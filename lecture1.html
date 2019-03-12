@@ -1,0 +1,290 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" >
+     <title>Lecture_plan1</title>
+          <script>
+              function validation()
+              {
+                  if(document.getElementById("course").value=="")
+                  {
+                    alert("Course must be filled out");
+                    return false;
+                  }
+                 else if(document.getElementById("semester").value=="")
+                  {
+                    alert("Enter your semester");
+                    return false;
+                 }
+            
+                 if(document.getElementById("subject").value=="")
+                  {
+                   alert(" Enter your subject name");
+                    return false;
+                  }
+                  if(document.getElementById("preparedby").value=="")
+                  {
+                    alert("Enter faculty name");
+                    return false;
+                  }
+                  if(document.getElementById("DOC").value=="")
+                  {
+                    alert("Enter date of commencement");
+                    return false;
+                  }
+                  if(document.getElementById("EDOC").value=="")
+                  {
+                    alert("Enter expected date of commencement");
+                    return false;
+                  }
+                  if(document.getElementById("ADOC").value=="")
+                  {
+                    alert("Enter actual date of commencement ");
+                    return false;
+                  }
+                  else
+                  {
+                    alert("you have all details.Thanks!");
+                    return true;
+                  }
+
+
+                }
+
+             
+
+           </script>
+     </head>
+
+
+  <body>
+         <center> <b> <h1>LECTURE PLAN</h1></b>  </center>	<br/><br/>
+              <div class="container">       
+                   <!-- Content here -->
+                  <div class="container">
+
+                    <form>
+                       <div class="form-row">
+                         <div class="col-md-4 mb-3">
+                         <label for="validationServer01">Course name</label>
+                         <input type="text" class="form-control is-valid" id="course" name="course" required>
+                        </div>
+
+                      <div class="col-md-4 mb-3">
+                       <label for="validationServer02">Semester</label>
+                         <input type="text" class="form-control is-valid" id="semester" name="semester" required>
+                        <!--  <input type="button" id="btn" value="submit" onclick="return semestervarify()"/>    -->
+                      </div>
+
+
+                <div class="col-md-4 mb-3">
+                 <label for="validationServerUsername">Subject name</label>
+                 <input type="text" class="form-control is-invalid" id="subject" name="subject" required>
+               </div>
+  
+
+            <div class="form-row">
+             <div class="col-md-4 mb-3">
+              <label for="validationServer03">Prepared By</label>
+              <input type="text" class="form-control is-invalid" id="preparedby" name="preparedby"  placeholder="Faculty name"  required>
+            </div>
+         </div>
+
+
+      <div class="col-md-4 mb-3">
+         <label for="validationServer04">Date of commencement</label>
+         <input type="text" class="form-control is-invalid" id="DOC"  required>
+    </div>
+
+
+      <div class="col-md-4 mb-3">
+        <label for="validationServer05">Expected Date of completion</label>
+       <input type="text" class="form-control is-invalid" id="EDOC"  required>
+	   </div>
+  
+
+    <div class="form-row">
+	      <div class="col-md-4 mb-3">
+       <label for="validationServer05">Actual Date of completion</label>
+       <input type="text" class="form-control is-invalid" id="ADOC"  required><br>
+        
+	     </div>
+    </div>
+
+
+</div>
+
+</form>
+
+</div>    <br>	
+
+ 
+
+                     
+
+
+
+    <h3><b>Lesson Structure:</b></h3>
+
+
+        <div class="container">           
+          <table class="table table-striped table-dark">
+           	<!-- write month name-->
+      	<thead>
+    	  <tr>
+       		 <th>Month:</th>
+       		 <td>
+    			 <input type="text" name="month"><br>
+    	   	</td>
+          <th>Year:</th>
+          <td>
+           <input type="text" name="Year"><br>
+          </td>
+       	</tr>
+       </thead>
+   
+
+   	<thead class="bg-primary">
+      <tr>
+      	<th scope="col">Day</th>
+        <th scope="col">Date</th>
+        <th scope="col">Unit</th>
+        <th scope="col">Introduction of Topic</th>
+        <th scope="col">No. of lecture</th>
+       </tr>
+    </thead>
+	
+	<tbody>
+		<tr>
+			<td>SUNDAY</td>
+       <td>
+          <input type="text" name="Date" maxlength="10" size="6"><br>
+       </td>
+        <td>
+          <input type="text" name="unit" maxlength="2" size="4"><br>
+       </td>
+      <td>
+        <textarea class="responsive-input" cols="30 "></textarea>
+      </td>
+        <td>
+          <input type="text" name="no.of lecture" maxlength="3" size="4"><br>
+       </td>
+
+		</tr>
+
+
+		<tr>
+			<td>MONDAY</td>
+        <td>
+           <input type="text" name="Date" maxlength="10" size="6"><br>
+        </td>
+        <td></td>
+        <td>
+          <textarea class="responsive-input" cols="30"></textarea>
+        </td> 
+       <td>
+          <input type="text" name="no of lecture" maxlength="3" size="4"><br>
+       </td>
+ 
+		</tr>
+
+
+    <tr>
+      <td>TUESDAY</td> 
+        <td>
+         <input type="text" name="Date" maxlength="10" size="6"><br>
+      </td>
+      <td></td>
+      <td>
+        <textarea class="responsive-input" cols="30"></textarea>
+      </td>  
+       <td>
+          <input type="text" name="no of lecture" maxlength="3" size="4"><br>
+       </td>
+ 
+    </tr>
+
+
+    <tr>
+      <td>WEDNESDAY</td>
+      <td>
+         <input type="text" name="Date" maxlength="10" size="6"><br>
+      </td>
+      <td></td>
+      <td>
+        <textarea class="responsive-input" cols="30"></textarea>
+      </td>
+       <td>
+          <input type="text" name="no of lecture" maxlength="3" size="4"><br>
+       </td>
+
+    </tr>
+
+
+    <tr>
+      <td>THRUSDAY</td>
+      <td>
+         <input type="text" name="Date" maxlength="10" size="6"><br>
+      </td>
+      <td></td>
+      <td>
+        <textarea class="responsive-input" cols="30"></textarea>
+      </td>
+      <td>
+          <input type="text" name="no of lecture" maxlength="3" size="4"><br>
+       </td>
+
+    </tr>
+
+
+      <tr>
+        <td>FRIDAY</td>
+        <td>
+         <input type="text" name="Date" maxlength="10" size="6"><br>
+      </td>
+      <td></td> 
+      <td>
+        <textarea class="responsive-input" cols="30"></textarea>
+      </td>
+       <td>
+          <input type="text" name="no of lecture" maxlength="3" size="4"><br>
+       </td>
+
+      </tr>
+
+
+      <tr>
+        <td>SATURDAY</td>
+       <td>
+         <input type="text" name="Date" maxlength="10" size="6"><br>
+      </td>
+      <td></td>
+      <td>
+        <textarea class="responsive-input" cols="30"></textarea>
+      </td>
+      <td>
+          <input type="text" name="no of lecture" maxlength="3" size="4"><br>
+       </td>
+
+    </tr>
+
+  </tbody>
+</table>
+      <input type="button" id="btn" value="submit" onclick="return validation()"/>
+
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="C:\xampp\htdocs\tdiary\bootstrap-3.3.7-dist\js\jquery.js" crossorigin="anonymous"></script>
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>		-->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
+  </body>
+</html>

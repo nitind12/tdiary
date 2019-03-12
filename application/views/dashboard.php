@@ -12,8 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 href="<?php echo base_url('assets/bootstrap/css/bootstrap-responsive.min.css'); ?>"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/theme.css'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/images/icons/css/font-awesome.css'); ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600');?>"/>
-	<link type="text/css" rel='stylesheet' href="<?php echo base_url('assets/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600')?>"/>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600"/>
 </head>
 <body><body>
         <div class="navbar navbar-fixed-top">
@@ -46,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </li>
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="images/user.png" class="nav-avatar" />
+                                <img src="<?php echo base_url('assets/images/user.png');?>" class="nav-avatar" />
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Your Profile</a></li>
@@ -73,16 +72,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </ul>
 </div> <div class="footer">
             <div class="container">
-                <b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
+                <b class="copyright">&copy; 2019 Dr. Nitin Deepak - amrapali.ac.in </b>All rights reserved.
             </div>
         </div>
-        <script  type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-1.9.1.min.js'); ?>" ></script>       <script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
+        <script  type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>       <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>" ></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/scripts/flot/jquery.flot.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/scripts/flot/jquery.flot.resize.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/flot/jquery.flot.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/flot/jquery.flot.resize.js'); ?>"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/scripts/datatables/jquery.dataTables.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/datatables/jquery.dataTables.js'); ?>"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/scripts/common.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/common.js'); ?>"></script>
       
-    </body>
+    </body> 

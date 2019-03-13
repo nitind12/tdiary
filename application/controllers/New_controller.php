@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Homelecture_controller extends CI_Controller {
-
-	/**
+class New_controller extends CI_Controller
+{
+		/**
 	 * Index Page for this controller.
 	 *S
 	 * Maps to the following URL
@@ -18,13 +18,11 @@ class Homelecture_controller extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index1()
 	{
-		$this->load->view('homelecture');
+		
+		$this->load->view('New');
+	
 	}
-	public function lecture_planner_link()
-	{
-		echo"welcome to lecture planner";
-	}
-}
 
+}

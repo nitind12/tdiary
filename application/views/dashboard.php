@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             
                             <ul class="widget widget-menu unstyled">
                                 <li><a href="#"><i class="menu-icon icon-table"></i> Online Attendance </a></li>
-                                <li><a href="#"><i class="menu-icon icon-book"></i> Lesson-Plans</a></li>
+                                <li><a href="<?php echo site_url('Fpage_controller/index'); ?>"><i class="menu-icon icon-book"></i> Lesson-Plans</a></li>
                                 <li><a href="#"><i class="menu-icon icon-paste"></i>Internal-Marks </a></li>
                                 <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>
                                 <li><a href="#"><i class="menu-icon icon-bar-chart"></i>Time-Charts </a></li>
@@ -96,7 +96,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!--/.sidebar-->
                     </div>
         
-        <script  type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>       <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>  
+        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>" ></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/flot/jquery.flot.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/flot/jquery.flot.resize.js'); ?>"></script>

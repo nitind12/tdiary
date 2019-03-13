@@ -15,9 +15,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>		-->
 </head>
 <body>
-<div style="padding-top:5%" class="container">	
+<div style="padding-top:5%" class="container">
+<div class="wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="span3">
+				<div class="sidebar">
+					<div class="span11">
+						<div class="content">
+
+							<div class="module">
+								<div class="module-head">
+									<center>  <h2>Lecture Plan</h2>   </center>
+								</div>
+								<div class="module-body">
+									<form class="form-horizontal">
+										<table class="table">
+											<thead>
+												<tr>
+													<td>
+														<div class="control-group">
+															<label class="control-label" for="basicinput">Dropdown Button</label>
+															<div class="controls">
+																<div class="dropdown">
+																	<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Dropdown Button <i class="icon-caret-down"></i></a>
+																	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+																		<li><a href="#">First Row</a></li>
+																		<li><a href="#">Second Row</a></li>
+																		<li><a href="#">Third Row</a></li>
+																		<li><a href="#">Fourth Row</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+												
+												</tr>
+											</thead>
+													
+							
+<!--
 	<div class="row">
 		<div class="span12">
+
 			<div class="content">
 				<div class="module">
 					<div class="module-head">
@@ -26,8 +65,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</center>
 					</div>
 
-					<div class="module">
-						<div class="module-head">
+				<div class="span9">
+					<div class="content">
 							<table class="table">
 								<thead>
 									<tr>
@@ -152,7 +191,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 </div>
 	
-										
+	-->	
+
+		<!--	<form class="navbar-search pull-left input-append" action="#">
+						<input type="text" class="span3">
+						
+						</button>
+					</form>
+								-->					
 	
 
 

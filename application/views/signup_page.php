@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
-					<form class="form-vertical" method="POST">
+					<form class="form-vertical" method="POST""action="<?php echo site_url('signup_controller/register');?>>
 						<div class="module-head">
 							<h3>Sign Up</h3>
 						</div>

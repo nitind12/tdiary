@@ -52,19 +52,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
-					<form class="form-vertical">
+					<form class="form-vertical" method="POST">
 						<div class="module-head">
 							<h3>Sign Up</h3>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="Username" placeholder="Username">
+									<input class="span12" type="text" id="Username"name="txtUsername" placeholder="Username">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="email" id="email" placeholder="Email">
+									<input class="span12" type="email" id="email"name="txtEmail" placeholder="Email">
 								</div>
 							</div>
 					
@@ -72,32 +72,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="first-name" placeholder="First-name">
+									<input class="span12" type="text" id="first_name"name="txtfirst_name" placeholder="First-name">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="sir-name" placeholder="Sir-name">
+									<input class="span12" type="text" id="sir_name" name="txtsir_name" placeholder="Sir-name">
 								</div>
 							</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="Password" id="Password" placeholder="Password">
+									<input class="span12" type="Password" id="Pwd" name="txtPwd" placeholder="Password">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="password" id="RePassword" placeholder="Re-Password">
+									<input class="span12" type="password" id="RePwd"name="txtRePwd"  placeholder="Re-Password">
 								</div>
 							</div>
 						</div>
+						<div class="module-body">
+							<div class="control-group">
+								<div class="controls row-fluid">
+									<input class="span12" type="text" id="Phone" name="Phone" placeholder="Phone">
+								</div>
+							</div>
+						</div>
+						
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
 									<div class="controls">
-												<select tabindex="1" data-placeholder="Select question.." class="span12">
+												<select tabindex="1" data-placeholder="Select question.." class="span12"name="txtquestion">
 													<option value="">Select question ..</option>
 													<option value="question 1">First question</option>
 													<option value="question 2">Second question</option>
@@ -109,38 +117,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="answer" placeholder="Answer">
+									<input class="span12" type="text" id="answer" placeholder="Answer"name="txtanswer">
 								</div>
 							</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="date" id="dateofbirth" placeholder="Date-Of-Birth">
+									<input class="span12" type="date" id="dateofbirth" placeholder="Date-Of-Birth"name="dateofbirth">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
 									
 									<label class="radio inline" "span12" >
-													<input type="radio" name="Teacher" id="Teacher" value="Teacher" checked="">
+													<input type="radio" name="txtrod" id="rod" value="Teacher" checked="" >
 													Teacher
 												</label>
 									<label class="radio inline">
-													<input type="radio" name="Student" id="Student" value="Student">
+													<input type="radio" name="txtrod" id="rad" value="Student">
 													Student
 												</label> 
 									<label class="radio inline">
-													<input type="radio" name="Parents" id="Parents" value="Parents">
+													<input type="radio" name="txtrod" id="rod" value="Parents">
 													Parents
 												</label>
+									</div>
 								</div>
-							</div>
 							<div>
-							<hr>							</div>
+								<hr>
+							</div>
 						
 					
-						
+	
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
@@ -162,14 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<b class="copyright">@ravi.com </b> All rights reserved.
 		</div>
 	</div>
-	<div class="footer">
-		<div class="container">
-			 
-
-			<b class="copyright">&copy; ravi.com </b> All rights reserved.
-		</div>
-	</div>
-	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-1.9.1.min.js'); ?>" ></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-1.9.1.min.js'); ?>" ></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-ui-1.10.1.custom.min.js'); ?>" ></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>" ></script>
 </body>

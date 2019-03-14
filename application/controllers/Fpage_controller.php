@@ -21,8 +21,8 @@ class Fpage_controller extends CI_Controller
 	public function index()
 	{
 		$this->load->view('firstpage');
-		//$this->load->view('New');
-		//$this->load->view('lessonplan');
+
+
 	}
 
 }

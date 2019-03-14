@@ -3,26 +3,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class New_controller extends CI_Controller
 {
-		/**
-	 * Index Page for this controller.
-	 *S
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index1()
-	{
-		
-		$this->load->view('New');
 	
+	/*function __construct()
+	{
+		parent::__construct();
+		$this->load->model('New_model','obj');		//calling model
+	}
+*/
+	function index1()
+	{
+		//$data['lecture_database'] = $this->obj->fetchtable();
+		$this->load->view('New');
+		$this->load->model('New_model','obj');
+		$this->obj->savingdata();
+		redirect('New_controller');
+
 	}
 
-}
+	/*function saving()
+	{
+		$this->obj->savingdata();
+		redirect('New_controller');
+
+	}*/
+}	
+?>

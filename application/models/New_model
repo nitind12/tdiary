@@ -1,9 +1,23 @@
-<?<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+ defined('BASEPATH') OR exit('No direct script access allowed');
+
 
 class New_model extends CI_Model
 {
 
 	$Course_Name=$this->input->post('Course_Name');
+	$Semester=$this->input->post('Course_Name');
+	$section=$this->input->post('Course_Name');
+	$Faculty_Name=$this->input->post('Course_Name');
+	$Date_Of_Commencement=$this->input->post('Course_Name');
+	$Actual_Date_Of_Completion=$this->input->post('Course_Name');
+	$Expected_Date_Of_Completion=$this->input->post('Course_Name');
+	$Subject_Name=$this->input->post('Course_Name');
+	$Unit=$this->input->post('Course_Name');
+	$Topic=$this->input->post('Course_Name');
+	$No_Of_Lecture=$this->input->post('Course_Name');
+	$Total_No_Of_Lecture=$this->input->post('Total_No_Of_Lecture,);
+	
 
 
 
@@ -17,19 +31,20 @@ class New_model extends CI_Model
 	// insert array is used to get fetch data from the view page
 	function savingdata()
 	{
-			$data=array(
-	 		'Course_Name'=>$this->input->post('Course_Name'),
-	 		'Semester'=>$this->input->post('Semester'),
-	 		'Section'=>$this->input->post('section'),
-	 		'Faculty_Name'=>$this->input->post('Faculty_Name'),
-	 		'Date_Of_Commencement'=>$this->input->post('Date_Of_Commencement'),
-	 		'Actual_Date_Of_Completion'=>$this->input->post('Actual_Date_Of_Completion'),
-	 		'Expected_Date_Of_Completion'=>$this->input->post('Expected_Date_Of_Completion'),
+			$data = array
+			(
+	 		'Course_Name'=>$Course_Name,
+	 		'Semester'=>$Semester,
+	 		'Section'=>$section,
+	 		'Faculty_Name'=>$Faculty_Name,
+	 		'Date_Of_Commencement'=>$Date_Of_Commencement,
+	 		'Actual_Date_Of_Completion'=>$Actual_Date_Of_Completion,
+	 		'Expected_Date_Of_Completion'=>Expected_Date_Of_Completion,
 	 		'Subject_Name'=>$this->input->post('Subject_Name'),
-	 		'Unit'=>$this->input->post('Unit'),
-	 		'Topic'=>$this->input->post('Topic'),
-	 		'No_Of_Lecture'=>$this->input->post('No_Of_Lecture'),
-	 		'Total_No_Of_Lecture'=>$this->input->post('Total_No_Of_Lecture')
+	 		'Unit'=>$Unit,
+	 		'Topic'=>$Topic,
+	 		'No_Of_Lecture'=>$No_Of_Lecture
+	 		'Total_No_Of_Lecture'=>Total_No_Of_Lecture
 	 			);
 
 				$this->db->insert('lecture', $data);	//insert data into database table

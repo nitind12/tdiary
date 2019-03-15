@@ -13,8 +13,8 @@ class signup_controller extends CI_Controller {
 		$this->load->model('my_signup_model', 'mrm');
 		$data['res'] = $this->mrm->register();
 		if($data['res'] == true){
-			//echo "Register Successfully"."<br><a href='" . site_url('Page_1_controller') . "'>Back</a>";
-			redirect('dashbooard');
+			//redirect('dashbooard');
+			echo "hello";
 		} else {
 			echo "Already exists. Please try with new name and email."."<br><a href='" . site_url('signup_page') . "'>Back</a>"; 
 		}

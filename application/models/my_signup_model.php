@@ -29,7 +29,7 @@ class My_signup_model extends CI_Model
 			$data = array(
 				'Username'=>$username_,
 				'Email'=>$email_,
-				''=>$first_name,	
+				'first_name'=>$first_name,	
 				'Email'=>$sir_name,	
 				'Password'=>$pwd,
 				'phone_no'=>$phone

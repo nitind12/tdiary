@@ -63,12 +63,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="Username" placeholder="Username">
+									<input class="span12" type="text" id="txtUsername" name ="txtUsername"placeholder="Username">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="email" id="email" placeholder="Email">
+									<input class="span12" type="email" id="email"name="txtEmail" placeholder="Email">
 								</div>
 							</div>
 					
@@ -76,24 +76,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="first-name" placeholder="First-name">
+									<input class="span12" type="text" id="first-name"name="txtfirst_name"  placeholder="First-name">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="sir-name" placeholder="Sir-name">
+									<input class="span12" type="text" id="sir-name"name="txtsir_name"  placeholder="Sir-name">
 								</div>
 							</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="Password" id="Password" placeholder="Password">
+									<input class="span12" type="Password" id="Password" name="txtEmail" placeholder="Password">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="password" id="RePassword" placeholder="Re-Password">
+									<input class="span12" type="password" id="RePassword" name="txtEmail" placeholder="Re-Password">
 								</div>
 							</div>
 						</div>
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="control-group">
 								<div class="controls row-fluid">
 									<div class="controls">
-												<select tabindex="1" data-placeholder="Select question.." class="span12">
+												<select tabindex="1" data-placeholder="Select question.." name="txtEmail"class="span12">
 													<option value="">Select question ..</option>
 													<option value="question 1">First question</option>
 													<option value="question 2">Second question</option>
@@ -113,29 +113,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="answer" placeholder="Answer">
+									<input class="span12" type="text" id="answer" name="txtEmail" placeholder="Answer">
 								</div>
 							</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="date" id="dateofbirth" placeholder="Date-Of-Birth">
+									<input class="span12" type="date" id="dateofbirth" name="txtEmail" placeholder="Date-Of-Birth">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
 									
 									<label class="radio inline" "span12" >
-													<input type="radio" name="Teacher" id="Teacher" value="Teacher" checked="">
+													<input type="radio" name="r1" id="Teacher" value="Teacher" checked="">
 													Teacher
 												</label>
 									<label class="radio inline">
-													<input type="radio" name="Student" id="Student" value="Student">
+													<input type="radio" name="r1" id="Student" value="Student">
 													Student
 												</label> 
 									<label class="radio inline">
-													<input type="radio" name="Parents" id="Parents" value="Parents">
+													<input type="radio" name="r1" id="Parents" value="Parents">
 													Parents
 												</label>
 								</div>

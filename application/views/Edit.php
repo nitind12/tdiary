@@ -16,6 +16,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/images/icons/css/font-awesome.css'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600');?>"/>
 	<link type="text/css" rel='stylesheet' href="<?php echo base_url('assets/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600')?>"/>
+
+
+	   <script>
+        /*      function validation()
+              {
+                  if(document.getElementById("course").value=="")
+                  {
+                    alert("Course must be filled out");
+                    return false;
+                  }
+                else if(document.getElementById("txtsemester").value=="")
+                  {
+                    alert("Enter your semester");
+                    return false;
+                 }
+            
+                 if(document.getElementById("txtsubject").value=="")
+                  {
+                   alert(" Enter your subject name");
+                    return false;
+                   
+     		     }
+                  if(document.getElementById("txtfaculty").value=="")
+                  {
+                    alert("Enter faculty name");
+                    return false;
+                  }
+                  if(document.getElementById("txtDOC").value=="")
+                  {
+                    alert("Enter date of commencement");
+                    return false;
+                  }
+                  if(document.getElementById("txtEDOC").value=="")
+                  {
+                    alert("Enter expected date of commencement");
+                    return false;
+                  }
+                  if(document.getElementById("txtADOC").value=="")
+                  {
+                    alert("Enter actual date of commencement ");
+                    return false;
+                  }
+                  else
+                  {
+                    alert("you have all details.Thanks!");
+                    return true;
+                  }
+
+
+                }
+*/
+           </script>
 </head>
 <body>
         <div class="navbar navbar-fixed-top">
@@ -84,11 +136,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>Lecture Plan </a>
                                     <ul id="togglePages1" class="collapse unstyled">
-                                        <li><a href="<?php echo site_url('New_controller/index'); ?>"><i class="icon-book"></i>New</a></li>
-                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Edit </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>View </a></li>
+                                        <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
+                                       
+                                        <li><a href="other-user-listing.html"><i class="icon-eye-open"></i>View </a></li>
                                     </ul>
-                                <li><a href="#"><i class="menu-icon icon-paste"></i>Internal-Marks </a></li>
+
+
+                                        <li><a href="<?php echo site_url('Lesson_controller/index'); ?>"><i class="icon-book"></i> Lesson Plan </a>
+                                         <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>  
+
+
+                                           <ul class="widget widget-menu unstyled">
+				                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages2"><i class="menu-icon icon-cog">
+				                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+				                                </i>Internal Marks </a>
+				                                  <ul id="togglePages2" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('test/index');?>"><i class="icon-edit"></i>Edit</a></li>
+                                        <li><a href="<?php echo site_url('marks/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        
+                                    </ul>
+                                </li>
+
+
+                           
                                 <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>
                                 <li><a href="#"><i class="menu-icon icon-bar-chart"></i>Time-Charts </a></li>
                             </ul>
@@ -121,8 +191,165 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
+<div class="span9">
+	<div class="content">
+
+		<div class="module">
+			<div class="module-head">
+				<center>  <h2>Lecture Plan</h2>	</center>
+			</div>
+				<div class="module-body">
+					<form  method="post" action="<?php echo site_url('Edit_controller/savingdata');?>"
+									 class="form-horizontal row-fluid">
+
+								<table class="table" border="1 ">
+									<tbody>
+										<tr>
+											<td>  
+												Course Name:<br>
+														
+															<select tabindex="1" data-placeholder="Select here.." class="span8" name="course">
+																<option value="">Select here..</option>
+																<option value="Category 1">BCA</option>
+																<option value="Category 2">BBA</option>
+																<option value="Category 3">B.COM</option>
+																<option value="Category 4">POLY TECHNIQUE</option>
+																<option value="Category 4">BSC</option>
+																<option value="Category 4">HM</option>
+															</select>
+										  	 </td>
+
+										  		 <td>									
+														Semester:	<br>
+														
+															<input type="text" id="txtSemester" name="txtsemester" class="span8">
+												</td>
 
 
+												<td>
+														Section:<br>
+														
+														<input type="text" id="txtSection" name="txtsection" class="span8">													
+												</td>
+											</tr>
+
+
+											<tr>
+												 <td>									
+														Date Of Commencement:	<br>
+														
+														<input type="text" id="txtDOC" name="txtDOC" class="span8">
+												</td>
+
+												 <td>								
+														Actual Date Of Completion:<br>
+														
+														<input type="text" id="txtADOC" name="txtADOC" class="span8">
+												</td>
+
+												<td>									
+														Expected Date Of Completion:<br>	
+														
+														<input type="text" id="txtEDOC" name="txtEDOC" class="span8">
+												</td>
+											</tr>
+
+											<tr>
+
+												<td>									
+														Facutly Name:	<br>
+														
+														<input type="text" id="txtfaculty" name="txtfaculty" class="span8">
+												</td>
+
+												<td>									
+														Subject Name:	<br>
+														
+														<input type="text" id="txtsubject" name="txtsubject" class="span8">
+												</td>
+
+
+												<td>									
+														Syllabus:	<br>
+														
+														<a class=" span8 dropdown-toggle btn" href="#" name="syllabus">Upload</a>
+												</td>
+											</tr>
+
+											<tr>
+												 <th colspan="3"><div class="control-group">
+												 	<label class=" span3 control-label" ><h3>Lecture Structure</h3></label>	
+													 </div>
+												</th>		
+										</tr>
+
+
+
+
+
+										<tr>
+											 
+											<th>
+												<center>	<h5>Unit</h5></center>
+											</th>
+
+											<th>
+												<center>	<h5>Topic</h5></center>
+												
+
+
+											</th>
+											<th>
+												<center>	<h5>No. Of Lecture</h5>	</center>
+												
+											</th>
+										</tr>
+
+
+										<tr>
+											<td>
+												<input type="text" id="txtunit" name="txtunit" cltxtass="span8">
+											</td>
+											<td>
+
+													<textarea class="span9" rows="8"  cols="30" name="txtarea"></textarea>
+											
+											<!--	<textarea class="span9" row="20"  cols="30" name="txtarea"></textarea>	-->
+											</td>
+											<td>
+												<input type="text" id="txtlecture" name="txtecture" cltxtass="span8">
+											</td>
+										</tr>
+
+										<tr>
+													<td colspan="3">									
+													<div class=" control-group">
+														<label class="control-label" for="total">Total No. of Lecture:	</label>
+														<div class="controls" >
+															<input type="text" id="txttotal" name="txttotal" class="span2">
+															<button style="float:right" type="submit" name="save" 
+															 class=" span3 btn">Submit</button>
+														</div>
+													</div>
+												</td>
+										</tr>
+							
+		
+
+
+
+
+
+
+
+
+										
+										
+
+
+
+								  
+<!--
 <div class="span9">
 	<div class="content">
 		<div class="module">
@@ -138,7 +365,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</center>
 							<div class="module-body">
 							
-
 									<form  method="post" action="<?php echo site_url('New_controller/savingdata');?>"
 									 class="form-horizontal row-fluid">
 										<table class="table" border="1">
@@ -308,7 +534,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 </body>
 </html>
-		
+				-->
 
 							
 										
@@ -331,25 +557,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 	
 <!-- view database in page -->
-
-<!--<table border="1" cellpadding="5" cellspacing="5" width="40%">
+<table border="1" cellpadding="5" cellspacing="5" width="50%">
 		<tr style="text-align: left">
-			<th>Course_Name</th>
+			<th>Course Name</th>
 			<th>Semester</th>
 			<th>Section</th>
-			<th>Faculty_Name</th>
-			<th>Date_Of_Commencement</th>
-			<th>Actual_Date_Of_Completion</th>
-			<th>Expected_Date_Of_Completion</th>
-			<th>Subject_Name</th>
+			<th>Faculty Name</th>
+			<th>Date Of Commencement</th>
+			<th>Actual Date Of Completion</th>
+			<th>Expected Date Of Completion</th>
+			<th>Subject Name</th>
 			<th>Unit</th>
 			<th>Topic</th>
-			<th>No_Of_Lecture</th>
-			<th>Total_No_Of_lecture</th>
+			<th>No Of Lecture</th>
+			<th>Total No Of Lecture</th>
 		</tr>
 	<?php foreach ($lecture_database as $item) { ?>
 		<tr>
-			<td><?php echo $item->Course_Name ;?></td>
+			<td><?php echo $item->Course_Name;?></td>
 			<td><?php echo $item->Semester;?></td>
 			<td><?php echo $item->Section ;?></td>
 			<td><?php echo $item->Faculty_Name ;?></td>
@@ -363,16 +588,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<td><?php echo $item->Total_No_Of_Lecture ;?></td>
 					</tr>
 	<?php } ?>
-	</table> -->	
-
-
-
-
-
-
-
-												
-	
+</table>
+		
 
 
         

@@ -74,11 +74,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             
                             <ul class="widget widget-menu unstyled">
                                 <li><a href="#"><i class="menu-icon icon-table"></i> Online Attendance </a></li>
-                                <li><a href="<?php echo site_url('Fpage_controller/index'); ?>"><i class="menu-icon icon-book"></i> Lesson-Plans</a></li>
+                              <!--  <li><a href="<?php echo site_url('Fpage_controller/index'); ?>"><i class="menu-icon icon-book">
+                                                                                                                  
+                                </i> Lesson-Plans</a></li>      -->
+                                   <ul class="widget widget-menu unstyled">
+                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-book">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Lecture Plan </a>
+                                    <ul id="togglePages1" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('New_controller/index'); ?>"><i class="icon-book"></i>New</a></li>
+                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Edit </a></li>
+                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>View </a></li>
+                                    </ul>
                                 <li><a href="#"><i class="menu-icon icon-paste"></i>Internal-Marks </a></li>
                                 <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>
                                 <li><a href="#"><i class="menu-icon icon-bar-chart"></i>Time-Charts </a></li>
                             </ul>
+
+
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">
                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">

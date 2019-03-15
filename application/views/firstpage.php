@@ -47,57 +47,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                  						   </ul>
                              			 				</li>
                             					
-						                                <li><a href="#togglePages">Lesson Plan </a>
+						                                <li><a href="<?php echo site_url('Lecture_controller/index2'); ?>">
+						                                Lesson Plan </a>
 						                                </li>
 
 						                                 <li><a href="#togglePage">Weekly Plan </a>
 						                                </li>
 						                              </ul>
 						                        
-                        </div>
-                        <!--/.sidebar-->
-                    </div>
-                </td>
-
-
-
-	<!--
-	<div class="wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="span12">
-					<div class="sidebar">
-					<div class="content">
-						<div class="module">
-							<div class="module-head">
-								<center>	<h2>Your Planbook</h2>		</center>
-							</div>
-						
-					<form method="post" action="#">	
-							<table class="table">
-								  <thead>
-									<tr>
-									<td>
-										<div class="dropdown ">
-											<a class="btn-primary dropdown-toggle btn" data-toggle="dropdown" 
-											href="#">Lecture Plan<i class="icon-caret-down"></i></a>
-											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-													<li><a href="#">New</a></li>
-													<li><a href="#">Edit</a></li>
-													<li><a href="#">View</a></li>								
-											</ul>
-										</div>
-									</td>
-
-									<td>
-										<a class=" btn-primary dropdown-toggle btn" href="#">Lesson Plan</a>
-									</td>
-
-									<td>
-										<a class=" btn-primary dropdown-toggle btn" href="#">Weekly Plan</a>
-									</td>
-		-->
-								</tr>
+                   							     </div>
+						                        <!--/.sidebar-->
+						                    </div>
+						                </td>
+									</tr>
 							</thead>
 						</table>
 					</form>

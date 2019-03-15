@@ -10,7 +10,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"/>
 	<link rel="stylesheet" type="text/css"
 	 href="<?php echo base_url('assets/bootstrap/css/bootstrap-responsive.min.css'); ?>"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/theme.css'); ?>" />
+	<link rel="stylesheet" target="
+
+	">ype="text/css" href="<?php echo base_url('assets/css/theme.css'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/images/icons/css/font-awesome.css'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600');?>"/>
 </head>
@@ -52,7 +54,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
+					<form class="form-vertical" method="POST" action="<?php echo site_url('signup_controller/register');?>">
 					<form class="form-vertical">
+
 						<div class="module-head">
 							<h3>Sign Up</h3>
 						</div>
@@ -144,7 +148,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
-									<button type="submit" class="btn btn-primary pull-right">Login</button>
+									<input type="submit" class="btn btn-primary pull-right" value="Login">
 								
 								</div>
 							</div>
@@ -162,12 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<b class="copyright">@ravi.com </b> All rights reserved.
 		</div>
 	</div>
-	<div class="footer">
-		<div class="container">
-			 
-
-			<b class="copyright">&copy; ravi.com </b> All rights reserved.
-		</div>
+	
 	</div>
 	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-1.9.1.min.js'); ?>" ></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-ui-1.10.1.custom.min.js'); ?>" ></script>

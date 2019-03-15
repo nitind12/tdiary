@@ -10,8 +10,5 @@ public function index()
 	
 
 	}
-	function firstpage()
-	{
-		$this->load->view('firstpage');
-	}
+
 }

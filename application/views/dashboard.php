@@ -77,16 +77,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <!--  <li><a href="<?php echo site_url('Fpage_controller/index'); ?>"><i class="menu-icon icon-book">
                                                                                                                   
                                 </i> Lesson-Plans</a></li>      -->
-                                   <ul class="widget widget-menu unstyled">
+                                  <ul class="widget widget-menu unstyled">
                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-book">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>Lecture Plan </a>
                                     <ul id="togglePages1" class="collapse unstyled">
-                                        <li><a href="<?php echo site_url('New_controller/index'); ?>"><i class="icon-book"></i>New</a></li>
-                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Edit </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>View </a></li>
+                                        <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
+                                        
+                                        <li><a href="other-user-listing.html"><i class="icon-eye-open"></i>View</a></li>
                                     </ul>
-                                <li><a href="#"><i class="menu-icon icon-paste"></i>Internal-Marks </a></li>
+
+                                        <li><a   href="<?php echo site_url('Lesson_controller/index'); ?>"><i class="icon-book"></i> Lesson Plan </a>
+                                         <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>    
+                                    <!--  <li><a href="#"><i class="menu-icon icon-paste"></i>Lesson Plan </a></li>
+
+                                      <li><a href="#"><i class="menu-icon icon-paste"></i>Weekly Plan </a></li>     -->
+
+                                     <ul class="widget widget-menu unstyled">
+                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages2"><i class="icon-paste">
+                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                                </i>Internal Marks </a>
+                                                  <ul id="togglePages2" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('test/index');?>"><i class="icon-edit"></i>Edit</a></li>
+                                        <li><a href="<?php echo site_url('marks/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        
+                                    </ul>
+                                </li>
+
+
+
+                                    </ul>
+                               
                                 <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>
                                 <li><a href="#"><i class="menu-icon icon-bar-chart"></i>Time-Charts </a></li>
                             </ul>

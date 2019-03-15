@@ -74,15 +74,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             
                             <ul class="widget widget-menu unstyled">
                                 <li><a href="#"><i class="menu-icon icon-table"></i> Online Attendance </a></li>
-                                <li><a href="<?php echo site_url('Fpage_controller/index'); ?>"><i class="menu-icon icon-book"></i> Lesson-Plans</a></li>
-                               <!-- <li><a href="<?php echo site_url('internaltest/index');?>"><i class="menu-icon icon-paste"></i>Internal-Marks </a></li>-->
+                            
+                                      <ul class="widget widget-menu unstyled">
+                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-book">
+                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                                </i>Lecture Plan </a>
+                                                 <ul id="togglePages1" class="collapse unstyled">
+                                                        <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
+                                                        
+                                                        <li><a href="other-user-listing.html"><i class="icon-eye-open"></i>View </a></li>
+                                                    </ul>
+
+
+                                        <li><a href="<?php echo site_url('Lesson_controller/index'); ?>"><i class="icon-book"></i> Lesson Plan </a>
+                                         <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>  
+
+
+
+
                                <ul class="widget widget-menu unstyled">
                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages2"><i class="menu-icon icon-cog">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>Internal Marks </a>
                                     <ul id="togglePages2" class="collapse unstyled">
-                                        <li><a href="<?php echo site_url('test/index');?>"><i class="icon-inbox"></i>Edit</a></li>
-                                        <li><a href="<?php echo site_url('marks/index');?>"><i class="icon-inbox"></i>View </a></li>
+                                        <li><a href="<?php echo site_url('test/index');?>"><i class="icon-edit"></i>Edit</a></li>
+                                        <li><a href="<?php echo site_url('marks/index');?>"><i class="icon-eye-open"></i>View </a></li>
                                         
                                     </ul>
                                 </li>

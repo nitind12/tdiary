@@ -30,7 +30,7 @@ class My_signup_model extends CI_Model
 			(
 				'Username'=>$username_,
 				'first_name'=>$first_name,	
-				'sir_name'=>$sir_name,
+				'last_name'=>$sir_name,
 				'email'=>$email_,	
 				'password'=>$pwd,
 				'phone_no'=>$phone,

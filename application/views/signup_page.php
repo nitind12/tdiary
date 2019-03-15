@@ -54,11 +54,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
-<<<<<<< HEAD
 					<form class="form-vertical" method="POST" action="<?php echo site_url('signup_controller/register');?>">
-=======
 					<form class="form-vertical">
->>>>>>> c0b5b4855c33896ced144807a353cf3ecf4e3d43
+
 						<div class="module-head">
 							<h3>Sign Up</h3>
 						</div>
@@ -168,12 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<b class="copyright">@ravi.com </b> All rights reserved.
 		</div>
 	</div>
-	<div class="footer">
-		<div class="container">
-			 
-
-			<b class="copyright">&copy; ravi.com </b> All rights reserved.
-		</div>
+	
 	</div>
 	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-1.9.1.min.js'); ?>" ></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-ui-1.10.1.custom.min.js'); ?>" ></script>

@@ -26,13 +26,14 @@ class My_signup_model extends CI_Model
 		} 
 		else 
 		{
-			$data = array(
+			$data = array
+			(
 				'Username'=>$username_,
 				'Email'=>$email_,
 				'first_name'=>$first_name,	
 				'Email'=>$sir_name,	
 				'Password'=>$pwd,
-				'phone_no'=>$phone
+				'phone_no'=>$phone,
 				'question'=>$question,	
 				'answer'=>$answer,	
 				'date_of_birth'=>$dateofbirth,

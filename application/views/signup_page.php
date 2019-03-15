@@ -88,20 +88,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="Password" id="Password" name="txtEmail" placeholder="Password">
+									<input class="span12" type="Password" id="Password" name="txtPwd" placeholder="Password">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="password" id="RePassword" name="txtEmail" placeholder="Re-Password">
+									<input class="span12" type="password" id="RePassword" name="retxtPwd" placeholder="Re-Password">
 								</div>
 							</div>
+							<div class="module-body">
+							<div class="control-group">
+								<div class="controls row-fluid">
+									<input class="span12" type="text" id="Phone" name="Phone" placeholder="phone no">
+								</div>
+							</div>
+						
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
 									<div class="controls">
-												<select tabindex="1" data-placeholder="Select question.." name="txtEmail"class="span12">
+												<select tabindex="1" data-placeholder="Select question.." name="txtquestion"class="span12">
 													<option value="">Select question ..</option>
 													<option value="question 1">First question</option>
 													<option value="question 2">Second question</option>
@@ -113,29 +120,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="answer" name="txtEmail" placeholder="Answer">
+									<input class="span12" type="text" id="answer" name="txtanswer" placeholder="Answer">
 								</div>
 							</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="date" id="dateofbirth" name="txtEmail" placeholder="Date-Of-Birth">
+									<input class="span12" type="date" id="dateofbirth" name="dateofbirth" placeholder="Date-Of-Birth">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
 									
 									<label class="radio inline" "span12" >
-													<input type="radio" name="r1" id="Teacher" value="Teacher" checked="">
+													<input type="radio" name="rod" id="Teacher" value="Teacher" checked="">
 													Teacher
 												</label>
 									<label class="radio inline">
-													<input type="radio" name="r1" id="Student" value="Student">
+													<input type="radio" name="rod" id="Student" value="Student">
 													Student
 												</label> 
 									<label class="radio inline">
-													<input type="radio" name="r1" id="Parents" value="Parents">
+													<input type="radio" name="rod" id="Parents" value="Parents">
 													Parents
 												</label>
 								</div>

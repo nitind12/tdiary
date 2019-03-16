@@ -82,13 +82,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                  <ul id="togglePages1" class="collapse unstyled">
                                                         <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                                         
-                                                        <li><a href="other-user-listing.html"><i class="icon-eye-open"></i>View </a></li>
+                                                        <li><a href="<?php echo site_url('Lview_controller/index'); ?>"><i class="icon-eye-open"></i>View </a></li>
                                                     </ul>
 
 
                                         <li><a href="<?php echo site_url('Lesson_controller/index'); ?>"><i class="icon-book"></i> Lesson Plan </a>
-                                         <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>  
 
+
+
+                                          <ul class="widget widget-menu unstyled">
+                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages4"><i class="menu-icon icon-book">
+                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                                </i>Weekly Lesson Plan </a>
+                                                    <ul id="togglePages4" class="collapse unstyled">
+                                                        <li><a href="#"><i class="icon-edit"></i>Edit</a></li>
+                                                                   
+                                                         <li><a href="#"><i class="icon-eye-open"></i>View </a></li>
+                                                    </ul>
+                                                </li>
+                                         </ul>
+                                         <!--<li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>  
+                                            -->
 
 
 

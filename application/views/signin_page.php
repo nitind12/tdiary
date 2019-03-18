@@ -31,9 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 					<ul class="nav pull-right">
 
-						<li><a href="login.php">
-							Sign In
-						</a></li>
+						<li><a href='<?php echo base_url()."index.php/Main/login"; ?>'>Sign In</a>
+							</li>
 
 						
 
@@ -52,19 +51,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
+					<form class="form-vertical" method="POST" action="<?php echo site_url('Main/signin_validation');?>">
 					<form class="form-vertical">
+
 						<div class="module-head">
 							<h3>Sign Up</h3>
 						</div>
+						<?php
+						  echo form_open();  
+  						  echo validation_errors();  
+						  ?>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="Username" placeholder="Username">
+									<input class="span12" type="text" id="txtUsername" name ="txtUsername"placeholder="Username">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="email" id="email" placeholder="Email">
+									<input class="span12" type="email" id="email"name="txtEmail" placeholder="Email">
 								</div>
 							</div>
 					
@@ -72,32 +77,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="first-name" placeholder="First-name">
+									<input class="span12" type="text" id="first-name"name="txtfirst_name"  placeholder="First-name">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="sir-name" placeholder="Sir-name">
+									<input class="span12" type="text" id="sir-name"name="txtsir_name"  placeholder="Sir-name">
 								</div>
 							</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="Password" id="Password" placeholder="Password">
+									<input class="span12" type="Password" id="Password" name="txtPwd" placeholder="Password">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="password" id="RePassword" placeholder="Re-Password">
+									<input class="span12" type="password" id="RePassword" name="retxtPwd" placeholder="Re-Password">
 								</div>
 							</div>
-						</div>
+							</div><div class="module-body">
+							<div class="control-group">
+								<div class="controls row-fluid">
+									<input class="span12" type="text" id="Phone" name="Phone" placeholder="phone no">
+								</div>
+							</div>
+							</div>	
+
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
 									<div class="controls">
-												<select tabindex="1" data-placeholder="Select question.." class="span12">
+												<select tabindex="1" data-placeholder="Select question.." name="txtquestion"class="span12">
 													<option value="">Select question ..</option>
 													<option value="question 1">First question</option>
 													<option value="question 2">Second question</option>
@@ -109,42 +121,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="answer" placeholder="Answer">
+									<input class="span12" type="text" id="answer" name="txtanswer" placeholder="Answer">
 								</div>
 							</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="date" id="dateofbirth" placeholder="Date-Of-Birth">
+									<input class="span12" type="date" id="dateofbirth" name="dateofbirth" placeholder="Date-Of-Birth">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
 									
 									<label class="radio inline" "span12" >
-													<input type="radio" name="Teacher" id="Teacher" value="Teacher" checked="">
+													<input type="radio" name="rod" id="Teacher" value="Teacher" checked="">
 													Teacher
 												</label>
 									<label class="radio inline">
-													<input type="radio" name="Student" id="Student" value="Student">
+													<input type="radio" name="rod" id="Student" value="Student">
 													Student
 												</label> 
 									<label class="radio inline">
-													<input type="radio" name="Parents" id="Parents" value="Parents">
+													<input type="radio" name="rod" id="Parents" value="Parents">
 													Parents
 												</label>
 								</div>
 							</div>
+							<?php
+							   echo form_close();
+							?>
+
 							<div>
-							<hr>							</div>
+							<hr>
+						</div>
 						
 					
 						
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
-									<button type="submit" class="btn btn-primary pull-right">Login</button>
+									<input type="submit" class="btn btn-primary pull-right" value="Sign Up">
 								
 								</div>
 							</div>
@@ -162,12 +179,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<b class="copyright">@ravi.com </b> All rights reserved.
 		</div>
 	</div>
-	<div class="footer">
-		<div class="container">
-			 
-
-			<b class="copyright">&copy; ravi.com </b> All rights reserved.
-		</div>
+	
 	</div>
 	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-1.9.1.min.js'); ?>" ></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-ui-1.10.1.custom.min.js'); ?>" ></script>

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class My_signup_model extends CI_Model
+class My_signin_model extends CI_Model
 {
 
 	function register()

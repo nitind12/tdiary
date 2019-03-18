@@ -10,9 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"/>
 	<link rel="stylesheet" type="text/css"
 	 href="<?php echo base_url('assets/bootstrap/css/bootstrap-responsive.min.css'); ?>"/>
-	<link rel="stylesheet" target="
-
-	">ype="text/css" href="<?php echo base_url('assets/css/theme.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/theme.css'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/images/icons/css/font-awesome.css'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600');?>"/>
 </head>
@@ -33,9 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 					<ul class="nav pull-right">
 
-						<li><a href="login.php">
-							Sign In
-						</a></li>
+						<li><a href='<?php echo base_url()."index.php/Main/login"; ?>'>Sign In</a>
+							</li>
 
 						
 
@@ -54,12 +51,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
-					<form class="form-vertical" method="POST" action="<?php echo site_url('signup_controller/register');?>">
+					<form class="form-vertical" method="POST" action="<?php echo site_url('Main/signin_validation');?>">
 					<form class="form-vertical">
 
 						<div class="module-head">
 							<h3>Sign Up</h3>
 						</div>
+						<?php
+						  echo form_open();  
+  						  echo validation_errors();  
+						  ?>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
@@ -96,14 +97,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<input class="span12" type="password" id="RePassword" name="retxtPwd" placeholder="Re-Password">
 								</div>
 							</div>
-							<div class="module-body">
+							</div><div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
 									<input class="span12" type="text" id="Phone" name="Phone" placeholder="phone no">
 								</div>
 							</div>
-						
-						</div>
+							</div>	
+
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
@@ -147,15 +148,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												</label>
 								</div>
 							</div>
+							<?php
+							   echo form_close();
+							?>
+
 							<div>
-							<hr>							</div>
+							<hr>
+						</div>
 						
 					
 						
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
-									<input type="submit" class="btn btn-primary pull-right" value="Login">
+									<input type="submit" class="btn btn-primary pull-right" value="Sign Up">
 								
 								</div>
 							</div>

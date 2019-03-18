@@ -6,7 +6,7 @@ class signup_controller extends CI_Controller {
 	public function index()
 	{
 		//$this->load->helper('url');
-		$this->load->view('signup_page');
+		$this->load->view('signin_page');
 	}
 
 	function register(){

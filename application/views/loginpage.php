@@ -31,8 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 					<ul class="nav pull-right">
 
-						<li>
-							<a href='<?php echo base_url()."index.php/Main/signin"; ?>'>Sign In</a>
+						<li><a href="sign_up.php">
+							Sign Up
 						</a></li>
 
 						
@@ -52,23 +52,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
-					<form class="form-vertical" method="post"action="<?php echo site_url('Main/login_action'); ?>">
+					<form class="form-vertical">
 						<div class="module-head">
-							<h3>Sign Up</h3>
-					</div>
-						<?php
-						    echo form_open();  
-    						echo validation_errors();
-						    ?>
+							<h3>Sign In</h3>
+						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" name="username"id="username" placeholder="Username">
+									<input class="span12" type="text" id="inputEmail" placeholder="Username">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="password"name="password" id="password" placeholder="Password">
+									<input class="span12" type="password" id="inputPassword" placeholder="Password">
 								</div>
 							</div>
 						</div>
@@ -79,9 +75,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<label class="checkbox">
 										<input type="checkbox"> Remember me
 									</label>
-								<?php
- 								echo form_close();  
-								?>
 								</div>
 							</div>
 						</div>

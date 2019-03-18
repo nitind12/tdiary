@@ -1,7 +1,12 @@
 <?php
 class User_model extends CI_Model
 {
-
+	/*	Public function __construct()
+	{
+		//parent::__construct();
+		//echo "hello world";
+		//echo "<br>";
+	}
 
 	/*function saverecords()
 	{
@@ -23,7 +28,7 @@ class User_model extends CI_Model
 				'name' => $this->input->post('name'),
 				'mobile' => $this->input->post('mobile')
 			);
-			$this->db->insert('users', $data);		//insert data into database table
+			$this->db->insert('users', $data);
 		}
 }
 ?>

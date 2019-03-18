@@ -15,55 +15,61 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>		-->
 </head>
 <body>
-	<div class="wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="span12">
-					<div class="sidebar">
-					<div class="content">
-						<div class="module">
-							<div class="module-head">
-								<center>	<h2>Your Planbook</h2>		</center>
-							</div>
-						
+<div style="padding-top:5%" class="container">	
+	<div class="row">
+		<div class="span12">
+			<div class="content">
+				<div class="module">
+					<div class="module-head">
+						<center>	<h2>Lesson Plan</h2>					
+												
+						</center>
+					</div>
+				</div>
+				<div class="module">
+						<div class="module-head">
 							<table class="table">
-								  <thead>
+								<thead>
 									<tr>
-									<td>
-										<div class="dropdown ">
-											<a class="btn-primary dropdown-toggle btn" data-toggle="dropdown" 
-											href="#">Lecture Plan<i class="icon-caret-down"></i></a>
-											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-													<li><a href="#">New</a></li>
-													<li><a href="#">Edit</a></li>
-													<li><a href="#">View</a></li>								
-											</ul>
+									  <td>								
+										<div class="control-group">
+											<label class="control-label" for="Course">Course:	</label>
+											<div class="controls">
+												<input type="text" id="Course" name="Course" class="span2">
+											</div>
 										</div>
 									</td>
 
-									<td>
-										<a class=" btn-primary dropdown-toggle btn" href="#">Lesson Plan</a>
+									   <td>								
+										<div class="control-group">
+											<label class="control-label" for="Semester">Semester:	</label>
+											<div class="controls">
+												<input type="text" id="Semester" name="Semester" class="span2">
+											</div>
+										</div>
 									</td>
 
-									<td>
-										<a class=" btn-primary dropdown-toggle btn" href="#">Weekly Plan</a>
+								   <td>								
+										<div class="control-group">
+											<label class="control-label" for="Section">Section:	</label>
+											<div class="controls">
+												<input type="text" id="Section" name="Section" class="span2">
+											</div>
+										</div>
 									</td>
 								</tr>
 							</thead>
 						</table>
-					</center>
-				</div>
+					</div>
+
 			</div>
 		</div>
 	</div>
 </div>
-</div>
 
 
-									
 
-												
-	
+
 
 
 	<script src="<?php echo base_url(),"dump/";?>scripts/jquery-1.9.1.min.js" type="text/javascript"></script>

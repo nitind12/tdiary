@@ -8,7 +8,7 @@ public function index()
 		//$this->load->helper('html');
 		$this->load->view('online_attendance');
 	
-		$this->load->view('dashboard');
 
 	}
+
 }

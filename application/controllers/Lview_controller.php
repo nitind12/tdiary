@@ -11,7 +11,7 @@ class Lview_controller extends CI_Controller
 
 	function index()
 	{
-		$data['lecture_database'] = $this->obj->fetchtable();
+		$data['tdiary_database'] = $this->obj->fetchtable();
 		$this->load->view('Lectureview',$data);	
 	}
 

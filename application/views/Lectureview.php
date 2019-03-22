@@ -113,9 +113,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                     </i>Weekly Lesson Plan </a>
                                         <ul id="togglePages4" class="collapse unstyled">
-                                            <li><a href="#"><i class="icon-edit"></i>Edit</a></li>
+                                            <li><a href="<?php echo site_url('Weeklyedit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                                        
-                                             <li><a href="#"><i class="icon-eye-open"></i>View </a></li>
+                                              <li><a href="<?php echo site_url('Weeklyview_controller/index'); ?>"><i class="icon-eye-open"></i>View </a></li>
                                         </ul>
                                     </li>
                              </ul>
@@ -176,38 +176,66 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<form  method="post" action="<?php echo site_url('Lview_controller/savingdata');?>"
 									 class="form-horizontal row-fluid">       
 <!-- view database in page -->
-	<table class="table table-striped table-bordered table-condensed">
-		<tr style="text-align: left">
-			<th>Course Name</th>
-			<th>Semester</th>
-			<th>Section</th>
-			<th>Date Of Commencement</th>
-			<th>Actual Date Of Completion</th>
-			<th>Expected Date Of Completion</th>
-			<th>Faculty Name</th>
-			<th>Subject Name</th>
-			<th>Unit</th>
-			<th>Topic</th>
-			<th>No Of Lecture</th>
-			<th>Total No Of Lecture</th>
-		</tr>
-	<?php foreach ($lecture_database as $item) { ?>
-		<tr>
-			<td><?php echo $item->Course_Name;?></td>
-			<td><?php echo $item->Semester;?></td>
-			<td><?php echo $item->Section ;?></td>
-			<td><?php echo $item->Date_Of_Commencement ;?></td>
-			<td><?php echo $item->Actual_Date_Of_Completion ;?></td>
-			<td><?php echo $item->Expected_Date_Of_Completion;?></td>
-			<td><?php echo $item->Faculty_Name ;?></td>
-			<td><?php echo $item->Subject_Name;?></td>
-			<td><?php echo $item->Unit;?></td>
-			<td><?php echo $item->Topic ;?></td>
-			<td><?php echo $item->No_Of_Lecture ;?></td>
-			<td><?php echo $item->Total_No_Of_Lecture ;?></td>
-					</tr>
-	<?php } ?>
-</table>
+                        	<table class="table table-striped table-bordered table-condensed">
+
+                        		<tr style="text-align: left">
+                        			<th>Course</th>
+                        			<th>Semester</th>
+                        			<th>Section</th>
+                                    <th>
+                                         <table class="table table-striped table-bordered table-condensed">
+                                            <th colspan="3"><center>Date</center></th>
+                                            <tr>
+                                			     <th>Date of Commence<br>
+                                                 ment</th>
+                                			     <th>Actual Date Of Completion</th>
+                                			     <th>Expected Date Of Completion</th>
+                                            </tr>
+                                         </table>
+                                    </th>
+                        			<th>Faculty</th>
+                        			<th>Subject</th>
+                        			<th>Unit</th>
+                        			<th>Topic</th>
+                        			<th>Lecture No</th>
+                        			<th>Total</th>
+                        		</tr>
+
+                        	   <?php foreach ($tdiary_database as $item) { ?>
+                        		<tr>
+                        			<td><?php echo $item->Course_Name;?></td>
+                        			<td><?php echo $item->Semester;?></td>
+                        			<td><?php echo $item->Section ;?></td>
+                                    <td>
+                                        <table class="table table-striped table-bordered table-condensed">
+                                            <tr>
+                            		          	 <td><?php echo $item->Date_Of_Commencement ;?></td>
+                            			         <td><?php echo $item->Actual_Date_Of_Completion ;?></td>
+                            			         <td><?php echo $item->Expected_Date_Of_Completion;?></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                        			<td><?php echo $item->Faculty_Name ;?></td>
+                        			<td><?php echo $item->Subject_Name;?></td>
+                        			<td><?php echo $item->Unit;?></td>
+                        			<td><?php echo $item->Topic ;?></td>
+                        			<td><?php echo $item->No_Of_Lecture ;?></td>
+                        			<td><?php echo $item->Total_No_Of_Lecture ;?></td>
+                        					</tr>
+                        	   <?php } ?>
+                             </table>
+                         </form>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+</div>
+</body>
+
+ 
+
         
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>  
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
@@ -216,5 +244,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script type="text/javascript" src="<?php echo base_url('assets/js/flot/jquery.flot.resize.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/datatables/jquery.dataTables.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/common.js'); ?>"></script>
-      
+
+</body>
+</html>
       

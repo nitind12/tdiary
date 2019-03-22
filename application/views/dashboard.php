@@ -112,9 +112,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                     </i>Weekly Lesson Plan </a>
                                         <ul id="togglePages4" class="collapse unstyled">
-                                            <li><a href="#"><i class="icon-edit"></i>Edit</a></li>
+                                            <li><a href="<?php echo site_url('Weeklyedit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                                        
-                                             <li><a href="#"><i class="icon-eye-open"></i>View </a></li>
+                                             <li><a href="<?php echo site_url('Weeklyview_controller/index'); ?>"><i class="icon-eye-open"></i>View </a></li>
                                         </ul>
                                     </li>
                              </ul>

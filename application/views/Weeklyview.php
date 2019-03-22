@@ -4,16 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEACHER DIARY</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"/>
-    <link rel="stylesheet" type="text/css"
-     href="<?php echo base_url('assets/bootstrap/css/bootstrap-responsive.min.css'); ?>"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/theme.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/images/icons/css/font-awesome.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600');?>"/>
-    <link type="text/css" rel='stylesheet' href="<?php echo base_url('assets/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600')?>"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TEACHER DIARY</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"/>
+	<link rel="stylesheet" type="text/css"
+	 href="<?php echo base_url('assets/bootstrap/css/bootstrap-responsive.min.css'); ?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/theme.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/images/icons/css/font-awesome.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600');?>"/>
+	<link type="text/css" rel='stylesheet' href="<?php echo base_url('assets/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600')?>"/>
 </head>
 <body>
         <div class="navbar navbar-fixed-top">
@@ -75,7 +75,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
                         19</b> </a></li>
                     </ul>
-                        <!--/.widget-nav-->                           
+                        <!--/.widget-nav-->
+                              
                      <ul class="widget widget-menu unstyled">
                         <li><a href="#"><i class="menu-icon icon-table"></i> Online Attendance </a></li> 
 
@@ -101,26 +102,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <ul id="togglePages2" class="collapse unstyled">
                                             <li><a href="<?php echo site_url('Lessonedit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                                        
-                                             <li><a href="<?php echo site_url('Lessonview_controller/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                             <li><a href="<?php echo site_url('Lessonview_controller/index'); ?>"><i class="icon-eye-open"></i>View </a></li>
                                         </ul>
                                     </li>
                              </ul>
-                                  
 
-                                 <ul class="widget widget-menu unstyled">
+                               <ul class="widget widget-menu unstyled">
                                     <li><a class="collapsed" data-toggle="collapse" href="#togglePages4"><i class="menu-icon icon-book">
                                     </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                     </i>Weekly Lesson Plan </a>
                                         <ul id="togglePages4" class="collapse unstyled">
                                             <li><a href="<?php echo site_url('Weeklyedit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                                        
-                                              <li><a href="<?php echo site_url('Weeklyview_controller/index'); ?>"><i class="icon-eye-open"></i>View </a></li>
+                                             <li><a href="<?php echo site_url('Weeklyview_controller/index'); ?>"><i class="icon-eye-open"></i>View </a></li>
                                         </ul>
                                     </li>
                              </ul>
+                                  
 
 
-                                   <!--      <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>    
+                                       <!--  <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>    
                                     <!-  <li><a href="#"><i class="menu-icon icon-paste"></i>Lesson Plan </a></li>
 
                                       <li><a href="#"><i class="menu-icon icon-paste"></i>Weekly Plan </a></li>     -->
@@ -162,114 +163,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
 
-
  <div class="span9">
-	<div class="content">
+    <div class="content">
 
-		<div class="module">
-			<div class="module-head">
-				<center>  <h2>Lesson Plan</h2>	</center>
-			</div>
-				<div class="module-body">
-					<form  method="post" action="<?php echo site_url('Lessonview_controller/savingdata');?>"
-									 class="form-horizontal row-fluid">
+        <div class="module">
+            <div class="module-head">
+                <center>  <h2>View Weekly Plan</h2>    </center>
+            </div>
+                <div class="module-body">
+                    <form  method="post" action="<?php echo site_url('Weeklyview_controller/savingdata');?>"
+                                     class="form-horizontal row-fluid">       
+<!-- view database in page -->
+                            <table class="table table-striped table-bordered table-condensed">
 
-								<table class="table table-striped table-bordered table-condensed">  
-									<tbody>
-										<tr>
-											<td>  
-												Course Name:<br>
-														
-															<select tabindex="1" data-placeholder="Select here.." class="span8" name="Course">
-																<option value="">Select here..</option>
-																<option value="BCA">BCA</option>
-																<option value="BBA">BBA</option>
-																<option value="B.COM">B.COM</option>
-																<option value="POLY TECHNIQUE">POLY TECHNIQUE</option>
-																<option value="BSC">BSC</option>
-																<option value="HM">HM</option>
-															</select>
-										  	 </td>
+                                <tr style="text-align: left">
+                                    <th>Course</th>
+                                    <th>Subject</th>
+                                    <th> Week no.</th>
+                                   
+                                    <th>
+                                         <table class="table table-striped table-bordered table-condensed">
+                                            <th colspan="2"><center>Period</center></th>
 
-										  		 <td>									
-														Semester:	<br>
-														
-															<input type="text" id="txtSemester" name="txtSemester" class="span8">
-												</td>
+                                            <th colspan="4"><center>Lecture Analysis</center></th>
 
 
-												<td>
-														Section:<br>
-														
-														<input type="text" id="txtSection" name="txtSection" class="span8">													
-												</td>
-											</tr>	
+                                            <tr>
+                                                 <th>Start Date</th>
+                                                 <th>End Date</th>
 
+                                                 <th> No. Of lecture Scheduled</th>
+                                                 <th>No. Of Lost Due To Holiday</th>
+                                                 <th>No. Of Lost Due To CL </th>
+                                                 <th>No. Of Extra Taken</th>
+     
+                                            </tr>
+                                         </table>
+                                    </th>
+                               
+                                   <th> No. of Lecture Actual Taken</th>
 
-											<tr>
-
-												 <td>									
-														Time Duration:	<br>
-														
-															<input type="text" id="txttime" name="txttime" class="span8">
-												</td>
-
-
-												<td>
-														Start Time:<br>
-														
-														<input type="text" id="txtstart" name="txtstart" class="span8">													
-												</td>
-
-												<td>
-														End Time:<br>
-														
-														<input type="text" id="txtend" name="txtend" class="span8">													
-												</td>
-											</tr>	
-
-
-
-											     <tr>
-												     <td>	
-															Date :	<br>
-															
-															<input type="Date" id="Date" name="Date" class="span8">
-													</td>
-
-													<td colspan="3" class="span3">
-														 <table class="table" border="0">
-															<tr>
-																<td colspan="2">
-															 		Unit:<br>
-															 		<input type="text" id="Unit" name="Unit" class="span4">
-															 	</td>
-															 </tr>
-
-															 <tr>
-															 	<td> Topic:<br>
-    																<textarea class="span9" rows="8"  cols="30"  
-                                                                    id="Topic" name="Topic"></textarea>
-																</td>
-															</tr>
-
-															<tr>
-																<td>No. Of Lecture :	<br>
-    																<input type="text" id="Lecture" name="Lecture"
-                                                                     class="span4">
-                                                                    
-                                                                     <button style="float:right" type="submit" name="save" 
-                                                                                     class=" span3 btn">Submit</button>
-                                                                </td>
-                                                            </tr>                               
-														</table>
-													</td>
-												</tr>
-											</tbody>
-											</table>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                    <th> Description Of Topic</th>
+                                </tr>
                             </table>
                         </form>
                     </div>
@@ -283,7 +218,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-        
+
+
+
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>  
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>" ></script>

@@ -16,13 +16,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link type="text/css" rel='stylesheet' href="<?php echo base_url('assets/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600')?>"/>
 
 	<script type="text/javascript">
-		       /*      function validation()
-              {
+		            function validation()
+                {
                   if(document.getElementById("course").value=="")
+                    {
+                      alert("Course must be filled out");
+                      return false;
+                    }
+                  else
                   {
-                    alert("Course must be filled out");
-                    return false;
+                    alert("you have all details.Thanks!");
+                    return true;
+
                   }
+                }
+
+                /*
+
                 else if(document.getElementById("txtsemester").value=="")
                   {
                     alert("Enter your semester");
@@ -64,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 }
 */
-           </script>
+         
 	</script>
 </head>
 <body>
@@ -165,9 +175,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                     </i>Weekly Lesson Plan </a>
                                         <ul id="togglePages4" class="collapse unstyled">
-                                            <li><a href="#"><i class="icon-edit"></i>Edit</a></li>
+                                            <li><a href="<?php echo site_url('Weeklyedit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                                        
-                                             <li><a href="#"><i class="icon-eye-open"></i>View </a></li>
+                                            <li><a href="<?php echo site_url('Weeklyview_controller/index'); ?>"><i class="icon-eye-open"></i>View </a></li>
                                         </ul>
                                     </li>
                              </ul>
@@ -230,7 +240,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<form  method="post" action="<?php echo site_url('Lview_controller/savingdata');?>"
 									 class="form-horizontal row-fluid">
 
-								<table class="table table-striped table-bordered table-condensed">									<tbody>
+								<table class="table table-striped table-bordered table-condensed">							
+                		<tbody>
 										<tr>
 											
 											<td>  
@@ -253,7 +264,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										  		 <td>									
 														Semester:	<br>
 														
-															<input type="text" id="txtsemester" name="txtsemester" class="span8">
+															<input type="number" id="txtsemester" name="txtsemester" class="span8">
 												</td>
 
 
@@ -310,26 +321,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<tr>
 												 <th colspan="3"><div class="control-group">
 												 	<label class=" span3 control-label" ><h3>Lecture Structure</h3></label>	
-													 </div>
-												</th>		
-										</tr>
+									<tr>
+                       
+                      <th>
+                        <center>  <h5>Unit</h5></center>
+                      </th>				
+									
 
 
-
-
-
-										<tr>
-											 
-											<th>
-												<center>	<h5>Unit</h5></center>
-											</th>
+										
 
 											<th>
 												<center>	<h5>Topic</h5></center>
-												
-
-
+	
 											</th>
+
 											<th>
 												<center>	<h5>No. Of Lecture</h5>	</center>
 												
@@ -339,13 +345,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 										<tr>
 											<td>
-												<input type="text" id="txtunit" name="txtunit" class="span8">
+												<input type="number" id="txtunit" name="txtunit" class="span8">
 											</td>
+
 											<td>
 
 													<textarea id="topic" name="topic" class="span9" rows="8"  cols="30" ></textarea>
 											
 											</td>
+
 											<td>
 												<input type="text" id="No_Of_Lecture" name="No_Of_Lecture" class="span8">
 
@@ -573,7 +581,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         
 												</tbody>
 											</table>
-										/</form>
+										</form>
+
 									</div>
 								</div>
 							</div>

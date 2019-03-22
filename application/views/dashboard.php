@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <li><a href="#">Edit Profile</a></li>
                                     <li><a href="#">Account Settings</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Logout</a></li>
+                                    <li><a href="<?php echo site_url('Main/logout'); ?>">Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -156,7 +156,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                                <li><a href="<?php echo site_url('Main/logout'); ?>"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>
                         </div>
                         <!--/.sidebar-->

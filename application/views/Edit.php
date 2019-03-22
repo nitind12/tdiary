@@ -312,9 +312,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 												<td>									
-														Syllabus:	<br>
+														Syllabus Upload:	<br>
 														
-														<a class=" span8 dropdown-toggle btn" href="#" id="syllabus" name="syllabus">Upload</a>
+														<input class="specialInput" type="file" href="#" id="syllabus" name="syllabus">
 												</td>
 											</tr>
 

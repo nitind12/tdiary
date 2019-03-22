@@ -11,6 +11,10 @@ class Main extends CI_Controller {
     public function login()  
     {  
         $this->load->view('loginpage');  
+    }
+     public function dash()  
+    {  
+        $this->load->view('dashboard');  
     }  
   
     public function signin()  
@@ -48,7 +52,7 @@ class Main extends CI_Controller {
                 'currently_logged_in' => 1  
                 );    
                    // $this->session->set_userdata($data);  
-                redirect('Main/signin_page');  
+                redirect('Main/dash');  
         }   
         else {  
             $this->load->view('loginpage');  
@@ -58,6 +62,12 @@ class Main extends CI_Controller {
     public function signin_validation()  
     {  
         $this->load->library('form_validation');  
+  
+        $this->form_validation->set_rules('username', 'Username', 'trim|xss_clean|is_unique[signup.username]');  
+  
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');  
+  
+        $this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|trim|matches[password]');  
   
         $this->form_validation->set_rules('username', 'Username', 'trim|xss_clean|is_unique[signup.username]');  
   

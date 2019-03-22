@@ -48,13 +48,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<input type="text" type="text" placeholder="permanent Address…"  class="span8 tip">
 				</div><br>
 				<div class="controls">
-					<input type="text" type="text" placeholder="City…"  class="span8 tip">
+					<input type="text" type="text" placeholder="City…"  class="span5 tip">
 				</div><br>
 				<div class="controls">
-					<input type="text" type="text" placeholder="State…"  class="span8 tip">
+					<input type="text" type="text" placeholder="State…"  class="span4 tip">
 				</div><br>
 				<div class="controls">
-					<input type="numeric" type="text" placeholder="pincode…"  class="span8 tip">
+					<input type="numeric" type="text" placeholder="pincode…"  class="span3 tip">
 				</div><br>
 				
 				
@@ -67,6 +67,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 										<div class="control-group">
 											<div class="controls">
+
+												<a href="<?php echo site_url('stu3c/index');?>">
 												<button type="submit" id="course" class="btn">Save & Next</a></button>
 											</div>
 										</div>

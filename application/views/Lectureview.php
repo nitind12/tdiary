@@ -195,6 +195,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </th>
                         			<th>Faculty</th>
                         			<th>Subject</th>
+                                    <th>Syllabus Upload</th>
                         			<th>Unit</th>
                         			<th>Topic</th>
                         			<th>Lecture No</th>
@@ -217,6 +218,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </td>
                         			<td><?php echo $item->Faculty_Name ;?></td>
                         			<td><?php echo $item->Subject_Name;?></td>
+                                    <td><?php echo $item->Syllabus_Upload;?></td>
                         			<td><?php echo $item->Unit;?></td>
                         			<td><?php echo $item->Topic ;?></td>
                         			<td><?php echo $item->No_Of_Lecture ;?></td>

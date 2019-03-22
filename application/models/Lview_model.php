@@ -19,6 +19,7 @@ class Lview_model extends CI_Model
 			'Expected_Date_Of_Completion' => $this->input->post('txtEDOC'),
 			'Faculty_Name' => $this->input->post('txtfaculty'),
 			'Subject_Name' => $this->input->post('txtsubject'),
+			'Syllabus_Upload'=>$this->input->post('syllabus'),
 			'Unit' => $this->input->post('txtunit'),
 			'Topic' => $this->input->post('topic'),
 			'No_Of_Lecture' => $this->input->post('No_Of_Lecture'),

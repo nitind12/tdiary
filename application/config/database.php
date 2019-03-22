@@ -80,7 +80,7 @@ $db['default'] = array(
 	'password' => '',
 
 	'database' => 'tdiary_database',
-	'database' => 'teacher_diary',
+	
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

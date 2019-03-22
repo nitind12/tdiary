@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" class="btn">Save & Next</button>
+												<button type="submit" class="btn">Submit</button>
 											</div>
 										</div>
 									</form>

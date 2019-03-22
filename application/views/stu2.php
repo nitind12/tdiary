@@ -58,93 +58,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div><br>
 				
 				
-				<!--<ul>
-				<div class="control-group">
-					<label class="control-label" for="basicinput">Gender</label>
-						<div class="controls">
-							<select tabindex="1" data-placeholder="Select here.." class="span8">
-								<option value="">Select here..</option>
-								<option value="Category 1">Male</option>
-								<option value="Category 2">Female</option>
-								<option value="Category 3">Other</option>
-								
-												</select>
-						</div>
-										</div>
-
-										<div class="control-group">
-											<label class="control-label">Blood Group</label>
-											<div class="controls">
-												<label class="radio">
-													<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-													A+
-												</label> 
-												<label class="radio">
-													<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-													B+
-												</label> 
-												<label class="radio">
-													<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-													AB+
-												</label>
-												<label class="radio">
-													<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-													O+
-												</label>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<label class="control-label">Category</label>
-											<div class="controls">
-												<label class="radio inline">
-													<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-													GEN
-												</label> 
-												<label class="radio inline">
-													<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-													SC/ST
-												</label> 
-												<label class="radio inline">
-													<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-													OBC
-												</label>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<label class="control-label">Nationality</label>
-											<div class="controls">
-												<label class="checkbox">
-													<input type="checkbox" value="">
-													Indian
-												</label>
-												<label class="checkbox">
-													<input type="checkbox" value="">
-													Foreigner
-												</label>
-												
-											</div>
-										</div>-->
-
-										<!--<div class="control-group">
-											<label class="control-label">Inline Checkboxes</label>
-											<div class="controls">
-												<label class="checkbox inline">
-													<input type="checkbox" value="">
-													Option one
-												</label>
-												<label class="checkbox inline">
-													<input type="checkbox" value="">
-													Option two
-												</label>
-												<label class="checkbox inline">
-													<input type="checkbox" value="">
-													Option three
-												</label>
-											</div>
-										</div>-->
-
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Other Description</label>
 											<div class="controls">
@@ -154,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" class="btn">Save & Next</button>
+												<button type="submit" id="course" class="btn">Save & Next</a></button>
 											</div>
 										</div>
 									</form>

@@ -103,8 +103,8 @@ class Main extends CI_Controller {
   
     public function logout()  
     {  
-        $this->session->sess_destroy();  
-        redirect('Main/loginpage');  
+        //$this->session->sess_destroy();  
+        redirect('Main/login');  
     }  
   
 }  

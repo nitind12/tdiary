@@ -31,13 +31,13 @@ class Test extends CI_Controller{
 			echo "fail";
 		}
 	}*/
-/*	public function del()
+	public function del()
 	{
 		//$u = $this->uri->segment(3);
 		//$this->testmodel->del($u);
 		$this->db->empty_table('studentmarks');
 		redirect('test','refresh');
-	}	*/
+	}
 	public function del1()
 	{
 		$u = $this->uri->segment(3);

@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +17,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600');?>"/>
 	<link type="text/css" rel='stylesheet' href="<?php echo base_url('assets/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600')?>"/>
 
-	<script type="text/javascript">
-		       /*      function validation()
+
+	   <script>
+        /*      function validation()
               {
                   if(document.getElementById("course").value=="")
                   {
@@ -65,7 +68,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 }
 */
            </script>
-	</script>
 </head>
 <body>
         <div class="navbar navbar-fixed-top">
@@ -74,24 +76,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                         <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Teacher diary </a>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
-
-
                         <ul class="nav nav-icons">
                             <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
                             <li><a href="#"><i class="icon-eye-open"></i></a></li>
                             <li><a href="#"><i class="icon-bar-chart"></i></a></li>
                         </ul>
-
-
                         <form class="navbar-search pull-left input-append" action="#">
-                            <input type="text" class="span3">
-                            <button class="btn" type="button">
-                                <i class="icon-search"></i>
-                            </button>
+                        <input type="text" class="span3">
+                        <button class="btn" type="button">
+                            <i class="icon-search"></i>
+                        </button>
                         </form>
-
-
                         <ul class="nav pull-right">
+
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo base_url(),"assets/"?>images/user.png" class="nav-avatar" />
@@ -112,87 +109,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- /navbar-inner -->
         </div>
         <!-- /navbar -->
-
- <div class="wrapper">
-     <div class="container">
-        <div class="row">
-            <div class="span3">
-                <div class="sidebar">
-                    <ul class="widget widget-menu unstyled">
-                        <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
-                        </a></li>
-                        <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Update</a>
-                        </li>
-                        <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Notification <b class="label green pull-right"> 0</b> </a></li>
-                        <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
-                        19</b> </a></li>
-                    </ul>
-                        <!--/.widget-nav-->
-                              
-                     <ul class="widget widget-menu unstyled">
-                        <li><a href="#"><i class="menu-icon icon-table"></i> Online Attendance </a></li> 
-
-
-
+		 <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
+                                <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                </a></li>
+                                <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Update</a>
+                                </li>
+                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Notification <b class="label green pull-right"> 0</b> </a></li>
+                                <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
+                                    19</b> </a></li>
+                            </ul>
+                            <!--/.widget-nav-->
+                            
+                            
+                            <ul class="widget widget-menu unstyled">
+                                <li><a href="#"><i class="menu-icon icon-table"></i> Online Attendance </a></li>
+                              <!--  <li><a href="<?php echo site_url('Fpage_controller/index'); ?>"><i class="menu-icon icon-book">
+                                                                                                                  
+                                </i> Lesson-Plans</a></li>      -->
+                                   <ul class="widget widget-menu unstyled">
                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-book">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>Lecture Plan </a>
                                     <ul id="togglePages1" class="collapse unstyled">
                                         <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
-                                        
-                                        <li><a href="<?php echo site_url('Lview_controller/index'); ?>"><i class="icon-eye-open"></i>View</a></li>
+                                       
+                                        <li><a href="other-user-listing.html"><i class="icon-eye-open"></i>View </a></li>
                                     </ul>
-                                </li>
-                            </ul>
 
-   
-                             <ul class="widget widget-menu unstyled">
-                                    <li><a class="collapsed" data-toggle="collapse" href="#togglePages2"><i class="menu-icon icon-book">
-                                    </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                    </i>Lesson Plan </a>
-                                        <ul id="togglePages2" class="collapse unstyled">
-                                            <li><a href="<?php echo site_url('Lessonedit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
-                                                       
-                                             <li><a href="<?php echo site_url('Lessonview_controller/index'); ?>"><i class="icon-eye-open"></i>View </a></li>
-                                        </ul>
-                                    </li>
-                             </ul>
-                                  
 
-                              <ul class="widget widget-menu unstyled">
-                                    <li><a class="collapsed" data-toggle="collapse" href="#togglePages4"><i class="menu-icon icon-book">
-                                    </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                    </i>Weekly Lesson Plan </a>
-                                        <ul id="togglePages4" class="collapse unstyled">
-                                            <li><a href="#"><i class="icon-edit"></i>Edit</a></li>
-                                                       
-                                             <li><a href="#"><i class="icon-eye-open"></i>View </a></li>
-                                        </ul>
-                                    </li>
-                             </ul>
-                                   <!--      <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>    
-                                    <!-  <li><a href="#"><i class="menu-icon icon-paste"></i>Lesson Plan </a></li>
+                                        <li><a href="<?php echo site_url('Lesson_controller/index'); ?>"><i class="icon-book"></i> Lesson Plan </a>
+                                         <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>  
 
-                                      <li><a href="#"><i class="menu-icon icon-paste"></i>Weekly Plan </a></li>     -->
 
-                                     <ul class="widget widget-menu unstyled">
-                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages3"><i class="icon-paste">
-                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                                </i>Internal Marks </a>
-                                                  <ul id="togglePages3" class="collapse unstyled">
+                                           <ul class="widget widget-menu unstyled">
+				                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages2"><i class="menu-icon icon-cog">
+				                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+				                                </i>Internal Marks </a>
+				                                  <ul id="togglePages2" class="collapse unstyled">
                                         <li><a href="<?php echo site_url('test/index');?>"><i class="icon-edit"></i>Edit</a></li>
                                         <li><a href="<?php echo site_url('marks/index');?>"><i class="icon-eye-open"></i>View </a></li>
                                         
                                     </ul>
                                 </li>
-                            </ul>
-                               
 
+
+                           
                                 <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>
                                 <li><a href="#"><i class="menu-icon icon-bar-chart"></i>Time-Charts </a></li>
-                        </ul>
-
+                            </ul>
 
 
                             <!--/.widget-nav-->
@@ -210,10 +179,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </ul>
                         </div>
                         <!--/.sidebar-->
-                    </div>
- 
-
+                   </li>
+               </ul>
+           </ul>
+       </div>
+  
          
+
 
 
 
@@ -227,40 +199,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<center>  <h2>Lecture Plan</h2>	</center>
 			</div>
 				<div class="module-body">
-					<form  method="post" action="<?php echo site_url('Lview_controller/savingdata');?>"
+					<form  method="post" action="<?php echo site_url('Edit_controller/savingdata');?>"
 									 class="form-horizontal row-fluid">
 
-								<table class="table table-striped table-bordered table-condensed">									<tbody>
+								<table class="table" border="1 ">
+									<tbody>
 										<tr>
-											
 											<td>  
-											
 												Course Name:<br>
 														
-															<select tabindex="1" data-placeholder="Select here.." class="span8"
-															 name="course" id="course">
+															<select tabindex="1" data-placeholder="Select here.." class="span8" name="course">
 																<option value="">Select here..</option>
-																<option value="BCA">BCA</option>
-																<option value="BBA">BBA</option>
-																<option value="B.COM">B.COM</option>
-																<option value="POLY TECHNIQUE">POLY TECHNIQUE</option>
-																<option value="BSC">BSC</option>
-																<option value="HM">HM</option>
+																<option value="Category 1">BCA</option>
+																<option value="Category 2">BBA</option>
+																<option value="Category 3">B.COM</option>
+																<option value="Category 4">POLY TECHNIQUE</option>
+																<option value="Category 4">BSC</option>
+																<option value="Category 4">HM</option>
 															</select>
-												
 										  	 </td>
 
 										  		 <td>									
 														Semester:	<br>
 														
-															<input type="text" id="txtsemester" name="txtsemester" class="span8">
+															<input type="text" id="txtSemester" name="txtsemester" class="span8">
 												</td>
 
 
 												<td>
 														Section:<br>
 														
-														<input type="text" id="txtsection" name="txtsection" class="span8">													
+														<input type="text" id="txtSection" name="txtsection" class="span8">													
 												</td>
 											</tr>
 
@@ -269,19 +238,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												 <td>									
 														Date Of Commencement:	<br>
 														
-														<input type="date" id="txtDOC" name="txtDOC" class="span8">
+														<input type="text" id="txtDOC" name="txtDOC" class="span8">
 												</td>
 
 												 <td>								
 														Actual Date Of Completion:<br>
 														
-														<input type="date" id="txtADOC" name="txtADOC" class="span8">
+														<input type="text" id="txtADOC" name="txtADOC" class="span8">
 												</td>
 
 												<td>									
 														Expected Date Of Completion:<br>	
 														
-														<input type="date" id="txtEDOC" name="txtEDOC" class="span8">
+														<input type="text" id="txtEDOC" name="txtEDOC" class="span8">
 												</td>
 											</tr>
 
@@ -303,7 +272,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<td>									
 														Syllabus:	<br>
 														
-														<a class=" span8 dropdown-toggle btn" href="#" id="syllabus" name="syllabus">Upload</a>
+														<a class=" span8 dropdown-toggle btn" href="#" name="syllabus">Upload</a>
 												</td>
 											</tr>
 
@@ -339,33 +308,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 										<tr>
 											<td>
-												<input type="text" id="txtunit" name="txtunit" class="span8">
+												<input type="text" id="txtunit" name="txtunit" cltxtass="span8">
 											</td>
 											<td>
 
-													<textarea id="topic" name="topic" class="span9" rows="8"  cols="30" ></textarea>
+													<textarea class="span9" rows="8"  cols="30" name="txtarea"></textarea>
 											
+											<!--	<textarea class="span9" row="20"  cols="30" name="txtarea"></textarea>	-->
 											</td>
 											<td>
-												<input type="text" id="No_Of_Lecture" name="No_Of_Lecture" class="span8">
-
+												<input type="text" id="txtlecture" name="txtecture" cltxtass="span8">
 											</td>
 										</tr>
 
 										<tr>
-												<td colspan="3">									
-													
-														Total No. of Lecture:	
-														
+													<td colspan="3">									
+													<div class=" control-group">
+														<label class="control-label" for="total">Total No. of Lecture:	</label>
+														<div class="controls" >
 															<input type="text" id="txttotal" name="txttotal" class="span2">
 															<button style="float:right" type="submit" name="save" 
 															 class=" span3 btn">Submit</button>
-													
+														</div>
+													</div>
 												</td>
-										</tr>								
-	
+										</tr>
+							
+		
 
-						  
+
+
+
+
+
+
+
+										
+										
+
+
+
+								  
 <!--
 <div class="span9">
 	<div class="content">
@@ -382,23 +365,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</center>
 							<div class="module-body">
 							
-									<form  method="post" action="<?php echo site_url('Lview_controller/savingdata');?>"
+									<form  method="post" action="<?php echo site_url('New_controller/savingdata');?>"
 									 class="form-horizontal row-fluid">
-										<table class="table table-striped table-bordered table-condensed">
+										<table class="table" border="1">
 										<tbody>
 											<tr>
 												 <td>
-													  <div class=" control-group">
+													  <div class="control-group">
 														<label class="control-label" for="Course">Course Name</label>
 														<div class="controls">
-															<select tabindex="1" data-placeholder="Select here.." class="span9" name="course" id="course">
+															<select tabindex="1" data-placeholder="Select here.." class="span8" name="Course_Name">
 																<option value="">Select here..</option>
-																<option value="BCA">BCA</option>
-																<option value="BBA">BBA</option>
-																<option value="B.COM">B.COM</option>
-																<option value="POLY TECHNIQUE">POLY TECHNIQUE</option>
-																<option value="BSC">BSC</option>
-																<option value="HM">HM</option>
+																<option value="Category 1">BCA</option>
+																<option value="Category 2">BBA</option>
+																<option value="Category 3">B.COM</option>
+																<option value="Category 4">POLY TECHNIQUE</option>
+																<option value="Category 4">BSC</option>
+																<option value="Category 4">HM</option>
 															</select>
 														</div>
 													  </div>
@@ -408,7 +391,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													<div class=" col control-group">
 														<label class="control-label" for="Semester">Semester:	</label>
 														<div class="controls">
-															<input type="text" id="txtsemester" name="txtsemester" class="span8">
+															<input type="text" id="txtSemester" name="txtSemester" class="span8">
 														</div>
 													</div>
 												</td>
@@ -417,18 +400,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													<div class="control-group">
 														<label class="control-label" for="Section">Section:	</label>
 														<div class="controls">
-															<input type="text" id="txtsection" name="txtsection" class="span8">
+															<input type="text" id="txtSection" name="txtSection" class="span8">
 														</div>
 													</div>
 												</td>
 											</tr>
 
+
 											<tr>
+												<td>
+													<div class="control-group">
+														<label class="control-label" for="Section">Faculty Name:	</label>
+														<div class="controls">
+															<input type="text" id="txtPrepared" name="txtPrepared" class="span8">
+														</div>
+													</div>
+												</td>
 							
 												<td>
 													<div class="control-group">
-														<label class="control-label" for="Section">Date Of Commencement:	
-														</label>
+														<label class="control-label" for="Section">Date Of Commencement:	</label>
 														<div class="controls">
 															<input type="text" id="txtDOC" name="txtDOC" class="span8">
 														</div>
@@ -443,32 +434,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														</div>
 													</div>
 												</td>
-
-
-												<td>
-													<div class="control-group">
-														<label class="control-label" for="Section">Expected Date Of Completion:	</label>
-														<div class="controls">
-															<input type="text" id="txtEDOC" name="txtEDOC" class="span8">
-														</div>
-													</div>
-												</td>
 											</tr>
 
-											<tr>
-												<td>
-													<div class="control-group">
-														<label class="control-label" for="Faculty">Faculty Name:	</label>
-														<div class="controls">
-															<input type="text" id="txtfaculty" name="txtfaculty" class="span8">
-														</div>
-													</div>
-												</td>
-
+										<tr>
 
 											<td>
 												<div class="control-group">
-													<label class="control-label" for="Subject">Subject Name:	</label>
+													<label class="control-label" for="Section">Expected Date Of Completion:	</label>
+													<div class="controls">
+														<input type="text" id="txtEDOC" name="txtEDOC" class="span8">
+													</div>
+												</div>
+											</td>
+
+											<td>
+												<div class="control-group">
+													<label class="control-label" for="Section">Subject Name:	</label>
 													<div class="controls">
 														<input type="text" id="txtsubject" name="txtsubject" class="span8">
 													</div>
@@ -477,9 +458,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 											<td>
 												<div class="control-group">
-													<label class="control-label" for="Syllabus">Syllabus Pdf:</label>
+													<label class="control-label" for="Section">Syllabus Pdf:</label>
 													<div class="controls">
-														<a class=" span8 dropdown-toggle btn"  id="syllabus" name="syllabus"href="#">Upload</a>
+														<a class=" span8 dropdown-toggle btn" href="#">Upload</a>
 													</div>
 												</div>
 											</td>						
@@ -499,51 +480,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<th><div class="control-group">
 													<label class="control-label" for="Unit"><h5>Unit</h5></label>
 												</div>
+											
+												<br>
+												<center>	<input type="text" id="txtsubject" name="txtunit" cltxtass="span8">
+												</center>
 											</th>
 											
-											
-																					
 											<th><div class=" control-group">
 													<label class="control-label" for="Topic"><h5>Topic</h5></label>
 												</div>
+												<br>
+												<center> <textarea class="span8" rows="3" name="txtarea"></textarea>
+												</center>
 											</th>
-												
-											
-											
 
 											<th><div class="control-group">
 													<label class="control-label" for="Lecture"><h5>No. Of Lecture</h5>
 													</label>
 												</div>
+													<br>
+												<center> <input type="text" id="txtNoofLecture" name="txtNoofLecture" class="span8">
+												</center>
 											</th>
 										</tr>
-
-
-										<tbody>
-											<tr>
-												<td>
-													<center>	<input type="text" id="txtunit" name="txtunit" cltxtass="span8">
-													</center>
-												</td>
-
-												<td>
-														<center> <textarea class="span8" rows="3" id="topic" name="topic"></textarea>
-													</center>
-												</td>
-
-												<td>
-
-													<center> <input type="text"  id="No_Of_Lecture" name="No_Of_Lecture" class="span8">
-													</center>
-												</td>
-											</tr>
 										
 										<tr>
 												<td colspan="3">									
 													<div class=" control-group">
 														<label class="control-label" for="Semester">Total No. of Lecture:	</label>
 														<div class="controls" >
-															<input type="text" id="txttotal" name="txttotal" class="span2">
+															<input type="text" id="txtSemester" name="txtSemester" class="span2">
 															<button style="float:right" type="submit" name="save" 
 															 class="btn btn-primary">Submit Form</button>
 														</div>
@@ -568,15 +534,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 </body>
 </html>
-			-->
+				-->
 
-        
-												</tbody>
-											</table>
-										/</form>
-									</div>
-								</div>
-							</div>
+							
+										
+									
+
+
+								
+
+
+						
 					</div><!--/.content-->
 				</div><!--/.span9-->
 			</div>
@@ -584,7 +552,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div><!--/.wrapper-->
 
 
+													
+			
+			
+	
+<!-- view database in page -->
+<table border="1" cellpadding="5" cellspacing="5" width="50%">
+		<tr style="text-align: left">
+			<th>Course Name</th>
+			<th>Semester</th>
+			<th>Section</th>
+			<th>Faculty Name</th>
+			<th>Date Of Commencement</th>
+			<th>Actual Date Of Completion</th>
+			<th>Expected Date Of Completion</th>
+			<th>Subject Name</th>
+			<th>Unit</th>
+			<th>Topic</th>
+			<th>No Of Lecture</th>
+			<th>Total No Of Lecture</th>
+		</tr>
+	<?php foreach ($lecture_database as $item) { ?>
+		<tr>
+			<td><?php echo $item->Course_Name;?></td>
+			<td><?php echo $item->Semester;?></td>
+			<td><?php echo $item->Section ;?></td>
+			<td><?php echo $item->Faculty_Name ;?></td>
+			<td><?php echo $item->Date_Of_Commencement ;?></td>
+			<td><?php echo $item->Actual_Date_Of_Completion ;?></td>
+			<td><?php echo $item->Expected_Date_Of_Completion;?></td>
+			<td><?php echo $item->Subject_Name;?></td>
+			<td><?php echo $item->Unit;?></td>
+			<td><?php echo $item->Topic ;?></td>
+			<td><?php echo $item->No_Of_Lecture ;?></td>
+			<td><?php echo $item->Total_No_Of_Lecture ;?></td>
+					</tr>
+	<?php } ?>
+</table>
+		
 
+
+        
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>  
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>" ></script>

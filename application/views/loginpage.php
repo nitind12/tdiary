@@ -1,32 +1,3 @@
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-					<i class="icon-reorder shaded"></i>
-				</a>
-
-			  	<a class="brand" href="index.html">
-			  		TEACHER DIARY
-			  	</a>
-
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				
-					<ul class="nav pull-right">
-
-						<li>
-							<a href='<?php echo base_url()."index.php/Main/signin"; ?>'>Sign In</a>
-						</a></li>
-						<li><a href=forgot.php>
-							Forgot your password?
-						</a></li>
-					</ul>
-				</div><!-- /.nav-collapse -->
-			</div>
-		</div><!-- /navbar-inner -->
-	</div><!-- /navbar -->
-
-
-
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">

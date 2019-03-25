@@ -10,10 +10,18 @@
                     </ul>
                         <!--/.widget-nav-->
                               
-                     <ul class="widget widget-menu unstyled">
-                        <li><a href="#"><i class="menu-icon icon-table"></i> Online Attendance </a></li> 
+                     <ul class="widget widget-menu unstyled"><li><a class="collapsed" data-toggle="collapse" href="#togglePages6"><i class="menu-icon icon-table">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Online Attendance </a>
+                            <ul id="togglePages6" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('Main/attendance_controller'); ?>"><i class="icon-edit"></i>Take Attendance</a></li>
+                                        
+                                        <li><a href="<?php echo site_url('Main/attendance_controllers'); ?>"><i class="icon-eye-open"></i>Update Attendance</a></li>
+                                    </ul>
+                                </li>
+</li> 
 
-
+                
 
                             <ul class="widget widget-menu unstyled">
                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-book">
@@ -60,7 +68,7 @@
                                       <li><a href="#"><i class="menu-icon icon-paste"></i>Weekly Plan </a></li>     -->
 
                                      <ul class="widget widget-menu unstyled">
-                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages3"><i class="icon-paste">
+                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages3"><i class="menu-icon icon-paste">
                                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                                 </i>Internal Marks </a>
                                                   <ul id="togglePages3" class="collapse unstyled">

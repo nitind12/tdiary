@@ -13,6 +13,7 @@ class Main extends CI_Controller {
         $this->load->view('dashboard');  
         $this->load->view('templates/footer');
     }  
+
  public function attendance_controller()  
     {  
         $data['title'] = "ONLINE_ATTENDANCE";

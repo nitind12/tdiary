@@ -21,13 +21,5 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
- 
- public function add_class()  
-    {   
-        $data['title'] = "Add-class";
-        $this->load->view('templates/header_form', $data);
-        $this->load->view('add_class');  
-        $this->load->view('templates/footer');
-    }
- } 
+ }
 ?>  

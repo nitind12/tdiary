@@ -9,4 +9,7 @@ $(function(){
 		}
 		return false;
 	});
+
+	$('#myModal').css('display', 'none');
+
 });

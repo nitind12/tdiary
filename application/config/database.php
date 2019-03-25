@@ -79,7 +79,7 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 
-	'database' => 'tdiary_database',
+	'database' => 'teacher_diary',
 	
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

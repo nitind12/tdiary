@@ -183,7 +183,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             
                                                 Course Name:<br>
                                                         
-                                                            <select tabindex="1" data-placeholder="Select here.." class="span8"
+                                                            <select tabindex="1" data-placeholder="Select here.." class="span4"
                                                              name="course" id="course">
                                                                 <option value="">Select here..</option>
                                                                 <option value="BCA">BCA</option>

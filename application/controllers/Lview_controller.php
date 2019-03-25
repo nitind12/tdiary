@@ -12,7 +12,11 @@ class Lview_controller extends CI_Controller
 	function index()
 	{
 		$data['tdiary_database'] = $this->obj->fetchtable();
-		$this->load->view('Lectureview',$data);	
+		 $data['title'] = "Lectureview";
+        $data['page_'] = "Lectureview";
+        $this->load->view('templates/header', $data);
+        $this->load->view('dashboard', $data);  
+        $this->load->view('templates/footer');	
 	}
 
 	function savingdata()

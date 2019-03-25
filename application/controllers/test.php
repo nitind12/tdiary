@@ -8,8 +8,14 @@ class Test extends CI_Controller{
 	}
 	function index()
 	{
-		$data['users'] = $this->um->fetchtable();
-		$this->load->view('testview',$data);
+		//$data['users'] = $this->um->fetchtable();
+		//$this->load->view('testview',$data);
+		 $data['users'] = $this->um->fetchtable();
+        $data['page_'] = 'testview';
+       
+        $this->load->view('templates/header');
+        $this->load->view('internal',$data);  
+        $this->load->view('templates/footer');
 		
 
 	}
@@ -18,32 +24,43 @@ class Test extends CI_Controller{
 		$this->um->savingdata();
 		redirect('test');
 	}
-	/*public function exam_list()
+	
+	public function del()
 	{
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('Student_Roll','Student_Roll','required|numeric');
-		$this->form_validation->set_rules('Student_name','Student_name','required|alpha');
-		$this->form_validation->set_rules('marks1','marks1','required|numeric');
-		$this->form_validation->set_rules('marks2','marks2','required');
-		if( $this->form_validation->run()==false ){
-			echo "success";
-		}else{
-			echo "fail";
-		}
-	}*/
-/*	public function del()
-	{
-		//$u = $this->uri->segment(3);
-		//$this->testmodel->del($u);
+		
 		$this->db->empty_table('studentmarks');
 		redirect('test','refresh');
-	}	*/
+	}
 	public function del1()
 	{
 		$u = $this->uri->segment(3);
 		$this->um->del($u);
-		//$this->db->empty_table('studentmarks');
+		
 		redirect('test','refresh');
 	}
+	/*public function pilih()
+	{
+		$kd = $this->uri->segment(3);
+		if($kd == null)
+		{
+			redirect('test');
+		}
+		$dt = $this->testmodel->edit($kd);
+		$data['Student_name'] = $dt->Student_name;
+		$data['marks1'] = $dt->marks1;
+		$data['marks2'] = $dt->marks2;
+	}
+	public function update()
+	{
+		if($this->input->post('edit'))
+		{
+			$id->$this->input->post('id');
+			$this->um->update($id);
+			redirect('test','refresh');
+		}else
+		{
+			redirect('test/pilih',$id,'refresh');
+		}
+	}*/
 
 }

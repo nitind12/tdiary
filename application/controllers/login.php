@@ -1,14 +1,42 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends CI_Controller {
-public function index()
-	{
-		$this->load->helper('url');
-		//$this->load->helper('html');
-		$this->load->view('online_attendance');
-	
+class Login extends CI_Controller 
+{
+    function __construct()
+    {
+        parent::__construct();
+       // $this->load->model('testmodel','um');
 
-	}
+    }
+    
+    public function index()  
+    {  
+       
+        $data['users'] = $this->um->fetchtable();
+        $data['page_'] = 'testview';
 
+        $this->load->view('templates/header');
+       $this->load->view('internal',$data); 
+         $this->load->view('dashboard');
+        $this->load->view('templates/footer');
+    }
+
+    public function authenticate()  
+    {  
+        $this->load->model('login_model');  
+  
+        if ($this->login_model->log_in_correctly())  
+        {  
+            redirect('Main');
+        } else {  
+            redirect('Login_controller');  
+        }  
+    }  
+  
+    public function logout()  
+    {  
+        $this->session->sess_destroy();  
+        redirect('Login_controller');  
+    }  
 }
+    

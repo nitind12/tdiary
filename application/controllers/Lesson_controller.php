@@ -1,8 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class New_controller extends CI_Controller
+class Lesson_controller extends CI_Controller
 {
+<<<<<<< HEAD:application/controllers/Lesson_controller.php
+	function index()
+=======
 		/**
 	 * Index Page for this controller.
 	 *S
@@ -18,11 +21,9 @@ class New_controller extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index1()
+	public function index()
+>>>>>>> parent of d169a4c... update:application/views/Lesson_controller.php
 	{
-		
-		$this->load->view('New');
-	
+		$this->load->view('lessonplan');
 	}
-
-}
+}?>

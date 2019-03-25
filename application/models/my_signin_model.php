@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class My_signup_model extends CI_Model
+class My_signin_model extends CI_Model
 {
 
 	function register()
@@ -16,8 +16,8 @@ class My_signup_model extends CI_Model
 		$dateofbirth= $this->input->post('dateofbirth');
 		$cat = $this->input->post('rod');
 		
-		$this->db->where('Username', $username_);
-		$this->db->or_where('Email', $email_);
+		$this->db->where('username', $username_);
+		$this->db->or_where('email', $email_);
 		$query = $this->db->get('sign_up');
 		
 		if($query->num_rows()!=0)
@@ -26,13 +26,14 @@ class My_signup_model extends CI_Model
 		} 
 		else 
 		{
-			$data = array(
+			$data = array
+			(
 				'Username'=>$username_,
-				'Email'=>$email_,
-				''=>$first_name,	
-				'Email'=>$sir_name,	
-				'Password'=>$pwd,
-				'phone_no'=>$phone
+				'first_name'=>$first_name,	
+				'last_name'=>$sir_name,
+				'email'=>$email_,	
+				'password'=>$pwd,
+				'phone_no'=>$phone,
 				'question'=>$question,	
 				'answer'=>$answer,	
 				'date_of_birth'=>$dateofbirth,

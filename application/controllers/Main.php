@@ -16,11 +16,13 @@ class Main extends CI_Controller {
 
  public function attendance_controller()  
     {  
+        
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "online_attendance";
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
+        
     }
  }
 ?>  

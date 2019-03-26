@@ -68,6 +68,5 @@ class Lview_model extends CI_Model
         $query = $this->db->get('lecture');  
   	 }  
 */
-
 }
 ?>

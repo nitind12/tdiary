@@ -18,7 +18,7 @@
 											
 												Course Name:<br>
 														
-															<select tabindex="1" data-placeholder="Select here.." class="span8"  id="course">
+															<select tabindex="1" data-placeholder="Select here.." class="span8"  id="course" name="course">
 																<option value="">Select here..</option>
 																<option value="BCA">BCA</option>
 																<option value="BBA">BBA</option>
@@ -117,7 +117,6 @@
 											</td>
 
 											<td>
-
 													<textarea id="topic" name="topic" class="span9" rows="8"  cols="30" ></textarea>
 											
 											</td>

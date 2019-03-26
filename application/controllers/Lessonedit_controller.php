@@ -14,7 +14,7 @@ class Lessonedit_controller extends CI_Controller
 	 	$data['title'] = "lessonedit";
         $data['page_'] = "lessonedit";
         $this->load->view('templates/header', $data);
-        $this->load->view('dashboard', $data);  
+        $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
 	
 	}

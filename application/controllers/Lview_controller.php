@@ -15,7 +15,7 @@ class Lview_controller extends CI_Controller
 		 $data['title'] = "Lectureview";
         $data['page_'] = "Lectureview";
         $this->load->view('templates/header', $data);
-        $this->load->view('dashboard', $data);  
+        $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');	
 	}
 

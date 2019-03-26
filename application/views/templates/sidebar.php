@@ -73,11 +73,54 @@
                                                 </i>Internal Marks </a>
                                                   <ul id="togglePages3" class="collapse unstyled">
                                         <li><a href="<?php echo site_url('test/index');?>"><i class="icon-edit"></i>Edit</a></li>
-                                        <li><a href="<?php echo site_url('nitin/view');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        <li><a href="<?php echo site_url('Marks/index');?>"><i class="icon-eye-open"></i>View </a></li>
                                         
                                     </ul>
                                 </li>
                             </ul>
+                                <ul class="widget widget-menu unstyled">
+                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages100"><i class="menu-icon icon-paste">
+                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                                </i>Class Test </a>
+                                                  <ul id="togglePages100" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('classtestcontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
+                                        <li><a href="<?php echo site_url('markscontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                             <ul class="widget widget-menu unstyled">
+                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages101"><i class="menu-icon icon-paste">
+                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                                </i>Practical Test </a>
+                                                  <ul id="togglePages101" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('practicaltestcontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
+                                        <li><a href="<?php echo site_url('practicalmarkscontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+<<<<<<< HEAD
+                               
+                               
+
+                               <!-- <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>-->
+                                <ul class="widget widget-menu unstyled">
+                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages102"><i class="menu-icon icon-paste">
+                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                                </i>Assignment </a>
+                                                  <ul id="togglePages102" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('assignmentcontroller/index');?>"><i class="icon-edit"></i>Given Assignment</a></li>
+                                        <li><a href="<?php echo site_url('givenassignmentcontroller/index');?>"><i class="icon-eye-open"></i>View Given Assignment </a></li>
+                                        <li><a href="<?php echo site_url('check_assignment_controller/index');?>"><i class="icon-eye-open"></i>Check Assignment </a></li>
+                                        <li><a href="<?php echo site_url('update_assignment_controller/index');?>"><i class="icon-eye-open"></i>View Checking Assignment </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                               
+                                <li><a href="#"><i class="menu-icon icon-bar-chart"></i>Time-Charts </a></li>
+                        </ul>
+=======
                             <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>
                                 
 
@@ -92,6 +135,7 @@
                                     </ul>
                                 </li>
                             </ul>   
+>>>>>>> 3c14f7fc8852d615cea89c72ccdcf96f0939add2
 
                           
 

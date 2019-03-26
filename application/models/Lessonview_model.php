@@ -43,6 +43,16 @@ class Lessonview_model extends CI_Model
  
  
 
+        $this->db->where('course', $course_);  
+        $this->db->where('txtsemester', $Semester_); 
+        $this->db->where('txtsection',$Section_);
+        $this->db->where('txttime', $Time_Duration_);  
+        $this->db->where('txtstart', $Start_Time_); 
+        $this->db->where('txtend',$End_Time_);
+        $this->db->where('Date',$Date_);
+        $this->db->where('Unit', $Unit_);  
+        $this->db->where('Topic', $Topic_); 
+        $this->db->where('Lecture',$Lecture_);
   
  
         $query = $this->db->get('lesson');  

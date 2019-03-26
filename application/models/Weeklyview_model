@@ -1,0 +1,31 @@
+<?php
+defined('BASEPATH') OR exit('NO direct script access allowed');
+
+class Weeklyview_model extends CI_Model
+{
+	function fetchtable()
+	{
+		$query = $this->db->get("weekly");		//lesson is table name of lecture database
+		return $query->result();
+	}
+
+	function savingdata()
+	{
+		$data = array(
+			'Course_Name' => $this->input->post('course'),		
+			'Semester' => $this->input->post('txtsemester'),
+			'Subject_Name' => $this->input->post('txtsubject'),
+			'Week_No' => $this->input->post('week'),
+			'Start_Date' => $this->input->post('startdate'),
+			'End_Date' => $this->input->post('enddate'),
+			'No_Of_Lecture_Schedule' => $this->input->post('Lecture_schedule'),
+			'No_Of_Lost_Due_To_Holiday' => $this->input->post('due_to_holiday'),
+			'No_of_Lost_Due_To_CL' => $this->input->post('due_to_cl'),
+			'No_Of_Extra_Taken' => $this->input->post('extra_taken'),
+			'No_Of_Lecture_Actual_Taken' => $this->input->post('actual_taken'),
+			'Description_Of_Topic' => $this->input->post('topic'),
+		);
+		
+		$this->db->insert('weekly',$data);		//lesson is a table name of lecture database
+
+	}

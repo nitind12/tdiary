@@ -17,7 +17,7 @@ class Lessonview_controller extends CI_Controller
 	    $data['title'] = "Lessonview";
         $data['page_'] = "Lessonview";
         $this->load->view('templates/header', $data);
-        $this->load->view('dashboard', $data);  
+        $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');	
 	}
 

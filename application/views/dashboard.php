@@ -5,9 +5,9 @@
                 <?php $this->load->view('templates/sidebar'); ?>
             </div>
             <div class="span9">
-                <!-- code here -->helloo..
-                
-             </div>
+
+                <!-- code here -->
+
         </div>
     </div>
 </div>

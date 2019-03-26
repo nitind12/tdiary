@@ -100,7 +100,6 @@
                                     </ul>
                                 </li>
                             </ul>
-<<<<<<< HEAD
                                
                                
 
@@ -118,10 +117,7 @@
                                 </li>
                             </ul>
                                
-                                <li><a href="#"><i class="menu-icon icon-bar-chart"></i>Time-Charts </a></li>
-                        </ul>
-=======
-                            <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>
+                                
                                 
 
                             <ul class="widget widget-menu unstyled">
@@ -135,10 +131,9 @@
                                     </ul>
                                 </li>
                             </ul>   
->>>>>>> 3c14f7fc8852d615cea89c72ccdcf96f0939add2
 
                           
-
+</ul>
 
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">

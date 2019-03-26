@@ -12,16 +12,18 @@ class Login extends CI_Controller
     public function index()  
     {  
        
-        $data['users'] = $this->um->fetchtable();
-        $data['page_'] = 'testview';
+       // $data['users'] = $this->um->fetchtable();
+      $data['page_'] = 'newdashboard';
 
-        $this->load->view('templates/header');
-       $this->load->view('internal',$data); 
-         $this->load->view('dashboard');
+        $data['title'] = "Dashboard";
+
+        $this->load->view('templates/header',$data);
+       // $this->load->view('internal',$data); 
+         $this->load->view('myrajpage',$data);
         $this->load->view('templates/footer');
     }
 
-    public function authenticate()  
+    /*public function authenticate()  
     {  
         $this->load->model('login_model');  
   
@@ -37,6 +39,6 @@ class Login extends CI_Controller
     {  
         $this->session->sess_destroy();  
         redirect('Login_controller');  
-    }  
+    }  */
 }
     

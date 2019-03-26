@@ -1,43 +1,42 @@
 <?php
 defined('BASEPATH') OR exit('NO direct script access allowed');
-class Test extends CI_Controller{
+class Assignmentcontroller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('testmodel','um');
+		$this->load->model('assignmentmodel','um');
 	}
 	function index()
 	{
-		//$data['users'] = $this->um->fetchtable();
-		//$this->load->view('testview',$data);
-		 $data['users'] = $this->um->fetchtable();
-        $data['page_'] = 'testview';
-        $data['title'] = "Edit Marks";
+		$data['users'] = $this->um->fetchtable();
+		//$this->load->view('assignmentview',$data);
+		 $data['page_'] = 'assignmentview';
        
-        $this->load->view('templates/header',$data);
+        $this->load->view('templates/header');
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		
+		
 
 	}
-	function savingdata()
+	function savingdata3()
 	{
-		$this->um->savingdata();
-		redirect('test');
+		$this->um->savingdata3();
+		redirect('Assignmentcontroller');
 	}
 	
 	public function del()
 	{
 		
-		$this->db->empty_table('studentmarks');
-		redirect('test','refresh');
+		$this->db->empty_table('assignment');
+		redirect('Assignmentcontroller','refresh');
 	}
 	public function del1()
 	{
 		$u = $this->uri->segment(3);
 		$this->um->del($u);
 		
-		redirect('test','refresh');
+		redirect('Assignmentcontroller','refresh');
 	}
 	/*public function pilih()
 	{

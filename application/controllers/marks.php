@@ -9,9 +9,10 @@ class Marks extends CI_Controller{
 		//$this->load->view('testmarks',$data);
 
 		 $data['page_'] = 'testmarks';
+		 $data['title'] = 'View Marks';
        
-        $this->load->view('templates/header');
-        $this->load->view('testmarksview',$data);  
+        $this->load->view('templates/header',$data);
+        $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		
 

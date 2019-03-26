@@ -7,7 +7,9 @@ class Lessonview_controller extends CI_Controller
 	{
 		parent::__construct();
 		
-		$this->load->model('Lessonview_model','obj');		//calling model
+		$this->load->model('Lessonview_model','obj');
+		 if(! $this->session->userdata('user')) redirect('Login_controller');
+     		//calling model
 	}
 
 	function index()

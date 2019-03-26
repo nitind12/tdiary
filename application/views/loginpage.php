@@ -3,7 +3,7 @@
 			<div class="row">
 				<div class="module module-login span4 offset4">
 						<div class="module-head">
-							<h3>Sign Up</h3>
+							<h3>LOG IN</h3>
 					</div>
 						<?php
 							$data = array(

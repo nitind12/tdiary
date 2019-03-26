@@ -78,8 +78,8 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-
 	'database' => 'tdiary_database',
+
 	
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

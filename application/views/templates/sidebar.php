@@ -100,6 +100,7 @@
                                     </ul>
                                 </li>
                             </ul>
+<<<<<<< HEAD
                                
                                
 
@@ -119,7 +120,24 @@
                                
                                 <li><a href="#"><i class="menu-icon icon-bar-chart"></i>Time-Charts </a></li>
                         </ul>
+=======
+                            <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>
+                                
 
+                            <ul class="widget widget-menu unstyled">
+                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages8"><i class="menu-icon icon-bar-chart">
+                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                                </i>Time-Charts </a>
+                                                  <ul id="togglePages8" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('test/index');?>"><i class="icon-edit"></i>Edit</a></li>
+                                        <li><a href="<?php echo site_url('nitin/view');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>   
+>>>>>>> 3c14f7fc8852d615cea89c72ccdcf96f0939add2
+
+                          
 
 
                             <!--/.widget-nav-->

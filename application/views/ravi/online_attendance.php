@@ -23,7 +23,7 @@
         			</div>
         
         			<div class="modal-body">
-         				 <?php $this->load->view('add_class');?>
+         				 <?php $this->load->view('ravi/add_class1');?>
        				 </div>
         
         			<!-- Modal footer -->

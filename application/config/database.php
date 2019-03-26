@@ -78,7 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'tdiary_database',
+	'database' => 't_diary',
 
 	
 	'dbdriver' => 'mysqli',

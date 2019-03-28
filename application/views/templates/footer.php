@@ -3,7 +3,9 @@
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>
 
         <script type="text/javascript" src="<?php echo base_url('assets/js/ravi.js');?>"></script>
-       <script type="text/javascript" src="<?php echo base_url('assets/js/preeti.js');?>"></script>
+           <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>"></script>
+       <!-- <script type="text/javascript" src="<?php echo base_url('assets/js/preeti.js');?>"></script>        -->
+       
        
         
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>

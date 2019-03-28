@@ -8,13 +8,19 @@
 			</div>
 				<div class="module-body">
 
-				<form  method="post" name="myform"  id="myform"   action="<?php echo site_url('Lview_controller/savingdata');?>"  class="form-horizontal row-fluid">				
+				<form  method="post" name="myform"  id="myform"   action="<?php echo site_url('Lview_controller/savingdata	');?>"  class="form-horizontal row-fluid">				
 
 							<table class="table table-striped table-bordered table-condensed">							
                 				<tbody>
 										<tr>
 											
-											<td>  
+										
+												<td>
+														Session:<br>
+														
+														<input type="text" id="session" name="session" class="span8">													
+												</td>
+												<td>		
 											
 												Course Name:<br>
 														
@@ -30,18 +36,23 @@
 												
 										  	 </td>
 
-										  		 <td>									
-														Semester:	<br>
-														
-															<input type="number" id="txtsemester" name="txtsemester" class="span8">
-												</td>
+										  
+												  <td>Semester:<br>
+												  	<select tabindex="1" data-placeholder="Select here.." class="span8" name="txtsemester" id="txtsemester">
+												  		<option value ="">Select here..</option>
+												  	 <option value ="1">1</option>
+												  	 <option value ="2">2</option>
+												  	 <option value ="3">3</option>
+												  	 <option value ="4">4</option>
+												  	 <option value ="5">5</option>
+												  	 <option value ="6">6</option>
+												  	 <option value ="7">7</option>
+												  	 <option value ="8">8</option>
+												  </select>
+									  </td>
 
 
-												<td>
-														Section:<br>
-														
-														<input type="text" id="txtsection" name="txtsection" class="span8">													
-												</td>
+											
 											</tr>
 
 
@@ -53,25 +64,23 @@
 												</td>
 
 												 <td>								
-														Actual Date Of Completion:<br>
+														 Date Of Completion:<br>
 														
-														<input type="date" id="txtADOC" name="txtADOC" class="span8">
+														<input type="date" id="DOC" name="DOC" class="span8">
 												</td>
 
-												<td>									
-														Expected Date Of Completion:<br>	
-														
-														<input type="date" id="txtEDOC" name="txtEDOC" class="span8">
-												</td>
-											</tr>
-
-											<tr>
-
-												<td>									
+													<td>									
 														Facutly Name:	<br>
 														
 														<input type="text" id="txtfaculty" name="txtfaculty" class="span8">
 												</td>
+
+											
+											</tr>
+
+											<tr>
+
+											
 
 												<td>									
 														Subject Name:	<br>
@@ -80,7 +89,7 @@
 												</td>
 
 
-												<td>									
+												<td colspan="2">									
 														Syllabus Upload:	<br>
 														
 														<input class="specialInput" type="file"  id="syllabus" name="syllabus">
@@ -135,9 +144,14 @@
 															<input type="text" id="txttotal" name="txttotal" class="span2">
 															<button style="float:right" type="submit" name="save" 
 															 class=" span3 btn">Submit</button>
-													
+															
 												</td>
-										</tr>								
+										</tr>
+
+
+
+											
+																
 	
 
 						  

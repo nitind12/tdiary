@@ -2,13 +2,7 @@
 class Marks extends CI_Controller{
 	public function index()
 	{
-		
-		$this->load->model('marksmodel');
-		$a = $this->marksmodel->getData();
-		$data['marks'] = $this->marksmodel->getData();
-		//$this->load->view('testmarks',$data);
-
-		 $data['page_'] = 'testmarks';
+		 $data['page_'] = 'viewmarks';
 		 $data['title'] = 'View Marks';
        
         $this->load->view('templates/header',$data);
@@ -16,5 +10,12 @@ class Marks extends CI_Controller{
         $this->load->view('templates/footer');
 		
 
+	}
+
+	function viewmarks(){
+		$this->load->model('Internalmodel','im');
+		$data['marks'] = $this->im->internalmarks();
+
+		echo json_encode($data);
 	}
 }

@@ -11,22 +11,26 @@ class Lessonview_model extends CI_Model
 	function savingdata()
 	{
 		$data = array(
-			'Course_Name' => $this->input->post('course'),		
-			'Semester' => $this->input->post('txtsemester'),
-			'Section' => $this->input->post('txtsection'),
-			'Time_Duration' => $this->input->post('txttime'),
-			'Start_Time' => $this->input->post('txtstart'),
-			'End_Time' => $this->input->post('txtend'),
-			'Date' => $this->input->post('Date'),
-			'Unit' => $this->input->post('Unit'),
-			'Topic' => $this->input->post('Topic'),
-			'No_Of_Lecture' => $this->input->post('Lecture'),
+			'session_id' => $this->input->post('session'),
+			'course_id' => $this->input->post('course'),		
+			'semester_id' => $this->input->post('txtsemester'),
+			'section_id' => $this->input->post('txtsection'),
+			'subject_id' => $this->input->post('txtsection'),
+			'lesson_id' => $this->input->post('txtsection'),
+			'time_duration' => $this->input->post('txttime'),
+			'start_time' => $this->input->post('txtstart'),
+			'end_time' => $this->input->post('txtend'),
+			'date' => $this->input->post('Date'),
+			'topic' => $this->input->post('Unit'),
+			'unit' => $this->input->post('Unit'),
+			'no_of_lecture' => $this->input->post('Topic'),
+		
 		);
 		
 		$this->db->insert('lesson',$data);		//lesson is a table name of lecture database
 
 	}
-
+/*
 	  public function filled_correctly()
 	  {  
   
@@ -57,6 +61,6 @@ class Lessonview_model extends CI_Model
  
         $query = $this->db->get('lesson');  
   	 }  
-
+*/
 }
 ?>

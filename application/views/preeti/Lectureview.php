@@ -1,7 +1,4 @@
 
-
-
-
  <div class="span9">
 	<div class="content">
 
@@ -15,53 +12,64 @@
 <!-- view database in page -->
                         	<table class="table table-striped table-bordered table-condensed">
 
+
                         		<tr style="text-align: left">
+                                    <th>Session</th>
                         			<th>Course</th>
                         			<th>Sem</th>
-                        			<th>Sec</th>
+                        			
                                     <th>
                                          <table class="table table-striped table-bordered table-condensed">
                                             <th colspan="3"><center>Date</center></th>
                                             <tr>
-                                			     <th>Date of Commence<br>
-                                                 ment</th>
-                                			     <th>Actual Date Of Completion</th>
-                                			     <th>Expected Date Of Completion</th>        
+                                			     <th>Date of Commence<br>ment</th>
+                                			     <th>Date Of Completion</th>
+                                			           
                                             </tr>
                                          </table>
                                     </th>
                         			<th>Faculty</th>
                         			<th>Subject</th>
+                                    
                                     <th>Upload file</th>
+                                    <th>Lecture No</th>
                         			<th>Unit</th>
                         			<th>Topic</th>
-                        			<th>Lecture No</th>
+                                    <th>No Of Lecture</th>
                         			<th>Total</th>
-                                    <th>Edit</th>
                                     <th>Delete</th>
+                                  
                         		</tr>
 
-                        	   <?php foreach ($tdiary_database as $item) { ?>
+                        	   <?php foreach ($t_diary as $item) { ?>
                         		<tr>
-                        			<td><?php echo $item->Course_Name;?></td>
-                        			<td><?php echo $item->Semester;?></td>
-                        			<td><?php echo $item->Section ;?></td>
+                        			<td><?php echo $item->session_id;?></td>
+                        			<td><?php echo $item->course_id;?></td>
+                        			<td><?php echo $item->semester_id ;?></td>
                                     <td>
                                         <table class="table table-striped table-bordered table-condensed">
                                             <tr>
-                            		          	 <td><?php echo $item->Date_Of_Commencement ;?></td>
-                            			         <td><?php echo $item->Actual_Date_Of_Completion ;?></td>
-                            			         <td><?php echo $item->Expected_Date_Of_Completion;?></td>
+                            		          	 <td><?php echo $item->date_of_commencement ;?></td>
+                            			         <td><?php echo $item->date_of_completion ;?></td>
+                            			         
                                             </tr>
                                         </table>
                                     </td>
-                        			<td><?php echo $item->Faculty_Name ;?></td>
-                        			<td><?php echo $item->Subject_Name;?></td>
-                                    <td><?php echo $item->Syllabus_Upload;?></td>
-                        			<td><?php echo $item->Unit;?></td>
-                        			<td><?php echo $item->Topic ;?></td>
-                        			<td><?php echo $item->No_Of_Lecture ;?></td>
-                        			<td><?php echo $item->Total_No_Of_Lecture ;?></td>
+                        			<td><?php echo $item->faculty_id ;?></td>
+                        			<td><?php echo $item->subject_id;?></td>
+                                    
+                                    <td><?php echo $item->syllabus_pdf;?></td>  
+                                    <td><?php echo $item->lectureid ;?></td>     
+                        			<td><?php echo $item->unit;?></td>
+                        			<td><?php echo $item->topic ;?></td>
+                        			
+                                    <td><?php echo $item->no_of_lecture;?></td>
+                        			<td><?php echo $item->total_lecture ;?></td>
+                                    <td>
+                                    <input type="button" id="del" name="del" class="btn btn-danger" value="Delete" > 
+                                    </td>
+                              
+                        
                         					</tr>
                         	   <?php } ?>
                              </table>

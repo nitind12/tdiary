@@ -6,18 +6,20 @@ class Edit_controller extends CI_Controller
 	function __construct()
 	{
         parent::__construct();
-         if(! $this->session->userdata('user')) redirect('Login_controller');
+        
      
     }
 
     public function index()  
     {  
-        $data['title'] = "Edit";
+        $data['title'] = "Editpage";
         $data['page_'] = "Edit";
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
     }
+
+   
 
 /*    public function authenticate()  
     {  

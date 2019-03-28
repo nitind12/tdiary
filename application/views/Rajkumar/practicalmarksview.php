@@ -10,14 +10,18 @@
 								<h1>Practical Test Marks</h1>
 							</div>
 	<form method="post" action="<?php echo site_url('practicaltestcontroller/savingdata2');?>" class="form-horizontal row-fluid">
-	<table class="table"  border="1">
+	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->
 				<thead>
 									<tr >
-									  <th align="center">Student Roll</th>
-									  <th align="center">Student Name</th>
-									  <th align="center">Practical_Marks</th>
+										<th><center>Course_name</center></th>
+										<th><center>Semester</center></th>
+										<th><center>Section</center></th>
+										<th><center>Subject</center></th>
+									  <th ><center>Student Roll</center></th>
+									  <!--<th ><center>Student Name</center></th>-->
+									  <th><center>Practical_Marks</center></th>
 									 
 									</tr>
 								  </thead>
@@ -27,16 +31,28 @@
 			
 
 			<tr>
+				<td>
+					<center><?= $user['Course_name']?></center>
+				</td>
+				<td>
+					<center><?= $user['Semester']?></center>
+				</td>
+				<td>
+					<center><?= $user['Section']?></center>
+				</td>
+				<td>
+					<center><?= $user['Subject']?></center>
+				</td>
 		
 			
-				<td align="center">
-					<?= $user['Student_Roll']?>
+				<td>
+					<center><?= $user['Student_Roll']?></center>
 				</td>
-				<td align="center">
+				<!--<td align="center">
 					<?= $user['Student_name']?>
-				</td>
-				<td align="center">
-					<?= $user['Practical_Marks']?>
+				</td>-->
+				<td>
+					<center><?= $user['Practical_Marks']?></center>
 				</td>
 				
 				

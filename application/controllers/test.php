@@ -10,7 +10,7 @@ class Test extends CI_Controller{
 	{
 		//$data['users'] = $this->um->fetchtable();
 		//$this->load->view('testview',$data);
-		 $data['users'] = $this->um->fetchtable();
+		$data['users'] = $this->um->fetchtable();
         $data['page_'] = 'testview';
         $data['title'] = "Edit Marks";
        

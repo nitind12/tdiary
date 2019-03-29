@@ -1,51 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
 
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Edmin</title>
-	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link type="text/css" href="css/theme.css" rel="stylesheet">
-	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
-	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
-</head>
-<body>
 
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-					<i class="icon-reorder shaded"></i>
-				</a>
+			
+			
 
-			  	<a class="brand" href="index.html">
-			  		Edmin
-			  	</a>
+			  
 
- Row</a></				<div class="nav-collapse collapse navbar-inverse-collapse">	
-					<ul class="nav nav-icons">
-						<li class="active"><a href="#">
-							<i class="icon-envelope"></i>
-						</a></li>
-						<li><a href="#">
-							<i class="icon-eye-open"></i>
-						</a></li>
-						<li><a href="#">
-							<i class="icon-bar-chart"></i>
-						</a></li>
-					</ul>
-
-					<form class="navbar-search pull-left input-append" action="#">
-						<input type="text" class="span3">
-						<button class="btn" type="button">
-							<i class="icon-search"></i>
-						</button>
-					</form>
 				
-					<ul class="nav pull-right">
+
+			
+					<!--ul class="nav pull-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
@@ -75,14 +41,14 @@
 							</ul>
 						</li>
 					</ul>
-				</div><!-- /.nav-collapse -->
+				</div>< /.nav-collapse -->
 			</div>
 		</div><!-- /navbar-inner -->
 	</div><!-- /navbar -->
 
 
 
-	<div class="wrapper">
+	<!--div class="wrapper">
 		<div class="container">
 			<div class="row">
 				<div class="span3">
@@ -116,17 +82,17 @@
 									<b class="label orange pull-right">19</b>
 								</a>
 							</li>
-						</ul><!--/.widget-nav-->
+						</ul></.widget-nav-->
 
-						<ul class="widget widget-menu unstyled">
+						<!--ul class="widget widget-menu unstyled">
                                 <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
                                 <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
                                 <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
                                 <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
                                 <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
-                            </ul><!--/.widget-nav-->
+                            </ul></.widget-nav-->
 
-						<ul class="widget widget-menu unstyled">
+						<!--ul class="widget widget-menu unstyled">
 							<li>
 								<a class="collapsed" data-toggle="collapse" href="#togglePages">
 									<i class="menu-icon icon-cog"></i>
@@ -164,7 +130,7 @@
 						</ul>
 
 					</div><!--/.sidebar-->
-				</div><!--/.span3-->
+				</div--><!--/.span3-->
 
 
 				<div class="span9">
@@ -174,9 +140,32 @@
 							<div class="module-head">
 								<h3>Forms</h3>
 							</div>
-							<div class="module-body">
+							<!--<div class="module-body">-->
+								Course<select>
+									<option value=""></option>
+									<option>BCA</option>
+									<option>BBA</option>
+									<option>B.TECH</option>
+								</select>
 
-									<div class="alert">
+								Year<select>
+									<option value=""></option>
+									<option>2017</option>
+									<option>2018</option>
+									<option>2019</option>
+								</select>
+
+								Sem<select>
+									<option value=""></option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+								</select>
+
+
+
+									<!--div class="alert">
 										<button type="button" class="close" data-dismiss="alert">×</button>
 										<strong>Warning!</strong> Something fishy here!
 									</div>
@@ -189,18 +178,18 @@
 										<strong>Well done!</strong> Now you are listening me :) 
 									</div>
 
-									<br />
+									<br /-->
 
 									<form class="form-horizontal row-fluid">
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label" for="basicinput">Basic Input</label>
 											<div class="controls">
 												<input type="text" id="basicinput" placeholder="Type something here..." class="span8">
 												<span class="help-inline">Minimum 5 Characters</span>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label" for="basicinput">Disabled Input</label>
 											<div class="controls">
 												<input type="text" id="basicinput" placeholder="You can't type something here..." class="span8" disabled>
@@ -221,18 +210,18 @@
 													<span class="add-on">#</span><input class="span8" type="text" placeholder="prepend">       
 												</div>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label" for="basicinput">Appended Input</label>
 											<div class="controls">
 												<div class="input-append">
 													<input type="text" placeholder="5.000" class="span8"><span class="add-on">$</span>
 												</div>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label" for="basicinput">Dropdown Button</label>
 											<div class="controls">
 												<div class="dropdown">
@@ -241,13 +230,13 @@
 														<li><a href="#">First Row</a></li>
 														<li><a href="#">Second Row</a></li>
 														<li><a href="#">Third Row</a></li>
-														<li><a href="#">Fourthli>
+														<li><a href="#">Fourth Row</a></li>
 													</ul>
 												</div>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label" for="basicinput">Dropdown</label>
 											<div class="controls">
 												<select tabindex="1" data-placeholder="Select here.." class="span8">
@@ -258,9 +247,9 @@
 													<option value="Category 4">Fourth Row</option>
 												</select>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label">Radiobuttons</label>
 											<div class="controls">
 												<label class="radio">
@@ -276,9 +265,9 @@
 													Option three
 												</label>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label">Inline Radiobuttons</label>
 											<div class="controls">
 												<label class="radio inline">
@@ -294,9 +283,9 @@
 													Option three
 												</label>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label">Checkboxes</label>
 											<div class="controls">
 												<label class="checkbox">
@@ -312,9 +301,9 @@
 													Option three
 												</label>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--div class="control-group">
 											<label class="control-label">Inline Checkboxes</label>
 											<div class="controls">
 												<label class="checkbox inline">
@@ -330,18 +319,18 @@
 													Option three
 												</label>
 											</div>
-										</div>
+										</div-->
 
-										<div class="control-group">
+										<!--<div class="control-group">
 											<label class="control-label" for="basicinput">Textarea</label>
 											<div class="controls">
 												<textarea class="span8" rows="5"></textarea>
 											</div>
-										</div>
+										</div-->
 
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" class="btn">Submit Form</button>
+												<button type="submit" class="btn">Submit</button>
 											</div>
 										</div>
 									</form>
@@ -364,8 +353,3 @@
 		</div>
 	</div>
 
-	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
-</body>

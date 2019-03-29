@@ -4,7 +4,7 @@
 							<div class="module">
 								<div class="module-head">
 									<h1 align="center">CSA TIME TABLE</h1>
-									<h3 align="center">BCA 3 SEM,SECTION-A</h3>
+									<h3 align="center">BCA 5 SEM,SECTION-A</h3>
 								</div>
 							
 								<div class="module-body">

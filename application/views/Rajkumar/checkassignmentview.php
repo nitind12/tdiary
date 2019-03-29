@@ -9,7 +9,7 @@
 								<h1 > Update Assignment Record</h1>
 							</div>
 	<form method="post" action="<?php echo site_url('check_assignment_controller/savingdata4');?>" class="form-horizontal row-fluid">
-	<table class="table"  border="1">
+	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->
 				<thead>
@@ -87,8 +87,8 @@
 								   	<tr>
 									  
 									  
-									  <td colspan="4">Grade<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span2" name="Grade" required="">
+									  <td>Grade<br>
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Grade" required="">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="A">A</option>
 									  	 <option value ="B">B</option>

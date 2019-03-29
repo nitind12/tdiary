@@ -4,31 +4,35 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 class Lview_model extends CI_Model
 {
 	function fetchtable()
-	{
+	{      
 		$query = $this->db->get("lecture");
 		return $query->result();
 	}
 	function savingdata()
 	{
 		$data = array(
-			'Course_Name' => $this->input->post('course'),
-			'Semester' => $this->input->post('txtsemester'),
-			'Section' => $this->input->post('txtsection'),
-			'Date_Of_Commencement' => $this->input->post('txtDOC'),
-			'Actual_Date_Of_Completion' => $this->input->post('txtADOC'),
-			'Expected_Date_Of_Completion' => $this->input->post('txtEDOC'),
-			'Faculty_Name' => $this->input->post('txtfaculty'),
-			'Subject_Name' => $this->input->post('txtsubject'),
-			'Syllabus_Upload'=>$this->input->post('syllabus'),
-			'Unit' => $this->input->post('txtunit'),
-			'Topic' => $this->input->post('topic'),
-			'No_Of_Lecture' => $this->input->post('No_Of_Lecture'),
-			'Total_No_Of_Lecture' => $this->input->post('txttotal')
+			'session_id' => $this->input->post('session'),
+			'course_id' => $this->input->post('course'),
+			'semester_id' => $this->input->post('txtsemester'),
+            'subject_id' => $this->input->post('txtsubject'),
+            'syllabus_pdf' => $this->input->post('syllabus'),
+			'date_of_commencement' => $this->input->post('txtDOC'),
+			'date_of_completion' => $this->input->post('DOC'),			
+			'faculty_id' => $this->input->post('txtfaculty'),
+			'unit' => $this->input->post('txtunit'),
+			'topic'=>$this->input->post('topic'),
+            'no_of_lecture' => $this->input->post('No_Of_Lecture'),
+			'total_lecture' => $this->input->post('txttotal'),
+            'status'=>'1',
+            'username'=>'ra'
+      
 
 		);
 		
 		$this->db->insert('lecture',$data);
 	}
+
+
 
 /*	  public function filled_correctly()
 	  {  

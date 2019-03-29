@@ -1,8 +1,12 @@
 $(document).ready(function()
 {
 	$('#myform').submit(function()
-	{
-		if($.trim($('#course').val()) == '')
+	{	
+		if($.trim($('#session').val()) == '')
+			{
+				alert('Session must be filled out');
+			}
+		else if($.trim($('#course').val()) == '')
 			{
 				alert('Course must be filled out');
 			}
@@ -10,21 +14,13 @@ $(document).ready(function()
 			{
 				alert('Semester must be filled out');
 			}
-		else if($.trim($('#txtsection').val()) == '')
-			{
-				alert('Section must be filled out');
-			}
 		else if($.trim($('#txtDOC').val()) == '')
 			{
 				alert('Date of commencement must be filled out');
 			}
-		else if($.trim($('#txtADOC').val()) == '')
+		else if($.trim($('#DOC').val()) == '')
 			{
-				alert('Actual date of completion must be filled out');
-			}
-		else if($.trim($('#txtEDOC').val()) == '')
-			{
-				alert('Expected date of completion must be filled out');
+				alert('date of completion must be filled out');
 			}
 		else if($.trim($('#txtfaculty').val()) == '')
 			{

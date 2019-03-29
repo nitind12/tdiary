@@ -9,11 +9,6 @@ class Lessonview_controller extends CI_Controller
 		
 
 		$this->load->model('Lessonview_model','obj');
-		 if(! $this->session->userdata('user')) redirect('Login_controller');
-     		//calling model
-
-		$this->load->model('Lessonview_model','obj');		//calling model
-	if(! $this->session->userdata('user')) redirect('Login_controller');
 
 
 	}
@@ -21,7 +16,7 @@ class Lessonview_controller extends CI_Controller
 	function index()
 	{
 
-		$data['tdiary_database'] = $this->obj->fetchtable();
+		$data['t_diary'] = $this->obj->fetchtable();
 	    $data['title'] = "Lessonview";
         $data['page_'] = "Lessonview";
         $this->load->view('templates/header', $data);

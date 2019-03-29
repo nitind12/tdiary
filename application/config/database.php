@@ -79,8 +79,6 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 't_diary',
-
-	
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

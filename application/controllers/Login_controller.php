@@ -10,6 +10,7 @@ class Login_controller extends CI_Controller
     public function index()  
     {  
         $data['title'] = "Login";
+        
         $this->load->view('templates/header_login', $data);
         $this->load->view('loginpage');  
         $this->load->view('templates/footer');
@@ -18,12 +19,13 @@ class Login_controller extends CI_Controller
     public function authenticate()  
     {  
         $this->load->model('login_model');  
-  
+    
         if ($this->login_model->log_in_correctly())  
         {  
-            redirect('Main');
+           redirect('Main');
         } else {  
             redirect('Login_controller');  
+           
         }  
     }  
   

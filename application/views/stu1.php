@@ -96,69 +96,70 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script type="text/javascript" src="<?php echo base_url('assets/scripts/flot/jquery.flot.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/scripts/flot/jquery.flot.resize.js'); ?>"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/scripts/datatables/jquery.dataTables.js'); ?>"></script
+        <script type="text/javascript" src="<?php echo base_url('assets/scripts/datatables/jquery.dataTables.js'); ?>"></script>
 	<div class="container">
 	<h1 align="center">Registration Form </h1>
 	<h3> Personal Detail</h3>
-<form method="post" action="<?php echo site_url('stu2c/index');?>" class="form-horizontal row-fluid">
-		<div class="control-group">
-			<label class="control-label" for="basicinput">Student_id</label>
+<form method="post" action="<?php echo site_url('stu2c/index');?>"  class="form-horizontal row-fluid">
+
+		<div class=" control-group">
+			<label class="btn btn-primary control-label" for="basicinput">Student_id</label>
 				<div class="controls">
-					<input type="text" id="basicinput" placeholder="enter your Student_id..."  class="span5" required/  >
+					<input type="number" id="basicinput" placeholder="enter your Student_id..."  class="span8" required/  >
 				</div>
 		</div>
-        
+  <br>      
 		<div class="control-group">
-			<label class="control-label" for="basicinput">First_name</label>
+			<label class="btn btn-primary control-label" for="basicinput">First_name</label>
 				<div class="controls">
-					<input type="text" id="basicinput" placeholder="enter your first name..."  class="span5" required/  >
+					<input type="text" id="basicinput" placeholder="enter your first name..."  class="span8" required/  >
 				</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="basicinput">Last_name</label>
+			<label class="btn btn-primary control-label" for="basicinput">Last_name</label>
 				<div class="controls">
-					<input type="text" id="basicinput" placeholder="enter your last name..."  class="span5" required/  >
+					<input type="text" id="basicinput" placeholder="enter your last name..."  class="span8" required/  >
 				</div>
 		</div>
         
         <div class="control-group">
-		    <label class="control-label" for="basicinput">Father's_name</label>
+		    <label class="btn btn-primary control-label" for="basicinput">Father's_name</label>
 				<div class="controls">
-					<input type="text" id="basicinput" placeholder="enter your father's name..."  class="span5" required/>
+					<input type="text" id="basicinput" placeholder="enter your father's name..."  class="span8" required/>
 				</div>
 		</div>
 
 		<div class="control-group">
-		    <label class="control-label" for="basicinput">Mother's_name</label>
+		    <label class="btn btn-primary control-label" for="basicinput">Mother's_name</label>
 				<div class="controls">
-					<input type="text" type="text" placeholder="enter your mother's name…"  class="span5" required/>
+					<input type="text" type="text" placeholder="enter your mother's name…"  class="span8"  required/>
 				</div>
 		</div><br>
 		<div class="control-group" >
-					<label class="control-label" for="basicinput">Blood group</label>
-						<div class="controls">
-							<select tabindex="1" data-placeholder="Select here.."  class="span5" required>
+			<label class="btn btn-primary control-label" for="basicinput">Blood group</label>
+				<div class="controls">
+					<select tabindex="1" data-placeholder="Select here.."  class="span8" required/>
 								<option value="">Select here..</option>
 								<option value="Category 1">A+</option>
 								<option value="Category 2">B+</option>
 								<option value="Category 3">AB+</option>
 								<option value="Category 3">O+</option>
 								<option value="Category 3">O-</option>
-							</select>
+					</select>
 						</div>
 				
 		</div>
-			<div class="control-group" required/>
-		        <label class="control-label" for="basicinput">D.O.B</label>
+			<div class="control-group" >
+		        <label class="btn btn-primary control-label" for="basicinput">D.O.B</label>
 		            <div class="controls">
-				        <input type="date" id="basicinput"  class="span5" >
+				        <input type="date" id="basicinput"  class="span8" required/ >
 				    </div>
 	        </div>
 
-			<div class="control-group" required/>
-					<label class="control-label" for="basicinput">Gender</label>
+			<div class="control-group" >
+					<label class="btn btn-primary control-label" for="basicinput">Gender</label>
 						<div class="controls">
-							<select tabindex="1" data-placeholder="Select here.." class="span5">
+							<select tabindex="1" data-placeholder="Select here.." class="span8" required/>
 								<option value="">Select here..</option>
 								<option value="Category 1">Male</option>
 								<option value="Category 2">Female</option>
@@ -168,10 +169,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 			</div>
 
-			<div class="control-group" required/>
-					<label class="control-label">Category</label>
+			<div class="control-group">
+					<label class="btn btn-primary control-label" for="basicinput">Category</label>
 						<div class="controls">
-							<label class="radio inline">
+							<label class="radio inline" required/ >
 								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
 													GEN
 							</label> 
@@ -187,10 +188,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 
 			<div class="control-group">
-					<label class="control-label">Nationality</label>
+					<label class="btn btn-primary control-label">Nationality</label>
 						<div class="controls">
-							<label class="checkbox">
-								<input type="radio" value="Indian" name="c1" required/>
+							<label class="checkbox" required/>
+								<input type="radio" value="Indian" name="c1" >
 													Indian
 							</label>
 							<label class="checkbox">
@@ -202,7 +203,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 
 			<div class="control-group" required/>
-						<div class="controls">
+						<div class=""btn btn-primary control-label">
 							<center><a href="<?php echo site_url('stu2c/index');?>">	
                                 <button><input type="submit" id="course" class="btn" onclick="return validation();">
                                 	Save & Next

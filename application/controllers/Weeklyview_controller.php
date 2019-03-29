@@ -5,29 +5,26 @@ class Weeklyview_controller extends CI_Controller
 {
 	function __construct()
 	{
-        parent::__construct();
-       	$this->load->model('Weeklyview_model','obj');		//calling model
-       
-    }
-    
-	
+		parent::__construct();
+		$this->load->model('Weeklyview_model','obj');		//calling model
+	}
+
 	function index()
 	{
-		$data['tdiary_database'] = $this->obj->fetchtable();
-		$data['title'] = "Weeklyview";
+		$data['t_diary'] = $this->obj->fetchtable();
+		$data['title'] = "Weeklyview page";
         $data['page_'] = "Weeklyview";
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
-        $this->load->view('templates/footer');
-	
+        $this->load->view('templates/footer');	
 	}
 
 	function savingdata()
 	{
-		$this->obj->savingdata();	
+		
+		$this->obj->savingdata();
 		redirect('Weeklyedit_controller');
 	}
-
 
 
 }	

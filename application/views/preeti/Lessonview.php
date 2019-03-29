@@ -15,9 +15,12 @@
                                         <!-- view database in page -->
                                         	<table class="table table-striped table-bordered table-condensed">
                                         		<tr style="text-align: left">
+                                                    <th>Session</th>
                                         			<th>Course</th>
                                         			<th>Sem</th>
                                         			<th>Sec</th>
+                                                    <th>Subject</th>
+                                                    <th>lecture_id</th>
                                         			<th>Time Duration</th>
                                         			<th>Start Time</th>
                                         			<th>End Time</th>
@@ -26,18 +29,21 @@
                                         			<th>Topic</th>
                                         			<th>Lecture No</th>
                                         		</tr>
-                                        	<?php foreach ($tdiary_database as $item) { ?>
+                                        	<?php foreach ($t_diary as $item) { ?>
                                         		<tr>
-                                        			<td><?php echo $item->Course_Name;?></td>
-                                        			<td><?php echo $item->Semester;?></td>
-                                        			<td><?php echo $item->Section ;?></td>
-                                        			<td><?php echo $item->Time_Duration ;?></td>
-                                        			<td><?php echo $item->Start_Time;?></td>
-                                        			<td><?php echo $item->End_Time;?></td>
-                                        			<td><?php echo $item->Date;?></td>
-                                        			<td><?php echo $item->Unit;?></td>
-                                        			<td><?php echo $item->Topic ;?></td>
-                                        			<td><?php echo $item->No_Of_Lecture ;?></td>
+                                        			<td><?php echo $item->session_id;?></td>
+                                        			<td><?php echo $item->course_id;?></td>
+                                        			<td><?php echo $item->semester_id ;?></td>
+                                        			<td><?php echo $item->section_id ;?></td>
+                                                    <td><?php echo $item->subject_id ;?></td>
+                                                    <td><?php echo $item->lesson_id ;?></td>
+                                                    <td><?php echo $item->time_duration ;?></td>
+                                        			<td><?php echo $item->start_time;?></td>
+                                        			<td><?php echo $item->end_time;?></td>
+                                        			<td><?php echo $item->date;?></td>
+                                        			<td><?php echo $item->topic;?></td>
+                                        			<td><?php echo $item->unit ;?></td>
+                                        			<td><?php echo $item->no_of_lecture ;?></td>
                                         					</tr>
                                         	<?php } ?>     
                                         </table>

@@ -8,16 +8,16 @@
 							<div class="module-head">
 								<h1 >Assignment</h1>
 							</div>
-	<form method="post" action="<?php echo site_url('assignmentcontroller/savingdata3');?>" class="form-horizontal row-fluid">
-	<table class="table"  border="1">
+	<form method="post" id="myform2" action="<?php echo site_url('assignmentcontroller/savingdata3');?>" class="form-horizontal row-fluid">
+	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->
 				<thead>
 				<tbody>
 								  
 									<tr>
-									  <td >Course Name:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_name" required="">
+									  <td >Course_name:<br>
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_name" id="Course_name">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="BCA">BCA</option>
 									  	 <option value ="BBA">BBA</option>
@@ -28,7 +28,7 @@
 									  </select></td>
 									  <td>Semester:<br>
 									  	<!--<input type="text" id="txtSemester" name="txtSemester" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" required="">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" id="Semester">
 									  		<option value ="">Select here..</option>
 									  	 <option value =" 1">1</option>
 									  	 <option value =" 2">2</option>
@@ -42,7 +42,7 @@
 									  </td>
 									  <td>Section:<br>
 									  	<!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" required="">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" id="Section">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="A">A</option>
 									  	 <option value ="B">B</option>
@@ -52,7 +52,7 @@
 									  </select>
 									  </td>
 									  <td>Subject:<br>
-									  	<input type="text"  name="Subject" class="span8" required="">
+									  	<input type="text"  name="Subject" id="Subject" class="span8"/>
 									  </td>
 
 
@@ -66,13 +66,13 @@
 									
 									<tr>
 									  <td>Assignment_id<br>
-									  	<input type="number" name="Assignment_id" class="span8" required="" /></td>
+									  	<input type="number" name="Assignment_id" id="Assignment_id" class="span8"/></td>
 									  <td>Given_date<br>
-									  	<input type="date" name="Given_date"class="span9" required="" /></td>
+									  	<input type="date" name="Given_date" id="Given_date"class="span9"/></td>
 									  <td>Submission_date<br>
-									  	<input type="date" name="Submission_date"class="span9" required="" /></td>
+									  	<input type="date" name="Submission_date" id="Submission_date" class="span9"/></td>
 									  <td>Last_submission_date<br>
-									  	<input type="date" name="Last_submission_date"class="span9" required="" /></td>
+									  	<input type="date" name="Last_submission_date" id="Last_submission_date" class="span9"/></td>
 									</tr>
 									
 								  </thead>
@@ -80,10 +80,10 @@
 									
 									<tr>
 									   <td>Unit<br>
-									   	<input type="number" name="Unit"class="span8" required="" /></td>
+									   	<input type="number" name="Unit" id="Unit" class="span8"/></td>
 									   <td colspan="3">Topic<br>
 									   	
-									   	<textarea class="span8" rows="5" name="Topic"align="right" required=""></textarea>
+									   	<textarea class="span8" rows="5" name="Topic" id="Topic" align="right"></textarea>
 									   </td>
 									</tr>
 								

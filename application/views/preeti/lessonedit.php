@@ -15,6 +15,12 @@
 								<table class="table table-striped table-bordered table-condensed">  
 									<tbody>
 										<tr>
+
+												<td>
+														Session:<br>
+														
+														<input type="text" id="session" name="session" class="span8">													
+												</td>
 											<td>  
 												Course Name:<br>
 														
@@ -45,6 +51,12 @@
 
 
 											<tr>
+
+												<td>
+														Subject:<br>
+														
+														<input type="text" id="txtsubject" name="txtsubject" class="span8">													
+												</td>
 
 												 <td>									
 														Time Duration:	<br>
@@ -78,7 +90,7 @@
 													<td colspan="3" class="span3">
 														 <table class="table" border="0">
 															<tr>
-																<td colspan="2">
+																<td colspan="3">
 															 		Unit:<br>
 															 		<input type="number" id="Unit" name="Unit" class="span4">
 															 	</td>

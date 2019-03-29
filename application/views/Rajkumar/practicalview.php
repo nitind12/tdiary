@@ -11,7 +11,7 @@
 								<h1>Practical Test</h1>
 							</div>
 	<form method="post" action="<?php echo site_url('Practicaltestcontroller/savingdata2');?>" class="form-horizontal row-fluid">
-	<table class="table"  border="1">
+	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->
 				<thead>
@@ -19,7 +19,7 @@
 								  
 									<tr>
 									  <td >Course Name:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course" required="">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_name" required="">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="BCA">BCA</option>
 									  	 <option value ="BBA">BBA</option>
@@ -52,7 +52,7 @@
 									  </select>
 									  </td>
 									  <td>Subject:<br>
-									  	<input type="text" id="txtSubject" name="txtSubject" class="span8" required="">
+									  	<input type="text" id="Subject" name="Subject" class="span8" required="">
 									  </td>
 
 
@@ -81,16 +81,16 @@
 								
 									<tr>
 									  <th>Student_Roll</th>
-									  <th>Student_name</th>
-									  <th>Practical_Marks</th>
+									 <!-- <th>Student_name</th>-->
+									  <th colspan="3">Practical_Marks</th>
 									 
 									</tr>
 								  </thead>
 								   <tbody>
 									<tr>
 									  <td><input type="text" name="Student_Roll" class="span8" required="" /></td>
-									  <td><input type="text" name="Student_name"class="span8"  required="" /></td>
-									  <td><input type="text" name="Practical_Marks"class="span8" required="" /></td>
+									 <!-- <td><input type="text" name="Student_name"class="span8"  required="" /></td>-->
+									  <td colspan="3"><input type="text" name="Practical_Marks"class="span4" required="" /></td>
 									 
 									</tr>
 								 <!-- <thead>
@@ -128,8 +128,12 @@
 										<table border="1" cellpadding="5" cellspacing="5" width="40%" align="center">
 
 		<tr style="text-align: left">
+			<th align="center">Course_name</th>
+			<th align="center">Semester</th>
+			<th align="center">Section</th>
+			<th align="center">Subject</th>
 			<th align="center">Student_Roll</th>
-			<th align="center">Sudent_name</th>
+			<!--<th align="center">Sudent_name</th>-->
 			<th align="center">Practical_Marks</th>
 			
 			<th align="center">Delete</th>
@@ -138,8 +142,12 @@
 
 		<?php foreach ($users as $item) { ?>
 			<tr >
+				<td align="center"><?php echo $item->Course_name;?></td>
+				<td align="center"><?php echo $item->Semester;?></td>
+				<td align="center"><?php echo $item->Section;?></td>
+				<td align="center"><?php echo $item->Subject;?></td>
 				<td align="center"><?php echo $item->Student_Roll;?></td>
-				<td align="center"><?php echo $item->Student_name;?></td>
+				<!--<td align="center"><?php echo $item->Student_name;?></td>-->
 				<td align="center"><?php echo $item->Practical_Marks;?></td>
 				
 				<td><a href="<?php echo site_url('practicaltestcontroller/del1/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>

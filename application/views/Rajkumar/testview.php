@@ -10,15 +10,15 @@
 								<h1>Internal Test</h1>
 							</div>
 	<form method="post" id="myform1" action="<?php echo site_url('test/savingdata');?>" class="form-horizontal row-fluid">
-	<table class="table"  border="1">
+	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->
 				<thead>
 				<tbody>
 								  
 									<tr>
-									  <td >Course Name:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course" id="Course" required="">
+									  <td >Course_name:<br>
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_name" id="Course_name" >
 									  		<option value ="">Select here..</option>
 									  	 <option value ="BCA">BCA</option>
 									  	 <option value ="BBA">BBA</option>
@@ -29,7 +29,7 @@
 									  </select></td>
 									  <td>Semester:<br>
 									  	<!--<input type="text" id="txtSemester" name="txtSemester" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" id="Semester" required="">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" id="Semester" >
 									  		<option value ="">Select here..</option>
 									  	 <option value ="1">1</option>
 									  	 <option value ="2">2</option>
@@ -43,17 +43,17 @@
 									  </td>
 									  <td>Section:<br>
 									  	<!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" id="Section" required="" >
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" id="Section"  >
 									  		<option value ="">Select here..</option>
-									  	 <option value ="Category 1">A</option>
-									  	 <option value ="Category 2">B</option>
-									  	 <option value ="Category 3">C</option>
-									  	 <option value ="Category 4">D</option>
+									  	 <option value ="A">A</option>
+									  	 <option value ="B">B</option>
+									  	 <option value ="C">C</option>
+									  	 <option value ="D">D</option>
 									  	 
 									  </select>
 									  </td>
 									  <td>Subject:<br>
-									  	<input type="text" id="txtSubject" name="txtSubject" class="span8" id="Subject" required="">
+									  	<input type="text" id="Subject" name="Subject" class="span8"  >
 									  </td>
 
 
@@ -70,17 +70,17 @@
 								   
 									<tr>
 									  <th>Student_Roll</th>
-									  <th>Student_name</th>
+									 <!-- <th>Student_name</th>-->
 									  <th>marks1</th>
-									  <th>marks2</th>
+									  <th colspan="2">marks2</th>
 									</tr>
 								  </thead>
 								   <tbody>
 									<tr>
-									  <td><input type="text" name="Student_Roll" id="Student_Roll" class="span8" required="" /></td>
-									  <td><input type="text" name="Student_name" id="Student_name"class="span8"  required="" /></td>
-									  <td><input type="text" name="marks1" id="marks1"class="span8" required="" /></td>
-									  <td><input type="text" name="marks2" id="marks2"class="span8" required="" /></td>
+									  <td><input type="text" name="Student_Roll" id="Student_Roll" class="span8"  /></td>
+									  <!--<td><input type="text" name="Student_name" id="Student_name"class="span8"  /></td>-->
+									  <td><input type="text" name="marks1" id="marks1"class="span8"  /></td>
+									  <td colspan="2"><input type="text" name="marks2" id="marks2"class="span5"  /></td>
 									</tr>
 								 <!-- <thead>
 									<tr bgcolor="lightblue">
@@ -117,8 +117,12 @@
 										<table border="1" cellpadding="5" cellspacing="5" width="40%" align="center">
 
 		<tr style="text-align: left">
+			<th align="center">Course_name</th>
+			<th align="center">Semester</th>
+			<th align="center">Section</th>
+			<th align="center">Subject</th>
 			<th align="center">Student_Roll</th>
-			<th align="center">Sudent_name</th>
+			<!--<th align="center">Sudent_name</th>-->
 			<th align="center">marks1</th>
 			<th align="center">marks2</th>
 			<th align="center">Delete</th>
@@ -127,8 +131,12 @@
 
 		<?php foreach ($users as $item) { ?>
 			<tr >
+				<td align="center"><?php echo $item->Course_name;?></td>
+				<td align="center"><?php echo $item->Semester;?></td>
+				<td align="center"><?php echo $item->Section;?></td>
+				<td align="center"><?php echo $item->Subject;?></td>
 				<td align="center"><?php echo $item->Student_Roll;?></td>
-				<td align="center"><?php echo $item->Student_name;?></td>
+				<!--<td align="center"><?php echo $item->Student_name;?></td>-->
 				<td align="center"><?php echo $item->marks1;?></td>
 				<td align="center"><?php echo $item->marks2;?></td>
 				<td><a href="<?php echo site_url('test/del1/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>

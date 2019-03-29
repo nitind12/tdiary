@@ -100,6 +100,7 @@
                                     </ul>
                                 </li>
                             </ul>
+
                                
                                
 
@@ -116,9 +117,9 @@
                                     </ul>
                                 </li>
                             </ul>
-                               
-                                
-                                
+                        
+
+        
 
                             <ul class="widget widget-menu unstyled">
                                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages8"><i class="menu-icon icon-bar-chart">
@@ -132,7 +133,7 @@
                                 </li>
                             </ul>   
 
-                          
+
 </ul>
 
                             <!--/.widget-nav-->

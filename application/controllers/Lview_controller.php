@@ -11,8 +11,8 @@ class Lview_controller extends CI_Controller
 
 	function index()
 	{
-		$data['tdiary_database'] = $this->obj->fetchtable();
-		 $data['title'] = "Lectureview";
+		$data['t_diary'] = $this->obj->fetchtable();
+		 $data['title'] = "Lectureview page";
         $data['page_'] = "Lectureview";
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
@@ -25,5 +25,8 @@ class Lview_controller extends CI_Controller
 		redirect('Edit_controller');
 	}
 
+
+
+    
 }
 ?>

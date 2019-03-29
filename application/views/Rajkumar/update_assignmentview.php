@@ -10,7 +10,7 @@
 								<h1>Given Assignment</h1>
 							</div>
 	<form method="post" action="<?php echo site_url('update_assignment_controller/savingdata4');?>" class="form-horizontal row-fluid">
-	<table class="table"  border="1">
+	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->
 				<thead>

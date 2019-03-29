@@ -12,8 +12,9 @@ class Markscontroller extends CI_Controller{
 		$data['marks'] = $this->classtestmarksmodel->getData();
 		//$this->load->view('classtestmarksview',$data);
 		$data['page_'] = 'classtestmarksview';
+		$data['title'] = 'View class test marks';
        
-        $this->load->view('templates/header');
+        $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		

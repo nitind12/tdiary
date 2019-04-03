@@ -14,7 +14,7 @@ class Marks extends CI_Controller{
 
 	function viewmarks(){
 		$this->load->model('Internalmodel','im');
-		$data['marks'] = $this->im->internalmarks();
+		$data['marks_'] = $this->im->internalmarks();///marks===???ass
 
 		echo json_encode($data);
 	}

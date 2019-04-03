@@ -107,7 +107,7 @@ $(document).ready(function()
 			
 			success: function(intel){
 				var obj = JSON.parse(intel);
-				var len = obj.marks.length;
+				var len = obj.marks_.length;
 				
 				var str = '';
 				if(len > 0){
@@ -120,10 +120,10 @@ $(document).ready(function()
 					str = str + "</tr>";
 					for(i=0; i<len;i++){
 						str = str + '<tr>';
-						str = str + '<td>' + obj.marks[i].Student_Roll + "</td>";
-						str = str + '<td>' + obj.marks[i].first_name + "</td>";
-						str = str + '<td>' + obj.marks[i].marks1 + "</td>";
-						str = str + '<td>' + obj.marks[i].marks2 + "</td>";
+						str = str + '<td>' + obj.marks_[i].Student_Roll + "</td>";
+						str = str + '<td>' + obj.marks_[i].first_name + "</td>";
+						str = str + '<td>' + obj.marks_[i].marks1 + "</td>";
+						str = str + '<td>' + obj.marks_[i].marks2 + "</td>";
 						
 						str = str + '</tr>';
 					}

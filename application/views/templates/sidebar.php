@@ -126,8 +126,9 @@
                                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                                 </i>Time-Charts </a>
                                                   <ul id="togglePages8" class="collapse unstyled">
-                                        <li><a href="<?php echo site_url('timecontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
-                                        <li><a href="<?php echo site_url('nitin/view');?>"><i class="icon-eye-open"></i>View </a></li>
+
+                                        <li><a href="<?php echo site_url('nitin/index');?>"><i class="icon-edit"></i>Edit</a></li>
+                                        <li><a href="<?php echo site_url('viewtimetablecontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
                                         
                                     </ul>
                                 </li>

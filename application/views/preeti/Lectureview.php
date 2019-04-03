@@ -1,87 +1,99 @@
+<div class="span9">
+    <div class="content">
 
- <div class="span9">
-	<div class="content">
+        <div class="module">
+            <div class="module-head">
+                  <h2>Lecture Plan</h2>
+            </div>
+                <div class="module-body">
 
-		<div class="module">
-			<div class="module-head">
-				 <h2>View Lecture Plan</h2>
-			</div>
-				<div class="module-body">
-					<form  method="post" action="<?php echo site_url('Lview_controller/savingdata');?>"
-									 class="form-horizontal row-fluid">       
-<!-- view database in page -->
-                        	<table class="table table-striped table-bordered table-condensed">
+                <form  method="post" name="mylectureviewform"  id="mylectureviewform"   action="<?php echo site_url('Lview_controller/savingdata   ');?>"  class="form-horizontal row-fluid">              
 
+                            <table class="table table-striped table-bordered table-condensed">                          
+                                <tbody>
+                                        <tr>
+                                            
+                                        
+                                                <td>        
+                                            
+                                                Course Name:<br>
+                                                        
+                                                            <select tabindex="1" data-placeholder="Select here.." class="span8"  id="course" name="course">
+                                                                <option value="">Select here..</option>
+                                                                <option value="BCA">BCA</option>
+                                                                <option value="BBA">BBA</option>
+                                                                <option value="B.COM">B.COM</option>
+                                                                <option value="POLY TECHNIQUE">POLY TECHNIQUE</option>
+                                                                <option value="BSC">BSC</option>
+                                                                <option value="HM">HM</option>
+                                                            </select>
+                                                
+                                             </td>
 
-                        		<tr style="text-align: left">
-                                    <th>Session</th>
-                        			<th>Course</th>
-                        			<th>Sem</th>
-                        			
-                                    <th>
-                                         <table class="table table-striped table-bordered table-condensed">
-                                            <th colspan="3"><center>Date</center></th>
-                                            <tr>
-                                			     <th>Date of Commence<br>ment</th>
-                                			     <th>Date Of Completion</th>
-                                			           
+                                          
+                                                  <td>Semester:<br>
+                                                    <select tabindex="1" data-placeholder="Select here.." class="span8" name="txtsemester" id="txtsemester">
+                                                        <option value ="">Select here..</option>
+                                                     <option value ="1">1</option>
+                                                     <option value ="2">2</option>
+                                                     <option value ="3">3</option>
+                                                     <option value ="4">4</option>
+                                                     <option value ="5">5</option>
+                                                     <option value ="6">6</option>
+                                                     <option value ="7">7</option>
+                                                     <option value ="8">8</option>
+                                                  </select>
+
+                                              </td>
+
+                                           
+                                                     <td>                                    
+                                                        Subject Name:   <br>
+                                                        
+                                                        <input type="text" id="txtsubject" name="txtsubject" class="span8">
+                                                </td>
+                                               
+
+                                                    <td colspan="2">                                    
+                                                        Facutly Name:   <br>
+                                                        
+                                                        <input type="text" id="txtfaculty" name="txtfaculty" class="span8">
+                                                    </td>
+
+                                            
                                             </tr>
-                                         </table>
-                                    </th>
-                        			<th>Faculty</th>
-                        			<th>Subject</th>
-                                    
-                                    <th>Upload file</th>
-                                    <th>Lecture No</th>
-                        			<th>Unit</th>
-                        			<th>Topic</th>
-                                    <th>No Of Lecture</th>
-                        			<th>Total</th>
-                                    <th>Delete</th>
-                                  
-                        		</tr>
 
-                        	   <?php foreach ($t_diary as $item) { ?>
-                        		<tr>
-                        			<td><?php echo $item->session_id;?></td>
-                        			<td><?php echo $item->course_id;?></td>
-                        			<td><?php echo $item->semester_id ;?></td>
-                                    <td>
-                                        <table class="table table-striped table-bordered table-condensed">
-                                            <tr>
-                            		          	 <td><?php echo $item->date_of_commencement ;?></td>
-                            			         <td><?php echo $item->date_of_completion ;?></td>
-                            			         
-                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                    <br>
+
+                                            <div class="control-group">
+                                                <div class="controls" style="float:left;">
+                                                    <button type="Reset" class="btn btn-primary" name="save" value="Reset">Reset</button>
+                                                </div>
+
+                                                <div class="controls" style="float:left;">
+                                                
+                                                     <input type="button" class="btn btn-primary" name="btnlecturesubmit" value="submit" id="btnlecturesubmit">
+                                                </div>
+                                            </div>
+                                </form>
+                                <br>
+
+                                 <div>
+                                        
+                                           <table class="table table-striped table-bordered table-condensed"
+                                            id="lecturehere" name="lecturehere"> 
                                         </table>
-                                    </td>
-                        			<td><?php echo $item->faculty_id ;?></td>
-                        			<td><?php echo $item->subject_id;?></td>
-                                    
-                                    <td><?php echo $item->syllabus_pdf;?></td>  
-                                    <td><?php echo $item->lectureid ;?></td>     
-                        			<td><?php echo $item->unit;?></td>
-                        			<td><?php echo $item->topic ;?></td>
-                        			
-                                    <td><?php echo $item->no_of_lecture;?></td>
-                        			<td><?php echo $item->total_lecture ;?></td>
-                                    <td>
-                                    <input type="button" id="del" name="del" class="btn btn-danger" value="Delete" > 
-                                    </td>
-                              
-                        
-                        					</tr>
-                        	   <?php } ?>
-                             </table>
-                         </form>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
-</div>
-</body>
+                                     </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
 
  
 

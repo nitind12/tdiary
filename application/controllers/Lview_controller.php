@@ -3,28 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Lview_controller extends CI_Controller
 {
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->model('Lview_model','obj');		//calling model
-	}
 
 	function index()
 	{
-		$data['t_diary'] = $this->obj->fetchtable();
-		 $data['title'] = "Lectureview page";
+	    $data['title'] = "Lectureview page";
         $data['page_'] = "Lectureview";
+
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');	
 	}
 
-	function savingdata()
+	function lessonview()
 	{
-		$this->obj->savingdata();
-		redirect('Edit_controller');
-	}
+		$this->load->model('Lview_model','object');
+		$data['lect_'] = $this->object->savingdata3();
 
+		echo json_encode($data);	
+	}
 
 
     

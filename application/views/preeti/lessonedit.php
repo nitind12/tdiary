@@ -9,8 +9,7 @@
 				 <h2>Lesson Plan</h2>
 			</div>
 				<div class="module-body">
-					<form  id="myform" name="myform" method="post" action="<?php echo site_url('Lessonedit_controller/savingdata');?>"
-									 class="form-horizontal row-fluid">
+					<form  id="mylessonedit" name="mylessonedit" method="post" action="<?php echo site_url('Lessonedit_controller/savingdata');?>" class="form-horizontal row-fluid">
 
 								<table class="table table-striped table-bordered table-condensed">  
 									<tbody>
@@ -93,10 +92,16 @@
 														<input type="time" id="txtstart" name="txtstart" class="span8">													
 												</td>
 
-												<td colspan="2">
+												<td>
 														End Time:<br>
 														
-														<input type="time" id="txtend" name="txtend" class="span4">													
+														<input type="time" id="txtend" name="txtend" class="span8">													
+												</td>
+
+												<td>
+														Lesson No:<br>
+														
+														<input type="text" id="lesson_no" name="lesson_no" class="span8">													
 												</td>
 											</tr>	
 
@@ -152,23 +157,24 @@
 
 								<table class="table table-striped table-bordered table-condensed">
                                         		<tr style="text-align: left">
-                                                    <th>Session</th>		<!--heading name -->
+                                                    <th>Session</th>		
                                         			<th>Course</th>
                                         			<th>Sem</th>
                                         			<th>Sec</th>
                                                     <th>Subject</th>
-                                                    <th>lecture_id</th>
+                                                    <th>Lesson No</th>
                                                     <th>Date</th>
                                         			<th>Start Time</th>
                                         			<th>End Time</th>
                                         			<th>Unit</th>
                                           			<th>Topic</th>	                                        			
                                         			<th>No.Of Lecture</th>
+                                        			<th>Delete</th>
                                         			
                                         		</tr>
                                  <?php foreach ($t_diary as $item) { ?>		
                                         <tr>
-                                        	<td><?php echo $item->session_id;?></td>		<!-- same as database -->
+                                        	<td><?php echo $item->session_id;?></td>		
                                         	<td><?php echo $item->course_id;?></td>
                                         	<td><?php echo $item->semester_id ;?></td>
                                        		<td><?php echo $item->section_id ;?></td>
@@ -180,9 +186,13 @@
                                         	<td><?php echo $item->unit ;?></td>	
                                         	<td><?php echo $item->topic;?></td>
                                         	<td><?php echo $item->no_of_lecture ;?></td>
+                                        	<td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
                                			</tr>
                                 <?php } ?> 
 
 	
 		
 	</table>
+	</div>
+</div>
+</div>

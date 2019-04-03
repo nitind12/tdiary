@@ -5,19 +5,20 @@ class Lessonedit_model extends CI_Model
 {
 	function fetchtable()
 	{
-		$query = $this->db->get("lesson");		//lesson is table name of lecture database
+		$query = $this->db->get("lesson");		
 		return $query->result();
 	}
 	function savingdata()
 	{
 		$data = array(
 			'session_id' => $this->input->post('session'),
-			'course_id' => $this->input->post('course'),		
+			'course_id' => $this->input->post('txtcourse'),		
 			'semester_id' => $this->input->post('txtsemester'),
 			'section_id' => $this->input->post('txtsection'),
 			'subject_id' => $this->input->post('txtsubject'),
 			'start_time' => $this->input->post('txtstart'),
 			'end_time' => $this->input->post('txtend'),
+			'lesson_id'=>$this->input->post('lesson_no'),	
 			'date' => $this->input->post('Date'),
 			'topic' => $this->input->post('Topic'),
 			'unit' => $this->input->post('Unit'),
@@ -27,7 +28,11 @@ class Lessonedit_model extends CI_Model
 		
 		);
 		
-		$this->db->insert('lesson',$data);		//lesson is a table name of lecture database
+		$this->db->insert('lesson',$data);	
 
+	}
+	function del($a){
+		$this->db->delete('lesson',array('lesson_id' => $a));
+		return;
 	}
 }?>

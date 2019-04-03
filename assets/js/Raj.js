@@ -101,7 +101,7 @@ $(document).ready(function()
 
 		$.ajax({
 			url:site_url_+ '/marks/viewmarks',
-			method: 'post',
+			type: 'post',
 			data: data_,
 			datatype: 'json',
 			

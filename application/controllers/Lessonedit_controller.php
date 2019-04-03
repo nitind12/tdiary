@@ -29,6 +29,14 @@ class Lessonedit_controller extends CI_Controller
         redirect('Lessonedit_controller');
     }
 
+    public function del1()
+    {
+        $u = $this->uri->segment(3);
+        $this->obj->del($u);
+        
+        redirect('Lessonedit_controller','refresh');
+    }
+
 
   /*  public function authenticate()  
     {  

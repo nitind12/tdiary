@@ -32,7 +32,15 @@ class Edit_controller extends CI_Controller
     public function del1()
     {
         $u = $this->uri->segment(3);
-        $this->obj->del($u);
+        $this->obj->delete1($u);
+        
+        redirect('Edit_controller','refresh');
+    }
+
+        public function del2()
+    {
+        $u = $this->uri->segment(3);
+        $this->obj->delete2($u);
         
         redirect('Edit_controller','refresh');
     }

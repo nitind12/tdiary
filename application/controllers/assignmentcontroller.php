@@ -11,8 +11,9 @@ class Assignmentcontroller extends CI_Controller{
 		$data['users'] = $this->um->fetchtable();
 		//$this->load->view('assignmentview',$data);
 		 $data['page_'] = 'assignmentview';
+		 $data['title'] = 'Edit Assignment';
        
-        $this->load->view('templates/header');
+        $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		

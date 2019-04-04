@@ -5,17 +5,20 @@ class Testmodel extends CI_Model{
 		$query = $this->db->get("studentmarks");
 		return $query->result();
 	}
-	function savingdata()
+	public function savingdata()
 	{
 		$data = array(
 			'Course_name' => $this->input->post('Course_name'),
 			'Semester' => $this->input->post('Semester'),
 			'Section' => $this->input->post('Section'),
 			'Subject' => $this->input->post('Subject'),
+			//'Session' => $this->input->post('Session'),
 			'Student_Roll' => $this->input->post('Student_Roll'),
 			//'Student_name' => $this->input->post('Student_name'),
 			'marks1' => $this->input->post('marks1'),
-			'marks2' => $this->input->post('marks2')
+			'marks2' => $this->input->post('marks2'),
+			'status' => '1',
+			'username' =>'ra'
 
 		);
 		

@@ -157,6 +157,7 @@ $(document).ready(function()
 
 		var data_ = $('#myform').serialize();
 		var url_ = site_url_+ '/Lessonview_controller/lessonview';
+		$('lessonhere').html('Loading....');
 		//console.log(url_);
 		$.ajax({
 			url:url_,
@@ -233,6 +234,7 @@ $(document).ready(function()
 				if(len > 0){
 					str = str + "<tr>";
 					str = str + "</tr>";
+					//str = str + "<th>Session</th>"
 					str = str + "<th>Lecture No</th>"
 					str = str + "<th>Unit</th>"
 					str = str + "<th>topic</th>"	
@@ -241,6 +243,7 @@ $(document).ready(function()
 
 					for(i=0; i<len;i++){
 						str = str + '<tr>';	
+						//str = str + '<td>' + obj.lect_[i].session + "</td>";
 						str = str + '<td>' + obj.lect_[i].lectureid + "</td>";
 						str = str + '<td>' + obj.lect_[i].unit + "</td>";
 						str = str + '<td>' + obj.lect_[i].topic + "</td>";

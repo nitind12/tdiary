@@ -1,21 +1,26 @@
 <?php
-class Classtestmarksmodel extends CI_Model{
-	
-	public function getData()
+class Classtestmarksmodel extends CI_Model
+{
+	function internalmarks()
 	{
+		$intel = array();
+		$Course = $this->input->post('Course_name');
+		$Semester = $this->input->post('Semester');
+		$Section = $this->input->post('Section');
+		$Subject = $this->input->post('Subject');
 		
-		$this->load->database();
-		$q = $this->db->query("SELECT * FROM classtest");
-		return $q->result_array();
-		
-		/*return [
-		['firstname'=>'firstuser','lastname'=>'firstname'],
-		['firstname'=>'seconduser','lastname'=>'secondtname'],
-		['firstname'=>'thirdtuser','lastname'=>'thirdtname'],
-		['firstname'=>'fourthuser','lastname'=>'fourthname'],
-		['firstname'=>'fifthuser','lastname'=>'fifthname'],
-		['firstname'=>'sixthuser','lastname'=>'sixthname'],
-		['firstname'=>'seventhuser','lastname'=>'seventhname'],
-	];*/
+		$this->db->distinct('b.student_id');
+		$this->db->select('a.*, b.first_name');
+		$this->db->where('a.Course_name',$Course);
+		$this->db->where('a.Semester',$Semester);
+		$this->db->where('a.Section',$Section);
+		$this->db->where('a.Subject', $Subject);
+		$this->db->from('classtest a');
+		$this->db->join('std_personal b', 'b.student_id=a.Student_Roll');
+
+		$q = $this->db->get('classtest');
+		//echo $this->db->last_query(); die();
+		return $q->result();
 	}
+	
 }

@@ -185,12 +185,13 @@
                         			<th>Sub</th>
                                     
                                     <th>Syllabus pdf</th>
-                                    <th>Lecture No</th>
+                                  
+                                   <th>Lecture No</th>
                         			<th>Unit</th>
                         			<th>Topic</th>
                                     <th>No Of Lecture</th>
                         			<th>Total</th>
-                        			<th>Delete</th>
+                        			<th>Delete</th>	
                                    
                                   
                         		</tr>
@@ -210,19 +211,20 @@
 	                                        </table>
 	                                    </td>
 	                        			<td><?php echo $item->faculty_id ;?></td>
-	                        			<td><?php echo $item->subject_id;?></td>
+	                        			<td><?php echo $item->subject_id;?></td>                
+	                                    <td><?php echo $item->syllabus_pdf;?></td> 
 	                                    
-	                                    <td><?php echo $item->syllabus_pdf;?></td>  
 	                                    <td><?php echo $item->lectureid ;?></td>     
 	                        			<td><?php echo $item->unit;?></td>
 	                        			<td><?php echo $item->topic ;?></td>
 	                        			
 	                                    <td><?php echo $item->no_of_lecture;?></td>
-	                        			<td><?php echo $item->total_lecture ;?></td>
-	                        			<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lectureid)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
+	                        			<td><?php echo $item->total_lecture ;?></td>	
+	                        			<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->semester_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
 	                        		</tr>
                         	   <?php } ?>
                         	</table>
+                 
 
 
 

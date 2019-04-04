@@ -1,28 +1,29 @@
 <?php
 defined('BASEPATH') OR exit('NO direct script access allowed');
-class Practicaltestcontroller extends CI_Controller{
+class Classtestcontroller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('practicaltestmodel','um');
+		$this->load->model('classtestmodel','um');
 	}
 	function index()
 	{
 		$data['users'] = $this->um->fetchtable();
-		//$this->load->view('practicalview',$data);
-		$data['page_'] = 'practicalview';
-		$data['title'] = 'Practical Edit';
+		//$this->load->view('classtestview',$data);
+		 $data['page_'] = 'classtestview';
+		 $data['title'] = 'Edit Class Test Marks';
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		
+		
 
 	}
-	function savingdata2()
+	function savingdata1()
 	{
-		$this->um->savingdata2();
-		redirect('practicaltestcontroller');
+		$this->um->savingdata1();
+		redirect('classtestcontroller');
 	}
 	/*public function exam_list()
 	{
@@ -41,15 +42,15 @@ class Practicaltestcontroller extends CI_Controller{
 	{
 		//$u = $this->uri->segment(3);
 		//$this->testmodel->del($u);
-		$this->db->empty_table('practicaltest');
-		redirect('practicaltestcontroller','refresh');
+		$this->db->empty_table('classtest');
+		redirect('classtestcontroller','refresh');
 	}
 	public function del1()
 	{
 		$u = $this->uri->segment(3);
 		$this->um->del($u);
 		//$this->db->empty_table('studentmarks');
-		redirect('practicaltestcontroller','refresh');
+		redirect('classtestcontroller','refresh');
 	}
 	/*public function pilih()
 	{

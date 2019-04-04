@@ -32,8 +32,15 @@ class Lectureedit_model extends CI_Model
 		$this->db->insert('lecture',$data);
 	}
 
-		function del($a){
-		$this->db->delete('lecture',array('lectureid' => $a));
+		function delete1($a){
+		$this->db->delete('lecture',array('semester_id' => $a));
+
 		return;
-	}
+		}
+
+		function delete2($a){
+		$this->db->delete('lecture',array('lectureid' => $a));
+
+		return;
+		}
 }?>

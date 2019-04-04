@@ -17,7 +17,9 @@ class Assignmentmodel extends CI_Model{
 			'Submission_date' => $this->input->post('Submission_date'),
 			'Last_submission_date' => $this->input->post('Last_submission_date'),
 			'Unit' => $this->input->post('Unit'),
-			'Topic' => $this->input->post('Topic')
+			'Topic' => $this->input->post('Topic'),
+			'status' => '1',
+			'username' =>'ra'
 
 
 		);

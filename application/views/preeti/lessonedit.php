@@ -131,7 +131,7 @@
 															</tr>
 
 															<tr>
-																<td>No. Of Lecture :	<br>
+																<td>Lecture id:	<br>
     																<input type="number" id="Lecture" name="Lecture"
                                                                      class="span4">
 
@@ -168,7 +168,7 @@
                                         			<th>End Time</th>
                                         			<th>Unit</th>
                                           			<th>Topic</th>	                                        			
-                                        			<th>No.Of Lecture</th>
+                                        			<th>Lecture id</th>
                                         			<th>Delete</th>
                                         			
                                         		</tr>
@@ -185,7 +185,7 @@
                                         	<td><?php echo $item->end_time;?></td>
                                         	<td><?php echo $item->unit ;?></td>	
                                         	<td><?php echo $item->topic;?></td>
-                                        	<td><?php echo $item->no_of_lecture ;?></td>
+                                        	<td><?php echo $item->lectureid;?></td>
                                         	<td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
                                			</tr>
                                 <?php } ?> 

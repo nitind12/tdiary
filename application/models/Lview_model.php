@@ -14,15 +14,15 @@ class Lview_model extends CI_Model
         $Faculty=$this->input->post('txtfaculty');
 
       //  $this->db->distinct('b.lectureid'); 
-      //  $this->db->select('a.*, b.faculty_id');
+      // $this->db->select('a.*, b.session');
 
         $this->db->where('course_id',$Course);
         $this->db->where('semester_id',$Semester);
         $this->db->where('subject_id',$Subject);
         $this->db->where('faculty_id',$Faculty);
 
-      //  $this->db->from('lesson a');
-      //  $this->db->join('lecture b','b.lectureid=a.faculty_id');
+       // $this->db->from('lecture a');
+       //$this->db->join('session b','b.s_id=a.session_id');
 
         $q=$this->db->get('lecture');
         //echo $this->db->last_query();

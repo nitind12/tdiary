@@ -3,7 +3,80 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 
 class Lview_model extends CI_Model
 {
-	function fetchtable()
+    function savingdata3()
+    {
+        $lecture_ = array();
+
+       
+        $Course= $this->input->post('course');
+        $Semester=$this->input->post('txtsemester');
+        $Subject=$this->input->post('txtsubject');
+        $Faculty=$this->input->post('txtfaculty');
+
+      //  $this->db->distinct('b.lectureid'); 
+      // $this->db->select('a.*, b.session');
+
+        $this->db->where('course_id',$Course);
+        $this->db->where('semester_id',$Semester);
+        $this->db->where('subject_id',$Subject);
+        $this->db->where('faculty_id',$Faculty);
+
+       // $this->db->from('lecture a');
+       //$this->db->join('session b','b.s_id=a.session_id');
+
+        $q=$this->db->get('lecture');
+        //echo $this->db->last_query();
+        return $q->result();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*function fetchtable()
 	{      
 		$query = $this->db->get("lecture");
 		return $query->result();
@@ -34,7 +107,7 @@ class Lview_model extends CI_Model
 
 
 
-/*	  public function filled_correctly()
+      public function filled_correctly()
 	  {  
   
         $Course_ = $this->input->post('course');

@@ -1,6 +1,6 @@
 <?php
 class Markscontroller extends CI_Controller{
-	public function index()
+	/*public function index()
 	{
 		//$this->load->helper('array');
 		//test();
@@ -20,5 +20,23 @@ class Markscontroller extends CI_Controller{
 		
 		
 
+	}*/
+	public function index()
+	{
+		 $data['page_'] = 'classtestmarksview';
+		 $data['title'] = 'View Marks';
+       
+        $this->load->view('templates/header',$data);
+        $this->load->view('myrajpage',$data);  
+        $this->load->view('templates/footer');
+		
+
+	}
+
+	function viewmarks(){
+		$this->load->model('classtestmarksmodel','im');
+		$data['marks'] = $this->im->internalmarks();
+
+		echo json_encode($data);
 	}
 }

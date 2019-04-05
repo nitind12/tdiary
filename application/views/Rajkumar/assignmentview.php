@@ -8,6 +8,7 @@
 							<div class="module-head">
 								<h1 >Assignment</h1>
 							</div>
+							
 	<form method="post" id="myform2" action="<?php echo site_url('assignmentcontroller/savingdata3');?>" class="form-horizontal row-fluid">
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
@@ -52,7 +53,37 @@
 									  </select>
 									  </td>
 									  <td>Subject:<br>
-									  	<input type="text"  name="Subject" id="Subject" class="span8"/>
+									  	<!--<input type="text"  name="Subject" id="Subject" class="span8"/>-->
+
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+									  		<option value ="">Select here..</option>
+									  	 <option value ="CE">CE</option>
+									  	 <option value ="Basic Mathematics">Basic Mathematics</option>
+									  	 <option value ="Introduction To Computer">Introduction To Computer</option>
+									  	 <option value ="POP">POP</option>
+									  	 <option value ="Financial Account">Financial Account</option>
+									  	 <option value ="Descrete Mathematics">Descrete Mathematics</option>
+									  	 <option value ="DBMS">DBMS</option>
+									  	 <option value ="DS">DS</option>
+									  	 <option value ="DE">DE</option>
+									  	 <option value ="OS">OS</option>
+									  	 <option value ="OB">OB</option>
+									  	 <option value ="OT">OT</option>
+									  	 <option value ="CG">CG</option>
+									  	 <option value ="CSA">CSA</option>
+									  	 <option value ="OOP WITH C++">OOP WITH C++</option>
+									  	 <option value ="DCN">DCN</option>
+									  	 <option value ="NAST">NAST</option>
+									  	 <option value ="Unix And Shell Programming">Unix And Shell Programming</option>
+									  	 <option value ="ES">ES</option>
+									  	 <option value ="Java">Java</option>
+									  	 <option value ="SE">SE</option>
+									  	 <option value ="AI">AI</option>
+									  	 <option value ="Python">Python</option>
+									  	 <option value ="C#">C#</option>
+									  	 <option value ="DBMS">Web Tech</option>
+
+									  </select>
 									  </td>
 
 
@@ -91,13 +122,13 @@
 								</table><br><br>
 								<center>
 								<div class="control-group">
-											<div class="controls">
+											<!--<div class="controls">-->
 												
-												<button type="submit" class="btn" name="save">INSERT RECORD</button>
-											</div>
+												<button type="submit" class="btn btn-primary" name="save">INSERT RECORD</button>
+											<!--</div>-->
 										</div></center><br><br>
 									</form>
-									<center><a href="<?php echo site_url('assignmentcontroller/del/' )?>" class="btn " onclick="return confirm('Are you sure to delete whole data from the table??')">Delete Whole Data From the Table!</a></center>
+									<center><a href="<?php echo site_url('assignmentcontroller/del/' )?>" class="btn btn-primary " onclick="return confirm('Are you sure to delete whole data from the table??')">Delete Whole Data From the Table!</a></center>
 									<br>
 										<table border="1" cellpadding="5" cellspacing="5" width="40%" align="center">
 
@@ -129,7 +160,7 @@
 				<td align="center"><?php echo $item->Last_submission_date;?></td>
 				<td align="center"><?php echo $item->Unit;?></td>
 				<td align="center"><?php echo $item->Topic;?></td>
-				<td><a href="<?php echo site_url('assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
+				<td><a href="<?php echo site_url('assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
 				<!--<td><a href="<?php echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
 			</tr>
 

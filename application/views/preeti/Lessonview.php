@@ -5,7 +5,7 @@
 
         <div class="module">
             <div class="module-head">
-                 <h2>Lesson Plan</h2>
+                 <h2>View Lesson Plan</h2>
             </div>
                 <div class="module-body">
                     <form  id="myform" name="myform" class="form-horizontal row-fluid">
@@ -77,7 +77,7 @@
                                              </div>
                                             </div>
                               </form>
-                              
+                              <br>
 
                                     <div>
                                         
@@ -92,8 +92,8 @@
                     
                              
 
-      
-                                        <!-- view database in page -->
+  <!--    
+                                     view database in page -->
                                        <!-- 	<table class="table table-striped table-bordered table-condensed">
                                         		<tr style="text-align: left">
                                                  
@@ -114,7 +114,7 @@
                                         		
                                                   
                                                     <td><?php echo $item->lesson_id ;?></td>
-                                                      <td><?php echo $item->subject_id ;?></td>
+                                                    <td><?php echo $item->subject_id ;?></td>
                                                     <td><?php echo $item->time_duration ;?></td>
                                         			<td><?php echo $item->start_time;?></td>
                                         			<td><?php echo $item->end_time;?></td>

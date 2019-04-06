@@ -9,7 +9,7 @@
 							<div class="module-head">
 								<h1>Internal Test</h1>
 							</div>
-	<form method="post" id="myform1" action="<?php echo site_url('/savingdata');?>" class="form-horizontal row-fluid">
+	<form method="post" id="myform1" action="<?php echo site_url('test/savingdata');?>" class="form-horizontal row-fluid">
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->
@@ -17,8 +17,10 @@
 				<tbody>
 								  
 									<tr>
-									  <td >Course_name:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_name" id="Course_name" >
+									  <td><input type="text" name="Student_name" id="Student_name"class="span8"  /></td>
+									  
+
+									  	<select tabindex="1"data-placeholder="enter your s_no.." class="span8" name="Course_name" id="Course_name" >
 									  		<option value ="">Select here..</option>
 									  	 <option value ="BCA">BCA</option>
 									  	 <option value ="BBA">BBA</option>

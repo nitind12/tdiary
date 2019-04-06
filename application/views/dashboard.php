@@ -6,7 +6,7 @@
             </div>
             <div class="span9">
                 <!-- code here -->
-                 <?php $this->load->view('satyam/'.$page_); ?>
+                 
             </div>
         </div>
     </div>

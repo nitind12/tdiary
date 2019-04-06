@@ -142,7 +142,7 @@
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>More Pages </a>
                                     <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
+                                        <li><a href="<?php echo site_url('stu1c/index');?>"><i class="icon-inbox"></i>Login </a></li>
                                         <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
                                         <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
                                     </ul>

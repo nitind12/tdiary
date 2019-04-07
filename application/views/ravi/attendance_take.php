@@ -2,7 +2,7 @@
   
   <div class="module">
               <div class="module-head">
-                <h3>ONLINE_ATTENDANCE   <div style="float:right">  <?php echo "date"?></div></h3>
+                <h3>ONLINE_ATTENDANCE   <div style="float:right"> <input type="hidden" value="<?php echo date("d-m-yy")?>" name="date" id="date"><?php echo date("d-M-Y")?> </div></h3>
                         </div>
               <div class="module-body table">
                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Main/submitattendance_controller');?>">

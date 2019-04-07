@@ -16,13 +16,12 @@
           <b>Add-Class</b>
         </button>
       </div>
-
     <?php foreach($cls_in_session as $item){?>
-      <div class="btn-box-row row-fluid  span2"style="background: #f0f0f0; border-radius: 8px; padding: 3px; vertical-align: top; height:auto; color: #000090; border: #808080 solid 1px">
-        <div style="border: #ff0000 solid 0px;; clear: both"> 
-          <a href="<?php echo site_url('Main/deleteClass/'.$item->s_no);?>" class="btn btn-danger delete-class-warning" style="padding: 0px 3px; float: right;" >&times;</a>
+      <div class="btn-box-row row-fluid  span2"style="background: #f0f0f0; border-radius: 12px; padding: 3px; vertical-align: top; color: #000090; border: #808080 dotted 1px">
+        <div style="float: right: border: #ff0000 solid 0px;"> 
+          <a href="<?php echo site_url('Main/deleteClass/'.$item->s_no);?>" class="btn btn-danger delete-class-warning" style="padding: 0px 3px; float: right;" onclick="return confirm('Are you sure')">&times;</a>
         </div>
-          <div class="btn-box-row row-fluid"  style="border: #ff0000 solid 0px; clear: both">
+          <div class="btn-box-row row-fluid"  style="border: #ff0000 solid 0px; float: left">
             <a href="<?php echo site_url('main/takeattendance_controller/'.$item->s_no);?>" id="<?php echo $item->s_no;?>">
               Session:<?php echo $item->session_id?><br>
               <?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br><?php echo $item->subject_id;?>

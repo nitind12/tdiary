@@ -32,10 +32,12 @@ class Add_class_model extends CI_Model
 		function add_attendance()
 		{
 		$intel = array();
-		$this->db->distinct('b.session_id');
+		$this->db->distinct('b.session_id ');
 		$this->db->select('a.*, b.first_name ,b.student_id');
 		$this->db->from('add_class a');
 		$this->db->join('std_personal b', 'b.session_id=a.session_id');
+		$this->db->join('std_personal c', 'c.course_id=a.course_id');
+
 
 		$q = $this->db->get('add_class');
 		//echo $this->db->last_query();
@@ -45,11 +47,11 @@ class Add_class_model extends CI_Model
 		{
 			$mk1 = $this->input->post('optionsRadios');
 			$stdroll = $this->input->post('Student_Roll');
-		
+			$date= $this->input->post('date');
 			for($i=0; $i<count($mk1); $i++)
 			{
 			$data = array(
-			'date'=>'21/05/2019',
+			'date'=>$date,
 			'time'=>'02:00',
 			'roll_no' => $stdroll[$i],
 			'attendance_status' => $mk1[$i],

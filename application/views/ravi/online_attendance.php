@@ -17,7 +17,7 @@
  <?php foreach($cls_in_session as $item){?>
       <div class="btn-box-row row-fluid  btn-box big span4"style=" float: left; color: #000090;">
         <div class="class"> 
-            <a href="" class="btn btn-danger delete-class-warning" style=" float: right;" >&times;</a>
+            <a href="<?php echo site_url('Main/deleteClass/'.$item->s_no);?>" class="btn btn-danger delete-class-warning" style=" float: right;" >&times;</a>
           </div>
           <a href="<?php echo site_url('main/takeattendance_controller/'.$item->s_no);?>" id="<?php echo $item->s_no;?>">
           <div class="btn-box-row row-fluid span2" style="font-size: 11px !important; text-align: left">

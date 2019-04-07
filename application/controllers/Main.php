@@ -51,7 +51,12 @@ class Main extends CI_Controller {
     {  
         $this->am->take_attendance(); 
         redirect('Main/attendance_controller');   
-        }
+    }
+
+    function deleteClass($no_){
+        $res = $this->am->delClass($no_);
+        redirect('Main/attendance_controller');
+    }
     
  }
 ?>  

@@ -15,14 +15,12 @@
       </div>
 
  <?php foreach($cls_in_session as $item){?>
-            
-      <a href="<?php echo site_url('main/takeattendance_controller/'.$item->s_no);?>" id="<?php echo $item->s_no;?>">
-          
       <div class="btn-box-row row-fluid  btn-box big span4"style=" float: left; color: #000090;">
         <div class="class"> 
-            <div class="btn btn-danger delete-class-warning" data-toggle="modal" style=" float: right;" data-target=".delete-warning">&times;</div>
+            <a href="" class="btn btn-danger delete-class-warning" style=" float: right;" >&times;</a>
           </div>
-          <div class="btn-box-row row-fluid">
+          <a href="<?php echo site_url('main/takeattendance_controller/'.$item->s_no);?>" id="<?php echo $item->s_no;?>">
+          <div class="btn-box-row row-fluid span2" style="font-size: 11px !important; text-align: left">
           <b>Session:<?php echo $item->session_id?></b>
       
           <b>Course:<?php echo $item->course_id?></b>
@@ -68,7 +66,6 @@
             </div>
         </div>
       </div>
-     
      
   </div>
 </div>

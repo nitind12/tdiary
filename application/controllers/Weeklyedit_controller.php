@@ -13,6 +13,8 @@ class Weeklyedit_controller extends CI_Controller
 	function index()
 	{
 		$data['t_diary'] = $this->obj->fetchtable();
+		 $data['course']=$this->obj->getCourse();
+		
 	    $data['title'] = "Weeklyedit page";
         $data['page_'] = "Weeklyedit";
 

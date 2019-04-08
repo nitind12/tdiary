@@ -1,4 +1,8 @@
-
+<style type="text/css">
+    .show-read-more .more-text{
+        display: none;
+    }
+</style>
 
 
  <div class="span9">
@@ -15,34 +19,15 @@
 									<tbody>
 										<tr>
 
-												<td>
-														Session:<br>
-														
-														<select tabindex="1" data-placeholder="Select here.." class="span8" name="session" id="session" >
-                                                            <option value ="">Select here..</option>
-                                                         <option value ="1">1</option>
-                                                         <option value ="2">2</option>
-                                                         <option value ="3">3</option>
-                                                         <option value ="4">4</option>
-                                                         <option value ="5">5</option>
-                                                         <option value ="6">6</option>
-                                                         <option value ="7">7</option>
-                                                         <option value ="8">8</option>
-                                                     </select>
-                                                </td>
-											
-												</td>
 											<td>  
 												Course Name:<br>
 														
 															<select tabindex="1" data-placeholder="Select here.." class="span8" name="txtcourse" id="txtcourse">
-																<option value="">Select here..</option>
-																<option value="BCA">BCA</option>
-																<option value="BBA">BBA</option>
-																<option value="B.COM">B.COM</option>
-																<option value="POLY TECHNIQUE">POLY TECHNIQUE</option>
-																<option value="BSC">BSC</option>
-																<option value="HM">HM</option>
+																 
+                                                                    <option value="">Select Course</option>
+                                                                    <?php foreach ($course as  $item)   { ?>
+                                                                        <option value="<?php echo $item->course_id;?>"><?php echo $item->name_of_courses ?></option>
+                                                                    <?php }?>
 															</select>
 										  	 </td>
 
@@ -73,17 +58,15 @@
 															  	 <option value ="D">D</option>
 									  	 
 									 						 </select>
-									 			</td>	
-										</tr>	
-
-
-											<tr>
+									 			</td>
+									 			
 
 												<td>
 														Subject:<br>
 														
 														<input type="text" id="txtsubject" name="txtsubject" class="span8">													
 												</td>
+												<tr>
 
 
 												<td>
@@ -98,10 +81,10 @@
 														<input type="time" id="txtend" name="txtend" class="span8">													
 												</td>
 
-												<td>
+												<td colspan="2">
 														Lesson No:<br>
 														
-														<input type="text" id="lesson_no" name="lesson_no" class="span8">													
+														<input type="text" id="lesson_no" name="lesson_no" class="span4">													
 												</td>
 											</tr>	
 
@@ -157,7 +140,7 @@
 
 								<table class="table table-striped table-bordered table-condensed">
                                         		<tr style="text-align: left">
-                                                    <th>Session</th>		
+                                                    		
                                         			<th>Course</th>
                                         			<th>Sem</th>
                                         			<th>Sec</th>
@@ -173,8 +156,8 @@
                                         			
                                         		</tr>
                                  <?php foreach ($t_diary as $item) { ?>		
-                                        <tr>
-                                        	<td><?php echo $item->session_id;?></td>		
+                                        <tr id='clickedit'>
+                                        			
                                         	<td><?php echo $item->course_id;?></td>
                                         	<td><?php echo $item->semester_id ;?></td>
                                        		<td><?php echo $item->section_id ;?></td>
@@ -184,7 +167,7 @@
                                         	<td><?php echo $item->start_time;?></td>
                                         	<td><?php echo $item->end_time;?></td>
                                         	<td><?php echo $item->unit ;?></td>	
-                                        	<td><?php echo $item->topic;?></td>
+                                        	<td  class="show-read-more"><?php echo $item->topic;?></td>
                                         	<td><?php echo $item->lectureid;?></td>
                                         	<td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
                                			</tr>

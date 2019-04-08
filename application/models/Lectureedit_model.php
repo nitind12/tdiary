@@ -25,22 +25,33 @@ class Lectureedit_model extends CI_Model
 			'topic'=>$this->input->post('topic'),
             'no_of_lecture' => $this->input->post('No_Of_Lecture'),
 			'total_lecture' => $this->input->post('txttotal'),
-            'status'=>'1',
+			'status'=>'1',
             'username'=>'ra'
            );
 		
-		$this->db->insert('lecture',$data);
+	
+
+		//$this->db->where('lectureid',$data);
+		//$this->db->update('lecture',$data);
+
+			$this->db->insert('lecture',$data);
 	}
 
-		function delete1($a){
-		$this->db->delete('lecture',array('semester_id' => $a));
 
-		return;
-		}
 
-		function delete2($a){
+
+
+	function getCourse()
+	{
+		$this->db->select('course_id , name_of_courses');
+		$query = $this->db->get('course_table');
+		return $query->result();
+	}
+	
+
+		function del($a)
+		{
 		$this->db->delete('lecture',array('lectureid' => $a));
-
 		return;
 		}
 }?>

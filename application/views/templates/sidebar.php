@@ -28,6 +28,8 @@
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>Lecture Plan </a>
                                     <ul id="togglePages1" class="collapse unstyled">
+
+                                       <li><a href="<?php echo site_url('Newedit_controller/index'); ?>"><i class="icon-edit"></i>New Edit</a></li>        
                                        
 
                                         <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
@@ -85,8 +87,10 @@
                                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                                 </i>Class Test </a>
                                                   <ul id="togglePages100" class="collapse unstyled">
-                                        <li><a href="<?php echo site_url('classtestcontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
-                                        <li><a href="<?php echo site_url('markscontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
+
+                                                    <li><a href="<?php echo site_url('classtestcontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
+
+                                                    <li><a href="<?php echo site_url('markscontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
                                         
                                     </ul>
                                 </li>

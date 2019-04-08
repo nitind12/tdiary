@@ -41,11 +41,9 @@ class Main extends CI_Controller {
     
      public function takeattendance_controller()  //showing the page of attendance;
 
-    public function takeattendance_controller($no_, $sess, $crs)  //showing the page of aatendance;
+   // public function takeattendance_controller($no_, $sess, $crs)  //showing the page of aatendance;
     {  
-      //  $data['title'] = "TAKE-ONLINE_ATTENDANCE";
-        //hello;
-
+        $data['title'] = "TAKE-ONLINE_ATTENDANCE";
         $data['page_'] = "attendance_take";        
         $this->load->view('templates/header', $data);
         $data['add_attend'] = $this->am->add_attendance($sess, $crs);

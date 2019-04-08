@@ -45,6 +45,7 @@ class Main extends CI_Controller {
         $data['title'] = "TAKE-ONLINE_ATTENDANCE";
         $data['page_'] = "attendance_take";        
         $this->load->view('templates/header', $data);
+           $data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);
            $data['add_attend'] = $this->am->add_attendance($sess, $crs);
          $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');

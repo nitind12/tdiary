@@ -5,17 +5,24 @@
             <a href="<?php echo site_url('Main/deleteClass/'.$item->s_no);?>" class="btn btn-danger delete-class-warning" style=" float: right;"  onclick="return confirm('Are you sure')" >&times;</a>
           </div>
           <a href="<?php echo site_url('main/takeattendance_controller/'.$item->s_no.'/'.$item->session_id.'/'.$item->course_id);?>" id="<?php echo $item->s_no;?>"><div class="btn-box-row row-fluid span2" style="font-size: 11px !important; text-align: left">
-          <b>Session:<?php echo $item->session_id?></b>
+          <b>Session:<td><?php echo $item->session_id?></b>
+                                <input type="hidden" value="$item->session_id?>" name="session_name" id="s_no_<?php echo $item->session_id?>">
+                    </td>
       
-          <b>Course:<?php echo $item->course_id?></b>
-      
-          <b>Semester:<?php echo $item->semester_id?></b>
+          <b>Course:<td><?php echo $item->course_id?></b>
+                      <input type="hidden" value="<?php echo $item->course_id?>" name="course_nane" id="s_no_<?php echo $item->course_id?>">
+                    </td>      
+          <b>Semester:<td><?php echo $item->semester_id?></b>
+                      <input type="hidden" value="<?php echo $item->semester_id?>" name="semster_name" id="s_no_<?php echo $item->semester_id?>">
+                    </td>
           
-          <b>Section:<?php  echo $item->section_id?></b>
+          <b>Section:<td><?php  echo $item->section_id?></b>
+                      <input type="hidden" value="<?php  echo $item->section_id?>" name="section_name" id="s_no_<?php  echo $item->section_id?>">
+                    </td>
           
-          <b>Subject:<?php echo $item->subject_id;?></b>
-
-         
+          <b>Subject:<td><?php echo $item->subject_id;?></b>
+                      <input type="hidden" value="<?php echo $item->subject_id;?>" name="subject_name" id="s_no_<?php echo $item->subject_id;?>">
+                    </td>        
       </div>
 
       </a>

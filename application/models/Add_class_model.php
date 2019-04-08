@@ -51,7 +51,7 @@ class Add_class_model extends CI_Model
 			for($i=0; $i<count($mk1); $i++)
 			{
 			$data = array(
-			'date'=>$date,
+			'date'=>'$date',
 			'time'=>'02:00',
 			'roll_no' => $stdroll[$i],
 			'attendance_status' => $mk1[$i],

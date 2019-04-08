@@ -26,7 +26,7 @@
 																 
                                                                     <option value="">Select Course</option>
                                                                     <?php foreach ($course as  $item)   { ?>
-                                                                        <option value="<?php echo $item->course_id;?>"><?php echo $item->name_of_courses ?></option>
+                                                                        <option value="<?php echo $item->s_no;?>"><?php echo $item->course_id ?></option>
                                                                     <?php }?>
 															</select>
 										  	 </td>

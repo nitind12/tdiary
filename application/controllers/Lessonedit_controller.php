@@ -7,16 +7,19 @@ class Lessonedit_controller extends CI_Controller
 	{
         parent::__construct();
        $this->load->model('Lessonedit_model','obj');
+        $this->load->model('Add_class_model','am');
+
         
     }
     
 	function index()
 	{ 
+        $data['cls_in_session'] = $this->am->fetchClass();
         $data['t_diary'] = $this->obj->fetchtable();
-         $data['course']=$this->obj->getCourse();
+        //$data['course']=$this->obj->getCourse();
          
-	 	$data['title'] = "Lesson edit page";
-        $data['page_'] = "Lessonedit";
+	 	$data['title'] = "Lesson divpage";
+        $data['page_'] = "Lesson_div";
 
         
         $this->load->view('templates/header', $data);

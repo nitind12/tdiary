@@ -27,7 +27,7 @@ function savingdata()
 
 		function del($a)
 		{
-		$this->db->delete('lecture',array('lectureid' => $a));
+		$this->db->delete('lecture',array('lecture_id' => $a));
 		return;
 		}
 }?>

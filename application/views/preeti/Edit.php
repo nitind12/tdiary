@@ -1,4 +1,12 @@
 
+
+<style type="text/css">
+    .show-read-more .more-text{
+        display: none;
+    }
+</style>
+
+
 <div class="span9">
 	<div class="content">
 
@@ -8,36 +16,34 @@
 			</div>
 				<div class="module-body">
 
+
 				<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Edit_controller/savingdata	');?>"  class="form-horizontal row-fluid">				
 
 							<table class="table table-striped table-bordered table-condensed">							
                 				<tbody>
 										<tr>
+											<td>Session:	<br>
+														
+														<input type="text" id="session" name="session" class="span8">
+												</td>
 											
 										
-												<td>
-														Session:<br>
-														
-														<input type="text" id="session" name="session" class="span8">													
-												</td>
 												<td>		
 											
-												Course Name:<br>
+												<label>Course Name:</label>
 														
 															<select tabindex="1" data-placeholder="Select here.." class="span8"  id="course" name="course">
-																<option value="">Select here..</option>
-																<option value="BCA">BCA</option>
-																<option value="BBA">BBA</option>
-																<option value="B.COM">B.COM</option>
-																<option value="POLY TECHNIQUE">POLY TECHNIQUE</option>
-																<option value="BSC">BSC</option>
-																<option value="HM">HM</option>
+																<option value="">Select Course</option>
+																<?php foreach ($course as  $item)	{ ?>
+																<option value="<?php echo $item->course_id;?>"><?php echo $item->name_of_courses ?></option>
+															<?php }?>
+																
 															</select>
 												
 										  	 </td>
 
 										  
-												  <td>Semester:<br>
+												  <td><label>Semester:</label>
 												  	<select tabindex="1" data-placeholder="Select here.." class="span8" name="txtsemester" id="txtsemester">
 												  		<option value ="">Select here..</option>
 												  	 <option value ="1">1</option>
@@ -132,7 +138,7 @@
 											</td>
 
 											<td>
-													<textarea id="topic" name="topic" class="span8" rows="5"  cols="25" >
+													<textarea id="topic" name="topic" class="span8" rows="5"  cols="30" >
 														
 													</textarea>
 											
@@ -171,18 +177,13 @@
                         			<th>Course</th>
                         			<th>Sem</th>
                         			
-                                    <th>
-                                         <table class="table table-striped table-bordered table-condensed">
-                                            <th colspan="3"><center>Date</center></th>
-                                            <tr>
+                                   
                                 			     <th>Date of Commence<br>ment</th>
                                 			     <th>Date Of Completion</th>
                                 			           
-                                            </tr>
-                                         </table>
-                                    </th>
+                                    
                         			<th>Faculty</th>
-                        			<th>Sub</th>
+                        			<th>Subject</th>
                                     
                                     <th>Syllabus pdf</th>
                                   
@@ -197,30 +198,24 @@
                         		</tr>
 
                         	   <?php foreach ($t_diary as $item) { ?>
-	                        		<tr>
+	                        		<tr id='clickedit'>
 	                        			<td><?php echo $item->session_id;?></td>
 	                        			<td><?php echo $item->course_id;?></td>
 	                        			<td><?php echo $item->semester_id ;?></td>
-	                                    <td>
-	                                        <table class="table table-striped table-bordered table-condensed">
-	                                            <tr>
+	                        			
 	                            		          	 <td><?php echo $item->date_of_commencement ;?></td>
-	                            			         <td><?php echo $item->date_of_completion ;?></td>
-	                            			         
-	                                            </tr>
-	                                        </table>
-	                                    </td>
+	                            			         <td><?php echo $item->date_of_completion ;?></td>	                            			         	                                   
 	                        			<td><?php echo $item->faculty_id ;?></td>
 	                        			<td><?php echo $item->subject_id;?></td>                
 	                                    <td><?php echo $item->syllabus_pdf;?></td> 
 	                                    
 	                                    <td><?php echo $item->lectureid ;?></td>     
 	                        			<td><?php echo $item->unit;?></td>
-	                        			<td><?php echo $item->topic ;?></td>
+	                        			<td  class="show-read-more"><?php echo $item->topic ;?></a></td>
 	                        			
 	                                    <td><?php echo $item->no_of_lecture;?></td>
 	                        			<td><?php echo $item->total_lecture ;?></td>	
-	                        			<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->semester_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
+	                        			<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lectureid)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
 	                        		</tr>
                         	   <?php } ?>
                         	</table>

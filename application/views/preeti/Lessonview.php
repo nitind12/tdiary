@@ -97,6 +97,8 @@
                                        <!-- 	<table class="table table-striped table-bordered table-condensed">
                                         		<tr style="text-align: left">
                                                  
+
+                                                 .00
                                                     
                                                     <th>lecture_id</th>
                                                     <th>Subject</th>

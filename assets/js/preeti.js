@@ -152,67 +152,6 @@ $(document).ready(function()
 
 
 
-
-		$('#btnlesssonsubmit').click(function(){
-
-		var data_ = $('#myform').serialize();
-		var url_ = site_url_+ '/Lessonview_controller/lessonview';
-		$('lessonhere').html('Loading....');
-		//console.log(url_);
-		$.ajax({
-			url:url_,
-			type: 'post',
-			data: data_,
-			success: function(lesson_){
-				$('#lessonhere').html(lesson_);
-				var obj = JSON.parse(lesson_);
-				var len = obj.lm.length;
-				
-				var str = 'x';
-				alert(len);
-				if(len > 0){
-					str = str + "<tr>";
-					str = str + "</tr>";
-					str = str + "<th>Lesson id</th>"					
-					str = str + "<th>Date</th>"
-					str = str + "<th>Start Time</th>"
-					str = str + "<th>End Time</th>"
-					str = str + "<th>Unit</th>"
-					str = str + "<th>topic</th>"	
-					str = str + "<th>No.Of Lecture</th>"
-					str = str + "</tr>";
-
-					for(i=0; i<len;i++){
-						str = str + '<tr>';
-						
-						str = str + '<td>' + obj.lm[i].lesson_id+ "</td>";
-						str = str + '<td>' + obj.lm[i].date + "</td>";
-						str = str + '<td>' + obj.lm[i].start_time + "</td>";
-						str = str + '<td>' + obj.lm[i].end_time+ "</td>";
-						str = str + '<td>' + obj.lm[i].unit + "</td>";
-						str = str + '<td>' + obj.lm[i].topic + "</td>";
-						str = str + '<td>' + obj.lm[i].no_of_lecture+ "</td>";
-						
-						str = str + '</tr>';
-					}
-					$('#lessonhere').html(str);
-				} else {
-					$('#lessonhere').html('No data found');
-				}
-			}, error: function(xhr, error, status){
-				$('#lessonhere').html(xhr.responseText);
-			}
-
-		});
-	});
-
-
-
-
-
-
-
-
 	$('#btnlecturesubmit').click(function()
 	{
 		var data_ = $('#mylectureviewform').serialize();
@@ -259,6 +198,75 @@ $(document).ready(function()
 			}
 		});
 	});	
+
+	
+
+
+
+
+
+
+
+
+
+		$('#btnlesssonsubmit').click(function(){
+
+		var data_ = $('#myform').serialize();
+		var url_ = site_url_+ '/Lessonview_controller/lessonview';
+		$('lessonhere').html('Loading....');
+		//console.log(url_);
+		$.ajax({
+			url:url_,
+			type: 'post',
+			data: data_,
+			success: function(lesson_){
+				$('#lessonhere').html(lesson_);
+				var obj = JSON.parse(lesson_);
+				var len = obj.lm.length;
+				
+				var str = 'x';
+				alert(len);
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th>Lesson id</th>"					
+					str = str + "<th>Date</th>"
+					str = str + "<th>Start Time</th>"
+					str = str + "<th>End Time</th>"
+					str = str + "<th>Unit</th>"
+					str = str + "<th>topic</th>"	
+					str = str + "<th>Lecture Id</th>"
+					str = str + "</tr>";
+
+					for(i=0; i<len;i++){
+						str = str + '<tr>';
+						
+						str = str + '<td>' + obj.lm[i].lesson_id+ "</td>";
+						str = str + '<td>' + obj.lm[i].date + "</td>";
+						str = str + '<td>' + obj.lm[i].start_time + "</td>";
+						str = str + '<td>' + obj.lm[i].end_time+ "</td>";
+						str = str + '<td>' + obj.lm[i].unit + "</td>";
+						str = str + '<td>' + obj.lm[i].topic + "</td>";
+						str = str + '<td>' + obj.lm[i].lectureid+ "</td>";
+						
+						str = str + '</tr>';
+					}
+					$('#lessonhere').html(str);
+				} else {
+					$('#lessonhere').html('No data found');
+				}
+			}, error: function(xhr, error, status){
+				$('#lessonhere').html(xhr.responseText);
+			}
+
+		});
+	});
+
+
+
+
+
+
 
 
 
@@ -322,6 +330,55 @@ $(document).ready(function()
 
 		});
 	});
+
+
+//Read More...
+		    var maxLength = 25;
+
+		    $(".show-read-more").each(function() {
+
+		        var myStr = $(this).text();
+
+		        if($.trim(myStr).length > maxLength){
+
+		            var newStr = myStr.substring(0, maxLength);
+		            var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+		            $(this).empty().html(newStr);
+		            $(this).append(' <a href="javascript:void(0);" class="read-more">Read More...</a>');
+		            $(this).append('<span class="more-text">' + removedStr + '</span>');
+		        }
+		    });
+		    $(".read-more").click(function(){
+		        $(this).siblings(".more-text").contents().unwrap();
+		        $(this).remove();
+		    });
+
+
+
+
+
+
+//double click and edit text
+    		var oriVal;
+				$("#clickedit").on('dblclick', 'td', function () {
+
+				    oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text'>").appendTo(this).focus();
+
+				});
+
+				$("#clickedit").on('focusout', 'td > input', function () {
+
+				    var $this = $(this);
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+
+				});
+
+    
 });
 
 
+
+1

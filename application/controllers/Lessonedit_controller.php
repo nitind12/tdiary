@@ -13,6 +13,8 @@ class Lessonedit_controller extends CI_Controller
 	function index()
 	{ 
         $data['t_diary'] = $this->obj->fetchtable();
+         $data['course']=$this->obj->getCourse();
+         
 	 	$data['title'] = "Lesson edit page";
         $data['page_'] = "Lessonedit";
 

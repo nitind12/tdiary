@@ -19,7 +19,7 @@
         <div class="class"> 
             <a href="<?php echo site_url('Main/deleteClass/'.$item->s_no);?>" class="btn btn-danger delete-class-warning" style=" float: right;"  onclick="return confirm('Are you sure')" >&times;</a>
           </div>
-          <a href="<?php echo site_url('main/takeattendance_controller/'.$item->s_no);?>" id="<?php echo $item->s_no;?>">
+          <a href="<?php echo site_url('main/takeattendance_controller/'.$item->s_no.'/'.$item->session_id.'/'.$item->course_id);?>" id="<?php echo $item->s_no;?>">
           <div class="btn-box-row row-fluid span2" style="font-size: 11px !important; text-align: left">
           <b>Session:<?php echo $item->session_id?></b>
       

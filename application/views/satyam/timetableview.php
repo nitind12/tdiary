@@ -3,9 +3,9 @@
 
 						<div class="module">
 							<div class="module-head">
-								<h1>View Timetable </h1>
+								<h1>View Time Table </h1>
 							</div>
-	<form id="myform1" name="myform1" class="form-horizontal row-fluid">
+	<form id="myform100" name="myform100" class="form-horizontal row-fluid">
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->

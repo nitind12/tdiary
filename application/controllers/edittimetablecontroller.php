@@ -49,8 +49,8 @@ class Edittimetablecontroller extends CI_Controller{
 		$data['Student_name'] = $dt->Student_name;
 		$data['marks1'] = $dt->marks1;
 		$data['marks2'] = $dt->marks2;
-	}
-	public function update()
+	}*/
+	/*public function update()
 	{
 		if($this->input->post('edit'))
 		{

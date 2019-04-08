@@ -1,14 +1,45 @@
 $(document).ready(function()
 {
+
+	$('#myform111').submit(function()
+	{
+		
+		if($.trim($('#Course_id').val()) == '')
+			{
+				alert('Course_id must be filled out');
+			}
+		else if($.trim($('#Semester').val()) == '')
+			{
+				alert('Semester must be filled out');
+			}
+		else if($.trim($('#Session').val()) == '')
+			{
+				alert('Session must be filled out');
+			}
+		else if($.trim($('#Section').val()) == '')
+			{
+				alert('Section must be filled out');
+			}
+
+			else
+			{
+				$('#myform111').submit();
+			}
+		return false;
+
+
+		
+	});
+
 	$('#myform100').submit(function()
 	{
 		if($.trim($('#Day').val()) == '')
 			{
 				alert('Day must be filled out');
 			}
-		else if($.trim($('#Semester_id').val()) == '')
+		else if($.trim($('#Semester').val()) == '')
 			{
-				alert('Semester_id must be filled out');
+				alert('Semester must be filled out');
 			}
 		else if($.trim($('#Section').val()) == '')
 			{
@@ -22,14 +53,14 @@ $(document).ready(function()
 			{
 				alert('Subject_id must be filled out');
 			}
-		else if($.trim($('#Faculty_id').val()) == '')
+		else if($.trim($('#Session').val()) == '')
 			{
-				alert('Faculty_id must be filled out');
+				alert('Session must be filled out');
 			}
-		else if($.trim($('#Time_table_id').val()) == '')
+		/*else if($.trim($('#Time_table_id').val()) == '')
 			{
 				alert('Time_table_id must be filled out');
-			}
+			}*/
 		else if($.trim($('#Time').val()) == '')
 			{
 				alert('Time must be filled out');
@@ -46,25 +77,25 @@ $(document).ready(function()
 		return false;
 		
 	});
-	/*$('#myform2').submit(function()
+	/*$('#myform101').submit(function()
 	{
-		if($.trim($('#Course_name').val()) == '')
+		if($.trim($('#Course').val()) == '')
 			{
-				alert('Course_name must be filled out');
+				alert('Course must be filled out');
 			}
 		else if($.trim($('#Semester').val()) == '')
 			{
 				alert('Semester must be filled out');
 			}
+		else if($.trim($('#Session').val()) == '')
+			{
+				alert('Session must be filled out');
+			}
 		else if($.trim($('#Section').val()) == '')
 			{
 				alert('Section must be filled out');
 			}
-		else if($.trim($('#Subject').val()) == '')
-			{
-				alert('Subject must be filled out');
-			}
-		else if($.trim($('#Assignment_id').val()) == '')
+		/*else if($.trim($('#Assignment_id').val()) == '')
 			{
 				alert('Assignment_id must be filled out');
 			}
@@ -102,7 +133,7 @@ $(document).ready(function()
 	});*/
 	$('#btnsubmit').click(function(){
 		
-		var data_ = $('#myform1').serialize();
+		var data_ = $('#myform100').serialize();
 
 
 		$.ajax({
@@ -120,30 +151,30 @@ $(document).ready(function()
 				if(len > 0){
 					str = str + "<tr>";
 					str = str + "</tr>";
-					str = str + "<th> Semester_id</th>"
+					str = str + "<th> Semester</th>"
 					str = str + "<th> Section</th>"
 					str = str + "<th> Course_id</th>"
 					str = str + "<th> Subject_id</th>"
-					//str = str + "<th> Faculty_id</th>"
+					str = str + "<th> Session</th>"
 					//str = str + "<th> Time_table_id</th>"
 					str = str + "<th> Time</th>"
 					str = str + "<th> Room</th>"
 
 					
-					//str = str + "<th> Internal marks2</th>"
+					
 					str = str + "</tr>";
 					for(i=0; i<len;i++){
 						str = str + '<tr>';
-						str = str + '<td>' + obj.marks[i].Semester_id + "</td>";
+						str = str + '<td>' + obj.marks[i].Semester + "</td>";
 						str = str + '<td>' + obj.marks[i].Section + "</td>";
 						str = str + '<td>' + obj.marks[i].Course_id + "</td>";
 						str = str + '<td>' + obj.marks[i].Subject_id + "</td>";
-						//str = str + '<td>' + obj.marks[i].Faculty_id + "</td>";
+						str = str + '<td>' + obj.marks[i].Session + "</td>";
 						//str = str + '<td>' + obj.marks[i].Time_table_id + "</td>";
 						str = str + '<td>' + obj.marks[i].Time + "</td>";
 						str = str + '<td>' + obj.marks[i].Room + "</td>";
 
-						//str = str + '<td>' + obj.marks[i].marks2 + "</td>";
+						
 						
 						str = str + '</tr>';
 					}
@@ -161,3 +192,5 @@ $(document).ready(function()
 	});
 
 });
+
+

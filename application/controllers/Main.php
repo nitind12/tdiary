@@ -31,14 +31,18 @@ class Main extends CI_Controller {
         $this->am->savingdata(); 
         redirect('Main/attendance_controller');   
         }
+
     public function delclass_controller($no_)  
     {  
         $this->am->delclass($no_); 
         redirect('Main/attendance_controller');   
     }
-    public function takeattendance_controller()  //showing the page of aatendance;
+    
+     public function takeattendance_controller()  //showing the page of attendance;
     {  
-        $data['title'] = "TAKE-ONLINE_ATTENDANCE";
+      //  $data['title'] = "TAKE-ONLINE_ATTENDANCE";
+        //hello;
+
         $data['page_'] = "attendance_take";        
         $this->load->view('templates/header', $data);
         $data['add_attend'] = $this->am->add_attendance();
@@ -47,6 +51,7 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
+
     public function submitattendance_controller()               ///showing the page of submit the data;
     {  
         $this->am->take_attendance(); 

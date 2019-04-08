@@ -11,7 +11,7 @@ class Lessonedit_model extends CI_Model
 	function savingdata()
 	{
 		$data = array(
-			//s'session_id' => $this->input->post('session'),
+			//'session_id' => $this->input->post('session'),
 			'course_id' => $this->input->post('txtcourse'),		
 			'semester_id' => $this->input->post('txtsemester'),
 			'section_id' => $this->input->post('txtsection'),
@@ -34,7 +34,7 @@ class Lessonedit_model extends CI_Model
 
 	function getCourse()
 	{
-		$this->db->select('course_id , name_of_courses');
+		$this->db->select('s_no , course_id');
 		$query = $this->db->get('course_table');
 		return $query->result();
 	}

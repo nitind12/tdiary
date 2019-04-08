@@ -17,7 +17,7 @@ class Lectureedit_model extends CI_Model
 			'semester_id' => $this->input->post('txtsemester'),
             'subject_id' => $this->input->post('txtsubject'),
             'syllabus_pdf' => $this->input->post('syllabus'),
-            'lectureid'=>$this->input->post('lectureno'),
+            'lecture_id'=>$this->input->post('lectureno'),
 			'date_of_commencement' => $this->input->post('txtDOC'),
 			'date_of_completion' => $this->input->post('DOC'),			
 			'faculty_id' => $this->input->post('txtfaculty'),
@@ -43,7 +43,7 @@ class Lectureedit_model extends CI_Model
 
 	function getCourse()
 	{
-		$this->db->select('course_id , name_of_courses');
+		$this->db->select('s_no , course_id');
 		$query = $this->db->get('course_table');
 		return $query->result();
 	}
@@ -51,7 +51,7 @@ class Lectureedit_model extends CI_Model
 
 		function del($a)
 		{
-		$this->db->delete('lecture',array('lectureid' => $a));
+		$this->db->delete('lecture',array('lecture_id' => $a));
 		return;
 		}
 }?>

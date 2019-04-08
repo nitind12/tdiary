@@ -24,20 +24,20 @@
                                     
                         			<th>Course</th>
                         			<th>Semester</th>
-                                 	<th>Date of Commencement</th>
-                                	<th>Date Of Completion</th>
+                                 	<!--<th>Date of Commencement</th>
+                                	<th>Date Of Completion</th>		-->
                         			<th>Faculty</th>
                         			<th>Subject</th>
                          		</tr>
 
                         	   <?php foreach ($t_diary as $item) { ?>
-	                        		<tr id='update'>
+	                        		<tr id=''>
 	                        			
 	                        			<td><?php echo $item->course_id;?></td>
 	                        			<td><?php echo $item->semester_id ;?></td>
 	                                   
-	                            		          	 <td><?php echo $item->date_of_commencement ;?></td>
-	                            			         <td><?php echo $item->date_of_completion ;?></td>
+	                            		        <!--  	 <td><?php echo $item->date_of_commencement ;?></td>
+	                            			         <td><?php echo $item->date_of_completion ;?></td>		-->
 	                            			         
 	                                
 	                        			<td><?php echo $item->faculty_id ;?></td>
@@ -138,13 +138,13 @@
 	                        		<tr id='update'>
 	                        			  <td><?php echo $item->syllabus_pdf;?></td> 
 	                                    
-	                                    <td><?php echo $item->lectureid ;?></td>     
+	                                    <td><?php echo $item->lecture_id ;?></td>     
 	                        			<td><?php echo $item->unit;?></td>
 	                        			<td  class="show-read-more"><?php echo $item->topic ;?></a></td>
 	                        			
 	                                    <td><?php echo $item->no_of_lecture;?></td>
 	                        			<td><?php echo $item->total_lecture ;?></td>	
-	                        			<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lectureid)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
+	                        			<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
 	                        		</tr>
                         	   		<?php } ?>
 								</table>

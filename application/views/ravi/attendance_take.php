@@ -56,7 +56,7 @@
 <table class="table">
 <tfoot>
                     <tr>
-                      <th <div class="control-group">
+                      <th> <div class="control-group">
                       <div class="controls">
                         <button type="submit" class="btntake" id="btntake">Submit Form</button>
                       </div>

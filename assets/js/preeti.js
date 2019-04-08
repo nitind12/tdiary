@@ -183,7 +183,7 @@ $(document).ready(function()
 					for(i=0; i<len;i++){
 						str = str + '<tr>';	
 						//str = str + '<td>' + obj.lect_[i].session + "</td>";
-						str = str + '<td>' + obj.lect_[i].lectureid + "</td>";
+						str = str + '<td>' + obj.lect_[i].lecture_id + "</td>";
 						str = str + '<td>' + obj.lect_[i].unit + "</td>";
 						str = str + '<td>' + obj.lect_[i].topic + "</td>";
 						str = str + '<td>' + obj.lect_[i].no_of_lecture+ "</td>";
@@ -375,10 +375,8 @@ $(document).ready(function()
 				    $this.remove(); // Don't just hide, remove the element.
 
 				});
-
-    
+   
 });
 
 
 
-1

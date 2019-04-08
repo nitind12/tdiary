@@ -5,6 +5,7 @@
 							<div class="module-head">
 								<h1>Internal Test Marks </h1>
 							</div>
+							<div class="module-body">
 	<form id="myform3" name="myform3" class="form-horizontal row-fluid">
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
@@ -47,9 +48,39 @@
 									  </select>
 									  </td>
 									  <td>Subject:<br>
-									  	<input type="text" id="Subject" name="Subject" class="span8"  >
+									  	<!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+									  		<option value ="">Select here..</option>
+									  	 <option value ="Cummunicative English">Cummunicative English</option>
+									  	 <option value ="Basic Mathematics">Basic Mathematics</option>
+									  	 <option value ="Introduction To Computer">Introduction To Computer</option>
+									  	 <option value ="POP">POP</option>
+									  	 <option value ="Financial Account">Financial Account</option>
+									  	 <option value ="Descrete Mathematics">Descrete Mathematics</option>
+									  	 <option value ="DBMS">DBMS</option>
+									  	 <option value ="DS">DS</option>
+									  	 <option value ="DE">DE</option>
+									  	 <option value ="OS">OS</option>
+									  	 <option value ="OB">OB</option>
+									  	 <option value ="OT">OT</option>
+									  	 <option value ="CG">CG</option>
+									  	 <option value ="CSA">CSA</option>
+									  	 <option value ="OOP WITH C++">OOP WITH C++</option>
+									  	 <option value ="DCN">DCN</option>
+									  	 <option value ="NAST">NAST</option>
+									  	 <option value ="Unix And Shell Programming">Unix And Shell Programming</option>
+									  	 <option value ="ES">ES</option>
+									  	 <option value ="Java">Java</option>
+									  	 <option value ="SE">SE</option>
+									  	 <option value ="AI">AI</option>
+									  	 <option value ="Python">Python</option>
+									  	 <option value ="C#">C#</option>
+									  	 <option value ="DBMS">Web Tech</option>
+
+									  </select>
 									  </td>
 									</tr>
+									
 								</thead>
 							</table>
 							<div class="control-group">
@@ -58,12 +89,12 @@
 								</div>
 											<div class="controls" style="float:left;">
 												
-												<button type="button" class="btn btn-primary" name="save" value="submit" id="btnViewmarks">Submit</button>
+												<button type="button" class="btn btn-primary" name="save" value="submit" id="btnViewmarks11">Submit</button>
 											</div>
 										</div>
 						</form>
 					<div>
-						<table class="table" border="1" id="markshere">
+						<table class="table" border="1" id="markshere11">
 						</table>
 					</div>
 					</div>

@@ -1,6 +1,7 @@
 $(document).ready(function()
 {
-	$('#myform').submit(function()
+/*	
+	$('#myEdit').submit(function()
 	{	
 		if($.trim($('#session').val()) == '')
 			{
@@ -20,7 +21,7 @@ $(document).ready(function()
 			}
 		else if($.trim($('#DOC').val()) == '')
 			{
-				alert('date of completion must be filled out');
+				alert('Date of completion must be filled out');
 			}
 		else if($.trim($('#txtfaculty').val()) == '')
 			{
@@ -52,7 +53,7 @@ $(document).ready(function()
 			}
 		else
 			{
-				$('#myform').submit();
+				$('#myEdit').submit();
 			}
 		return false;
 		
@@ -61,9 +62,48 @@ $(document).ready(function()
 
 
 
-	$('#myform1').submit(function()
+
+	$('#mylectureviewform').submit(function()
+		{	
+			
+			if($.trim($('#course').val()) == '')
+				{
+					alert('Course must be filled out');
+				}
+			else if($.trim($('#txtsemester').val()) == '')
+				{
+					alert('Semester must be filled out');
+				}
+			else if($.trim($('#txtsubject').val()) == '')
+				{
+					alert('Subject must be filled out');
+				}
+			else if($.trim($('#txtfaculty').val()) == '')
+				{
+					alert('Faculty name must be filled out');
+				}
+			else
+				{
+					$('#mylectureviewform').submit();
+				}
+			return false;
+		
+	});
+
+
+
+
+
+
+
+
+	$('#mylessonedit').submit(function()
 	{
-		if($.trim($('#course').val()) == '')
+		if($.trim($('#session').val()) == '')
+			{
+				alert('Session must be filled out');
+			}
+		else if($.trim($('#txtcourse').val()) == '')
 			{
 				alert('Course must be filled out');
 			}
@@ -74,10 +114,6 @@ $(document).ready(function()
 		else if($.trim($('#txtsection').val()) == '')
 			{
 				alert('Section must be filled out');
-			}
-		else if($.trim($('#txttime').val()) == '')
-			{
-				alert('Timeduration must be filled out');
 			}
 		else if($.trim($('#txtstart').val()) == '')
 			{
@@ -105,10 +141,187 @@ $(document).ready(function()
 			}
 		else
 			{
-				$('#myform1').submit();
+				$('#mylessonedit').submit();
 			}
 		return false;
 	});
+	
+*/
 
 
+
+
+
+
+		$('#btnlesssonsubmit').click(function(){
+
+		var data_ = $('#myform').serialize();
+		var url_ = site_url_+ '/Lessonview_controller/lessonview';
+		$('lessonhere').html('Loading....');
+		//console.log(url_);
+		$.ajax({
+			url:url_,
+			type: 'post',
+			data: data_,
+			success: function(lesson_){
+				$('#lessonhere').html(lesson_);
+				var obj = JSON.parse(lesson_);
+				var len = obj.lm.length;
+				
+				var str = 'x';
+				alert(len);
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th>Lesson id</th>"					
+					str = str + "<th>Date</th>"
+					str = str + "<th>Start Time</th>"
+					str = str + "<th>End Time</th>"
+					str = str + "<th>Unit</th>"
+					str = str + "<th>topic</th>"	
+					str = str + "<th>No.Of Lecture</th>"
+					str = str + "</tr>";
+
+					for(i=0; i<len;i++){
+						str = str + '<tr>';
+						
+						str = str + '<td>' + obj.lm[i].lesson_id+ "</td>";
+						str = str + '<td>' + obj.lm[i].date + "</td>";
+						str = str + '<td>' + obj.lm[i].start_time + "</td>";
+						str = str + '<td>' + obj.lm[i].end_time+ "</td>";
+						str = str + '<td>' + obj.lm[i].unit + "</td>";
+						str = str + '<td>' + obj.lm[i].topic + "</td>";
+						str = str + '<td>' + obj.lm[i].no_of_lecture+ "</td>";
+						
+						str = str + '</tr>';
+					}
+					$('#lessonhere').html(str);
+				} else {
+					$('#lessonhere').html('No data found');
+				}
+			}, error: function(xhr, error, status){
+				$('#lessonhere').html(xhr.responseText);
+			}
+
+		});
+	});
+
+
+
+
+
+
+
+
+	$('#btnlecturesubmit').click(function()
+	{
+		var data_ = $('#mylectureviewform').serialize();
+		var url_ = site_url_+ '/Lview_controller/lessonview';
+		//console.log(url_);
+
+		$.ajax({
+			url:url_,
+			type: 'post',
+			data: data_,
+			success: function(lecture_){
+				$('#lecturehere').html(lecture_);
+				var obj = JSON.parse(lecture_);
+				var len = obj.lect_.length;
+
+				var str = 'x';
+				alert(len)
+
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					//str = str + "<th>Session</th>"
+					str = str + "<th>Lecture No</th>"
+					str = str + "<th>Unit</th>"
+					str = str + "<th>topic</th>"	
+					str = str + "<th>No.Of Lecture</th>"
+					str = str + "</tr>";
+
+					for(i=0; i<len;i++){
+						str = str + '<tr>';	
+						//str = str + '<td>' + obj.lect_[i].session + "</td>";
+						str = str + '<td>' + obj.lect_[i].lectureid + "</td>";
+						str = str + '<td>' + obj.lect_[i].unit + "</td>";
+						str = str + '<td>' + obj.lect_[i].topic + "</td>";
+						str = str + '<td>' + obj.lect_[i].no_of_lecture+ "</td>";
+						
+						str = str + '</tr>';
+				}$('#lecturehere').html(str);	//print table heading
+			}else {
+					$('#lecturehere').html('No data found');
+				}
+			}, error: function(xhr, error, status){
+				$('#lecturehere').html(xhr.responseText);
+			}
+		});
+	});	
+
+
+
+
+
+
+
+
+	$('#btnweeklysubmit').click(function(){
+		var data_ = $('#myweek').serialize();
+		var url_ = site_url_+ '/Weeklyview_controller/lessonview';
+
+		$.ajax({
+			url:url_,
+			type: 'post',
+			data: data_,
+			success: function(weekly_){
+				$('#weeklyhere').html(weekly_);
+				var obj = JSON.parse(weekly_);
+				var len = obj.week.length;
+
+				var str = 'x';
+				alert(len);
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th>Week No</th>"
+					str = str + "<th>Date</th>"
+					str = str + "<th>Unit</th>"	
+					str = str + "<th>Topic</th>"
+					str = str + "<th>No Of Lecture</th>"
+					str = str + "<th>NO Of lecture Schedule</th>"
+					str = str + "<th>No of Lost Due To Holiday</th>"
+					str = str + "<th>No Of Lost Due To CL</th>"
+					str = str + "<th>No Of Extra Taken</th>"
+					str = str + "<th>No Of Lecure Actual Taken</th>"
+					
+					str = str + "</tr>";
+
+					for(i=0; i<len;i++){
+						str = str + '<tr>';	
+						str = str + '<td>' + obj.week[i].week_id + "</td>";
+						str = str + '<td>' + obj.week[i].date + "</td>";
+						str = str + '<td>' + obj.week[i].unit+ "</td>";
+						str = str + '<td>' + obj.week[i].topic+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lecture+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lecture_schedule+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lost_due_to_holiday+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lost_due_to_cl+ "</td>";
+						str = str + '<td>' + obj.week[i].no_extra_taken+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lecture_actual_taken+ "</td>";
+						
+						str = str + '</tr>';
+				}$('#weeklyhere').html(str);
+			}else {
+					$('#weeklyhere').html('No data found');
+				}
+			}, error: function(xhr, error, status){
+				$('#weeklyhere').html(xhr.responseText);
+			}
+
+		});
+	});
 });
+
+

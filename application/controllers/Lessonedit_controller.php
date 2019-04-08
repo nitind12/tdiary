@@ -6,18 +6,36 @@ class Lessonedit_controller extends CI_Controller
 	function __construct()
 	{
         parent::__construct();
+       $this->load->model('Lessonedit_model','obj');
         
     }
     
 	function index()
-	{
-	 	$data['title'] = "lessonedit";
-        $data['page_'] = "lessonedit";
+	{ 
+        $data['t_diary'] = $this->obj->fetchtable();
+	 	$data['title'] = "Lesson edit page";
+        $data['page_'] = "Lessonedit";
+
+        
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
 	
 	}
+
+     function savingdata()
+    {
+         $this->obj->savingdata();
+        redirect('Lessonedit_controller');
+    }
+
+    public function del1()
+    {
+        $u = $this->uri->segment(3);
+        $this->obj->del($u);
+        
+        redirect('Lessonedit_controller','refresh');
+    }
 
 
   /*  public function authenticate()  

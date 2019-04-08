@@ -1,22 +1,39 @@
 <?php
 class Update_Assignment_Controller extends CI_Controller{
-	public function index()
+	/*public function index()
 	{
-		//$this->load->helper('array');
-		//test();
-		//$arr = ['abc'=>'ABC','xyz'=>'XYZ'];
-		//echo element('raj' ,$arr, 'notfound');
+		
 		$this->load->model('update_assignmentmodel');
 		$a = $this->update_assignmentmodel->getData();
-		//print_r($a);
+		
 		$data['marks'] = $this->update_assignmentmodel->getData();
-		//$this->load->view('practicalmarksview',$data);
+		
 		$data['page_'] = 'update_assignmentview';
+		$data['title'] = 'Updated Assignment';
        
-        $this->load->view('templates/header');
+        $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		
 
+	}*/
+
+	public function index()
+	{
+		 $data['page_'] = 'update_assignmentview';
+		 $data['title'] = 'View Marks';
+       
+        $this->load->view('templates/header',$data);
+        $this->load->view('myrajpage',$data);  
+        $this->load->view('templates/footer');
+		
+
+	}
+
+	function viewmarks(){
+		$this->load->model('update_assignmentmodel','im');
+		$data['marks'] = $this->im->internalmarks();
+
+		echo json_encode($data);
 	}
 }

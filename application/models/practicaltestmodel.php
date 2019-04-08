@@ -8,9 +8,13 @@ class Practicaltestmodel extends CI_Model{
 	function savingdata2()
 	{
 		$data = array(
+			'Course_name' => $this->input->post('Course_name'),
+			'Semester' => $this->input->post('Semester'),
+			'Section' => $this->input->post('Section'),
+			'Subject' => $this->input->post('Subject'),
 			'Student_Roll' => $this->input->post('Student_Roll'),
-			'Student_name' => $this->input->post('Student_name'),
-			'Practical_Marks' => $this->input->post('Practical_Marks')
+			//'Student_name' => $this->input->post('Student_name'),
+			'Practical_marks' => $this->input->post('Practical_marks')
 			
 
 		);

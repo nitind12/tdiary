@@ -13,6 +13,7 @@
           <b>Add-Class</b>
         </button>
       </div>
+     
         <?php $this->load->view('ravi/view_class');?>     
   </div>
 </div>

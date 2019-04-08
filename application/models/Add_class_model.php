@@ -29,17 +29,16 @@ class Add_class_model extends CI_Model
 			return $query;
 		}
 	
-		function add_attendance()
+		function add_attendance($sess, $crs)
 		{
 		$intel = array();
-		$this->db->distinct('b.session_id ');
-		$this->db->select('a.*, b.first_name ,b.student_id');
+		$this->db->distinct('b.session_id');
+		$this->db->select('a.*, b.student_id, b.first_name');
+		$this->db->where('a.session_id', $sess);
+		$this->db->where('a.course_id', $crs);
 		$this->db->from('add_class a');
-		$this->db->join('std_personal b', 'b.session_id=a.session_id');
-		$this->db->join('std_personal c', 'c.course_id=a.course_id');
-
-
-		$q = $this->db->get('add_class');
+		$this->db->join('std_personal b', 'a.session_id=b.session_id');
+		$q = $this->db->get();
 		//echo $this->db->last_query();
 		return $q->result();
 		}

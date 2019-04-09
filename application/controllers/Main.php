@@ -39,7 +39,6 @@ class Main extends CI_Controller {
     }
 
 
-
    public function takeattendance_controller($no_,$sess,$crs)  //showing the page of aatendance;
     {  
         $data['title'] = "TAKE-ONLINE_ATTENDANCE";

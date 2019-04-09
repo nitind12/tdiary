@@ -14,10 +14,9 @@ class Lessonedit_controller extends CI_Controller
     
 	function index()
 	{ 
-        $data['cls_in_session'] = $this->am->fetchClass();
-        $data['t_diary'] = $this->obj->fetchtable();
+      
         //$data['course']=$this->obj->getCourse();
-         
+        $data['cls_in_session'] = $this->am->fetchClass(); 
 	 	$data['title'] = "Lesson divpage";
         $data['page_'] = "Lesson_div";
 
@@ -28,10 +27,23 @@ class Lessonedit_controller extends CI_Controller
 	
 	}
 
+       public function lesson_edit()  
+    {  
+        $data['t_diary'] = $this->obj->fetchtable();
+        
+        $data['cls_in_session'] = $this->am->fetchClass();
+        $data['title'] = "lecture_edit";
+        $data['page_'] = "Lessonedit";
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage');  
+        $this->load->view('templates/footer');
+    }
+
      function savingdata()
     {
          $this->obj->savingdata();
-        redirect('Lessonedit_controller');
+        redirect('Lessonedit_controller/lesson_edit');
     }
 
     public function del1()
@@ -39,7 +51,7 @@ class Lessonedit_controller extends CI_Controller
         $u = $this->uri->segment(3);
         $this->obj->del($u);
         
-        redirect('Lessonedit_controller','refresh');
+        redirect('Lessonedit_controller/lesson_edit','refresh');
     }
 
 

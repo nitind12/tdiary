@@ -27,7 +27,7 @@
       
           <b>Semester:<?php echo $item->semester_id?></b>
           
-          <b>Section:<?php  echo $item->section_id?></b>
+         <!-- <b>Section:<?php  echo $item->section_id?></b>    -->
           
           <b>Subject:<?php echo $item->subject_id;?></b>
 
@@ -35,11 +35,9 @@
       </div>
 
       </a>
-    </div>
-      <?php 
-        }
+      </div>
+  <?php  }?>
       
 
-       ?>
 </div>
  </div>

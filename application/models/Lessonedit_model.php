@@ -12,10 +12,10 @@ class Lessonedit_model extends CI_Model
 	{
 		$data = array(
 			//'session_id' => $this->input->post('session'),
-			'course_id' => $this->input->post('txtcourse'),		
-			'semester_id' => $this->input->post('txtsemester'),
-			'section_id' => $this->input->post('txtsection'),
-			'subject_id' => $this->input->post('txtsubject'),
+			//'course_id' => $this->input->post('txtcourse'),		
+			//'semester_id' => $this->input->post('txtsemester'),
+			//'section_id' => $this->input->post('txtsection'),
+			//'subject_id' => $this->input->post('txtsubject'),
 			'start_time' => $this->input->post('txtstart'),
 			'end_time' => $this->input->post('txtend'),
 			'lesson_id'=>$this->input->post('lesson_no'),	

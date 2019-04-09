@@ -42,6 +42,19 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();
 		return $q->result();
 		}
+		function add_view_attendance($sess, $crs)
+		{
+		$intel = array();
+		$this->db->distinct('b.session_id');
+		$this->db->select('a.*');
+		$this->db->where('a.session_id', $sess);
+		$this->db->where('a.course_id', $crs);
+		$this->db->from('add_class a');
+		$q = $this->db->get();
+		//echo $this->db->last_query();
+		return $q->result();
+		}
+		
 		public function take_attendance()
 		{
 			$mk1 = $this->input->post('optionsRadios');

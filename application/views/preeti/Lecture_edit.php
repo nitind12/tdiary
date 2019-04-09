@@ -12,48 +12,71 @@
 				  <h2>Lecture Plan</h2>
 			</div>
 				
+			 <div class="module-body table">
+                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+                  <thead>
+                    <tr>
+                     <th align="center">Session:</th>
+                      <th align="center">Course:</th>
+                      <th align="center">Semester:</th>
+                      <th align="center">Subject:
+                      </th>
+                      
+                      </tr>
+                  </thead>
+                  
+               <tbody>
+                <?php foreach($add_class_in as $item){?>
 
+
+                     <tr >
+                        <td><b><?php echo $item->session_id?></b> </td>
+                        <td><b><?php echo $item->course_id?></b> </td>
+                        <td> <b><?php echo $item->semester_id?></b> </td>
+                       <td> <b><?php echo $item->subject_id;?></b></td>
+                     </tr>        
+              <?php 
+                }
+               ?>
+              </tbody>
+        
+                
+        </table>
+
+          </div>
+         
 
 				<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Edit_controller/savingdata	');?>"  class="form-horizontal row-fluid">
 
-					<table class="table table-striped table-bordered table-condensed">
-						<thead>
-
-                        		<tr style="text-align: left">
-
-                                  	<th>Session</th> 
-                        			<th>Course</th>
-                        			<th>Semester</th>
-                        		<!--	<th>Date Of Commencement</th>
-                        			<th>Date Of Completion</th>			-->
-                        			<th>Faculty</th>
-                        			<th>Subject</th>
-                        		<!--	<th>syllabus pdf</th>		-->
-                         		</tr>
-                         </thead>
-                         <tbody>
-
-							<?php foreach($cls_in_session as $item){?>
-	                        		<tr>
-	                        			<td><?php echo $item->session_id?></td>
-	                        			<td><?php echo $item->course_id;?></td>
-	                        			<td><?php echo $item->semester_id ;?></td>
-	                        			<td><?php echo $item->faculty_id ;?></td>
-	                        			<td><?php echo $item->semester_id ;?></td>
-	                        		</tr>
-	                        	<?php }?>		
-                         	</tbody>
-                         </table>	
-                         <br>		
-
-							<table class="table table-striped table-bordered table-condensed">	
+								<table class="table table-striped table-bordered table-condensed">	
 								<tbody>
+
+
+									<?php foreach ($add_class_in as $item) { ?>
+										<input type="hidden" value="<?php echo $item->add_class_id;?>"
+										 name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
+										<?php }?>
+
 							
 											<tr>
 												 <th colspan="4"><div class="control-group">
 												 	<label class=" span3 control-label" ><h3>Lecture Structure</h3></label>	
 													</div>
 												</th>
+												<tr>
+												 <td colspan="2">									
+														Date Of Commencement:	<br>
+														
+														<input type="date" id="txtDOC" name="txtDOC" class="span8">
+												</td >
+
+												 <td colspan="2">								
+														 Date Of Completion:<br>
+														
+														<input type="date" id="DOC" name="DOC" class="span8">
+												</td>
+
+												</tr>
 											</tr>
 
 										<tr>
@@ -124,34 +147,7 @@
 												</tbody>
 											</table>
 								
-									<table class="table table-striped table-bordered table-condensed">
-
-										<tr style="text-align: left">
-												 <th>Lecture No</th>
-			                        			<th>Unit</th>
-			                        			<th>Topic</th>
-			                                    <th>No Of Lecture</th>
-			                        			<th>Total</th>
-			                        			<th>Delete</th>	
-                                   
-                                  
-                        				</tr>
-
-                        				 <?php foreach ($t_diary as $item) { ?>
-	                        				<tr id='clickedit'>
-	                        					  <td><?php echo $item->lecture_id ;?></td>     
-					                        			<td><?php echo $item->unit;?></td>
-					                        			<td  class="show-read-more"><?php echo $item->topic ;?></a></td>
-					                        			
-					                                    <td><?php echo $item->no_of_lecture;?></td>
-					                        			<td><?php echo $item->total_lecture ;?></td>	
-					                        			<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
-					                        		</tr>
-				                        	   <?php } ?>
-                        				</table>
-                        			</form>
-                        		</div>
-                						
+								
 
 								</div>
 							</div>

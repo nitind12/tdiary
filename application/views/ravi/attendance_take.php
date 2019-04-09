@@ -18,27 +18,27 @@
                       </tr>
                   </thead>
                   
-               
+               <tbody>
                 <?php foreach($add_class_in as $item){?>
 
 
-                  <tr >
-        <td><b><?php echo $item->session_id?></b> </td>
-        <td><b><?php echo $item->course_id?></b> </td>
-        <td> <b><?php echo $item->semester_id?></b> </td>
-        <td> <b><?php  echo $item->section_id?></b> </td>
-       <td> <b><?php echo $item->subject_id;?></b></td>
-                </tr>        
+                     <tr >
+                        <td><b><?php echo $item->session_id?></b> </td>
+                        <td><b><?php echo $item->course_id?></b> </td>
+                        <td> <b><?php echo $item->semester_id?></b> </td>
+                        <td> <b><?php  echo $item->section_id?></b> </td>
+                       <td> <b><?php echo $item->subject_id;?></b></td>
+                     </tr>        
               <?php 
                 }
                ?>
-          </tbody>
+              </tbody>
         
                 
         </table>
 
           </div>
-
+         
                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Main/submitattendance_controller');?>">
 
                 <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">

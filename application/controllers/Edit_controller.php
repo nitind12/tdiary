@@ -22,16 +22,11 @@ class Edit_controller extends CI_Controller
         $this->load->view('templates/footer');
 
     }
-<<<<<<< HEAD
-     public function lecture_edit($no_,$sess,$crs)
+    public function lecture_edit($no_,$sess,$crs)
     {  
      $data['add_class_in'] = $this->obj->add_view_attendance($sess,$crs);
        
         $data['t_diary'] = $this->obj->fetchtable();
-=======
-     public function lecture_edit()  
-    {  
->>>>>>> parent of 649676f... Merge branch 'master' of https://github.com/nitind12/tdiary
         $data['title'] = "lecture_edit";
         $data['page_'] = "Lecture_edit";
         

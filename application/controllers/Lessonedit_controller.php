@@ -32,7 +32,7 @@ class Lessonedit_controller extends CI_Controller
         
 
         $data['t_diary'] = $this->obj->fetchtable(); 
-         $data['add_class_id'] = $this->am->add_view_attendance($sess,$crs);     
+         $data['add_class_in'] = $this->am->add_view_attendance($sess,$crs);     
        
         $data['title'] = "lecture_edit";
         $data['page_'] = "Lessonedit";

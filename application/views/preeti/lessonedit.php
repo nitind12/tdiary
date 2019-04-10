@@ -49,6 +49,14 @@
                                        
 								<table class="table table-striped table-bordered table-condensed">  
 									<tbody>
+
+
+						<?php foreach ($add_class_in as $item) { ?>
+										<input type="hidden" value="<?php echo $item->add_class_id;?>"
+										 name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
+										<?php }?>
+
+												
 										<tr>
 												<td>
 														Lesson No:<br>

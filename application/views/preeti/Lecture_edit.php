@@ -32,8 +32,8 @@
                      <tr >
                         <td><b><?php echo $item->session_id?></b> </td>
                         <td><b><?php echo $item->course_id?></b> </td>
-                        <td> <b><?php echo $item->semester_id?></b> </td>
-                       <td> <b><?php echo $item->subject_id;?></b></td>
+                        <td><b><?php echo $item->semester_id?></b> </td>
+                       <td><b><?php echo $item->subject_id;?></b></td>
                      </tr>        
               <?php 
                 }
@@ -46,17 +46,16 @@
           </div>
          
 
-				<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Edit_controller/savingdata	');?>"  class="form-horizontal row-fluid">
+				<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Edit_controller/savingdata');?>"  class="form-horizontal row-fluid">
 
 								<table class="table table-striped table-bordered table-condensed">	
 								<tbody>
 
 
-									<?php foreach ($add_class_in as $item) { ?>
+			<?php foreach ($add_class_in as $item) { ?>
 										<input type="hidden" value="<?php echo $item->add_class_id;?>"
 										 name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
-										<?php }?>
-
+										<?php }?>		
 							
 											<tr>
 												 <th colspan="4"><div class="control-group">
@@ -93,10 +92,7 @@
 	
 											</th>
 
-											<th>
-												<center>	<h5>No. Of Lecture</h5>	</center>
-												
-											</th>
+											
 										</tr>
 
 
@@ -116,11 +112,7 @@
 											
 											</td>
 
-											<td>
-											<center>	<input type="text" id="No_Of_Lecture" name="No_Of_Lecture" class="span8"></center>
-
-											</td>
-										</tr>
+											</tr>
 
 										<tr>
 												<td colspan="4">									
@@ -146,6 +138,31 @@
 
 												</tbody>
 											</table>
+
+												<table class="table table-striped table-bordered table-condensed">
+                                        		<tr style="text-align: left">
+                                                    		
+                                        			
+                                                    <th>Lecture No</th>
+                                                   
+                                        			<th>Unit</th>
+                                          			<th>Topic</th>	                                        			
+                                        			
+
+                                        			<th>Delete</th>
+                                        			
+                                        		</tr>
+                                 <?php foreach ($t_diary as $item) { ?>		
+                                        <tr>
+                                        			
+                                        	
+                                            <td class="lectdata" id="<?php echo $item->lecture_id.'-lecture_id';?>"><?php echo $item->lecture_id ;?></td>
+                                          	<td class="lectdata" id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
+                                        	<td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata"><?php echo $item->topic;?></td>
+                                        	<!--<td><?php //echo $item->lectureid;?></td>-->
+                                        	<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
+                               			</tr>
+                                <?php } ?> 
 								
 								
 

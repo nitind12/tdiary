@@ -360,21 +360,35 @@ $(document).ready(function()
 
 //double click and edit text
     		var oriVal;
-				$("#clickedit").on('dblclick', 'td', function () {
-
-				    oriVal = $(this).text();
+    			$('body').on('dblclick', '.lectdata', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
 				    $(this).text("");
-				    $("<input type='text'>").appendTo(this).focus();
-
-				});
-
-				$("#clickedit").on('focusout', 'td > input', function () {
-
-				    var $this = $(this);
+				    $("<input type='text' id=lct-"+this.id+">").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', 'td > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
 				    $this.parent().text($this.val() || oriVal);
 				    $this.remove(); // Don't just hide, remove the element.
 
-				});
+				    var data_ = "dt="+$this.val()+"&lectid="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/edit_controller/updatedColumn";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(lectupdate_){
+
+				    });
+    			});
+
+				
    
 });
 

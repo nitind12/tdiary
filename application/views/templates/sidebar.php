@@ -36,7 +36,7 @@
 
                                         <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                         
-                                        <li><a href="<?php echo site_url('Lview_controller/index'); ?>"><i class="icon-eye-open"></i>View</a></li>
+                                        <li><a href="<?php echo site_url('Edit_controller/view_lecture_div'); ?>"><i class="icon-eye-open"></i>View</a></li>
                                     </ul>
                                 </li>
                             </ul>

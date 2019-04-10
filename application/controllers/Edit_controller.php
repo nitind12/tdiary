@@ -22,10 +22,11 @@ class Edit_controller extends CI_Controller
         $this->load->view('templates/footer');
 
     }
-     public function lecture_edit()
+     public function lecture_edit($no_,$sess,$crs)
     {  
+        $data['add_class_in'] = $this->am->add_view_attendance($sess,$crs);
+       
         $data['t_diary'] = $this->obj->fetchtable();
-         $data['cls_in_session'] = $this->am->fetchClass();
         $data['title'] = "lecture_edit";
         $data['page_'] = "Lecture_edit";
         
@@ -38,7 +39,7 @@ class Edit_controller extends CI_Controller
     function savingdata()
     {
         $this->obj->savingdata();
-        redirect('Edit_controller/lecture_edit');
+        redirect('Edit_controller');
     }
 
     public function del1()

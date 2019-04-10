@@ -27,11 +27,13 @@ class Lessonedit_controller extends CI_Controller
 	
 	}
 
-       public function lesson_edit()  
+    public function lesson_edit($no_,$sess,$crs)  
     {  
-        $data['t_diary'] = $this->obj->fetchtable();
         
-        $data['cls_in_session'] = $this->am->fetchClass();
+
+        $data['t_diary'] = $this->obj->fetchtable(); 
+         $data['add_class_id'] = $this->am->add_view_attendance($sess,$crs);     
+       
         $data['title'] = "lecture_edit";
         $data['page_'] = "Lessonedit";
         

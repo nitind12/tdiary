@@ -33,7 +33,7 @@
 
                                 <tbody>
 
-							<?php foreach($cls_in_session as $item){?>
+							<?php foreach($add_class_in  as $item){?>
 	                        		<tr>
 	                        			<td><?php echo $item->session_id?></td>
 	                        			<td><?php echo $item->course_id;?></td>

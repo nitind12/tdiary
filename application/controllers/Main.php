@@ -40,16 +40,17 @@ class Main extends CI_Controller {
 
 
 
-   public function takeattendance_controller($no_,$sess)  //showing the page of aatendance;
+     public function takeattendance_controller($no_,$sess)  //showing the page of aatendance;
     {  
         $data['title'] = "TAKE-ONLINE_ATTENDANCE";
         $data['page_'] = "attendance_take";        
         $this->load->view('templates/header', $data);
+           $data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);
+           $data['add_attend'] = $this->am->add_attendance($sess, $crs);
            $data['add_class_in'] = $this->am->add_view_attendance($no_);
            $data['add_attend'] = $this->am->add_attendance($sess, $no_);
          $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
-        
     }
 
     public function submitattendance_controller()               ///showing the page of submit the data;

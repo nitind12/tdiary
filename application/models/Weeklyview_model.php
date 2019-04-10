@@ -24,8 +24,8 @@ class Weeklyview_model extends CI_Model
 		$this->db->where('w.semester_id',$Semester);
 		$this->db->where('w.subject_id',$Subject);
 		$this->db->where('w.section',$Section);
-		$this->db->where('l.date',$Startdate);
-		$this->db->where('l.date',$Enddate);
+		$this->db->where('l.date>=',$Startdate);
+		$this->db->where('l.date<=',$Enddate);
 
 		//$this->db->where("DATE_FORMAT('w.start_date','%Y-%m-%d')>=date('Y-m-d',strtotime('".$Startdate."'))");
 		//$this->db->where('l.date BETWEEN " '.date('Y-m-d' ,strtotime('2019-04-02')).' " and " '. date('Y-m-d' ,strtotime('2019-04-04.')).'" ');

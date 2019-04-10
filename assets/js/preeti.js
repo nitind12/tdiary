@@ -364,7 +364,7 @@ $(document).ready(function()
     				// this.id - it will give you the specific id of td where dblclick held
     				oriVal = $(this).text();
 				    $(this).text("");
-				    $("<input type='text' id=lct-"+this.id+">").appendTo(this).focus();
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
     			});
 				
     			$('body').on('focusout', 'td > input', function(){
@@ -375,15 +375,21 @@ $(document).ready(function()
 				    var data_ = $this.val();
 				    $this.parent().text($this.val() || oriVal);
 				    $this.remove(); // Don't just hide, remove the element.
-
-				    var data_ = "dt="+$this.val()+"&lectid="+arr[1]+"&columnname="+arr[2];
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&lectid="+arr[1]+"&columnname="+arr[2];
 				    var url_ = site_url_ + "/edit_controller/updatedColumn";
 
 				    $.ajax({
 				    	url:url_,
 						type: 'post',
 						data: data_,
-						success: function(lectupdate_){
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
 
 				    });
     			});

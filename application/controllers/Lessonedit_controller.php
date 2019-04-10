@@ -28,24 +28,19 @@ class Lessonedit_controller extends CI_Controller
 	
 	}
 
-<<<<<<< HEAD
     public function lesson_edit($no_,$sess,$crs)  
     {  
         
-
-        $data['t_diary'] = $this->obj->fetchtable(); 
-         $data['add_class_in'] = $this->am->add_view_attendance($sess,$crs);     
-       
-        $data['title'] = "lecture_edit";
-        $data['page_'] = "Lessonedit";
+    $data['t_diary'] = $this->obj->fetchtable(); 
+    $data['add_class_in'] = $this->am->add_view_attendance($sess,$crs);     
+      $data['title'] = "lecture_edit";
+     $data['page_'] = "Lessonedit";
         
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage');  
         $this->load->view('templates/footer');
     }
 
-=======
->>>>>>> parent of 649676f... Merge branch 'master' of https://github.com/nitind12/tdiary
      function savingdata()
     {
          $this->obj->savingdata();

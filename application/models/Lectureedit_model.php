@@ -46,6 +46,22 @@ $data = array(
 		}
 	
 	}
+
+	function updatedColumn()
+    {
+        $lectupdate_ = array();
+
+        $dt=$this->input->post('dt');
+        $lect_id=$this->input->post('lectid');
+        echo $col = $this->input->post('columnname');
+
+        $this->db->where('lecture_id', $lect_id);
+        $data = array(
+        	$col => $dt
+        );
+        $query = $this->db->update('lecture', $data);
+        return $query;
+    }
 	
 	/*function savingdata()
 	{

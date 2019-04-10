@@ -77,10 +77,10 @@ class Edit_controller extends CI_Controller
     function updatedColumn()
     {
 
-        $this->load->model('Lectupdate_model','lup');
-        $data['lectupdate_'] = $this->lup->savingdata();
+        $this->load->model('Lectureedit_model','lectup');
+        $bool_= $this->lectup->updatedColumn();
 
-        echo json_encode($data); 
+        echo $data; 
 
     }
 

@@ -80,6 +80,12 @@
 											</tr>
 
 										<tr>
+
+											<th>
+												<center>	<h5> Lecture No</h5></center>
+	
+											</th>
+
 		                					<th>
 		                      			  		<center>  <h5>Unit</h5></center>
 		                      				</th>				
@@ -89,6 +95,7 @@
 	
 											</th>
 
+											
 											
 										</tr>
 
@@ -105,7 +112,7 @@
 											
 											</td>
 
-											</tr>
+											
 											<td>
 												<input type="text" id="No_Of_Lecture" name="No_Of_Lecture" class="span8">
 

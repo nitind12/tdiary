@@ -5,8 +5,9 @@ class Assignmentcontroller extends CI_Controller{
 	{
 		parent::__construct();
 		$this->load->model('assignmentmodel','um');
+		 $this->load->model('Add_class_model','am');
 	}
-	function index()
+	/*function index()
 	{
 		$data['users'] = $this->um->fetchtable();
 		//$this->load->view('assignmentview',$data);
@@ -19,10 +20,36 @@ class Assignmentcontroller extends CI_Controller{
 		
 		
 
-	}
+	}*/
+
+	  public function index()  
+    {  
+
+        $data['cls_in_session'] = $this->am->fetchClass();
+        $data['title'] = "Edit_Assignment";
+        $data['page_'] = "view_class";
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('myrajpage', $data);  
+        $this->load->view('templates/footer');
+
+    }
+     public function lecture_edit($no_,$sess,$crs)  
+    {  
+    	$data['users'] = $this->um->fetchtable();
+    	$data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);////ravi wALA SE
+
+        $data['title'] = "assignment_edit";
+        $data['page_'] = "assignmentview";
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('myrajpage');  
+        $this->load->view('templates/footer');
+    }
 	function savingdata3()
 	{
 		$this->um->savingdata3();
+		//echo"data inns";die();
 		redirect('Assignmentcontroller');
 	}
 	

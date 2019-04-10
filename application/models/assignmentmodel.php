@@ -7,11 +7,16 @@ class Assignmentmodel extends CI_Model{
 	}
 	function savingdata3()
 	{
+		$addclass_id= $this->input->post('addclass_id');
+			
+
+			for($i=0; $i<count($addclass_id); $i++){
+			
+		
 		$data = array(
-			'Course_name' => $this->input->post('Course_name'),
-			'Semester' => $this->input->post('Semester'),
-			'Section' => $this->input->post('Section'),
-			'Subject' => $this->input->post('Subject'),
+			
+			'add_class_id' => $addclass_id[$i],
+			
 			'Assignment_id' => $this->input->post('Assignment_id'),
 			'Given_date' => $this->input->post('Given_date'),
 			'Submission_date' => $this->input->post('Submission_date'),
@@ -23,8 +28,10 @@ class Assignmentmodel extends CI_Model{
 
 
 		);
+
 		
 		$this->db->insert('assignment',$data);
+	}
 
 	}
 	/*function saving()

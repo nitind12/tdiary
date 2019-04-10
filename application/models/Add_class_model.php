@@ -35,10 +35,7 @@ class Add_class_model extends CI_Model
 			$this->db->distinct('b.session_id');
 			$this->db->select('a.*, b.student_id, b.first_name');
 			$this->db->where('a.session_id', $sess);
-			$this->db->where('a.course_id', $crs);
-			$this->db->from('add_class a');
-			$this->db->join('std_personal b', 'a.session_id=b.session_id');
-			$this->db->where('a.add_class_id', $clsid);
+			$this->db->where('a.add_class_id',$clsid);
 			$this->db->from('std_personal b');
 			$this->db->join('section c', 'b.student_id=c.student_id');
 			$this->db->join('add_class a', 'a.add_class_id=c.session_class_id');

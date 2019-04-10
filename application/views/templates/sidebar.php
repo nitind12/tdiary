@@ -36,7 +36,7 @@
 
                                         <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                         
-                                        <li><a href="<?php echo site_url('Lview_controller/index'); ?>"><i class="icon-eye-open"></i>View</a></li>
+                                        <li><a href="<?php echo site_url('Edit_controller/view_lecture_div'); ?>"><i class="icon-eye-open"></i>View</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -79,7 +79,7 @@
                                                 </i>Internal Marks </a>
                                                   <ul id="togglePages3" class="collapse unstyled">
                                         <li><a href="<?php echo site_url('test/index');?>"><i class="icon-edit"></i>Edit</a></li>
-                                        <li><a href="<?php echo site_url('Marks/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        <li><a href="<?php echo site_url('Test/viewmarks');?>"><i class="icon-eye-open"></i>View </a></li>
                                         
                                     </ul>
                                 </li>
@@ -92,7 +92,7 @@
 
                                                     <li><a href="<?php echo site_url('classtestcontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
 
-                                                    <li><a href="<?php echo site_url('markscontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                                    <li><a href="<?php echo site_url('classtestcontroller/');?>"><i class="icon-eye-open"></i>View </a></li>
                                         
                                     </ul>
                                 </li>

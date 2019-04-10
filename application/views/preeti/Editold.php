@@ -20,7 +20,7 @@
 				<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Edit_controller/savingdata	');?>"  class="form-horizontal row-fluid">				
 
 							<table class="table table-striped table-bordered table-condensed">	
-							 <div style="float:right"> <input type="hid" value="<?php echo date("d-m-yy")?>" name="date" id="date"><?php echo date("D-d-M-Y")?> </div></h3>
+							 <div style="float:right"> <input type="hidden" value="<?php echo date("d-m-yy")?>" name="date" id="date"><?php echo date("D-d-M-Y")?> </div></h3>
                         </div>						
                 				<tbody>
 										<tr>

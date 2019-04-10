@@ -31,6 +31,7 @@ class Add_class_model extends CI_Model
 	
 		function add_attendance($sess, $clsid)
 		{
+
 		$intel = array();
 		$this->db->distinct('b.session_id');
 		$this->db->select('a.*, b.student_id, b.first_name');

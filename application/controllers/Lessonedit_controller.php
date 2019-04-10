@@ -14,9 +14,10 @@ class Lessonedit_controller extends CI_Controller
     
 	function index()
 	{ 
-      
+        $data['cls_in_session'] = $this->am->fetchClass();
+        $data['t_diary'] = $this->obj->fetchtable();
         //$data['course']=$this->obj->getCourse();
-        $data['cls_in_session'] = $this->am->fetchClass(); 
+         
 	 	$data['title'] = "Lesson divpage";
         $data['page_'] = "Lesson_div";
 
@@ -27,6 +28,7 @@ class Lessonedit_controller extends CI_Controller
 	
 	}
 
+<<<<<<< HEAD
     public function lesson_edit($no_,$sess,$crs)  
     {  
         
@@ -42,10 +44,12 @@ class Lessonedit_controller extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+=======
+>>>>>>> parent of 649676f... Merge branch 'master' of https://github.com/nitind12/tdiary
      function savingdata()
     {
          $this->obj->savingdata();
-        redirect('Lessonedit_controller/lesson_edit');
+        redirect('Lessonedit_controller');
     }
 
     public function del1()
@@ -53,7 +57,7 @@ class Lessonedit_controller extends CI_Controller
         $u = $this->uri->segment(3);
         $this->obj->del($u);
         
-        redirect('Lessonedit_controller/lesson_edit','refresh');
+        redirect('Lessonedit_controller','refresh');
     }
 
 

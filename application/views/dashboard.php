@@ -5,6 +5,13 @@
                 <?php $this->load->view('templates/sidebar'); ?>
             </div>
             <div class="span9">
+<<<<<<< HEAD
+                <!-- code here -->
+<<<<<<< HEAD
+                 
+=======
+>>>>>>> de2118d52530535760e77f2bc76fe9ada96919ba
+=======
                 <div class="module">
                                 <div class="module-head">
                                     <h3>
@@ -89,6 +96,7 @@
                         </tbody>
                     </table>
                 </div>
+>>>>>>> 86ff3db5148f47b07820a9eba27719c7391bfdba
             </div>
         </div></div>
 

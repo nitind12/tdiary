@@ -8,7 +8,8 @@
 
 			  
 
-				
+				<form class="form-horizontal row-fluid">
+
 
 			
 					<!--ul class="nav pull-right">
@@ -140,28 +141,36 @@
 							<div class="module-head">
 								<h3>Forms</h3>
 							</div>
+							<div class="control-group">
+											<div class="controls">
+												<button type="Edit" class="btn">Edit</button>
+											</div>
+										</div>
 							<!--<div class="module-body">-->
+								Day<select>
+									<option value=""></option>
+									<option>Monday</option>
+									<option>Tuesday</option>
+									<option>Wednesday</option>
+									<option>Thrusday</option>
+									<option>Friday</option>
+									<option>Saturday</option>
+								</select>
+
 								Course<select>
 									<option value=""></option>
 									<option>BCA</option>
 									<option>BBA</option>
 									<option>B.TECH</option>
+									<option>B.COM</option>
 								</select>
 
-								Year<select>
-									<option value=""></option>
-									<option>2017</option>
-									<option>2018</option>
-									<option>2019</option>
-								</select>
+								Subject Code<input type="text">
+								Subject Name<input type="text">	
+								Time<input type="text" name="">	
+								Room No.<input type="text" name="">					
 
-								Sem<select>
-									<option value=""></option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
+								
 
 
 
@@ -180,7 +189,7 @@
 
 									<br /-->
 
-									<form class="form-horizontal row-fluid">
+									
 										<!--div class="control-group">
 											<label class="control-label" for="basicinput">Basic Input</label>
 											<div class="controls">

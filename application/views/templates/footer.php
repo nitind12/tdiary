@@ -3,11 +3,11 @@
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>
 
         <script type="text/javascript" src="<?php echo base_url('assets/js/ravi.js');?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>"></script>
+           <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=1.1"></script>
+
           <script type="text/javascript" src="<?php echo base_url('assets/js/preeti.js');?>?version=2.1"></script>
        
-       
-        
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
       <!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>   -->
         <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>" ></script>

@@ -34,7 +34,6 @@
 												  	 <option value ="3">3</option>
 												  	 <option value ="4">4</option>
 												  	 <option value ="5">5</option>
-												  	 <option value ="4">4</option>
 												  	 <option value ="6">6</option>
 												  	 <option value ="7">7</option>
 												  	 <option value ="8">8</option>
@@ -42,8 +41,16 @@
 									         </td>
                                                     <td>
 														Session:<br>
+														<select tabindex="1" data-placeholder="Select here.." class="span8" name="Session" id="Session">
+												  		<option value ="">Select here..</option>
+												  	 <option value =" 2010-2013">2010-2013</option>
+									  	             <option value =" 2013-2016">2013-2016</option>
+									  	             <option value =" 2016-2019">2016-2019</option>
+									  	             <option value =" 2019-2022">2019-2022</option>
+									  	             <option value =" 2022-2025">2022-2025</option>
+												  </select>
 														
-														<input type="text" id="Session" name="Session" class="span8">													
+																											
 												</td>
 												<td>		
 										           Section:<br>
@@ -100,14 +107,14 @@
 												<td colspan="2">									
 														Time Table Upload:	<br>
 														
-														<input class="specialInput" type="file"  id="syllabus" name="syllabus">
+														<input class="specialInput" type="file"  id="Choose file" name="Choose file">
 												</br></td>
 											</tr>
 											<tr>
 												<td>
 												<div class="controls" style="float:left;">
 												
-												<button type="button" class="btn btn-primary" name="save" value="submit" id="btnsubmit1">Submit</button>
+												<input type="submit" class="btn btn-primary" name="save" value="submit" id="btnsubmit1">
 											</div>
 										</td>
 										</tr>
@@ -190,7 +197,7 @@
 						</center>
 							<div class="module-body">
 							
-									<form  method="post" action="<?php echo site_url('Lview_controller/savingdata');?>"
+									<form  method="post" action="<?php //echo site_url('Lview_controller/savingdata');?>"
 									 class="form-horizontal row-fluid">
 										<table class="table table-striped table-bordered table-condensed">
 										<tbody>

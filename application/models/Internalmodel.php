@@ -18,6 +18,7 @@ class Internalmodel extends CI_Model{
 		$this->db->join('std_personal b', 'b.Student_id=a.Student_Roll');
 
 		$q = $this->db->get('studentmarks');
+		//echo $this->db->last_query();
 		return $q->result();
 	}
 	

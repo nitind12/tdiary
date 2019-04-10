@@ -3,29 +3,43 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 
 class Weeklyview_model extends CI_Model
 {
-	function fetchtable()
+
+	function savingdata2()
 	{
-		$query = $this->db->get("weekly");
-		return $query->result();
-	}
-	function savingdata()
-	{
-		$data = array(
-			'session_id' => $this->input->post('session'),
-			'course_id' => $this->input->post('course'),
-			'semester_id' => $this->input->post('txtsemester'),
-            'subject_id' => $this->input->post('txtsubject'),
-            'start_date' => $this->input->post('startdate'),
-			'end_date' => $this->input->post('enddate'),
-			'no_of_lecture_schedule' => $this->input->post('Lecture_schedule'),
-			'no_of_lost_due_to_holiday' => $this->input->post('due_to_holiday'),
-			'no_of_lost_due_to_cl' => $this->input->post('due_to_cl'),
-			'no_extra_taken' => $this->input->post('extra_taken'),
-			'no_of_lecture_actual_taken' => $this->input->post('actual_taken'),
-			'description_of_topic' => $this->input->post('topic')
-		);
+		$weekly_ = array();
+
+		$Course=$this->input->post('txtcourse');
+		$Semester= $this->input->post('txtsemester');
+		$Subject=$this->input->post('txtsubject');
+		$Section=$this->input->post('txtsection');
+		$Startdate=$this->input->post('startdate');
+		$Enddate=$this->input->post('enddate');
+
 		
-		$this->db->insert('weekly',$data);
+		$this->db->distinct('w.weekly_id');
+		$this->db->select('w.*,l.topic,l.date,l.unit,l.no_of_lecture');
+
+
+		$this->db->where('w.course_id',$Course);
+		$this->db->where('w.semester_id',$Semester);
+		$this->db->where('w.subject_id',$Subject);
+		$this->db->where('w.section',$Section);
+		$this->db->where('l.date',$Startdate);
+		$this->db->where('l.date',$Enddate);
+
+		//$this->db->where("DATE_FORMAT('w.start_date','%Y-%m-%d')>=date('Y-m-d',strtotime('".$Startdate."'))");
+		//$this->db->where('l.date BETWEEN " '.date('Y-m-d' ,strtotime('2019-04-02')).' " and " '. date('Y-m-d' ,strtotime('2019-04-04.')).'" ');
+		//$this->db->where('l.date BETWEEN "'. date('Y-m-d', strtotime($Startdate)). '" and "'. date('Y-m-d', strtotime($Enddate)).'"');
+		//$this->db->where('l.date', BETWEEN '$Startdate' and  '$Enddate');
+
+		$this->db->from('weekly w');
+		$this->db->join('lesson l','l.lesson_id=w.lesson_id');
+
+
+
+		$q=$this->db->get('weekly');
+		// echo $this->db->last_query(); 
+
+		return $q->result();
 	}
-}
-?>
+}?>

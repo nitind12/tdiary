@@ -82,11 +82,27 @@
 									  <td>Subject_id<br>
 									  	<input type="text" name="Subject_id" id="Subject_id" class="span8"/></td>
 									  <td>Session<br>
-									  	<input type="text" name="Session" id="Session"class="span9"/></td>
-									  <!--td>Time_table_id<br>
-									  	<input type="text" name="Time_table_id" id="Time_table_id" class="span9"/></td-->
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Session" id="Session">
+									  		<option value ="">Select here..</option>
+									  	 <option value =" 2010-2013">2010-2013</option>
+									  	 <option value =" 2013-2016">2013-2016</option>
+									  	 <option value =" 2016-2019">2016-2019</option>
+									  	 <option value =" 2019-2022">2019-2022</option>
+									  	 <option value =" 2022-2025">2022-2025</option>
+									  </select>
+									  	
 									  <td>Time<br>
-									  	<input type="time" name="Time" id="Time" class="span9"/></td>
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Time" id="Time">
+									  		<option value ="">Select here..</option>
+									  		<option value="09_00_09_50">09:00-09:50 AM</option>
+									  		<option value="09_50_10_40">09:50-10_40 AM</option>
+									  		<option Value="10_40_11_30">10:40-11:30 AM</option>
+									  		<option value="11_50_12_40">11:50-12:30 PM</option>
+									  		<option value="12_40_01_30">12:40-01:30 PM</option>
+									  		<option value="02_10_03_00">02:10-03:00 PM</option>
+									  		<option value="03_00_03_50">03:00-03:50 PM</option>
+									  	</select>
+									  	
 									  	<td>Room<br>
 									   	<input type="text" name="Room" id="Room" class="span8"/></td>
 									   
@@ -113,7 +129,7 @@
 									</form>
 									<center><a href="<?php echo site_url('edittimetablecontroller/del/' )?>" class="btn btn-primary " onclick="return confirm('Are you sure to delete whole data from the table??')">Delete Whole Data From the Table!</a></center>
 									<br>
-										<table border="1" cellpadding="5" cellspacing="5" width="40%" align="center">
+										<table class="table table-striped table-bordered table-condensed"  border="1">
 
 		<tr style="text-align: left">
 			<th align="center">Day</th>

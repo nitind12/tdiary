@@ -13,7 +13,7 @@ class Studenttimetableeditmodel extends CI_Model{
 			'Semester' => $this->input->post('Semester'),
 			'Session' => $this->input->post('Session'),
 			'Section' => $this->input->post('Section'),
-			//'Subject_id' => $this->input->post('Subject_id'),
+			'Choose file' => $this->input->post('Choose file(filename)'),
 			//'Faculty_id' => $this->input->post('Faculty_id'),
 			//'Time_table_id' => $this->input->post('Time_table_id'),
 			//'Time' => $this->input->post('Time'),

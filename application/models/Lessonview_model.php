@@ -3,31 +3,31 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 
 class Lessonview_model extends CI_Model
 {
-	function fetchtable()
+
+	function savingdata2()
 	{
-		$query = $this->db->get("lesson");		//lesson is table name of lecture database
-		return $query->result();
-	}
-	function savingdata()
-	{
-		$data = array(
-			'session_id' => $this->input->post('session'),
-			'course_id' => $this->input->post('course'),		
-			'semester_id' => $this->input->post('txtsemester'),
-			'section_id' => $this->input->post('txtsection'),
-			'subject_id' => $this->input->post('txtsection'),
-			'lesson_id' => $this->input->post('txtsection'),
-			'time_duration' => $this->input->post('txttime'),
-			'start_time' => $this->input->post('txtstart'),
-			'end_time' => $this->input->post('txtend'),
-			'date' => $this->input->post('Date'),
-			'topic' => $this->input->post('Unit'),
-			'unit' => $this->input->post('Unit'),
-			'no_of_lecture' => $this->input->post('Topic'),
-		
-		);
-		
-		$this->db->insert('lesson',$data);		//lesson is a table name of lecture database
+		$lesson_ = array();
+
+		$Course=$this->input->post('txtcourse');
+		$Semester= $this->input->post('txtsemester');
+		$Section=$this->input->post('txtsection');
+		$Subject=$this->input->post('txtsubject');
+    
+
+		//$this->db->distinct('b.lectureid');	
+	//	$this->db->select('a.*, b.faculty_id');
+
+		$this->db->where('course_id',$Course);
+		$this->db->where('semester_id',$Semester);
+		$this->db->where('section_id',$Section);
+		$this->db->where('subject_id',$Subject);
+
+		//$this->db->from('lesson a');
+	//	$this->db->join('lecture b','b.lectureid=a.faculty_id');
+
+		$q=$this->db->get('lesson');
+		//echo $this->db->last_query();
+		return $q->result();
 
 	}
 /*

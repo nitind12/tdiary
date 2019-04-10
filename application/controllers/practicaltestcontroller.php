@@ -11,8 +11,9 @@ class Practicaltestcontroller extends CI_Controller{
 		$data['users'] = $this->um->fetchtable();
 		//$this->load->view('practicalview',$data);
 		$data['page_'] = 'practicalview';
+		$data['title'] = 'Practical Edit';
        
-        $this->load->view('templates/header');
+        $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		

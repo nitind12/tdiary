@@ -20,7 +20,7 @@ class Viewtimetablecontroller extends CI_Controller{
 	public function index()
 	{
 		 $data['page_'] = 'timetableview';
-		 $data['title'] = 'View Marks';
+		 $data['title'] = 'View Timetable';
        
         $this->load->view('templates/header',$data);
         $this->load->view('mysatyampage',$data);  
@@ -31,7 +31,7 @@ class Viewtimetablecontroller extends CI_Controller{
 
 	function viewmarks(){
 		$this->load->model('viewtimetablemodel','im');
-		$data['marks'] = $this->im->internalmarks();
+		$data['marks'] = $this->im->timetable();
 
 		echo json_encode($data);
 	}

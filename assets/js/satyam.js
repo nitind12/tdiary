@@ -3,7 +3,7 @@ $(document).ready(function()
 
 	$('#myform111').submit(function()
 	{
-		
+
 		if($.trim($('#Course_id').val()) == '')
 			{
 				alert('Course_id must be filled out');
@@ -19,6 +19,10 @@ $(document).ready(function()
 		else if($.trim($('#Section').val()) == '')
 			{
 				alert('Section must be filled out');
+			}
+		else if($.trim($('#Choose_file').val()) == '')
+			{
+				alert('Choose_file must be select out');
 			}
 
 			else
@@ -149,8 +153,9 @@ $(document).ready(function()
 				var str = '';
 				
 				if(len > 0){
-					str = str + "<tr>";
-					str = str + "</tr>";
+
+					//str = str + "<tr>";
+					//str = str + "</tr>";
 					str = str + "<th> Semester</th>"
 					str = str + "<th> Section</th>"
 					str = str + "<th> Course_id</th>"
@@ -164,21 +169,11 @@ $(document).ready(function()
 					
 					str = str + "</tr>";
 					for(i=0; i<len;i++){
-						str = str + '<tr>';
-						str = str + '<td>' + obj.marks[i].Semester + "</td>";
-						str = str + '<td>' + obj.marks[i].Section + "</td>";
-						str = str + '<td>' + obj.marks[i].Course_id + "</td>";
-						str = str + '<td>' + obj.marks[i].Subject_id + "</td>";
-						str = str + '<td>' + obj.marks[i].Session + "</td>";
-						//str = str + '<td>' + obj.marks[i].Time_table_id + "</td>";
-						str = str + '<td>' + obj.marks[i].Time + "</td>";
-						str = str + '<td>' + obj.marks[i].Room + "</td>";
-
-						
-						
-						str = str + '</tr>';
+						//alert(obj.marks[i].Subject_id);
+						id_ = obj.marks[i].Day+obj.marks[i].Time;
+						$('#'+id_).html(obj.marks[i].Subject_id);
 					}
-					$('#timetablehere').html(str);
+					//$('#timetablehere').html(str);
 
 				}
 				else{

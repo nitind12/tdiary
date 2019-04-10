@@ -1,0 +1,1413 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 08, 2019 at 07:38 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 5.6.40
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `t_diary`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_class`
+--
+
+CREATE TABLE `add_class` (
+  `s_no` int(11) NOT NULL,
+  `faculty_id` varchar(25) NOT NULL,
+  `session_id` varchar(25) NOT NULL,
+  `course_id` varchar(15) NOT NULL,
+  `semester_id` varchar(50) NOT NULL,
+  `subject_id` varchar(15) NOT NULL,
+  `section_id` varchar(3) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `add_class`
+--
+
+INSERT INTO `add_class` (`s_no`, `faculty_id`, `session_id`, `course_id`, `semester_id`, `subject_id`, `section_id`, `username`, `status`) VALUES
+(24, 'ravi', '2014', 'BCA', '5', 'software', 'A', 'ra', 1),
+(25, 'ravi', '2015', 'BBA', '5', 'AC', 'A', 'ra', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assignment`
+--
+
+CREATE TABLE `assignment` (
+  `Assignment_id` int(11) NOT NULL,
+  `Course_name` varchar(150) NOT NULL,
+  `Semester` varchar(15) NOT NULL,
+  `Section` varchar(3) NOT NULL,
+  `Subject` varchar(150) NOT NULL,
+  `Given_date` date NOT NULL,
+  `Submission_date` date NOT NULL,
+  `Last_submission_date` date NOT NULL,
+  `Unit` int(3) NOT NULL,
+  `Topic` text NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `add_class_id` int(5) NOT NULL,
+  `attendance_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `time` time(3) NOT NULL,
+  `roll_no` int(4) NOT NULL,
+  `attendance_status` varchar(9) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `student_id` varchar(50) NOT NULL,
+  `faculty_id` varchar(50) NOT NULL,
+  `description_if_any` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`add_class_id`, `attendance_id`, `date`, `time`, `roll_no`, `attendance_status`, `username`, `status`, `student_id`, `faculty_id`, `description_if_any`) VALUES
+(0, 31, '2019-05-21', '02:00:00.000', 118, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 32, '2019-05-21', '02:00:00.000', 119, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 33, '2019-05-21', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 34, '2019-05-21', '02:00:00.000', 121, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 35, '2019-05-21', '02:00:00.000', 122, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 36, '2019-05-21', '02:00:00.000', 124, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 37, '2019-05-21', '02:00:00.000', 125, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 38, '2019-05-21', '02:00:00.000', 127, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 39, '2019-05-21', '02:00:00.000', 128, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 40, '2019-05-21', '02:00:00.000', 15, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 41, '0000-00-00', '02:00:00.000', 118, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 42, '0000-00-00', '02:00:00.000', 119, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 43, '0000-00-00', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 44, '0000-00-00', '02:00:00.000', 121, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 45, '0000-00-00', '02:00:00.000', 122, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 46, '0000-00-00', '02:00:00.000', 124, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 47, '0000-00-00', '02:00:00.000', 125, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 48, '0000-00-00', '02:00:00.000', 127, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 49, '0000-00-00', '02:00:00.000', 128, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 50, '0000-00-00', '02:00:00.000', 15, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 51, '0000-00-00', '02:00:00.000', 118, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 52, '0000-00-00', '02:00:00.000', 119, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 53, '0000-00-00', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 54, '0000-00-00', '02:00:00.000', 121, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 55, '0000-00-00', '02:00:00.000', 122, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 56, '0000-00-00', '02:00:00.000', 124, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 57, '0000-00-00', '02:00:00.000', 125, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 58, '0000-00-00', '02:00:00.000', 127, ' ABSENT', 'ra', 1, '121', '2', ''),
+(0, 59, '0000-00-00', '02:00:00.000', 128, 'PRESENT', 'ra', 1, '121', '2', ''),
+(0, 60, '0000-00-00', '02:00:00.000', 15, ' ABSENT', 'ra', 1, '121', '2', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance_update`
+--
+
+CREATE TABLE `attendance_update` (
+  `attendance_update_id` int(11) NOT NULL,
+  `add_class_id` int(11) NOT NULL,
+  `take_attendance_id` int(11) NOT NULL,
+  `update_date` date NOT NULL,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `check_assignment1`
+--
+
+CREATE TABLE `check_assignment1` (
+  `Course_name` varchar(150) NOT NULL,
+  `Semester` int(3) NOT NULL,
+  `Section` varchar(3) NOT NULL,
+  `Student_Roll` int(3) NOT NULL,
+  `Assignment_id` varchar(4) NOT NULL,
+  `Submission_date` date NOT NULL,
+  `Late_submission` varchar(4) NOT NULL,
+  `Grade` varchar(2) NOT NULL,
+  `Subject` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classtest`
+--
+
+CREATE TABLE `classtest` (
+  `Course_name` varchar(150) NOT NULL,
+  `Semester` int(3) NOT NULL,
+  `Section` varchar(3) NOT NULL,
+  `Subject` varchar(150) NOT NULL,
+  `Student_Roll` int(10) NOT NULL,
+  `Marks` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `course_table`
+--
+
+CREATE TABLE `course_table` (
+  `university_id` varchar(50) NOT NULL,
+  `s_no` int(11) NOT NULL,
+  `course_id` varchar(50) NOT NULL,
+  `name_of_courses` varchar(150) NOT NULL,
+  `no_of_years` int(2) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `course_table`
+--
+
+INSERT INTO `course_table` (`university_id`, `s_no`, `course_id`, `name_of_courses`, `no_of_years`, `status`, `username`) VALUES
+('	 ku', 1, 'BCA', 'Bachelor of Computer Application', 3, 1, 'ra'),
+('uou', 2, 'MCA', 'Master of Computer Application', 2, 1, 'ra'),
+('	 ku', 3, 'BBA', 'Bachelor of Business Administration', 3, 1, 'ra'),
+('uou', 4, 'MBA', 'Master of Business Administration', 2, 1, 'ra'),
+('	 ku', 5, 'B.COM', 'Bachelor of Commerce', 3, 1, 'ra'),
+('	 ku', 6, 'B.SC', 'Bachelor of Science', 3, 1, 'ra'),
+('	 ku', 7, 'BHM', 'Bachelor of Hotel Management', 3, 1, 'ra'),
+('uou', 8, 'DHM', 'Diploma Of Hotel Management', 1, 1, 'ra'),
+('uou', 9, 'B.TECH', 'Bachelor Of Technology ', 4, 1, 'ra'),
+('uou', 10, 'M.TECH', 'Master Of Technology', 2, 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faculty_address`
+--
+
+CREATE TABLE `faculty_address` (
+  `address` varchar(150) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `pincode` int(10) NOT NULL,
+  `address_status` tinyint(1) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date_of_commencement` date NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `faculty_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faculty_contact`
+--
+
+CREATE TABLE `faculty_contact` (
+  `faculty_email` varchar(100) NOT NULL,
+  `email_status` tinyint(1) NOT NULL,
+  `faculty_contact` varchar(15) NOT NULL,
+  `faculty_status` tinyint(1) NOT NULL,
+  `contact_status` tinyint(1) NOT NULL,
+  `status` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `faculty_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faculty_personal`
+--
+
+CREATE TABLE `faculty_personal` (
+  `s_no` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `gender` text NOT NULL,
+  `marital_status` varchar(15) NOT NULL,
+  `father_name` varchar(100) NOT NULL,
+  `husband_name` varchar(100) NOT NULL,
+  `nationality` varchar(50) NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `blood_group` varchar(4) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `session` year(4) NOT NULL,
+  `faculty_id` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faculty_profile`
+--
+
+CREATE TABLE `faculty_profile` (
+  `qualification_id` varchar(15) NOT NULL,
+  `teacher_experience` int(3) NOT NULL,
+  `date_of_joining` date NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `teacher_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lecture`
+--
+
+CREATE TABLE `lecture` (
+  `session_id` varchar(50) NOT NULL,
+  `course_id` varchar(50) NOT NULL,
+  `semester_id` varchar(50) NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
+  `date_of_commencement` date NOT NULL,
+  `date_of_completion` date NOT NULL,
+  `faculty_id` varchar(50) NOT NULL,
+  `unit` int(3) NOT NULL,
+  `topic` text NOT NULL,
+  `lecture_id` int(3) NOT NULL,
+  `no_of_lecture` int(11) NOT NULL,
+  `total_lecture` int(3) NOT NULL,
+  `syllabus_pdf` varchar(250) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lesson`
+--
+
+CREATE TABLE `lesson` (
+  `session_id` varchar(50) NOT NULL,
+  `course_id` varchar(10) NOT NULL,
+  `semester_id` varchar(50) NOT NULL,
+  `section_id` varchar(50) NOT NULL,
+  `faculty_id` varchar(50) NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
+  `lectureid` varchar(50) NOT NULL,
+  `lesson_id` int(20) NOT NULL,
+  `start_time` time(2) NOT NULL,
+  `end_time` time(2) NOT NULL,
+  `unit` varchar(50) NOT NULL,
+  `no_of_lecture` varchar(50) NOT NULL,
+  `topic` text NOT NULL,
+  `date` date NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `marks`
+--
+
+CREATE TABLE `marks` (
+  `session_id` varchar(15) NOT NULL,
+  `course_id` varchar(15) NOT NULL,
+  `std_id` varchar(15) NOT NULL,
+  `faculty_id` varchar(15) NOT NULL,
+  `subject_id` varchar(15) NOT NULL,
+  `semester_id` varchar(15) NOT NULL,
+  `section_id` varchar(15) NOT NULL,
+  `marks_id` int(11) NOT NULL,
+  `marks` int(4) NOT NULL,
+  `marks_status` varchar(50) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `practicaltest`
+--
+
+CREATE TABLE `practicaltest` (
+  `Course_name` varchar(150) NOT NULL,
+  `Semester` int(3) NOT NULL,
+  `Section` varchar(3) NOT NULL,
+  `Subject` varchar(150) NOT NULL,
+  `Student_Roll` int(10) NOT NULL,
+  `Practical_marks` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `qualification`
+--
+
+CREATE TABLE `qualification` (
+  `q_id` int(2) NOT NULL,
+  `qualification` varchar(20) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `date_` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `qualification`
+--
+
+INSERT INTO `qualification` (`q_id`, `qualification`, `username`, `date_`) VALUES
+(1, '10th', 'ra', '2019-03-22'),
+(2, '12th', 'ra', '2019-03-22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room`
+--
+
+CREATE TABLE `room` (
+  `room_id` varchar(15) NOT NULL,
+  `room_no` int(5) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `session_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `section`
+--
+
+CREATE TABLE `section` (
+  `section_id` int(11) NOT NULL,
+  `section_name` varchar(5) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `section`
+--
+
+INSERT INTO `section` (`section_id`, `section_name`, `status`, `username`) VALUES
+(1, 'A', 1, 'ra'),
+(2, 'B', 1, 'ra'),
+(3, 'C', 1, 'ra'),
+(4, 'D', 1, 'ra'),
+(5, 'E', 1, 'ra'),
+(6, 'F', 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester`
+--
+
+CREATE TABLE `semester` (
+  `semester_id` int(11) NOT NULL,
+  `no_of_semester` int(3) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `semester`
+--
+
+INSERT INTO `semester` (`semester_id`, `no_of_semester`, `status`, `username`) VALUES
+(1, 1, 1, 'ra'),
+(2, 2, 1, 'ra'),
+(3, 3, 1, 'ra'),
+(4, 4, 1, 'ra'),
+(5, 5, 1, 'ra'),
+(6, 6, 1, 'ra'),
+(7, 7, 1, 'ra'),
+(8, 8, 1, 'ra'),
+(9, 9, 1, 'ra'),
+(10, 10, 1, 'ra'),
+(11, 11, 1, 'ra'),
+(12, 12, 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `session`
+--
+
+CREATE TABLE `session` (
+  `s_id` int(11) NOT NULL,
+  `session` int(8) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `session`
+--
+
+INSERT INTO `session` (`s_id`, `session`, `status`, `username`) VALUES
+(2014, 2014, 1, 'ra'),
+(2015, 2015, 1, 'ra'),
+(2016, 2016, 1, 'ra'),
+(2017, 2017, 1, 'ra'),
+(2018, 2018, 1, 'ra'),
+(2019, 2019, 1, 'ra'),
+(2020, 2020, 1, 'ra'),
+(2021, 2021, 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sign_up`
+--
+
+CREATE TABLE `sign_up` (
+  `s_no` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(15) NOT NULL,
+  `phone_no` varchar(15) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `question` longtext NOT NULL,
+  `answer` mediumtext NOT NULL,
+  `category` varchar(15) NOT NULL,
+  `staus` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sign_up`
+--
+
+INSERT INTO `sign_up` (`s_no`, `username`, `first_name`, `last_name`, `email`, `password`, `phone_no`, `date_of_birth`, `question`, `answer`, `category`, `staus`) VALUES
+(1, 'ra', 'umesh chandra pandey', 'pa', 'ravip8527@gmail.com', '12', '9917604820', '2005-02-25', 'question 1', '1', 'Student', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `std_academic`
+--
+
+CREATE TABLE `std_academic` (
+  `s_no` int(11) NOT NULL,
+  `student_id` varchar(50) NOT NULL,
+  `qualification_status` varchar(6) NOT NULL,
+  `passing_year` year(4) NOT NULL,
+  `school` varchar(120) NOT NULL,
+  `board` varchar(15) NOT NULL,
+  `percentage` int(5) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `std_address`
+--
+
+CREATE TABLE `std_address` (
+  `student_id` varchar(50) NOT NULL,
+  `address` int(150) NOT NULL,
+  `state` int(100) NOT NULL,
+  `city` int(100) NOT NULL,
+  `pincode` int(10) NOT NULL,
+  `address_status` tinyint(1) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date_of_commencement` date NOT NULL,
+  `username` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `std_contact`
+--
+
+CREATE TABLE `std_contact` (
+  `std_email` varchar(60) DEFAULT NULL,
+  `std_contact` varchar(15) NOT NULL,
+  `alternate_contact` int(15) NOT NULL,
+  `contact_status` tinyint(1) NOT NULL,
+  `email_status` tinyint(1) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `alternate_email` varchar(50) NOT NULL,
+  `std_id` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `std_group`
+--
+
+CREATE TABLE `std_group` (
+  `session_id` varchar(15) NOT NULL,
+  `course_id` text NOT NULL,
+  `subject_id` varchar(15) NOT NULL,
+  `group_id` varchar(15) NOT NULL,
+  `semester_id` varchar(15) NOT NULL,
+  `section_id` varchar(15) NOT NULL,
+  `starting_roll` int(4) NOT NULL,
+  `ending_roll` int(4) NOT NULL,
+  `std_id` varchar(15) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `std_personal`
+--
+
+CREATE TABLE `std_personal` (
+  `s_no` int(11) NOT NULL,
+  `first_name` varchar(60) NOT NULL,
+  `last_name` varchar(60) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `father_name` varchar(120) NOT NULL,
+  `mother_name` varchar(120) NOT NULL,
+  `gender` varchar(15) NOT NULL,
+  `nationality` varchar(15) NOT NULL,
+  `category` varchar(10) NOT NULL,
+  `blood_group` varchar(3) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `student_id` varchar(50) NOT NULL,
+  `session_id` varchar(50) NOT NULL,
+  `course_id` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `std_personal`
+--
+
+INSERT INTO `std_personal` (`s_no`, `first_name`, `last_name`, `date_of_birth`, `father_name`, `mother_name`, `gender`, `nationality`, `category`, `blood_group`, `status`, `username`, `student_id`, `session_id`, `course_id`) VALUES
+(1, 'Aman', 'jangi', '0000-00-00', 'Pramod  kumar jangi', 'Janki   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '1', '2017', 'BCA'),
+(2, 'Bhavesh', 'bajetha', '0000-00-00', 'Ramesh c. bajetha', 'Manju bajetha', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '2', '2017', 'BCA'),
+(3, 'Dev', 'mandal', '0000-00-00', 'Ajay   mandal', 'Purnima   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '3', '2017', 'BCA'),
+(4, 'Divisha', 'sharma', '0000-00-00', 'Vivek   sharma', 'Upma   sharma', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '4', '2018', 'BCA'),
+(5, 'Gourav', 'farswan', '0000-00-00', 'Surender s. farswan', 'Renu   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '5', '2018', 'BCA'),
+(6, 'Jeevika', 'chausali', '0000-00-00', 'Trilochan chausali', 'Lata   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '6', '2018', 'BCA'),
+(7, 'Kapil', 'ruwali', '0000-00-00', 'Bhuvan   chand', 'Pushpa   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '7', '2018', 'BCA'),
+(8, 'Khushi', 'chausali', '0000-00-00', 'Deepanshu   ', 'Meena   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '8', '2018', 'BCA'),
+(11, 'Sarthak', 'dosad', '0000-00-00', 'Mahendra s. dosad', 'Lata   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '9', '2018', 'BCA'),
+(12, 'Shivansh', 'belwal', '0000-00-00', 'Ramesh c. belwal', 'Beena   devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '10', '2018', 'BCA'),
+(13, 'Yamini', 'kavidayal', '0000-00-00', 'Pramod chand Kavidayal', 'Hema Kavidayal', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '11', '2018', 'BCA'),
+(14, 'Vaishnavi', 'pant', '0000-00-00', 'Vinay kumar pant', 'Deepa   pant', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '12', '2018', 'BCA'),
+(15, 'Hariom', 'sharma', '0000-00-00', 'Chandra praksh sharma', 'Prema   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '13', '2018', 'BCA'),
+(16, 'Naitik', 'dangwal', '0000-00-00', 'Dinesh c. dangwal', 'Geeta   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '14', '2018', 'BCA'),
+(17, 'Narender', 'singh', '0000-00-00', 'Inderjeet   singh', 'Prema   ', 'M', 'hindu', 'OBC', 'A+', 1, 'gopal', '15', '2015', 'BCA'),
+(18, 'Vinay', 'ruwali', '0000-00-00', 'Hem chandra ruwali', 'Khasti   devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '16', '2015', 'BCA'),
+(19, 'Aarti', 'arya', '0000-00-00', 'Khasti   ram', 'Asha   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '17', '2018', 'BCA'),
+(20, 'Anushka', 'bhandari', '0000-00-00', 'D. s. bhandari', 'Khasti   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '18', '2019', 'BCA'),
+(21, 'Jatin', 'tamta', '0000-00-00', 'Vinod   kumar', 'Sunita   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '19', '2019', 'BCA'),
+(22, 'Ayush', 'bohra', '0000-00-00', 'Rajeev   kumar', 'Pushpa   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '20', '2019', 'BCA'),
+(23, 'Khushi', 'milkani', '0000-00-00', 'Chandra s. milkani', 'Suman   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '21', '2019', 'BCA'),
+(24, 'Gourav', 'jangi', '0000-00-00', 'Manoj   jangi', 'Munni   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '22', '2019', 'BCA'),
+(25, 'Preeti', 'patni', '0000-00-00', 'Lalit   singh', 'Neelu   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '23', '2019', 'BCA'),
+(26, 'Paramjoat', 'singh', '0000-00-00', 'Jaswinder   singh', 'Kamlajeet   kaur', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '24', '2019', 'BCA'),
+(27, 'Jagdish', 'bora', '0000-00-00', 'Anand singh bohra', 'Diksha   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '25', '2019', 'BCA'),
+(28, 'Raja', 'chousali', '0000-00-00', 'Sanjay   kumar', 'Deepa   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '26', '2019', 'BBA'),
+(29, 'Tanishka', 'sharma', '0000-00-00', 'Sushil   kumar', 'Pooja   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '27', '2019', 'BBA'),
+(30, 'Harjas', 'singh', '0000-00-00', 'Amandeep   singh', 'Rajwinder   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '28', '2019', 'BBA'),
+(31, 'Diksha', 'chousali', '0000-00-00', 'Heera ballabh bhatt', 'Hema   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '29', '2019', 'BBA'),
+(32, 'Sourabh', 'bahuguna', '0000-00-00', 'Vipin   bahuguna', 'Hema   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '30', '2018', 'BBA'),
+(33, 'Ojaswani', 'tamta', '0000-00-00', 'Surender   tamta', 'Shobha   ', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '31', '2018', 'BBA'),
+(34, 'Surajpreet', 'singh', '0000-00-00', 'Malkeet   singh', 'Mukhtiyar   kaur', 'M', 'hindu', 'OBC', 'A+', 1, 'gopal', '32', '2018', 'BBA'),
+(35, 'Kartick', 'Chauhan', '0000-00-00', 'Shyam  singh Chauhan', 'Saraswati', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '33', '2018', 'BBA'),
+(36, 'Charulata', 'arya', '0000-00-00', 'Lalit  arya', 'Sapna   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '34', '2019', 'BBA'),
+(37, 'Deepanshi', 'rana', '0000-00-00', 'Prakash   rana', 'Pushpa   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '35', '2019', 'BBA'),
+(38, 'Ishita', 'kulera', '0000-00-00', 'Diwan singh kulera', 'Neeru   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '36', '2019', 'BBA'),
+(39, 'Aksh', 'chilwal', '0000-00-00', 'Manoj   chilwal', 'Saroj   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '37', '2018', 'BBA'),
+(40, 'Bhupender', 'gounia', '0000-00-00', 'Yash pal singh', 'Kamla   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '38', '2018', 'BBA'),
+(41, 'Niharika', 'sharma', '0000-00-00', 'Pradeep   shrma', 'Sunita Sharma', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '39', '2018', 'BBA'),
+(42, 'Jiya', 'chousali', '0000-00-00', 'Tara dutt chousali', 'Mamta   chausali', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '40', '2018', 'BBA'),
+(43, 'Sagun', 'tamta', '0000-00-00', 'Gajender  tamta', 'Ka   lpna', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '41', '2018', 'BBA'),
+(44, 'Kushal', 'paneru', '0000-00-00', 'Lalit   paneru', 'Bhawna   paneru', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '42', '2018', 'BBA'),
+(45, 'Shubham', 'chousali', '0000-00-00', 'Ramesh c. chausali', 'Saroj   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '43', '2018', 'BBA'),
+(46, 'Hardik', 'mehra', '0000-00-00', 'Balwant  singh mehra', 'Hansi   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '44', '2018', 'BBA'),
+(47, 'Prateek', 'raj', '0000-00-00', 'Daya kishan raj', 'Geeta   ', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '45', '2018', 'BBA'),
+(48, 'Sourabh', 'mehra', '0000-00-00', 'Mohan s. mehra', 'Meena   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '46', '2018', 'BBA'),
+(49, 'Deepanshu', 'joshi', '0000-00-00', 'Deepak chandra joshi', 'Asha   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '47', '2018', 'BBA'),
+(50, 'Rohit', 'pargain', '0000-00-00', 'Chander shekar pargain', 'Khasti   pargain', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '48', '2018', 'BBA'),
+(51, 'Vanshika', 'arya', '0000-00-00', 'Rakesh   kumar', 'Rekha   ', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '49', '2017', 'BBA'),
+(52, 'Deepak', 'bisht', '0000-00-00', 'Laxman singh bisht', 'Uma   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '50', '2017', 'BBA'),
+(53, 'Kartick', 'ghangola', '0000-00-00', 'Heera ballabh ghangola', 'Mamta devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '51', '2017', 'BBA'),
+(54, 'Manish', 'thuwal', '0000-00-00', 'Bipin c. thuwal', 'Pooja   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '52', '2017', 'BBA'),
+(55, 'Devansh', 'pargain', '0000-00-00', 'Mukesh   pargain', 'Pooja   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '53', '2017', 'BBA'),
+(56, 'Parth', 'tamta', '0000-00-00', 'Amit   kumar', 'Mamta   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '54', '2017', 'BBA'),
+(57, 'Kajal', 'joshi', '0000-00-00', 'Mohan c. joshi', 'Kamla joshi  ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '55', '2018', 'BBA'),
+(58, 'Kumkum', 'upreti', '0000-00-00', 'Yogesh   upreti', 'Pooja   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '56', '2018', 'BBA'),
+(59, 'Somya', 'chufal', '0000-00-00', 'Deepak s. chufal', 'Pushpa   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '57', '2018', 'MCA'),
+(60, 'Rakshita', 'belwal', '0000-00-00', 'Chattarpati   belwal', 'Durga   belwal', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '58', '2018', 'MCA'),
+(61, 'Gourav', 'pantola', '0000-00-00', 'Bishan datt pantola', 'Kamla   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '59', '2019', 'MCA'),
+(62, 'Himani', 'bisht', '0000-00-00', 'Prakash   singh', 'Prema   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '60', '2017', 'MCA'),
+(63, 'Tanuja', 'bughani', '0000-00-00', 'Bipin  bughani', 'Sunita   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '61', '2016', 'MCA'),
+(66, 'Aarav', 'jangi', '0000-00-00', 'Pramod kumar jangi', 'Janki   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '62', '2015', 'MCA'),
+(67, 'Asha', 'pargain', '0000-00-00', 'Lalit mohan pargain', 'Geeta   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '63', '2016', 'MCA'),
+(69, 'Bhawna', 'matiyali', '0000-00-00', 'Bahadur   singh', 'Nirmala   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '64', '2015', 'MCA'),
+(70, 'Bharat', 'matiyali', '0000-00-00', 'Harish s. matiyali', 'Nirmala   matiyali', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '65', '2015', 'MCA'),
+(71, 'Arpit', 'matiyali', '0000-00-00', 'Nirmal   singh', 'Kamla   matiyali', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '66', '2016', 'MCA'),
+(72, 'Niharika', 'tamta', '0000-00-00', 'Govind   ram', 'Maheswari   devi', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '67', '2017', 'MCA'),
+(74, 'Harshita', 'pant', '0000-00-00', 'Mr. lalit mohan pant  ', 'Mrs. tanuja pant  ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '68', '2018', 'MCA'),
+(75, 'Lokesh', 'joshi', '0000-00-00', 'Girish chandra joshi  ', 'Beena joshi  ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '69', '2015', 'MCA'),
+(76, 'Vansh', 'singh', '0000-00-00', 'Mangal singh   ', 'Mamta dhami  ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '70', '2019', 'MCA'),
+(77, 'Gurpreet', 'singh', '0000-00-00', 'Malkeet   singh', 'Mukhtiyar   kaur', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '71', '2018', 'MCA'),
+(78, 'Aman', 'arya', '0000-00-00', 'Ramesh c. arya', 'Sunita   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '72', '2014', 'MCA'),
+(79, 'Rashi', 'pantola', '0000-00-00', 'Manoj   pantola', 'Babita   pantola', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '73', '2022', 'MCA'),
+(80, 'Mayank', 'goldar', '0000-00-00', 'Deelip   goldar', 'Renu   goldar', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '74', '2019', 'MCA'),
+(81, 'Yogesh', 'bajetha', '0000-00-00', 'Kheem singh bajetha', 'Kavita   bajetha', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '75', '2019', 'MCA'),
+(82, 'Sourav', 'kumar', '0000-00-00', 'Prakash   chandra', 'Hansa   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '76', '2019', 'MBA'),
+(83, 'Garima', 'deopa', '0000-00-00', 'Bishan s. deopa', 'Pushpa   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '77', '2021', 'MBA'),
+(84, 'Karan', 'kumar', '0000-00-00', 'Dinesh   prasad', 'Mamta   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '78', '2019', 'MBA'),
+(85, 'Nisha', 'bhatt', '0000-00-00', 'Deepak   chandra', 'Keshvi   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '79', '2019', 'MBA'),
+(86, 'Ishita', 'rajwar', '0000-00-00', 'Pratap   rajwar', 'Kavita   chand', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '80', '2021', 'MBA'),
+(87, 'Deepak', 'bhatt', '0000-00-00', 'Ramesh   bhatt', 'Renu   bhatt', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '81', '2018', 'MBA'),
+(88, 'Upasna', 'jangi', '0000-00-00', 'Neeraj   kumar', 'Janki   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '82', '2017', 'MBA'),
+(89, 'Mamta', 'rajput', '0000-00-00', 'Jhamman singh ', 'Pushpa   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '83', '2020', 'MBA'),
+(90, 'Naman', 'joshi', '0000-00-00', 'Mukesh c. joshi', 'Mamta   joshi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '84', '2019', 'MBA'),
+(91, 'Prince', 'bajetha', '0000-00-00', 'Naveen c. bajetha', 'Rekha   bajetha', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '85', '2016', 'MBA'),
+(92, 'Dev', 'mehra', '0000-00-00', 'Jagat s. mehra', 'Radha   mehra', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '86', '2019', 'MBA'),
+(93, 'Mamta', 'ruwali', '0000-00-00', 'Chandra prakash ruwali', 'Renu   ruwali', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '87', '2021', 'MBA'),
+(94, 'Rajat', 'bora', '0000-00-00', 'Nandan s. bora', 'Saroj   bora', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '88', '2015', 'MBA'),
+(95, 'Mannya', 'rautela', '0000-00-00', 'Narendra s. rautela', 'Asha   rautela', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '89', '2030', 'MBA'),
+(96, 'Aruniya', 'kohli', '0000-00-00', 'Prem   kohli', 'Veena   kohli', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '90', '2016', 'MBA'),
+(97, 'Prachi', 'chand', '0000-00-00', 'Gopal   chand', 'Sunita   chand', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '91', '2016', 'MBA'),
+(98, 'Piyush', 'sharma', '0000-00-00', 'Lalit   sharma', 'Sona   sharma', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '92', '2016', 'MBA'),
+(99, 'Deepanshu', 'gaira', '0000-00-00', 'Dinesh lal', 'Chandra arya', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '93', '2016', 'MBA'),
+(100, 'Harsh', 'bajetha', '0000-00-00', 'Kailash c. bajetha', 'Tulsi   devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '94', '2016', 'MBA'),
+(101, 'Priyanshi', 'gunwant', '0000-00-00', 'Lalit   gunwant', 'Asha   gunwant', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '95', '2016', 'BCA'),
+(102, 'Pritiyush', 'tamta', '0000-00-00', 'Surendera   lal', 'Shobha   tamta', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '96', '2016', 'BCA'),
+(103, 'Ritika', 'rawat', '0000-00-00', 'Sanjay   rawat', 'Reetu   rawat', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '97', '2016', 'BCA'),
+(104, 'Aniket', 'kumar', '0000-00-00', 'Rakesh   kumar', 'Rekha   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '98', '2016', 'BCA'),
+(105, 'Sapna', 'arya', '0000-00-00', 'Suresh   chandra', 'Sunita   arya', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '99', '2016', 'BCA'),
+(106, 'Manish', 'singh', '0000-00-00', 'S. s. barthyal', 'Hansi   devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '100', '2019', 'BCA'),
+(107, 'Aadarsh', 'kumar', '0000-00-00', 'Madan   ram', 'Vimla   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '101', '2019', 'BCA'),
+(108, 'Pooja', 'joshi', '0000-00-00', 'K. d. joshi', 'Seema   joshi', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '102', '2019', 'BCA'),
+(109, 'Sabina', 'khatoon', '0000-00-00', 'Guddu   khan', 'Sharina   khatoon', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '103', '2019', 'BCA'),
+(111, 'Manvi', 'tamta', '0000-00-00', 'Mahipal   tamta', 'Champta   tamta', 'F', 'hindu', 'SC', 'B+', 1, 'gopal', '104', '2019', 'BCA'),
+(112, 'Aayush', 'arya', '0000-00-00', 'Laxman   kumar', 'Chandrakala   ', 'M', 'hindu', 'SC', 'B+', 1, 'gopal', '105', '2019', 'BCA'),
+(114, 'Bhumika', 'bajetha', '0000-00-00', 'Jagdish c. bajetha', 'Kanchan   bajetha', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '106', '2019', 'BCA'),
+(115, 'Divyam', 'tamta', '0000-00-00', 'Sanjay   tamta', 'Ganga   devi', 'M', 'hindu', 'SC', 'B+', 1, 'gopal', '107', '2019', 'BCA'),
+(116, 'Gourav', 'arya', '0000-00-00', 'Pooran c. arya', 'Shobha   arya', 'M', 'hindu', 'SC', 'B+', 1, 'gopal', '108', '2019', 'BBA'),
+(117, 'Harshit', 'bughani', '0000-00-00', 'Tara dutt chousali', 'Durga   bughani', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '109', '2019', 'BBA'),
+(118, 'Kashish', 'joshi', '0000-00-00', 'Madhawanand   joshi', 'Seeta   joshi', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '110', '2019', 'BBA'),
+(119, 'Mukul', 'bughani', '0000-00-00', 'Naveen c. bughani', 'Vimla   bughani', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '111', '2019', 'BBA'),
+(120, 'Nikhil', 'mehra', '0000-00-00', 'Bhagat s. mehra', 'Neha   mehra', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '112', '2019', 'BBA'),
+(121, 'Piyush', 'pokhriyal', '0000-00-00', 'Dheerendra   pokhriyal', 'Rupa   ', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '113', '2019', 'BBA'),
+(122, 'Purva', 'bajetha', '0000-00-00', 'Ramesh c. bajetha', 'Mamta   bajetha', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '114', '2019', 'BBA'),
+(123, 'Priyanshu', 'belwal', '0000-00-00', 'Vinod   belwal', 'Asha   belwal', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '115', '2019', 'BBA'),
+(124, 'Twinkle', 'khanwal', '0000-00-00', 'Gopal   singh', 'Uma   khanwal', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '116', '2019', 'BBA'),
+(125, 'Tanmay', 'kumar', '0000-00-00', 'Arjun   kumar', '   ', 'F', 'hindu', 'SC', 'B+', 1, 'gopal', '117', '2019', 'BBA'),
+(126, 'Yogita', 'kohli', '0000-00-00', 'Ram   lal', 'Sarita   devi', 'F', 'hindu', 'SC', 'B+', 1, 'gopal', '118', '2015', 'BBA'),
+(127, 'Himanshi', 'bhatt', '0000-00-00', 'Bhuwan c. bhatt', 'Pushpa   bhatt', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '119', '2015', 'BBA'),
+(128, 'Kamini', 'bisht', '0000-00-00', 'Ganesh   bisht', 'Radha   devi', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '120', '2015', 'BBA'),
+(129, 'Jyoti', 'paliwal', '0000-00-00', 'Keshav   paliwal', 'Mamta   ruwali', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '121', '2015', 'BBA'),
+(130, 'Ananya', 'kohli', '0000-00-00', 'Chandan   lal', 'Rekha   devi', 'F', 'hindu', 'SC', 'B+', 1, 'gopal', '122', '2015', 'BBA'),
+(131, 'Bhawna', 'bisht', '0000-00-00', 'Bishan s. bisht', 'Champa devi', 'F', 'hindu', 'GENERAL', 'B+', 1, 'gopal', '123', '2017', 'BBA'),
+(132, 'Kushankit', 'parki', '0000-00-00', 'Manoj kumar', 'Champa parki', 'F', 'hindu', 'GENERAL', 'B+', 1, 'gopal', '124', '2016', 'BBA'),
+(133, 'Neha', 'sanwal', '0000-00-00', 'Surech c. sanwal', 'Lt. pushpa sanwal', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '125', '2014', 'BBA'),
+(134, 'Prateek', 'kanyal', '0000-00-00', 'Dinesh s. kanyal', 'Asha   kanyal', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '126', '2017', 'BBA'),
+(135, 'Garima', 'rawat', '0000-00-00', 'Gopal s. rawat', 'Manju   rawat', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '127', '2016', 'BBA'),
+(136, 'Bhumika', 'chilwal', '0000-00-00', 'Manoj   chilwal', 'Saroj   chilwal', 'F', 'hindu', 'GENERAL', 'O+', 1, 'nitin', '128', '2016', 'BBA'),
+(138, 'Anshuman', 'summal', '0000-00-00', 'Laxman s. summal', 'Bhawna   summal', 'M', 'hindu', 'GENERAL', 'O+', 1, 'nitin', '129', '2017', 'BBA'),
+(139, 'Mayank', 'tamta', '0000-00-00', 'Govind   ram', 'Maheswari   devi', 'F', 'hindu', 'SC', 'O+', 1, 'gopal', '130', '2017', 'BCA'),
+(141, 'Ayush', 'rautela', '0000-00-00', 'Devender   rautela', 'Kamla   rautela', 'M', 'hindu', 'GENERAL', 'O+', 1, 'nitin', '131', '2017', 'MCA'),
+(142, 'Vikash', 'pokhriya', '0000-00-00', 'Govind   ballabh', 'Geeta   devi', 'M', 'hindu', 'GENERAL', 'O+', 1, 'gopal', '132', '2017', 'MCA'),
+(143, 'Diksha', 'mewari', '0000-00-00', 'Rajendar   mewari', 'Bhagwati   devi', 'F', 'hindu', 'GENERAL', 'O+', 1, 'gopal', '133', '2017', 'BBA'),
+(144, 'Deepanshu', 'sanwal', '0000-00-00', 'Rajendra Kumar sanwal', 'Pinky   sanwal', 'M', 'hindu', 'GENERAL', 'O+', 1, 'gopal', '134', '2017', 'MBA'),
+(145, 'Priyanshi', 'bisht', '0000-00-00', 'Narayan   bisht', 'Diksha   bisht', 'F', 'hindu', 'GENERAL', 'O+', 1, 'gopal', '135', '2018', 'BBA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `std_reg`
+--
+
+CREATE TABLE `std_reg` (
+  `session` varchar(10) DEFAULT NULL,
+  `course_of_admission` varchar(15) NOT NULL,
+  `date_of_admission` date NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `description` text NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `std_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `studentmarks`
+--
+
+CREATE TABLE `studentmarks` (
+  `Course_name` varchar(150) NOT NULL,
+  `Semester` int(3) NOT NULL,
+  `Section` varchar(3) NOT NULL,
+  `Subject` varchar(150) NOT NULL,
+  `Student_Roll` int(10) NOT NULL,
+  `marks1` int(4) NOT NULL,
+  `marks2` int(4) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subject`
+--
+
+CREATE TABLE `subject` (
+  `course_id` varchar(15) NOT NULL,
+  `semester_id` varchar(15) NOT NULL,
+  `subject_id` varchar(15) NOT NULL,
+  `subject_name` varchar(150) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`course_id`, `semester_id`, `subject_id`, `subject_name`, `status`, `username`) VALUES
+('M.Tech', '1', '3CS1103', 'Data Structure and Algorithms', 1, 'ra'),
+('M.Tech', '1', '3CS1104', 'Computer Architecture', 1, 'ra'),
+('M.Tech', '1', '3CS1105', 'Comprehensive Assessment - I', 1, 'ra'),
+('M.Tech', '1', '3CS1106', 'Software Engineering', 1, 'ra'),
+('M.Tech', '1', '3CS1107', 'Database Systems', 1, 'ra'),
+('M.Tech', '1', '3CS1108', 'Advance Computer Networks', 1, 'ra'),
+('M.Tech', '2', '3CS1201', 'Research Seminar', 1, 'ra'),
+('M.Tech', '2', '3CS1202', 'Real Time Systems', 1, 'ra'),
+('M.Tech', '2', '3CS1203', 'Compiler Design', 1, 'ra'),
+('M.Tech', '2', '3CS1204', 'Distributed and Parallel Systems', 1, 'ra'),
+('M.Tech', '2', '3CS1205', 'Comprehensive Assessment - II', 1, 'ra'),
+('M.Tech', '3', '3CS1301', 'Project Part- I', 1, 'ra'),
+('M.Tech', '4', '3CS1401', 'Project Part- II', 1, 'ra'),
+('M.Tech', '2', '3CS1E01', 'Advance Compiler Design(Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E02', 'Simulation and Mathematical Modeling (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E03', 'Optimization Techniques (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E04', 'Software Testing and Quality Assurance (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E05', 'Formal Specification and Verification of Programs(Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E06', 'Data Compression (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E07', 'Modern Databases (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E08', 'Mobile Data Management(Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E09', 'Distributed Algorithms(Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E10', 'Multicore Computing(Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E11', 'Service Oriented Architecture(Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E13', 'Cloud Computing (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E14', 'High Performance Architecture (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E15', 'Information Theory and Coding (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E16', 'Wireless Ad Hoc Networks (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E17', 'Wireless Sensor Networks (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E23', 'Data Warehousing and Mining (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E24', 'Web Search and Mining (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E28', 'Artificial Intelligence (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E32', 'Computer Security (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS1E35', 'Machine Learning (Elective)', 1, 'ra'),
+('M.Tech', '2', '3CS3105', 'Information and Network Security', 1, 'ra'),
+('M.Tech', '2', '3CS3202', 'Information and Retrieval Systems', 1, 'ra'),
+('M.Tech', '1', '3SP1104', 'ICT Tools', 1, 'ra'),
+('M.Tech', '1', '3SP1123', 'Communication Skills for Engineers', 1, 'ra'),
+('M.Tech', '2', '3SP1126', 'Cyber Security', 1, 'ra'),
+('M.Tech', '2', '3SP1204', 'Research Methodology', 1, 'ra'),
+('M.Tech', '3', '3SP1301', 'Practical Training', 1, 'ra'),
+('BBA  ', '1', 'BBA 101 ', 'Business Organization & Management', 1, 'ra'),
+('BBA  ', '1', 'BBA 102 ', 'English Language & Communication English', 1, 'ra'),
+('BBA  ', '1', 'BBA 103 ', 'Micro Economics', 1, 'ra'),
+('BBA  ', '1', 'BBA 104 ', 'Statistics for Business Decisions', 1, 'ra'),
+('BBA  ', '1', 'BBA 105 ', 'Basic Accounting', 1, 'ra'),
+('BBA  ', '1', 'BBA 106 ', 'Computer Fundamental-Practical', 1, 'ra'),
+('BBA  ', '2', 'BBA 201 ', 'Organizational Behavior', 1, 'ra'),
+('BBA  ', '2', 'BBA 202 ', 'Business Communication', 1, 'ra'),
+('BBA  ', '2', 'BBA 203 ', 'Business Environment', 1, 'ra'),
+('BBA  ', '2', 'BBA 204 ', 'Macro Economics', 1, 'ra'),
+('BBA  ', '2', 'BBA 205 ', 'Financial Accounting', 1, 'ra'),
+('BBA  ', '2', 'BBA 206 ', 'Business Mathematics', 1, 'ra'),
+('BBA  ', '2', 'BBA 207 ', 'Comprehensive viva-voce', 1, 'ra'),
+('BBA  ', '3', 'BBA 301 ', 'Human Resource Management', 1, 'ra'),
+('BBA  ', '3', 'BBA 302 ', 'Business Laws', 1, 'ra'),
+('BBA  ', '3', 'BBA 303 ', 'Management Accounting', 1, 'ra'),
+('BBA  ', '3', 'BBA 304 ', 'Marketing Management', 1, 'ra'),
+('BBA  ', '3', 'BBA 305 ', 'International Business', 1, 'ra'),
+('BBA  ', '3', 'BBA 306 ', 'Financial Management', 1, 'ra'),
+('BBA  ', '4', 'BBA 401 ', 'Production Management', 1, 'ra'),
+('BBA  ', '4', 'BBA 402 ', 'Environmental Science', 1, 'ra'),
+('BBA  ', '4', 'BBA 403 ', 'Income Tax Law & Practice', 1, 'ra'),
+('BBA  ', '4', 'BBA 404 ', 'Research Methodology', 1, 'ra'),
+('BBA  ', '4', 'BBA 405 ', 'Indian Economics', 1, 'ra'),
+('BBA  ', '4', 'BBA 406 ', 'e-Commerce', 1, 'ra'),
+('BBA  ', '4', 'BBA 407 ', 'Comprehensive viva-voce', 1, 'ra'),
+('BBA  ', '5', 'BBA 501 ', 'Business Policy & Strategic Management', 1, 'ra'),
+('BBA  ', '5', 'BBA 502', 'International Marketing', 1, 'ra'),
+('BBA  ', '5', 'BBA 503 ', 'Industrial Relations & Labour Laws', 1, 'ra'),
+('BBA  ', '5', 'BBA 504 ', 'Financial Markets & Institutions', 1, 'ra'),
+('BBA  ', '5', 'BBA 505 ', 'Advertising & Sales Management', 1, 'ra'),
+('BBA  ', '5', 'BBA 506 ', 'Consumer Behavior', 1, 'ra'),
+('BBA  ', '5', 'BBA 507 ', 'Summer Training Project Report', 1, 'ra'),
+('BBA  ', '6', 'BBA 601', 'Management Information System', 1, 'ra'),
+('BBA  ', '6', 'BBA 602 ', 'Entrepreneurship & Small Business Management', 1, 'ra'),
+('BBA  ', '6', 'BBA 603', 'Project Management', 1, 'ra'),
+('BBA  ', '6', 'BBA 604 ', 'Rural Marketing', 1, 'ra'),
+('BBA  ', '6', 'BBA 605', 'Marketing of Services', 1, 'ra'),
+('BBA  ', '6', 'BBA 606 ', 'Project Report', 1, 'ra'),
+('BBA  ', '6', 'BBA 607 ', 'Project Viva-Voce', 1, 'ra'),
+('BCA', '1', 'BCA101', 'Communicative English ', 1, ''),
+('BCA', '1', 'BCA102', 'Basic Mathematics ', 1, ''),
+('BCA', '1', 'BCA103', 'Introduction to Computers ', 1, ''),
+('BCA', '1', 'BCA104', 'Procedure Oriented Programming ', 1, ''),
+('BCA', '1', 'BCA105', 'Financial Accounting ', 1, ''),
+('BCA', '1', 'BCA106', 'Lab C Programming ', 1, ''),
+('BCA', '2', 'BCA201', 'Discrete Mathematics ', 1, 'ra'),
+('BCA', '2', 'BCA202', 'Database Management Systems ', 1, 'ra'),
+('BCA', '2', 'BCA203', 'Data Structures  ', 1, 'ra'),
+('BCA', '2', 'BCA204', 'Digital Electronics ', 1, 'ra'),
+('BCA', '2', 'BCA205', 'Operating System ', 1, 'ra'),
+('BCA', '2', 'BCA206', 'Lab Data Structures/DBMS ', 1, 'ra'),
+('BCA', '3', 'BCA301', 'Organizational Behaviour  ', 1, 'ra'),
+('BCA', '3', 'BCA302', 'Optimization Techniques ', 1, 'ra'),
+('BCA', '3', 'BCA303', 'Computer Graphics ', 1, 'ra'),
+('BCA', '3', 'BCA304', 'Computer System Architecture ', 1, 'ra'),
+('BCA', '3', 'BCA305', 'Object Oriented Programming with C++ ', 1, 'ra'),
+('BCA', '3', 'BCA306', 'Lab Computer Graphics in C++/ Optimization Techniques ', 1, 'ra'),
+('BCA', '4', 'BCA401', 'Digital Communication and Networks ', 1, 'ra'),
+('BCA', '4', 'BCA402', 'Numerical Analysis and Statistical Techniques ', 1, 'ra'),
+('BCA', '4', 'BCA403', 'Unix and Shell Programming ', 1, 'ra'),
+('BCA', '4', 'BCA404', 'Environmental  Science ', 1, 'ra'),
+('BCA', '4', 'BCA405', 'Java Programming ', 1, 'ra'),
+('BCA', '4', 'BCA406', 'Lab Java Programming/Unix Programming ', 1, 'ra'),
+('BCA', '5', 'BCA501', 'Software Engineering ', 1, 'ra'),
+('BCA', '5', 'BCA502', 'Artificial Intelligence ', 1, 'ra'),
+('BCA', '5', 'BCA503', '(a)Python (b)C# with .NET Frame work ', 1, 'ra'),
+('BCA', '5', 'BCA504', 'Theory of Computation ', 1, 'ra'),
+('BCA', '5', 'BCA505', 'Web Technology ', 1, 'ra'),
+('BCA', '5', 'BCA506', 'Lab Python/ C#', 1, 'ra'),
+('BCA', '6', 'BCA601', 'Project Work ', 1, 'ra'),
+('BCH ', '1', 'BCH 101 ', 'English Language & BusinessCommunication', 1, 'ra'),
+('BCH ', '1', 'BCH 102 ', 'Business Organization & Management', 1, 'ra'),
+('BCH ', '1', 'BCH 103 ', 'Micro Economics', 1, 'ra'),
+('BCH ', '1', 'BCH 104 ', 'Financial Accounting', 1, 'ra'),
+('BCH ', '1', 'BCH 105 ', 'Comprehensive Viva- Voce', 1, 'ra'),
+('BCH ', '2', 'BCH 201 ', 'Business Environment', 1, 'ra'),
+('BCH ', '2', 'BCH 202 ', 'Business Regulatory Framework', 1, 'ra'),
+('BCH ', '2', 'BCH 203 ', 'Business Mathematics', 1, 'ra'),
+('BCH ', '2', 'BCH 204 ', 'Cost Accounting', 1, 'ra'),
+('BCH ', '2', 'BCH 205 ', 'Comprehensive Viva- Voce', 1, 'ra'),
+('BCH ', '3', 'BCH 301 ', 'Management Accounting', 1, 'ra'),
+('BCH ', '3', 'BCH 302 ', 'Corporate Legal Framework', 1, 'ra'),
+('BCH ', '3', 'BCH 303', 'Business Policy and Strategic Management', 1, 'ra'),
+('BCH ', '3', 'BCH 304 ', 'Business Research Methods', 1, 'ra'),
+('BCH ', '3', 'BCH 305 ', 'Comprehensive Viva- Voce', 1, 'ra'),
+('BCH ', '4', 'BCH 401 ', 'Production Management', 1, 'ra'),
+('BCH ', '4', 'BCH 402 ', 'Financial Management', 1, 'ra'),
+('BCH ', '4', 'BCH 403 ', 'Marketing Management', 1, 'ra'),
+('BCH ', '4', 'BCH 404 ', 'Computer Applications in Business', 1, 'ra'),
+('BCH ', '4', 'BCH 405 ', 'Comprehensive Viva- Voce', 1, 'ra'),
+('BCH ', '5', 'BCH 501 ', 'Income Tax Law & Accounts', 1, 'ra'),
+('BCH ', '5', 'BCH 502 ', 'International Business', 1, 'ra'),
+('BCH ', '5', 'BCH 503 ', 'Corporate Accounting', 1, 'ra'),
+('BCH ', '5', 'BCH 504 ', 'Auditing', 1, 'ra'),
+('BCH ', '5', 'BCH 505 ', 'Comprehensive Viva- Voce', 1, 'ra'),
+('BCH ', '6', 'BCH 601', 'Business Ethics & Social Responsibility', 1, 'ra'),
+('BCH ', '6', 'BCH 602 ', 'Entrepreneurship & Small Business Management', 1, 'ra'),
+('BCH ', '6', 'BCH 603', 'Project Report & Viva-Voce', 1, 'ra'),
+('BHM ', '4', 'BEGE-103', 'Communication Skill in English', 1, 'ra'),
+('BHM ', '1', 'BHM 105', 'Application of Computers', 1, 'ra'),
+('BHM ', '1', 'BHM 106', 'Hotel Engineering', 1, 'ra'),
+('BHM ', '2', 'BHM 108', 'Accountancy', 1, 'ra'),
+('BHM ', '2', 'BHM 109', 'Communication', 1, 'ra'),
+('BHM ', '1', 'BHM 111', 'Foundation Course in Food Production - I', 1, 'ra'),
+('BHM ', '1', 'BHM 112', 'Foundation Course in Food & Beverage Service - I', 1, 'ra'),
+('BHM ', '1', 'BHM 113', 'Foundation Course in Front Office - I', 1, 'ra'),
+('BHM ', '1', 'BHM 114', 'Foundation Course in Accommodation Operations-I', 1, 'ra'),
+('BHM ', '1', 'BHM 116', 'Nutrition', 1, 'ra'),
+('BHM ', '2', 'BHM 117', 'Principal of Food Science', 1, 'ra'),
+('BHM ', '2', 'bHM 151', 'Foundation Course in Food Production - II', 1, 'ra'),
+('BHM ', '2', 'BHM 152', 'Foundation Course in F & B Service - II', 1, 'ra'),
+('BHM ', '2', 'BHM 153', 'Foundation Course in Front Office - II', 1, 'ra'),
+('BHM ', '2', 'BHM 154', 'Foundation Course in Accommodation Operation-II', 1, 'ra'),
+('BHM ', '4', 'BHM 201', 'Food Production Operations', 1, 'ra'),
+('BHM ', '4', 'BHM 202', 'Food & Beverage Service Operations', 1, 'ra'),
+('BHM ', '4', 'BHM 203', 'Front Office Operations', 1, 'ra'),
+('BHM ', '4', 'BHM 204', 'Accommodation Operations', 1, 'ra'),
+('BHM ', '4', 'BHM 205', 'Food & Beverage Controls', 1, 'ra'),
+('BHM ', '4', 'BHM 206', 'Hotel Accountancy', 1, 'ra'),
+('BHM ', '4', 'BHM 207', 'Food Safety & Quality', 1, 'ra'),
+('BHM ', '3', 'BHM 208', 'Industrial Training', 1, 'ra'),
+('BHM ', '6', 'BHM 305', 'Food & Beverage Management', 1, 'ra'),
+('BHM ', '6', 'BHM 306', 'Facility Planning', 1, 'ra'),
+('BHM ', '5', 'BHM 307', 'Financial Management', 1, 'ra'),
+('BHM ', '5', 'BHM 308', 'Strategic Management', 1, 'ra'),
+('BHM ', '5', 'BHM 309', 'Research Project', 1, 'ra'),
+('BHM ', '5', 'BHM 310', 'Special topics / Guest speakers', 1, 'ra'),
+('BHM ', '5', 'BHM 311', 'Advance Food Production Operation-I', 1, 'ra'),
+('BHM ', '5', 'BHM 312', 'Advance Food & Beverage Operation-I', 1, 'ra'),
+('BHM ', '5', 'BHM 313', 'Front Office ?Management-I', 1, 'ra'),
+('BHM ', '5', 'BHM 314', 'Accommodation Management-I', 1, 'ra'),
+('BHM ', '6', 'BHM 351', 'Advance Food Production Operation-II', 1, 'ra'),
+('BHM ', '6', 'BHM 352', 'Advance Food & Beverage Operation-II', 1, 'ra'),
+('BHM ', '6', 'BHM 353', 'Front Office ?Management-II', 1, 'ra'),
+('BHM ', '6', 'BHM 354', 'Accommodation Management-II', 1, 'ra'),
+('B.Tech', '1', 'CE104', 'Computer Programming', 1, 'ra'),
+('B.Tech', '2', 'CE105', 'Introduction to Computer Science and Engineering', 1, 'ra'),
+('B.Tech', '3', 'CE301', 'Digital Systems', 1, 'ra'),
+('B.Tech', '3', 'CE302', 'Object Oriented Programming', 1, 'ra'),
+('B.Tech', '3', 'CE303', 'Mathematical foundation of Computer Science', 1, 'ra'),
+('B.Tech', '4', 'CE401', 'Data Communication', 1, 'ra'),
+('B.Tech', '4', 'CE402', 'Computer Organization', 1, 'ra'),
+('B.Tech', '4', 'CE403', 'Data Structures', 1, 'ra'),
+('B.Tech', '4', 'CE404', 'Seminar', 1, 'ra'),
+('B.Tech', '4', 'CE405', 'Mini Project - I', 1, 'ra'),
+('B.Tech', '4', 'CE406', 'Computer Peripherals Workshop', 1, 'ra'),
+('B.Tech', '5', 'CE501', 'Theory of Computation', 1, 'ra'),
+('B.Tech', '5', 'CE502', 'Database Management Systems', 1, 'ra'),
+('B.Tech', '5', 'CE503', 'Computer Networks', 1, 'ra'),
+('B.Tech', '5', 'CE504', 'Operating Systems', 1, 'ra'),
+('B.Tech', '5', 'CE505', 'Mini Project- II', 1, 'ra'),
+('B.Tech', '6', 'CE601', 'Design and Analysis of Algorithms', 1, 'ra'),
+('B.Tech', '6', 'CE602', 'Mini Project- III', 1, 'ra'),
+('B.Tech', '6', 'CE611', '.net Technologies (Elective I)', 1, 'ra'),
+('B.Tech', '6', 'CE613', 'IT Industry Management (Elective III)', 1, 'ra'),
+('B.Tech', '6', 'CE621', 'Java Technologies (Elective I)', 1, 'ra'),
+('B.Tech', '6', 'CE623', 'Machine Learning (Elective III)', 1, 'ra'),
+('B.Tech', '6', 'CE631', 'Objective C Programming (Elective I)', 1, 'ra'),
+('B.Tech', '6', 'CE633', 'Data Mining (Elective III)', 1, 'ra'),
+('B.Tech', '6', 'CE64', 'University Elective', 1, 'ra'),
+('B.Tech', '6', 'CE641', 'Embedded C Programming (Elective I)', 1, 'ra'),
+('B.Tech', '6', 'CE643', 'Parallel and Distributed computing (Elective III)', 1, 'ra'),
+('B.Tech', '6', 'CE651', 'LAMP Technologies (Elective I)', 1, 'ra'),
+('B.Tech', '6', 'CE653', 'Advanced Data Structures (Elective III)', 1, 'ra'),
+('B.Tech', '6', 'CE661', 'Mobile Applications Development Technologies (Elective I)', 1, 'ra'),
+('B.Tech', '6', 'CE663', 'Natural Language Processing (Elective III)', 1, 'ra'),
+('B.Tech', '6', 'CE671', 'Internet of Things(Elective 1)', 1, 'ra'),
+('B.Tech', '7', 'CE701', 'Interfacing with Microprocessor', 1, 'ra'),
+('B.Tech', '7', 'CE702', 'Minor Project', 1, 'ra'),
+('B.Tech', '7', 'CE703', 'Open source development lab', 1, 'ra'),
+('B.Tech', '8', 'CE801', 'Major Project', 1, 'ra'),
+('B.Tech', '1', 'CL103', 'Environmental Studies', 1, 'ra'),
+('B.Tech', '1', 'CY102', 'Chemistry', 1, 'ra'),
+('B.Tech', '3', 'EC321', 'Basic Electronics', 1, 'ra'),
+('B.Tech', '2', 'EE103', 'Elements of Electrical and Electronics Engineering.', 1, 'ra'),
+('B.Tech', '2', 'EE104', 'Electrical Workshop', 1, 'ra'),
+('B.Tech', '1', 'HS101B', 'English Communication', 1, 'ra'),
+('B.Tech', '5', 'IT502', 'Web designing', 1, 'ra'),
+('B.Tech', '6', 'IT601', 'Software Engineering', 1, 'ra'),
+('B.Tech', '6', 'IT612', 'Advanced Computer Networks (Elective II)', 1, 'ra'),
+('B.Tech', '6', 'IT622', 'Machine Human Interface (Elective II)', 1, 'ra'),
+('B.Tech', '6', 'IT632', 'Computer Graphics and Visualization (Elective II)', 1, 'ra'),
+('B.Tech', '6', 'IT642', 'Main Frame Systems (Elective II)', 1, 'ra'),
+('B.Tech', '6', 'IT652', 'Network Security and Encryption (Elective II)', 1, 'ra'),
+('B.Tech', '6', 'IT662', 'Cloud Computing (Elective II)', 1, 'ra'),
+('B.Tech', '6', 'IT682', 'Business Analysis and Optimization (Elective II)', 1, 'ra'),
+('B.Tech', '6', 'IT692', 'Software Testing (Elective II)', 1, 'ra'),
+('B.Tech', '7', 'IT702', 'Information Retrieval System (Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT714', 'Database Administration(Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT724', 'Artificial Intelligence', 1, 'ra'),
+('B.Tech', '7', 'IT734', 'System administration(Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT744', 'Digital Image Processing(Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT754', 'Wireless Networks (Elective IV)', 1, 'ra'),
+('B.Tech', '6', 'IT764', 'System Software (Elective I)', 1, 'ra'),
+('B.Tech', '7', 'IT784', 'Data Compression(ElectiveIV)', 1, 'ra'),
+('B.Tech', '7', 'IT794', 'Compiler Construction', 1, 'ra'),
+('B.Tech', '7', 'IT7A4', 'Network programming (Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT7B4', 'Web security (Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT7C4', 'Big data analytics (Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT7D4', 'Agile Software Development (Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT7E4', 'Secure software engineering (Elective IV)', 1, 'ra'),
+('B.Tech', '7', 'IT7F4', 'Deep Learning (Elective-IV)', 1, 'ra'),
+('B.Tech', '1', 'MA102', 'Calculus and Differential Equations', 1, 'ra'),
+('B.Tech', '2', 'MA202', 'Linear Algebra', 1, 'ra'),
+('B.Tech', '3', 'MA306', 'Applied Mathematics.', 1, 'ra'),
+('B.Tech', '4', 'MA403', 'Probability Statistics and Numerical Analysis', 1, 'ra'),
+('MBA', '1', 'MBA 101', 'Management Concepts', 1, 'ra'),
+('MBA', '1', 'MBA 102', 'Business Environment', 1, 'ra'),
+('MBA', '1', 'MBA 103', 'Computer Applications in Management', 1, 'ra'),
+('MBA', '1', 'MBA 104', 'Accounting for Managers', 1, 'ra'),
+('MBA', '1', 'MBA 105', 'Business Communications', 1, 'ra'),
+('MBA', '2', 'MBA 201', 'Managerial Economics', 1, 'ra'),
+('MBA', '2', 'MBA 202', 'Business Statistics', 1, 'ra'),
+('MBA', '2', 'MBA 203', 'Indian Ethos and Management', 1, 'ra'),
+('MBA', '2', 'MBA 204', 'Business Laws', 1, 'ra'),
+('MBA', '2', 'MBA 205', 'Organization Behaviour', 1, 'ra'),
+('MBA', '3', 'MBA 301', 'Management Information Systems', 1, 'ra'),
+('MBA', '3', 'MBA 302', 'Financial Management', 1, 'ra'),
+('MBA', '3', 'MBA 303', 'Marketing Management', 1, 'ra'),
+('MBA', '3', 'MBA 304', 'Human Resource Management', 1, 'ra'),
+('MBA', '3', 'MBA 305', 'Production Management', 1, 'ra'),
+('MBA', '4', 'MBA 401', 'Operation Research', 1, 'ra'),
+('MBA', '4', 'MBA 402', 'Business Research Methodology', 1, 'ra'),
+('MBA', '4', 'MBA 403', 'Project Management', 1, 'ra'),
+('MBA', '4', 'MBA 404', 'Strategic Management', 1, 'ra'),
+('MBA', '4', 'MBA 405', 'Consumer Behaviour', 1, 'ra'),
+('MBA', '5', 'MBA 501', 'Summer Internship', 1, 'ra'),
+('MBA', '5', 'MBA 502', 'International Trade and Business', 1, 'ra'),
+('MBA', '5', 'MBA 503', 'Cross-cultural and Global Management', 1, 'ra'),
+('MBA', '5', 'MBA 504', 'Total Quality Management', 1, 'ra'),
+('MBA', '5', 'MBA 505', 'Project and Project based viva-voce', 1, 'ra'),
+('MBA', '6', 'MBA 601', 'Entrepreneurship', 1, 'ra'),
+('MBA', '6', 'MBA 602', 'Training and Development', 1, 'ra'),
+('MBA', '6', 'MBA 603', 'Management of Financial Services', 1, 'ra'),
+('MBA', '6', 'MBA 604', 'Planning and Managing Retail Business', 1, 'ra'),
+('MBA', '6', 'MBA 605', 'Comprehensive Viva-voce', 1, 'ra'),
+('B.Tech', '1', 'ME103', 'Engineering Graphics', 1, 'ra'),
+('B.Tech', '2', 'ME104', 'Mechanical Workshop', 1, 'ra'),
+('B.Tech', '2', 'PY103', 'Physics', 1, 'ra'),
+('B.Tech', '2', 'SP103', 'Design Thinking', 1, 'ra'),
+('B.Tech', '1', 'SP104', 'Law and Engineering', 1, 'ra'),
+('B.Tech', '1', 'SP105', 'ICT Tools and Cyber Security', 1, 'ra'),
+('B.Tech', '4', 'SP341', 'Ethics & Values', 1, 'ra'),
+('B.Tech', '3', 'SP343', 'Entrepreneurship', 1, 'ra'),
+('B.Tech', '3', 'SP344', 'Community Services', 1, 'ra'),
+('B.Tech', '5', 'SP501', 'Fractional Course', 1, 'ra'),
+('B.Tech', '6', 'SP601', 'Capstone Course ( Computer Engineering)', 1, 'ra'),
+('B.Tech', '7', 'SP701', 'Practical Training', 1, 'ra'),
+('B.Tech', '4', 'SS341', 'Economics For Engineers', 1, 'ra'),
+('B.Tech', '3', 'SS342', 'ICT Tools and Security', 1, 'ra'),
+('B.Tech', '6', 'SS561.', 'Creativity and Innovation.', 1, 'ra'),
+('B.Tech', '5', 'SS562', 'Law for Engineers', 1, 'ra'),
+('B.Tech', '7', 'SS701', 'Organizational Behaviour', 1, 'ra'),
+('BHM ', '2', 'TS-01', 'Foundation Course in Tourism', 1, 'ra'),
+('BHM ', '4', 'TS-03', 'Management in Tourism', 1, 'ra'),
+('BHM ', '5', 'TS-06', 'Tourism Marketing', 1, 'ra'),
+('BHM ', '4', 'TS-07', 'Human Resource Management', 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable`
+--
+
+CREATE TABLE `timetable` (
+  `timetable_id` varchar(15) NOT NULL,
+  `course_id` varchar(15) NOT NULL,
+  `semester_id` varchar(15) NOT NULL,
+  `section_id` varchar(15) NOT NULL,
+  `room_id` varchar(15) NOT NULL,
+  `subject_id` varchar(15) NOT NULL,
+  `faculty_id` varchar(15) NOT NULL,
+  `time` time(3) NOT NULL,
+  `date` date NOT NULL,
+  `day` varchar(15) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `university`
+--
+
+CREATE TABLE `university` (
+  `university_id` varchar(11) NOT NULL,
+  `university_name` varchar(50) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `university`
+--
+
+INSERT INTO `university` (`university_id`, `university_name`, `status`, `username`) VALUES
+('ku', 'kumaun university', 1, 'ra'),
+('uou', 'uttarakhand open university', 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `weekly`
+--
+
+CREATE TABLE `weekly` (
+  `session_id` varchar(10) NOT NULL,
+  `subject_id` varchar(10) NOT NULL,
+  `course_id` varchar(10) NOT NULL,
+  `semester_id` varchar(10) NOT NULL,
+  `section` varchar(15) NOT NULL,
+  `lectureid` varchar(10) NOT NULL,
+  `lesson_id` varchar(10) NOT NULL,
+  `week_id` int(10) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `no_of_lecture_schedule` int(3) NOT NULL,
+  `no_of_lost_due_to_holiday` int(3) NOT NULL,
+  `no_of_lost_due_to_cl` int(3) NOT NULL,
+  `no_extra_taken` int(3) NOT NULL,
+  `no_of_lecture_actual_taken` int(3) NOT NULL,
+  `description_of_topic` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `add_class`
+--
+ALTER TABLE `add_class`
+  ADD PRIMARY KEY (`s_no`),
+  ADD UNIQUE KEY `session_id` (`session_id`);
+
+--
+-- Indexes for table `assignment`
+--
+ALTER TABLE `assignment`
+  ADD PRIMARY KEY (`Assignment_id`);
+
+--
+-- Indexes for table `attendance`
+--
+ALTER TABLE `attendance`
+  ADD PRIMARY KEY (`attendance_id`);
+
+--
+-- Indexes for table `attendance_update`
+--
+ALTER TABLE `attendance_update`
+  ADD PRIMARY KEY (`attendance_update_id`);
+
+--
+-- Indexes for table `course_table`
+--
+ALTER TABLE `course_table`
+  ADD PRIMARY KEY (`s_no`);
+
+--
+-- Indexes for table `faculty_personal`
+--
+ALTER TABLE `faculty_personal`
+  ADD PRIMARY KEY (`s_no`),
+  ADD UNIQUE KEY `faculty_id` (`faculty_id`);
+
+--
+-- Indexes for table `lecture`
+--
+ALTER TABLE `lecture`
+  ADD PRIMARY KEY (`lecture_id`);
+
+--
+-- Indexes for table `lesson`
+--
+ALTER TABLE `lesson`
+  ADD PRIMARY KEY (`lesson_id`),
+  ADD UNIQUE KEY `date` (`date`);
+
+--
+-- Indexes for table `marks`
+--
+ALTER TABLE `marks`
+  ADD PRIMARY KEY (`marks_id`);
+
+--
+-- Indexes for table `qualification`
+--
+ALTER TABLE `qualification`
+  ADD PRIMARY KEY (`q_id`);
+
+--
+-- Indexes for table `room`
+--
+ALTER TABLE `room`
+  ADD PRIMARY KEY (`room_id`),
+  ADD UNIQUE KEY `room_id` (`room_id`),
+  ADD UNIQUE KEY `room_no` (`room_no`);
+
+--
+-- Indexes for table `section`
+--
+ALTER TABLE `section`
+  ADD PRIMARY KEY (`section_id`);
+
+--
+-- Indexes for table `semester`
+--
+ALTER TABLE `semester`
+  ADD PRIMARY KEY (`semester_id`);
+
+--
+-- Indexes for table `session`
+--
+ALTER TABLE `session`
+  ADD PRIMARY KEY (`s_id`);
+
+--
+-- Indexes for table `sign_up`
+--
+ALTER TABLE `sign_up`
+  ADD PRIMARY KEY (`s_no`);
+
+--
+-- Indexes for table `std_academic`
+--
+ALTER TABLE `std_academic`
+  ADD PRIMARY KEY (`s_no`);
+
+--
+-- Indexes for table `std_group`
+--
+ALTER TABLE `std_group`
+  ADD PRIMARY KEY (`group_id`);
+
+--
+-- Indexes for table `std_personal`
+--
+ALTER TABLE `std_personal`
+  ADD PRIMARY KEY (`s_no`),
+  ADD UNIQUE KEY `student_id` (`student_id`);
+
+--
+-- Indexes for table `subject`
+--
+ALTER TABLE `subject`
+  ADD PRIMARY KEY (`subject_id`);
+
+--
+-- Indexes for table `timetable`
+--
+ALTER TABLE `timetable`
+  ADD PRIMARY KEY (`timetable_id`);
+
+--
+-- Indexes for table `university`
+--
+ALTER TABLE `university`
+  ADD PRIMARY KEY (`university_id`);
+
+--
+-- Indexes for table `weekly`
+--
+ALTER TABLE `weekly`
+  ADD PRIMARY KEY (`week_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `add_class`
+--
+ALTER TABLE `add_class`
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `attendance`
+--
+ALTER TABLE `attendance`
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
+-- AUTO_INCREMENT for table `attendance_update`
+--
+ALTER TABLE `attendance_update`
+  MODIFY `attendance_update_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `course_table`
+--
+ALTER TABLE `course_table`
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `faculty_personal`
+--
+ALTER TABLE `faculty_personal`
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `lecture`
+--
+ALTER TABLE `lecture`
+  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `lesson`
+--
+ALTER TABLE `lesson`
+  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `marks`
+--
+ALTER TABLE `marks`
+  MODIFY `marks_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `qualification`
+--
+ALTER TABLE `qualification`
+  MODIFY `q_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `section`
+--
+ALTER TABLE `section`
+  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `semester`
+--
+ALTER TABLE `semester`
+  MODIFY `semester_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `sign_up`
+--
+ALTER TABLE `sign_up`
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `std_academic`
+--
+ALTER TABLE `std_academic`
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `std_personal`
+--
+ALTER TABLE `std_personal`
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+
+--
+-- AUTO_INCREMENT for table `weekly`
+--
+ALTER TABLE `weekly`
+  MODIFY `week_id` int(10) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

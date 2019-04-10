@@ -12,7 +12,7 @@ class Studenttimetableeditcontroller extends CI_Controller
 
     public function index()  
     {  
-        $data['title'] = "Editpage";
+        $data['title'] = "Studenttimetableedit";
         $data['page_'] = "Studenttimetableedit";
         $this->load->view('templates/header', $data);
         $this->load->view('mysatyampage', $data);  

@@ -13,7 +13,7 @@ class Viewtimetablemodel extends CI_Model{
 		
 	}*/
 
-	function internalmarks()
+	function timetable()
 	{
 		$intel = array();
 		$Day = $this->input->post('Day');

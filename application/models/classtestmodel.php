@@ -8,8 +8,12 @@ class Classtestmodel extends CI_Model{
 	function savingdata1()
 	{
 		$data = array(
+			'Course_name' => $this->input->post('Course_name'),
+			'Semester' => $this->input->post('Semester'),
+			'Section' => $this->input->post('Section'),
+			'Subject' => $this->input->post('Subject'),
 			'Student_Roll' => $this->input->post('Student_Roll'),
-			'Student_name' => $this->input->post('Student_name'),
+			//'Student_name' => $this->input->post('Student_name'),
 			'Marks' => $this->input->post('Marks')
 			
 

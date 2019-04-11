@@ -4,13 +4,11 @@ class Assignmentcontroller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('assignmentmodel','um');
-		 $this->load->model('Add_class_model','am');
 		$this->load->model('Givenassignmentmodel','gm');
 		
-		
+		$this->load->model('assignmentmodel','um');
+		 $this->load->model('Add_class_model','am');
 	}
-	
 	  public function index()  
     {  
 
@@ -23,19 +21,37 @@ class Assignmentcontroller extends CI_Controller{
         $this->load->view('templates/footer');
 
     }
-     public function assignment_edit_controller($no_)  
+     public function lecture_edit($no_,$sess)  
     {  
-    	$data['add_class_in']= $this->gm->add_view_class($no_);////ravi wALA SE
-        $data['title'] = "assignment_edit";
+    	//$data['users'] = $this->um->fetchtable();
+   		 $data['add_class_in'] = $this->gm->add_view_attendance($no_);////ravi wALA SE
+
+        $data['title'] ="assignment_edit";
         $data['page_'] = "assignmentview";
+        
         $this->load->view('templates/header', $data);
-        $this->load->view('myrajpage');  
+        $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
     }
-	
-	function assignment_edit_controller_saving ()
+	function savingdata3()
 	{
-		$this->gm->assignment_edit_modal_saving();
+		$this->um->savingdata3();
+		//echo"data inns";die();
 		redirect('Assignmentcontroller');
 	}
+	
+	public function del()
+	{
+		
+		$this->db->empty_table('assignment');
+		redirect('Assignmentcontroller','refresh');
+	}
+	public function del1()
+	{
+		$u = $this->uri->segment(3);
+		$this->um->del($u);
+		
+		redirect('Assignmentcontroller','refresh');
+	}
+	
 }

@@ -10,19 +10,34 @@ class Givenassignmentmodel extends CI_Model{
 		$this->db->where('b.add_class_id' ,$no_);
 		$this->db->from('assignment a');
 		$this->db->join('add_class b', 'b.add_class_id=a.add_class_id');
-
 		$q = $this->db->get('assignment');
-		//echo $this->db->last_query(); die();
 		return $q->result();
 	}
-function add_view_attendance($clsid)
+	public function add_view_class($clsid)
 		{
-		//$intel = array();
 		$this->db->where('a.add_class_id', $clsid);
 		$this->db->from('add_class a');
 		$q = $this->db->get();
-		//echo $this->db->last_query();
 		return $q->result();
 		}
 		
+	public function assignment_edit_modal_saving()
+	{
+		$addclass_id= $this->input->post('addclass_id');	
+		for($i=0; $i<count($addclass_id); $i++)
+		{
+			$data = array(	
+			'add_class_id' => $addclass_id[$i],	
+			'Assignment_id' => $this->input->post('Assignment_id'),
+			'Given_date' => $this->input->post('Given_date'),
+			'Submission_date' => $this->input->post('Submission_date'),
+			'Unit' => $this->input->post('Unit'),
+			'Topic' => $this->input->post('Topic'),
+			'status' => '1',
+			'username' =>'ra'
+		);
+			$this->db->insert('assignment',$data);
+		}
+	}
+	
 }

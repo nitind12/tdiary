@@ -15,29 +15,13 @@ class Edit_controller extends CI_Controller
     {  
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['title'] = "lecture_page";
-        $data['page_'] = "Lecture_div";
-
+        $data['page_'] = "Lecture_class";
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
 
     }
-    public function lecture_edit($no_,$sess,$crs)
-    {  
-     $data['add_class_in'] = $this->obj->add_view_attendance($sess,$crs);
-       
-        $data['t_diary'] = $this->obj->fetchtable();
-        $data['title'] = "lecture_edit";
-        $data['page_'] = "Lecture_edit";
-        
-        $this->load->view('templates/header', $data);
-        $this->load->view('mypreetipage');
-
-        $this->load->view('templates/footer');
-    }
-
-
-    function view_lecture_div()
+    public function view_lecture_div()
     {
         $data['title'] = "Lectureview page";
         $data['page_'] = "Lecture_view_div";
@@ -46,6 +30,22 @@ class Edit_controller extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');  
+    }
+
+    public function lecture_edit($no_,$sess,$crs)
+    {  
+        $data['add_class_in'] = $this->obj->add_view_class($no_);
+        $data['t_diary'] = $this->obj->fetchtable($no_);
+        $data['title'] = "lecture_edit";
+        $data['page_'] = "Lecture_edit";
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage',$data);
+        $this->load->view('templates/footer');
+    }
+    public function lecture_saving_data()
+    {
+        $this->obj->lecture_saving_data_modal();
+        redirect('Edit_controller');
     }
 
     function lessonview()
@@ -59,11 +59,6 @@ class Edit_controller extends CI_Controller
 
     
  
-    function savingdata()
-    {
-        $this->obj->savingdata();
-        redirect('Edit_controller');
-    }
 
     public function del1()
     {
@@ -83,22 +78,6 @@ class Edit_controller extends CI_Controller
         echo $data; 
 
     }
-
-
-   
-
-/*    public function authenticate()  
-    {  
-        $this->load->model('Lview_model');  
-  
-        if ($this->Lview_model->filled_correctly())  
-        {  
-            redirect('Edit');
-        } else {  
-            redirect('Edit_controller');  
-        }  
-    }  
-*/
 
 }	
 ?>

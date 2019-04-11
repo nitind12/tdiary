@@ -367,7 +367,7 @@ $(document).ready(function()
 				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
     			});
 				
-    			$('body').on('focusout', 'td > input', function(){
+    			$('body').on('focusout', '.mytd > input', function(){
     				var str = this.id;
     				var arr = str.split('-');
     				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);

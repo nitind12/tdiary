@@ -57,7 +57,6 @@
 				<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Edit_controller/savingdata	');?>"  class="form-horizontal row-fluid">				
 
 							<table class="table table-striped table-bordered table-condensed">	
-							
 											<tr>
 												 <th colspan="3"><div class="control-group">
 												 	<label class=" span3 control-label" ><h3>Lecture Structure</h3></label>	
@@ -133,39 +132,24 @@
 
 												</tbody>
 											</table>
-
 												<table class="table table-striped table-bordered table-condensed">
                                         		<tr style="text-align: left">
-                                                    		
-                                        			
                                                     <th>Lecture No</th>
-                                                   
                                         			<th>Unit</th>
                                           			<th>Topic</th>	                                        			
-                                        			
-
                                         			<th>Delete</th>
-                                        			
                                         		</tr>
                                  <?php foreach ($t_diary as $item) { ?>		
-                                        <tr>
-                                        			
-                                        	
-                                            <td class="lectdata" id="<?php echo $item->lecture_id.'-lecture_id';?>"><?php echo $item->lecture_id ;?></td>
-                                          	<td class="lectdata" id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
-                                        	<td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata"><?php echo $item->topic;?></td>
-                                        	<!--<td><?php //echo $item->lectureid;?></td>-->
-                                        	<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
-                               			</tr>
+                                    <tr>
+                                        <td class="lectdata mytd" id="<?php echo $item->lecture_id.'-lecture_id';?>"><?php echo $item->lecture_id ;?></td>
+                                      	<td class="lectdata mytd" id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
+                                    	<td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php echo $item->topic;?></td>
+                                    	<!--<td><?php //echo $item->lectureid;?></td>-->
+                                    	<td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
+                           			</tr>
                                 <?php } ?> 
-								
-								
 										</form>
-
 									</div>
-
-						
-
 								</div>
 							</div>
 					</div><!--/.content-->

@@ -4,21 +4,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends CI_Controller {  
     function __construct(){
         parent::__construct();
-       //if(! $this->session->userdata('user')) redirect('Login_controller');
+       if(! $this->session->userdata('user')) redirect('Login_controller');
        $this->load->model('Add_class_model','am');
     }
     public function index()  
-    {  
+    {   $data['page_'] = "Reg_div";
+       
         $data['title'] = "Dashboard";
         $this->load->view('templates/header', $data);
-        $this->load->view('dashboard');  
+        $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
-    }  
-
+    }
+   
     public function attendance_controller()  
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "online_attendance";
+        $data['cls_in_session'] = $this->am->fetchClass();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
+    public function attendance_view_controller()  
+    {  
+        $data['title'] = "ONLINE_VIEW_ATTENDANCE";
+        $data['page_'] = "view_attendance_class";
+        $data['cls_in_session'] = $this->am->fetchClass();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
+    public function attendance_class_controller()  
+    {  
+        $data['title'] = "ONLINE_ATTENDANCE";
+        $data['page_'] = "online_take_attendance";
         $data['cls_in_session'] = $this->am->fetchClass();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  

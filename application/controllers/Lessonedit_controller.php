@@ -23,20 +23,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	}
 
-    public function lesson_edit($no_,$sess,$crs)  
+    public function lesson_edit($no_)  
     {  
       $data['t_diary'] = $this->obj->fetchtable($no_);
           
     $data['add_class_in'] = $this->gm->add_view_class($no_);     
-    $data['title'] = "lecture_edit";
-    $data['page_'] = "Lessonedit";    
+    $data['title'] = "lesson_edit";
+    $data['page_'] = "lesson_new";    
     $this->load->view('templates/header', $data);
     $this->load->view('mypreetipage');  
     $this->load->view('templates/footer');
     
     }
 
-     function lesson_edit_saving_controller()
+     function savingdata()
     {
          $this->obj->lesson_edit_saving_modal();
         redirect('Lessonedit_controller');

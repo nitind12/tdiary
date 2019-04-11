@@ -39,7 +39,7 @@
                     <br>		
                  
 
-			<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Lessonedit_controller/lesson_edit_saving_controller');?>"  class="form-horizontal row-fluid">
+			<form  method="post"action="<?php echo site_url('Lessonedit_controller/lesson_edit_saving_controller');?>"  class="form-horizontal row-fluid">
 				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                 	<?php foreach ($add_class_in as $item) { ?>
 						<input type="hidden" value="<?php echo $item->add_class_id;?>"
@@ -83,10 +83,14 @@
 					</td>
 				</tr>
 				<tr>
-						<td colspan="3">			
+					<td colspan="2">No_of_leture:<br>
+					<input type="text" id="No_of_leture" name="No_of_leture" class="span8">					 
+					</td>
+					
+						<td >			
 					
 							<button style="float:right" type="submit" name="save" 
-							class=" span3 btn">Submit</button>
+							class=" span12 btn">Submit</button>
 						</td>
 					</tr>
 				</div>

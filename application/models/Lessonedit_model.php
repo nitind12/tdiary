@@ -24,6 +24,7 @@ class Lessonedit_model extends CI_Model
 			'end_time' => $this->input->post('txtend'),
 			'lesson_id'=>$this->input->post('lesson_no'),	
 			'date' => $date,
+			'no_of_lecture' => $this->input->post('No_of_leture'),
 			'topic' => $this->input->post('Topic'),
 			'unit' => $this->input->post('Unit'),
 			'lecture_id' => $this->input->post('Lecture'),

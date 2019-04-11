@@ -8,7 +8,7 @@ class Checkassignmentmodel extends CI_Model{
 	
 	function check_assignment_marks_enter_modal()
 	{
-			$assignment_id= $this->input->post('assignment_id');
+			$assignment_id= $this->input->post('Assignment_No');
 			$stdroll = $this->input->post('Student_Roll');
 			$addclass_id = $this->input->post('addclass_id');
 			$assignment_status = $this->input->post('optionsRadios');
@@ -20,7 +20,7 @@ class Checkassignmentmodel extends CI_Model{
 			$data = array(
 			'add_class_id'=>$addclass_id[$i],
 			'roll_no' => $stdroll[$i],
-			'assignment_id' => $assignment_id[$i],
+			'assignment_id'=>$assignment_id[$i],
 			'assignment_status'=>$assignment_status[$i],
 			'checker_date'=>$date,
 			'status' => '1',

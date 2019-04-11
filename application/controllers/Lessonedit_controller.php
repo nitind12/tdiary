@@ -6,15 +6,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	   function __construct()
 	   {
         parent::__construct();
+        $this->load->model('Givenassignmentmodel','gm');
+        
        $this->load->model('Lessonedit_model','obj');
         $this->load->model('Add_class_model','am');
     }
     
     	function index()
-	   { 
+	   { ///done
         $data['cls_in_session'] = $this->am->fetchClass();
-        $data['t_diary'] = $this->obj->fetchtable();  
-	 	$data['title'] = "Lesson_class_page";
+       $data['title'] = "Lesson_Plan";
         $data['page_'] = "Lesson_class";
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
@@ -24,9 +25,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     public function lesson_edit($no_,$sess,$crs)  
     {  
-        
-    $data['t_diary'] = $this->obj->fetchtable(); 
-    $data['add_class_in'] = $this->am->add_view_attendance($sess,$crs);     
+      $data['t_diary'] = $this->obj->fetchtable($no_);
+          
+    $data['add_class_in'] = $this->gm->add_view_class($no_);     
     $data['title'] = "lecture_edit";
     $data['page_'] = "Lessonedit";    
     $this->load->view('templates/header', $data);
@@ -35,9 +36,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     }
 
-     function savingdata()
+     function lesson_edit_saving_controller()
     {
-         $this->obj->savingdata();
+         $this->obj->lesson_edit_saving_modal();
         redirect('Lessonedit_controller');
     }
 

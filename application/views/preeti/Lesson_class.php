@@ -1,12 +1,11 @@
 <div class="span9">
   <div class="content">
-
     <div class="module">
       <div class="module-head">
           <h2>Lesson Plan</h2>
       </div>
-        <div class="module-body">
-          <div class="btn-box-row row-fluid" >
+      <div class="module-body">
+        <div class="btn-box-row row-fluid" >
            
            <?php foreach($cls_in_session as $item){?>
               <div class="btn-box-row row-fluid  btn-box big span4"style=" float: left; color: #000090;">

@@ -3,7 +3,7 @@
 
     <div class="module">
       <div class="module-head">
-          <h2>Lecture View</h2>
+          <h2>Lecture Edit</h2>
       </div>
         <div class="module-body">
           <div class="btn-box-row row-fluid">   

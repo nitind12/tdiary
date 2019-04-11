@@ -57,7 +57,8 @@
                           <input type="hidden" value="<?php echo $item->student_id;?>" name="Student_Roll[]" id ="sid_<?php echo $item->student_id;?>">
                       </td>
                       <td align="center"><?php echo $item->first_name; ?></td>
-                      <td><input type="text" name="assignment_id[]"id="assignment_id[]" placeholder="Assignment_No" class="span8">
+                      <td>
+                        <input type="text" name="Assignment_No[]"id="Assignment_No[]" placeholder="Assignment_No" class="span8">
  
                         </td>
                       <td>

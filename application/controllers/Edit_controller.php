@@ -32,6 +32,8 @@ class Edit_controller extends CI_Controller
         $this->load->view('templates/footer');  
     }
 
+
+
     public function lecture_edit($no_,$sess,$crs)
     {  
         $data['add_class_in'] = $this->obj->add_view_class($no_);
@@ -42,6 +44,17 @@ class Edit_controller extends CI_Controller
         $this->load->view('mypreetipage',$data);
         $this->load->view('templates/footer');
     }
+    public function lecture_view($no_,$sess,$crs)
+    {  
+        $data['add_class_in'] = $this->obj->add_view_class($no_);
+        $data['t_diary'] = $this->obj->fetchtable($no_);
+        $data['title'] = "lecture_view";
+        $data['page_'] = "lecture_view";
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage',$data);
+        $this->load->view('templates/footer');
+    }
+    
     public function lecture_saving_data()
     {
         $this->obj->lecture_saving_data_modal();

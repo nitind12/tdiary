@@ -10,29 +10,29 @@ class Test extends CI_Controller{
 	}
 	function index() 												//internal wale class 
 	{
-		//$data['users'] = $this->um->fetchtable();
-        $data['page_'] = 'testview';
-        $data['title'] = "Edit Marks";
-        $data['cls_in_session'] = $this->am->fetchClass();
+		$data['page_'] = 'edit_marks_selected';
+        $data['title'] = "Edit-Marks ";
+        $data['marks_type_']=$this->um->marks_type_();
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		
 
 	}
-	 public function Test_controller()  /////internal marks page load as like input box;
+	 public function Edt_controller($so_,$mt)  /////internal marks page load as like input box;
     {  
-        $data['title'] = "EDIT_INTERNAL";
-        $data['page_'] = "edittest";        
+        $data['title'] = "Select-Marks-Type";
+        $data['page_'] = "testview";        
+       $data['cls_in_session'] = $this->am->fetchClass();
         $this->load->view('templates/header', $data);
-        $this->load->view('myrajpage');  
+        $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
         
-    }
-	 public function Testinternal_controller($no_,$sess)  /////internal marks page load as like input box;
-    {  
-        $data['title'] = "EDIT_INTERNAL_MARKS";
-        $data['page_'] = "edit_test_marks_view";        
+        }
+    public function Testinternal_controller($no_,$sess)  /////internal marks page load as like input box;
+        {  
+        $data['title'] = "Edit-Marks";
+        $data['page_'] = "edittest";        
         $this->load->view('templates/header', $data);
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['add_attend'] = $this->am->add_attendance($sess, $no_);
@@ -46,8 +46,17 @@ class Test extends CI_Controller{
         $this->um->take_marks(); 
         redirect('Test/index');   
     }
+    public function viewmarks()                           //showing all classs in view marks
+        {
+        $data['page_'] = 'view_marks_selected';
+        $data['title'] = "View-marks";
+        $data['marks_type_']=$this->um->marks_type_();
+        $this->load->view('templates/header',$data);
+        $this->load->view('myrajpage',$data);  
+        $this->load->view('templates/footer');
+    }
 
-	public function viewmarks()                           //showing all classs in view marks
+	public function vie_controller()                           //showing all classs in view marks
 		{
 		$data['page_'] = 'viewtestclass';
         $data['title'] = "View-marks";
@@ -56,11 +65,6 @@ class Test extends CI_Controller{
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 	}
-
-
-
-
-
  public function viewmarks_controller($no_,$sess) ////rename fecttab 
     {  
     	

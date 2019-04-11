@@ -1,10 +1,9 @@
 <div class="span9">
-					<div class="content">
-
-						<div class="module">
-							<div class="module-head">
-								<h1 >Assignment</h1>
-							</div>
+	<div class="content">
+		<div class="module">
+			<div class="module-head">
+					<h1 >View-Assignment</h1>
+				</div>
 
 							<div class="module-body">
 					 <div class="module-body table">
@@ -48,7 +47,7 @@
           								<br>
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 										
-		<tr style="text-align: left">
+		<tr>
 			<th align="center">A_id</th>
 			<th align="center">Given_date</th>
 			<th align="center">Submission_date</th>

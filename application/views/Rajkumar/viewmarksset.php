@@ -54,6 +54,7 @@
                     <tr>
                      <th align="center">Roll-no</th>
                       <th align="center">Student Name</th>
+                      <th align="center">Total Marks</th>
                       <th align="center">Obtained Marks</th>
                       <th align="center">Delete/Edit</th>
                       
@@ -65,7 +66,7 @@
               <tr >
               <td align="center"><?php echo $item->roll_no?></td>
               <td align="center"><?php echo $item->first_name?></td>
-
+               <td align="center"><?php echo $item->totalmarks;?></td>
               <td align="center"><?php echo $item->marks;?></td>
               <td><a href="<?php echo site_url('assignmentcontroller/del1/' .$item->add_marks_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
         <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->

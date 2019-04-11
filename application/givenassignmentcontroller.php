@@ -41,7 +41,7 @@ class Givenassignmentcontroller extends CI_Controller{
  public function view_assignment($no_,$sess,$crs) ////rename fecttab 
     {  
     	$data['vie'] = $this->um->view_given_assignment($no_);
-    	$data['add_class_in'] = $this->um->add_view_attendance($no_);////ravi wALA SE
+    	$data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);////ravi wALA SE
 
         $data['title'] = "assignment_view";
         $data['page_'] = "givenassignment";

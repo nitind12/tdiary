@@ -15,14 +15,4 @@ class Givenassignmentmodel extends CI_Model{
 		//echo $this->db->last_query(); die();
 		return $q->result();
 	}
-function add_view_attendance($clsid)
-		{
-		//$intel = array();
-		$this->db->where('a.add_class_id', $clsid);
-		$this->db->from('add_class a');
-		$q = $this->db->get();
-		//echo $this->db->last_query();
-		return $q->result();
-		}
-		
 }

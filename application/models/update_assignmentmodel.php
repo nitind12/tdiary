@@ -1,18 +1,10 @@
 <?php
 class Update_Assignmentmodel extends CI_Model{
 	
-	/*public function getData()
-	{
-		
-		$this->load->database();
-		$q = $this->db->query("SELECT * FROM check_assignment1");
-		return $q->result_array();
-		
-		
-	}*/
+	
 
 
-	function internalmarks()
+	/*function internalmarks()
 	{
 		$intel = array();
 		$Course = $this->input->post('Course_name');
@@ -28,6 +20,22 @@ class Update_Assignmentmodel extends CI_Model{
 		$this->db->where('a.Subject', $Subject);
 		$this->db->from('check_assignment1 a');
 		$this->db->join('std_personal b', 'b.student_id=a.Student_Roll');
+
+		$q = $this->db->get('check_assignment1');
+		
+		return $q->result();
+	}*/
+
+
+	function view_given_assignment($no_)///ra
+	{
+		
+		$this->db->distinct('a.Assignment_id');
+		$this->db->select('a.*, c.first_name');
+		$this->db->where('b.add_class_id' ,$no_);
+		$this->db->from('check_assignment1 a');
+		$this->db->join('add_class b', 'b.add_class_id=a.add_class_id');
+		$this->db->join('std_personal c', 'c.student_id=a.Student_Roll');
 
 		$q = $this->db->get('check_assignment1');
 		//echo $this->db->last_query(); die();

@@ -4,9 +4,12 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 class Lectureedit_model extends CI_Model
 {
 
-	function fetchtable()
-	{      
-		$query = $this->db->get("lecture");
+	function fetchtable($clsid)
+	{  
+		 $this->db->select('a.*');
+		$this->db->where('a.add_class_id', $clsid);
+		$this->db->from('lecture a');
+		$query = $this->db->get();
 		return $query->result();
 	}
 	function lecture_saving_data_modal()
@@ -45,19 +48,25 @@ class Lectureedit_model extends CI_Model
         return $query;
     }
 	
-	
-		public function add_view_class($sess, $crs)
+	function add_view_class($clsid)
 		{
-		$intel = array();
-		$this->db->distinct('b.session_id');
-		$this->db->select('a.*');
-		$this->db->where('a.session_id', $sess);
-		$this->db->where('a.course_id', $crs);
+		//$intel = array();
+		$this->db->where('a.add_class_id', $clsid);
 		$this->db->from('add_class a');
 		$q = $this->db->get();
 		//echo $this->db->last_query();
 		return $q->result();
 		}
+	/*	public function add_view_class($sess,$crs)
+		{
+			$this->db->distinct('b.session_id');
+			$this->db->select('a.*');
+			$this->db->where('a.session_id', $sess);
+			$this->db->where('a.course_id', $crs);
+			$this->db->from('add_class a');
+			$q = $this->db->get();
+			return $q->result();
+		}*/
 		public function getCourse()
 		{
 		$this->db->select('s_no , course_id');

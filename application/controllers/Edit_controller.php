@@ -34,8 +34,8 @@ class Edit_controller extends CI_Controller
 
     public function lecture_edit($no_,$sess,$crs)
     {  
-        $data['add_class_in'] = $this->obj->add_view_class($sess,$crs);
-        $data['t_diary'] = $this->obj->fetchtable();
+        $data['add_class_in'] = $this->obj->add_view_class($no_);
+        $data['t_diary'] = $this->obj->fetchtable($no_);
         $data['title'] = "lecture_edit";
         $data['page_'] = "Lecture_edit";
         $this->load->view('templates/header', $data);
@@ -78,22 +78,6 @@ class Edit_controller extends CI_Controller
         echo $data; 
 
     }
-
-
-   
-
-/*    public function authenticate()  
-    {  
-        $this->load->model('Lview_model');  
-  
-        if ($this->Lview_model->filled_correctly())  
-        {  
-            redirect('Edit');
-        } else {  
-            redirect('Edit_controller');  
-        }  
-    }  
-*/
 
 }	
 ?>

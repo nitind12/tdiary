@@ -30,6 +30,14 @@ class Weeklyedit_model extends CI_Model
 		$this->db->insert('weekly',$data);
 		}
 
+	function getCourse()
+	{
+		$this->db->select('s_no , course_id');
+		$query = $this->db->get('course_table');
+		return $query->result();
+	}
+
+	
 	function del($a)
 	{
 		$this->db->delete('weekly',array('week_id' => $a));

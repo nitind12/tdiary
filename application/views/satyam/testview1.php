@@ -23,6 +23,7 @@
 								  <tbody>
 									<tr>
 									  <td>MON</td>
+										</div>
 									  <td>BCA 203</td>
 									  <td>BCA 201</td>
 									  <td>BCA 205</td>

@@ -24,33 +24,47 @@ class Add_class_model extends CI_Model
 		}
 		function delClass($no_)
 		{	
-			$this->db->where('s_no', $no_);
+			$this->db->where('add_class_id', $no_);
 			$query = $this->db->delete("add_class");
 			return $query;
 		}
 	
-		function add_attendance()
+		function add_attendance($sess, $clsid)
 		{
+
 		$intel = array();
-		$this->db->distinct('b.session_id ');
-		$this->db->select('a.*, b.first_name ,b.student_id');
-		$this->db->from('add_class a');
-		$this->db->join('std_personal b', 'b.session_id=a.session_id');
-		$this->db->join('std_personal c', 'c.course_id=a.course_id');
-
-
-		$q = $this->db->get('add_class');
+		$this->db->distinct('b.session_id');
+		$this->db->select('a.*, b.student_id, b.first_name');
+		$this->db->where('a.session_id', $sess);
+		$this->db->where('a.add_class_id', $clsid);
+		$this->db->from('std_personal b');
+		$this->db->join('section c', 'b.student_id=c.student_id');
+		$this->db->join('add_class a', 'a.add_class_id=c.session_class_id');
+		$q = $this->db->get();
 		//echo $this->db->last_query();
 		return $q->result();
 		}
+		function add_view_attendance($clsid)
+		{
+		//$intel = array();
+		$this->db->where('a.add_class_id', $clsid);
+		$this->db->from('add_class a');
+		$q = $this->db->get();
+		//echo $this->db->last_query();
+		return $q->result();
+		}
+		
 		public function take_attendance()
 		{
 			$mk1 = $this->input->post('optionsRadios');
 			$stdroll = $this->input->post('Student_Roll');
 			$date= $this->input->post('date');
-			for($i=0; $i<count($mk1); $i++)
+			$addclass_id = $this->input->post('addclass_id');
+			
+			for($i=0; $i<count($addclass_id); $i++)
 			{
 			$data = array(
+			'add_class_id'=>$addclass_id[$i],
 			'date'=>$date,
 			'time'=>'02:00',
 			'roll_no' => $stdroll[$i],

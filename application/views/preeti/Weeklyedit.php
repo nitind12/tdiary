@@ -18,13 +18,10 @@
                                                         
                                                             <select tabindex="1" data-placeholder="Select here.."
                                                              class="span8"  name="txtcourse" id="txtcourse">
-                                                                <option value="">Select here..</option>
-                                                                <option value="BCA">BCA</option>
-                                                                <option value="BBA">BBA</option>
-                                                                <option value="B.COM">B.COM</option>
-                                                                <option value="POLY TECHNIQUE">POLY TECHNIQUE</option>
-                                                                <option value="BSC">BSC</option>
-                                                                <option value="HM">HM</option>
+                                                                <option value="">Select Course</option>
+                                                                <?php foreach ($course as  $item)   { ?>
+                                                                <option value="<?php echo $item->s_no;?>"><?php echo $item->course_id ?></option>
+                                                            <?php }?>
                                                             </select>
                                                 
                                                  </td>
@@ -128,7 +125,7 @@
                                                 </td>
                                            
                                                 <td colspan="3">Description Of Topic:<br>
-                                                        <textarea id="topic" name="topic" class="span8" rows="5"  cols="30" ></textarea>
+                                                        <textarea id="topic" name="topic" class="span8" rows="4" cols="20" ></textarea>
                                                 </td>
                                             </tr>
                                              <tr>
@@ -288,7 +285,7 @@
 
                                   <?php foreach ($t_diary as $item) { ?>
 
-                                        <tr>
+                                        <tr id="clickedit">
                                             <td><?php echo $item->session_id;?></td>
                                             <td><?php echo $item->course_id;?></td>
                                             <td><?php echo $item->semester_id ;?></td>

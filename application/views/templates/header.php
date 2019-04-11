@@ -7,7 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script type="text/javascript">
         site_url_='<?php echo site_url();?>';
         base_url_='<?php echo base_url();?>';
-    </script>
+</script>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TEACHER DIARY: <?php echo $title; ?></title>

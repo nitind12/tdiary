@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends CI_Controller {  
     function __construct(){
         parent::__construct();
-       if(! $this->session->userdata('user')) redirect('Login_controller');
+       //if(! $this->session->userdata('user')) redirect('Login_controller');
        $this->load->model('Add_class_model','am');
     }
     public function index()  
@@ -31,22 +31,28 @@ class Main extends CI_Controller {
         $this->am->savingdata(); 
         redirect('Main/attendance_controller');   
         }
+
     public function delclass_controller($no_)  
     {  
         $this->am->delclass($no_); 
         redirect('Main/attendance_controller');   
     }
-    public function takeattendance_controller()  //showing the page of aatendance;
+
+
+
+     public function takeattendance_controller($no_,$sess)  //showing the page of aatendance;
     {  
         $data['title'] = "TAKE-ONLINE_ATTENDANCE";
         $data['page_'] = "attendance_take";        
         $this->load->view('templates/header', $data);
-        $data['add_attend'] = $this->am->add_attendance();
+         //  $data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);
+         //  $data['add_attend'] = $this->am->add_attendance($sess, $crs);
+        $data['add_class_in'] = $this->am->add_view_attendance($no_);
+           $data['add_attend'] = $this->am->add_attendance($sess, $no_);
          $this->load->view('myravipage', $data);  
-        
         $this->load->view('templates/footer');
-        
     }
+
     public function submitattendance_controller()               ///showing the page of submit the data;
     {  
         $this->am->take_attendance(); 

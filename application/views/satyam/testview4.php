@@ -13,24 +13,24 @@
 									  <thead>
 										<tr bgcolor="lightblue">
 										  <th>DAY / TIME</th>
-										  <th>9:00-9:50</th>
-										  <th>9:50-10:40</th>
-										  <th>10:40-11:30</th>
-										  <th>11:30-11:50</th>
-										  <th>11:50-12:40</th>
-										  <th>12:40-01-30</th>
-										  <th>01:30-02:00</th>
-										  <th>02:00-02:50</th>
-										  <th>02:50-03:40</th>
-										  <th>03:40-04:50</th>
+										  <th></th>
+										  <th></th>
+										  <th></th>
+										  <th></th>
+										  <th></th>
+										  <th></th>
+										  <th></th>
+										  <th></th>
+										  <th></th>
+										  <th></th>
 										</tr>
 									  </thead>
 									  <tbody>
 										<tr>
 										  <td>MON</td>
-										  <td>BCA 303</td>
-										  <td>BCA 301</td>
-										  <td>BCA 305</td>
+										  <td></td>
+										  <td></td>
+										  <td></td>
 										  <td></td>
 										  <td>PDP</td>
 										  <td>BCA 304</td>

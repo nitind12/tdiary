@@ -53,8 +53,8 @@
               </div>
             </div>
         </div>
-      </div>
-     
+      </div>    
+        <?php $this->load->view('ravi/view_class');?>     
   </div>
 </div>
 </div>      

@@ -3,7 +3,7 @@
 
 						<div class="module">
 							<div class="module-head">
-								<h1 >Updated Assignment</h1>
+								<h1 >Check_View_Assignment</h1>
 							</div>
 
 							<div class="module-body">
@@ -43,43 +43,48 @@
         
                 
         </table>
-
           </div>
-          								<br>
-	<table class="table table-striped table-bordered table-condensed"  border="1">
-										
-		<tr style="text-align: left">
-			<th align="center">Student_Roll</th>
-			<th align="center">Student name</th>
-			<th align="center">A_id</th>
-			
-			<th align="center">Submission_date</th>
-			<th align="center">Late_submission</th>
-			
-			<th align="center">Grade</th>
-			<th align="center">Delete</th>
+          <br>
+               <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller');?>">
 
-
-			<!--<th align="center">Update</th>-->
-		</tr>
-
-		<?php foreach ($vie as $item) { ?>
-			<tr >
-				<td align="center"><?php echo $item->Student_Roll;?></td>
-				<td align="center"><?php echo $item->first_name;?></td>
-				<td align="center"><?php echo $item->Assignment_id;?></td>
-				
-				<td align="center"><?php echo $item->Submission_date;?></td>
-				<td align="center"><?php echo $item->Late_submission;?></td>
-				
-				<td align="center"><?php echo $item->Grade;?></td>
-				<!--<td align="center" class="show-read-more"><?php echo $item->Topic;?></td>-->
-				<td><a href="<?php echo site_url('assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
-				<!--<td><a href="<?php echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
-			</tr>
-
-		<?php } ?>
-		
-	</table>
+                <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
+                  <!-- <div style="float:right">
+                    <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
+                    //echo date("D-d-M-Y")?> </div>--->
+                   
+                  </h3>
+                       
+                        </div>
+               
+                  <thead>
+                   <tr>
+						<th align="center">Student_Roll</th>
+						<th align="center">Student name</th>
+						<th align="center">A_id</th>
+						<th align="center"><b>(1=Check0=Not_Check)</b><br>
+							Assignment Status
+						</th>	
+						<th align="center">Submission_date</th>	
+						<th align="center">Delete/Edit</th>
+					</tr>
+   
+                  </thead>
+               <tbody>
+                  
+		             <?php foreach ($vie as $item)
+		             { 
+		             	?>
+		              <tr >
+		              <td align="center"><?php echo $item->roll_no;?></td>
+						<td align="center"><?php echo $item->first_name;?></td>
+						<td align="center"><?php echo $item->assignment_id;?></td>
+						<td align="center"><?php echo $item->assignment_status;?></td>
+						<td align="center"><?php echo $item->checker_date;?></td>
+						<td><input type="button" class="btn btn-primary " value="Delete" onclick="return confirm('Are you sure')"></td>
+						
+				    <?php } ?>
+		  </tbody>
+</table>
+</div>
 </div>
 

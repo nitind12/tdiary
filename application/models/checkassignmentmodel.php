@@ -2,68 +2,48 @@
 class Checkassignmentmodel extends CI_Model{
 	function fetchtable()
 	{
-		$query = $this->db->get("check_assignment1");
+		$query = $this->db->get("assignment_checker");
 		return $query->result();
 	}
-	function savingdata4()
+	
+	function check_assignment_marks_enter_modal()
 	{
-		$data = array(
-			'Course_name' => $this->input->post('Course_name'),
-			'Semester' => $this->input->post('Semester'),
-			'Section' => $this->input->post('Section'),
-			'Subject' => $this->input->post('Subject'),
-			'Student_Roll' => $this->input->post('Student_Roll'),
-			'Assignment_id' => $this->input->post('Assignment_id'),
-			'Submission_date' => $this->input->post('Submission_date'),
-			'Late_submission' => $this->input->post('Late_submission'),
-			'Grade' => $this->input->post('Grade')
+			$assignment_id= $this->input->post('assignment_id');
+			$stdroll = $this->input->post('Student_Roll');
+			$addclass_id = $this->input->post('addclass_id');
+			$assignment_status = $this->input->post('optionsRadios');
+			$date= $this->input->post('date1');
+			
 
-
-		);
+			for($i=0; $i<count($addclass_id); $i++)
+			{
+			$data = array(
+			'add_class_id'=>$addclass_id[$i],
+			'roll_no' => $stdroll[$i],
+			'assignment_id' => $assignment_id[$i],
+			'assignment_status'=>$assignment_status[$i],
+			'checker_date'=>$date,
+			'status' => '1',
+			'username' =>'ra'
+			);
 		
-		$this->db->insert('check_assignment1',$data);
-
+			$this->db->insert('assignment_checker',$data);
+			
+		}
+				
 	}
-	/*function saving()
+	function view_given_assignment($no_)///ra
 	{
-		$data = array(
-			'Course_name' => $this->input->post('Course_name'),
-			'Semester' => $this->input->post('Semester'),
-			'Section' => $this->input->post('Section'),
-			'Subject' => $this->input->post('Subject')
-
-		);
 		
-		$this->db->insert('data',$data);
+		$this->db->distinct('a.assignment_id');
+		$this->db->select('a.*, c.first_name');
+		$this->db->where('b.add_class_id' ,$no_);
+		$this->db->from('assignment_checker a');
+		$this->db->join('add_class b', 'b.add_class_id=a.add_class_id');
+		$this->db->join('std_personal c', 'c.student_id=a.Student_Roll');
 
-	}*/
-	function del($a){
-		$this->db->delete('check_assignment1',array('Assignment_id' => $a));
-		return;
+		$q = $this->db->get('assignment_checker');
+		return $q->result();
 	}
-	function del1($a){
-		$this->db->delete('check_assignment_conroller',array('id' => $a));
-		return;
-	}
-	/*public function edit($a)
-	{
-		$d = $this->db->get_where('studentmarks',array('Student_Roll'=>$a))->row();
-		return $d;
-	}
-	function update($id)
-	{
-		$Student_Roll = $this->input->post('Student_Roll');
-		$Student_name = $this->input->post('Student_name');
-		$marks1 = $this->input->post('marks1');
-		$marks2 = $this->input->post('marks2');
-		$data =array(
-			'Student_Roll' => $Student_Roll,
-			'Student_name'=>$Student_name,
-			'marks1'=>$marks1,
-			'marks2'=>$marks2
-		);
-		$this->db->where('Student_Roll',$id);
-		$this->db->insert('test',$data);
-	}*/
 }
 ?>

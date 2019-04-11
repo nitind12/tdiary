@@ -1,3 +1,8 @@
+<style type="text/css">
+    .show-read-more .more-text{
+       display: none;
+    }
+</style>
 <div class="span9">
 	<div class="content">
 		<div class="module">

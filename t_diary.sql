@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2019 at 06:15 AM
+-- Generation Time: Apr 12, 2019 at 09:19 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.40
 
@@ -49,7 +49,8 @@ INSERT INTO `add_class` (`add_class_id`, `faculty_id`, `session_id`, `course_id`
 (25, 'ravi', '2015', 'BBA', '5', 'AC', 'A', 'ra', 1),
 (26, 'ravi', '2015', 'BBA', '5', 'AC', 'B', 'ra', 1),
 (28, 'ravi', '2018', 'BCA', '5', 'software', 'A', 'ra', 1),
-(29, 'ravi', '2018', 'BCA', '5', 'software', 'B', 'ra', 1);
+(29, 'ravi', '2018', 'BCA', '5', 'software', 'B', 'ra', 1),
+(30, 'ravi', '2016', 'bca', '5', 'software', 'A', 'ra', 1);
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,6 @@ CREATE TABLE `assignment` (
   `Assignment_id` int(11) NOT NULL,
   `Given_date` date NOT NULL,
   `Submission_date` date NOT NULL,
-  `Last_submission_date` date NOT NULL,
   `Unit` int(3) NOT NULL,
   `Topic` varchar(150) NOT NULL,
   `status` tinyint(1) NOT NULL,
@@ -73,9 +73,40 @@ CREATE TABLE `assignment` (
 -- Dumping data for table `assignment`
 --
 
-INSERT INTO `assignment` (`add_class_id`, `Assignment_id`, `Given_date`, `Submission_date`, `Last_submission_date`, `Unit`, `Topic`, `status`, `username`) VALUES
-(25, 1, '2019-04-11', '2019-04-12', '2019-04-13', 1, 'tgjjkhgyuk', 1, 'ra'),
-(25, 1, '2019-04-11', '2019-04-12', '2019-04-13', 1, 'tgjjkhgyuk', 1, 'ra');
+INSERT INTO `assignment` (`add_class_id`, `Assignment_id`, `Given_date`, `Submission_date`, `Unit`, `Topic`, `status`, `username`) VALUES
+(25, 1, '2019-04-11', '2019-04-12', 1, 'tgjjkhgyuk', 1, 'ra'),
+(25, 1, '2019-04-11', '2019-04-12', 1, 'tgjjkhgyuk', 1, 'ra'),
+(25, 1, '2019-04-15', '2019-04-15', 1, 'FFGDZGV XZDVXVXVDXXXDZVSXGX', 1, 'ra'),
+(25, 0, '0000-00-00', '0000-00-00', 0, '', 1, 'ra'),
+(26, 0, '0000-00-00', '0000-00-00', 14, 'SGSSDIFHKZ,', 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assignment_checker`
+--
+
+CREATE TABLE `assignment_checker` (
+  `add_class_id` int(11) NOT NULL,
+  `assignment_id` int(11) NOT NULL,
+  `roll_no` int(11) NOT NULL,
+  `assignment_status` tinyint(1) NOT NULL,
+  `checker_date` date NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `assignment_checker`
+--
+
+INSERT INTO `assignment_checker` (`add_class_id`, `assignment_id`, `roll_no`, `assignment_status`, `checker_date`, `status`, `username`) VALUES
+(25, 2, 118, 1, '2019-04-11', 1, 'ra'),
+(25, 2, 119, 1, '2019-04-11', 1, 'ra'),
+(25, 2, 120, 1, '2019-04-11', 1, 'ra'),
+(26, 55, 121, 1, '2019-04-11', 1, 'ra'),
+(26, 5646, 122, 1, '2019-04-11', 1, 'ra'),
+(26, 944, 403, 1, '2019-04-11', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -107,7 +138,13 @@ INSERT INTO `attendance` (`add_class_id`, `attendance_id`, `date`, `time`, `roll
 (28, 71, '2019-04-09', '02:00:00.000', 6, 'PRESENT', 'ra', 1, '121', '2', ''),
 (28, 72, '2019-04-09', '02:00:00.000', 7, 'LEAVE', 'ra', 1, '121', '2', ''),
 (28, 73, '2019-04-09', '02:00:00.000', 8, ' ABSENT', 'ra', 1, '121', '2', ''),
-(28, 74, '2019-04-09', '02:00:00.000', 9, ' ABSENT', 'ra', 1, '121', '2', '');
+(28, 74, '2019-04-09', '02:00:00.000', 9, ' ABSENT', 'ra', 1, '121', '2', ''),
+(26, 75, '2019-04-11', '02:00:00.000', 121, ' ABSENT', 'ra', 1, '121', '2', ''),
+(26, 76, '2019-04-11', '02:00:00.000', 122, ' ABSENT', 'ra', 1, '121', '2', ''),
+(26, 77, '2019-04-11', '02:00:00.000', 403, 'PRESENT', 'ra', 1, '121', '2', ''),
+(25, 78, '2019-04-12', '02:00:00.000', 118, ' ABSENT', 'ra', 1, '121', '2', ''),
+(25, 79, '2019-04-12', '02:00:00.000', 119, ' ABSENT', 'ra', 1, '121', '2', ''),
+(25, 80, '2019-04-12', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', '');
 
 -- --------------------------------------------------------
 
@@ -123,24 +160,6 @@ CREATE TABLE `attendance_update` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `check_assignment1`
---
-
-CREATE TABLE `check_assignment1` (
-  `add_class_id` int(11) NOT NULL,
-  `Assignment_id` varchar(4) NOT NULL,
-  `Student_Roll` varchar(11) NOT NULL,
-  `Submission_date` date NOT NULL,
-  `Late_submission` varchar(4) NOT NULL,
-  `Grade` varchar(4) NOT NULL,
-  `Subject` varchar(150) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `username` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -273,22 +292,33 @@ CREATE TABLE `faculty_profile` (
 --
 
 CREATE TABLE `lecture` (
-  `session_id` varchar(50) NOT NULL,
-  `course_id` varchar(50) NOT NULL,
-  `semester_id` varchar(50) NOT NULL,
-  `subject_id` varchar(50) NOT NULL,
-  `date_of_commencement` date NOT NULL,
-  `date_of_completion` date NOT NULL,
+  `lecture_id` int(3) NOT NULL,
   `faculty_id` varchar(50) NOT NULL,
+  `add_class_id` int(11) NOT NULL,
   `unit` int(3) NOT NULL,
   `topic` text NOT NULL,
-  `lecture_id` int(3) NOT NULL,
   `no_of_lecture` int(11) NOT NULL,
-  `total_lecture` int(3) NOT NULL,
-  `syllabus_pdf` varchar(250) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lecture`
+--
+
+INSERT INTO `lecture` (`lecture_id`, `faculty_id`, `add_class_id`, `unit`, `topic`, `no_of_lecture`, `status`, `username`) VALUES
+(1, '', 24, 0, '						', 0, 1, 'ra'),
+(4, '121', 25, 1, '					aijdciiccocvbfvvbj 	', 1, 1, 'ra'),
+(5, '121', 26, 1, '					aijdciiccocvbfvvbj 	', 1, 1, 'ra'),
+(6, '121', 25, 1, 'iugaxhuihiclhghcygzbgcefkcfjnkjggnkgngfxnyuh', 1, 1, 'ra'),
+(7, '121', 26, 1, '		fdzcz				', 1, 1, 'ra'),
+(8, '121', 25, 1, '			iioiuuuiuyg			', 1, 1, 'ra'),
+(9, '121', 26, 1, '			iioiuuuiuyg			', 1, 1, 'ra'),
+(10, '121', 26, 5, '				sa		', 5, 1, 'ra'),
+(11, '121', 26, 0, '			fdvfz			', 0, 1, 'ra'),
+(12, '121', 26, 1, '			zsfC			', 1, 1, 'ra'),
+(13, '121', 25, 55, '					dbifzvhrvivf	', 55, 1, 'ra'),
+(14, '121', 24, 1, '				GUDYUIAUYFEUGCY		', 1, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -297,14 +327,9 @@ CREATE TABLE `lecture` (
 --
 
 CREATE TABLE `lesson` (
-  `session_id` varchar(50) NOT NULL,
-  `course_id` varchar(10) NOT NULL,
-  `semester_id` varchar(50) NOT NULL,
-  `section_id` varchar(50) NOT NULL,
-  `faculty_id` varchar(50) NOT NULL,
-  `subject_id` varchar(50) NOT NULL,
-  `lectureid` varchar(50) NOT NULL,
   `lesson_id` int(20) NOT NULL,
+  `add_class_id` int(11) NOT NULL,
+  `lecture_id` varchar(50) NOT NULL,
   `start_time` time(2) NOT NULL,
   `end_time` time(2) NOT NULL,
   `unit` varchar(50) NOT NULL,
@@ -314,6 +339,17 @@ CREATE TABLE `lesson` (
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lesson`
+--
+
+INSERT INTO `lesson` (`lesson_id`, `add_class_id`, `lecture_id`, `start_time`, `end_time`, `unit`, `no_of_lecture`, `topic`, `date`, `status`, `username`) VALUES
+(1, 26, '3', '00:00:00.00', '00:00:00.00', '3', '5', 'wqyadh', '2019-04-11', 1, 'ra'),
+(2, 26, '1', '13:00:00.00', '16:12:00.00', '5', '54', 'fsexd', '2019-04-11', 1, 'ra'),
+(4, 26, '3', '02:05:00.00', '10:05:00.00', '322', '4', 'gddbf ', '2019-04-11', 1, 'ra'),
+(5, 26, '5', '00:00:00.00', '00:00:00.00', '33', '32', 'sad', '2019-04-11', 1, 'ra'),
+(6, 25, '3', '00:00:00.00', '00:00:00.00', '4', '55565', 'dcCjCk,cc', '2019-04-11', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -812,7 +848,16 @@ INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_ty
 (21, 29, 12, 0, 9, 30, 1, 'ra'),
 (22, 29, 13, 0, 9, 30, 1, 'ra'),
 (23, 29, 14, 0, 18, 30, 1, 'ra'),
-(24, 29, 17, 0, 7, 30, 1, 'ra');
+(24, 29, 17, 0, 7, 30, 1, 'ra'),
+(25, 25, 118, 0, 14, 30, 1, 'ra'),
+(26, 25, 119, 0, 14, 30, 1, 'ra'),
+(27, 25, 120, 0, 14, 30, 1, 'ra'),
+(28, 26, 121, 0, 14, 30, 1, 'ra'),
+(29, 26, 122, 0, 14, 30, 1, 'ra'),
+(30, 26, 403, 0, 14, 30, 1, 'ra'),
+(31, 26, 121, 0, 14, 30, 1, 'ra'),
+(32, 26, 122, 0, 14, 30, 1, 'ra'),
+(33, 26, 403, 0, 14, 30, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -1277,8 +1322,7 @@ ALTER TABLE `lecture`
 -- Indexes for table `lesson`
 --
 ALTER TABLE `lesson`
-  ADD PRIMARY KEY (`lesson_id`),
-  ADD UNIQUE KEY `date` (`date`);
+  ADD PRIMARY KEY (`lesson_id`);
 
 --
 -- Indexes for table `marks_type`
@@ -1375,13 +1419,13 @@ ALTER TABLE `weekly`
 -- AUTO_INCREMENT for table `add_class`
 --
 ALTER TABLE `add_class`
-  MODIFY `add_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `add_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `attendance_update`
@@ -1405,19 +1449,19 @@ ALTER TABLE `faculty_personal`
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
-  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `marks_type`
 --
 ALTER TABLE `marks_type`
-  MODIFY `marks_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `marks_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `qualification`
@@ -1453,7 +1497,7 @@ ALTER TABLE `std_personal`
 -- AUTO_INCREMENT for table `studentmarks`
 --
 ALTER TABLE `studentmarks`
-  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `weekly`

@@ -18,8 +18,12 @@ class Studenttimetableeditcontroller extends CI_Controller
         $this->load->view('mysatyampage', $data);  
         $this->load->view('templates/footer');
     }
-
    
+    function uploadTT(){
+        $this->load->model('Studenttimetableeditmodel', 'stem');
+        $this->stem->savingTimeTable();
+        redirect('Studenttimetableeditcontroller');
+    }
 
 /*    public function authenticate()  
     {  

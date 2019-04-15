@@ -6,25 +6,39 @@ class Studenttimetableeditmodel extends CI_Model{
 		$query = $this->db->get("student_time_table");
 		return $query->result();
 	}
-	function savingdata3()
+	function savingTimeTable()
 	{
 		$data = array(
 			'Course_id' => $this->input->post('Course_id'),
 			'Semester' => $this->input->post('Semester'),
 			'Session' => $this->input->post('Session'),
 			'Section' => $this->input->post('Section'),
-			'Choose file' => $this->input->post('Choose file(filename)'),
-			//'Faculty_id' => $this->input->post('Faculty_id'),
-			//'Time_table_id' => $this->input->post('Time_table_id'),
-			//'Time' => $this->input->post('Time'),
-			//'Room' => $this->input->post('Room'),
-
-
 		);
-		
 		$this->db->insert('student_time_table',$data);
-
+		$fileid = $this->db->insert_id();
+		echo $this->upload_tt($fileid); die();
 	}
+
+	function upload_tt($id){
+        //clearstatcache();
+        echo "agaya  ";
+        $config=array(
+        'upload_path'=>'./assets/'.'ttdocs',
+        'allowed_type'=>'pdf',
+        'max_size'=>5000,
+        'file_name'=>$id,
+        'overwrite'=>TRUE,
+        );
+        $file_element_name='txtttUpload';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+        $path_ji=$this->upload->data();
+        $path_=$path_ji['file_name'];
+    }else{
+        $path_='x';
+    }
+    return $path_;
+    }
 	/*function saving()
 	{
 		$data = array(

@@ -7,7 +7,7 @@
 							</div>
 							<div class="module-body">
 	<form id="myform100" name="myform100" class="form-horizontal row-fluid">
-	<table class="table table-striped table-bordered table-condensed"  border="1">
+	<table class="table table-striped table-bordered table-condensed" border="1">
 		
 			<!--<table class="table" >-->
 				<thead>
@@ -43,8 +43,8 @@
 									  <thead>
 										<tr bgcolor="lightblue">
 										  <th>DAY</th>
-										  <th>09:00-09:50</th>
-										  <th>09:50-10:40</th>
+										  <th>09:00-09:50 Room</th>
+										  <th>09:50-10:40 Room</th>
 										  <th>10:40-11:30</th>
 								
 										  <th>11:50-12:40</th>

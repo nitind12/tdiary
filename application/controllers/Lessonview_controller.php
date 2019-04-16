@@ -15,7 +15,7 @@ class Lessonview_controller extends CI_Controller
 	function index()
 	{
 	    $data['title'] = "Lesson_view ";
-        $data['page_'] = "Lessonview";
+        $data['page_'] = "Lessonview_class";
          $data['cls_in_session'] = $this->am->fetchClass();
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  

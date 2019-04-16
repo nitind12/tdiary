@@ -33,13 +33,17 @@
                	</tbody>
             </table>
         </div>
-   		<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Edit_controller/lecture_saving_data');?>"  class="form-horizontal row-fluid">
-				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+   		<form  method="post" name="myEdit"  id="myEdit"   action="<?php echo site_url('Edit_controller/lecture_saving_data/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>"  class="form-horizontal row-fluid">
+				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" width="100%">
+
+
                 	<?php foreach ($add_class_in as $item) { ?>
 						<input type="hidden" value="<?php echo $item->add_class_id;?>"
 						name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
 					<?php }
-					?>		
+					?>	
+
+
 				<div class="module-body">
 					<tr>
 					<th colspan="3">
@@ -63,21 +67,27 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="number" id="txtunit" name="txtunit" class="span12">
+							<input type="number" id="No_Of_Lecture" name="No_Of_Lecture" class="span12">
 						</td>
+							
+						<td>
+						<input type="text" id="txtunit" name="txtunit" class="span12">
+						</td>
+
 						<td>
 						<textarea id="topic" name="topic" class="span12" rows="6"  cols="50">
 						</textarea>
-						</td>	
-						<td>
-						<input type="text" id="No_Of_Lecture" name="No_Of_Lecture" class="span12">
 						</td>
 					</tr>
 					<tr>
-						<td colspan="3">			
+						<td colspan="3">
+								<div class="control-group">
+									<div class="controls">			
 					
-							<button style="float:right" type="submit" name="save" 
-							class=" span3 btn">Submit</button>
+										<button style="float:right" type="submit" name="save" 
+										class=" span3 btn">Submit</button>
+									</div>
+								</div>
 						</td>
 					</tr>
 				</tbody>
@@ -101,11 +111,12 @@
                    <tbody>
                    <?php foreach ($t_diary as $item) { ?>		
                        <tr>                 	
-	                       <td class="lectdata" id="<?php echo $item->lecture_id.'-lecture_id';?>"><?php echo 
+	                       <td class="lectdata"   id="<?php echo $item->lecture_id.'-lecture_id';?>"><?php echo 
 	                       $item->lecture_id ;?></td>
-	                       <td class="lectdata" id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
+	                       <td class="lectdata"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
 	                        <td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata"><?php echo $item->topic;?></td>
-	                        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
+
+	                        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
 	                    </tr>
                    <?php } ?> 
                   </tbody> 

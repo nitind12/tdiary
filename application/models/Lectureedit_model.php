@@ -68,6 +68,8 @@ class Lectureedit_model extends CI_Model
 			$q = $this->db->get();
 			return $q->result();
 		}*/
+
+
 		public function getCourse()
 		{
 		$this->db->select('s_no , course_id');
@@ -75,5 +77,11 @@ class Lectureedit_model extends CI_Model
 		return $query->result();
 		}
 
+
+		function del($a)
+		{
+			$this->db->delete('lecture',array('lecture_id'=>$a));
+			return;
+		}
 }
 

@@ -51,12 +51,11 @@
                
                   <thead>
                     <tr>
-                     <th align="center">Lecture_no</th>
-                      <th align="center">Unit_No</th>
-                      <th align="center">Topic</th>
-                      <th align="center">Delete/Edit</th>
-                      
-                        </tr>
+                        <th align="center">Lecture_no</th>
+                        <th align="center">Unit_No</th>
+                        <th align="center">Topic</th>
+                        <th align="center">Delete/Edit</th>
+                    </tr>
                   </thead>
                   <tbody>
                   
@@ -65,8 +64,9 @@
               <td align="center"><?php echo $item->no_of_lecture ?></td>
               <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
                <td align="center"><?php echo $item->topic ?></td>
-              <td>Delete</td>
-        <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
+
+              <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
+     
       </tr>
 
     <?php } ?>

@@ -105,13 +105,13 @@
                                             
 
                                          
-                                                 <td>No. Of Lecture Actual Taken :<br>
-                                                      <input type="number" id="actual_taken" name="actual_taken" class="span8">  
+                                                 <td colspan="2">No. Of Lecture Actual Taken :<br>
+                                                      <input type="number" id="actual_taken" name="actual_taken" class="span4">  
                                                   </td>
                                            
-                                                  <td colspan="4">Description Of Topic:<br>
+                                               <!--   <td colspan="4">Description Of Topic:<br>
                                                         <textarea id="topic" name="topic" class="span8" rows="5" cols="30" ></textarea>
-                                                  </td>
+                                                  </td>   -->
                                             </tr>
 
                                              <tr>
@@ -138,10 +138,10 @@
                                     <th align="center">No Of<br> Lost <br>Due To Holiday</th>
                                     <th align="center">No Of Lost<br> Due To CL</th>
                                     <th align="center">No Extra Taken</th>  
-                                    
-                                        
+               
                                     <th align="center">No Of <br>Lect Actual Taken</th>
-                                    <th align="center"> Desc of Topic</th>    
+                                  
+                                  <!--  <th align="center"> Desc of Topic</th>  -->  
                                     <th align="center">Delete</th>                            
                                 </tr>
 
@@ -158,7 +158,9 @@
                                             <td><?php echo $item->no_extra_taken;?></td>
                                                                                       
                                             <td><?php echo $item->no_of_lecture_actual_taken;?></td>
-                                            <td><?php echo $item->description_of_topic;?></td>
+
+                                          <!--  <td><?php //echo $item->description_of_topic;?></td>-->
+
                                             <td><a href="<?php echo site_url('Weeklyedit_controller/del1/' . $item->week_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
 
                                         </tr>

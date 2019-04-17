@@ -4,64 +4,37 @@ class Check_Assignment_Controller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('assignmentmodel','km');
+		$this->load->model('Add_class_model','am');
 		$this->load->model('checkassignmentmodel','um');
 	}
-	function index()
-	{
-		$data['users'] = $this->um->fetchtable();
-		//$this->load->view('assignmentview',$data);
-		 $data['page_'] = 'checkassignmentview';
-		 $data['title'] = 'Update Assinment';
-       
-        $this->load->view('templates/header',$data);
-        $this->load->view('myrajpage',$data);  
+	 public function index()  
+    {  
+        $data['cls_in_session'] = $this->am->fetchClass();
+        $data['title'] = "View_Class_Check_Assignment";
+        $data['page_'] = "view_class_check_assignment";
+        $this->load->view('templates/header', $data);
+        $this->load->view('myrajpage', $data);  
         $this->load->view('templates/footer');
-		
-		
+    }
 
-	}
-	function savingdata4()
+    public function check_assignment_marks_controller($no_,$sess)  
+    {  
+        $data['title'] = "check_assignment_student";
+        $data['page_'] = "check_assignment_student";        
+        $this->load->view('templates/header', $data);
+        $data['add_class_in'] = $this->am->add_view_attendance($no_);
+        $data['add_attend'] = $this->am->add_attendance($sess, $no_);
+         $this->load->view('myrajpage',$data);  
+        $this->load->view('templates/footer');
+        
+    }
+
+    function check_assignment_marks_enter()
 	{
-		$this->um->savingdata4();
+		$this->um->check_assignment_marks_enter_modal();
 		redirect('Check_assignment_controller');
 	}
 	
-	public function del()
-	{
-		
-		$this->db->empty_table('check_assignment1');
-		redirect('check_assignment_controller','refresh');
-	}
-	public function del1()
-	{
-		$u = $this->uri->segment(3);
-		$this->um->del($u);
-		
-		redirect('check_assignment_controller','refresh');
-	}
-	/*public function pilih()
-	{
-		$kd = $this->uri->segment(3);
-		if($kd == null)
-		{
-			redirect('test');
-		}
-		$dt = $this->testmodel->edit($kd);
-		$data['Student_name'] = $dt->Student_name;
-		$data['marks1'] = $dt->marks1;
-		$data['marks2'] = $dt->marks2;
-	}
-	public function update()
-	{
-		if($this->input->post('edit'))
-		{
-			$id->$this->input->post('id');
-			$this->um->update($id);
-			redirect('test','refresh');
-		}else
-		{
-			redirect('test/pilih',$id,'refresh');
-		}
-	}*/
-
+	
 }

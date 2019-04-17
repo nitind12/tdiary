@@ -1,54 +1,44 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Lessonedit_controller extends CI_Controller
-{
-	function __construct()
-	{
+    class Lessonedit_controller extends CI_Controller
+    {
+	   function __construct()
+	   {
         parent::__construct();
+        $this->load->model('Givenassignmentmodel','gm');
+        
        $this->load->model('Lessonedit_model','obj');
         $this->load->model('Add_class_model','am');
-
-        
     }
     
-	function index()
-	{ 
+    	function index()
+	   { ///done
         $data['cls_in_session'] = $this->am->fetchClass();
-        $data['t_diary'] = $this->obj->fetchtable();
-        //$data['course']=$this->obj->getCourse();
-         
-	 	$data['title'] = "Lesson divpage";
-        $data['page_'] = "Lesson_div";
-
-        
+       $data['title'] = "Lesson_Plan";
+        $data['page_'] = "Lesson_class";
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
 	
 	}
 
-<<<<<<< HEAD
-    public function lesson_edit($no_,$sess,$crs)  
+    public function lesson_edit($no_)  
     {  
-        
-
-        $data['t_diary'] = $this->obj->fetchtable(); 
-         $data['add_class_in'] = $this->am->add_view_attendance($sess,$crs);     
-       
-        $data['title'] = "lecture_edit";
-        $data['page_'] = "Lessonedit";
-        
-        $this->load->view('templates/header', $data);
-        $this->load->view('mypreetipage');  
-        $this->load->view('templates/footer');
+      $data['t_diary'] = $this->obj->fetchtable($no_);
+          
+    $data['add_class_in'] = $this->gm->add_view_class($no_);     
+    $data['title'] = "lesson_edit";
+    $data['page_'] = "lesson_new";    
+    $this->load->view('templates/header', $data);
+    $this->load->view('mypreetipage');  
+    $this->load->view('templates/footer');
+    
     }
 
-=======
->>>>>>> parent of 649676f... Merge branch 'master' of https://github.com/nitind12/tdiary
      function savingdata()
     {
-         $this->obj->savingdata();
+         $this->obj->lesson_edit_saving_modal();
         redirect('Lessonedit_controller');
     }
 
@@ -60,17 +50,4 @@ class Lessonedit_controller extends CI_Controller
         redirect('Lessonedit_controller','refresh');
     }
 
-
-  /*  public function authenticate()  
-    {  
-        $this->load->model('Lessonview_model');  
-  
-        if ($this->Lessonview_model->filled_correctly())  
-        {  
-            redirect('lessonedit');
-        } else {  
-            redirect('Lessonedit_controller');  
-        }  
-    } 
-    */
 }?>

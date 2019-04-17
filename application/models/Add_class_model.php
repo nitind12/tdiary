@@ -3,6 +3,7 @@ class Add_class_model extends CI_Model
 {
 		function fetchClass()
 		{
+			$this->db->order_by('course_id');
 		$query = $this->db->get("add_class");
 		return $query->result();
 		}

@@ -1,6 +1,11 @@
 <?php
 class Testmodel extends CI_Model
 {
+		public function marks_type_()
+		{
+		$query = $this->db->get("marks_type");
+		return $query->result();
+		}
 		
 		public function take_marks()
 		{

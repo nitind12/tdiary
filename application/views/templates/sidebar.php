@@ -18,7 +18,7 @@
                             <ul id="togglePages6" class="collapse unstyled">
                                         <li><a href="<?php echo site_url('Main/attendance_class_controller'); ?>"><i class="icon-edit"></i>Take Attendance</a></li>
                                         
-                                        <li><a href="<?php echo site_url('Main/attendance_view_controller'); ?>"><i class="icon-eye-open"></i>Edit-Attendance</a></li>
+                                        <li><a href="<?php echo site_url('Main/attendance_view_controller'); ?>"><i class="icon-eye-open"></i>Report's-Attendance</a></li>
                                     </ul>
                                 </li>
 </li> 

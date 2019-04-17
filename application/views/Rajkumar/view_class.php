@@ -1,3 +1,5 @@
+
+
 <div class="span9">
           <div class="content">
 
@@ -9,7 +11,14 @@
                  <div class="btn-box-row row-fluid" >
        
       <div class="btn-box-row row-fluid" >
- 
+        <a href="<?php echo site_url('assignmentcontroller/assignment_edit_controller/'.$item->add_class_id.'/'.$item->session_id);?>" id="<?php echo $item->add_class_id;?>" onclick="submit_form(); return false;">
+          <form method="post" name="form_name_here" id="form_name_here"> 
+            <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"><?php 
+                    echo date("D-d-M-Y")?> </div>
+                   
+          </form>
+        </a>
+
   <?php foreach($cls_in_session as $item){?>
       <div class="btn-box-row row-fluid  btn-box big span4"style=" float: left; color: #000090;">
           <a href="<?php echo site_url('assignmentcontroller/assignment_edit_controller/'.$item->add_class_id.'/'.$item->session_id);?>" id="<?php echo $item->add_class_id;?>">

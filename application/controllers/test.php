@@ -19,27 +19,51 @@ class Test extends CI_Controller{
 		
 
 	}
-	 public function Edt_controller($so_,$mt)  /////internal marks page load as like input box;
+	 public function Edt_controller()  /////internal marks page load as like input box;
     {  
-        $data['title'] = "Select-Marks-Type";
-        $data['page_'] = "testview";        
-       $data['cls_in_session'] = $this->am->fetchClass();
-        $this->load->view('templates/header', $data);
-        $this->load->view('myrajpage',$data);  
-        $this->load->view('templates/footer');
+        if($this->input->post('mtypeid')){
+            $so_ = $this->input->post('mtypeid');
+            $mt = $this->input->post('mtypename');
+            $data['title'] = "Select-Marks-Type";
+            $data['page_'] = "testview";        
+               $data['cls_in_session'] = $this->am->fetchClass();
+               $this->session->set_userdata('itype', $mt);
+               $this->session->set_userdata('itypeid', $so_);
+            $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
+           
+            $this->load->view('templates/header', $data);
+            $this->load->view('myrajpage',$data);  
+            $this->load->view('templates/footer');
+        }
+        else 
+        {
+            redirect('test');
+        }
         
         }
-    public function Testinternal_controller($no_,$sess)  /////internal marks page load as like input box;
-        {  
-        $data['title'] = "Edit-Marks";
-        $data['page_'] = "edittest";        
-        $this->load->view('templates/header', $data);
-        $data['add_class_in'] = $this->am->add_view_attendance($no_);
-        $data['add_attend'] = $this->am->add_attendance($sess, $no_);
-         $this->load->view('myrajpage',$data);  
-        $this->load->view('templates/footer');
+    public function Testinternal_controller()  /////internal marks page load as like input box;
+        { 
+             if($this->input->post('addclassid'))
+            {
+            $no_ = $this->input->post('addclassid');
+            $sess = $this->input->post('sessionid');
         
+            $data['title'] = "Edit-Marks";
+            $data['page_'] = "edittest";        
+            $this->load->view('templates/header', $data);
+            $data['add_class_in'] = $this->am->add_view_attendance($no_);
+            $data['add_attend'] = $this->am->add_attendance($sess, $no_);
+            $data['marks_headerr_']=$this->um->marks_header($no_,$sess);
+           
+             $this->load->view('myrajpage',$data);  
+            $this->load->view('templates/footer');
+         } 
+        else 
+        {
+            redirect('test/Edt_controller');
+        }
     }
+       
 
     public function submitmarks_controller()               ///showing the page of submit the data;
     {  
@@ -51,20 +75,34 @@ class Test extends CI_Controller{
         $data['page_'] = 'view_marks_selected';
         $data['title'] = "View-marks";
         $data['marks_type_']=$this->um->marks_type_();
+          
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
     }
 
-	public function vie_controller()                           //showing all classs in view marks
-		{
-		$data['page_'] = 'viewtestclass';
-        $data['title'] = "View-marks";
-        $data['cls_in_session'] = $this->am->fetchClass();
-        $this->load->view('templates/header',$data);
-        $this->load->view('myrajpage',$data);  
-        $this->load->view('templates/footer');
-	}
+	public function vie_controller($so_,$mt) 
+    {
+		if($this->input->post('marksid1')){
+            $so_ = $this->input->post('marksid1');
+            $mt = $this->input->post('marksname1');
+            $data['title'] = "Select-View-Type";
+            $data['page_'] = "viewtestclass";        
+               $data['cls_in_session'] = $this->am->fetchClass();
+               $this->session->set_userdata('marksname1', $mt);
+               $this->session->set_userdata('marksid1', $so_);
+            $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
+           
+            $this->load->view('templates/header', $data);
+            $this->load->view('myrajpage',$data);  
+            $this->load->view('templates/footer');
+        }
+        else 
+        {
+            redirect('test');
+        }
+        
+        }
  public function viewmarks_controller($no_,$sess) ////rename fecttab 
     {  
     	

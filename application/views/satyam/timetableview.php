@@ -7,7 +7,7 @@
 							</div>
 							<div class="module-body">
 	<form id="myform100" name="myform100" class="form-horizontal row-fluid">
-	<table class="table table-striped table-bordered table-condensed"  border="1">
+	<table class="table table-striped table-bordered table-condensed" border="1">
 		
 			<!--<table class="table" >-->
 				<thead>

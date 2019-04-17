@@ -3,9 +3,7 @@ $(document).ready(function()
 
 	$('#myform111').submit(function()
 	{
-
-		if($.trim($('#Course_id').val()) == '')
-			{
+		if($.trim($('#Course_id').val()) == ''){
 				alert('Course_id must be filled out');
 			}
 		else if($.trim($('#Semester').val()) == '')
@@ -20,11 +18,10 @@ $(document).ready(function()
 			{
 				alert('Section must be filled out');
 			}
-		else if($.trim($('#Choose_file').val()) == '')
+		else if($.trim($('#txtttUpload').val()) == '')
 			{
 				alert('Choose_file must be select out');
 			}
-
 			else
 			{
 				$('#myform111').submit();
@@ -172,7 +169,10 @@ $(document).ready(function()
 						//alert(obj.marks[i].Subject_id);
 						id_ = obj.marks[i].Day+obj.marks[i].Time;
 						$('#'+id_).html(obj.marks[i].Subject_id);
+						//id_ = obj.marks[i].Day+obj.marks[i].Time;
+						//$('#'+id_).html(obj.marks[i].Subject_id,Room);
 					}
+					
 					//$('#timetablehere').html(str);
 
 				}

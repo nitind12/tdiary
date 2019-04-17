@@ -55,6 +55,22 @@ class Add_class_model extends CI_Model
 		return $q->result();
 		}
 		
+		
+		public function  reports_attendance_modals()
+		{
+			$reports_=array();
+			$btn1= $this->input->post('d1');
+	
+		$this->db->distinct('a.roll_no');
+		$this->db->select('a.*');
+		$this->db->where('a.date',$btn1);
+		$this->db->from('attendance a');
+		$query = $this->db->get();
+		return $query->result();
+		
+		}
+	
+
 		public function take_attendance()
 		{
 			$mk1 = $this->input->post('optionsRadios');

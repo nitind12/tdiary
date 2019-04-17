@@ -1,5 +1,44 @@
 $(document).ready(function()
 {
+
+	$('.editmarksselected').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#mtypeid').val(arr[0]);
+			$('#mtypename').val(arr[1]);
+
+			$('#frmMarksSelected').submit();
+		});	
+
+	
+	$('.testviewselected').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassid').val(arr[0]);
+			$('#sessionid').val(arr[1]);
+
+			$('#frmMarksedit').submit();
+		});	
+
+	$('.viewtestclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#marksid1').val(arr[0]);
+			$('#marksname1').val(arr[1]);
+
+			$('#frmviewSelected').submit();
+		});	
+
+	
+	$('.viewtest').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassid1').val(arr[0]);
+			$('#sessionid1').val(arr[1]);
+
+			$('#frmview').submit();
+		});	
+
 	$('#myform1').submit(function()
 	{
 		if($.trim($('#Course_name').val()) == '')
@@ -507,6 +546,7 @@ $('#update').click(function(){
 			}
 
 		});
+
 	});
 
 

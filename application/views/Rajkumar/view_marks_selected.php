@@ -1,15 +1,21 @@
 <div class="content">
   <div class="module">
     <div class="module-head">
-      <h1>View-Marks</h1>
+      <h1>VIEW-MARKS</h1>
     </div>
           
          <div class="btn-box-row row-fluid" >
- 
-           <?php foreach($marks_type_ as $item){?>
+          <?php
+            $data = array(
+              'name' => 'frmviewSelected',
+              'id' => 'frmviewSelected'
+            );
+            echo form_open('Test/vie_controller', $data); 
+          ?>
+          <?php foreach($marks_type_ as $item){?>
+             
                <div class="btn-box-row row-fluid  btn-box big span5">
-                 <a href="<?php echo site_url('Test/vie_controller/'.$item->marks_type_id.'/'.$item->marks_name);?>" id="<?php echo $item->marks_type_id;?>">
-                <div class="btn-box-row row-fluid ">
+                <div class="btn-box-row row-fluid viewtestclass" id="<?php echo $item->marks_type_id . "~" . $item->marks_name;?>">
         
                     <i class="icon-gift" id="btnaddclass"name="btnaddclass"></i>
                             <br>
@@ -19,8 +25,13 @@
                 </a>
               </div>
             <?php 
-              }
+              } ?>
+              <input type="hidden" name="mtypeid" id="mtypeid">
+              <input type="hidden" name="mtypename" id="mtypename">
+              <?php
+              echo form_close();
               ?>
+
       </div>
  </div>
 </div>

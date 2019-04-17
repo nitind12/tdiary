@@ -149,7 +149,7 @@ $(document).ready(function()
 */
 
 
-
+/*
 
 
 	$('#btnlecturesubmit').click(function()
@@ -269,12 +269,6 @@ $(document).ready(function()
 
 
 
-
-
-
-
-
-
 	$('#btnweeklysubmit').click(function(){
 		var data_ = $('#myweek').serialize();
 		var url_ = site_url_+ '/Weeklyview_controller/lessonview';
@@ -332,8 +326,13 @@ $(document).ready(function()
 	});
 
 
+
+*/
+
+
+
 //Read More...
-		    var maxLength = 25;
+		    var maxLength = 30;
 
 		    $(".show-read-more").each(function() {
 

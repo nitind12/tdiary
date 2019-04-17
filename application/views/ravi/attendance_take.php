@@ -55,8 +55,7 @@
                      <th align="center">Roll-no</th>
                       <th align="center">Student Name</th>
                       <th align="center">Attendance status</th>
-                      <th align="center">Delete</th>
-                      </tr>
+                     </tr>
                   </thead>
                   <tbody>
                     
@@ -91,13 +90,12 @@
                       </div>
                     </div>
           </td>
-        <td><a href="#">Delete</a></td>
+       
         </tr>  
     <?php } ?>
   </tbody>
   <br/>
                 
-</table>
 <table class="table">
 <tfoot>
                     <tr>

@@ -55,10 +55,10 @@ class Edit_controller extends CI_Controller
         $this->load->view('templates/footer');
     }
     
-    public function lecture_saving_data()
+    public function lecture_saving_data($no_,$sess,$crs)
     {
         $this->obj->lecture_saving_data_modal();
-        redirect('Edit_controller');
+        redirect('Edit_controller/lecture_edit/'.$no_.'/'.$sess.'/'.$crs);
     }
 
     function lessonview()
@@ -78,7 +78,7 @@ class Edit_controller extends CI_Controller
         $u = $this->uri->segment(3);
         $this->obj->del($u);
         
-        redirect('Edit_controller','refresh');
+        redirect('Edit_controller/lecture_edit','refresh');
     }
 
 

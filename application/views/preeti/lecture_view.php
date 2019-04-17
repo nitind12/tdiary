@@ -6,7 +6,7 @@
 <div class="content">
 <div class="module">
     <div class="module-head">
-          <h1>Lecture-View</h1>
+          <h1>Lecture View</h1>
     </div>
     <div class="module-body table">
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
@@ -15,7 +15,6 @@
               <th align="center">Session:</th>
               <th align="center">Course:</th>
                <th align="center">Semester:</th>
-               <th align="center">Section:</th>
                <th align="center">Subject:</th>
               </tr>
               </thead>
@@ -25,7 +24,6 @@
             <td><b><?php echo $item->session_id?></b> </td>
              <td><b><?php echo $item->course_id?></b> </td>
              <td> <b><?php echo $item->semester_id?></b> </td>
-              <td> <b><?php  echo $item->section_id?></b> </td>
               <td> <b><?php echo $item->subject_id;?></b></td>
             </tr>        
               <?php 
@@ -51,22 +49,22 @@
                
                   <thead>
                     <tr>
-                     <th align="center">Lecture_no</th>
-                      <th align="center">Unit_No</th>
-                      <th align="center">Topic</th>
-                      <th align="center">Delete/Edit</th>
-                      
-                        </tr>
+                        <th align="center">Lecture No</th>
+                        <th align="center">Unit No</th>
+                        <th align="center">Topic</th>
+                        <th align="center">Delete</th>
+                    </tr>
                   </thead>
                   <tbody>
                   
              <?php foreach ($t_diary as $item) { ?>
               <tr>
-              <td align="center"><?php echo $item->no_of_lecture ?></td>
+              <td align="center"><?php echo $item->lecture_id ?></td>
               <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
-               <td align="center"><?php echo $item->topic ?></td>
-              <td>Delete</td>
-        <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
+               <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
+
+              <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
+     
       </tr>
 
     <?php } ?>

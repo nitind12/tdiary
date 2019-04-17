@@ -20,9 +20,11 @@ class Lectureedit_model extends CI_Model
 		{			
 	$data = array(
 			'add_class_id' => $addclass_id[$i],
+			'lecture_id'=>$this->input->post('Lecture_no'),
 			'unit' => $this->input->post('txtunit'),
 			'topic'=>$this->input->post('topic'),
-            'no_of_lecture' => $this->input->post('txtunit'),
+			'no_of_lecture'=>$this->input->post('no_of_lecture'),
+
             'faculty_id'=>'121',
 			'status'=>'1',
             'username'=>'ra'
@@ -68,6 +70,8 @@ class Lectureedit_model extends CI_Model
 			$q = $this->db->get();
 			return $q->result();
 		}*/
+
+
 		public function getCourse()
 		{
 		$this->db->select('s_no , course_id');
@@ -75,5 +79,11 @@ class Lectureedit_model extends CI_Model
 		return $query->result();
 		}
 
+
+		function del($a)
+		{
+			$this->db->delete('lecture',array('lecture_id'=>$a));
+			return;
+		}
 }
 

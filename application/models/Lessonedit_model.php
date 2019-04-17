@@ -5,7 +5,7 @@ class Lessonedit_model extends CI_Model
 {
 	function fetchtable($clsid)
 	{  
-		 $this->db->select('a.*');
+		$this->db->select('a.*');
 		$this->db->where('a.add_class_id', $clsid);
 		$this->db->from('lesson a');
 		$query = $this->db->get("");	
@@ -23,8 +23,9 @@ class Lessonedit_model extends CI_Model
 			'start_time' => $this->input->post('txtstart'),
 			'end_time' => $this->input->post('txtend'),
 			'lesson_id'=>$this->input->post('lesson_no'),	
-			'date' => $date,
-			'no_of_lecture' => $this->input->post('No_of_leture'),
+			//'date' => $date,
+			//'no_of_lecture' => $this->input->post('No_of_leture'),
+			'date'=>$this->input->post('date'),
 			'topic' => $this->input->post('Topic'),
 			'unit' => $this->input->post('Unit'),
 			'lecture_id' => $this->input->post('Lecture'),

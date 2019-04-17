@@ -16,7 +16,7 @@
 
 			<thead>
                      <tr style="text-align: left">                   		
-                                      <th>session</th>
+                                      <th>Session</th>
                                       <th>Course</th>
                                        <th>Semester</th>
                                    		<th>Section</th>
@@ -35,94 +35,126 @@
 	           		</tr>
 	                    	<?php }?>		
                  </tbody>
-                      </table>	
+          </table>	
                     <br>		
                  
 
 			<form  method="post"action="<?php echo site_url('Lessonedit_controller/lesson_edit_saving_controller');?>"  class="form-horizontal row-fluid">
 				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+
+
                 	<?php foreach ($add_class_in as $item) { ?>
 						<input type="hidden" value="<?php echo $item->add_class_id;?>"
 						name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
 					<?php }
-					?>		
-			<div class="module-body">
-				<div class="control-group">
-					<label class="control-label" >
-						<h3>Lesson_Structure</h3>
-					</label>	
-				</div>
-				<div style="float:right">
-                    <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date1" id="date1"> </div>
+					?>	
+
+				
+				
+				<!--<div style="float:right">
+                    <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date1" id="date1"> </div>		-->
                     
                   <thead>
+                  	<th colspan="3">
+						<div class="control-group">
+							<label class="control-label span3" >
+								<h3>Lesson Structure</h3>
+							</label>
+						</div>
+					</th>	
+
                  </thead>
 				<tbody>
 				<tr>
+					<!--
+						<td>Lesson No:<br>
+							<input type="text" id="lesson_no" name="lesson_no" class="span8">					 
+						</td>
+					-->
 					<td>Start Time:<br>
-						<input type="time" id="txtstart" name="txtstart" class="span12">
+						<input type="time" id="txtstart" name="txtstart" class="span8">
 					</td>
 					<td>End Time:<br>
-						<input type="time" id="txtend" name="txtend" class="span12">				
+						<input type="time" id="txtend" name="txtend" class="span6">				
 					</td>
-					<td >Unit:<br>
-						<input type="number" id="Unit" name="Unit" class="span12">
-					</td>
+				
+				
 
 				</tr>	
 				 <tr>
-				 	<td>Lecture_Plan_No:<br>
-						<input type="number" id="Lecture" name="Lecture"class="span12">
+				 	<td>Date:<br>
+						<input type="date" id="date" name="date"class="span8">
     				</td>
-					
-					<td>Lesson No:<br>
-					<input type="text" id="lesson_no" name="lesson_no" class="span12">					 
-					</td>
-					<td > Topic:<br>
-    				<textarea class="span12" rows="8"  cols="30" id="Topic" name="Topic"></textarea>
+
+				 	<td colspan="2">
+				 		<table class="table table-striped table-bordered table-condensed">
+				 			<tr>
+    							<td >Unit:<br>
+									<input type="number" id="Unit" name="Unit" class="span4">
+								</td>
+							</tr>
+							<tr>
+								<td > Topic:<br>
+    								<textarea class="span12" rows="5"  cols="30" id="Topic" name="Topic"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td>Lecture No:<br>
+									<input type="number" id="Lecture" name="Lecture"class="span4">
+    							</td>
+    						</tr>
+
+						</table>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">No_of_leture:<br>
-					<input type="text" id="No_of_leture" name="No_of_leture" class="span8">					 
-					</td>
+				
 					
-						<td >			
+						<td colspan="3">			
 					
-							<button style="float:right" type="submit" name="save" 
-							class=" span12 btn">Submit</button>
+							<button style="float:right" type="submit" name="save" id="save" class="btn btn-primary">Submit</button>
 						</td>
 					</tr>
 				</div>
     	</tbody>
     </table>
- </form>
-</div>		
-</div>
-</div>
 
-<table class="table table-striped table-bordered table-condensed">
+    <br>
+
+
+				<table class="table table-striped table-bordered table-condensed">
                            <tr style="text-align: left">
-                                                 <th>Lesson_No</th>
-                                                 <th>Date</th>
+                                              <!--  <th>Lesson No</th>	-->
+                                                <th>Date</th>
                                         		<th>Start Time</th>
                                         		<th>End Time</th>
                                         		<th>Unit</th>
                                           		<th>Topic</th>	                               	
-                                          		<th>Lecture id</th>
+                                          		<th>Lecture No</th>
                                         	<th>Delete</th>
                                         	</tr>
                           <?php foreach ($t_diary as $item) { ?>		
                                  <tr id='clickedit'>
-                                        <td><?php echo $item->lesson_id ;?></td>
+                                   <!--     <td><?php echo $item->lesson_id ;?></td>		-->
                                         <td><?php echo $item->date;?></td>
                                         <td><?php echo $item->start_time;?></td>
                                         <td><?php echo $item->end_time;?></td>
                                         <td><?php echo $item->unit ;?></td>	
                                        <td class="show-read-more"><?php echo $item->topic;?></td>
                                         <td><?php echo $item->lecture_id;?></td>
-                                        <td>Delete</td>
+                                        <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
+                                        
                                			</tr>
                                 <?php } ?>
-</table>
+            </table>
+        </div>
+    </table>
+</form>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
 	

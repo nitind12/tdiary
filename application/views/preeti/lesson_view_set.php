@@ -6,7 +6,7 @@
 <div class="content">
 <div class="module">
     <div class="module-head">
-          <h1>Lecture-View</h1>
+          <h1>Lecture View</h1>
     </div>
     <div class="module-body table">
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
@@ -50,39 +50,39 @@
                         </div>
                
                   <thead>
-                    <tr>
-                        
-                      <th align="center">Lecture_No</th>
-                      <th align="center">Start_Time</th>
-                      <th align="center">End_Time</th>
-                      <th align="center">Unit</th>
-                      <th align="center">Topic</th>
-                      <th align="center">Date</th>
-                      <th align="center">No_of_Lecture</th>
-                      <th align="center">Delete/Edit</th>
+                      <tr>
+                          <!-- <th align="center">No_of_Lecture</th>  -->
+                          <th align="center">Date</th>
+                          <th align="center">Start Time</th>
+                          <th align="center">End Time</th>
+                          <th align="center">Unit</th>
+                          <th align="center">Topic</th>
+                          <th align="center">Lecture No</th>
+                          
+                         
+                          <th align="center">Delete</th>
                       
-                  </tr>
+                       </tr>
                   </thead>
                   <tbody>
                   
              <?php foreach ($t_diary as $item) { ?>
-              <tr>
-            <td class="show-read-more"><?php echo $item->lecture_id ?></td>
-              <td class="show-read-more"><?php echo $item->start_time ?></td>
-              <td class="show-read-more"><?php echo $item->end_time ?></td>
-              <td class="show-read-more"><?php echo $item->unit ?></td>
-              <td class="show-read-more"><?php echo $item->topic ?></td>
-                <td class="show-read-more"><?php echo $item->date ?></td>
-              <td align="center"><?php echo $item->no_of_lecture ?></td>
-               
-                <td>Delete</td>
-        <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
-      </tr>
+                <tr>
+                      <td class="show-read-more"><?php echo $item->date ?></td>
+                      <td class="show-read-more"><?php echo $item->start_time ?></td>
+                      <td class="show-read-more"><?php echo $item->end_time ?></td>
+                      <td class="show-read-more"><?php echo $item->unit ?></td>
+                      <td class="show-read-more"><?php echo $item->topic ?></td>
+                      <td class="show-read-more"><?php echo $item->lecture_id ?></td>
+              
+                    <!--  <td align="center"><?php echo $item->no_of_lecture ?></td>    -->
+                      
+                         <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>    
+                     <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
+                </tr>
 
-    <?php } ?>
-    
-                    
-   
+           <?php } ?>
+  
 </div>
 
   </tbody>

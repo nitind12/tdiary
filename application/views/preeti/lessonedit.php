@@ -1,6 +1,6 @@
 <style type="text/css">
     .show-read-more .more-text{
-        display: none;
+        display: none;							rfgfgrh
     }
 </style>
 
@@ -16,7 +16,7 @@
 
 			<thead>
                      <tr style="text-align: left">                   		
-                                      <th>session</th>
+                                      <th>Session</th>
                                       <th>Course</th>
                                        <th>Semester</th>
                                    		<th>Section</th>

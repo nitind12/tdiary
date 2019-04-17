@@ -7,7 +7,7 @@
 <div class="content">
   <div class="module">
     <div class="module-head">
-      <h3>Lecture  View</h3>
+      <h2>Lecture  View</h2>
     </div>
       
       <div class="btn-box-row row-fluid" >

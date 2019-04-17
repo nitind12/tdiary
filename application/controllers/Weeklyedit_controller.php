@@ -6,68 +6,52 @@ class Weeklyedit_controller extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Givenassignmentmodel','gm');
-
-		$this->load->model('Weeklyedit_model','obj');
-		$this->load->model('Add_class_model','am');	
+		$this->load->model('Weeklyedit_model','obj');	
+		$this->load->model('Add_class_model','am');
 		
 	}
 
 	function index()
 	{
-		
-	    $data['title'] = "Weekly Class page";
+	
+		$data['cls_in_session'] = $this->am->fetchClass();
+	    $data['title'] = "Weeklyedit page";
         $data['page_'] = "Weeklyedit_class";
-        $data['cls_in_session'] = $this->am->fetchClass();
 
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');	
 	}
 
-
-	public function WeeklyEdit($no_)
-	{
-
-		$data['t_diary'] = $this->obj->fetchtable();
-		$data['add_class_in']= $this->gm->add_view_class($no_);
-		//$data['course']=$this->obj->getCourse();
-
-		$data['title'] = "Weeklyedit page";
+    public function weekly_edit($no_,$sess,$crs)
+    {  
+        $data['add_class_in'] = $this->obj->add_view_class($no_);
+        $data['t_diary'] = $this->obj->fetchtable($no_);
+        $data['title'] = "Weekly Edit";
         $data['page_'] = "Weeklyedit";
-
         $this->load->view('templates/header', $data);
-        $this->load->view('mypreetipage', $data);  
-        $this->load->view('templates/footer');	
-	}
+        $this->load->view('mypreetipage',$data);
+        $this->load->view('templates/footer');
+    }
 
 
+    public function weekly_view($no_,$sess,$crs)
+    {  
+        $data['add_class_in'] = $this->obj->add_view_class($no_);
+        $data['t_diary'] = $this->obj->fetchtable($no_);
+        $data['title'] = "Weekly Edit";
+        $data['page_'] = "Weeklyview";
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage',$data);
+        $this->load->view('templates/footer');
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	function savingdata()
+	function savingdata($no_,$sess,$crs)
 	{
 		
 		$this->obj->savingdata();
-		redirect('Weeklyedit_controller');
+		redirect('Weeklyedit_controller/Weekly_edit/'.$no_.'/'.$sess.'/'.$crs);
 	}
 
     public function del1()

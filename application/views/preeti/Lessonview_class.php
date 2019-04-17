@@ -1,13 +1,12 @@
 
 
-
 <style type="text/css">
   .classBox{font-size: 13px !important; text-align: left; margin: 10px}
 </style>
 <div class="content">
   <div class="module">
     <div class="module-head">
-      <h3>Lesson Plan View</h3>
+      <h2>Lesson Plan View</h2>
     </div>
       
        <div class="module-body">
@@ -25,3 +24,4 @@
     <?php } ?>
 </div>
  </div>
+

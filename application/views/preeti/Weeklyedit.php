@@ -48,7 +48,18 @@
 
                                     <tbody>
 
+     
 
+                                            <tr>
+                                                <th colspan="3">
+
+                                                   <div class="control-group">
+                                                      <label class=" span3 control-label" >
+                                                          <h3>Lecture Analysis</h3>
+                                                      </label> 
+                                                    </div>
+                                                </th>
+                                            </tr>
 
 
                                               <tr>
@@ -60,22 +71,13 @@
                                                         <input type="date" id="startdate" name="startdate" class="span8">
                                                   </td>
 
-                                                    <td colspan="2">End Date:<br>
-                                                        <input type="date" id="enddate" name="enddate" class="span4">
-                                                    </td>
-                                              </tr>
-
-                                                
-
-                                            <tr>
-                                                 <th colspan="4"><div class="control-group">
-                                                    <label class=" span3 control-label" ><h3>Lecture Analysis</h3></label> 
-                                                    </div>
-                                                </th>
+                                                  <td>End Date:<br>
+                                                        <input type="date" id="enddate" name="enddate" class="span8">
+                                                  </td>
+   
                                             </tr>
-
-
                                             <tr>
+
                                                  <td>No. Of Lecture Schedule:
                                                       <input type="number" id="Lecture_schedule" name="Lecture_schedule" class="span8">
                                                     
@@ -92,32 +94,37 @@
                                                 </td>
                                             
                                           
-                                                 <td>No. Of Extra Taken :
+                                               
+                                            </tr>
+                                          <tr>
+
+                                              <td>No. Of Extra Taken :
                                                       <input type="number" id="extra_taken" name="extra_taken" class="span8">
                                                     
                                                 </td>
-                                            </tr>
+                                            
 
-                                            <tr>
+                                         
                                                  <td>No. Of Lecture Actual Taken :<br>
                                                       <input type="number" id="actual_taken" name="actual_taken" class="span8">  
                                                   </td>
                                            
-                                                  <td colspan="3">Description Of Topic:<br>
-                                                        <textarea id="topic" name="topic" class="span8" rows="4" cols="20" ></textarea>
+                                                  <td colspan="4">Description Of Topic:<br>
+                                                        <textarea id="topic" name="topic" class="span8" rows="5" cols="30" ></textarea>
                                                   </td>
                                             </tr>
 
                                              <tr>
                                                  <td colspan="4">                                    
-                                                   <button style="float:right" type="submit" name="save" class=" span3 btn">Submit</button>
+                                                   <button style="float:right" type="submit" name="save" class="btn btn-primary ">
+                                                   Submit</button>
                                                  </td>
                                             </tr>   
 
                                     </tbody>
                                </table>
                           </form>
-                      </div>
+                     
 
                         <table class="table table-striped table-bordered table-condensed">
 
@@ -125,25 +132,25 @@
                             
                                     <th>Week no</th>
 
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>No Of Lecture Schedule</th>
-                                    <th>No Of Lost Due To Holiday</th>
-                                    <th>No Of Lost Due To CL</th>
-                                    <th>No Extra Taken</th>  
+                                    <th align="center">Start Date</th>
+                                    <th align="center">End Date</th>
+                                    <th align="center">No Of<br> Lect Schedule</th>
+                                    <th align="center">No Of<br> Lost <br>Due To Holiday</th>
+                                    <th align="center">No Of Lost<br> Due To CL</th>
+                                    <th align="center">No Extra Taken</th>  
                                     
                                         
-                                    <th>No Of Lecture Actual Taken</th>
-                                    <th> Desc of Topic</th>    
-                                    <th>Delete</th>                            
+                                    <th align="center">No Of <br>Lect Actual Taken</th>
+                                    <th align="center"> Desc of Topic</th>    
+                                    <th align="center">Delete</th>                            
                                 </tr>
 
                                   <?php foreach ($t_diary as $item) { ?>
 
                                         <tr id="clickedit">
                                             <td><?php echo $item->week_id; ?></td>
-                                            <td><?php echo $item->startdate;?></td>
-                                            <td><?php echo $item->enddate;?></td> 
+                                            <td><?php echo $item->start_date;?></td>
+                                            <td><?php echo $item->end_date;?></td> 
                                            
                                             <td><?php echo $item->no_of_lecture_schedule;?></td>
                                             <td><?php echo $item->no_of_lost_due_to_holiday;?></td>
@@ -152,12 +159,13 @@
                                                                                       
                                             <td><?php echo $item->no_of_lecture_actual_taken;?></td>
                                             <td><?php echo $item->description_of_topic;?></td>
-                                            <td><a href="<?php echo site_url('Weeklyedit_controller/del1/' . $item->week_id)?>" class="btn " onclick="return confirm('Are you sure')">Delete</a></td>
+                                            <td><a href="<?php echo site_url('Weeklyedit_controller/del1/' . $item->week_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
 
                                         </tr>
                                     <?php } ?>
 
                             </table>
+                          </div>
 
                          </div>
                      </div>

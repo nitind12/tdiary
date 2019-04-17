@@ -7,13 +7,8 @@
 				  <h2>Upload Time Table</h2>
 			</div>
 				<div class="module-body">
-					<?php
-						$data = array(
-							'class' => 'form-horizontal row-fluid',
-						);
-					?>
-					<?php echo form_open_multipart('Studenttimetableeditcontroller/uploadTT', $data);?>  
-			
+
+				<form  method="post" name="myform111"  id="myform111"   action="<?php echo site_url('Upload/file_data');?>"  class="form-horizontal row-fluid" enctype="multipart/form-data">				
 
 							<table class="table table-striped table-bordered table-condensed">							
                 				<tbody>
@@ -61,16 +56,17 @@
 												<td>		
 										           Section:<br>
 												  	<select tabindex="1" data-placeholder="Select here.." class="span8" name="Section" id="Section">
-												  	 <option value ="">Select here..</option>
+												  		<option value ="">Select here..</option>
 												  	 <option value ="A">A</option>
 												  	 <option value ="B">B</option>
 												  	 <option value ="C">C</option>
 												  	 <option value ="D">D</option>
 												  	 <option value ="E">E</option>
-												  	</select>
+												  </select>
 									  </td>
 									</tr>
 									<tr>
+
 										<td colspan="2">									
 												Time Table Upload:	<br>
 												
@@ -81,16 +77,14 @@
 										<td>
 										<div class="controls" style="float:left;">
 										
-										<input type="submit
-
-									" class="btn btn-primary" name="save" value="submit" id="btnsubmit1">
+										<input type="submit" class="btn btn-primary" name="save" value="submi" id="btnsubmit1">
 									</div>
 								</td>
 								</tr>
 
 										</tbody>
 									</table>
-							<?php echo form_close();?>
+							</form>
 
 									</div>
 								</div>

@@ -43,8 +43,8 @@
 									  <thead>
 										<tr bgcolor="lightblue">
 										  <th>DAY</th>
-										  <th>09:00-09:50 Room</th>
-										  <th>09:50-10:40 Room</th>
+										  <th>09:00-09:50</th>
+										  <th>09:50-10:40</th>
 										  <th>10:40-11:30</th>
 								
 										  <th>11:50-12:40</th>

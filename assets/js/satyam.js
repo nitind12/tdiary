@@ -22,7 +22,6 @@ $(document).ready(function()
 			{
 				alert('Choose_file must be select out');
 			}
-
 			else
 			{
 				$('#myform111').submit();

@@ -20,38 +20,30 @@ class Studenttimetableeditmodel extends CI_Model{
 	}
 
 	function upload_tt($id){
-        //clearstatcache();
-        echo "agaya  ";
         $config=array(
-        'upload_path'=>'./assets/'.'ttdocs',
-        'allowed_type'=>'pdf',
-        'max_size'=>5000,
-        'file_name'=>$id,
-        'overwrite'=>TRUE,
+	        'upload_path'=>'./assets/ttdocs/',
+	        'allowed_type'=>'*',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
         );
+        echo $config['upload_path'];
         $file_element_name='txtttUpload';
         $this->load->library('upload',$config);
+        echo $this->upload->do_upload($file_element_name); die();
         if($this->upload->do_upload($file_element_name)){
-        $path_ji=$this->upload->data();
-        $path_=$path_ji['file_name'];
-    }else{
-        $path_='x';
-    }
+	        $path_ji=$this->upload->data();
+	        $path_=$path_ji['file_name'];
+	    }else{
+	        $path_='x';
+	    }
     return $path_;
     }
-	/*function saving()
+	/*
+	function saving()
 	{
-		$data = array(
-			'Course_name' => $this->input->post('Course_name'),
-			'Semester' => $this->input->post('Semester'),
-			'Section' => $this->input->post('Section'),
-			'Subject' => $this->input->post('Subject')
 
-		);
-		
-		$this->db->insert('data',$data);
-
-	}*/
+	}
+	*/
 	function del($a){
 		$this->db->delete('student_time_table',array('Section' => $a));
 		return;

@@ -35,6 +35,18 @@ class Check_Assignment_Controller extends CI_Controller{
 		$this->um->check_assignment_marks_enter_modal();
 		redirect('Check_assignment_controller');
 	}
-	
+
+
+	//-- double click and edit ----//
+
+    function updatedColumn()
+    {
+
+        
+        $bool_= $this->um->updatedColumn();
+
+        echo $data; 
+    }
+
 	
 }

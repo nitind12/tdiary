@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	   {
         parent::__construct();
         $this->load->model('Givenassignmentmodel','gm');
-        
+       
        $this->load->model('Lessonedit_model','obj');
         $this->load->model('Add_class_model','am');
     }
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     	function index()
 	   { ///done
         $data['cls_in_session'] = $this->am->fetchClass();
-       $data['title'] = "Lesson_Plan";
+        $data['title'] = "Lesson_Plan";
         $data['page_'] = "Lesson_class";
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
@@ -25,8 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     public function lesson_edit($no_)  
     {  
-      $data['t_diary'] = $this->obj->fetchtable($no_);
-          
+    $data['t_diary'] = $this->obj->fetchtable($no_);     
     $data['add_class_in'] = $this->gm->add_view_class($no_);     
     $data['title'] = "lesson_edit";
     $data['page_'] = "lesson_new";    

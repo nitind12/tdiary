@@ -51,15 +51,15 @@
                   <thead>
                       <tr>
                           <!-- <th align="center">No_of_Lecture</th>  -->
-                          <th align="center">Week No</th>
-                          <th align="center">Start Date</th>
-                          <th align="center">End Date</th>
-                          <th align="center">Lect Schedule</th>
-                          <th align="center">Lost Due To Holiday </th>
-                          <th align="center">Lost Due To CL </th>
-                          <th align="cneter">Extra Lect Taken</th>
-                          <th align="center">Actual Lect Taken</th>
-                          <th align="center">Desc If Any</th>
+                          <th align="center">Week_No</th>
+                          <th align="center">StartDate</th>
+                          <th align="center">EndDate</th>
+                          <th align="center">L.Schedule</th>
+                          <th align="center">Holiday</th>
+                          <th align="center">CLG.Leave</th>
+                          <th align="cneter">L.Extra </th>
+                          <th align="center">L.Actual</th>
+                          <th align="center">Details</th>
                           
                          
                           <th align="center">Delete</th>
@@ -78,8 +78,9 @@
                       <td><?php echo $item->no_of_lost_due_to_cl ?></td>
                       <td><?php echo $item->no_extra_taken ?></td>
                       <td><?php echo $item->no_of_lecture_actual_taken ?></td>
-                      <td><?php echo $item->description_of_topic ?></td>
+                      <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date);?>" class="btn btn-primary">Details</a></td>
 
+                                          
               
                     <!--  <td align="center"><?php echo $item->no_of_lecture ?></td>    -->
                       

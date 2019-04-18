@@ -52,7 +52,10 @@ class Testmodel extends CI_Model
 		$this->db->select('a.*, b.student_id, b.first_name');
 		$this->db->where('c.add_class_id' ,$no_);
 		$this->db->where('b.session_id', $sess);
+		$this->db->where('a.marks_type_id',$this->session->userdata('marksid'));
+		
 		$this->db->from('studentmarks a');
+		
 		$this->db->join('std_personal b', 'b.student_id=a.roll_no');
 
 		$this->db->join('add_class c', 'c.add_class_id=a.add_class_id');

@@ -20,10 +20,9 @@ class Lectureedit_model extends CI_Model
 		{			
 	$data = array(
 			'add_class_id' => $addclass_id[$i],
-			'lecture_id'=>$this->input->post('Lecture_no'),
 			'unit' => $this->input->post('txtunit'),
 			'topic'=>$this->input->post('topic'),
-			'no_of_lecture'=>$this->input->post('no_of_lecture'),
+			'no_of_lecture'=>$this->input->post('Lecture_no'),
 
             'faculty_id'=>'121',
 			'status'=>'1',
@@ -33,8 +32,17 @@ class Lectureedit_model extends CI_Model
 		}
 	
 	}
+	/*function total_modal()
+	{
 	
-
+	$this->db->select('SUM(no_of_lecture)');
+	$this->db->select('no_of_lecture');
+	$this->db->from('lecture');
+	$this->db->order_by('unit');
+	$this->db->limit(3);
+	$q=$this->db->get();
+	return $q->row();
+	}*/
 	function updatedColumn()
     {
         $lectupdate_ = array();

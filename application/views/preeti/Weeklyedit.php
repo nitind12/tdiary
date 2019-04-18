@@ -109,10 +109,7 @@
                                                       <input type="number" id="actual_taken" name="actual_taken" class="span4">  
                                                   </td>
                                            
-                                               <!--   <td colspan="4">Description Of Topic:<br>
-                                                        <textarea id="topic" name="topic" class="span8" rows="5" cols="30" ></textarea>
-                                                  </td>   -->
-                                            </tr>
+                                               </tr>
 
                                              <tr>
                                                  <td colspan="4">                                    
@@ -125,13 +122,14 @@
                                </table>
                           </form>
                      
+<hr/>
+ 
 
                         <table class="table table-striped table-bordered table-condensed">
 
                                 <tr style="text-align: left">
                             
-                                    <th>Week no</th>
-
+                                    
                                     <th align="center">Start Date</th>
                                     <th align="center">End Date</th>
                                     <th align="center">No Of<br> Lect Schedule</th>
@@ -141,16 +139,14 @@
                
                                     <th align="center">No Of <br>Lect Actual Taken</th>
                                   
-                                  <!--  <th align="center"> Desc of Topic</th>  -->  
+                                  <th align="center"> Details</th> 
                                     <th align="center">Delete</th>                            
                                 </tr>
-
                                   <?php foreach ($t_diary as $item) { ?>
 
                                         <tr id="clickedit">
-                                            <td><?php echo $item->week_id; ?></td>
-                                            <td><?php echo $item->start_date;?></td>
-                                            <td><?php echo $item->end_date;?></td> 
+                                            <td><input type="hidden" name="start_date" value="?php echo $item->start_date;?>"><?php echo $item->start_date;?></td>
+                                            <td><input type="hidden" name="end_date" value="?php echo $item->end_date;?>"><?php echo $item->end_date;?></td> 
                                            
                                             <td><?php echo $item->no_of_lecture_schedule;?></td>
                                             <td><?php echo $item->no_of_lost_due_to_holiday;?></td>
@@ -159,14 +155,17 @@
                                                                                       
                                             <td><?php echo $item->no_of_lecture_actual_taken;?></td>
 
-                                          <!--  <td><?php //echo $item->description_of_topic;?></td>-->
+                                          <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date);?>" class="btn btn-primary">Details</a></td>
 
-                                            <td><a href="<?php echo site_url('Weeklyedit_controller/del1/' . $item->week_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
+                                            <td>
+
+                                              <a href="<?php echo site_url('Weeklyedit_controller/del1/' . $item->week_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
 
                                         </tr>
                                     <?php } ?>
 
                             </table>
+                          </form>
                           </div>
 
                          </div>

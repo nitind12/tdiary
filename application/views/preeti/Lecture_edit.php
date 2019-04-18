@@ -58,9 +58,6 @@
 					</tr>
 
 					<tr>
-						<th>
-							<center><h5>Lecture No</h5></center>
-						</th>
 						
 						<th>
 		                	<center>  <h5>Unit No</h5></center>
@@ -69,12 +66,12 @@
 						<center><h5>Topic</h5></center>
 						</th>
 					
+						<th>
+							<center><h5>No_Lecture_Of_Aspect</h5></center>
+						</th>
 						
 					</tr>
 					<tr>
-						<td>
-							<input type="number" id="Lecture_no" name="Lecture_no" class="span12">
-						</td>
 							
 						<td>
 						<input type="number" id="txtunit" name="txtunit" class="span12">
@@ -85,6 +82,9 @@
 						</textarea>
 						</td>
 				
+						<td>
+							<input type="number" id="Lecture_no" name="Lecture_no" class="span12">
+						</td>
 						
 					</tr>
 					<tr>
@@ -110,7 +110,7 @@
 		<table class="table table-striped table-bordered table-condensed">
                  <thead>
                   <tr style="text-align: left">
-                    <th>Lecture No</th>
+                    <th>No_Of_Lecture_Aspect</th>
                     <th>Unit No</th>
               		<th>Topic</th>
               		                                      			
@@ -121,7 +121,7 @@
                    <?php foreach ($t_diary as $item) { ?>		
                        <tr>                 	
 	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-lecture_id';?>"><?php echo 
-	                       $item->lecture_id ;?></td>
+	                       $item->no_of_lecture ;?></td>
 	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
 	                        <td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php echo $item->topic;?></td>
 
@@ -130,7 +130,12 @@
 
 	                        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
 	                    </tr>
-                   <?php } ?> 
+
+                   		<?php 
+                   	} 
+                   	?> <?php ///foreach ($total as $item) {?>
+
+                   <tr><td colspan="4">TOTAL LECTURE=-<?php //echo $total;   } ?></td></tr>
                   </tbody> 
                </table>
 				</form>

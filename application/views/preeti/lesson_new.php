@@ -83,7 +83,7 @@
 				</tr>	
 				 <tr>
 				 	<td>Date:<br>
-						<input type="date" id="date" name="date"class="span8">
+						<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date"class="span8">
     				</td>
 
 				 	<td colspan="2">
@@ -99,7 +99,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Lecture No:<br>
+								<td>No_Of_Lecture:<br>
 									<input type="number" id="Lecture" name="Lecture"class="span4">
     							</td>
     						</tr>

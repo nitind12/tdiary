@@ -19,16 +19,48 @@
                   </thead>
                   
             <tbody>
+              <?php
+                $options = array(
+                  'name' => 'frmViewAttendance',
+                  'id' => 'frmViewAttendance'
+                ); 
+                echo form_open('#', $options);
+              ?>
             <?php foreach($add_class_in as $item){?>
+              
               <tr >
-                        <td><b><?php echo $item->session_id?></b> </td>
-                        <td><b><?php echo $item->course_id?></b> </td>
-                        <td> <b><?php echo $item->semester_id?></b> </td>
-                        <td> <b><?php  echo $item->section_id?></b> </td>
-                       <td> <b><?php echo $item->subject_id;?></b></td>
+                        <td><b><select tabindex="1" data-placeholder="Select here.." class="span1">
+                          <option value="<?php echo $item->session_id?>"><?php echo $item->session_id?></option>
+                          /select>
+                    </b> </td>
+                        <td><select tabindex="1" data-placeholder="Select here.." class="span1" id="crs_for_attendance">
+                          <?php foreach ($cls_in_session as $itemcrs) {?>
+                            <?php if($item->course_id == $itemcrs->course_id){ ?>
+                              <option value="<?php echo $item->course_id?>" selected="selected"><?php echo $itemcrs->course_id?></option>
+                            <?php } else { ?>
+                              <option value="<?php echo $item->course_id?>"><?php echo $itemcrs->course_id?></option>
+                            <?php } ?>
+                          <?php } ?>
+                          /select>
+                    </b> </td>
+                        <td> <select tabindex="1" data-placeholder="Select here.." class="span1">
+                          <option value="<?php echo $item->semester_id?>"><?php echo $item->semester_id?></option>
+                          /select>
+                    </b> </td>
+                        <td><select tabindex="1" data-placeholder="Select here.." class="span1">
+                          <option value="<?php echo $item->section_id?>"><?php echo $item->section_id?></option>
+                          /select>
+                    </b> </td>
+                       <td> <select tabindex="1" data-placeholder="Select here.." class="span1">
+                          <option value="<?php echo $item->subject_id;?>"><?php echo $item->subject_id;?></option>
+                          /select>
+                    </b> </td>
                 </tr>        
               <?php 
                 }
+               ?>
+               <?php
+                echo form_close(); 
                ?>
               </tbody>
            </table>
@@ -36,7 +68,7 @@
     <div class="module-head">
            <h2>View-Attendance-Reports </h2>
         </div>
-  <form class="form-horizontal row-fluid" name="frmattendancereports" id="frmattendancereports" method="post" action="<?php echo site_url('Main/view_attendance_reports_controller');?>">
+  <form class="form-horizontal row-fluid" name="frmattendancereports" id="frmattendancereports" method="post" action="<?php echo site_url('Main/view_attendance_reports_controller/'.$item->add_class_id.'/'.$item->session_id);?>">
 
         <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           

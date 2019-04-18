@@ -36,7 +36,7 @@
     <div class="module-head">
            <h2>View-Attendance-Reports </h2>
         </div>
-  <form class="form-horizontal row-fluid" name="frmattendancereports" id="frmattendancereports" method="post" action="<?php echo site_url('Main/view_attendance_controller');?>">
+  <form class="form-horizontal row-fluid" name="frmattendancereports" id="frmattendancereports" method="post" action="<?php echo site_url('Main/view_attendance_reports_controller');?>">
 
         <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           

@@ -57,6 +57,15 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
+     public function view_attendance_reports_controller($no_,$sess)  
+    {  
+        $data['title'] = "ONLINE_ATTENDANCE";
+        $data['page_'] = "view_reports_attendance";
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+    
     public function addclass_controller()  
     {  
         $this->am->savingdata(); 

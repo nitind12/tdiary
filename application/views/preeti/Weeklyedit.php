@@ -147,8 +147,6 @@
                                 </tr>
                                   <?php foreach ($t_diary as $item) { ?>
 
-                                        <tr>
-                                            <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-week_id';?>"><?php echo $item->week_id; ?></td>
                                          
                                         <tr id="clickedit">
                                             <td><input type="hidden" name="start_date" value="?php echo $item->start_date;?>"><?php echo $item->start_date;?></td>

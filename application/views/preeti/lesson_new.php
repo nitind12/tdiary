@@ -82,7 +82,7 @@
 								</td>
 
 								<td>End Time:<br>
-									<input type="time" id="txtend" name="txtend" class="span6">				
+									<input type="time" id="txtend" name="txtend" class="span8">				
 								</td>
 							</tr>	
 
@@ -107,15 +107,16 @@
 												</td>
 											</tr>
 
-											<tr>
-												<td>Lecture No:<br>
-													<input type="number" id="Lecture" name="Lecture"class="span4">
-				    							</td>
-				    						</tr>
-				    					</tbody>
+										<tr>
+											<td>No_Of_Lecture:<br>
+												<input type="number" id="Lecture" name="Lecture"class="span4">
+    										</td>
+    									</tr>
+
 									</table>
 								</td>
 							</tr>
+							<tr>
 
 
 							<tr>
@@ -125,34 +126,9 @@
 							</tr>
 						</tbody>
 					</table>
-				</form>
-			</div>
-   			 <br>
-							<tr>
-								<td>No_Of_Lecture:<br>
-									<input type="number" id="Lecture" name="Lecture"class="span4">
-    							</td>
-    						</tr>
+			
 
-						</table>
-					</td>
-				</tr>
-				<tr>
-				
-					
-						<td colspan="3">			
-					
-							<button style="float:right" type="submit" name="save" id="save" class="btn btn-primary">Submit</button>
-						</td>
-					</tr>
-				</div>
-    	</tbody>
-    </table>
-
-    <br>
-
-
-				<table class="table table-striped table-bordered table-condensed">
+			<table class="table table-striped table-bordered table-condensed">
                     <tr style="text-align: left">
                         <!--  <th>Lesson No</th>	-->
                         <th>Date</th>
@@ -160,7 +136,7 @@
                         <th>End Time</th>
                         <th>Unit</th>
                         <th>Topic</th>	                               	
-                        <th>Lecture No</th>
+                        <th>No Of Lecture </th>
                         <th>Delete</th>
                     </tr>
 
@@ -186,6 +162,9 @@
 	                        </tr>
                         <?php } ?>
                 </table>
+                	</form>
+			</div>
+   			 <br>
         </div>
     </div>
 </div>

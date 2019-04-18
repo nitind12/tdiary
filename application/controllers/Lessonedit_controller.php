@@ -7,8 +7,7 @@ class Lessonedit_controller extends CI_Controller
 	{
         parent::__construct();
         $this->load->model('Givenassignmentmodel','gm');
-        
-        $this->load->model('Lessonedit_model','obj');
+       $this->load->model('Lessonedit_model','obj');
         $this->load->model('Add_class_model','am');
     }
     
@@ -27,15 +26,14 @@ class Lessonedit_controller extends CI_Controller
 
 
     public function lesson_edit($no_)  
-    {  
-
-        $data['t_diary'] = $this->obj->fetchtable($no_);       
-        $data['add_class_in'] = $this->gm->add_view_class($no_);     
-        $data['title'] = "lesson_edit";
-        $data['page_'] = "lesson_new";    
-        $this->load->view('templates/header', $data);
-        $this->load->view('mypreetipage');  
-        $this->load->view('templates/footer');  
+    { 
+    $data['t_diary'] = $this->obj->fetchtable($no_);     
+    $data['add_class_in'] = $this->gm->add_view_class($no_);     
+    $data['title'] = "lesson_edit";
+    $data['page_'] = "lesson_new";    
+    $this->load->view('templates/header', $data);
+    $this->load->view('mypreetipage');  
+    $this->load->view('templates/footer');
     }
 
 

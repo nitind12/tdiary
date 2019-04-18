@@ -75,46 +75,51 @@ class Test extends CI_Controller{
         $data['page_'] = 'view_marks_selected';
         $data['title'] = "View-marks";
         $data['marks_type_']=$this->um->marks_type_();
-          
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
     }
 
-	public function vie_controller($so_,$mt) 
+	public function vie_controller() 
     {
-		if($this->input->post('marksid1')){
-            $so_ = $this->input->post('marksid1');
-            $mt = $this->input->post('marksname1');
+		if($this->input->post('mtypeid1')){
+            $so_ = $this->input->post('mtypeid1');
+            $mt = $this->input->post('mtypename1');
             $data['title'] = "Select-View-Type";
             $data['page_'] = "viewtestclass";        
-               $data['cls_in_session'] = $this->am->fetchClass();
-               $this->session->set_userdata('marksname1', $mt);
-               $this->session->set_userdata('marksid1', $so_);
+            $data['cls_in_session'] = $this->am->fetchClass();
+            $this->session->set_userdata('marksname', $mt);
+            $this->session->set_userdata('marksid', $so_);
             $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
-           
-            $this->load->view('templates/header', $data);
+                $this->load->view('templates/header', $data);
             $this->load->view('myrajpage',$data);  
             $this->load->view('templates/footer');
         }
-        else 
-        {
-            redirect('test');
+        else{
+            redirect("test/viewmarks");
         }
-        
         }
- public function viewmarks_controller($no_,$sess) ////rename fecttab 
+ public function viewmarks_controller() ////rename fecttab 
     {  
     	
+         if($this->input->post('addclassid1'))
+         {
+         $no_ = $this->input->post('addclassid1');
+         $sess = $this->input->post('sessionid1');
         $data['title'] = "assignment_view";
         $data['page_'] = "viewmarksset";
         
         $this->load->view('templates/header', $data);
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
-        $data['vim'] = $this->um->view_internal_marks($no_,$sess);
+          $data['vim'] = $this->um->view_internal_marks($no_,$sess);
     	
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
-    }
+         }
 
+            else{
+        redirect("test/viewmarks");
+       
+            }
+}
 }

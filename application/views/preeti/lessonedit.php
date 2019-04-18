@@ -53,7 +53,7 @@
 					</label>	
 				</div>
 				<div style="float:right">
-                    <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date1" id="date1"> </div>
+                    <input type="text" name="date1" id="date1"> </div>
                     
                   <thead>
                  </thead>

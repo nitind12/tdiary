@@ -23,14 +23,13 @@ $(document).ready(function()
 	$('.viewtestclass').click(function(){
 			var str = this.id;
 			var arr = str.split('~');
-			$('#marksid1').val(arr[0]);
-			$('#marksname1').val(arr[1]);
+			$('#mtypeid1').val(arr[0]);
+			$('#mtypename1').val(arr[1]);
 
 			$('#frmviewSelected').submit();
 		});	
 
-	
-	$('.viewtest').click(function(){
+$('.viewtest').click(function(){
 			var str = this.id;
 			var arr = str.split('~');
 			$('#addclassid1').val(arr[0]);
@@ -39,6 +38,7 @@ $(document).ready(function()
 			$('#frmview').submit();
 		});	
 
+		
 	$('#myform1').submit(function()
 	{
 		if($.trim($('#Course_name').val()) == '')

@@ -56,23 +56,23 @@
                         //echo date("D-d-M-Y")?> </div>--->
                    
 
-                          <thead>
-                            <tr>
-                                <th align="center">Lecture No</th>
-                                <th align="center">Unit No</th>
-                                <th align="center">Topic</th>
-                                <th align="center">Delete</th>
-                            </tr>
-                          </thead>
 
-
-                          <tbody>
+                          
+                  <thead>
+                    <tr>
+                        <th align="center">No_Of_Lecture_Aspect</th>
+                        <th align="center">Unit No</th>
+                        <th align="center">Topic</th>
+                        <th align="center">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                   
-                              <?php foreach ($t_diary as $item) { ?>
-                                <tr>
-                                   <td align="center"><?php echo $item->lecture_id ?></td>
-                                   <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
-                                   <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
+             <?php foreach ($t_diary as $item) { ?>
+              <tr>
+              <td align="center"><?php echo $item->no_of_lecture?></td>
+              <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
+               <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
 
                                    <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary" 
                                     onclick="return confirm('Are you sure')">Delete</a></td>

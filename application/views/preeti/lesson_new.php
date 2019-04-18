@@ -86,11 +86,11 @@
 								</td>
 							</tr>	
 
-
-				 			<tr>
-							 	<td>Date:<br>
-									<input type="date" id="date" name="date"class="span8">
-			    				</td>
+				</tr>	
+			 <tr>
+				 	<td>Date:<br>
+						<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date"class="span8">
+    				</td>
 
 				 				<td colspan="2">
 				 					<table class="table table-striped table-bordered table-condensed">
@@ -128,6 +128,28 @@
 				</form>
 			</div>
    			 <br>
+							<tr>
+								<td>No_Of_Lecture:<br>
+									<input type="number" id="Lecture" name="Lecture"class="span4">
+    							</td>
+    						</tr>
+
+						</table>
+					</td>
+				</tr>
+				<tr>
+				
+					
+						<td colspan="3">			
+					
+							<button style="float:right" type="submit" name="save" id="save" class="btn btn-primary">Submit</button>
+						</td>
+					</tr>
+				</div>
+    	</tbody>
+    </table>
+
+    <br>
 
 
 				<table class="table table-striped table-bordered table-condensed">

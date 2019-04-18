@@ -34,10 +34,10 @@
 											
 												<label>Course Name:</label>
 														
-															<select tabindex="1" data-placeholder="Select here.." class="span8"  id="course" name="course">
-																<option value="">Select Course</option>
-																<?php foreach ($course as  $item)	{ ?>
-																<option value="<?php echo $item->s_no;?>"><?php echo $item->course_id ?></option>
+													<select tabindex="1" data-placeholder="Select here.." class="span8"  id="course" name="course">
+													<option value="">Select Course</option>
+														<?php foreach ($course as  $item)	{ ?>
+															<option value="<?php echo $item->s_no;?>"><?php echo $item->course_id ?></option>
 															<?php }?>
 																
 															</select>

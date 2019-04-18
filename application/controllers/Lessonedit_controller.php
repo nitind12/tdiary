@@ -1,30 +1,32 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class Lessonedit_controller extends CI_Controller
-    {
-	   function __construct()
-	   {
+class Lessonedit_controller extends CI_Controller
+{
+	function __construct()
+	{
         parent::__construct();
         $this->load->model('Givenassignmentmodel','gm');
-       
        $this->load->model('Lessonedit_model','obj');
         $this->load->model('Add_class_model','am');
     }
     
-    	function index()
-	   { ///done
+
+
+    function index()
+	{ ///done
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['title'] = "Lesson_Plan";
         $data['page_'] = "Lesson_class";
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
-	
 	}
 
+
+
     public function lesson_edit($no_)  
-    {  
+    { 
     $data['t_diary'] = $this->obj->fetchtable($no_);     
     $data['add_class_in'] = $this->gm->add_view_class($no_);     
     $data['title'] = "lesson_edit";
@@ -32,14 +34,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $this->load->view('templates/header', $data);
     $this->load->view('mypreetipage');  
     $this->load->view('templates/footer');
-    
     }
 
-     function savingdata()
+
+
+    function updatedColumn()
     {
-         $this->obj->lesson_edit_saving_modal();
+      //  $this->load->model('Lessonedit_model','lectup');
+        $bool_= $this->obj->updatedColumn();
+        echo $data; 
+    }
+
+
+
+    function savingdata()
+    {
+        $this->obj->lesson_edit_saving_modal();
         redirect('Lessonedit_controller');
     }
+
+
 
     public function del1()
     {

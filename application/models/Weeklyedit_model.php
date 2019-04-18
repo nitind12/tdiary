@@ -91,5 +91,24 @@ class Weeklyedit_model extends CI_Model
 		$this->db->delete('weekly',array('week_id' => $a));
 		return;
 	}
+
+
+
+	function updatedColumn()
+    {
+        $lectupdate_ = array();
+
+        $dt=$this->input->post('dt');
+        $week_id=$this->input->post('week_id');
+        echo $col = $this->input->post('columnname');
+
+        $this->db->where('week_id', $week_id);
+        $data = array(
+        	$col => $dt
+        );
+        $query = $this->db->update('weekly', $data);
+        return $query;
+    }
+	
 }
 ?>

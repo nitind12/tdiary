@@ -8,8 +8,9 @@ class Edit_controller extends CI_Controller
         parent::__construct();
          $this->load->model('Lectureedit_model','obj'); 
          $this->load->model('Add_class_model','am');
-
     }
+
+
 
     public function index()  
     {  
@@ -19,13 +20,15 @@ class Edit_controller extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
-
     }
+
+
+
     public function view_lecture_div()
     {
         $data['title'] = "Lectureview page";
         $data['page_'] = "Lecture_view_div";
-         $data['cls_in_session'] = $this->am->fetchClass();
+        $data['cls_in_session'] = $this->am->fetchClass();
 
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
@@ -45,6 +48,9 @@ class Edit_controller extends CI_Controller
         $this->load->view('mypreetipage',$data);
         $this->load->view('templates/footer');
     }
+
+
+
     public function lecture_view($no_,$sess,$crs)
     {  
         $data['add_class_in'] = $this->obj->add_view_class($no_);
@@ -55,12 +61,17 @@ class Edit_controller extends CI_Controller
         $this->load->view('mypreetipage',$data);
         $this->load->view('templates/footer');
     }
+
+
     
     public function lecture_saving_data($no_,$sess,$crs)
     {
         $this->obj->lecture_saving_data_modal();
         redirect('Edit_controller/lecture_edit/'.$no_.'/'.$sess.'/'.$crs);
     }
+
+
+
 
     function lessonview()
     {
@@ -71,9 +82,8 @@ class Edit_controller extends CI_Controller
     }
 
 
-    
- 
 
+//--- for delete -->
     public function del1()
     {
         $u = $this->uri->segment(3);
@@ -82,6 +92,7 @@ class Edit_controller extends CI_Controller
         redirect('Edit_controller/lecture_edit','refresh');
     }
 
+//-- double click and edit ----//
 
     function updatedColumn()
     {
@@ -90,7 +101,6 @@ class Edit_controller extends CI_Controller
         $bool_= $this->lectup->updatedColumn();
 
         echo $data; 
-
     }
 
 }	

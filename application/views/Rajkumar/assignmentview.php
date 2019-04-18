@@ -35,7 +35,7 @@
               </table>
           </div>
 	<form method="post"  action="<?php echo site_url('assignmentcontroller/assignment_edit_controller_saving
-	/'.$item->add_class_id.'/'.$item->session_id);?>" id="<?php echo $item->add_class_id;?>" 
+	/'.$item->add_class_id.'/'.$item->session_id);?>" name="formhere" id="<?php echo $item->add_class_id;?>" 
 		class="form-horizontal row-fluid">
 
 				<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
@@ -53,7 +53,7 @@
 							<td>Assignment_id<br>
 							<input type="number" name="Assignment_id" id="Assignment_id" class="span8"/></td>
 							<td>Given_date<br>
-							<input type="date" name="Given_date" id="Given_date"class="span9"/></td>
+							 <input type="text" value="<?php echo date("Y-m-d")?>" name="Given_date" id="date"></td>
 							<td>Submission_date<br>
 							<input type="date" name="Submission_date" id="Submission_date" class="span9"/></td></td>
 						</tr>
@@ -66,11 +66,12 @@
 						</tr>
 				</tbody>
 			</table>
+		</form>
 			<br/>
 			<br/>
 		<center>
 			<div class="control-group">
-				<button type="submit" class="btn btn-primary" name="save">INSERT RECORD</button>
+				<button type="submit" class="btn btn-primary" name="save" id="given">INSERT RECORD</button>
 			</div>
 		</center></div>
 	</div>

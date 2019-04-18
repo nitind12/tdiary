@@ -63,5 +63,13 @@ class Weeklyedit_controller extends CI_Controller
     }
 
 
+    function updatedColumn()
+    {
+      //  $this->load->model('Lessonedit_model','lectup');
+        $bool_= $this->obj->updatedColumn();
+        echo $data; 
+    }
+
+
 }
 ?>

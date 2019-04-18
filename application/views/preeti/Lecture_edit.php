@@ -59,13 +59,16 @@
 
 
 
-						<thead>
+						
 							<tr>
 								<th colspan="3">
 									<div class="control-group">
 										<label class="control-label span3" >
 											<h3>Lecture Structure</h3>
 										</label>	
+									</div>
+								</th>
+							</tr>
             
 
 					
@@ -99,47 +102,7 @@
 						</td>
 						
 					</tr>
-					<tr>
-						<td colspan="3">
-								<div class="control-group">
-									<div class="controls">			
-					
-										<button style="float:right" type="submit" name="save" 
-										class=" span3 btn">Submit</button>
-									</div>
-								</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr>
-								<th>
-									<center><h5>Lecture No</h5></center>
-								</th>
-										
-								<th>
-					                <center>  <h5>Unit No</h5></center>
-					            </th>	
-
-								<th>
-									<center><h5>Topic</h5></center>
-								</th>
-							</tr>
-
-
-							<tr>
-								<td>
-									<input type="number" id="Lecture_no" name="Lecture_no" class="span12">
-								</td>
-									
-								<td>
-									<input type="number" id="txtunit" name="txtunit" class="span12">
-								</td>
-
-								<td>
-									<textarea id="topic" name="topic" class="span12" rows="6"  cols="30"></textarea>
-								</td>	
-							</tr>
+			
 
 
 							<tr>
@@ -166,7 +129,7 @@
 
 
 
-			<table class="table table-striped table-bordered table-condensed">
+			<!---table class="table table-striped table-bordered table-condensed">
 
 				<thead>
 			        <tr style="text-align: left">
@@ -182,13 +145,13 @@
 	            <tbody>
 		            <?php foreach ($t_diary as $item) { ?>		
 				        <tr>                 	
-					       	<td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-lecture_id';?>"><?php echo $item->lecture_id ;?></td>
+					       	<td class="lectdata mytd"   id="<?php //echo $item->lecture_id.'-lecture_id';?>"><?php //echo $item->lecture_id ;?></td>
 
-					        <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>
+					        <td class="lectdata mytd"   id="<?php// echo $item->lecture_id.'-unit';?>"><?php //echo $item->unit ;?></td>
 
-					        <td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php echo $item->topic;?></td>
+					        <td id="<?php //echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php //echo $item->topic;?></td>
 
-					        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
+					        <td><a href="<?php //echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
 					    </tr>
 				 	<?php } ?> 
 	            </tbody> 
@@ -197,13 +160,14 @@
 	</div>						
 </div>
 </div>
-			   </div> 
+			   </div--> 
 		<table class="table table-striped table-bordered table-condensed">
                  <thead>
                   <tr style="text-align: left">
-                    <th>No_Of_Lecture_Aspect</th>
+                    
                     <th>Unit No</th>
               		<th>Topic</th>
+              		<th>No Of Lecture Aspect</th>
               		                                      			
                     <th>Delete</th>
                    </tr>
@@ -211,10 +175,11 @@
                    <tbody>
                    <?php foreach ($t_diary as $item) { ?>		
                        <tr>                 	
-	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-lecture_id';?>"><?php echo 
-	                       $item->no_of_lecture ;?></td>
+	                       
 	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
 	                        <td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php echo $item->topic;?></td>
+	                        <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-no_of_lecture';?>"><?php echo 
+	                       $item->no_of_lecture ;?></td>
 
 
 	                      

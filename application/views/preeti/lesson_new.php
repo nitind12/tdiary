@@ -81,50 +81,39 @@
 									<input type="time" id="txtstart" name="txtstart" class="span8">
 								</td>
 
-								<td colspan="2">End Time:<br>
+								<td>End Time:<br>
 									<input type="time" id="txtend" name="txtend" class="span8">				
 								</td>
-
-								
 							</tr>	
 
-								
-							 <tr>
-							 	<td>Date:<br>
-									<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date"class="span8">
-    							</td>
-						 		<td colspan="2"> Lecture Type:<br>
-									<select tabindex="1" data-placeholder="Select here.." class="span8">
-										<option value="">Select here..</option>
-										<option value="Letcure Schedule">Letcure Schedule</option>
-										<option value="Arrangement">Arrangement</option>
-										<option value="Extra Lecture Taken">Extra Lecture Taken</option>
-												
-									</select>
-										
-								</td>
-							
+				</tr>	
+			 <tr>
+				 	<td>Date:<br>
+						<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date"class="span8">
+    				</td>
 
-				 				
-				 					
+				 				<td colspan="2">
+				 					<table class="table table-striped table-bordered table-condensed">
+				 						<tbody>
 					 						<tr>
 	    										<td >Unit:<br>
-													<input type="number" id="Unit" name="Unit" class="span8">
+													<input type="number" id="Unit" name="Unit" class="span4">
 												</td>
-											
+											</tr>
 
-										
+											<tr>
 												<td > Topic:<br>
 				    								<textarea class="span12" rows="5"  cols="30" id="Topic" name="Topic"></textarea>
 												</td>
-											<tr>
-										
-											<td>No Of Lecture:<br>
-												<input type="number" id="Lecture" name="Lecture"class="span8">
+											</tr>
+
+										<tr>
+											<td>No_Of_Lecture:<br>
+												<input type="number" id="Lecture" name="Lecture"class="span4">
     										</td>
     									</tr>
 
-								
+									</table>
 								</td>
 							</tr>
 							<tr>

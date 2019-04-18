@@ -435,9 +435,6 @@ $(document).ready(function()
 
 
 
-
-
-
     			var oriVal;
     			$('body').on('dblclick', '.weekdata', function(){
     				// this.id - it will give you the specific id of td where dblclick held

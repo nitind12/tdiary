@@ -38,6 +38,31 @@ $('.viewtest').click(function(){
 			$('#frmview').submit();
 		});	
 
+$('.assignemtedit').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidA').val(arr[0]);
+			$('#sessionidA').val(arr[1]);
+
+			$('#frmassignmentedit').submit();
+		});	
+$('.assignmentview').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidAV').val(arr[0]);
+			$('#sessionidAV').val(arr[1]);
+
+			$('#frmassignmentview').submit();
+		});	
+
+$('.assignmentchecker').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidCA').val(arr[0]);
+			$('#sessionidCA').val(arr[1]);
+
+			$('#frmassignmentchecker').submit();
+		});	
 		
 	$('#myform1').submit(function()
 	{

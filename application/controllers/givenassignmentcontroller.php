@@ -21,8 +21,14 @@ class Givenassignmentcontroller extends CI_Controller{
 		
 
 	}
- public function view_assignment($no_,$sess) ////rename fecttab 
+ 
+ 	public function view_assignment() ////rename fecttab 
     {  
+    	if($this->input->post('addclassidAV'))
+            {
+            $no_ = $this->input->post('addclassidAV');
+            $sess = $this->input->post('sessionidAV');
+        
     	$data['vie'] = $this->gm->view_given_assignment($no_);
     	$data['add_class_in'] = $this->gm->add_view_class($no_);////ravi wALA SE
 
@@ -33,8 +39,15 @@ class Givenassignmentcontroller extends CI_Controller{
         $this->load->view('myrajpage');  
         $this->load->view('templates/footer');
     }
+	else
+	{
+		redirect('Givenassignmentcontroller');
+	}
 	
-	function viewmarks(){
+}
+
+	function viewmarks()
+	{
 		$this->load->model('givenassignmentmodel','im');
 		$data['marks'] = $this->im->internalmarks();
 

@@ -4,7 +4,7 @@
 
         <script type="text/javascript" src="<?php echo base_url('assets/js/ravi.js');?>"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=1.3"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=1.5"></script>
 
         <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=1.1"></script>
         

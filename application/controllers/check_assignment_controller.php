@@ -18,18 +18,25 @@ class Check_Assignment_Controller extends CI_Controller{
         $this->load->view('templates/footer');
     }
 
-    public function check_assignment_marks_controller($no_,$sess)  
+    public function check_assignment_marks_controller()  
     {  
+       if($this->input->post('addclassidCA'))
+        {
+        $no_ = $this->input->post('addclassidCA');
+        $sess = $this->input->post('sessionidCA');
         $data['title'] = "check_assignment_student";
         $data['page_'] = "check_assignment_student";        
         $this->load->view('templates/header', $data);
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['add_attend'] = $this->am->add_attendance($sess, $no_);
-         $this->load->view('myrajpage',$data);  
+        $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
-        
+        }
+        else
+        {
+        redirect('Check_assignment_controller');
+        }
     }
-
     function check_assignment_marks_enter()
 	{
 		$this->um->check_assignment_marks_enter_modal();

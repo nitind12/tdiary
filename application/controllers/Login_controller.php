@@ -10,7 +10,6 @@ class Login_controller extends CI_Controller
     public function index()  
     {  
         $data['title'] = "Login";
-        
         $this->load->view('templates/header_login', $data);
         $this->load->view('loginpage');  
         $this->load->view('templates/footer');

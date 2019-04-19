@@ -82,7 +82,7 @@
 						</th>
 					
 						<th>
-							<center><h5>No_Lecture_Of_Aspect</h5></center>
+							<center><h5>No Of Lecture Aspect</h5></center>
 						</th>
 						
 					</tr>

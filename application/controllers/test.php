@@ -43,7 +43,7 @@ class Test extends CI_Controller{
         }
     public function Testinternal_controller()  /////internal marks page load as like input box;
         { 
-             if($this->input->post('addclassid'))
+         if($this->input->post('addclassid'))
             {
             $no_ = $this->input->post('addclassid');
             $sess = $this->input->post('sessionid');

@@ -33,11 +33,14 @@ class Weeklyedit_controller extends CI_Controller
         $this->load->view('mypreetipage',$data);
         $this->load->view('templates/footer');
     }
-    public function details($no_,$sd,$ed)
+    public function details($no_,$sd,$ed,$wi)
     {  
         $data['title'] = "Weekly details";
         $data['page_'] = "Weeklydetails";
          $data['t_diary'] = $this->obj->fetchtable($no_);
+
+         $data['t_diary'] = $this->obj->weeklyreport($wi);
+         
         $data['details']= $this->obj->detailsreports($sd,$ed,$no_);
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage',$data);

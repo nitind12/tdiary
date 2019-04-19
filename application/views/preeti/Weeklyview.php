@@ -83,7 +83,7 @@
                       <td><?php echo $item->no_of_lost_due_to_cl ?></td>
                       <td><?php echo $item->no_extra_taken ?></td>
                       <td><?php echo $item->no_of_lecture_actual_taken ?></td>
-                      <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date);?>" class="btn btn-primary">Details</a></td>
+                      <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date . '/'.$item->week_id);?>" class="btn btn-primary">Details</a></td>
 
 
                                           

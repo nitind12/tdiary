@@ -55,20 +55,18 @@
                   </h3>
                        
                         </div>
-                         <center><a href="<?php echo site_url('update_assignment_controller/del/' )?>" class="btn btn-primary" onclick="return confirm('Are you sure to delete whole data from the table??')">Delete Whole Data From the Table!</a></center>
-               
                
                   <thead>
                    <tr>
-          						<th align="center">Student_Roll</th>
-          						<th align="center">Student name</th>
-          						<th align="center">A_id</th>
-          						<th align="center"><b>(1=Check 0=Not_Check)</b><br>
-          							Assignment Status
-          						</th>	
-          						<th align="center">Submission_date</th>	
-          						<th align="center">Delete/Edit</th>
-          					</tr>
+						<th align="center">Student_Roll</th>
+						<th align="center">Student name</th>
+						<th align="center">A_id</th>
+						<th align="center"><b>(1=Check0=Not_Check)</b><br>
+							Assignment Status
+						</th>	
+						<th align="center">Submission_date</th>	
+						<th align="center">Delete/Edit</th>
+					</tr>
    
                   </thead>
                <tbody>
@@ -77,12 +75,21 @@
 		             { 
 		             	?>
 		              <tr >
+<<<<<<< HEAD
 		              <td align="center"  class="viewdata viewtd"   id="<?php echo $item->roll_no.'-roll_no';?>"><?php echo $item->roll_no;?></td>
-      						<td align="center"  class="viewdata viewtd"   id="<?php echo $item->roll_no.'-first_name';?>"><?php echo $item->first_name;?></td>
-      						<td align="center"  class="viewdata viewtd"   id="<?php echo $item->roll_no.'-assignment_id';?>"><?php echo $item->assignment_id;?></td>
-      						<td align="center"  class="viewdata viewtd"   id="<?php echo $item->roll_no.'-assignment_status';?>"><?php echo $item->assignment_status;?></td>
-      						<td align="center"  class="viewdata viewtd"   id="<?php echo $item->roll_no.'-checker_date';?>"><?php echo $item->checker_date;?></td>
+      						<td align="center"><?php echo $item->first_name;?></td>
+      						<td align="center"><?php echo $item->assignment_id;?></td>
+      						<td align="center"><?php echo $item->assignment_status;?></td>
+      						<td align="center"><?php echo $item->checker_date;?></td>
       						<td><a href="<?php echo site_url('update_assignment_controller/del1/' .$item->roll_no)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
+=======
+		              <td align="center"><?php echo $item->roll_no;?></td>
+						<td align="center"><?php echo $item->first_name;?></td>
+						<td align="center"><?php echo $item->assignment_id;?></td>
+						<td align="center"><?php echo $item->assignment_status;?></td>
+						<td align="center"><?php echo $item->checker_date;?></td>
+						<td><input type="button" class="btn btn-primary " value="Delete" onclick="return confirm('Are you sure')"></td>
+>>>>>>> parent of d743830... update
 						
 				    <?php } ?>
 		  </tbody>

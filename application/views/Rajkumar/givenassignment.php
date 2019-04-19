@@ -1,8 +1,3 @@
-<style type="text/css">
-    .show-read-more .more-text{
-       display: none;
-    }
-</style>
 <div class="span9">
 	<div class="content">
 		<div class="module">
@@ -49,11 +44,7 @@
         </table>
 
           </div>
-         
-
           	<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
-
-               <center><a href="<?php echo site_url('givenassignmentcontroller/del/' )?>" class="btn btn-primary" onclick="return confirm('Are you sure to delete whole data from the table??')">Delete Whole Data From the Table!</a></center>
           		<thead>
                  	<tr>
 						<th align="center">A_id</th>
@@ -73,7 +64,7 @@
 					<td align="center"><?php echo $item->Unit;?></td>
 					
 					<td align="center" class="show-read-more"><?php echo $item->Topic;?></td>
-					<td><a href="<?php echo site_url('givenassignmentcontroller/del1/' . $item->Given_date)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
+					<td><a href="<?php echo site_url('assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
 					<!--<td><a href="<?php echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
 				</tr>
 

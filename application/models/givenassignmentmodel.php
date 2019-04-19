@@ -40,12 +40,4 @@ class Givenassignmentmodel extends CI_Model{
 		}
 	}
 	
-	function del($a){
-		$this->db->delete('assignment',array('Given_date' => $a));
-		return;
-	}
-	function del1($a){
-		$this->db->delete('assignment',array('id' => $a));
-		return;
-	}
 }

@@ -56,9 +56,9 @@ class Weeklyedit_model extends CI_Model
 
 	function detailsreports($sd,$ed,$no_)
 	{
-		$this->db->select('date , unit,topic');
-		$this->db->where('DATE(date) BETWEEN "'.$sd.'" AND "'.$ed.'"', '',false);
-		$this->db->where('add_class_id',$no_);
+	$this->db->select('date , unit,topic');
+	$this->db->where('DATE(date) BETWEEN "'.$sd.'" AND "'.$ed.'"', '',false);
+	 $this->db->where('add_class_id',$no_);
 	
 	//$this->db->where(' date >= date("'.$sd.'")');
 	//$this->db->where( 'date <= date("'.$ed.'")');

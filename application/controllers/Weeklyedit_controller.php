@@ -37,6 +37,7 @@ class Weeklyedit_controller extends CI_Controller
     {  
         $data['title'] = "Weekly details";
         $data['page_'] = "Weeklydetails";
+         $data['t_diary'] = $this->obj->fetchtable($no_);
         $data['details']= $this->obj->detailsreports($sd,$ed,$no_);
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage',$data);

@@ -68,10 +68,6 @@
                               <tbody>
                                   <tr>
 
-                                      <td>Week No:  <br>                                   
-                                          <input type="text" id="week" name="week" class="span8">
-                                      </td>
-
                                       <td>Start Date:<br>
                                           <input type="date" id="startdate" name="startdate" class="span8">
                                       </td>
@@ -79,14 +75,19 @@
                                       <td>End Date:<br>
                                           <input type="date" id="enddate" name="enddate" class="span8">
                                       </td>
+
+                                        <td>No. Of Lecture Schedule:
+                                            <input type="number" id="Lecture_schedule" name="Lecture_schedule" class="span8">
+                                        </td>
+                                   
    
                                   </tr>
 
 
                                   <tr>
-                                       <td>No. Of Lecture Schedule:
-                                            <input type="number" id="Lecture_schedule" name="Lecture_schedule" class="span8">
-                                        </td>
+                                       <td>No. Of Extra Taken :
+                                          <input type="number" id="extra_taken" name="extra_taken" class="span8">
+                                      </td>
 
                                         <td>No. Of Lost Due To Holiday:
                                             <input type="number" id="due_to_holiday" name="due_to_holiday" class="span8">
@@ -99,12 +100,10 @@
 
 
                                   <tr>
-                                      <td>No. Of Extra Taken :
-                                          <input type="number" id="extra_taken" name="extra_taken" class="span8">
-                                      </td>
+                                     
  
-                                      <td colspan="2">No. Of Lecture Actual Taken :<br>
-                                          <input type="number" id="actual_taken" name="actual_taken" class="span4">  
+                                      <td colspan="3">No. Of Lecture Actual Taken :<br>
+                                          <input type="number" id="actual_taken" name="actual_taken" class="span3">  
                                       </td>
                                            
 
@@ -124,8 +123,7 @@
                                </table>
                           </form>
                      
-<hr/>
- 
+<br>
 
                         <table class="table table-striped table-bordered table-condensed">
 
@@ -142,25 +140,28 @@
                                     <th align="center">No Of <br>Lect Actual Taken</th>
                                     <th align="center">Details</th>
                                   
-                                  <th align="center"> Details</th> 
+                               
                                     <th align="center">Delete</th>                            
                                 </tr>
                                   <?php foreach ($t_diary as $item) { ?>
 
                                          
-                                        <tr id="clickedit">
-                                            <td><input type="hidden" name="start_date" value="?php echo $item->start_date;?>"><?php echo $item->start_date;?></td>
-                                            <td><input type="hidden" name="end_date" value="?php echo $item->end_date;?>"><?php echo $item->end_date;?></td> 
+                                        <tr>
+                                            <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-start_date';?>"><input type="hidden" name="start_date" value="?php echo $item->start_date;?>"><?php echo $item->start_date;?></td>
+                                            <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-end_date';?>"><input type="hidden" name="end_date" value="?php echo $item->end_date;?>"><?php echo $item->end_date;?></td> 
                                            
-                                            <td><?php echo $item->no_of_lecture_schedule;?></td>
-                                            <td><?php echo $item->no_of_lost_due_to_holiday;?></td>
-                                            <td><?php echo $item->no_of_lost_due_to_cl;?></td>
-                                            <td><?php echo $item->no_extra_taken;?></td>
+                                            <td class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_schedule';?>"><?php echo $item->no_of_lecture_schedule;?></td>
+
+                                            <td class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_holiday';?>"><?php echo $item->no_of_lost_due_to_holiday;?></td>
+
+                                            <td class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_cl';?>"><?php echo $item->no_of_lost_due_to_cl;?></td>
+
+                                            <td class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_extra_taken';?>"><?php echo $item->no_extra_taken;?></td>
                                                                                       
-                                            <td><?php echo $item->no_of_lecture_actual_taken;?></td>
+                                            <td class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_actual_taken';?>"><?php echo $item->no_of_lecture_actual_taken;?></td>
 
 
-                                          <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date);?>" class="btn btn-primary">Details</a></td>
+                                          <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id);?>" class="btn btn-primary">Details</a></td>
 
                                             <td>
 

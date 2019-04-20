@@ -191,7 +191,7 @@
                    	} 
                    	?> <?php ///foreach ($total as $item) {?>
 
-                   <tr><td colspan="4">TOTAL LECTURE=-<?php //echo $total;   } ?></td></tr>
+                   <tr><td colspan="4">TOTAL LECTURE=<?php //echo $total;   } ?></td></tr>
                   </tbody> 
                </table>
 				</form>

@@ -60,7 +60,7 @@
                           
                   <thead>
                     <tr>
-                        <th align="center">No_Of_Lecture_Aspect</th>
+                        <th align="center">No Of Lecture Aspect</th>
                         <th align="center">Unit No</th>
                         <th align="center">Topic</th>
                         <th align="center">Delete</th>
@@ -74,8 +74,8 @@
               <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
                <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
 
-                                   <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary" 
-                                    onclick="return confirm('Are you sure')">Delete</a></td>
+                                   <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash" 
+                                    onclick="return confirm('Are you sure')"></a></td>
      
                                 </tr>
 

@@ -57,7 +57,7 @@
                           <th align="center">End Time</th>
                           <th align="center">Unit</th>
                           <th align="center">Topic</th>
-                          <th align="center">Lecture No</th>
+                          <th align="center">Lecture Type</th>
                           
                          
                           <th align="center">Delete</th>
@@ -73,11 +73,13 @@
                       <td class="show-read-more"><?php echo $item->end_time ?></td>
                       <td class="show-read-more"><?php echo $item->unit ?></td>
                       <td class="show-read-more"><?php echo $item->topic ?></td>
-                      <td class="show-read-more"><?php echo $item->lecture_id ?></td>
+                       <td class="show-read-more"><?php echo $item->lecture_type ?></td>
+                     
+                      <!--td class="show-read-more"><?php echo $item->lecture_id ?></td>
               
-                    <!--  <td align="center"><?php echo $item->no_of_lecture ?></td>    -->
+                      <td align="center"><?php echo $item->no_of_lecture ?></td>    -->
                       
-                         <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>    
+                         <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>    
                      <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
                 </tr>
 

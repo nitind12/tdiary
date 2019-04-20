@@ -1,7 +1,9 @@
 <div class="content">
   
   <div class="module">
+
               <div class="module-head">
+                <h1>View internal marks 1</h1>
                 <h1><?php echo $this->session->userdata('marksname');?></h1>
                         </div>
               <div class="module-body table">

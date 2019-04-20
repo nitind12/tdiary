@@ -8,7 +8,7 @@
  
                 <h1><?php echo $item->marks_name?>
                 <?php 
-            }
+  }
       
 
        ?>

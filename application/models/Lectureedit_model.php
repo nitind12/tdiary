@@ -22,17 +22,17 @@ class Lectureedit_model extends CI_Model
 		for($i=0; $i<count($addclass_id); $i++)
 		{			
 
-	$data = array(
-			'add_class_id' => $addclass_id[$i],
-			'unit' => $this->input->post('txtunit'),
-			'topic'=>$this->input->post('topic'),
-			'no_of_lecture'=>$this->input->post('Lecture_no'),
+			$data = array(
+				'add_class_id' => $addclass_id[$i],
+				'unit' => $this->input->post('txtunit'),
+				'topic'=>$this->input->post('topic'),
+				'no_of_lecture'=>$this->input->post('Lecture_no'),
 
-            'faculty_id'=>'121',
-			'status'=>'1',
-            'username'=>'ra'
-           );	
-		$this->db->insert('lecture',$data);
+	            'faculty_id'=>'121',
+				'status'=>'1',
+	            'username'=>'ra'
+          	 );	
+			$this->db->insert('lecture',$data);
 		}
 	
 	}
@@ -47,6 +47,9 @@ class Lectureedit_model extends CI_Model
 	$q=$this->db->get();
 	return $q->row();
 	}*/
+
+//----double click and edit---//
+
 	function updatedColumn()
     {
         $lectupdate_ = array();

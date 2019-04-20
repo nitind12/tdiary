@@ -90,7 +90,7 @@
               
                                 <!--  <td align="center"><?php echo $item->no_of_lecture ?></td>    -->
                                   
-                                     <td><a href="<?php echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>    
+                                     <td><a href="<?php echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-danger  icon-trash" onclick="return confirm('Are you sure')"></a></td>    
                                  <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
                               </tr>
 

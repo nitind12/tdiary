@@ -56,7 +56,6 @@ $(function()
 	});	
 
 		$('#crs_for_attendance').change(function(){
-			alert('hello');
 			var url_ = site_url_ + "/main/specificClass";
 			var data_ = $('#frmViewAttendance').serialize();
 
@@ -66,10 +65,12 @@ $(function()
 				url: url_,
 				success: function(data){
 					var obj = JSON.parse(data);
-					$('#frmattendancereports').attr('action', 'main/view_attendance_controller/'.obj.clsid['add_class_id']."/".$('#sessionji').val());
+					var url__ = site_url_+'/main/view_attendance_controller/'+obj.clsid['add_class_id']+"/"+$('#sessionji').val();
+					alert(url__);
+					//$('#frmattendancereports').attr('action', url__);
 				}
 			})
-
+			return false;
 		});
 
 });

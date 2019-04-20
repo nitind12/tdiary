@@ -577,7 +577,44 @@ $('#update').click(function(){
 
 
 
+//double click and edit text
+    		var oriVal;
+    			$('body').on('dblclick', '.viewdata', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.viewtd > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&viewid="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/check_assignment_controller/updatedColumn";
 
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+	
 
 
 });
+
+

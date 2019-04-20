@@ -60,7 +60,7 @@
                           
                   <thead>
                     <tr>
-                        <th align="center">No_Of_Lecture_Aspect</th>
+                        <th align="center">No Of Lecture Aspect</th>
                         <th align="center">Unit No</th>
                         <th align="center">Topic</th>
                         <th align="center">Delete</th>

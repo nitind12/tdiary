@@ -45,7 +45,6 @@
                       <th align="center">Student Name</th>
                       <th align="center">Assignment_NO</th>
                       <th align="center">Status</th>
-                      <th align="center">Grade</th>
                         </tr>
                   </thead>
                   <tbody>
@@ -71,18 +70,8 @@
                           <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value="0">
                            UNCHECKED
                         </label> 
-                       </td>
-                       <td>
-                        <select tabindex="1" data-placeholder="" class="span9" name=grade[]>
-                          <option value="">Select Grade</option>
-                          <option value="A">A</option>
-                          <option value="B">B</option>
-                          <option value="C">C</option>
-                          <option value="D">D</option>
-                        </select>
-                    
-
-                       </td>
+                       
+                      </td>
                 </tr>  
                 <?php } ?>
               </tbody>

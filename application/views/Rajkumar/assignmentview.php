@@ -3,7 +3,7 @@
 		<div class="module">
 			<div class="module-head">
 				<h1 >Given_Assignment</h1>
-				</div>
+							</div>
 
 				<div class="module-body">
 					<div class="module-body table">
@@ -50,11 +50,11 @@
 					<input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
 					<?php  }  ?>
 						<tr>
-							<td>Assignment No<br>
+							<td>Assignment_id<br>
 							<input type="number" name="Assignment_id" id="Assignment_id" class="span8"/></td>
-							<td>Given Date<br>
+							<td>Given_date<br>
 							<input type="date" name="Given_date" id="Given_date"class="span9"/></td>
-							<td>Submission Date<br>
+							<td>Submission_date<br>
 							<input type="date" name="Submission_date" id="Submission_date" class="span9"/></td></td>
 						</tr>
 											

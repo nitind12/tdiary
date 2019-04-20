@@ -84,12 +84,11 @@
 								<td>End Time:<br>
 									<input type="time" id="txtend" name="txtend" class="span8">				
 								</td>
-							</tr>	
+						
 
-				</tr>	
-			 <tr>
-				 	<td>Date:<br>
-						<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date"class="span8">
+				
+				 <!--	<td>Date:<br>
+						<input type="text" value="<?php //echo date("Y-m-d");?>" id="date" name="date"class="span8">
     				</td>
 
 				 				<td colspan="2">
@@ -108,7 +107,7 @@
 											</tr>
 
 										<tr>
-											<td>No_Of_Lecture:<br>
+											<td>No Of Lecture:<br>
 												<input type="number" id="Lecture" name="Lecture"class="span4">
     										</td>
     									</tr>
@@ -126,7 +125,64 @@
 							</tr>
 						</tbody>
 					</table>
-			
+			-->
+
+							 	<td>Date:<br>
+									<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date"class="span8">
+    							</td>
+    						</tr>
+
+
+						 		<td colspan="2"> Lecture Type:<br>
+									<select tabindex="1" data-placeholder="Select here.." class="span8" name="lecturetype[]"id="lecturetype[]">
+										<option value="">Select here..</option>
+										<option value="Letcure Schedule">Letcure Schedule</option>
+										<option value="Arrangement">Arrangement</option>
+										<option value="Extra Lecture Taken">Extra Lecture Taken</option>
+												
+									</select>
+										
+								</td>
+							
+
+				 				<td colspan="2">
+				 					<table class="table table-striped table-bordered table-condensed">
+				 						<tbody>
+				 				
+				 					
+					 						<tr>
+	    										<td >Unit:<br>
+													
+													<input type="number" id="Unit" name="Unit" class="span8">
+												</td>
+											</tr>
+											
+
+											<tr>
+										
+												<td > Topic:<br>
+				    								<textarea class="span12" rows="5"  cols="30" id="Topic" name="Topic"></textarea>
+												</td>
+											</tr>
+
+										<tr>
+										
+											<td>No Of Lecture:<br>
+												<input type="number" id="Lecture" name="Lecture"class="span8">
+    										</td>
+    									</tr>
+
+    									<tr>					
+											<td colspan="3">			
+									
+												<button style="float:right" type="submit" name="save" id="save" class="btn btn-primary">Submit</button>
+											</td>
+										</tr>
+
+									</table>
+								
+								</td>
+							</tr>
 
 			<table class="table table-striped table-bordered table-condensed">
                     <tr style="text-align: left">
@@ -137,6 +193,7 @@
                         <th>Unit</th>
                         <th>Topic</th>	                               	
                         <th>No Of Lecture </th>
+                        <th>Lecture Type</th>
                         <th>Delete</th>
                     </tr>
 
@@ -155,6 +212,8 @@
 	                            <td class="show-read-more lessondata lesstd"  id="<?php echo $item->lesson_id.'-topic' ;?>"><?php echo $item->topic;?></td>
 
 	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>
+
+	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?></td>
 
 
 	                            <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>

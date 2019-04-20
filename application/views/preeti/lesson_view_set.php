@@ -57,7 +57,7 @@
                           <th align="center">End Time</th>
                           <th align="center">Unit</th>
                           <th align="center">Topic</th>
-                          <th align="center">Lecture No</th>
+                          <th align="center">Lecture Type</th>
                           
                          
                           <th align="center">Delete</th>
@@ -73,7 +73,9 @@
                       <td class="show-read-more"><?php echo $item->end_time ?></td>
                       <td class="show-read-more"><?php echo $item->unit ?></td>
                       <td class="show-read-more"><?php echo $item->topic ?></td>
-                      <td class="show-read-more"><?php echo $item->lecture_id ?></td>
+                       <td class="show-read-more"><?php echo $item->lecture_type ?></td>
+                     
+                      <!--td class="show-read-more"><?php echo $item->lecture_id ?></td>
               
                     <!--  <td align="center"><?php echo $item->no_of_lecture ?></td>    -->
                       

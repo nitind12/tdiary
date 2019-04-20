@@ -169,9 +169,10 @@ $(document).ready(function()
 						//alert(obj.marks[i].Subject_id);
 						id_ = obj.marks[i].Day+obj.marks[i].Time;
 						$('#'+id_).html(obj.marks[i].Subject_id);
-						//id_ = obj.marks[i].Day+obj.marks[i].Time;
+						//id_ = obj.marks[i].Date+obj.marks[i].Time;
 						//$('#'+id_).html(obj.marks[i].Subject_id,Room);
 					}
+
 					
 					//$('#timetablehere').html(str);
 

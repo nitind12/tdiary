@@ -184,7 +184,7 @@
 
 	                      
 
-	                        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
+	                        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 	                    </tr>
 
                    		<?php 

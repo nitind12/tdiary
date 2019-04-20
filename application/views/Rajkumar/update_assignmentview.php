@@ -75,13 +75,12 @@
 		             { 
 		             	?>
 		              <tr >
-		              <td align="center"><?php echo $item->roll_no;?></td>
-						<td align="center"><?php echo $item->first_name;?></td>
-						<td align="center"><?php echo $item->assignment_id;?></td>
-						<td align="center"><?php echo $item->assignment_status;?></td>
-						<td align="center"><?php echo $item->checker_date;?></td>
-						<td><input type="button" class="btn btn-primary " value="Delete" onclick="return confirm('Are you sure')"></td>
-						
+		              <td align="center"  class="viewdata viewtd"   id="<?php echo $item->roll_no.'-roll_no';?>"><?php echo $item->roll_no;?></td>
+      						<td align="center"><?php echo $item->first_name;?></td>
+      						<td align="center"><?php echo $item->assignment_id;?></td>
+      						<td align="center"><?php echo $item->assignment_status;?></td>
+      						<td align="center"><?php echo $item->checker_date;?></td>
+      						<td><a href="<?php echo site_url('update_assignment_controller/del1/' .$item->roll_no)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
 				    <?php } ?>
 		  </tbody>
 </table>

@@ -171,6 +171,10 @@
 												<input type="number" id="Lecture" name="Lecture"class="span8">
     										</td>
     									</tr>
+    								</tbody>
+    							</table>
+    						</td>
+
 
     									<tr>					
 											<td colspan="3">			
@@ -178,11 +182,14 @@
 												<button style="float:right" type="submit" name="save" id="save" class="btn btn-primary">Submit</button>
 											</td>
 										</tr>
+									</tbody>
+								</table>
+							<br>
 
-									</table>
+
 								
-								</td>
-							</tr>
+								
+						
 
 			<table class="table table-striped table-bordered table-condensed">
                     <tr style="text-align: left">
@@ -216,7 +223,7 @@
 	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?></td>
 
 
-	                            <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
+	                            <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>
 	                                        
 	                        </tr>
                         <?php } ?>

@@ -43,17 +43,5 @@ class Check_Assignment_Controller extends CI_Controller{
 		redirect('Check_assignment_controller');
 	}
 	
-
-
-    //-- double click and edit ----//
-
-    function updatedColumn()
-    {
-
-        
-        $bool_= $this->um->updatedColumn();
-
-        echo $data; 
-    }
 	
 }

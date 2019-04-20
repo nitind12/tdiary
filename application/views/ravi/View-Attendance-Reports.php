@@ -29,11 +29,11 @@
             <?php foreach($add_class_in as $item){?>
               
               <tr >
-                        <td><b><select tabindex="1" data-placeholder="Select here.." class="span1">
+                        <td><b><select tabindex="1" data-placeholder="Select here.." class="span1" name="sessionji" id="sessionji">
                           <option value="<?php echo $item->session_id?>"><?php echo $item->session_id?></option>
                           /select>
                     </b> </td>
-                        <td><select tabindex="1" data-placeholder="Select here.." class="span1" id="crs_for_attendance">
+                        <td><select tabindex="1" data-placeholder="Select here.." class="span1" id="crs_for_attendance"name id="crs_for_attendance">
                           <?php foreach ($cls_in_session as $itemcrs) {?>
                             <?php if($item->course_id == $itemcrs->course_id){ ?>
                               <option value="<?php echo $item->course_id?>" selected="selected"><?php echo $itemcrs->course_id?></option>
@@ -43,15 +43,15 @@
                           <?php } ?>
                           /select>
                     </b> </td>
-                        <td> <select tabindex="1" data-placeholder="Select here.." class="span1">
+                        <td> <select tabindex="1" data-placeholder="Select here.." class="span1" name="semji" id="semji">
                           <option value="<?php echo $item->semester_id?>"><?php echo $item->semester_id?></option>
                           /select>
                     </b> </td>
-                        <td><select tabindex="1" data-placeholder="Select here.." class="span1">
+                        <td><select tabindex="1" data-placeholder="Select here.." class="span1" name="sectionji" id="sectionji">
                           <option value="<?php echo $item->section_id?>"><?php echo $item->section_id?></option>
                           /select>
                     </b> </td>
-                       <td> <select tabindex="1" data-placeholder="Select here.." class="span1">
+                       <td> <select tabindex="1" data-placeholder="Select here.." class="span1" name="subjectji" id="subjectji">
                           <option value="<?php echo $item->subject_id;?>"><?php echo $item->subject_id;?></option>
                           /select>
                     </b> </td>

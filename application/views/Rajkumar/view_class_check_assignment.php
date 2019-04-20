@@ -15,8 +15,7 @@
             echo form_open('Check_Assignment_Controller/check_assignment_marks_controller', $data); 
           ?>
 
-      <div class="btn-box-row row-fluid" >
- 
+      <div class="btn-box-row row-fluid">
   <?php foreach($cls_in_session as $item){?>
       <div class="btn-box-row row-fluid  btn-box big span4"style=" float: left; color: #000090;">
           <div class="btn-box-row row-fluid span2  assignmentchecker" id="<?php echo $item->add_class_id . "~" . $item->session_id;?>"  style="font-size: 11px !important; text-align: left">

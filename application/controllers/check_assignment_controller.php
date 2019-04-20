@@ -34,9 +34,9 @@ class Check_Assignment_Controller extends CI_Controller{
         }
         else
         {
-        redirect('Check_assignment_controller');
-        }
-    }
+            redirect('Check_assignment_controller');
+            }
+     }
     function check_assignment_marks_enter()
 	{
 		$this->um->check_assignment_marks_enter_modal();

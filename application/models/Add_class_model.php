@@ -2,18 +2,18 @@
 class Add_class_model extends CI_Model
 {
 		function specificClass(){
-			$this->db->select('add_class_id, ');
-			$this->db->where('session_id', $this->input->post(''));
-			$this->db->where('course_id', $this->input->post(''));
-			$this->db->where('semester_id', $this->input->post(''));
-			$this->db->where('subject_id', $this->input->post(''));
-			$this->db->where('section_id', $this->input->post(''));
+			$this->db->select('add_class_id');
+			$this->db->where('session_id', $this->input->post('sessionji'));
+			$this->db->where('course_id', $this->input->post('crs_for_attendance'));
+			$this->db->where('semester_id', $this->input->post('semji'));
+			$this->db->where('subject_id', $this->input->post('subjectji'));
+			$this->db->where('section_id', $this->input->post('sectionji'));
 			$query = $this->db->get('add_class');
 			return $query->row();
 		}
 		function fetchClass()
 		{
-			$this->db->order_by('course_id');
+		$this->db->order_by('course_id');
 		$query = $this->db->get("add_class");
 		return $query->result();
 		}

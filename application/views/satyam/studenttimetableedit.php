@@ -81,7 +81,11 @@
 										<td>
 										<div class="controls" style="float:left;">
 										
+
 										<input type="submit"class="btn btn-primary" name="save" value="submit" id="btnsubmit1">
+
+										
+
 									</div>
 								</td>
 								</tr>

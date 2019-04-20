@@ -8,38 +8,38 @@ class studentmodel extends CI_Model{
 	function savingstudent()
 	{
 		$data = array(
-			'Date of Commencement' => $this->input->post('Date of Commencement'),
-			'Course of Admission' => $this->input->post('Course of Admission'),
-			'First Name' => $this->input->post('First Name'),
-			'Last Name' => $this->input->post('Last Name'),
-			'Father Name' => $this->input->post('Father Name'),
-			'Mother Name' => $this->input->post('Mother Name'),
-			'D.O.B' => $this->input->post('D.O.B'),
-			'Blood Group' => $this->input->post('Blood Group'),
+			'Date_of_Commencement' => $this->input->post('Date_of_Commencement'),
+			'Course_of_Addmission' => $this->input->post('Course_of_Addmission'),
+			'First_Name' => $this->input->post('First_Name'),
+			'Last_Name' => $this->input->post('Last_Name'),
+			'Father_Name' => $this->input->post('Father_Name'),
+			'Mother_Name' => $this->input->post('Mother_Name'),
+			'D_O_B' => $this->input->post('D_O_B'),
+			'Blood_Group' => $this->input->post('Blood_Group'),
 			'Gender' => $this->input->post('Gender'),
 			'Nationality' => $this->input->post('Nationality'),
 			'Category' => $this->input->post('Category'),
-			'Student Contact No.' => $this->input->post('Student Contact No.'),
-			'Student Email' => $this->input->post('Student Email'),
-			'Alternate Contact No.' => $this->input->post('Alternate Contact No.'),
-			'Alternate Email' => $this->input->post('Alternate Email'),
-			'State' => $this->input->post('State'),
-			'City' => $this->input->post('City'),
-			'Pincode' => $this->input->post('Pincode'),
-			'State' => $this->input->post('State'),
-			'City' => $this->input->post('City'),
-			'Pincode' => $this->input->post('Pincode'),
-			'Passing Year' => $this->input->post('Passing Year'),
-			'Board' => $this->input->post('Board'),
-			'Percentage' => $this->input->post('Percentage'),
-			'Passing Year' => $this->input->post('Passing Year'),
-			'Board' => $this->input->post('Board'),
-			'Percentage' => $this->input->post('Percentage'),
+			'Student_Contact_No' => $this->input->post('Student_Contact_No'),
+			'Student_Email' => $this->input->post('Student_Email'),
+			'Alternate_Contact_No' => $this->input->post('Alternate_Contact_No'),
+			'Alternate_Email' => $this->input->post('Alternate_Email'),
+			'Current_State' => $this->input->post('Current_State'),
+			'Current_City' => $this->input->post('Current_City'),
+			'Current_Pincode' => $this->input->post('Current_Pincode'),
+			'Parmanent_State' => $this->input->post('Parmanent_State'),
+			'Parmanent_City' => $this->input->post('Parmanent_City'),
+			'Parmanent_Pincode' => $this->input->post('Parmanent_Pincode'),
+			'Highschool_Passing_Year' => $this->input->post('Highschool_Passing_Year'),
+			'Highschool_Board' => $this->input->post('Highschool_Board'),
+			'Highschool_Percentage' => $this->input->post('Highschool_Percentage'),
+			'Intermediate_Passing_Year' => $this->input->post('Intermediate_Passing_Year'),
+			'Intermediate_Board' => $this->input->post('Intermediate_Board'),
+			'Intermediate_Percentage' => $this->input->post('Intermediate_Percentage'),
 			'Graduation' => $this->input->post('Graduation'),
-			'Passing Year' => $this->input->post('Passing Year'),
-			'Board' => $this->input->post('Board'),
-			'Percentage' => $this->input->post('Percentage'),
-			'Other Description' => $this->input->post('Other Description')
+			'Graduation_Passing_Year' => $this->input->post('Graduation_Passing_Year'),
+			'Graduation_University' => $this->input->post('Graduation_University'),
+			'Graduation_Percentage' => $this->input->post('Graduation_Percentage')
+			
 			
 
 			
@@ -49,7 +49,7 @@ class studentmodel extends CI_Model{
 
 		);
 		
-		$this->db->insert('faculty_personal,$data');
+		$this->db->insert('student_personal',$data);
 
 	}
 	/*function saving()

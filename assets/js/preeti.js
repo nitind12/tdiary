@@ -334,22 +334,23 @@ $(document).ready(function()
 //Read More...
 		    var maxLength = 30;
 
-		    $(".show-read-more").each(function() {
+		    	$(".show-read-more").each(function() {
 
-		        var myStr = $(this).text();
+		       		var myStr = $(this).text();
 
-		        if($.trim(myStr).length > maxLength){
+		        	if($.trim(myStr).length > maxLength){
 
-		            var newStr = myStr.substring(0, maxLength);
-		            var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-		            $(this).empty().html(newStr);
-		            $(this).append(' <a href="javascript:void(0);" class="read-more">Read More...</a>');
-		            $(this).append('<span class="more-text">' + removedStr + '</span>');
-		        }
-		    });
-		    $(".read-more").click(function(){
-		        $(this).siblings(".more-text").contents().unwrap();
-		        $(this).remove();
+			            var newStr = myStr.substring(0, maxLength);
+			            var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			            $(this).empty().html(newStr);
+			            $(this).append(' <a href="javascript:void(0);" class="read-more">Read More...</a>');
+			            $(this).append('<span class="more-text">' + removedStr + '</span>');
+			        }
+		  		});
+		  		
+			    	$(".read-more").click(function(){
+			        $(this).siblings(".more-text").contents().unwrap();
+			        $(this).remove();
 		    });
 
 
@@ -392,6 +393,83 @@ $(document).ready(function()
 
 				    });
     			});
+	
+
+
+		
+
+			var oriVal;
+    			$('body').on('dblclick', '.lessondata', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.lesstd > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&less_id="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/Lessonedit_controller/updatedColumn";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+
+
+
+    			var oriVal;
+    			$('body').on('dblclick', '.weekdata', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.weektd > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&week_id="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/Weeklyedit_controller/updatedColumn";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+
 
 				
    

@@ -12,6 +12,8 @@ class Checkassignmentmodel extends CI_Model{
 			$stdroll = $this->input->post('Student_Roll');
 			$addclass_id = $this->input->post('addclass_id');
 			$assignment_status = $this->input->post('optionsRadios');
+			$Grade = $this->input->post('grade');
+			
 			$date= $this->input->post('date1');
 			
 
@@ -22,6 +24,7 @@ class Checkassignmentmodel extends CI_Model{
 			'roll_no' => $stdroll[$i],
 			'assignment_id'=>$assignment_id[$i],
 			'assignment_status'=>$assignment_status[$i],
+			'grade'=>$Grade[$i],
 			'checker_date'=>$date,
 			'status' => '1',
 			'username' =>'ra'
@@ -40,7 +43,7 @@ class Checkassignmentmodel extends CI_Model{
 		$this->db->where('b.add_class_id' ,$no_);
 		$this->db->from('assignment_checker a');
 		$this->db->join('add_class b', 'b.add_class_id=a.add_class_id');
-		$this->db->join('std_personal c', 'c.student_id=a.Student_Roll');
+		$this->db->join('std_personal c', 'c.student_id=a.roll_no');
 
 		$q = $this->db->get('assignment_checker');
 		return $q->result();

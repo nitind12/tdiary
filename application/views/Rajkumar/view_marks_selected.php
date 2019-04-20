@@ -26,8 +26,8 @@
               </div>
             <?php 
               } ?>
-              <input type="hidden" name="mtypeid" id="mtypeid">
-              <input type="hidden" name="mtypename" id="mtypename">
+              <input type="hidden" name="mtypeid1" id="mtypeid1">
+              <input type="hidden" name="mtypename1" id="mtypename1">
               <?php
               echo form_close();
               ?>

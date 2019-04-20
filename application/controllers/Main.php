@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends CI_Controller {  
     function __construct(){
         parent::__construct();
-     //  if(! $this->session->userdata('user')) redirect('Login_controller');
+     if(! $this->session->userdata('user')) redirect('Login_controller');
        $this->load->model('Add_class_model','am');
     }
     public function index()  
@@ -46,17 +46,37 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
+
+    function specificClass()
+    {
+        $data['clsid'] = $this->am->specificClass();
+        echo json_encode($data);
+    }
      public function view_attendance_controller($no_,$sess)  
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "View-Attendance-Reports";
+        $data['cls_in_session'] = $this->am->fetchCourses();
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['reports'] = $this->am->reports_attendance_modals();
-   
+        $data['no_'] = $no_;
+        $data['sess_'] = $sess;
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
+     public function view_attendance_reports_controller($no_,$sess)  
+    {  
+        $data['title'] = "ONLINE_ATTENDANCE";
+        $data['page_'] = "view-reports-attendance";
+        $data['cls_in_session'] = $this->am->fetchClass();
+        $data['add_class_in'] = $this->am->add_view_attendance($no_);
+        $data['attendance_Status'] = $this->am->reports_modals($no_);   
+         $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+    
     public function addclass_controller()  
     {  
         $this->am->savingdata(); 

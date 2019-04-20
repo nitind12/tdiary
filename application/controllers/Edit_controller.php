@@ -26,6 +26,7 @@ class Edit_controller extends CI_Controller
 
     public function view_lecture_div()
     {
+
         $data['title'] = "Lectureview page";
         $data['page_'] = "Lecture_view_div";
         $data['cls_in_session'] = $this->am->fetchClass();
@@ -33,33 +34,58 @@ class Edit_controller extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');  
+   }
+
+
+
+//this is for hide 
+    public function lecture_edit()
+    {  
+        
+        if($this->input->post('addclassidED'))
+        {
+            $no_ = $this->input->post('addclassidED');
+            $sess = $this->input->post('sessionidED');
+            $clsid = $this->input->post('courseidED');
+        
+            $data['add_class_in'] = $this->obj->add_view_class($no_);
+            $data['t_diary'] = $this->obj->fetchtable($no_);
+           // $data['total']=$this->obj->total_modal();
+            $data['title'] = "lecture_edit";
+            $data['page_'] = "Lecture_edit";
+            $this->load->view('templates/header', $data);
+            $this->load->view('mypreetipage',$data);
+            $this->load->view('templates/footer');
+         }
+         else
+        {
+            redirect('Edit_controller');
+        }
+
     }
 
 
 
-    public function lecture_edit($no_,$sess,$crs)
+    public function lecture_view()
     {  
-        $data['add_class_in'] = $this->obj->add_view_class($no_);
-        $data['t_diary'] = $this->obj->fetchtable($no_);
-       // $data['total']=$this->obj->total_modal();
-        $data['title'] = "lecture_edit";
-        $data['page_'] = "Lecture_edit";
-        $this->load->view('templates/header', $data);
-        $this->load->view('mypreetipage',$data);
-        $this->load->view('templates/footer');
-    }
-
-
-
-    public function lecture_view($no_,$sess,$crs)
-    {  
-        $data['add_class_in'] = $this->obj->add_view_class($no_);
-        $data['t_diary'] = $this->obj->fetchtable($no_);
-        $data['title'] = "lecture_view";
-        $data['page_'] = "lecture_view";
-        $this->load->view('templates/header', $data);
-        $this->load->view('mypreetipage',$data);
-        $this->load->view('templates/footer');
+        if($this->input->post('addclassidED'))
+        {
+            $no_ = $this->input->post('addclassidED');
+            $sess = $this->input->post('sessionidED');
+            $clsid = $this->input->post('courseidED');
+            
+            $data['add_class_in'] = $this->obj->add_view_class($no_);
+            $data['t_diary'] = $this->obj->fetchtable($no_);
+            $data['title'] = "lecture_view";
+            $data['page_'] = "lecture_view";
+            $this->load->view('templates/header', $data);
+            $this->load->view('mypreetipage',$data);
+            $this->load->view('templates/footer');
+        }
+        else
+        {
+            redirect('Edit_controller/ view_lecture_div');
+        }
     }
 
 

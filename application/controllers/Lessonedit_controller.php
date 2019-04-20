@@ -25,16 +25,31 @@ class Lessonedit_controller extends CI_Controller
 
 
 
-    public function lesson_edit($no_)  
+
+
+    public function lesson_edit()  
     { 
-    $data['t_diary'] = $this->obj->fetchtable($no_);     
-    $data['add_class_in'] = $this->gm->add_view_class($no_);     
-    $data['title'] = "lesson_edit";
-    $data['page_'] = "lesson_new";    
-    $this->load->view('templates/header', $data);
-    $this->load->view('mypreetipage');  
-    $this->load->view('templates/footer');
+        if($this->input->post('addclassidED'))
+        {
+            $no_ = $this->input->post('addclassidED');
+            $sess = $this->input->post('sessionidED');
+            $clsid = $this->input->post('courseidED');
+
+            $data['t_diary'] = $this->obj->fetchtable($no_);     
+            $data['add_class_in'] = $this->gm->add_view_class($no_);     
+            $data['title'] = "lesson_edit";
+            $data['page_'] = "lesson_new";    
+            $this->load->view('templates/header', $data);
+            $this->load->view('mypreetipage');  
+            $this->load->view('templates/footer');
+        }
+        else
+        {
+            redirect('Lessonedit_controller');
+        }
     }
+
+
 
 
 

@@ -1,7 +1,52 @@
 $(document).ready(function()
 {
-/*	
-	$('#myEdit').submit(function()
+	$('.lectureclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			$('#courseidED').val(arr[2]);
+
+			$('#frmlectureclass').submit();
+		});	
+
+
+		$('.lectureviewclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			$('#courseidED').val(arr[2]);
+
+			$('#frmlectureviewclass').submit();
+		});	
+
+
+
+	$('.lessonclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			$('#courseidED').val(arr[2]);
+
+			$('#frmlessonclass').submit();
+		});	
+
+
+	$('.weeklyclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			$('#courseidED').val(arr[2]);
+
+			$('#frmweeklyclass').submit();
+		});	
+
+
+
+	/*$('#myEdit').submit(function()
 	{	
 		if($.trim($('#session').val()) == '')
 			{
@@ -358,7 +403,7 @@ $(document).ready(function()
 
 
 
-//double click and edit text
+//---double click and edit text in lecture plan----//
     		var oriVal;
     			$('body').on('dblclick', '.lectdata', function(){
     				// this.id - it will give you the specific id of td where dblclick held
@@ -397,7 +442,7 @@ $(document).ready(function()
 
 
 		
-
+//---- double click and edit in lesson plan----//
 			var oriVal;
     			$('body').on('dblclick', '.lessondata', function(){
     				// this.id - it will give you the specific id of td where dblclick held
@@ -435,6 +480,9 @@ $(document).ready(function()
 
 
 
+
+
+//--- double click and edit in weekly plan --//
     			var oriVal;
     			$('body').on('dblclick', '.weekdata', function(){
     				// this.id - it will give you the specific id of td where dblclick held
@@ -470,9 +518,6 @@ $(document).ready(function()
 				    });
     			});
 
-
-				
-   
 });
 
 

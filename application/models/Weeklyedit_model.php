@@ -43,6 +43,8 @@ class Weeklyedit_model extends CI_Model
 	}
 
 
+
+
 	function add_view_class($clsid)
 		{
 		//$intel = array();
@@ -52,6 +54,8 @@ class Weeklyedit_model extends CI_Model
 		//echo $this->db->last_query();
 		return $q->result();
 		}
+
+
 
 
 	function detailsreports($sd,$ed,$no_)
@@ -73,6 +77,8 @@ class Weeklyedit_model extends CI_Model
 
 
 
+
+
 	function weeklyreport($wi)
 	{
 		$this->db->select('week_id, start_date, end_date, no_of_lecture_schedule, no_of_lost_due_to_holiday, no_of_lost_due_to_cl, no_extra_taken,no_of_lecture_actual_taken');
@@ -83,6 +89,9 @@ class Weeklyedit_model extends CI_Model
 		$query=$this->db->get();
 		return $query->result();
 	}
+
+
+
 /*function detailsreports($sd,$ed)
 	{
 	$this->db->select('date, unit,topic');

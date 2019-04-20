@@ -62,90 +62,90 @@ $(document).ready(function()
 			{
 				alert('Alternate Email must be filled out');
 			}
-		else if($.trim($('#C_State').val()) == '')
+		else if($.trim($('#Current State').val()) == '')
 			{
-				alert('State must be filled out');
+				alert('Current State must be filled out');
 			}
-		else if($.trim($('#C_City').val()) == '')
+		else if($.trim($('#Current City').val()) == '')
 			{
-				alert('City must be filled out');
+				alert('Current City must be filled out');
 			}
-		else if($.trim($('#C_Pincode').val()) == '')
+		else if($.trim($('#Current Pincode').val()) == '')
 			{
-				alert('Pincode must be filled out');
+				alert('Current Pincode must be filled out');
 			}
-			else if($.trim($('#P_State').val()) == '')
+			else if($.trim($('#Parmanent State').val()) == '')
 			{
-				alert('State must be filled out');
+				alert('Parmanent State must be filled out');
 			}
-		else if($.trim($('#P_City').val()) == '')
+		else if($.trim($('#Parmanent City').val()) == '')
 			{
-				alert('City must be filled out');
+				alert('Parmanent City must be filled out');
 			}
-		else if($.trim($('#P_Pincode').val()) == '')
+		else if($.trim($('#Parmanent Pincode').val()) == '')
 			{
-				alert('Pincode must be filled out');
+				alert('Parmanent Pincode must be filled out');
 			}
 		
-		else if($.trim($('#H_Passing Year').val()) == '')
+		else if($.trim($('#Highschool Passing Year').val()) == '')
 			{
-				alert('Passing Year must be filled out');
+				alert('Highschool Passing Year must be filled out');
 			}
-		else if($.trim($('#H_Board').val()) == '')
+		else if($.trim($('#Highschool Board').val()) == '')
 			{
-				alert('Board must be filled out');
+				alert('Highschool Board must be filled out');
 			}
-		else if($.trim($('#H_Percentage').val()) == '')
+		else if($.trim($('#Highschool Percentage').val()) == '')
 			{
-				alert('Percentage must be filled out');
+				alert('Highschool Percentage must be filled out');
 			}
-			else if($.trim($('#I_Passing Year').val()) == '')
+			else if($.trim($('#Intermediate Passing Year').val()) == '')
 			{
-				alert('Passing Year must be filled out');
+				alert('Intermediate Passing Year must be filled out');
 			}
-		else if($.trim($('#I_Board').val()) == '')
+		else if($.trim($('#Intermediate Board').val()) == '')
 			{
-				alert('Board must be filled out');
+				alert('Intermediate Board must be filled out');
 			}
-		else if($.trim($('#I_Percentage').val()) == '')
+		else if($.trim($('#Intermediate Percentage').val()) == '')
 			{
-				alert('Percentage must be filled out');
+				alert('Intermediate Percentage must be filled out');
 			}
 			else if($.trim($('#Graduation').val()) == '')
 			{
 				alert('Graduation must be filled out');
 			}
-			else if($.trim($('#G_Passing Year').val()) == '')
+			else if($.trim($('#Graduation Passing Year').val()) == '')
 			{
-				alert('Passing Year must be filled out');
+				alert('Graduation Passing Year must be filled out');
 			}
-		else if($.trim($('#G_Board').val()) == '')
+		else if($.trim($('#Graduation Board').val()) == '')
 			{
-				alert('Board must be filled out');
+				alert('Graduation Board must be filled out');
 			}
-		else if($.trim($('#G_Percentage').val()) == '')
+		else if($.trim($('#Graduation Percentage').val()) == '')
 			{
-				alert('Percentage must be filled out');
+				alert('Graduation Percentage must be filled out');
 			}
 			else if($.trim($('#Post Graduation').val()) == '')
 			{
 				alert('Post Graduation must be filled out');
 			}
-			else if($.trim($('#P_Passing Year').val()) == '')
+			else if($.trim($('#Post Graduation Passing Year').val()) == '')
 			{
-				alert('Passing Year must be filled out');
+				alert('Post Graduation Passing Year must be filled out');
 			}
-		else if($.trim($('#P_Board').val()) == '')
+		else if($.trim($('#Post Graduation Board').val()) == '')
 			{
-				alert('Board must be filled out');
+				alert('Post Graduation Board must be filled out');
 			}
-		else if($.trim($('#P_Percentage').val()) == '')
+		else if($.trim($('#Post Graduation Percentage').val()) == '')
 			{
-				alert('Percentage must be filled out');
+				alert('Post Graduation Percentage must be filled out');
 			}
-			else if($.trim($('#Other Description').val()) == '')
+			else if($.trim($('#Teaching Experience').val()) == '')
 			{
-				alert('Other Description must be filled out');
+				alert('Teaching Experience must be filled out');
 			}
 		
 		
@@ -224,75 +224,72 @@ $(document).ready(function()
 			{
 				alert('Alternate Email must be filled out');
 			}
-		else if($.trim($('#State').val()) == '')
+		else if($.trim($('#Current State').val()) == '')
 			{
-				alert('State must be filled out');
+				alert('Current State must be filled out');
 			}
-		else if($.trim($('#City').val()) == '')
+		else if($.trim($('#Current City').val()) == '')
 			{
-				alert('City must be filled out');
+				alert('Current City must be filled out');
 			}
-		else if($.trim($('#Pincode').val()) == '')
+		else if($.trim($('#Current Pincode').val()) == '')
 			{
-				alert('Pincode must be filled out');
+				alert('Current Pincode must be filled out');
 			}
-			else if($.trim($('#State').val()) == '')
+			else if($.trim($('#Parmanent State').val()) == '')
 			{
-				alert('State must be filled out');
+				alert('Parmanent State must be filled out');
 			}
-		else if($.trim($('#City').val()) == '')
+		else if($.trim($('#Parmanent City').val()) == '')
 			{
-				alert('City must be filled out');
+				alert('Parmanent City must be filled out');
 			}
-		else if($.trim($('#Pincode').val()) == '')
+		else if($.trim($('#Parmanent Pincode').val()) == '')
 			{
-				alert('Pincode must be filled out');
+				alert('Parmanent Pincode must be filled out');
 			}
 		
-		else if($.trim($('#Passing Year').val()) == '')
+		else if($.trim($('#Parmanent Passing Year').val()) == '')
 			{
-				alert('Passing Year must be filled out');
+				alert('Parmanent Passing Year must be filled out');
 			}
-		else if($.trim($('#Board').val()) == '')
+		else if($.trim($('#Parmanent Board').val()) == '')
 			{
-				alert('Board must be filled out');
+				alert('Parmanent Board must be filled out');
 			}
-		else if($.trim($('#Percentage').val()) == '')
+		else if($.trim($('#Highschool Percentage').val()) == '')
 			{
-				alert('Percentage must be filled out');
+				alert('Highschool Percentage must be filled out');
 			}
-			else if($.trim($('#Passing Year').val()) == '')
+			else if($.trim($('#Highschool Passing Year').val()) == '')
 			{
-				alert('Passing Year must be filled out');
+				alert('Highschool Passing Year must be filled out');
 			}
-		else if($.trim($('#Board').val()) == '')
+		else if($.trim($('#Highschool Board').val()) == '')
 			{
-				alert('Board must be filled out');
+				alert('Highschool Board must be filled out');
 			}
-		else if($.trim($('#Percentage').val()) == '')
+		else if($.trim($('#Highschool Percentage').val()) == '')
 			{
-				alert('Percentage must be filled out');
+				alert('Highschool Percentage must be filled out');
 			}
 			else if($.trim($('#Graduation').val()) == '')
 			{
 				alert('Graduation must be filled out');
 			}
-			else if($.trim($('#Passing Year').val()) == '')
+			else if($.trim($('#Graduation Passing Year').val()) == '')
 			{
-				alert('Passing Year must be filled out');
+				alert('Graduation Passing Year must be filled out');
 			}
-		else if($.trim($('#Board').val()) == '')
+		else if($.trim($('#Graduation University ').val()) == '')
 			{
-				alert('Board must be filled out');
+				alert('Graduation University must be filled out');
 			}
-		else if($.trim($('#Percentage').val()) == '')
+		else if($.trim($('#Graduation Percentage').val()) == '')
 			{
-				alert('Percentage must be filled out');
+				alert('Graduation Percentage must be filled out');
 			}
-			else if($.trim($('#Other Description').val()) == '')
-			{
-				alert('Other Description must be filled out');
-			}
+			
 		
 		
 		else
@@ -305,3 +302,6 @@ $(document).ready(function()
 
 
 });
+
+
+

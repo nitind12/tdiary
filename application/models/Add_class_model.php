@@ -9,6 +9,7 @@ class Add_class_model extends CI_Model
 			$this->db->where('subject_id', $this->input->post('subjectji'));
 			$this->db->where('section_id', $this->input->post('sectionji'));
 			$query = $this->db->get('add_class');
+			echo $this->db->last_query();
 			return $query->row();
 		}
 		function fetchClass()

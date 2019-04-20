@@ -1,17 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('NO direct script access allowed');
-class facultycontroller extends CI_Controller{
+class facultyprofilecontroller extends CI_Controller{
     function __construct()
     {
         parent::__construct();
-        $this->load->model('facultymodel','um');
+        $this->load->model('facultyprofilemodel','um');
     }
     function index()
     {
         $data['users'] = $this->um->fetchtable();
         //$this->load->view('assignmentview',$data);
-         $data['page_'] = 'facultyview';
-         $data['title'] = 'Faculty';
+         $data['page_'] = 'facultyprofileview';
+         $data['title'] = 'Facultyprofile';
        
         $this->load->view('templates/header',$data);
         $this->load->view('mysapnapage',$data);  
@@ -23,7 +23,7 @@ class facultycontroller extends CI_Controller{
     function savingfaculty()
     {
         $this->um->savingfaculty();
-        redirect('facultycontroller');
+        redirect('facultyprofilecontroller');
     }
     
    /* public function del()

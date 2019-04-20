@@ -2,48 +2,48 @@
 class facultymodel extends CI_Model{
 	function fetchtable()
 	{
-		$query = $this->db->get("faculty_personal");
+		$query = $this->db->get("fac_personal");
 		return $query->result();
 	}
 	function savingfaculty()
 	{
 		$data = array(
-			'Date of Commencement' => $this->input->post('Date of Commencement'),
-			'First Name' => $this->input->post('First Name'),
-			'Last Name' => $this->input->post('Last Name'),
-			'Father Name' => $this->input->post('Father Name'),
-			'Mother Name' => $this->input->post('Mother Name'),
-			'Husband/Wife Name' => $this->input->post('Husband/Wife Name'),
-			'D.O.B' => $this->input->post('D.O.B'),
-			'Blood Group' => $this->input->post('Blood Group'),
+			'Date_of_Commencement' => $this->input->post('Date_of_Commencement'),
+			'First_Name' => $this->input->post('First_Name'),
+			'Last_Name' => $this->input->post('Last_Name'),
+			'Father_Name' => $this->input->post('Father_Name'),
+			'Mother_Name' => $this->input->post('Mother_Name'),
+			'Husband/Wife_Name' => $this->input->post('Husband/Wife_Name'),
+			'D_O_B' => $this->input->post('D_O_B'),
+			'Blood_Group' => $this->input->post('Blood_Group'),
 			'Gender' => $this->input->post('Gender'),
 			'Nationality' => $this->input->post('Nationality'),
 			'Category' => $this->input->post('Category'),
-			'Faculty Contact No.' => $this->input->post('Faculty Contact No.'),
-			'Faculty Email' => $this->input->post('Faculty Email'),
-			'Alternate Contact No.' => $this->input->post('Alternate Contact No.'),
-			'Alternate Email' => $this->input->post('Alternate Email'),
-			'C_State' => $this->input->post('State'),
-			'C_City' => $this->input->post('City'),
-			'C_Pincode' => $this->input->post('Pincode'),
-			'P_State' => $this->input->post('State'),
-			'P_City' => $this->input->post('City'),
-			'P_Pincode' => $this->input->post('Pincode'),
-			'H_Passing Year' => $this->input->post('Passing Year'),
-			'H_Board' => $this->input->post('Board'),
-			'H_Percentage' => $this->input->post('Percentage'),
-			'I_Passing Year' => $this->input->post('Passing Year'),
-			'I_Board' => $this->input->post('Board'),
-			'I_Percentage' => $this->input->post('Percentage'),
+			'Faculty_Contact_No' => $this->input->post('Faculty_Contact_No'),
+			'Faculty_Email' => $this->input->post('Faculty_Email'),
+			'Alternate_Contact_No' => $this->input->post('Alternate_Contact_No'),
+			'Alternate_Email' => $this->input->post('Alternate_Email'),
+			'Current_State' => $this->input->post('Current_State'),
+			'Current_City' => $this->input->post('Current_City'),
+			'Current_Pincode' => $this->input->post('Current_Pincode'),
+			'Parmanent_State' => $this->input->post('Parmanent_State'),
+			'Parmanent_City' => $this->input->post('Parmanent_City'),
+			'Parmanent_Pincode' => $this->input->post('Parmanent_Pincode'),
+			'Highschool_Passing_Year' => $this->input->post('Highschool_Passing_Year'),
+			'Highschool_Board' => $this->input->post('Highschool_Board'),
+			'Highschool_Percentage' => $this->input->post('Highschool_Percentage'),
+			'Intermediate_Passing_Year' => $this->input->post('Intermediate_Passing_Year'),
+			'Intermediate_Board' => $this->input->post('Intermediate_Board'),
+			'Intermediate_Percentage' => $this->input->post('Intermediate_Percentage'),
 			'Graduation' => $this->input->post('Graduation'),
-			'G_Passing Year' => $this->input->post('Passing Year'),
-			'G_University' => $this->input->post('Board'),
-			'G_Percentage' => $this->input->post('Percentage'),
-			'Post Graduation' => $this->input->post('Post Graduation'),
-			'P_Passing Year' => $this->input->post('Passing Year'),
-			'P_University' => $this->input->post('Board'),
-			'P_Percentage' => $this->input->post('Percentage'),
-			'Other Description' => $this->input->post('Other Description')
+			'Graduation_Passing_Year' => $this->input->post('Graduation_Passing_Year'),
+			'Graduation_University' => $this->input->post('Graduation_University'),
+			'Graduation_Percentage' => $this->input->post('Graduation_Percentage'),
+			'Post_Graduation' => $this->input->post('Post_Graduation'),
+			'Post_Graduation_Passing_Year' => $this->input->post('Post_Graduation_Passing_Year'),
+			'Post_Graduation_University' => $this->input->post('Post_Graduation_University'),
+			'Post_Graduation_Percentage' => $this->input->post('Post_Graduation_Percentage'),
+			'Teaching_Experience' => $this->input->post('Teaching_Experience')
 			
 
 			
@@ -53,7 +53,7 @@ class facultymodel extends CI_Model{
 
 		);
 		
-		$this->db->insert('faculty_personal',$data);
+		$this->db->insert('fac_personal',$data);
 
 	}
 	/*function saving()

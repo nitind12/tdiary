@@ -11,6 +11,7 @@ class studentcontroller extends CI_Controller{
         $data['users'] = $this->um->fetchtable();
         //$this->load->view('assignmentview',$data);
          $data['page_'] = 'studentview';
+         $data['title'] = 'stdenty';
        
         $this->load->view('templates/header',$data);
         $this->load->view('mysapnapage',$data);  

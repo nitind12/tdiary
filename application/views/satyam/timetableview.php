@@ -13,7 +13,7 @@
 				<thead>
 <tr>
 									  <td >Day<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Day" id="Day" >
+									  	<select tabindex="1"data-placeholder="Select here.."name="day" id="day"class="span8" >
 									  		<option value ="">Select here..</option>
 									  	 <option value ="Monday">Monday</option>
 									  	 <option value ="Tuesday">Tuesday</option>
@@ -22,6 +22,9 @@
 									  	 <option value ="Friday">Friday</option>
 									  	 <option value ="Saturday">Saturday</option>
 									  </select></td>
+									
+									  <td> Date<br>
+									  	<input type="text" value="<?php echo date("d-m-y")?>" name="Date" id="Date" class="span8"/></td>
 									  
 									</tr>
 								</thead>
@@ -46,8 +49,7 @@
 										  <th>09:00-09:50</th>
 										  <th>09:50-10:40</th>
 										  <th>10:40-11:30</th>
-								
-										  <th>11:50-12:40</th>
+					                      <th>11:50-12:40</th>
 										  <th>12:40-01:30</th>
 										  <th>02:10-03:00</th>
 										  <th>03:00-03:50</th>

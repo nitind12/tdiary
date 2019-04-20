@@ -16,7 +16,7 @@ class Viewtimetablemodel extends CI_Model{
 	function timetable()
 	{
 		$intel = array();
-		$Day = $this->input->post('Day');
+		$Day = $this->input->post('day');
 		
 		
 		$this->db->distinct('a.Day');
@@ -28,6 +28,7 @@ class Viewtimetablemodel extends CI_Model{
 
 		$q = $this->db->get('time_table_edit');
 		return $q->result();
+		//echo  $this->db->last_query();
 	}
 	
 }

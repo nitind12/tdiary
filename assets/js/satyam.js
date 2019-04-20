@@ -3,7 +3,8 @@ $(document).ready(function()
 
 	$('#myform111').submit(function()
 	{
-		if($.trim($('#Course_id').val()) == ''){
+		if($.trim($('#Course_id').val()) == '')
+		    {
 				alert('Course_id must be filled out');
 			}
 		else if($.trim($('#Semester').val()) == '')
@@ -158,7 +159,6 @@ $(document).ready(function()
 					str = str + "<th> Course_id</th>"
 					str = str + "<th> Subject_id</th>"
 					str = str + "<th> Session</th>"
-					//str = str + "<th> Time_table_id</th>"
 					str = str + "<th> Time</th>"
 					str = str + "<th> Room</th>"
 
@@ -169,9 +169,10 @@ $(document).ready(function()
 						//alert(obj.marks[i].Subject_id);
 						id_ = obj.marks[i].Day+obj.marks[i].Time;
 						$('#'+id_).html(obj.marks[i].Subject_id);
-						//id_ = obj.marks[i].Day+obj.marks[i].Time;
+						//id_ = obj.marks[i].Date+obj.marks[i].Time;
 						//$('#'+id_).html(obj.marks[i].Subject_id,Room);
 					}
+
 					
 					//$('#timetablehere').html(str);
 

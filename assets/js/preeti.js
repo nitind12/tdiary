@@ -149,7 +149,7 @@ $(document).ready(function()
 */
 
 
-
+/*
 
 
 	$('#btnlecturesubmit').click(function()
@@ -183,7 +183,7 @@ $(document).ready(function()
 					for(i=0; i<len;i++){
 						str = str + '<tr>';	
 						//str = str + '<td>' + obj.lect_[i].session + "</td>";
-						str = str + '<td>' + obj.lect_[i].lectureid + "</td>";
+						str = str + '<td>' + obj.lect_[i].lecture_id + "</td>";
 						str = str + '<td>' + obj.lect_[i].unit + "</td>";
 						str = str + '<td>' + obj.lect_[i].topic + "</td>";
 						str = str + '<td>' + obj.lect_[i].no_of_lecture+ "</td>";
@@ -269,12 +269,6 @@ $(document).ready(function()
 
 
 
-
-
-
-
-
-
 	$('#btnweeklysubmit').click(function(){
 		var data_ = $('#myweek').serialize();
 		var url_ = site_url_+ '/Weeklyview_controller/lessonview';
@@ -332,25 +326,31 @@ $(document).ready(function()
 	});
 
 
+
+*/
+
+
+
 //Read More...
-		    var maxLength = 25;
+		    var maxLength = 30;
 
-		    $(".show-read-more").each(function() {
+		    	$(".show-read-more").each(function() {
 
-		        var myStr = $(this).text();
+		       		var myStr = $(this).text();
 
-		        if($.trim(myStr).length > maxLength){
+		        	if($.trim(myStr).length > maxLength){
 
-		            var newStr = myStr.substring(0, maxLength);
-		            var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-		            $(this).empty().html(newStr);
-		            $(this).append(' <a href="javascript:void(0);" class="read-more">Read More...</a>');
-		            $(this).append('<span class="more-text">' + removedStr + '</span>');
-		        }
-		    });
-		    $(".read-more").click(function(){
-		        $(this).siblings(".more-text").contents().unwrap();
-		        $(this).remove();
+			            var newStr = myStr.substring(0, maxLength);
+			            var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			            $(this).empty().html(newStr);
+			            $(this).append(' <a href="javascript:void(0);" class="read-more">Read More...</a>');
+			            $(this).append('<span class="more-text">' + removedStr + '</span>');
+			        }
+		  		});
+		  		
+			    	$(".read-more").click(function(){
+			        $(this).siblings(".more-text").contents().unwrap();
+			        $(this).remove();
 		    });
 
 
@@ -360,25 +360,120 @@ $(document).ready(function()
 
 //double click and edit text
     		var oriVal;
-				$("#clickedit").on('dblclick', 'td', function () {
-
-				    oriVal = $(this).text();
+    			$('body').on('dblclick', '.lectdata', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
 				    $(this).text("");
-				    $("<input type='text'>").appendTo(this).focus();
-
-				});
-
-				$("#clickedit").on('focusout', 'td > input', function () {
-
-				    var $this = $(this);
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.mytd > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
 				    $this.parent().text($this.val() || oriVal);
 				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&lectid="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/edit_controller/updatedColumn";
 
-				});
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
 
-    
+				    });
+    			});
+	
+
+
+		
+
+			var oriVal;
+    			$('body').on('dblclick', '.lessondata', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.lesstd > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&less_id="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/Lessonedit_controller/updatedColumn";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+
+
+
+    			var oriVal;
+    			$('body').on('dblclick', '.weekdata', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.weektd > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&week_id="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/Weeklyedit_controller/updatedColumn";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+
+
+				
+   
 });
 
 
 
-1

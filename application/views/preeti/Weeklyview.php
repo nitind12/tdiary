@@ -1,176 +1,107 @@
 
+<!--  Read More -->
+<style type="text/css">
+    .show-read-more .more-text{
+       display: none;
+    }
+</style>
+
 
 <div class="span9">
     <div class="content">
-
         <div class="module">
             <div class="module-head">
-                 <h2>View Weekly Plan</h2>
+              <h2>Weekly Plan</h2>
             </div>
-                <div class="module-body">
-                    <form  method="post" id="myweek" name="myweek" class="form-horizontal row-fluid">
-
-                                <table class="table table-striped table-bordered table-condensed">  
-                                    <tbody>
-                                        <tr>
-                                               <td> Course Name:<br>
-                                                        
-                                                            <select  tabindex="1" data-placeholder="Select here.." class="span8" name="txtcourse" id="txtcourse">
-                                                                <option value="">Select here..</option>
-                                                                <option value="BCA">BCA</option>
-                                                                <option value="BBA">BBA</option>
-                                                                <option value="B.COM">B.COM</option>
-                                                                <option value="POLY TECHNIQUE">POLY TECHNIQUE</option>
-                                                                <option value="BSC">BSC</option>
-                                                                <option value="HM">HM</option>
-                                                            </select>
-                                             </td>
-
-                                                 <td>                                   
-                                                        Semester:   <br>
-                                                
-                                                    <select tabindex="1" data-placeholder="Select here.." class="span8" name="txtsemester" id="txtsemester" >
-                                                            <option value ="">Select here..</option>
-                                                         <option value ="1">1</option>
-                                                         <option value ="2">2</option>
-                                                         <option value ="3">3</option>
-                                                         <option value ="4">4</option>
-                                                         <option value ="5">5</option>
-                                                         <option value ="6">6</option>
-                                                         <option value ="7">7</option>
-                                                         <option value ="8">8</option>
-                                                     </select>
-                                                </td>
 
 
-                                                   <td>
-                                                        Subject:<br>
-                                                        
-                                                        <input type="text" id="txtsubject" name="txtsubject" class="span8">                                                   
-                                                </td> 
-
-                                                     <td>
-                                                         Section:<br>
-                                                        <select tabindex="1"data-placeholder="Select here.." class="span8" name="txtsection" id="txtsection"  >
-                                                                <option value ="">Select here..</option>
-                                                                 <option value ="A">A</option>
-                                                                 <option value ="B">B</option>
-                                                                 <option value ="C">C</option>
-                                                                 <option value ="D">D</option>
-                                         
-                                                             </select>
-                                                    </td>
-                                                                                                   
-                                                
-
-                                        </tr>  
-                                        <tr>
-
-                                                  <td>
-                                                        Start Date:<br>
-                                                        
-                                                        <input type="date" id="startdate" name="startdate" class="span8">                                                   
-                                                </td> 
-
-                                                      <td colspan="3">
-                                                        End Date:<br>
-                                                        
-                                                        <input type="date" id="enddate" name="enddate" class="span4 ">                                                   
-                                                </td> 
-                                        </tr>
+            <div class="module-body table">
+                  <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+                      <thead>
+                          <tr>
+                              <th align="center">Session:</th>
+                              <th align="center">Course:</th>
+                              <th align="center">Semester:</th>
+                              <th align="center">Section: </th>  
+                              <th align="center">Subject: </th>                    
+                          </tr>
+                      </thead>
 
 
-                                      </tbody>
-                                  </table>
-                                  <br>
+                      <tbody>
 
-                                       <div class="control-group">
-                                              <div class="controls" style="float:left;">
-                                                  <button type="Reset" class="btn btn-primary" name="save" value="Reset">Reset</button>
-                                              </div>
+                          <?php foreach($add_class_in as $item){?>
+                            <tr >
+                                <td><b><?php echo $item->session_id?></b> </td>
+                                <td><b><?php echo $item->course_id?></b> </td>
+                                <td><b><?php echo $item->semester_id?></b> </td>
+                                <td><b><?php echo $item->section_id;?></b></td>
+                               <td><b><?php echo $item->subject_id;?></b></td>
+                            </tr>        
+                          <?php  } ?>
+                      </tbody>
+                  </table>
+                    <br>  
+            
 
-                                                <div class="controls" style="float:left;">
-                                                
-                                                <input type="button" class="btn btn-primary" name="btnweeklysubmit" value="submit" id="btnweeklysubmit">
-                                             </div>
-                                            </div>
-                              </form>
-                              <br>
 
-                                    <div>
-                                        
-                                           <table class="table table-striped table-bordered table-condensed"
-                                            id="weeklyhere" name="weeklyhere"> 
-                                        </table>
-                                     </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller');?>">
+
+                         <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
+                  <!-- <div style="float:right">
+                    <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
+                    //echo date("D-d-M-Y")?> </div>--->
+      
                     
+                  <thead>
+                      <tr>
+                          <!-- <th align="center">No_of_Lecture</th>  -->
+                          <th align="center">Week_No</th>
+                          <th align="center">StartDate</th>
+                          <th align="center">EndDate</th>
+                          <th align="center">L.Schedule</th>
+                          <th align="center">Holiday</th>
+                          <th align="center">CLG.Leave</th>
+                          <th align="cneter">L.Extra </th>
+                          <th align="center">L.Actual</th>
+                          <th align="center">Details</th>
+                          
+                         
+                          <th align="center">Delete</th>
+                      
+                       </tr>
+                  </thead>
+                  <tbody>
+                  
+             <?php foreach ($t_diary as $item) { ?>
+                <tr>
+                      <td><?php echo $item->week_id ?></td>
+                      <td><?php echo $item->start_date ?></td>
+                      <td><?php echo $item->end_date ?></td>
+                      <td><?php echo $item->no_of_lecture_schedule ?></td>
+                      <td><?php echo $item->no_of_lost_due_to_holiday ?></td>
+                      <td><?php echo $item->no_of_lost_due_to_cl ?></td>
+                      <td><?php echo $item->no_extra_taken ?></td>
+                      <td><?php echo $item->no_of_lecture_actual_taken ?></td>
+                      <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date . '/'.$item->week_id);?>" class="btn btn-primary">Details</a></td>
 
 
+                                          
+              
+                                <!--  <td align="center"><?php echo $item->no_of_lecture ?></td>    -->
+                                  
+                                     <td><a href="<?php echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>    
+                                 <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
+                              </tr>
 
-
-
-
-
-
-
-
-
-
-<!--
- <div class="span9">
-    <div class="content">
-
-        <div class="module">
-            <div class="module-head">
-                <h2>View Weekly Plan</h2> 
-            </div>
-                <div class="module-body">
-                    <form  method="post" action="<?php echo site_url('Weeklyview_controller/savingdata');?>"
-                                     class="form-horizontal row-fluid">       
-
-                            <table class="table table-striped table-bordered table-condensed">
-
-                                <tr style="text-align: left">
-                                    <th>Session</th>
-                                    <th>Course</th>
-                                    <th>Semester</th>
-                                    <th>Subject</th>
-                                    
-                                   
-                                    <th>
-                                         <table class="table table-striped table-bordered table-condensed">
-                                            <th colspan="2"><center>Period</center></th>
-
-                                            <th colspan="4"><center>Lecture Analysis</center></th>
-                                            <tr>
-                                                 <th>Start Date</th>
-                                                 <th>End Date</th>
-                                                 <th>No. Of lecture Scheduled</th>
-                                                 <th>No. Of Lost Due To Holiday</th>
-                                                 <th>No. Of Lost Due To CL </th>
-                                                 <th>No. Of Extra Taken</th>
-     
-                                            </tr>
-                                         </table>
-                                    </th>
-                               
-                                   <th> No. of Lecture Actual Taken</th>
-
-                                    <th> Description Of Topic</th>
-                                </tr>
-
- 
-                            </table>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
--->
-
-
+                          <?php } ?>
+                        </tbody>
+                    </table>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+             

@@ -1,37 +1,43 @@
 <?php
 class Givenassignmentmodel extends CI_Model{
 	
-	/*public function getData()
-	{
-		
-		$this->load->database();
-		$q = $this->db->query("SELECT * FROM assignment");
-		return $q->result_array();
-		
-		
-	}*/
 
-
-	function internalmarks()
+	function view_given_assignment($no_)///ra
 	{
-		$intel = array();
-		$Course = $this->input->post('Course_name');
-		$Semester = $this->input->post('Semester');
-		$Section = $this->input->post('Section');
-		$Subject = $this->input->post('Subject');
 		
 		$this->db->distinct('a.Assignment_id');
-		//$this->db->select('a.*, b.session');
 		$this->db->select('a.*');
-		$this->db->where('a.Course_name',$Course);
-		$this->db->where('a.Semester',$Semester);
-		$this->db->where('a.Section',$Section);
-		$this->db->where('a.Subject', $Subject);
+		$this->db->where('b.add_class_id' ,$no_);
 		$this->db->from('assignment a');
-		//$this->db->join('session b', 'b.s_id=a.Assignment_id');
-
+		$this->db->join('add_class b', 'b.add_class_id=a.add_class_id');
 		$q = $this->db->get('assignment');
-		//echo $this->db->last_query(); die();
 		return $q->result();
 	}
+	public function add_view_class($clsid)
+		{
+		$this->db->where('a.add_class_id', $clsid);
+		$this->db->from('add_class a');
+		$q = $this->db->get();
+		return $q->result();
+		}
+		
+	public function assignment_edit_modal_saving()
+	{
+		$addclass_id= $this->input->post('addclass_id');	
+			for($i=0; $i<count($addclass_id); $i++)
+			{
+			$data = array(	
+			'add_class_id' => $addclass_id[$i],	
+			'assignment_no' => $this->input->post('Assignment_id'),
+			'Given_date' => $this->input->post('Given_date'),
+			'Submission_date' => $this->input->post('Submission_date'),
+			'Unit' => $this->input->post('Unit'),
+			'Topic' => $this->input->post('Topic'),
+			'status' => '1',
+			'username' =>'ra'
+		);
+			$this->db->insert('assignment',$data);
+		}
+	}
+	
 }

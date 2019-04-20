@@ -5,63 +5,121 @@ class Test extends CI_Controller{
 	{
 		parent::__construct();
 		$this->load->model('testmodel','um');
+		$this->load->model('Add_class_model','am');
+   
 	}
-	function index()
+	function index() 												//internal wale class 
 	{
-		//$data['users'] = $this->um->fetchtable();
-		//$this->load->view('testview',$data);
-		 $data['users'] = $this->um->fetchtable();
-        $data['page_'] = 'testview';
-        $data['title'] = "Edit Marks";
-       
+		$data['page_'] = 'edit_marks_selected';
+        $data['title'] = "Edit-Marks ";
+        $data['marks_type_']=$this->um->marks_type_();
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 		
 
 	}
-	function savingdata()
-	{
-		$this->um->savingdata();
-		redirect('test');
-	}
-	
-	public function del()
-	{
-		
-		$this->db->empty_table('studentmarks');
-		redirect('test','refresh');
-	}
-	public function del1()
-	{
-		$u = $this->uri->segment(3);
-		$this->um->del($u);
-		
-		redirect('test','refresh');
-	}
-	/*public function pilih()
-	{
-		$kd = $this->uri->segment(3);
-		if($kd == null)
-		{
-			redirect('test');
-		}
-		$dt = $this->testmodel->edit($kd);
-		$data['Student_name'] = $dt->Student_name;
-		$data['marks1'] = $dt->marks1;
-		$data['marks2'] = $dt->marks2;
-	}
-	public function update()
-	{
-		if($this->input->post('edit'))
-		{
-			$id->$this->input->post('id');
-			$this->um->update($id);
-			redirect('test','refresh');
-		}else
-		{
-			redirect('test/pilih',$id,'refresh');
-		}
-	}*/
+	 public function Edt_controller()  /////internal marks page load as like input box;
+    {  
+        if($this->input->post('mtypeid')){
+            $so_ = $this->input->post('mtypeid');
+            $mt = $this->input->post('mtypename');
+            $data['title'] = "Select-Marks-Type";
+            $data['page_'] = "testview";        
+               $data['cls_in_session'] = $this->am->fetchClass();
+               $this->session->set_userdata('itype', $mt);
+               $this->session->set_userdata('itypeid', $so_);
+            $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
+           
+            $this->load->view('templates/header', $data);
+            $this->load->view('myrajpage',$data);  
+            $this->load->view('templates/footer');
+        }
+        else 
+        {
+            redirect('test');
+        }
+        
+        }
+    public function Testinternal_controller()  /////internal marks page load as like input box;
+        { 
+         if($this->input->post('addclassid'))
+            {
+            $no_ = $this->input->post('addclassid');
+            $sess = $this->input->post('sessionid');
+        
+            $data['title'] = "Edit-Marks";
+            $data['page_'] = "edittest";        
+            $this->load->view('templates/header', $data);
+            $data['add_class_in'] = $this->am->add_view_attendance($no_);
+            $data['add_attend'] = $this->am->add_attendance($sess, $no_);
+            $data['marks_headerr_']=$this->um->marks_header($no_,$sess);
+           
+             $this->load->view('myrajpage',$data);  
+            $this->load->view('templates/footer');
+         } 
+        else 
+        {
+            redirect('test/Edt_controller');
+        }
+    }
+       
 
+    public function submitmarks_controller()               ///showing the page of submit the data;
+    {  
+        $this->um->take_marks(); 
+        redirect('Test/index');   
+    }
+    public function viewmarks()                           //showing all classs in view marks
+        {
+        $data['page_'] = 'view_marks_selected';
+        $data['title'] = "View-marks";
+        $data['marks_type_']=$this->um->marks_type_();
+        $this->load->view('templates/header',$data);
+        $this->load->view('myrajpage',$data);  
+        $this->load->view('templates/footer');
+    }
+
+	public function vie_controller() 
+    {
+		if($this->input->post('mtypeid1')){
+            $so_ = $this->input->post('mtypeid1');
+            $mt = $this->input->post('mtypename1');
+            $data['title'] = "Select-View-Type";
+            $data['page_'] = "viewtestclass";        
+            $data['cls_in_session'] = $this->am->fetchClass();
+            $this->session->set_userdata('marksname', $mt);
+            $this->session->set_userdata('marksid', $so_);
+            $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
+                $this->load->view('templates/header', $data);
+            $this->load->view('myrajpage',$data);  
+            $this->load->view('templates/footer');
+        }
+        else{
+            redirect("test/viewmarks");
+        }
+        }
+ public function viewmarks_controller() ////rename fecttab 
+    {  
+    	
+         if($this->input->post('addclassid1'))
+         {
+         $no_ = $this->input->post('addclassid1');
+         $sess = $this->input->post('sessionid1');
+        $data['title'] = "assignment_view";
+        $data['page_'] = "viewmarksset";
+        
+        $this->load->view('templates/header', $data);
+        $data['add_class_in'] = $this->am->add_view_attendance($no_);
+          $data['vim'] = $this->um->view_internal_marks($no_,$sess);
+    	
+        $this->load->view('myrajpage',$data);  
+        $this->load->view('templates/footer');
+         }
+
+            else{
+        redirect("test/viewmarks");
+       
+            }
+}
 }

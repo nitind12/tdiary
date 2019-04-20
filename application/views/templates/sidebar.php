@@ -1,12 +1,14 @@
 <div class="sidebar">
                     <ul class="widget widget-menu unstyled">
-                        <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
+                        <li class="active"><a href="<?php echo site_url('Main/index'); ?>"><i class="menu-icon icon-dashboard">
+                            
+                        </i>Dashboard
                         </a></li>
-                        <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Update</a>
+                        <li><a href="<?php echo site_url('Main/index'); ?>"><i class="menu-icon icon-bullhorn"></i>News Update</a>
                         </li>
-                        <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Notification <b class="label green pull-right"> 0</b> </a></li>
-                        <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
-                        19</b> </a></li>
+                        <li><a href="<?php echo site_url('Main/index'); ?>"><i class="menu-icon icon-inbox"></i>Notification <b class="label green pull-right"> 0</b> </a></li>
+                        <li><a href="<?php echo site_url('Main/index'); ?>"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
+                        4</b> </a></li>
                     </ul>
                         <!--/.widget-nav-->
                               
@@ -14,9 +16,9 @@
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>Online Attendance </a>
                             <ul id="togglePages6" class="collapse unstyled">
-                                        <li><a href="<?php echo site_url('Main/attendance_controller'); ?>"><i class="icon-edit"></i>Take Attendance</a></li>
+                                        <li><a href="<?php echo site_url('Main/attendance_class_controller'); ?>"><i class="icon-edit"></i>Take Attendance</a></li>
                                         
-                                        <li><a href="<?php echo site_url('Main/attendance_controllers'); ?>"><i class="icon-eye-open"></i>Update Attendance</a></li>
+                                        <li><a href="<?php echo site_url('Main/attendance_view_controller'); ?>"><i class="icon-eye-open"></i>Report's-Attendance</a></li>
                                     </ul>
                                 </li>
 </li> 
@@ -28,13 +30,9 @@
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>Lecture Plan </a>
                                     <ul id="togglePages1" class="collapse unstyled">
-
-                                       <li><a href="<?php echo site_url('Newedit_controller/index'); ?>"><i class="icon-edit"></i>New Edit</a></li>        
-                                       
-
                                         <li><a href="<?php echo site_url('Edit_controller/index'); ?>"><i class="icon-edit"></i>Edit</a></li>
                                         
-                                        <li><a href="<?php echo site_url('Lview_controller/index'); ?>"><i class="icon-eye-open"></i>View</a></li>
+                                        <li><a href="<?php echo site_url('Edit_controller/view_lecture_div'); ?>"><i class="icon-eye-open"></i>View</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -66,51 +64,20 @@
                                   
 
 
-                                       <!--  <li><a href="#togglePage"><i class="icon-book"></i>Weekly Lesson Plan </a> </li>    
-                                    <!-  <li><a href="#"><i class="menu-icon icon-paste"></i>Lesson Plan </a></li>
-
-                                      <li><a href="#"><i class="menu-icon icon-paste"></i>Weekly Plan </a></li>     -->
-
                                      <ul class="widget widget-menu unstyled">
                                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages3"><i class="menu-icon icon-paste">
                                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                                </i>Internal Marks </a>
+                                                </i> Marks </a>
                                                   <ul id="togglePages3" class="collapse unstyled">
                                         <li><a href="<?php echo site_url('test/index');?>"><i class="icon-edit"></i>Edit</a></li>
-                                        <li><a href="<?php echo site_url('Marks/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        <li><a href="<?php echo site_url('Test/viewmarks');?>"><i class="icon-eye-open"></i>View </a></li>
                                         
                                     </ul>
                                 </li>
                             </ul>
-                                <ul class="widget widget-menu unstyled">
-                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages100"><i class="menu-icon icon-paste">
-                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                                </i>Class Test </a>
-                                                  <ul id="togglePages100" class="collapse unstyled">
-
-                                                    <li><a href="<?php echo site_url('classtestcontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
-
-                                                    <li><a href="<?php echo site_url('markscontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
-                                        
-                                    </ul>
-                                </li>
-                            </ul>
-                             <ul class="widget widget-menu unstyled">
-                                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages101"><i class="menu-icon icon-paste">
-                                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                                </i>Practical Test </a>
-                                                  <ul id="togglePages101" class="collapse unstyled">
-                                        <li><a href="<?php echo site_url('practicaltestcontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
-                                        <li><a href="<?php echo site_url('practicalmarkscontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
-                                        
-                                    </ul>
-                                </li>
-                            </ul>
-
+                                
                                
                                
-
-                               <!-- <li><a href="#"><i class="menu-icon icon-bold"></i> Assignments</a></li>-->
                                 <ul class="widget widget-menu unstyled">
                                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages102"><i class="menu-icon icon-paste">
                                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
@@ -132,8 +99,12 @@
                                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                                 </i>Time-Charts </a>
                                                   <ul id="togglePages8" class="collapse unstyled">
-                                        <li><a href="<?php echo site_url('timecontroller/index');?>"><i class="icon-edit"></i>Edit</a></li>
-                                        <li><a href="<?php echo site_url('nitin/view');?>"><i class="icon-eye-open"></i>View </a></li>
+
+                                        <li><a href="<?php echo site_url('nitin/index');?>"><i class="icon-edit"></i>Edit</a></li>
+                                        <li><a href="<?php echo site_url('viewtimetablecontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
+                                        <li><a href="<?php echo site_url('studenttimetableeditcontroller/index');?>"><i class="icon-edit"></i>Edit-Admin</a></li>
+                                        <li><a href="<?php echo site_url('studenttimetableviewcontroller/index');?>"><i class="icon-eye-open"></i>View-Student </a></li>
+
                                         
                                     </ul>
                                 </li>
@@ -150,8 +121,7 @@
                                     <ul id="togglePages" class="collapse unstyled">
                                         <li><a href="<?php echo site_url('stu1c/index');?>"><i class="icon-inbox"></i>Login </a></li>
                                         <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
-                                    </ul>
+                                         </ul>
                                 </li>
                                 <li><a href="<?php echo site_url('Main/logout'); ?>"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>

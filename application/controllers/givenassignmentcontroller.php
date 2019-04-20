@@ -1,25 +1,17 @@
 <?php
 class Givenassignmentcontroller extends CI_Controller{
-	/*public function index()
+	function __construct()
 	{
-		
-		$this->load->model('givenassignmentmodel');
-		$a = $this->givenassignmentmodel->getData();
-		
-		$data['marks'] = $this->givenassignmentmodel->getData();
-		
-		$data['page_'] = 'givenassignmentview';
-		$data['title'] = 'Given Assignment';
-       
-        $this->load->view('templates/header',$data);
-        $this->load->view('myrajpage',$data);  
-        $this->load->view('templates/footer');
-		
-
-	}*/
-
+		parent::__construct();
+		$this->load->model('Givenassignmentmodel','gm');
+		 $this->load->model('Add_class_model','am');
+	}
+	
+	
 	public function index()
 	{
+		$data['cls_in_session'] = $this->am->fetchClass();
+       
 		 $data['page_'] = 'givenassignmentview';
 		 $data['title'] = 'View Assignment';
        
@@ -29,8 +21,33 @@ class Givenassignmentcontroller extends CI_Controller{
 		
 
 	}
+ 
+ 	public function view_assignment() ////rename fecttab 
+    {  
+    	if($this->input->post('addclassidAV'))
+            {
+            $no_ = $this->input->post('addclassidAV');
+            $sess = $this->input->post('sessionidAV');
+        
+    	$data['vie'] = $this->gm->view_given_assignment($no_);
+    	$data['add_class_in'] = $this->gm->add_view_class($no_);////ravi wALA SE
 
-	function viewmarks(){
+        $data['title'] = "assignment_view";
+        $data['page_'] = "givenassignment";
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('myrajpage');  
+        $this->load->view('templates/footer');
+    }
+	else
+	{
+		redirect('Givenassignmentcontroller');
+	}
+	
+}
+
+	function viewmarks()
+	{
 		$this->load->model('givenassignmentmodel','im');
 		$data['marks'] = $this->im->internalmarks();
 

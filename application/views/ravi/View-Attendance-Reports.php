@@ -1,11 +1,3 @@
-<style type="text/css">
-  #msg_{
-    color: #ff0000;
-    font-size: Arial;
-    font-size: 11px;
-    text-align: center;
-  }
-</style>
 <div class="span9">
 <div class="content">
     <div class="module">
@@ -15,13 +7,11 @@
       <div class="module-body table">
         <?php
                 $options = array(
-                  'name' => 'frmattendancereports',
-                  'id' => 'frmattendancereports'
+                  'name' => 'frmViewAttendance',
+                  'id' => 'frmViewAttendance'
                 ); 
-                echo form_open('main/view_attendance_controller/'.$no_."/".$sess_, $options);
+                echo form_open('#', $options);
               ?>
-              <input type="hidden" name="txtclsid" id="txtclsid" value="<?php echo $no_;?>">
-              <input type="hidden" name="txtSession" id="txtSession" value="<?php echo $sess_;?>">
         <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                   <thead>
                     <tr>
@@ -38,27 +28,18 @@
             <tbody>
             <?php foreach($add_class_in as $item){?>
               
-              <tr>
-                  <td>
-                    <b>
-                    <select tabindex="1" data-placeholder="Select here.." class="span1" name="sessionji" id="sessionji">
-                      <?php foreach ($session__ as $itemSess) { ?>
-                          <?php if($itemSess->s_id == $item->session_id){?>
-                            <option value="<?php echo $itemSess->s_id?>" selected="selected"><?php echo $itemSess->s_id?></option>
-                          <?php } else { ?>
-                            <option value="<?php echo $itemSess->s_id?>"><?php echo $itemSess->s_id?></option>
-                          <?php } ?>
-                      <?php } ?>
-                      <option value="2016">2016</option>
-                    </select>
-                    </b> 
-                  </td>
+              <tr >
+                        <td><b><select tabindex="1" data-placeholder="Select here.." class="span1" name="sessionji" id="sessionji">
+                          <option value="<?php echo $item->session_id?>"><?php echo $item->session_id?></option>
+                          <option value="2016">2016</option>
+                          </select>
+                    </b> </td>
                         <td><select tabindex="1" data-placeholder="Select here.." class="span1" id="crs_for_attendance"name="crs_for_attendance">
                           <?php foreach ($cls_in_session as $itemcrs) {?>
                             <?php if($item->course_id == $itemcrs->course_id){ ?>
-                              <option value="<?php echo $itemcrs->course_id?>" selected="selected"><?php echo $itemcrs->course_id?></option>
+                              <option value="<?php echo $item->course_id?>" selected="selected"><?php echo $itemcrs->course_id?></option>
                             <?php } else { ?>
-                              <option value="<?php echo $itemcrs->course_id?>"><?php echo $itemcrs->course_id?></option>
+                              <option value="<?php echo $item->course_id?>"><?php echo $itemcrs->course_id?></option>
                             <?php } ?>
                           <?php } ?>
                           </select>
@@ -92,7 +73,7 @@
                   <td colspan="2">
                   <div class="control-group">
                       <div class="controls">
-                        <input type="submit" value="Submit Form" id="cmbAttendanceReport"></button>
+                        <input type="submit" value="Submit Form"></button>
                       </div>
                     </div>
                   </td>
@@ -100,14 +81,11 @@
               <?php 
                 }
                ?>
-               <tr>
-                <td id="msg_" colspan="5"></td>
-               </tr>
               </tbody>
            </table>
-            <?php
-              echo form_close(); 
-            ?>
+           <?php
+                echo form_close(); 
+               ?>
         </div>
     <div class="module-head">
            <h2>View-Attendance-Reports </h2>

@@ -52,11 +52,19 @@ class Main extends CI_Controller {
         $data['clsid'] = $this->am->specificClass();
         echo json_encode($data);
     }
-     public function view_attendance_controller($no_,$sess)  
+
+    function view_attendance_controller_via_ajax($no_, $sess_){
+        $data['reports_'] = $data['reports'] = $this->am->reports_attendance_modals($no_);
+        echo json_encode($data);
+    }
+    public function view_attendance_controller($no_,$sess)  
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "View-Attendance-Reports";
+        // Fetcing Master Data
         $data['cls_in_session'] = $this->am->fetchCourses();
+        $data['session__'] = $this->am->fetchSession();
+        // --------------------
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['reports'] = $this->am->reports_attendance_modals();
         $data['no_'] = $no_;

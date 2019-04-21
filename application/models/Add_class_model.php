@@ -9,7 +9,7 @@ class Add_class_model extends CI_Model
 			$this->db->where('subject_id', $this->input->post('subjectji'));
 			$this->db->where('section_id', $this->input->post('sectionji'));
 			$query = $this->db->get('add_class');
-			echo $this->db->last_query();
+			//echo $this->db->last_query();
 			return $query->row();
 		}
 		function fetchClass()
@@ -17,6 +17,12 @@ class Add_class_model extends CI_Model
 		$this->db->order_by('course_id');
 		$query = $this->db->get("add_class");
 		return $query->result();
+		}
+
+		function fetchSession(){
+			$this->db->order_by('s_id');
+			$query = $this->db->get('session');
+			return $query->result();
 		}
 
 		function fetchCourses()
@@ -79,16 +85,20 @@ class Add_class_model extends CI_Model
 		}
 		
 		
-		public function  reports_attendance_modals()
+		function  reports_attendance_modals($no_='')
 		{
 			$reports_=array();
 			$btn1= $this->input->post('d1');
 	
-		$this->db->distinct('a.roll_no');
+		//$this->db->distinct('a.roll_no');
 		$this->db->select('a.*');
-		$this->db->where('a.date',$btn1);
+		$this->db->where('DATE_FORMAT(a.date, "%Y-%m-%d")=',date('Y-m-d',strtotime($btn1)));
+		if($no_ != ''){
+			$this->db->where('a.add_class_id', $no_);
+		}
 		$this->db->from('attendance a');
 		$query = $this->db->get();
+		//echo $this->db->last_query();
 		return $query->result();
 		
 		}

@@ -64,6 +64,8 @@ class Main extends CI_Controller {
         // Fetcing Master Data
         $data['cls_in_session'] = $this->am->fetchCourses();
         $data['session__'] = $this->am->fetchSession();
+        $data['subject__'] = $this->am->fetchSubject();
+        
         // --------------------
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['reports'] = $this->am->reports_attendance_modals();

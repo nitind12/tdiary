@@ -49,8 +49,7 @@
                             <option value="<?php echo $itemSess->s_id?>"><?php echo $itemSess->s_id?></option>
                           <?php } ?>
                       <?php } ?>
-                      <option value="2016">2016</option>
-                    </select>
+                      </select>
                     </b> 
                   </td>
                         <td><select tabindex="1" data-placeholder="Select here.." class="span1" id="crs_for_attendance"name="crs_for_attendance">
@@ -64,15 +63,39 @@
                           </select>
                     </b> </td>
                         <td> <select tabindex="1" data-placeholder="Select here.." class="span1" name="semji" id="semji">
-                          <option value="<?php echo $item->semester_id?>"><?php echo $item->semester_id?></option>
+                          <option value="<?php echo $item->semester_id?>"><?php echo $item->semester_id?>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                            
+                          </option>
                           </select>
                     </b> </td>
+                        
                         <td><select tabindex="1" data-placeholder="Select here.." class="span1" name="sectionji" id="sectionji">
                           <option value="<?php echo $item->section_id?>"><?php echo $item->section_id?></option>
+                          <option value="B">B</option>
+                          <option value="C">C</option>
+                          <option value="D">D</option>
+                          <option value="E">E</option>
+                          <option value="F">F</option>
+                          
                           </select>
                     </b> </td>
                        <td> <select tabindex="1" data-placeholder="Select here.." class="span1" name="subjectji" id="subjectji">
-                          <option value="<?php echo $item->subject_id;?>"><?php echo $item->subject_id;?></option>
+                         <?php foreach ($subject__ as $itemSubj) { ?>
+                          <?php if($itemSubj->subject_id == $item->subject_id){?>
+                            <option value="<?php echo $itemSubj->subject_id?>" selected="selected">
+                              <?php echo $itemSubj->subject_id?></option>
+                          <?php } else { ?>
+                            <option value="<?php echo $itemSubj->subject_id?>"><?php echo $itemSubj->subject_id?></option>
+                          <?php } ?>
+                      <?php } ?>
+                    
+                         </option>
+
                           </select>
                     </b> </td>
                 </tr>    

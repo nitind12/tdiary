@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
-	<!--<div class="navbar navbar-fixed-top">
+	<div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">

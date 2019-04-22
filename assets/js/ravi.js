@@ -92,7 +92,7 @@ $(function()
 					if(obj.clsid != null){
 						var url__ = site_url_+'/main/view_attendance_controller/'+obj.clsid['add_class_id']+"/"+$('#sessionji').val();
 						$('#frmattendancereports').attr('action', url__);
-						$('#txtclsid').val(vobj.clsid['add_class_id']);
+						$('#txtclsid').val(obj.clsid['add_class_id']);
 						$('#txtSession').val($('#sessionji').val());
 					} else {
 						$('#msg_').html('X: Selected Combination is not found')

@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <ul class="nav pull-right">
 
                         <li>
-                            <a href='<?php echo base_url()."index.php/Main/signin"; ?>'>Sign In</a>
+                            <a href='<?php echo base_url()."index.php/signup_controller"; ?>'>Sign In</a>
                         </a></li>
                         <li><a href=forgot.php>
                             Forgot your password?

@@ -22,13 +22,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!--link rel="stylesheet" type="text/css" href="http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600"/>
 	<link type="text/css" rel='stylesheet' href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"/-->
 </head>
-<body>
+<body >
 
-	<!--<div class="navbar navbar-fixed-top">
+	<div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
-                <div class="container">
+                <div class="container ">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Teacher diary </a>
+                        <i class="icon-reorder shaded"></i></a><span class="hideblock"><a class="brand " href="index.html">Teacher diary </span></a>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
 
 

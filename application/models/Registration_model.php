@@ -7,8 +7,6 @@ class Registration_model extends CI_Model{
 		
 		$data = array(
 			
-			
-			
 			'first_name' => $this->input->post('first_name'),
 			'last_name' => $this->input->post('last_name'),
 			'date_of_birth' => $this->input->post('date_of_birth'),
@@ -28,6 +26,17 @@ class Registration_model extends CI_Model{
 		$this->db->insert('std_personal',$data);
 	
 
-}
+	}
+
+	function getprofile()
+	{
+		$this->db->select('first_name');
+		$this->db->where('student_id','1');
+
+		$this->db->from('std_personal');
+
+			$query=$this->db->get();
+		return $query->result();
+	}
 }
 

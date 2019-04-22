@@ -5,7 +5,7 @@ class Studentprofilemodel extends CI_Model{
 	{
 		
 		$this->load->database();
-		$q = $this->db->query("SELECT * FROM student_personal");
+		$q = $this->db->query("SELECT * FROM std_personal");
 		return $q->result_array();
 		
 		

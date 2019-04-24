@@ -27,7 +27,7 @@ class Test extends CI_Controller{
             $data['title'] = "Select-Marks-Type";
             $data['page_'] = "testview";        
                $data['cls_in_session'] = $this->am->fetchClass();
-               $this->session->set_userdata('itype1', $mt);
+                $this->session->set_userdata('itype', $mt);
                $this->session->set_userdata('itypeid', $so_);
             $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
            

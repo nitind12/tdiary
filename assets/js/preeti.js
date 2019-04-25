@@ -34,6 +34,19 @@ $(document).ready(function()
 		});	
 
 
+
+	$('.lessonviewclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			$('#courseidED').val(arr[2]);
+
+			$('#frmlessonviewclass').submit();
+		});	
+
+
+
 	$('.weeklyclass').click(function(){
 			var str = this.id;
 			var arr = str.split('~');
@@ -43,6 +56,21 @@ $(document).ready(function()
 
 			$('#frmweeklyclass').submit();
 		});	
+
+
+	$('.weeklyviewclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			$('#courseidED').val(arr[2]);
+
+			$('#frmweeklyviewclass').submit();
+		});	
+
+
+
+
 
 
 

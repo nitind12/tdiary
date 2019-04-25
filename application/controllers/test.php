@@ -19,7 +19,7 @@ class Test extends CI_Controller{
 		
 
 	}
-	 public function Edt_controller()  /////internal marks page load as like input box;
+	 function Edt_controller()  /////internal marks page load as like input box;
     {  
         if($this->input->post('mtypeid')){
             $so_ = $this->input->post('mtypeid');
@@ -27,7 +27,7 @@ class Test extends CI_Controller{
             $data['title'] = "Select-Marks-Type";
             $data['page_'] = "testview";        
                $data['cls_in_session'] = $this->am->fetchClass();
-               $this->session->set_userdata('itype', $mt);
+                $this->session->set_userdata('itype', $mt);
                $this->session->set_userdata('itypeid', $so_);
             $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
            
@@ -40,21 +40,20 @@ class Test extends CI_Controller{
             redirect('test');
         }
         
-        }
-    public function Testinternal_controller()  /////internal marks page load as like input box;
+    }
+    function Testinternal_controller()  /////internal marks page load as like input box;
         { 
          if($this->input->post('addclassid'))
             {
             $no_ = $this->input->post('addclassid');
             $sess = $this->input->post('sessionid');
-        
+            
             $data['title'] = "Edit-Marks";
             $data['page_'] = "edittest";        
-            $this->load->view('templates/header', $data);
             $data['add_class_in'] = $this->am->add_view_attendance($no_);
             $data['add_attend'] = $this->am->add_attendance($sess, $no_);
             $data['marks_headerr_']=$this->um->marks_header($no_,$sess);
-           
+           $this->load->view('templates/header', $data);
              $this->load->view('myrajpage',$data);  
             $this->load->view('templates/footer');
          } 
@@ -65,12 +64,12 @@ class Test extends CI_Controller{
     }
        
 
-    public function submitmarks_controller()               ///showing the page of submit the data;
+    function submitmarks_controller()               ///showing the page of submit the data;
     {  
         $this->um->take_marks(); 
         redirect('Test/index');   
     }
-    public function viewmarks()                           //showing all classs in view marks
+    function viewmarks()                           //showing all classs in view marks
         {
         $data['page_'] = 'view_marks_selected';
         $data['title'] = "View-marks";
@@ -80,7 +79,7 @@ class Test extends CI_Controller{
         $this->load->view('templates/footer');
     }
 
-	public function vie_controller() 
+	function vie_controller() 
     {
 		if($this->input->post('mtypeid1')){
             $so_ = $this->input->post('mtypeid1');
@@ -99,7 +98,7 @@ class Test extends CI_Controller{
             redirect("test/viewmarks");
         }
         }
- public function viewmarks_controller() ////rename fecttab 
+  function viewmarks_controller() ////rename fecttab 
     {  
     	
          if($this->input->post('addclassid1'))

@@ -26,10 +26,10 @@ class Studenttimetableeditmodel extends CI_Model{
 	        'file_name'=>$id,
         	'overwrite'=>TRUE,
         );
-        echo $config['upload_path'];
+        $config['upload_path'];
         $file_element_name='txtttUpload';
         $this->load->library('upload',$config);
-        echo $this->upload->do_upload($file_element_name); die();
+        $this->upload->do_upload($file_element_name);
         if($this->upload->do_upload($file_element_name)){
 	        $path_ji=$this->upload->data();
 	        $path_=$path_ji['file_name'];

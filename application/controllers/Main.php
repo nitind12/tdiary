@@ -1,15 +1,15 @@
-<?php  
+<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');  
   
 class Main extends CI_Controller {  
     function __construct(){
         parent::__construct();
-     //if(! $this->session->userdata('user')) redirect('Login_controller');
+     if($this->session->userdata('user')) redirect('Login_controller');
        $this->load->model('Add_class_model','am');
     }
     public function index()  
-    {   $data['page_'] = "Reg_div";
-       
+    {   
+        $data['page_'] = "Reg_div";
         $data['title'] = "Dashboard";
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
@@ -46,17 +46,36 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
+    public function attendance_report_student_controller()  
+    {  
+        $data['title'] = "Student-Report-Attendance";
+        $data['page_'] = "student_report_attendance";
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
 
     function specificClass()
     {
         $data['clsid'] = $this->am->specificClass();
         echo json_encode($data);
     }
-     public function view_attendance_controller($no_,$sess)  
+
+    function view_attendance_controller_via_ajax($no_, $sess_){
+        $data['reports_'] = $data['reports'] = $this->am->reports_attendance_modals($no_);
+        echo json_encode($data);
+    }
+    public function view_attendance_controller($no_,$sess)  
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "View-Attendance-Reports";
+        // Fetcing Master Data
         $data['cls_in_session'] = $this->am->fetchCourses();
+        $data['session__'] = $this->am->fetchSession();
+        $data['subject__'] = $this->am->fetchSubject();
+        
+        // --------------------
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['reports'] = $this->am->reports_attendance_modals();
         $data['no_'] = $no_;

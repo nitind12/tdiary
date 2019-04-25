@@ -62,15 +62,27 @@ class Weeklyedit_controller extends CI_Controller
     }
 
 
-    public function weekly_view($no_,$sess,$crs)
+    public function weekly_view()
     {  
-        $data['add_class_in'] = $this->obj->add_view_class($no_);
-        $data['t_diary'] = $this->obj->fetchtable($no_);
-        $data['title'] = "Weekly Edit";
-        $data['page_'] = "Weeklyview";
-        $this->load->view('templates/header', $data);
-        $this->load->view('mypreetipage',$data);
-        $this->load->view('templates/footer');
+
+         if($this->input->post('addclassidED'))
+        {
+            $no_ = $this->input->post('addclassidED');
+            $sess = $this->input->post('sessionidED');
+            $clsid = $this->input->post('courseidED');
+        
+            $data['add_class_in'] = $this->obj->add_view_class($no_);
+            $data['t_diary'] = $this->obj->fetchtable($no_);
+            $data['title'] = "Weekly Edit";
+            $data['page_'] = "Weeklyview";
+            $this->load->view('templates/header', $data);
+            $this->load->view('mypreetipage',$data);
+            $this->load->view('templates/footer');
+        }
+        else
+        {
+            redirect('Weeklyview_controller');
+        }
     }
 
 

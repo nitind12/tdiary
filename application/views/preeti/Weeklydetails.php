@@ -3,21 +3,31 @@
        display: none;
     }
 </style>
+
+<style media="print">
+  .hideblock{
+      display:none;
+}
+</style>
 <div class="span9">
   <div class="content">
     <div class="module">
       <div class="module-head">
+        
+     <div style="float:right">
+                    <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"> <?php echo date("Y-m-d")?></div>
+      
           <h1>Weekly Details</h1>
       </div>
                <div class="module-body">
           
 
+               <span class="hideblock"> <a href="#" onclick="window.print()" class="glyphicon-print">print</a></span>
+            
+
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
-                  <!-- <div style="float:right">
-                    <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
-                    //echo date("D-d-M-Y")?> </div>--->
-      
-                    
+            
+                      
                       <thead>
                           <tr>
                               <!-- <th align="center">No_of_Lecture</th>  -->

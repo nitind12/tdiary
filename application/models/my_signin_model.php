@@ -15,7 +15,6 @@ class My_signin_model extends CI_Model
 		$answer = $this->input->post('txtanswer');
 		$dateofbirth= $this->input->post('dateofbirth');
 		$cat = $this->input->post('rod');
-		
 		$this->db->where('username', $username_);
 		$this->db->or_where('email', $email_);
 		$query = $this->db->get('sign_up');

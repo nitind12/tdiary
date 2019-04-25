@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar  hideblock">
                     <ul class="widget widget-menu unstyled">
                         <li class="active"><a href="<?php echo site_url('Main/index'); ?>"><i class="menu-icon icon-dashboard">
                             
@@ -23,7 +23,20 @@
                                 </li>
 </li> 
 
-                
+                <ul class="widget widget-menu unstyled">
+                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-book">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Student Attendance Reports </a>
+                                    <ul id="togglePages1" class="collapse unstyled">
+                                        <li><a href="<?php echo site_url('Main/attendance_report_student_controller'); ?>"><i class="icon-edit"></i>View-Consolidate</a></li>
+                                        
+                                        <li><a href="<?php echo site_url('Edit_controller/view_lecture_div'); ?>"><i class="icon-eye-open"></i>View-Daywise</a></li>
+                                     <li><a href="<?php echo site_url('Edit_controller/view_lecture_div'); ?>"><i class="icon-eye-open"></i>View-Total</a></li>
+                                   
+                                    </ul>
+                                </li>
+                            </ul>
+
 
                             <ul class="widget widget-menu unstyled">
                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-book">
@@ -121,7 +134,7 @@
                                 </i>More Pages </a>
                                     <ul id="togglePages" class="collapse unstyled">
                                         <li><a href="<?php echo site_url('stu1c/index');?>"><i class="icon-inbox"></i>Login </a></li>
-                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
+                                        <li><a href="<?php echo site_url('Stdprofile_controller/index');?>"><i class="icon-inbox"></i>Profile </a></li>
                                          </ul>
                                 </li>
                                 <li><a href="<?php echo site_url('Main/logout'); ?>"><i class="menu-icon icon-signout"></i>Logout </a></li>

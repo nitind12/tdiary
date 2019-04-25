@@ -1563,10 +1563,11 @@ class CI_Email {
 
 		if ($this->charset === 'UTF-8')
 		{
-			// Note: We used to have mb_encode_mimeheader() as the first choice
-			//       here, but it turned out to be buggy and unreliable. DO NOT
-			//       re-add it! -- Narf
-			if (ICONV_ENABLED === TRUE)
+			if (MB_ENABLED === TRUE)
+			{
+				return mb_encode_mimeheader($str, $this->charset, 'Q', $this->crlf);
+			}
+			elseif (ICONV_ENABLED === TRUE)
 			{
 				$output = @iconv_mime_encode('', $str,
 					array(
@@ -1588,10 +1589,6 @@ class CI_Email {
 				}
 
 				$chars = iconv_strlen($str, 'UTF-8');
-			}
-			elseif (MB_ENABLED === TRUE)
-			{
-				$chars = mb_strlen($str, 'UTF-8');
 			}
 		}
 
@@ -1872,26 +1869,20 @@ class CI_Email {
 			return FALSE;
 		}
 
-		if ( ! $this->_send_command('from', $this->clean_email($this->_headers['From'])))
-		{
-			return FALSE;
-		}
+		$this->_send_command('from', $this->clean_email($this->_headers['From']));
 
 		foreach ($this->_recipients as $val)
 		{
-			if ( ! $this->_send_command('to', $val))
-			{
-				return FALSE;
-			}
+			$this->_send_command('to', $val);
 		}
 
 		if (count($this->_cc_array) > 0)
 		{
 			foreach ($this->_cc_array as $val)
 			{
-				if ($val !== '' && ! $this->_send_command('to', $val))
+				if ($val !== '')
 				{
-					return FALSE;
+					$this->_send_command('to', $val);
 				}
 			}
 		}
@@ -1900,17 +1891,14 @@ class CI_Email {
 		{
 			foreach ($this->_bcc_array as $val)
 			{
-				if ($val !== '' && ! $this->_send_command('to', $val))
+				if ($val !== '')
 				{
-					return FALSE;
+					$this->_send_command('to', $val);
 				}
 			}
 		}
 
-		if ( ! $this->_send_command('data'))
-		{
-			return FALSE;
-		}
+		$this->_send_command('data');
 
 		// perform dot transformation on any lines that begin with a dot
 		$this->_send_data($this->_header_str.preg_replace('/^\./m', '..$1', $this->_finalbody));

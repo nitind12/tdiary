@@ -41,19 +41,19 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Date Of Commencement:</label>
 											<div class="controls">
-												<input type="text" name="DateOfCommencement"id="DateOfCommencement" placeholder="Subject-Name" class="span8">
+												<input type="text" name="DateOfCommencement"id="DateOfCommencement" placeholder="Date-Of-Commencement" class="span8">
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Date Of Completion:</label>
 											<div class="controls">
-												<input type="text" name="DateOfCompletion"id="DateOfCompletion" placeholder="Subject-Name" class="span8">
+												<input type="text" name="DateOfCompletion"id="DateOfCompletion" placeholder="Date-Of-Completion" class="span8">
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">syllabus_pdf</label>
 											<div class="controls">
-												<input type="file" name="syllabus_pdf"id="syllabus_pdf" placeholder="Subject-Name" class="span8">
+												<input type="file" name="syllabus_pdf"id="syllabus_pdf" placeholder="syllabus_pdf" class="span8">
 											</div>
 										</div>
 										

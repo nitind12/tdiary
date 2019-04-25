@@ -52,6 +52,9 @@ class Add_class_model extends CI_Model
 			'semester_id' => $this->input->post('Semester'),
 			'section_id' => $this->input->post('Section'),
 			'subject_id' => $this->input->post('Subject_Name'),
+			'section_id' => $this->input->post('Section'),
+			'date_of_completion' => $this->input->post('DateOfCompletion'),
+			//'section_id' => $this->input->post('Section'),
 			'username' => 'ra',
 			'status'=>1						
 

@@ -169,9 +169,9 @@ $(document).ready(function()
 						//alert(obj.marks[i].Subject_id);
 						id_ = obj.marks[i].Day+obj.marks[i].Time;
 						$('#'+id_).html(obj.marks[i].Subject_id);
-						//id_ = obj.marks[i].Date+obj.marks[i].Time;
-						//$('#'+id_).html(obj.marks[i].Subject_id,Room);
-					}
+
+                        }
+						
 
 					
 					//$('#timetablehere').html(str);
@@ -180,6 +180,7 @@ $(document).ready(function()
 				else{
 					$('#timetablehere').html('no data found');
 				}
+
 			}, error: function(xhr, error, status){
 				$('#timetablehere').html(xhr.responseText);
 			}
@@ -188,5 +189,176 @@ $(document).ready(function()
 	});
 
 });
+
+
+//e.onmouseover = function()
+//{
+//	document.getElementByid('popup').style.display = 'Section';
+//}
+//e.onmouseover = function()
+//{
+//	document.getElementByid('popup').style.display = 'Room';
+//}
+//e.onmouseover = function()
+//{
+//	document.getElementByid('popup').style.display = 'Session';
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

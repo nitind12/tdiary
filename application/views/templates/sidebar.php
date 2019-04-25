@@ -103,6 +103,7 @@
                                         <li><a href="<?php echo site_url('nitin/index');?>"><i class="icon-edit"></i>Edit</a></li>
                                         <li><a href="<?php echo site_url('viewtimetablecontroller/index');?>"><i class="icon-eye-open"></i>View </a></li>
                                         <li><a href="<?php echo site_url('studenttimetableeditcontroller/index');?>"><i class="icon-edit"></i>Edit-Admin</a></li>
+                                        <li><a href="<?php echo site_url('studenttimetableviewcontroller/index');?>"><i class="icon-eye-open"></i>View-Admin </a></li>
                                         <li><a href="<?php echo site_url('studenttimetableviewcontroller/index');?>"><i class="icon-eye-open"></i>View-Student </a></li>
 
                                         

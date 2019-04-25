@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed'); 
-class Studenttimetableviewmodel extends CI_Model{
+class Adminviewmodel extends CI_Model{
 	function fetchtable()
 	{
 		$query = $this->db->get("student_time_table");
@@ -40,7 +40,7 @@ class Studenttimetableviewmodel extends CI_Model{
 		return;
 	}
 	function del1($a){
-		$this->db->delete('Studenttimetableviewcontroller',array('id' => $a));
+		$this->db->delete('adminviewcontroller',array('id' => $a));
 		return;
 	}
 	/*public function edit($a)

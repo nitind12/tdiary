@@ -153,12 +153,6 @@ class CI_Input {
 		// Sanitize global arrays
 		$this->_sanitize_globals();
 
-		// CSRF Protection check
-		if ($this->_enable_csrf === TRUE && ! is_cli())
-		{
-			$this->security->csrf_verify();
-		}
-
 		log_message('info', 'Input Class Initialized');
 	}
 
@@ -606,7 +600,7 @@ class CI_Input {
 		{
 			$_GET = array();
 		}
-		elseif (is_array($_GET))
+		elseif (is_array($_GET) && count($_GET) > 0)
 		{
 			foreach ($_GET as $key => $val)
 			{
@@ -615,7 +609,7 @@ class CI_Input {
 		}
 
 		// Clean $_POST Data
-		if (is_array($_POST))
+		if (is_array($_POST) && count($_POST) > 0)
 		{
 			foreach ($_POST as $key => $val)
 			{
@@ -624,7 +618,7 @@ class CI_Input {
 		}
 
 		// Clean $_COOKIE Data
-		if (is_array($_COOKIE))
+		if (is_array($_COOKIE) && count($_COOKIE) > 0)
 		{
 			// Also get rid of specially treated cookies that might be set by a server
 			// or silly application, that are of no use to a CI application anyway
@@ -652,6 +646,12 @@ class CI_Input {
 
 		// Sanitize PHP_SELF
 		$_SERVER['PHP_SELF'] = strip_tags($_SERVER['PHP_SELF']);
+
+		// CSRF Protection check
+		if ($this->_enable_csrf === TRUE && ! is_cli())
+		{
+			$this->security->csrf_verify();
+		}
 
 		log_message('debug', 'Global POST, GET and COOKIE data sanitized');
 	}
@@ -803,7 +803,7 @@ class CI_Input {
 
 		if ( ! isset($headers))
 		{
-			empty($this->headers) && $this->request_headers();
+			empty($this->headers) OR $this->request_headers();
 			foreach ($this->headers as $key => $value)
 			{
 				$headers[strtolower($key)] = $value;

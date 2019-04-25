@@ -9,7 +9,6 @@ class Edittimetablecontroller extends CI_Controller{
 	function index()
 	{
 		$data['users'] = $this->um->fetchtable();
-		//$this->load->view('assignmentview',$data);
 		 $data['page_'] = 'edittimetable';
        
         $this->load->view('templates/header');
@@ -38,18 +37,6 @@ class Edittimetablecontroller extends CI_Controller{
 		
 		redirect('Edittimetablecontroller','refresh');
 	}
-	/*public function pilih()
-	{
-		$kd = $this->uri->segment(3);
-		if($kd == null)
-		{
-			redirect('test');
-		}
-		$dt = $this->testmodel->edit($kd);
-		$data['Student_name'] = $dt->Student_name;
-		$data['marks1'] = $dt->marks1;
-		$data['marks2'] = $dt->marks2;
-	}*/
 	/*public function update()
 	{
 		if($this->input->post('edit'))

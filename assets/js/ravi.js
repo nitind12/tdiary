@@ -10,8 +10,17 @@ $(function()
 		}
 		return false;
 	});
-
-	$('#myModal').css('display', 'none');
+		$('#myModal').css('display', 'none');
+		
+			$('#Password, #RePassword').on('keyup', function () {
+  		if ($('#Password').val() == $('#RePassword').val()) {
+    			$('#message').html('Matching').css('color', 'green');
+    			$('#btnsign').removeAttr('disabled');
+  				} else {
+   				 $('#message').html('Not Matching').css('color', 'red');
+					$('#btnsign').attr('disabled','disabled');
+    			}
+					});
 		
 
 	$('#cmbAttendanceReport').click(function()

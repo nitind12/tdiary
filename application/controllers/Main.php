@@ -1,16 +1,18 @@
-<?php  
+<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');  
   
 class Main extends CI_Controller {  
     function __construct(){
         parent::__construct();
-     //if(! $this->session->userdata('user')) redirect('Login_controller');
+     if( $this->session->userdata('user')) redirect('Login_controller');
        $this->load->model('Add_class_model','am');
     }
     public function index()  
-    {   $data['page_'] = "Reg_div";
-       
+    {   
+        $data['page_'] = "Reg_div";
         $data['title'] = "Dashboard";
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -20,6 +22,8 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "online_attendance";
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         $data['cls_in_session'] = $this->am->fetchClass();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
@@ -31,6 +35,8 @@ class Main extends CI_Controller {
         $data['title'] = "ONLINE_VIEW_ATTENDANCE";
         $data['page_'] = "view_attendance_class";
         $data['cls_in_session'] = $this->am->fetchClass();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -41,6 +47,19 @@ class Main extends CI_Controller {
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "online_take_attendance";
         $data['cls_in_session'] = $this->am->fetchClass();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
+    public function attendance_report_student_controller()  
+    {  
+        $data['title'] = "Student-Report-Attendance";
+        $data['page_'] = "student_report_attendance";
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -65,7 +84,8 @@ class Main extends CI_Controller {
         $data['cls_in_session'] = $this->am->fetchCourses();
         $data['session__'] = $this->am->fetchSession();
         $data['subject__'] = $this->am->fetchSubject();
-        
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         // --------------------
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['reports'] = $this->am->reports_attendance_modals();
@@ -79,6 +99,8 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "view-reports-attendance";
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['attendance_Status'] = $this->am->reports_modals($no_);   
@@ -108,7 +130,10 @@ class Main extends CI_Controller {
         $this->load->view('templates/header', $data);
          //  $data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);
          //  $data['add_attend'] = $this->am->add_attendance($sess, $crs);
-        $data['add_class_in'] = $this->am->add_view_attendance($no_);
+       
+       $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['add_attend'] = $this->am->add_attendance($sess, $no_);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');

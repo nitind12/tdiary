@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Studenttimetableviewcontroller extends CI_Controller
+class Adminviewcontroller extends CI_Controller
 {
 	function __construct()
 	{
@@ -12,8 +12,8 @@ class Studenttimetableviewcontroller extends CI_Controller
 
     public function index()  
     {  
-        $data['title'] = "Studenttimetableview";
-        $data['page_'] = "Studenttimetableview";
+        $data['title'] = "Asminview";
+        $data['page_'] = "Adminview";
         $this->load->view('templates/header', $data);
         $this->load->view('mysatyampage', $data);  
         $this->load->view('templates/footer');
@@ -21,9 +21,9 @@ class Studenttimetableviewcontroller extends CI_Controller
 
     public function update()  
     {  
-        $this->load->model('Studenttimetableviewmodel', 'stem');
+        $this->load->model('adminviewmodel', 'stem');
         $this->stem->savingTTable();
-        redirect('Studenttimetableviewcontroller');  
+        redirect('Adminviewcontroller');  
   
     }  
 }?>

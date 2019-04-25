@@ -8,7 +8,7 @@
 			</div>
 				<div class="module-body">
 
-				<form  method="post" name="myform111"  id="myform111"   action="<?php echo site_url('Studenttimetableeditcontroller/index');?>"  class="form-horizontal row-fluid">				
+				<form  method="post" name="myform111"  id="myform111"   action="<?php echo site_url('adminviewcontroller/index');?>"  class="form-horizontal row-fluid">				
 
 							<table class="table table-striped table-bordered table-condensed">							
                 				<tbody>

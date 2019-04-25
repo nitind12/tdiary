@@ -1,6 +1,26 @@
 <?php
 class Add_class_model extends CI_Model
 {
+		function getDashboardMenu(){
+
+		}
+		function getMenu()
+		{
+		$this->db->select('a.*');
+		$this->db->from('sidebar a');
+		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
+		$this->db->where('b.users_id', 2);
+		$this->db->where('a.status', 1);
+		$q = $this->db->get();
+		//echo $this->db->last_query();
+
+		return $q->result();
+		}
+		
+		function getSubmenu(){
+			$query = $this->db->get('sub_sidebar');
+			return $query->result();
+		}
 		function specificClass(){
 			$this->db->select('add_class_id');
 			$this->db->where('session_id', $this->input->post('sessionji'));

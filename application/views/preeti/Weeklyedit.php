@@ -15,6 +15,8 @@
            </div>
 
         <div class="module-body table">
+
+          
             <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                 <thead>
                     <tr>
@@ -138,7 +140,7 @@
                                     <th align="center">No Extra Taken</th>  
                
                                     <th align="center">No Of <br>Lect Actual Taken</th>
-                                    <th align="center">Details</th>
+                               <!--     <th align="center">Details</th>   -->
                                   
                                
                                     <th align="center">Delete</th>                            
@@ -148,6 +150,7 @@
                                          
                                         <tr>
                                             <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-start_date';?>"><input type="hidden" name="start_date" value="?php echo $item->start_date;?>"><?php echo $item->start_date;?></td>
+
                                             <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-end_date';?>"><input type="hidden" name="end_date" value="?php echo $item->end_date;?>"><?php echo $item->end_date;?></td> 
                                            
                                             <td class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_schedule';?>"><?php echo $item->no_of_lecture_schedule;?></td>
@@ -161,7 +164,7 @@
                                             <td class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_actual_taken';?>"><?php echo $item->no_of_lecture_actual_taken;?></td>
 
 
-                                          <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id);?>" class="btn btn-primary">Details</a></td>
+                                      <!--    <td><a href="<?php //echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id);?>" class="btn btn-primary">Details</a></td>   -->
 
                                             <td>
 

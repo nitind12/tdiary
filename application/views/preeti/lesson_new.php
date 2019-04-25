@@ -14,7 +14,7 @@
 			</div>
 
 
-			<div class="module-body">
+			<div class="module-body table">
 				<form  id="mylessonedit" name="mylessonedit" method="post" action="<?php echo site_url('Lessonedit_controller/savingdata');?>" class="form-horizontal row-fluid">
 
 					<table class="table table-striped table-bordered table-condensed">
@@ -134,7 +134,7 @@
 
 
 						 		<td colspan="2"> Lecture Type:<br>
-									<select tabindex="1" data-placeholder="Select here.." class="span8" name="lecturetype[]"id="lecturetype[]">
+									<select tabindex="1" data-placeholder="Select here.." class="span8" name="lecturetype[]"id="lecturetype[]" required="required">
 										<option value="">Select here..</option>
 										<option value="Letcure Schedule">Letcure Schedule</option>
 										<option value="Arrangement">Arrangement</option>
@@ -167,9 +167,9 @@
 
 										<tr>
 										
-											<td>No Of Lecture:<br>
+										<!--	<td>No Of Lecture:<br>
 												<input type="number" id="Lecture" name="Lecture"class="span8">
-    										</td>
+    										</td>		-->
     									</tr>
     								</tbody>
     							</table>
@@ -199,7 +199,7 @@
                         <th>End Time</th>
                         <th>Unit</th>
                         <th>Topic</th>	                               	
-                        <th>No Of Lecture </th>
+                      <!--  <th>No Of Lecture </th>		-->
                         <th>Lecture Type</th>
                         <th>Delete</th>
                     </tr>
@@ -218,7 +218,7 @@
 
 	                            <td class="show-read-more lessondata lesstd"  id="<?php echo $item->lesson_id.'-topic' ;?>"><?php echo $item->topic;?></td>
 
-	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>
+	                        <!--    <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>		-->
 
 	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?></td>
 

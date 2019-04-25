@@ -16,9 +16,7 @@ class Stdprofile_controller extends CI_Controller
 		 $data['title'] = 'Student Profile';
 		 $data['page_'] = 'Stdprofile';
 
-		 $data['profile']=$this->obj->getprofile();
-	
-       
+		 $data['profile']=$this->obj->getprofile() ;
         $this->load->view('templates/header',$data);
         $this->load->view('mysapnapage',$data);  
         $this->load->view('templates/footer');

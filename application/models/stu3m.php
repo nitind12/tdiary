@@ -15,7 +15,7 @@ class stu3m extends CI_Model{
 			'email_status' => $this->input->post('email_status'),
 			'status' => $this->input->post('status'),
 			'alternate_email' => $this->input->post('alternate_email'),
-			'std_id' => $this->input->post('std_id'),
+			'std_id' => $this->input->post('student_id'),
 			'username' => $this->input->post('username')
 			
 		);

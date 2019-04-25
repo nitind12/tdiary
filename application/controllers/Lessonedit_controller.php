@@ -65,7 +65,7 @@ class Lessonedit_controller extends CI_Controller
     function savingdata()
     {
         $this->obj->lesson_edit_saving_modal();
-        redirect('Lessonedit_controller');
+        redirect('Lessonedit_controller/lesson_edit');
     }
 
 
@@ -75,7 +75,7 @@ class Lessonedit_controller extends CI_Controller
         $u = $this->uri->segment(3);
         $this->obj->del($u);
         
-        redirect('Lessonedit_controller','refresh');
+        redirect('Lessonedit_controller/lesson_edit','refresh');
     }
 
 }?>

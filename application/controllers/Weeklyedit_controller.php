@@ -6,6 +6,7 @@ class Weeklyedit_controller extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+
 		$this->load->model('Weeklyedit_model','obj');	
 		$this->load->model('Add_class_model','am');
 		
@@ -25,7 +26,7 @@ class Weeklyedit_controller extends CI_Controller
 
 
 
-    public function weekly_edit()
+    function weekly_edit()
     {  
         if($this->input->post('addclassidED'))
         {
@@ -62,7 +63,7 @@ class Weeklyedit_controller extends CI_Controller
     }
 
 
-    public function weekly_view()
+    function weekly_view()
     {  
 
          if($this->input->post('addclassidED'))
@@ -90,10 +91,10 @@ class Weeklyedit_controller extends CI_Controller
 	{
 		
 		$this->obj->savingdata();
-		redirect('Weeklyedit_controller/Weekly_edit/'.$no_.'/'.$sess.'/'.$crs);
+		redirect('Weeklyedit_controller/weekly_edit/'.$no_.'/'.$sess.'/'.$crs);
 	}
 
-    public function del1()
+    function del1()
     {
         $u = $this->uri->segment(3);
         $this->obj->del($u);

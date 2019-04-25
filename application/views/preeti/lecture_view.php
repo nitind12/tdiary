@@ -7,6 +7,12 @@
 </style>
 
 
+<style media="print">
+  .hideblock{
+      display:none;
+}
+</style>
+
 
 <div class="span9">
     <div class="content">
@@ -16,6 +22,9 @@
             </div>
 
             <div class="module-body table">
+
+                <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
+               <br>
 
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
 
@@ -63,7 +72,7 @@
                         <th align="center">No Of Lecture Aspect</th>
                         <th align="center">Unit No</th>
                         <th align="center">Topic</th>
-                        <th align="center">Delete</th>
+                       <!-- <th align="center">Delete</th>    -->
                     </tr>
                   </thead>
                   <tbody>
@@ -74,8 +83,8 @@
               <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
                <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
 
-                                   <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash" 
-                                    onclick="return confirm('Are you sure')"></a></td>
+                       <!--            <td><a href="<?php //secho site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash" 
+                                    onclick="return confirm('Are you sure')"></a></td>    -->
      
                                 </tr>
 

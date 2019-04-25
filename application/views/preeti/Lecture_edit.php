@@ -109,7 +109,7 @@
 								<td colspan="3">
 									<div class="control-group">
 										<div class="controls">			
-											<button style="float:right" type="submit" name="save" class=" span3 btn">Submit</button>
+											<button style="float:right" type="submit" name="save" class=" btn btn-primary">Submit</button>
 										</div>
 									</div>
 								</td>

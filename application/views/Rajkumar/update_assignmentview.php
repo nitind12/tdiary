@@ -55,7 +55,7 @@
                   </h3>
                        
                         </div>
-               
+                        
                   <thead>
                    <tr>
 						<th align="center">Student_Roll</th>
@@ -65,6 +65,7 @@
 							Assignment Status
 						</th>	
 						<th align="center">Submission_date</th>	
+            <th align="center">Grade</th> 
 						<th align="center">Delete/Edit</th>
 					</tr>
    
@@ -80,7 +81,8 @@
       						<td align="center"><?php echo $item->assignment_id;?></td>
       						<td align="center"><?php echo $item->assignment_status;?></td>
       						<td align="center"><?php echo $item->checker_date;?></td>
-      						<td><a href="<?php echo site_url('update_assignment_controller/del1/' .$item->roll_no)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
+                  <td align="center"><?php echo $item->Grade;?></td>
+      						<td><a href="<?php echo site_url('update_assignment_controller/del1/' .$item->assignment_checker_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 				    <?php } ?>
 		  </tbody>
 </table>

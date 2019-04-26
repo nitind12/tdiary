@@ -1,6 +1,10 @@
+ 
+
 <div class="module-body table">
+
           <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
             <thead>
+
                <tr>
                    <th align="center">Session:</th>
                     <th align="center">Course:</th>
@@ -38,8 +42,8 @@
                     <tr>
                      <th align="center">Roll-no</th>
                       <th align="center">Student Name</th>
-                      <th align="center">Obtained Marks</th>
                       <th align="center">Total Marks</th>
+                      <th align="center">Obtained Marks</th>
                         </tr>
                   </thead>
                   <tbody>
@@ -47,6 +51,7 @@
                  <?php foreach ($add_attend as $item) { ?>                     
                 <tr >
                       <input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
+
                   
                       <td><?php echo $item->student_id;?>
                           <input type="hidden" value="<?php echo $item->student_id;?>" name="Student_Roll[]" id ="sid_<?php echo $item->student_id;?>">

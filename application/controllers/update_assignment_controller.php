@@ -17,8 +17,13 @@ class Update_Assignment_Controller extends CI_Controller{
         $this->load->view('templates/footer');
 	}
 
-	public function view_assignment($no_,$sess) ////rename fecttab 
-    {  
+	public function view_assignment() ////rename fecttab 
+    { 
+     if($this->input->post('addclassidCA')){
+            $no_ = $this->input->post('addclassidCA');
+            $sess = $this->input->post('sessionidCA');
+
+
     	$data['vie'] = $this->um->view_given_assignment($no_,$sess);
     	$data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['title'] = "Check_view_Assignment";
@@ -26,9 +31,18 @@ class Update_Assignment_Controller extends CI_Controller{
         $this->load->view('templates/header', $data);
         $this->load->view('myrajpage');  
         $this->load->view('templates/footer');
+    }else{
+        redirect('Update_Assignment_Controller');
+    }
     	
        
     }
 
-	
+     public function del1()
+    {
+        $u = $this->uri->segment(3);
+        $this->um->del1($u);
+        redirect('update_assignment_controller/index','refresh');
+    }
+
 }

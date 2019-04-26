@@ -28,7 +28,7 @@ class Givenassignmentmodel extends CI_Model{
 			{
 			$data = array(	
 			'add_class_id' => $addclass_id[$i],	
-			'assignment_no' => $this->input->post('Assignment_id'),
+			'Assignment_no' => $this->input->post('Assignment_no'),
 			'Given_date' => $this->input->post('Given_date'),
 			'Submission_date' => $this->input->post('Submission_date'),
 			'Unit' => $this->input->post('Unit'),
@@ -38,6 +38,14 @@ class Givenassignmentmodel extends CI_Model{
 		);
 			$this->db->insert('assignment',$data);
 		}
+	}
+
+
+	
+
+	function del1($a){
+		$this->db->delete('assignment',array('Assignment_id' => $a));
+		return;
 	}
 	
 }

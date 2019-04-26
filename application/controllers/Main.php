@@ -11,8 +11,11 @@ class Main extends CI_Controller {
     {   
         $data['page_'] = "Reg_div";
         $data['title'] = "Dashboard";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');

@@ -54,5 +54,13 @@ class Givenassignmentcontroller extends CI_Controller{
 		echo json_encode($data);
 	}
 
+	
+
+ public function del1()
+    {
+        $u = $this->uri->segment(3);
+        $this->gm->del1($u);
+        redirect('givenassignmentcontroller/index','refresh');
+    }
 
 }

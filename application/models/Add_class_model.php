@@ -1,9 +1,32 @@
 <?php
 class Add_class_model extends CI_Model
 {
-		function getDashboardMenu(){
+		function getDashboardMenu()
+		{
+		$this->db->select('a.*');
+		$this->db->from('sidebar a');
+		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
+		$this->db->where('b.users_id', 2);
+		$this->db->where('a.status', 2);
+		$q = $this->db->get();
+		//echo $this->db->last_query();
 
+		return $q->result();
+		
 		}
+		function getlastMenu()
+		{
+			$this->db->select('a.*');
+		$this->db->from('sidebar a');
+		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
+		$this->db->where('b.users_id', 2);
+		$this->db->where('a.status', 3);
+		$q = $this->db->get();
+		return $q->result();
+		
+		}
+		
+		
 		function getMenu()
 		{
 		$this->db->select('a.*');

@@ -48,5 +48,13 @@ class Checkassignmentmodel extends CI_Model{
 		$q = $this->db->get('assignment_checker');
 		return $q->result();
 	}
+
+
+	
+		function del1($a){
+		$this->db->delete('assignment_checker',array('assignment_checker_id' => $a));
+		return;
+	}
+	
 }
 ?>

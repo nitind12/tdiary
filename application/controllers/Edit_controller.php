@@ -18,11 +18,8 @@ class Edit_controller extends CI_Controller
         $data['title'] = "lecture_page";
         $data['page_'] = "Lecture_class";
 
-         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
-
 
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
@@ -37,7 +34,6 @@ class Edit_controller extends CI_Controller
         $data['title'] = "Lectureview page";
         $data['page_'] = "Lecture_view_div";
         $data['cls_in_session'] = $this->am->fetchClass();
-        
          $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();

@@ -13,6 +13,10 @@ class Test extends CI_Controller{
 		$data['page_'] = 'edit_marks_selected';
         $data['title'] = "Edit-Marks ";
         $data['marks_type_']=$this->um->marks_type_();
+         $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
@@ -26,7 +30,11 @@ class Test extends CI_Controller{
             $mt = $this->input->post('mtypename');
             $data['title'] = "Select-Marks-Type";
             $data['page_'] = "testview";        
-               $data['cls_in_session'] = $this->am->fetchClass();
+               $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['cls_in_session'] = $this->am->fetchClass();
                $this->session->set_userdata('itype', $mt);
                $this->session->set_userdata('itypeid', $so_);
             $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
@@ -54,7 +62,11 @@ class Test extends CI_Controller{
             $data['add_class_in'] = $this->am->add_view_attendance($no_);
             $data['add_attend'] = $this->am->add_attendance($sess, $no_);
             $data['marks_headerr_']=$this->um->marks_header($no_,$sess);
-           
+            $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       
              $this->load->view('myrajpage',$data);  
             $this->load->view('templates/footer');
          } 
@@ -75,7 +87,11 @@ class Test extends CI_Controller{
         $data['page_'] = 'view_marks_selected';
         $data['title'] = "View-marks";
         $data['marks_type_']=$this->um->marks_type_();
-        $this->load->view('templates/header',$data);
+         $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
     }
@@ -91,7 +107,11 @@ class Test extends CI_Controller{
             $this->session->set_userdata('marksname', $mt);
             $this->session->set_userdata('marksid', $so_);
             $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
-                $this->load->view('templates/header', $data);
+              $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+          $this->load->view('templates/header', $data);
             $this->load->view('myrajpage',$data);  
             $this->load->view('templates/footer');
         }
@@ -108,7 +128,11 @@ class Test extends CI_Controller{
          $sess = $this->input->post('sessionid1');
         $data['title'] = "assignment_view";
         $data['page_'] = "viewmarksset";
-        
+         $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       
         $this->load->view('templates/header', $data);
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
           $data['vim'] = $this->um->view_internal_marks($no_,$sess);

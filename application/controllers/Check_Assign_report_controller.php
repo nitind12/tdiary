@@ -4,6 +4,10 @@ class Check_assign_report_controller extends CI_Controller{
 	{
 		 $data['page_'] = 'check_assign_report_view';
 		 $data['title'] = 'assign_report_view ';
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
@@ -27,6 +31,10 @@ class Check_assign_report_controller extends CI_Controller{
 	{
 		 $data['page_'] = 'check_marks1_report_view';
 		 $data['title'] = 'marks_report_view ';
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  

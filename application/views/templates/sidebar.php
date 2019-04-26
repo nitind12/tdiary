@@ -27,17 +27,5 @@
                     </ul>  
 
                             <!--/.widget-nav-->
-                            <ul class="widget widget-menu unstyled">
-                                
-                        <li>
-                            <a class="collapsed" data-toggle="collapse" href="#togglePages">
-                                <i class="menu-icon icon-cog">
-                                </i><?php foreach ($last as $sub) { ?>
-                                    
-                                <i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i><?php echo $sub->sidebar_name; ?> </a>
-                             </li>
-                             <?php } ?>
-                             </ul>
-                        </div>
+                             </div>
                         <!--/.sidebar-->

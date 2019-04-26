@@ -20,6 +20,20 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
+    public function form_controller()  
+    {   
+        $data['page_'] = "formpage";
+        $data['title'] = "Form Page";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['f4_'] = $this->am->getformtypeMenu();
+       
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
    
     public function attendance_controller()  
     {  
@@ -108,6 +122,32 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
+     public function Edit_Form_controller()  /////internal marks page load as like input box;
+    {  
+        if($this->input->post('mtypeid')){
+            $so_ = $this->input->post('mtypeidfrm');
+            $mt = $this->input->post('mtypenamefrm');
+            $data['title'] = "Select-Form-Type";
+            $data['page_'] = "select_form_edit";        
+               $data['dashboard1'] = $this->am->getDashboardMenu();
+                $data['menu'] = $this->am->getMenu();
+                $data['submenu'] = $this->am->getSubmenu();
+                $data['last'] = $this->am->getlastMenu();
+            $data['cls_in_session'] = $this->am->fetchClass();
+               $this->session->set_userdata('itypefrm', $mt);
+               $this->session->set_userdata('itypeid', $so_);
+            $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
+           
+            $this->load->view('templates/header', $data);
+            $this->load->view('myrajpage',$data);  
+            $this->load->view('templates/footer');
+        }
+        else 
+        {
+            redirect('test');
+        }
+    }
+    
      public function view_attendance_reports_controller($no_,$sess)  
     {  
         $data['title'] = "ONLINE_ATTENDANCE";

@@ -25,8 +25,10 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "online_attendance";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
         $data['cls_in_session'] = $this->am->fetchClass();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
@@ -38,8 +40,10 @@ class Main extends CI_Controller {
         $data['title'] = "ONLINE_VIEW_ATTENDANCE";
         $data['page_'] = "view_attendance_class";
         $data['cls_in_session'] = $this->am->fetchClass();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -50,8 +54,10 @@ class Main extends CI_Controller {
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "online_take_attendance";
         $data['cls_in_session'] = $this->am->fetchClass();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -61,8 +67,10 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "Student-Report-Attendance";
         $data['page_'] = "student_report_attendance";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -87,8 +95,10 @@ class Main extends CI_Controller {
         $data['cls_in_session'] = $this->am->fetchCourses();
         $data['session__'] = $this->am->fetchSession();
         $data['subject__'] = $this->am->fetchSubject();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
         // --------------------
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['reports'] = $this->am->reports_attendance_modals();
@@ -102,8 +112,10 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "view-reports-attendance";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['attendance_Status'] = $this->am->reports_modals($no_);   
@@ -134,8 +146,10 @@ class Main extends CI_Controller {
          //  $data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);
          //  $data['add_attend'] = $this->am->add_attendance($sess, $crs);
        
-       $data['menu'] = $this->am->getMenu();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
          $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['add_attend'] = $this->am->add_attendance($sess, $no_);
         $this->load->view('myravipage', $data);  

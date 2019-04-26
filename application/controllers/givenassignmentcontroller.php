@@ -14,6 +14,10 @@ class Givenassignmentcontroller extends CI_Controller{
        
 		 $data['page_'] = 'givenassignmentview';
 		 $data['title'] = 'View Assignment';
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
@@ -33,7 +37,11 @@ class Givenassignmentcontroller extends CI_Controller{
     	$data['add_class_in'] = $this->gm->add_view_class($no_);////ravi wALA SE
 
         $data['title'] = "assignment_view";
-        $data['page_'] = "givenassignment";
+         $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       $data['page_'] = "givenassignment";
         
         $this->load->view('templates/header', $data);
         $this->load->view('myrajpage');  

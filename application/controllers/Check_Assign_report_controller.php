@@ -1,6 +1,13 @@
 <?php
 class Check_assign_report_controller extends CI_Controller{
-	public function index()
+	function __construct()
+	{
+        parent::__construct();
+        $this->load->model('Givenassignmentmodel','gm');
+       $this->load->model('Lessonedit_model','obj');
+        $this->load->model('Add_class_model','am');
+    }
+    public function index()
 	{
 		 $data['page_'] = 'check_assign_report_view';
 		 $data['title'] = 'assign_report_view ';

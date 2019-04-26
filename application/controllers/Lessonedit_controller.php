@@ -17,11 +17,9 @@ class Lessonedit_controller extends CI_Controller
 	{ ///done
         $data['cls_in_session'] = $this->am->fetchClass();
 
-       $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
-        
+
         $data['title'] = "Lesson_Plan";
         $data['page_'] = "Lesson_class";
         $this->load->view('templates/header', $data);
@@ -41,11 +39,9 @@ class Lessonedit_controller extends CI_Controller
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
 
-            $data['dashboard1'] = $this->am->getDashboardMenu();
-        $data['menu'] = $this->am->getMenu();
-        $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
-        
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
+
             $data['t_diary'] = $this->obj->fetchtable($no_);     
             $data['add_class_in'] = $this->gm->add_view_class($no_);     
             $data['title'] = "lesson_edit";

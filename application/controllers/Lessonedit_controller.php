@@ -14,7 +14,7 @@ class Lessonedit_controller extends CI_Controller
 
 
     function index()
-	{ ///done
+	{ 
         $data['cls_in_session'] = $this->am->fetchClass();
 
         $data['menu'] = $this->am->getMenu();

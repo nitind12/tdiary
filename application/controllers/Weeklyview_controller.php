@@ -16,6 +16,10 @@ class Weeklyview_controller extends CI_Controller
 	{
 		$data['title'] = "Weeklyview page";
         $data['page_'] = "Weeklyview_class";
+
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        
         $data['cls_in_session'] = $this->am->fetchClass();
         
         $this->load->view('templates/header', $data);

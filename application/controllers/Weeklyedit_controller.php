@@ -18,10 +18,11 @@ class Weeklyedit_controller extends CI_Controller
 		$data['cls_in_session'] = $this->am->fetchClass();
 	    $data['title'] = "Weeklyedit page";
         $data['page_'] = "Weeklyedit_class";
-
+ $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
-
+        $data['last'] = $this->am->getlastMenu();
+       
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');	
@@ -36,9 +37,10 @@ class Weeklyedit_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
-
-            $data['menu'] = $this->am->getMenu();
-            $data['submenu'] = $this->am->getSubmenu();
+ $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
         
         $data['add_class_in'] = $this->obj->add_view_class($no_);
         $data['t_diary'] = $this->obj->fetchtable($no_);
@@ -59,9 +61,11 @@ class Weeklyedit_controller extends CI_Controller
         $data['title'] = "Weekly details";
         $data['page_'] = "Weeklydetails";
 
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
-
+        $data['last'] = $this->am->getlastMenu();
+       
          $data['t_diary'] = $this->obj->fetchtable($no_);
 
          $data['t_diary'] = $this->obj->weeklyreport($wi);
@@ -82,9 +86,10 @@ class Weeklyedit_controller extends CI_Controller
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
 
-            $data['menu'] = $this->am->getMenu();
-            $data['submenu'] = $this->am->getSubmenu();
-        
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
             $data['add_class_in'] = $this->obj->add_view_class($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
             $data['title'] = "Weekly Edit";

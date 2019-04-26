@@ -17,11 +17,10 @@ class Edit_controller extends CI_Controller
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['title'] = "lecture_page";
         $data['page_'] = "Lecture_class";
-$data['dashboard1'] = $this->am->getDashboardMenu();
+
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
-        
+
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
@@ -35,11 +34,11 @@ $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['title'] = "Lectureview page";
         $data['page_'] = "Lecture_view_div";
         $data['cls_in_session'] = $this->am->fetchClass();
-        $data['dashboard1'] = $this->am->getDashboardMenu();
+         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-        
+
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');  
@@ -57,7 +56,7 @@ $data['dashboard1'] = $this->am->getDashboardMenu();
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
 
-        $data['dashboard1'] = $this->am->getDashboardMenu();
+         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
@@ -91,10 +90,10 @@ $data['dashboard1'] = $this->am->getDashboardMenu();
             $data['add_class_in'] = $this->obj->add_view_class($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
 
-        $data['dashboard1'] = $this->am->getDashboardMenu();
+         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
+        $data['last'] = $this->am->getlastMenu();s
             
             $data['title'] = "lecture_view";
             $data['page_'] = "lecture_view";

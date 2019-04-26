@@ -12,7 +12,11 @@ class Update_Assignment_Controller extends CI_Controller{
 		$data['cls_in_session'] = $this->am->fetchClass();
 		$data['page_'] = 'update_assignmentviewdiv';
 		$data['title'] = 'Check_View_Assignment';
-        $this->load->view('templates/header',$data);
+         $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
 	}
@@ -28,7 +32,11 @@ class Update_Assignment_Controller extends CI_Controller{
     	$data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['title'] = "Check_view_Assignment";
         $data['page_'] = "update_assignmentview";  
-        $this->load->view('templates/header', $data);
+         $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       $this->load->view('templates/header', $data);
         $this->load->view('myrajpage');  
         $this->load->view('templates/footer');
     }else{

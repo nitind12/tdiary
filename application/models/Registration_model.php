@@ -30,13 +30,18 @@ class Registration_model extends CI_Model{
 
 	function getprofile()
 	{
-		$this->db->select('first_name');
+		
+		$this->db->select('st.first_name, st.last_name, st.date_of_birth, st.blood_group,st.course_id, sc.std_contact ,sc.std_email	');
 		$this->db->where('student_id','1');
+		$this->db->from('std_personal st');
+		//$this->db->join('std_contact sc' , 'st.student_id = sc.student_id');
+		//$this->db->join('std_address sa, sa.student_id=  st.student_id');
+	
 
-		$this->db->from('std_personal');
+		$query=$this->db->get();
 
-			$query=$this->db->get();
-		return $query->result();
+		//return $query->result();
+		echo $this->db->last_query();
 	}
 }
 

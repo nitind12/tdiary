@@ -17,6 +17,10 @@ class Edit_controller extends CI_Controller
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['title'] = "lecture_page";
         $data['page_'] = "Lecture_class";
+
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
@@ -30,6 +34,9 @@ class Edit_controller extends CI_Controller
         $data['title'] = "Lectureview page";
         $data['page_'] = "Lecture_view_div";
         $data['cls_in_session'] = $this->am->fetchClass();
+
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
 
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
@@ -47,6 +54,9 @@ class Edit_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
+
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
         
             $data['add_class_in'] = $this->obj->add_view_class($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
@@ -76,6 +86,10 @@ class Edit_controller extends CI_Controller
             
             $data['add_class_in'] = $this->obj->add_view_class($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
+
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
+            
             $data['title'] = "lecture_view";
             $data['page_'] = "lecture_view";
             $this->load->view('templates/header', $data);

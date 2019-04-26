@@ -74,41 +74,10 @@ $(document).ready(function()
 
 
 
-	/*$('#myEdit').submit(function()
+
+/*	$('#myEdit').submit(function()
 	{	
-		if($.trim($('#session').val()) == '')
-			{
-				alert('Session must be filled out');
-			}
-		else if($.trim($('#course').val()) == '')
-			{
-				alert('Course must be filled out');
-			}
-		else if($.trim($('#txtsemester').val()) == '')
-			{
-				alert('Semester must be filled out');
-			}
-		else if($.trim($('#txtDOC').val()) == '')
-			{
-				alert('Date of commencement must be filled out');
-			}
-		else if($.trim($('#DOC').val()) == '')
-			{
-				alert('Date of completion must be filled out');
-			}
-		else if($.trim($('#txtfaculty').val()) == '')
-			{
-				alert('Faculty name must be filled out');
-			}
-		else if($.trim($('#txtsubject').val()) == '')
-			{
-				alert('Subject must be filled out');
-			}
-		else if($.trim($('#syllabus').val()) == '')
-			{
-				alert('Syllabus must be filled out');
-			}
-		else if($.trim($('#txtunit').val()) == '')
+		if($.trim($('#txtunit').val()) == '')
 			{
 				alert('Unit must be filled out');
 			}
@@ -116,14 +85,11 @@ $(document).ready(function()
 			{
 				alert('Topic must be filled out');
 			}
-		else if($.trim($('#No_Of_Lecture').val()) =='')
+		else if($.trim($('#Lecture_no').val()) == '')
 			{
-				alert('NO of lecture must be filled out');
+				alert('No of lecture aspect must be filled out');
 			}
-		else if($.trim($('#txttotal').val()) == '')
-			{
-				alert('please enter total no of lecture');
-			}
+
 		else
 			{
 				$('#myEdit').submit();
@@ -136,59 +102,9 @@ $(document).ready(function()
 
 
 
-	$('#mylectureviewform').submit(function()
-		{	
-			
-			if($.trim($('#course').val()) == '')
-				{
-					alert('Course must be filled out');
-				}
-			else if($.trim($('#txtsemester').val()) == '')
-				{
-					alert('Semester must be filled out');
-				}
-			else if($.trim($('#txtsubject').val()) == '')
-				{
-					alert('Subject must be filled out');
-				}
-			else if($.trim($('#txtfaculty').val()) == '')
-				{
-					alert('Faculty name must be filled out');
-				}
-			else
-				{
-					$('#mylectureviewform').submit();
-				}
-			return false;
-		
-	});
-
-
-
-
-
-
-
-
 	$('#mylessonedit').submit(function()
 	{
-		if($.trim($('#session').val()) == '')
-			{
-				alert('Session must be filled out');
-			}
-		else if($.trim($('#txtcourse').val()) == '')
-			{
-				alert('Course must be filled out');
-			}
-		else if($.trim($('#txtsemester').val()) == '')
-			{
-				alert('Semester must be filled out');
-			}
-		else if($.trim($('#txtsection').val()) == '')
-			{
-				alert('Section must be filled out');
-			}
-		else if($.trim($('#txtstart').val()) == '')
+		if($.trim($('#txtstart').val()) == '')
 			{
 				alert(' Start time must be filled out');
 			}
@@ -196,10 +112,14 @@ $(document).ready(function()
 			{
 				alert('End time must be filled out');
 			}
-		else if($.trim($('#Date').val()) == '')
+		else if($.trim($('#date').val()) == '')
 			{
 				alert('Date must be filled out');
-			}			
+			}
+		else if($.trim($('#lecturetype[]').val()) == '')	
+		{
+			alert('Lecturetype must be filled out');
+		}		
 		else if($.trim($('#Unit').val()) == '')
 			{
 				alert('Unit must be filled out');
@@ -219,7 +139,47 @@ $(document).ready(function()
 		return false;
 	});
 	
-*/
+
+
+	$('#weeklyedit').submit(function()
+	{
+		if($.trim($('#startdate').val()) == '')
+			{
+				alert(' Start date must be filled out');
+			}
+		else if($.trim($('#enddate').val()) == '')
+			{
+				alert('End date must be filled out');
+			}
+		else if($.trim($('#Lecture_schedule').val()) == '')
+			{
+				alert('No of lecture Schedule must be filled out');
+			}
+		else if($.trim($('#extra_taken').val()) == '')	
+		{
+			alert('No of extra lecture taken must be filled out');
+		}		
+		else if($.trim($('#due_to_holiday').val()) == '')
+			{
+				alert('No of lost due to holiday must be filled out');
+			}
+		else if($.trim($('#due_to_cl').val()) == '')
+			{
+				alert('No of lost due to college leave must be filled out');
+			}
+		else if($.trim($('#actual_taken').val()) == '')
+			{
+				alert('No of lecture actual taken must be filled out');
+			}
+		else
+			{
+				$('#weeklyedit').submit();
+			}
+		return false;
+	});
+	
+
+
 
 
 /*
@@ -405,7 +365,7 @@ $(document).ready(function()
 
 
 //Read More...
-		    var maxLength = 30;
+		    var maxLength = 40;
 
 		    	$(".show-read-more").each(function() {
 

@@ -12,45 +12,44 @@
 							<form class="form-horizontal row-fluid"  >	
 								<table class="table table-striped table-bordered table-condensed span8 " style="float:right" >
 								<thead>
+									 <?php foreach ($profile as $item) { ?>
 				            		<tr>
-					                    	<th align="center">First Name:</th>
+					                    	<th align="center">Name:<td><?php echo $item->first_name ;?> <?php echo $item->last_name ;?></td></th>
 					                  </tr>
 
-					                  <tr>
-					                  		<th align="center">Last Name:</th>
+					                  	 <tr>
+					                  		<th align="center">Date Of Birth:<td><?php echo $item->date_of_birth ;?></td></th>
+					                  	</tr>
+
+
+					                  	<tr>
+					                  		<th align="center">Contact:<td><?php echo $item->std_contact ;?></td></th>
+
 					                  	</tr>
 
 					                  	<tr>
-					                  		<th align="center">Contact:</th>
+					                  		<th align="center">Email id:<td><?php echo $item->std_email ;?></td></th>
 					                  	</tr>
 
 					                  	<tr>
-					                  		<th align="center">Email id:</th>
+					                  		<th align="center">Course:<td><?php echo $item->course_id ;?></td></th>
 					                  	</tr>
 
 					                  	<tr>
-					                  		<th align="center">Course:</th>
+					                  		<th align="center">Blood Group:<td><?php echo $item->blood_group ;?></td></th>
 					                  	</tr>
-
-					                  	<tr>
-					                  		<th align="center">Blood Group:</th>
-					                  	</tr>
+					                  	 <?php } ?>
 	
                						</thead>
+               					</table>
+               				</form>
+               			</div>
+               		</div>
+               	</div>
+               </div>
 
-               						 <?php foreach ($profile as $item) { ?>
-												<tr>
-								                      <td><?php echo $item->first_name ;?></td>
-								                     
-								                    </tr>
-								          <?php } ?>
-											
-               									</table>
-               					
-             		
-			                
-								</div>
-							</div>
-						</div>
-					</div>
+
+               						
+												
+								       
 

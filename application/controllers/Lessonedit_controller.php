@@ -16,6 +16,10 @@ class Lessonedit_controller extends CI_Controller
     function index()
 	{ ///done
         $data['cls_in_session'] = $this->am->fetchClass();
+
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+
         $data['title'] = "Lesson_Plan";
         $data['page_'] = "Lesson_class";
         $this->load->view('templates/header', $data);
@@ -34,6 +38,9 @@ class Lessonedit_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
+
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
 
             $data['t_diary'] = $this->obj->fetchtable($no_);     
             $data['add_class_in'] = $this->gm->add_view_class($no_);     
@@ -65,7 +72,7 @@ class Lessonedit_controller extends CI_Controller
     function savingdata()
     {
         $this->obj->lesson_edit_saving_modal();
-        redirect('Lessonedit_controller');
+        redirect('Lessonedit_controller/lesson_edit');
     }
 
 
@@ -75,7 +82,7 @@ class Lessonedit_controller extends CI_Controller
         $u = $this->uri->segment(3);
         $this->obj->del($u);
         
-        redirect('Lessonedit_controller','refresh');
+        redirect('Lessonedit_controller/lesson_edit','refresh');
     }
 
 }?>

@@ -30,7 +30,7 @@ class Lessonedit_model extends CI_Model
 				'date'=>$this->input->post('date'),
 				'topic' => $this->input->post('Topic'),
 				'unit' => $this->input->post('Unit'),
-				'lecture_id' => $this->input->post('Lecture'),
+				//'lecture_id' => $this->input->post('Lecture'),
 				'status'=>'1',
 				'username'=>'ra'
 			);

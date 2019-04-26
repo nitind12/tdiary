@@ -6,6 +6,7 @@ class Weeklyedit_controller extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+
 		$this->load->model('Weeklyedit_model','obj');	
 		$this->load->model('Add_class_model','am');
 		
@@ -18,6 +19,9 @@ class Weeklyedit_controller extends CI_Controller
 	    $data['title'] = "Weeklyedit page";
         $data['page_'] = "Weeklyedit_class";
 
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');	
@@ -25,13 +29,16 @@ class Weeklyedit_controller extends CI_Controller
 
 
 
-    public function weekly_edit()
+    function weekly_edit()
     {  
         if($this->input->post('addclassidED'))
         {
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
+
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
         
         $data['add_class_in'] = $this->obj->add_view_class($no_);
         $data['t_diary'] = $this->obj->fetchtable($no_);
@@ -51,6 +58,10 @@ class Weeklyedit_controller extends CI_Controller
     {  
         $data['title'] = "Weekly details";
         $data['page_'] = "Weeklydetails";
+
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+
          $data['t_diary'] = $this->obj->fetchtable($no_);
 
          $data['t_diary'] = $this->obj->weeklyreport($wi);
@@ -62,7 +73,7 @@ class Weeklyedit_controller extends CI_Controller
     }
 
 
-    public function weekly_view()
+    function weekly_view()
     {  
 
          if($this->input->post('addclassidED'))
@@ -70,6 +81,9 @@ class Weeklyedit_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
+
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
         
             $data['add_class_in'] = $this->obj->add_view_class($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
@@ -90,10 +104,10 @@ class Weeklyedit_controller extends CI_Controller
 	{
 		
 		$this->obj->savingdata();
-		redirect('Weeklyedit_controller/Weekly_edit/'.$no_.'/'.$sess.'/'.$crs);
+		redirect('Weeklyedit_controller/weekly_edit/'.$no_.'/'.$sess.'/'.$crs);
 	}
 
-    public function del1()
+    function del1()
     {
         $u = $this->uri->segment(3);
         $this->obj->del($u);

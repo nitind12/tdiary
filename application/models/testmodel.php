@@ -14,6 +14,7 @@ class Testmodel extends CI_Model
 			$addclass_id = $this->input->post('addclass_id');
 			$Obtained_Marks= $this->input->post('Obtained_Marks');
 			
+			
 
 			for($i=0; $i<count($addclass_id); $i++)
 			{
@@ -22,7 +23,9 @@ class Testmodel extends CI_Model
 			'roll_no' => $stdroll[$i],
 			'totalmarks' => $totalmarks[$i],
 			'marks'=>$Obtained_Marks[$i],
-			'marks_type_id' => $this->session->userdata('itypeid'),
+			
+			//'marks_type_id' => $this->session->userdata('itypeid'),
+			'marks_type_id' => '1',
 			'status' => '1',
 			'username' =>'ra',
 			);
@@ -52,8 +55,8 @@ class Testmodel extends CI_Model
 		$this->db->select('a.*, b.student_id, b.first_name');
 		$this->db->where('c.add_class_id' ,$no_);
 		$this->db->where('b.session_id', $sess);
-		$this->db->where('a.marks_type_id',$this->session->userdata('marksid'));
-		
+		//$this->db->where('a.marks_type_id',$this->session->userdata('marksid'));
+		$this->db->where('a.marks_type_id','1');
 		$this->db->from('studentmarks a');
 		
 		$this->db->join('std_personal b', 'b.student_id=a.roll_no');
@@ -64,5 +67,10 @@ class Testmodel extends CI_Model
 		
 		return $q->result();
 	}
+	function del1($a){
+		$this->db->delete('studentmarks',array('add_marks_id' => $a));
+		return;
+	}
+	
 	
 }

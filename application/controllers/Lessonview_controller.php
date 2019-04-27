@@ -16,6 +16,12 @@ class Lessonview_controller extends CI_Controller
 	{
 	    $data['title'] = "Lesson_view ";
         $data['page_'] = "Lessonview_class";
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        
         $data['cls_in_session'] = $this->am->fetchClass();
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
@@ -29,6 +35,11 @@ class Lessonview_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
             
          	$data['t_diary'] = $this->obj->fetchtable($no_);     
        		$data['add_class_in']= $this->gm->add_view_class($no_);////ravi wALA SE

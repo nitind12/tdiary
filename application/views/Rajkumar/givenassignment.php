@@ -45,9 +45,10 @@
 
           </div>
           	<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
+              
           		<thead>
                  	<tr>
-						<th align="center">A_id</th>
+						<th align="center">A_no</th>
 						<th align="center">Given_date</th>
 						<th align="center">Submission_date</th>
 						<th align="center">Unit</th>
@@ -58,13 +59,13 @@
              <tbody>
 				<?php foreach ($vie as $item) { ?>
 				<tr>
-					<td align="center"><?php echo $item->Assignment_id;?></td>
+					<td align="center"><?php echo $item->Assignment_no;?></td>
 					<td align="center"><?php echo $item->Given_date;?></td>
 					<td align="center"><?php echo $item->Submission_date;?></td>
 					<td align="center"><?php echo $item->Unit;?></td>
 					
 					<td align="center" class="show-read-more"><?php echo $item->Topic;?></td>
-					<td><a href="<?php echo site_url('assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
+					<td><a href="<?php echo site_url('givenassignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 					<!--<td><a href="<?php echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
 				</tr>
 

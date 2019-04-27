@@ -17,6 +17,12 @@ class Edit_controller extends CI_Controller
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['title'] = "lecture_page";
         $data['page_'] = "Lecture_class";
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
@@ -29,7 +35,12 @@ class Edit_controller extends CI_Controller
 
         $data['title'] = "Lectureview page";
         $data['page_'] = "Lecture_view_div";
+
         $data['cls_in_session'] = $this->am->fetchClass();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
 
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
@@ -47,12 +58,18 @@ class Edit_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
+
+            $data['dashboard1'] = $this->am->getDashboardMenu();
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
+            $data['last'] = $this->am->getlastMenu();
         
             $data['add_class_in'] = $this->obj->add_view_class($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
            // $data['total']=$this->obj->total_modal();
             $data['title'] = "lecture_edit";
             $data['page_'] = "Lecture_edit";
+            
             $this->load->view('templates/header', $data);
             $this->load->view('mypreetipage',$data);
             $this->load->view('templates/footer');
@@ -66,6 +83,9 @@ class Edit_controller extends CI_Controller
 
 
 
+
+
+
     public function lecture_view()
     {  
         if($this->input->post('addclassidED'))
@@ -76,6 +96,12 @@ class Edit_controller extends CI_Controller
             
             $data['add_class_in'] = $this->obj->add_view_class($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
+
+                $data['dashboard1'] = $this->am->getDashboardMenu();
+                $data['menu'] = $this->am->getMenu();
+                $data['submenu'] = $this->am->getSubmenu();
+                $data['last'] = $this->am->getlastMenu();
+        
             $data['title'] = "lecture_view";
             $data['page_'] = "lecture_view";
             $this->load->view('templates/header', $data);
@@ -99,13 +125,14 @@ class Edit_controller extends CI_Controller
 
 
 
-    function lessonview()
+  /*  function lessonview()
     {
         $this->load->model('Lview_model','object');
         $data['lect_'] = $this->object->savingdata3();
 
         echo json_encode($data);    
     }
+    */
 
 
 

@@ -51,9 +51,9 @@
 					<?php  }  ?>
 						<tr>
 							<td>Assignment No<br>
-							<input type="number" name="Assignment_id" id="Assignment_id" class="span8"/></td>
+							<input type="number" name="Assignment_no" id="Assignment_no" class="span8"/></td>
 							<td>Given Date<br>
-							<input type="date" name="Given_date" id="Given_date"class="span9"/></td>
+							 <input type="text" value="<?php echo date("Y-m-d")?>" name="Given_date" id="date"></td>
 							<td>Submission Date<br>
 							<input type="date" name="Submission_date" id="Submission_date" class="span9"/></td></td>
 						</tr>

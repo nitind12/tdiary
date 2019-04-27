@@ -1,9 +1,7 @@
 <div class="content">
   
   <div class="module">
-
               <div class="module-head">
-               
                 <h1><?php echo $this->session->userdata('marksname');?></h1>
                         </div>
               <div class="module-body table">
@@ -70,8 +68,8 @@
               <td align="center"><?php echo $item->first_name?></td>
                <td align="center"><?php echo $item->totalmarks;?></td>
               <td align="center"><?php echo $item->marks;?></td>
-              <td><a href="<?php echo site_url('assignmentcontroller/del1/' .$item->add_marks_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
-        <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
+              <td><a href="<?php echo site_url('test/del1/' .$item->add_marks_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
+       
       </tr>
 
     <?php } ?>

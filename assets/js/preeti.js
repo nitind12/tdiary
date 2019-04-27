@@ -376,7 +376,7 @@ $(document).ready(function()
 			            var newStr = myStr.substring(0, maxLength);
 			            var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
 			            $(this).empty().html(newStr);
-			            $(this).append(' <a href="javascript:void(0);" class="read-more">Read More...</a>');
+			            $(this).append(' <a href="javascript:void(0);" class="read-more hideblock">Read More...</a>');
 			            $(this).append('<span class="more-text">' + removedStr + '</span>');
 			        }
 		  		});
@@ -505,6 +505,10 @@ $(document).ready(function()
 
 				    });
     			});
+
+
+			//------- total number of lecture------//
+
 
 });
 

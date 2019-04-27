@@ -6,6 +6,8 @@ class Adminviewcontroller extends CI_Controller
 	function __construct()
 	{
         parent::__construct();
+           $this->load->model('Add_class_model','am');
+   
         
      
     }
@@ -14,6 +16,8 @@ class Adminviewcontroller extends CI_Controller
     {  
         $data['title'] = "Asminview";
         $data['page_'] = "Adminview";
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         $this->load->view('templates/header', $data);
         $this->load->view('mysatyampage', $data);  
         $this->load->view('templates/footer');
@@ -23,7 +27,9 @@ class Adminviewcontroller extends CI_Controller
     {  
         $this->load->model('adminviewmodel', 'stem');
         $this->stem->savingTTable();
-        redirect('Adminviewcontroller');  
+        redirect('Adminviewcontroller'); 
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu(); 
   
     }  
 }?>

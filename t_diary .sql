@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2019 at 11:42 AM
+-- Generation Time: Apr 27, 2019 at 12:49 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -62,26 +62,28 @@ INSERT INTO `add_class` (`add_class_id`, `faculty_id`, `session_id`, `course_id`
 --
 
 CREATE TABLE `assignment` (
-  `add_class_id` int(11) NOT NULL,
   `Assignment_id` int(11) NOT NULL,
+  `add_class_id` int(11) NOT NULL,
+  `Assignment_no` int(11) NOT NULL,
   `Given_date` date NOT NULL,
   `Submission_date` date NOT NULL,
   `Unit` int(3) NOT NULL,
-  `Topic` varchar(150) NOT NULL,
+  `Topic` longtext NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `username` varchar(150) NOT NULL
+  `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `assignment`
 --
 
-INSERT INTO `assignment` (`add_class_id`, `Assignment_id`, `Given_date`, `Submission_date`, `Unit`, `Topic`, `status`, `username`) VALUES
-(25, 1, '2019-04-11', '2019-04-12', 1, 'tgjjkhgyuk', 1, 'ra'),
-(25, 1, '2019-04-11', '2019-04-12', 1, 'tgjjkhgyuk', 1, 'ra'),
-(25, 1, '2019-04-15', '2019-04-15', 1, 'FFGDZGV XZDVXVXVDXXXDZVSXGX', 1, 'ra'),
-(25, 0, '0000-00-00', '0000-00-00', 0, '', 1, 'ra'),
-(26, 0, '0000-00-00', '0000-00-00', 14, 'SGSSDIFHKZ,', 1, 'ra');
+INSERT INTO `assignment` (`Assignment_id`, `add_class_id`, `Assignment_no`, `Given_date`, `Submission_date`, `Unit`, `Topic`, `status`, `username`) VALUES
+(1, 25, 1, '2019-04-11', '2019-04-12', 1, 'tgjjkhgyuk', 1, 'ra'),
+(2, 25, 1, '2019-04-11', '2019-04-12', 1, 'tgjjkhgyuk', 1, 'ra'),
+(3, 25, 1, '2019-04-15', '2019-04-15', 1, 'FFGDZGV XZDVXVXVDXXXDZVSXGX', 1, 'ra'),
+(4, 25, 0, '0000-00-00', '0000-00-00', 0, '', 1, 'ra'),
+(5, 26, 0, '0000-00-00', '0000-00-00', 14, 'SGSSDIFHKZ,', 1, 'ra'),
+(8, 25, 2, '2019-04-26', '2019-04-26', 2, 'r5wd6yuoifpfdisgxtaycgvfiokgbp;lsxazuyt5rdxgfcvkbl;h\'/v,xlknzftgcfx', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -90,11 +92,13 @@ INSERT INTO `assignment` (`add_class_id`, `Assignment_id`, `Given_date`, `Submis
 --
 
 CREATE TABLE `assignment_checker` (
+  `assignment_checker_id` int(11) NOT NULL,
   `add_class_id` int(11) NOT NULL,
   `assignment_id` int(11) NOT NULL,
   `roll_no` int(11) NOT NULL,
   `assignment_status` tinyint(1) NOT NULL,
   `checker_date` date NOT NULL,
+  `Grade` varchar(4) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -103,13 +107,31 @@ CREATE TABLE `assignment_checker` (
 -- Dumping data for table `assignment_checker`
 --
 
-INSERT INTO `assignment_checker` (`add_class_id`, `assignment_id`, `roll_no`, `assignment_status`, `checker_date`, `status`, `username`) VALUES
-(25, 2, 118, 1, '2019-04-11', 1, 'ra'),
-(25, 2, 119, 1, '2019-04-11', 1, 'ra'),
-(25, 2, 120, 1, '2019-04-11', 1, 'ra'),
-(26, 55, 121, 1, '2019-04-11', 1, 'ra'),
-(26, 5646, 122, 1, '2019-04-11', 1, 'ra'),
-(26, 944, 403, 1, '2019-04-11', 1, 'ra');
+INSERT INTO `assignment_checker` (`assignment_checker_id`, `add_class_id`, `assignment_id`, `roll_no`, `assignment_status`, `checker_date`, `Grade`, `status`, `username`) VALUES
+(1, 25, 2, 118, 1, '2019-04-11', 'A', 1, 'ra'),
+(2, 25, 2, 119, 1, '2019-04-11', 'A', 1, 'ra'),
+(3, 25, 2, 120, 1, '2019-04-11', 'A', 1, 'ra'),
+(4, 26, 55, 121, 1, '2019-04-11', 'A', 1, 'ra'),
+(5, 26, 5646, 122, 1, '2019-04-11', 'B', 1, 'ra'),
+(6, 26, 944, 403, 1, '2019-04-11', 'D', 1, 'ra'),
+(7, 25, 2, 118, 1, '2019-04-26', 'A', 1, 'ra'),
+(8, 25, 2, 119, 1, '2019-04-26', 'A', 1, 'ra'),
+(9, 25, 2, 120, 1, '2019-04-26', 'A', 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assign_subject`
+--
+
+CREATE TABLE `assign_subject` (
+  `assign_subject_id` int(11) NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
+  `faculty_id` int(11) NOT NULL,
+  `session_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -147,7 +169,10 @@ INSERT INTO `attendance` (`add_class_id`, `attendance_id`, `date`, `time`, `roll
 (26, 77, '2019-04-11', '02:00:00.000', 403, 'PRESENT', 'ra', 1, '121', '2', ''),
 (25, 78, '2019-04-12', '02:00:00.000', 118, ' ABSENT', 'ra', 1, '121', '2', ''),
 (25, 79, '2019-04-12', '02:00:00.000', 119, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 80, '2019-04-12', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', '');
+(25, 80, '2019-04-12', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', ''),
+(25, 81, '2019-04-27', '02:00:00.000', 118, ' ABSENT', 'ra', 1, '121', '2', ''),
+(25, 82, '2019-04-27', '02:00:00.000', 119, 'PRESENT', 'ra', 1, '121', '2', ''),
+(25, 83, '2019-04-27', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', '');
 
 -- --------------------------------------------------------
 
@@ -163,6 +188,19 @@ CREATE TABLE `attendance_update` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `batch`
+--
+
+CREATE TABLE `batch` (
+  `batch_id` int(11) NOT NULL,
+  `batch_name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -276,6 +314,36 @@ CREATE TABLE `faculty_profile` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `form_type`
+--
+
+CREATE TABLE `form_type` (
+  `form_type_id` int(11) NOT NULL,
+  `form_type_name` varchar(150) NOT NULL,
+  `icon` text NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `form_type`
+--
+
+INSERT INTO `form_type` (`form_type_id`, `form_type_name`, `icon`, `status`, `username`) VALUES
+(1, 'Add  Card Teacher ID', '', 1, 'ra'),
+(2, 'Add  card Student ID', '', 1, 'ra'),
+(3, 'Add Course', '', 1, 'ra'),
+(4, 'Add Room', '', 1, 'ra'),
+(5, 'Add Department', '', 1, 'ra'),
+(6, 'Promoted Class', '', 1, 'ra'),
+(7, 'Add Admin', '', 1, 'ra'),
+(8, 'Add Subject', '', 1, 'ra'),
+(9, 'Add Session', '', 1, 'ra'),
+(10, 'Add Batch', '', 1, 'ra');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lecture`
 --
 
@@ -306,7 +374,8 @@ INSERT INTO `lecture` (`lecture_id`, `faculty_id`, `add_class_id`, `unit`, `topi
 (11, '121', 26, 0, '			fdvfz			', 0, 1, 'ra'),
 (12, '121', 26, 1, '			zsfC			', 1, 1, 'ra'),
 (13, '121', 25, 55, '					dbifzvhrvivf	', 55, 1, 'ra'),
-(14, '121', 24, 1, '				GUDYUIAUYFEUGCY		', 1, 1, 'ra');
+(14, '121', 24, 1, '				GUDYUIAUYFEUGCY		', 1, 1, 'ra'),
+(15, '121', 25, 1, '						rtyuiopdf[\'l;likhgjhg', 4, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -322,6 +391,7 @@ CREATE TABLE `lesson` (
   `end_time` time(2) NOT NULL,
   `unit` varchar(50) NOT NULL,
   `no_of_lecture` varchar(50) NOT NULL,
+  `lecture_type` varchar(50) NOT NULL,
   `topic` text NOT NULL,
   `date` date NOT NULL,
   `status` tinyint(1) NOT NULL,
@@ -332,12 +402,13 @@ CREATE TABLE `lesson` (
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`lesson_id`, `add_class_id`, `lecture_id`, `start_time`, `end_time`, `unit`, `no_of_lecture`, `topic`, `date`, `status`, `username`) VALUES
-(1, 26, '3', '00:00:00.00', '00:00:00.00', '3', '5', 'wqyadh', '2019-04-11', 1, 'ra'),
-(2, 26, '1', '13:00:00.00', '16:12:00.00', '5', '54', 'fsexd', '2019-04-11', 1, 'ra'),
-(4, 26, '3', '02:05:00.00', '10:05:00.00', '322', '4', 'gddbf ', '2019-04-11', 1, 'ra'),
-(5, 26, '5', '00:00:00.00', '00:00:00.00', '33', '32', 'sad', '2019-04-11', 1, 'ra'),
-(6, 25, '3', '00:00:00.00', '00:00:00.00', '4', '55565', 'dcCjCk,cc', '2019-04-11', 1, 'ra');
+INSERT INTO `lesson` (`lesson_id`, `add_class_id`, `lecture_id`, `start_time`, `end_time`, `unit`, `no_of_lecture`, `lecture_type`, `topic`, `date`, `status`, `username`) VALUES
+(1, 26, '3', '00:00:00.00', '00:00:00.00', '3', '5', '', 'wqyadh', '2019-04-11', 1, 'ra'),
+(2, 26, '1', '13:00:00.00', '16:12:00.00', '5', '54', '', 'fsexd', '2019-04-11', 1, 'ra'),
+(4, 26, '3', '02:05:00.00', '10:05:00.00', '322', '4', '', 'gddbf ', '2019-04-11', 1, 'ra'),
+(5, 26, '5', '00:00:00.00', '00:00:00.00', '33', '32', '', 'sad', '2019-04-11', 1, 'ra'),
+(6, 25, '3', '00:00:00.00', '00:00:00.00', '4', '55565', '', 'dcCjCk,cc', '2019-04-11', 1, 'ra'),
+(7, 25, '', '00:00:00.00', '00:00:00.00', '', '', 'Arrangement', '', '2019-04-27', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -515,9 +586,9 @@ CREATE TABLE `sidebar` (
 INSERT INTO `sidebar` (`sidebar_id`, `sidebar_name`, `path`, `status`, `username`) VALUES
 (1, 'Dashboard', 'Main/index', 2, 'ra'),
 (2, 'Dashboard', 'Main/index', 2, 'ra'),
-(3, 'Teacher-Dashboard', 'Main/index', 2, 'ra'),
-(7, 'Student-Notification', 'Main/index', 2, 'ra'),
-(8, 'Teacher-Notification', 'Main/index', 2, 'ra'),
+(3, 'TDashboard', 'Main/index', 2, 'ra'),
+(7, 'SNotification', 'Main/index', 2, 'ra'),
+(8, 'Notification', 'Main/index', 2, 'ra'),
 (9, 'Teacher-Online-Attendance', '#', 1, 'ra'),
 (10, 'Student-Attendace-Report', '#', 1, 'ra'),
 (11, 'Teacher-Lecture-Plan', '#', 1, 'ra'),
@@ -530,8 +601,9 @@ INSERT INTO `sidebar` (`sidebar_id`, `sidebar_name`, `path`, `status`, `username
 (18, 'Admin-Timetable', '#', 1, 'ra'),
 (19, 'Teacher-Timetable', '#', 1, 'ra'),
 (20, 'Student-Timetable', '#', 1, 'ra'),
-(21, 'More-Pages', '#', 1, 'ra'),
-(22, 'Logout', 'Main/logout', 1, 'ra');
+(21, 'More-Pages', '#', 3, 'ra'),
+(22, 'Logout', 'Main/logout', 3, 'ra'),
+(23, 'Forms', 'Main/form_controller', 2, 'ra');
 
 -- --------------------------------------------------------
 
@@ -875,7 +947,10 @@ INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_ty
 (30, 26, 403, 0, 14, 30, 1, 'ra'),
 (31, 26, 121, 0, 14, 30, 1, 'ra'),
 (32, 26, 122, 0, 14, 30, 1, 'ra'),
-(33, 26, 403, 0, 14, 30, 1, 'ra');
+(33, 26, 403, 0, 14, 30, 1, 'ra'),
+(34, 25, 118, 1, 14, 30, 1, 'ra'),
+(35, 25, 119, 1, 14, 30, 1, 'ra'),
+(36, 25, 120, 1, 14, 30, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -897,7 +972,8 @@ CREATE TABLE `student_time_table` (
 --
 
 INSERT INTO `student_time_table` (`fid`, `Course_id`, `Semester`, `Session`, `Section`, `Choose_File`) VALUES
-(1, '', 0, '', '', '');
+(1, '', 0, '', '', ''),
+(2, 'BCA', 1, ' 2011-2012', '', '');
 
 -- --------------------------------------------------------
 
@@ -1406,7 +1482,15 @@ INSERT INTO `users_menu` (`users_menu_id`, `users_id`, `sidebar_id`, `status`, `
 (29, 3, 10, 1, 'ra'),
 (30, 3, 16, 1, 'ra'),
 (31, 3, 17, 1, 'ra'),
-(32, 3, 20, 1, 'ra');
+(32, 3, 20, 1, 'ra'),
+(33, 1, 23, 1, 'ra'),
+(34, 1, 21, 1, 'ra'),
+(35, 1, 22, 1, 'ra'),
+(36, 2, 21, 1, 'ra'),
+(37, 2, 22, 1, 'ra'),
+(38, 3, 21, 1, 'ra'),
+(39, 3, 22, 1, 'ra'),
+(40, 1, 22, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -1415,11 +1499,7 @@ INSERT INTO `users_menu` (`users_menu_id`, `users_id`, `sidebar_id`, `status`, `
 --
 
 CREATE TABLE `weekly` (
-  `session_id` varchar(10) NOT NULL,
-  `subject_id` varchar(10) NOT NULL,
-  `course_id` varchar(10) NOT NULL,
-  `semester_id` varchar(10) NOT NULL,
-  `section` varchar(15) NOT NULL,
+  `add_class_id` int(11) NOT NULL,
   `lectureid` varchar(10) NOT NULL,
   `lesson_id` varchar(10) NOT NULL,
   `week_id` int(10) NOT NULL,
@@ -1444,6 +1524,24 @@ ALTER TABLE `add_class`
   ADD PRIMARY KEY (`add_class_id`);
 
 --
+-- Indexes for table `assignment`
+--
+ALTER TABLE `assignment`
+  ADD PRIMARY KEY (`Assignment_id`);
+
+--
+-- Indexes for table `assignment_checker`
+--
+ALTER TABLE `assignment_checker`
+  ADD PRIMARY KEY (`assignment_checker_id`);
+
+--
+-- Indexes for table `assign_subject`
+--
+ALTER TABLE `assign_subject`
+  ADD PRIMARY KEY (`assign_subject_id`);
+
+--
 -- Indexes for table `attendance`
 --
 ALTER TABLE `attendance`
@@ -1454,6 +1552,12 @@ ALTER TABLE `attendance`
 --
 ALTER TABLE `attendance_update`
   ADD PRIMARY KEY (`attendance_update_id`);
+
+--
+-- Indexes for table `batch`
+--
+ALTER TABLE `batch`
+  ADD PRIMARY KEY (`batch_id`);
 
 --
 -- Indexes for table `course_table`
@@ -1485,6 +1589,12 @@ ALTER TABLE `faculty_personal`
 --
 ALTER TABLE `faculty_profile`
   ADD PRIMARY KEY (`faculty_profile_id`);
+
+--
+-- Indexes for table `form_type`
+--
+ALTER TABLE `form_type`
+  ADD PRIMARY KEY (`form_type_id`);
 
 --
 -- Indexes for table `lecture`
@@ -1644,16 +1754,40 @@ ALTER TABLE `add_class`
   MODIFY `add_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
+-- AUTO_INCREMENT for table `assignment`
+--
+ALTER TABLE `assignment`
+  MODIFY `Assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `assignment_checker`
+--
+ALTER TABLE `assignment_checker`
+  MODIFY `assignment_checker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `assign_subject`
+--
+ALTER TABLE `assign_subject`
+  MODIFY `assign_subject_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `attendance_update`
 --
 ALTER TABLE `attendance_update`
   MODIFY `attendance_update_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `batch`
+--
+ALTER TABLE `batch`
+  MODIFY `batch_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `faculty_address`
@@ -1680,16 +1814,22 @@ ALTER TABLE `faculty_profile`
   MODIFY `faculty_profile_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `form_type`
+--
+ALTER TABLE `form_type`
+  MODIFY `form_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
-  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `marks_type`
@@ -1713,7 +1853,7 @@ ALTER TABLE `semester`
 -- AUTO_INCREMENT for table `sidebar`
 --
 ALTER TABLE `sidebar`
-  MODIFY `sidebar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `sidebar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `sign_up`
@@ -1749,13 +1889,13 @@ ALTER TABLE `std_personal`
 -- AUTO_INCREMENT for table `studentmarks`
 --
 ALTER TABLE `studentmarks`
-  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `student_time_table`
 --
 ALTER TABLE `student_time_table`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sub_sidebar`
@@ -1779,7 +1919,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users_menu`
 --
 ALTER TABLE `users_menu`
-  MODIFY `users_menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `users_menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `weekly`

@@ -32,6 +32,7 @@ class Assignmentcontroller extends CI_Controller{
             {
             $no_ = $this->input->post('addclassidA');
             $sess = $this->input->post('sessionidA');
+        $data['users'] = $this->gm->fetchtable($no_);
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();

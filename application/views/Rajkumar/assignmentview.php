@@ -1,3 +1,8 @@
+<style type="text/css">
+	.show-read-more1 .more-text{
+		display: none;
+	}
+</style>
 <div class="span9">
 	<div class="content">
 		<div class="module">
@@ -51,7 +56,7 @@
 					<?php  }  ?>
 						<tr>
 							<td>Assignment No<br>
-							<input type="number" name="Assignment_no" id="Assignment_no" class="span8"/></td>
+							<input type="number"max="10"min="1" name="Assignment_no" id="Assignment_no" class="span8"/></td>
 							<td>Given Date<br>
 							 <input type="text" value="<?php echo date("Y-m-d")?>" name="Given_date" id="date"></td>
 							<td>Submission Date<br>
@@ -59,9 +64,9 @@
 						</tr>
 											
 						<tr>
-						  <td>Unit<br><input type="number" name="Unit" id="Unit" class="span8"/></td>
+						  <td>Unit<br><input type="number" max="12"min="1" name="Unit" id="Unit" class="span8"/></td>
 							<td colspan="3">QUESTION<br>
-							<textarea class="span8" rows="5" name="Topic" id="Topic" align="right"></textarea>
+							<textarea class="span8 " rows="5" name="Topic" id="Topic" align="right"></textarea>
 							</td>
 						</tr>
 				</tbody>
@@ -73,6 +78,39 @@
 				<button type="submit" class="btn btn-primary" name="save">INSERT RECORD</button>
 			</div>
 		</center></div>
+
+
+		<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
+              
+          		<thead>
+                 	<tr>
+						<th align="center">A_no</th>
+						<th align="center">Given_date</th>
+						<th align="center">Submission_date</th>
+						<th align="center">Unit</th>
+						<th align="center">Topic</th>
+						<th align="center"><span class="hideblock">Delete</span></th>
+				</tr>
+      			</thead>
+             <tbody>
+				<?php foreach ($users as $item) { ?>
+				<tr>
+					<td align="center"><?php echo $item->Assignment_no;?></td>
+					<td align="center"><?php echo $item->Given_date;?></td>
+					<td align="center"><?php echo $item->Submission_date;?></td>
+					<td align="center"><?php echo $item->Unit;?></td>
+					
+					<td align="center" class="show-read-more1"><?php echo $item->Topic;?></td>
+					<td><span class="hideblock"><a href="<?php echo site_url('Assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></span></td>
+					<!--<td><a href="<?php echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
+				</tr>
+
+		<?php } ?>
+		
+	</table>
+</div>
+
+
 	</div>
 </div>
 </div>

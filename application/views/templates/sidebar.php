@@ -27,5 +27,16 @@
                     </ul>  
 
                             <!--/.widget-nav-->
-                             </div>
+                            <ul class="widget widget-menu unstyled">
+                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages<?php echo $option1->sidebar_id;?>"><i class="menu-icon icon-cog">
+                                    <?php foreach ($last as $option1) { ?>
+                                    
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i><?php echo $option1->sidebar_name; ?> </a>
+                                    <ul id="togglePages<?php echo $option1->sidebar_id;?>" class="collapse unstyled">
+                                        <li></li>
+                                        
+                                <?php }?>
+                            </ul>
+                        </div>
                         <!--/.sidebar-->

@@ -93,7 +93,9 @@
 					<tr>
 							
 						<td>
+
 						<input type="number" id="txtunit" name="txtunit" class="span12" min="1" max="12">
+
 						</td>
 
 						<td>
@@ -102,7 +104,10 @@
 						</td>
 				
 						<td>
+
 							<input type="number" id="Lecture_no" name="Lecture_no" class="span12" min="1" max="12">
+
+	
 						</td>
 						
 					</tr>

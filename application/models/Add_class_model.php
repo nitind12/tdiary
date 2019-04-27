@@ -55,6 +55,13 @@ class Add_class_model extends CI_Model
 			//echo $this->db->last_query();
 			return $query->row();
 		}
+		function getformtypeMenu()
+		{
+		$this->db->order_by('form_type_id');
+		$query = $this->db->get("form_type");
+		return $query->result();
+		}
+		
 		function fetchClass()
 		{
 		$this->db->order_by('course_id');

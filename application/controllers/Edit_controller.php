@@ -35,6 +35,7 @@ class Edit_controller extends CI_Controller
 
         $data['title'] = "Lectureview page";
         $data['page_'] = "Lecture_view_div";
+
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
@@ -68,6 +69,7 @@ class Edit_controller extends CI_Controller
            // $data['total']=$this->obj->total_modal();
             $data['title'] = "lecture_edit";
             $data['page_'] = "Lecture_edit";
+            
             $this->load->view('templates/header', $data);
             $this->load->view('mypreetipage',$data);
             $this->load->view('templates/footer');
@@ -78,6 +80,9 @@ class Edit_controller extends CI_Controller
         }
 
     }
+
+
+
 
 
 
@@ -120,13 +125,14 @@ class Edit_controller extends CI_Controller
 
 
 
-    function lessonview()
+  /*  function lessonview()
     {
         $this->load->model('Lview_model','object');
         $data['lect_'] = $this->object->savingdata3();
 
         echo json_encode($data);    
     }
+    */
 
 
 

@@ -15,6 +15,10 @@
 
 
 			<div class="module-body table">
+				  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Note!</strong> For Edit Double Click!
+                  </div>
 				<form  id="mylessonedit" name="mylessonedit" method="post" action="<?php echo site_url('Lessonedit_controller/savingdata');?>" class="form-horizontal row-fluid">
 
 					<table class="table table-striped table-bordered table-condensed">

@@ -27,6 +27,7 @@ class Lectureedit_model extends CI_Model
 				'unit' => $this->input->post('txtunit'),
 				'topic'=>$this->input->post('topic'),
 				'no_of_lecture'=>$this->input->post('Lecture_no'),
+			//	'total_lecture'=>$this->input->post('total'),
 
 	            'faculty_id'=>'121',
 				'status'=>'1',

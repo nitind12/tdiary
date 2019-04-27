@@ -6,6 +6,8 @@ class Studenttimetableviewcontroller extends CI_Controller
 	function __construct()
 	{
         parent::__construct();
+           $this->load->model('Add_class_model','am');
+   
         
      
     }
@@ -14,6 +16,8 @@ class Studenttimetableviewcontroller extends CI_Controller
     {  
         $data['title'] = "Studenttimetableview";
         $data['page_'] = "Studenttimetableview";
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         $this->load->view('templates/header', $data);
         $this->load->view('mysatyampage', $data);  
         $this->load->view('templates/footer');
@@ -23,7 +27,9 @@ class Studenttimetableviewcontroller extends CI_Controller
     {  
         $this->load->model('Studenttimetableviewmodel', 'stem');
         $this->stem->savingTTable();
-        redirect('Studenttimetableviewcontroller');  
+        redirect('Studenttimetableviewcontroller'); 
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu(); 
   
     }  
 }?>

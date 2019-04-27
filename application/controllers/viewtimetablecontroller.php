@@ -16,12 +16,21 @@ class Viewtimetablecontroller extends CI_Controller{
 		
 
 	}*/
+	function __construct()
+	{
+        parent::__construct();
+           $this->load->model('Add_class_model','am');
+   
+        
+     
+    }
 
 	public function index()
 	{
 		 $data['page_'] = 'timetableview';
 		 $data['title'] = 'View Timetable';
-       
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
         $this->load->view('templates/header',$data);
         $this->load->view('mysatyampage',$data);  
         $this->load->view('templates/footer');
@@ -32,7 +41,8 @@ class Viewtimetablecontroller extends CI_Controller{
 	function viewmarks(){
 		$this->load->model('viewtimetablemodel','im');
 		$data['marks'] = $this->im->timetable();
-
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
 		echo json_encode($data);
 	}
 }

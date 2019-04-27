@@ -16,6 +16,11 @@
 
 
             <div class="module-body table">
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Note!</strong> For Edit Double Click!
+                  </div>
+
              
 
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
@@ -62,7 +67,7 @@
                   <thead>
                       <tr>
                           <!-- <th align="center">No_of_Lecture</th>  -->
-                          <th align="center">Week_No</th>
+                          <th align="center">WeekNo</th>
                           <th align="center">StartDate</th>
                           <th align="center">EndDate</th>
                           <th align="center">L.Schedule</th>
@@ -73,7 +78,7 @@
                           <th align="center">Details</th>
                           
                          
-                        <!--  <th align="center">Delete</th>    -->
+                         <th align="center">Delete</th>    
                       
                        </tr>
                   </thead>
@@ -101,7 +106,7 @@
               
                                 <!--  <td align="center"><?php //echo $item->no_of_lecture ?></td>    -->
                                   
-                                 <!--    <td><a href="<?php //echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-danger  icon-trash" onclick="return confirm('Are you sure')"></a></td>    -->
+                                   <td><a href="<?php echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-danger  icon-trash" onclick="return confirm('Are you sure')"></a></td>   
 
                                  <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
                               </tr>

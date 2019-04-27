@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
 <link href="<?php echo base_url('assets/css/default.css');?>" rel="stylesheet" type="text/css" media="all" />
-<link href=""<?php echo base_url('assets/css/fonts.css');?>" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo base_url('assets/css/fonts.css');?>" rel="stylesheet" type="text/css" media="all" />
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -25,11 +25,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<ul>
 				<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
 				<li><a href="<?php echo site_url('Login_controller/index');?>"
-           " accesskey="2" title="">Admin_log</a></li>
-				<li><a href="<?php echo site_url('Login_controller/index');?>" 
+            accesskey="2" title="">Login</a></li>
+			<!--	<li><a href="<?php //echo site_url('Login_controller/index');?>" 
 					accesskey="3" title="">Teacher_log</a></li>
-				<li><a href="<?php echo site_url('Login_controller/index');?>" 
-					accesskey="4" title="">Student_log</a></li>
+				<li><a href="<?php //echo site_url('Login_controller/index');?>" 
+					accesskey="4" title="">Student_log</a></li>		-->
 				<li>
 					<a href="<?php echo site_url('Homemain/about_us_controller');?>" 
 						accesskey="5" title="">About Us</a></li>

@@ -155,4 +155,9 @@ class Test extends CI_Controller{
         $this->um->del1($u);
         redirect('Test/vie_controller','refresh');
     }
+
+
+
+
+
 }

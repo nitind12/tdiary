@@ -18,10 +18,18 @@
     <div class="content">
          <div class="module">
             <div class="module-head">
+              <div style="float:right">
+                    <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"> <?php echo date("Y-m-d")?>
+                </div>
                 <h1>Lecture View</h1>
             </div>
 
             <div class="module-body table">
+
+                  <div class="alert hideblock">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Note!</strong> For Edit Double Click!
+                  </div>
 
                 <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
                <br>
@@ -60,9 +68,9 @@
                 action="<?php echo site_url('Test/submitmarks_controller');?>">
 
                     <table  class="datatable-1 table table-bordered table-striped  display" width="100%">
-                      <!-- <div style="float:right">
+                     <!-- <div style="float:right">
                         <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
-                        //echo date("D-d-M-Y")?> </div>--->
+                       // echo date("D-d-M-Y")?> </div>-->
                    
 
 
@@ -72,7 +80,7 @@
                         <th align="center">No Of Lecture Aspect</th>
                         <th align="center">Unit No</th>
                         <th align="center">Topic</th>
-                       <!-- <th align="center">Delete</th>    -->
+                        <th align="center" class="hideblock">Delete</th>    
                     </tr>
                   </thead>
                   <tbody>
@@ -83,8 +91,8 @@
               <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
                <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
 
-                       <!--            <td><a href="<?php //secho site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash" 
-                                    onclick="return confirm('Are you sure')"></a></td>    -->
+                                <td class="hideblock"><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " 
+                                    onclick="return confirm('Are you sure')"></a></td>    
      
                                 </tr>
 

@@ -37,11 +37,11 @@
 							</table>
 							<div class="control-group">
 								<div class="controls" style="float:left;">
-									<button type="Reset" class="btn btn-primary" name="save" value="Reset">Reset</button>
+									<button type="Reset" class="btn btn-primary hideblock" name="save" value="Reset">Reset</button>
 								</div>
 											<div class="controls" style="float:left;">
 												
-												<button type="button" class="btn btn-primary" name="save" value="submit" id="btnsubmit">Submit</button>
+												<button type="button" class="btn btn-primary hideblock" name="save" value="submit" id="btnsubmit">Submit</button>
 											</div>
 										</div>
 						</form>

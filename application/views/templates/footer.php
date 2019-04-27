@@ -8,7 +8,7 @@
 
         <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=1.1"></script>
         
-        <script type="text/javascript" src="<?php echo base_url('assets/js/preeti.js');?>?version=5.9"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/preeti.js');?>?version=6.1"></script>
        
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js'); ?>"></script>
        	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>  

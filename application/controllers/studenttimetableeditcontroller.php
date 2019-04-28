@@ -7,6 +7,7 @@ class Studenttimetableeditcontroller extends CI_Controller
 	{
         parent::__construct();
 
+
          if(!$this->session->userdata('user')) redirect('Login_controller');
          
            $this->load->model('Add_class_model','am');
@@ -19,9 +20,11 @@ class Studenttimetableeditcontroller extends CI_Controller
     {  
         $data['title'] = "Studenttimetableedit";
         $data['page_'] = "Studenttimetableedit";
+         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
-        $this->load->view('templates/header', $data);
+        $data['last'] = $this->am->getlastMenu();
+       $this->load->view('templates/header', $data);
         $this->load->view('mysatyampage', $data);  
         $this->load->view('templates/footer');
     }
@@ -34,20 +37,6 @@ class Studenttimetableeditcontroller extends CI_Controller
         $data['submenu'] = $this->am->getSubmenu();
     }
 
-/*    public function authenticate()  
-    {  
-        $this->load->model('Lview_model');  
-  
-        if ($this->Lview_model->filled_correctly())  
-        {  
-            redirect('Edit');
-        } else {  
-            redirect('Edit_controller');  
-        }  
-    }  
-*/
-
- 
     
 
 

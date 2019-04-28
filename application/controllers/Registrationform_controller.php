@@ -5,8 +5,11 @@ class Registrationform_controller extends CI_Controller{
 	{
 		parent::__construct();
 
-		 if(!$this->session->userdata('user')) redirect('Login_controller');
-		 
+
+
+		if(!$this->session->userdata('user')) redirect('Login_controller');
+     
+
 		$this->load->model('registration_model','um');
 	}
 	public function index1()
@@ -14,6 +17,10 @@ class Registrationform_controller extends CI_Controller{
 		//$data['cls_in_session'] = $this->am->fetchClass();
 		 $data['page_'] = 'Reg_div';
 		 $data['title'] = 'View Marks';
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
@@ -30,6 +37,10 @@ function index()
 		
 		 $data['page_'] = 'registration_view';
 		 $data['title'] = 'Edit Assignment';
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  

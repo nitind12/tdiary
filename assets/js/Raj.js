@@ -76,6 +76,7 @@ $('.assignmentchecker').click(function(){
 			$('#frmviewassignment').submit();
 		});
 
+
 		
 	$('#myform1').submit(function()
 	{

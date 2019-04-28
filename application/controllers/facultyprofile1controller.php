@@ -2,8 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class facultyprofile1controller extends CI_Controller
-{
+{	
+	 function __construct()
+    {
+        parent::__construct();
 
+        if(!$this->session->userdata('user')) redirect('Login_controller');
+
+
+    }
 
 	public function index()
 	{

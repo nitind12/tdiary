@@ -4,6 +4,9 @@ class Check_Assignment_Controller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+        
+         if(!$this->session->userdata('user')) redirect('Login_controller');
+
 		$this->load->model('assignmentmodel','km');
 		$this->load->model('Add_class_model','am');
 		$this->load->model('checkassignmentmodel','um');

@@ -4,6 +4,9 @@ class stu2c extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+
+		 if(!$this->session->userdata('user')) redirect('Login_controller');
+		 
 		$this->load->model('stu2m','um');
 	}
 	function index()

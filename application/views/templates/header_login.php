@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li>
                             <a href='<?php echo base_url()."index.php/signup_controller"; ?>'>Sign In</a>
                         </a></li>
-                        <li><a href=forgot.php>
+                        <li><a href='<?php echo base_url()."index.php/Forgotpwd_controller"; ?>'>
                             Forgot your password?
                         </a></li>
                     </ul>

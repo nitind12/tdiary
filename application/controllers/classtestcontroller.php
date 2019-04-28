@@ -4,6 +4,9 @@ class Classtestcontroller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+
+		 if(!$this->session->userdata('user')) redirect('Login_controller');
+		 
 		$this->load->model('classtestmodel','um');
 	}
 	function index()

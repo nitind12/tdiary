@@ -28,8 +28,8 @@
 
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">
+                                <?php foreach ($last as $option1) { ?>
                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages<?php echo $option1->sidebar_id;?>"><i class="menu-icon icon-cog">
-                                    <?php foreach ($last as $option1) { ?>
                                     
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i><?php echo $option1->sidebar_name; ?> </a>

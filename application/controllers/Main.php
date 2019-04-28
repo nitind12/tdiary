@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends CI_Controller {  
     function __construct(){
         parent::__construct();
-     if( $this->session->userdata('user')) redirect('Login_controller');
+     if(!$this->session->userdata('user')) redirect('Login_controller');
        $this->load->model('Add_class_model','am');
     }
     public function index()  
@@ -15,7 +15,22 @@ class Main extends CI_Controller {
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-        
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+        /*/$Course_id=$this->input->post('Course');
+        //$Semester_id=$this->input->post('Semester');
+        //$Subject=$this->am->getSubject1($Course_id,$Semester_id);
+        if(count($Subject)>0)
+        {
+            $sub_select_box="";
+            $sub_select_box.='<option value="none">Select subject</option>';
+            foreach($Subject as $sub)
+            {
+                $sub_select_box.='<option value="'.$sub->subject.'">'$sub->subject_name.'</option>';
+            }
+            echo json_encode($sub_select_box);
+        }?*/
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -29,7 +44,10 @@ class Main extends CI_Controller {
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
         $data['f4_'] = $this->am->getformtypeMenu();
-       
+       $data['course1'] = $this->am->getCourse1();
+      $data['Semester1'] = $this->am->getSemester1();
+      $data['Session1'] = $this->am->getSession1();
+            
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');

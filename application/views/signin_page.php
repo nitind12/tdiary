@@ -130,11 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="control-group">
 								<div class="controls row-fluid">
 									
-									<label class="radio inline" "span12" >
-													<input type="radio" name="rod" id="Teacher" value="1" checked="">
-													Teacher
-												</label>
-									<label class="radio inline">
+										<label class="radio inline">
 													<input type="radio" name="rod" id="Student" value="2">
 													Student
 												</label> 

@@ -27,6 +27,33 @@ class Add_class_model extends CI_Model
 		
 		}
 		
+		 function getCourse1()
+		{
+		$this->db->select('course_id,name_of_courses');
+		$query = $this->db->get('course_table');
+		return $query->result();
+		}
+
+		 function getSession1()
+		{
+		$this->db->select('s_id,session');
+		$query = $this->db->get('session');
+		return $query->result();
+		}
+		function getSemester1()
+		{
+		$this->db->select('semester_id,no_of_semester');
+		$query = $this->db->get('semester');
+		return $query->result();
+		}
+		function getSubject1($Course_id,$Semester_id)
+		{
+		$this->db->where('course_id',$Course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		return $query->result();
+		}
 		
 		function getMenu()
 		{

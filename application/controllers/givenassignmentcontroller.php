@@ -71,4 +71,19 @@ class Givenassignmentcontroller extends CI_Controller{
         redirect('givenassignmentcontroller/index','refresh');
     }
 
+
+
+
+       function updatedColumnview()
+    {
+
+        //$this->load->model('Lectureedit_model','lectup');
+        $bool_= $this->gm->updatedColumnview();
+
+        echo $data; 
+    }
+
+
+
+
 }

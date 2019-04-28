@@ -844,6 +844,48 @@ $('#update').click(function(){
 	
 
 
+
+
+//---double click and edit text view given assignment----//
+    		var oriVal;
+    			$('body').on('dblclick', '.viewgivenassign_data', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.viewgivenassign_td > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&viewgivenassign_id="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/Givenassignmentcontroller/updatedColumnview";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+	
+	
+
+
+
 //---double click and edit text view checked assignment----//
     		var oriVal;
     			$('body').on('dblclick', '.checkedassign_data', function(){
@@ -863,7 +905,7 @@ $('#update').click(function(){
 				    $this.remove(); // Don't just hide, remove the element.
 				    var dt__ = $this.val();
 				    var data_ = "dt="+dt__+"&checkedassign_id="+arr[1]+"&columnname="+arr[2];
-				    var url_ = site_url_ + "/Update_Assignment_Controller/updatedColumn";
+				    var url_ = site_url_ + "/Assignmentcontroller/updatedColumn";
 
 				    $.ajax({
 				    	url:url_,

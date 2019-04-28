@@ -82,4 +82,26 @@ class Givenassignmentmodel extends CI_Model{
         $query = $this->db->update('assignment', $data);
         return $query;
     }
+
+
+
+    //---double click and edit---//
+
+	function updatedColumnview()
+    {
+        $lectupdate_ = array();
+
+        $dt=$this->input->post('dt');
+        $viewgivenassign_id=$this->input->post('viewgivenassign_id');
+        echo $col = $this->input->post('columnname');
+
+        $this->db->where('Assignment_id', $viewgivenassign_id);
+        $data = array(
+        			$col => $dt
+       			 );
+
+        $query = $this->db->update('assignment', $data);
+        return $query;
+    }
+
 }

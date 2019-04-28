@@ -55,6 +55,27 @@ class Checkassignmentmodel extends CI_Model{
 		$this->db->delete('assignment_checker',array('assignment_checker_id' => $a));
 		return;
 	}
+
+
+
+	//---double click and edit---//
+
+	function updatedColumn()
+    {
+        $assignupdate_ = array();
+
+        $dt=$this->input->post('dt');
+        $checkedassign_id=$this->input->post('checkedassign_id');
+        echo $col = $this->input->post('columnname');
+
+        $this->db->where('assignment_checker_id', $checkedassign_id);
+        $data = array(
+        			$col => $dt
+       			 );
+
+        $query = $this->db->update('assignment_checker', $data);
+        return $query;
+    }
 	
 }
 ?>

@@ -157,6 +157,14 @@ class Test extends CI_Controller{
     }
 
 
+  function updatedColumn()
+    {
+
+        //$this->load->model('Testmodel','um');
+        $bool_= $this->um->updatedColumn();
+
+        echo $data; 
+    }
 
 
 

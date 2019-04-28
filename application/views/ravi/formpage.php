@@ -9,10 +9,10 @@
       <tr>
         <th >
          <h2>
-          <center>Add Course</center></h2></th> 
+          Add Course</h2></th> 
         <th>
           <h2>
-            <center>Add Subject</center></h2></th>
+            Add Subject</h2></th>
     </tr>
     <tr>
       <td>
@@ -60,9 +60,26 @@
                     <div class="control-group">
                       <label class="control-label" for="CourseName">Course Name</label>
                       <div class="controls">
-                        <input type="text" id="CourseName"class="CourseName" placeholder="Course Name" class="span8">
-                         </div>
+                       <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course" id="Course">
+                                             <option value="">Select Course</option>
+                                                <?php foreach ($course1 as  $item) { ?>
+                                                 <option value="<?php echo $item->course_id;?>">
+                                                  <?php echo $item->name_of_courses?></option>
+                                                    <?php }?>
+                                                 </select>
+                                                </div>
                     </div>
+                    <div class="control-group">
+                      <label class="control-label" for="basicinput">Semester</label>
+                      <div class="controls">
+                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Semester" id="Semester">
+                      <option value="">Select Semester</option>
+                                                <?php foreach ($Semester1 as  $item) { ?>
+                                                 <option value="<?php echo $item->semester_id;?>">
+                                                  <?php echo $item->no_of_semester?></option>
+                                                    <?php }?>
+                                                 </select>
+                         </div></div>
 
                     <div class="control-group">
                       <label class="control-label" for="Subject_ID">Subject ID</label>
@@ -74,23 +91,13 @@
                       <div class="control-group">
                       <label class="control-label" for="Subject_Name">Subject Name</label>
                       <div class="controls">
-                        <input  type="text"id="Subject_Name"class="Subject_Name" placeholder="Course Name" class="span8">
+                        <input  type="text"id="Subject_Name"class="Subject_Name" placeholder="Subject Name" class="span8">
                       </div>
                     </div>
-                    <div class="control-group">
-                      <label class="control-label" for="basicinput">Course Duration</label>
-                      <div class="controls">
-                        <input  type="number"id="CourseName"class="CourseName" placeholder="1,2,3..."  class="span8" max="5" min="1">
-                      </div>
-                    </div><div class="control-group">
-                      <label class="control-label" for="basicinput">No Of Semester</label>
-                      <div class="controls">
-                        <input type="number" id="CourseName"class="CourseName"placeholder="1,2,3..." class="span8 tip"  max="5" min="1">
-                      </div>
-                    </div>
+                    
                     <div class="control-group">
                       <div class="controls">
-                        <button type="submit" class="btn">Submit Form</button>
+                        <button type="submit" class="btn">GO</button>
                       </div>
                     </div>
 
@@ -98,35 +105,72 @@
         
 
         <tr>
-        <th> <h2><center>Add Room</center></h2></th> 
-        <th><h2><center>Add Department</center></h2></th>
+        <th> <h2>Assign-Subject</h2></th> 
+        <th><h2>Add Department</h2></th>
     </tr>
-    <tr>
-      <td>
-                    <div class="control-group">
-                      <label class="control-label" for="basicinput"></label>
+    <tr><td> <div class="control-group">
+                      <label class="control-label" for="CourseName">Session</label>
                       <div class="controls">
-                        <input type="text" id="basicinput" placeholder="Type something here..." class="span8">
-                        <span class="help-inline">Minimum 5 Characters</span>
-                      </div>
+                   
+                            <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session">
+                                             <option value="">Select Session</option>
+                                                <?php foreach ($Session1 as  $item) { ?>
+                                                 <option value="<?php echo $item->s_id;?>">
+                                                  <?php echo $item->session?></option>
+                                                    <?php }?>
+                                                 </select>
+                                         </div></div>     
+     
+                    <div class="control-group">
+                      <label class="control-label" for="CourseName">Course Name</label>
+                      <div class="controls">
+                       <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course" id="Course">
+                                             <option value="">Select Course</option>
+                                                <?php foreach ($course1 as  $item) { ?>
+                                                 <option value="<?php echo $item->course_id;?>">
+                                                  <?php echo $item->name_of_courses?></option>
+                                                    <?php }?>
+                                                 </select>
+                                                </div>
                     </div>
-
                     <div class="control-group">
-                      <label class="control-label" for="basicinput">Disabled Input</label>
+                      <label class="control-label" for="basicinput">Semester</label>
                       <div class="controls">
-                        <input type="text" id="basicinput" placeholder="You can't type something here..." class="span8" disabled>
-                      </div>
-                    </div>
-
+                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Semester" id="Semester">
+                      <option value="">Select Semester</option>
+                                                <?php foreach ($Semester1 as  $item) { ?>
+                                                 <option value="<?php echo $item->semester_id;?>">
+                                                  <?php echo $item->no_of_semester?></option>
+                                                    <?php }?>
+                                                 </select>
+                         </div></div>
+                <div class="control-group">
+                      <label class="control-label" for="basicinput">Subject</label>
+                      <div class="controls">
+                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Subject" id="Subject">
+                      <option value="">Select Subject</option>
+                                                <?php foreach ($Semester1 as  $item) { ?>
+                                                 <option value="<?php echo $item->semester_id;?>">
+                                                  <?php echo $item->no_of_semester?></option>
+                                                    <?php }?>
+                                                 </select>
+                         </div></div>
+                         <div class="control-group">
+                      <label class="control-label" for="basicinput">Faculty</label>
+                      <div class="controls">
+                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Subject" id="Subject">
+                      <option value="">Select Faculty</option>
+                                                <?php foreach ($Semester1 as  $item) { ?>
+                                                 <option value="<?php echo $item->semester_id;?>">
+                                                  <?php echo $item->no_of_semester?></option>
+                                                    <?php }?>
+                                                 </select>
+                         </div></div>
+                  
+                    
                     <div class="control-group">
-                      <label class="control-label" for="basicinput">Tooltip Input</label>
                       <div class="controls">
-                        <input data-title="A tooltip for the input" type="text" placeholder="Hover to view the tooltip…" data-original-title="" class="span8 tip">
-                      </div>
-                    </div>
-                    <div class="control-group">
-                      <div class="controls">
-                        <button type="submit" class="btn">Submit Form</button>
+                        <button type="submit" class="btn">Go</button>
                       </div>
                     </div>
 </td> </form>

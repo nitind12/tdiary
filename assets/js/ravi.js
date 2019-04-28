@@ -22,7 +22,6 @@ $(function()
     			}
 					});
 		
-
 	$('#cmbAttendanceReport').click(function()
 	{
 		$('#msg_').html('');

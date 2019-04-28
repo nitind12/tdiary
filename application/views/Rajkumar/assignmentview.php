@@ -95,21 +95,25 @@
              <tbody>
 				<?php foreach ($users as $item) { ?>
 				<tr>
-					<td align="center"><?php echo $item->Assignment_no;?></td>
-					<td align="center"><?php echo $item->Given_date;?></td>
-					<td align="center"><?php echo $item->Submission_date;?></td>
-					<td align="center"><?php echo $item->Unit;?></td>
+					<td align="center" class="givenassign_data  givenassign_td"  id="<?php echo $item->Assignment_id.'-Assignment_no';?>"><?php echo $item->Assignment_no;?></td>
+
+					<td align="center"  class="givenassign_data  givenassign_td"  id="<?php echo $item->Assignment_id.'-Given_date';?>"><?php echo $item->Given_date;?></td>
+
+					<td align="center" class="givenassign_data  givenassign_td"  id="<?php echo $item->Assignment_id.'-Submission_date';?>"><?php echo $item->Submission_date;?></td>
+
+					<td align="center"  class="givenassign_data  givenassign_td"  id="<?php echo $item->Assignment_id.'-Unit';?>"><?php echo $item->Unit;?></td>
 					
-					<td align="center" class="show-read-more1"><?php echo $item->Topic;?></td>
+					<td align="center" class="show-read-more1  givenassign_data  givenassign_td "  id="<?php echo $item->Assignment_id.'-Topic';?>"><?php echo $item->Topic;?></td>
+
 					<td><span class="hideblock"><a href="<?php echo site_url('Assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></span></td>
-					<!--<td><a href="<?php echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
+
+					<!--<td><a href="<?php //echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
 				</tr>
 
 		<?php } ?>
 		
 	</table>
 </div>
-
 
 	</div>
 </div>

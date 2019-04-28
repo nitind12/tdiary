@@ -56,4 +56,15 @@ class Assignmentcontroller extends CI_Controller{
 		$this->gm->assignment_edit_modal_saving();
 		redirect('Assignmentcontroller');
 	}
+
+
+
+      function updatedColumn()
+    {
+
+        //$this->load->model('Lectureedit_model','lectup');
+        $bool_= $this->gm->updatedColumn();
+
+        echo $data; 
+    }
 }

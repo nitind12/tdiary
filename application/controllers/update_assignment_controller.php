@@ -53,4 +53,18 @@ class Update_Assignment_Controller extends CI_Controller{
         redirect('update_assignment_controller/index','refresh');
     }
 
-}
+
+
+
+  function updatedColumn()
+    {
+
+        //$this->load->model('Lectureedit_model','lectup');
+        $bool_= $this->um->updatedColumn();
+
+        echo $data; 
+    }
+
+
+
+}?>

@@ -63,4 +63,23 @@ class Givenassignmentmodel extends CI_Model{
 	}
 	
 	
+
+	//---double click and edit---//
+
+	function updatedColumn()
+    {
+        $lectupdate_ = array();
+
+        $dt=$this->input->post('dt');
+        $givenassign_id=$this->input->post('givenassign_id');
+        echo $col = $this->input->post('columnname');
+
+        $this->db->where('Assignment_id', $givenassign_id);
+        $data = array(
+        			$col => $dt
+       			 );
+
+        $query = $this->db->update('assignment', $data);
+        return $query;
+    }
 }

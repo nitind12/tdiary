@@ -71,6 +71,25 @@ class Testmodel extends CI_Model
 		$this->db->delete('studentmarks',array('add_marks_id' => $a));
 		return;
 	}
+
+
+
+	function updatedColumn()
+    {
+        $marksupdate_ = array();
+
+        $dt=$this->input->post('dt');
+        $marks_id=$this->input->post('marksid');
+        echo $col = $this->input->post('columnname');
+
+        $this->db->where('add_marks_id', $marks_id);
+        $data = array(
+        			$col => $dt
+       			 );
+
+        $query = $this->db->update('studentmarks', $data);
+        return $query;
+    }
 	
 	
 }

@@ -64,8 +64,8 @@
                   
              <?php foreach ($vim as $item) { ?>
               <tr >
-              <td align="center"><?php echo $item->roll_no?></td>
-              <td align="center"><?php echo $item->first_name?></td>
+              <td align="center" class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-roll_no';?>"><?php echo $item->roll_no?></td>
+              <td align="center" class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-roll_no';?>"><?php echo $item->first_name?></td>
                <td align="center"><?php echo $item->totalmarks;?></td>
               <td align="center"><?php echo $item->marks;?></td>
               <td><a href="<?php echo site_url('test/del1/' .$item->add_marks_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>

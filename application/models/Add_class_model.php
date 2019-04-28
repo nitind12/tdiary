@@ -6,7 +6,7 @@ class Add_class_model extends CI_Model
 		$this->db->select('a.*');
 		$this->db->from('sidebar a');
 		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
-		$this->db->where('b.users_id', 1);
+		$this->db->where('b.users_id', $this->session->userdata('user_status'));
 		$this->db->where('a.status', 2);
 		$q = $this->db->get();
 		//echo $this->db->last_query();
@@ -19,9 +19,10 @@ class Add_class_model extends CI_Model
 			$this->db->select('a.*');
 		$this->db->from('sidebar a');
 		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
-		$this->db->where('b.users_id', 1);
+		$this->db->where('b.users_id', $this->session->userdata('user_status'));
 		$this->db->where('a.status', 3);
 		$q = $this->db->get();
+		//echo $this->db->last_query();
 		return $q->result();
 		
 		}
@@ -59,7 +60,7 @@ class Add_class_model extends CI_Model
 		$this->db->select('a.*');
 		$this->db->from('sidebar a');
 		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
-		$this->db->where('b.users_id', 1);
+		$this->db->where('b.users_id', $this->session->userdata('user_status'));
 		$this->db->where('a.status', 1);
 		$q = $this->db->get();
 		//echo $this->db->last_query();

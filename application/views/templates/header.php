@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                         <ul class="nav pull-right">
-                            <li><a href="#">Support </a></li>
+                            <li><span style="color: red; font:TimeNewRomen"><?php echo  $this->session->userdata('user') ?></span></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo base_url(),"assets/"?>images/user.png" class="nav-avatar" />
                                 <b class="caret"></b></a>

@@ -136,7 +136,7 @@
 
                                 <tr style="text-align: left">
                             
-                                    
+                                    <th align="center">WeekNo</th>
                                     <th align="center">Start Date</th>
                                     <th align="center">End Date</th>
                                     <th align="center">No Of<br> Lect Schedule</th>
@@ -154,6 +154,9 @@
 
                                          
                                         <tr>
+
+                                           <td  class="weekdata  weektd"  id="<?php echo $item->week_id.'-week_id';?>"><?php echo $item->week_id ?></td>
+
                                             <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-start_date';?>"><input type="hidden" name="start_date" value="?php echo $item->start_date;?>"><?php echo $item->start_date;?></td>
 
                                             <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-end_date';?>"><input type="hidden" name="end_date" value="?php echo $item->end_date;?>"><?php echo $item->end_date;?></td> 

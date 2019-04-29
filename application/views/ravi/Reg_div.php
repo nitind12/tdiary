@@ -22,6 +22,14 @@
                 <b>Faculty Registration</b>
       </div>
       </a>
+
+        <div class="btn-box-row row-fluid  btn-box big span5" >
+          <a href="#" >
+           <i class="menu-icon icon-table"></i>
+                <b>Time Table</b>
+      </div>
+      </a>
+
       <div class="btn-box-row row-fluid  btn-box big span5" >
           <a href="<?php echo site_url('Main/attendance_controller');?>" >
            <i class="icon-adjust"></i>

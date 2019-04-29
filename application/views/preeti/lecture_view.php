@@ -77,9 +77,10 @@
                           
                   <thead>
                     <tr>
-                        <th align="center">No Of Lecture Aspect</th>
+                        
                         <th align="center">Unit No</th>
                         <th align="center">Topic</th>
+                        <th align="center">No Of Lecture Aspect</th>
                         <th align="center" class="hideblock">Delete</th>    
                     </tr>
                   </thead>
@@ -87,9 +88,10 @@
                   
              <?php foreach ($t_diary as $item) { ?>
               <tr>
-              <td align="center"><?php echo $item->no_of_lecture?></td>
+            
               <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
                <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
+                 <td align="center"><?php echo $item->no_of_lecture?></td>
 
                                 <td class="hideblock"><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " 
                                     onclick="return confirm('Are you sure')"></a></td>    

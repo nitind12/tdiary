@@ -57,9 +57,6 @@ class Checkassignmentmodel extends CI_Model{
 	}
 
 
-
-	//---double click and edit---//
-
 	function updatedColumn()
     {
         $assignupdate_ = array();
@@ -77,5 +74,8 @@ class Checkassignmentmodel extends CI_Model{
         return $query;
     }
 	
+
+
+
 }
 ?>

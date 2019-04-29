@@ -27,7 +27,15 @@ class Add_class_model extends CI_Model
 		
 		}
 		
-		 function getCourse1()
+		 function getAssignment1()
+		{
+		$this->db->distinct('Assignment_no');	
+		$this->db->select('Assignment_no');
+		$query = $this->db->get('assignment');
+		return $query->result();
+		}
+
+		function getCourse1()
 		{
 		$this->db->select('course_id,name_of_courses');
 		$query = $this->db->get('course_table');
@@ -133,7 +141,7 @@ class Add_class_model extends CI_Model
 			'section_id' => $this->input->post('Section'),
 			'date_of_completion' => $this->input->post('DateOfCompletion'),
 			//'section_id' => $this->input->post('Section'),
-			'username' => 'ra',
+			'username' => $this->session->userdata('user'),
 			'status'=>1						
 
 			);
@@ -222,7 +230,7 @@ class Add_class_model extends CI_Model
 			'roll_no' => $stdroll[$i],
 			'attendance_status' => $mk1[$i],
 			'status' => '1',
-			'username' =>'ra',
+			'username' =>$this->session->userdata('user'),
 			'faculty_id'=>'2',
 			'student_id'=>'121'
 			);

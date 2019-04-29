@@ -37,9 +37,12 @@ class Check_Assignment_Controller extends CI_Controller{
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+        
         $this->load->view('templates/header', $data);
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['add_attend'] = $this->am->add_attendance($sess, $no_);
+        $data['assignment'] = $this->am->getAssignment1();
+        
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
         }

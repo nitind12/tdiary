@@ -6,8 +6,6 @@ class Weeklyedit_controller extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-        
-         if(!$this->session->userdata('user')) redirect('Login_controller');
 
 		$this->load->model('Weeklyedit_model','obj');	
 		$this->load->model('Add_class_model','am');
@@ -20,15 +18,14 @@ class Weeklyedit_controller extends CI_Controller
 		$data['cls_in_session'] = $this->am->fetchClass();
 	    $data['title'] = "Weeklyedit page";
         $data['page_'] = "Weeklyedit_class";
- $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-       
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');	
-	}
+    }
 
 
 

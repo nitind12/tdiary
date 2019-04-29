@@ -8,7 +8,7 @@ class Edittimetablecontroller extends CI_Controller{
 		 if(!$this->session->userdata('user')) redirect('Login_controller');
 		 
 		 $this->load->model('Add_class_model','am');
-   if(!$this->session->userdata('user')) redirect('Login_controller');
+ 
      
 		$this->load->model('edittimrtablemodel','um');
 	}

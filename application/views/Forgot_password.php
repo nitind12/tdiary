@@ -27,19 +27,19 @@
 
 							<div class="control-group">
 								<div class="controls row-fluid  ">
-								<input type="text" name="username" id="username"  class="span12" placeholder="Username" >
+								<input type="text" name="username" id="username"  class="span12" placeholder="Username"  required="required">
 								</div>
 							</div>
 
 							<div class="control-group">
 								<div class="controls row-fluid">
-								<input type="password" name="newPassword" id="newPassword"  class="span12 " placeholder="New Password" ><span  toggle="#newPassword"  class="icon-eye-open field-icon  toggle-password"></span>
+								<input type="password" name="newPassword" id="newPassword"  class="span12 " placeholder="New Password"  required="required"><span  toggle="#newPassword"  class="icon-eye-open field-icon  toggle-password"></span>
 								</div>
 							</div>
 
 							<div class="control-group">
 								<div class="controls row-fluid">
-								<input type="password" name="confirmPassword"  id="confirmPassword"  class="span12 " placeholder="Confirm Password"><span  toggle="#confirmPassword"  class="icon-eye-open field-icon  toggle-password"></span>
+								<input type="password" name="confirmPassword"  id="confirmPassword"  class="span12 " placeholder="Confirm Password" required="required"><span  toggle="#confirmPassword"  class="icon-eye-open field-icon  toggle-password"></span>
 								</div>
 							</div>
 						</div>

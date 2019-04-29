@@ -10,17 +10,7 @@ class Forgotpwd_controller extends CI_Controller
         $this->load->model('Forgotpwd_model' , 'fm');
     }
     
-/*    public function index()  
-    {  
-        
-        $data['title'] = "Forgot Password";
-        $this->load->view('templates/header_login', $data);
-        $this->load->view('Forgot_password');
-        $this->load->view('templates/footer');
-       
-    }
- 
- */  
+
     
     public function index()
     {

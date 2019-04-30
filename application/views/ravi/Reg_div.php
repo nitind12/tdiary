@@ -10,18 +10,20 @@
        <h2>View Time Table </h2>
                 
   <table class="table table-striped table-bordered table-condensed" border="1">
-    
-      <!--<table class="table" >-->
-            
-                  
-                               <table class="table" border="1">
-                    <thead>
+    <?php foreach ($das1 as  $re) 
+    {
+      echo $re->Subject_id;
+?>
+<br/>
+<?php
+    }?>
+              <thead>
                     <tr bgcolor="lightblue">
                       <th>DAY</th>
                       <th>09:00-09:50</th>
                       <th>09:50-10:40</th>
                       <th>10:40-11:30</th>
-                                <th>11:50-12:40</th>
+                     <th>11:50-12:40</th>
                       <th>12:40-01:30</th>
                       <th>02:10-03:00</th>
                       <th>03:00-03:50</th>
@@ -30,13 +32,13 @@
                     <tbody>
                     <tr>
                       <td>MON</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td id="Monday09_00_09_50"></td>
+                      <td id="Monday09_50_10_40"></td>
+                      <td id="Monday10_40_11_30"></td>
+                      <td id="Monday11_50_12_40"></td>
+                      <td id="Monday12_40_01_30"></td>
+                      <td id="Monday02_10_03_00"></td>
+                      <td id="Monday03_00_03_50"></td>
                       
                       
                     </tr>
@@ -125,13 +127,7 @@
       </div>
       </a>
 
-        <div class="btn-box-row row-fluid  btn-box big span5" >
-          <a href="<?php echo site_url('Dashboardtimetablecontroller/index');?>" >
-           <i class="menu-icon icon-table"></i>
-                <b>Time Table</b>
-      </div>
-      </a>
-
+ 
       <div class="btn-box-row row-fluid  btn-box big span5" >
           <a href="<?php echo site_url('Main/attendance_controller');?>" >
            <i class="icon-adjust"></i>

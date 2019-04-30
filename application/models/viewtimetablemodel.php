@@ -11,8 +11,16 @@ class Viewtimetablemodel extends CI_Model{
 		return $q->result_array();
 		
 		
-	}*/
-
+	}*/function dashtimetable()
+	{
+	$intel = array();
+	$this->db->select('a.*');
+	$this->db->where('a.Faculty_id','1');
+	$this->db->from('time_table_edit a');
+	$q = $this->db->get();
+	return $q->result();
+	
+}
 	function timetable()
 	{
 		$intel = array();

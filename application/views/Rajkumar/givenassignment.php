@@ -21,6 +21,10 @@
           
 
 					<div class="module-body table">
+            <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Note!</strong>Double Click For Edit!
+                  </div>
                  <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                   <thead>
                     <tr>

@@ -78,6 +78,10 @@
 				<button type="submit" class="btn btn-primary" name="save">INSERT RECORD</button>
 			</div>
 		</center></div>
+		<div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Note!</strong>Double Click For Edit!
+                  </div>
 
 
 		<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
@@ -105,9 +109,9 @@
 					
 					<td align="center" class="show-read-more1  givenassign_data  givenassign_td "  id="<?php echo $item->Assignment_id.'-Topic';?>"><?php echo $item->Topic;?></td>
 
-					<td><span class="hideblock"><a href="<?php echo site_url('Assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></span></td>
+					<td><span class="hideblock"><a href="<?php echo site_url('assignmentcontroller/del1/' . $item->Assignment_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></span></td>
 
-					<!--<td><a href="<?php //echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
+					
 				</tr>
 
 		<?php } ?>

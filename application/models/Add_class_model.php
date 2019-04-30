@@ -1,7 +1,8 @@
 <?php
 class Add_class_model extends CI_Model
 {
-		function getDashboardMenu()
+	
+	function getDashboardMenu()
 		{
 		$this->db->select('a.*');
 		$this->db->from('sidebar a');
@@ -129,8 +130,9 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		}
 
-		function savingdata()
+		function savingdata($data)
 		{
+			
 		$data = array(
 			'faculty_id'=>'ravi',
 			'session_id' => $this->input->post('Session'),
@@ -139,8 +141,9 @@ class Add_class_model extends CI_Model
 			'section_id' => $this->input->post('Section'),
 			'subject_id' => $this->input->post('Subject_Name'),
 			'section_id' => $this->input->post('Section'),
+			'date_of_commencement' => $this->input->post('DateOfCommencement'),
 			'date_of_completion' => $this->input->post('DateOfCompletion'),
-			//'section_id' => $this->input->post('Section'),
+			'syllabus_pdf' => $this->input->post('pic_file'),
 			'username' => $this->session->userdata('user'),
 			'status'=>1						
 

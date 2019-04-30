@@ -1,8 +1,16 @@
 				<div class="content">
 						<div class="module">
+							
 							<div class="module-body">
-									<form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Main/addclass_controller');?>">
-										<div class="control-group">
+								<?php
+            				$data = array(
+              				'name' => 'frmclass',
+              			'id' => 'frmclass'
+            			);
+           					 echo form_open_multipart('Main/addclass_controller', $data); 
+          				?>
+          				<span class="form-horizontal row-fluid">									
+          								<div class="control-group">
 											<label class="control-label" for="basicinput">Session</label>
 											<div class="controls">
 												<select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session">
@@ -50,16 +58,13 @@
 												<input type="text" id="Section" name="Section" placeholder="Section" class="span8">
 												</div>
 										</div>
-
 										<div class="control-group">
-											<label class="control-label" for="basicinput">Subject-Name
-											</label>
+											<label class="control-label" for="basicinput">Subject-Name</label>
 											<div class="controls">
-												<select tabindex="1" data-placeholder="Select here.."class="span8"  name="Subject_Name" id="Subject_Name">
-											     </select>
-                                             
+												<input type="text" id="Subject_Name" name="Subject_Name" placeholder="Subject_Name" class="span8">
 												</div>
 										</div>
+
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Date Of Commencement:</label>
 											<div class="controls">
@@ -75,7 +80,8 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">syllabus_pdf</label>
 											<div class="controls">
-												<input type="file" name="syllabus_pdf"id="syllabus_pdf" placeholder="syllabus_pdf" class="span8">
+												<input type="file" name="pic_file" class="form-control"  id="pic_file" class="span8">
+												<!--input type="file" name="syllabus_pdf"id="syllabus_pdf" placeholder="syllabus_pdf" class="span8"-->
 											</div>
 										</div>
 										

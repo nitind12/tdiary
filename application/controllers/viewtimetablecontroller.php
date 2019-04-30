@@ -5,8 +5,6 @@ class Viewtimetablecontroller extends CI_Controller{
         parent::__construct();
 
          if(!$this->session->userdata('user')) redirect('Login_controller');
-         
-
 
            $this->load->model('Add_class_model','am');
  

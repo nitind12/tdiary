@@ -4,9 +4,6 @@ class Assignmentcontroller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
-
-         if(!$this->session->userdata('user')) redirect('Login_controller');
-         
 		$this->load->model('assignmentmodel','um');
 		 $this->load->model('Add_class_model','am');
 		$this->load->model('Givenassignmentmodel','gm');
@@ -70,4 +67,12 @@ class Assignmentcontroller extends CI_Controller{
 
         echo $data; 
     }
+
+    public function del1()
+    {
+        $u = $this->uri->segment(3);
+        $this->gm->del1($u);
+        redirect('assignmentcontroller/index','refresh');
+    }
+
 }

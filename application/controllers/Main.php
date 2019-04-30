@@ -36,6 +36,36 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
+    public function indext()  
+    {   
+        $data['page_'] = "teacherdash";
+        $data['title'] = "Dashboard";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+    public function indexs()  
+    {   
+        $data['page_'] = "studentdash";
+        $data['title'] = "Dashboard";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
     public function form_controller()  
     {   
         $data['page_'] = "formpage";
@@ -185,7 +215,15 @@ class Main extends CI_Controller {
     
     public function addclass_controller()  
     {  
-        $this->am->savingdata(); 
+    
+        $config['upload_path']  = './assets/uploads/';
+        $config['allowed_types']  = 'gif|jpg|png';
+        $config['max_size']     = 1000;
+            $this->load->library('upload', $config);    
+                $upload_data = $this->upload->data();
+                $data['pic_file'] = $upload_data['file_name'];
+                 $this->am->savingdata($data); 
+            
         redirect('Main/attendance_controller');   
         }
 

@@ -27,7 +27,7 @@ class Checkassignmentmodel extends CI_Model{
 			'grade'=>$Grade[$i],
 			'checker_date'=>$date,
 			'status' => '1',
-			'username' =>'ra'
+			'username' => $this->session->userdata('user'),
 			);
 		
 			$this->db->insert('assignment_checker',$data);
@@ -57,6 +57,9 @@ class Checkassignmentmodel extends CI_Model{
 	}
 
 
+
+	//---double click and edit---//
+
 	function updatedColumn()
     {
         $assignupdate_ = array();
@@ -73,9 +76,14 @@ class Checkassignmentmodel extends CI_Model{
         $query = $this->db->update('assignment_checker', $data);
         return $query;
     }
+
+   public function getmarkstype()
+	{
+		$this->db->select('Assignment_no');
+		$query = $this->db->get('assignment');
+		return $query->result();
+	}
 	
-
-
-
+	
 }
 ?>

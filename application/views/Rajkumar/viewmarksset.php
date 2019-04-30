@@ -5,6 +5,10 @@
                 <h1><?php echo $this->session->userdata('marksname');?></h1>
                         </div>
               <div class="module-body table">
+                <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Note!</strong>Double Click For Edit!
+                  </div>
                  <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                   <thead>
                     <tr>
@@ -65,9 +69,9 @@
              <?php foreach ($vim as $item) { ?>
               <tr >
               <td align="center" class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-roll_no';?>"><?php echo $item->roll_no?></td>
-              <td align="center" class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-roll_no';?>"><?php echo $item->first_name?></td>
+              <td align="center"><?php echo $item->first_name?></td>
                <td align="center"><?php echo $item->totalmarks;?></td>
-              <td align="center"><?php echo $item->marks;?></td>
+              <td align="center"class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-marks';?>"><?php echo $item->marks;?></td>
               <td><a href="<?php echo site_url('test/del1/' .$item->add_marks_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
        
       </tr>

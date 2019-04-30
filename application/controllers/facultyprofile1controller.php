@@ -14,7 +14,7 @@ class facultyprofile1controller extends CI_Controller
 		$data['marks'] = $this->facultyprofilemodel->getData();
 		
 		$data['page_'] = 'facultyprofileview';
-		$data['title'] = 'Given Assignment';
+		$data['title'] = 'profile';
        
         $this->load->view('templates/header',$data);
         $this->load->view('mysapnapage',$data);  

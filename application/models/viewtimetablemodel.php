@@ -28,7 +28,9 @@ class Viewtimetablemodel extends CI_Model{
 
 		$q = $this->db->get('time_table_edit');
 		return $q->result();
+		//'status' =>'1';
+		//'username' =>$this->session->userdata('user');
 		//echo  $this->db->last_query();
 	}
 	
-}
+}?>

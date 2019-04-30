@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 27, 2019 at 12:49 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Host: localhost:3306
+-- Generation Time: Apr 28, 2019 at 08:56 AM
+-- Server version: 5.7.23
+-- PHP Version: 7.1.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -633,7 +633,7 @@ CREATE TABLE `sign_up` (
 INSERT INTO `sign_up` (`s_no`, `username`, `first_name`, `last_name`, `email`, `password`, `phone_no`, `date_of_birth`, `question`, `answer`, `category`, `staus`) VALUES
 (1, 'ra', 'ed', 'pa', 'ravip8527@gmail.com', '12', '9917604820', '2005-02-25', 'question 1', '1', '1', ''),
 (2, 'new1', 'raj', 'joshi', 'ravip@gmail.com', '123', '9917604820', '2019-04-22', 'question 1', '1', '3', ''),
-(4, '', '', '', '', '12', '', '0000-00-00', '', '', '2', '');
+(5, 'preeti', 'preeti', 'joshi', 'preeti@gmail.com', '123', '9917604820', '1997-04-11', 'question 1', '1', '3', '');
 
 -- --------------------------------------------------------
 
@@ -950,7 +950,13 @@ INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_ty
 (33, 26, 403, 0, 14, 30, 1, 'ra'),
 (34, 25, 118, 1, 14, 30, 1, 'ra'),
 (35, 25, 119, 1, 14, 30, 1, 'ra'),
-(36, 25, 120, 1, 14, 30, 1, 'ra');
+(36, 25, 120, 1, 14, 30, 1, 'ra'),
+(37, 25, 118, 1, 9, 30, 1, 'ra'),
+(38, 25, 119, 1, 14, 30, 1, 'ra'),
+(39, 25, 120, 1, 14, 30, 1, 'ra'),
+(40, 25, 118, 2, 14, 30, 1, 'ra'),
+(41, 25, 119, 2, 14, 30, 1, 'ra'),
+(42, 25, 120, 2, 14, 30, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -1331,10 +1337,10 @@ INSERT INTO `sub_sidebar` (`sub_sidebar_id`, `sidebar_id`, `sub_sidebar_name`, `
 (14, 16, 'View', 'Check_assign_report_controller/marks1', 1, 'ra'),
 (15, 17, 'View-Assignment', 'assign_report_controller/index', 1, 'ra'),
 (16, 17, 'View-Checked-Assignment', 'check_assign_report_controller/index', 1, 'ra'),
-(17, 18, 'Edit-Timetable', 'nitin/index', 1, 'ra'),
-(18, 18, 'View-Timetable', 'viewtimetablecontroller/index', 1, 'ra'),
-(19, 19, 'Edit-Timetable', 'studenttimetableeditcontroller/index', 1, 'ra'),
-(20, 19, 'View-Timetable', 'studenttimetableviewcontroller/index', 1, 'ra'),
+(17, 18, 'Edit-Timetable', 'Studenttimetableeditcontroller/index', 1, 'ra'),
+(18, 18, 'View-Timetable', 'studenttimetableviewcontroller/index', 1, 'ra'),
+(19, 19, 'Edit-Timetable', 'Edittimetablecontroller/index', 1, 'ra'),
+(20, 19, 'View-Timetable', 'viewtimetablecontroller/index', 1, 'ra'),
 (21, 20, 'View-Timetable', 'studenttimetableviewcontroller/index', 1, 'ra'),
 (22, 11, 'Edit', 'Edit_controller/index', 1, 'ra'),
 (23, 11, 'View', 'Edit_controller/view_lecture_div', 1, 'ra'),
@@ -1859,7 +1865,7 @@ ALTER TABLE `sidebar`
 -- AUTO_INCREMENT for table `sign_up`
 --
 ALTER TABLE `sign_up`
-  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `std_academic`
@@ -1889,7 +1895,7 @@ ALTER TABLE `std_personal`
 -- AUTO_INCREMENT for table `studentmarks`
 --
 ALTER TABLE `studentmarks`
-  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `student_time_table`

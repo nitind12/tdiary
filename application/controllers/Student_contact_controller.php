@@ -4,6 +4,9 @@ class Student_contact_controller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+
+		 if(!$this->session->userdata('user')) redirect('Login_controller');
+		 
 		$this->load->model('contact_model','um');
 	}
 function index()

@@ -23,14 +23,14 @@
 									  	<input type="text" id="last_name" name="last_name" class="span8"></td>
 									  	
 									  <td>Date of birth:<br>
-									  	<input type="text" id="date_of_birth" name="date_of_birth" class="span8"></td>
+									  	<input type="date" id="date_of_birth" name="date_of_birth" class="span8"></td>
 									  </tr>
 									  <tr>
 									  	<td>Father Name:<br>
-									  <input type="text"  name="father_name" class="span8" required="">
+									  <input type="text"  name="father_name" class="span8" >
 									</td>
 									<td>Mother Name:<br>
-									  <input type="text"  name="mother_name" class="span8" required="">
+									  <input type="text"  name="mother_name" class="span8" >
 									</td>
 									<td>Gender:<br>
 									  <select tabindex="1"data-placeholder="Select here.." class="span8" name="gender" id="gender">

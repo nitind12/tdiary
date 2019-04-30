@@ -59,7 +59,16 @@
                       </td>
                       <td align="center"><?php echo $item->first_name; ?></td>
                       <td>
-                        <input type="text" name="Assignment_No[]"id="Assignment_No[]" placeholder="Assignment_No" class="span8">
+                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Assignment_No[]" id="Assignment_No[]">
+                              <option value="">Assignment No</option>
+                            <?php foreach ($assignment as  $item) { ?>
+                              <option value="<?php echo $item->Assignment_no;?>">
+                               <?php echo $item->Assignment_no?></option>
+                                      <?php
+                                        }
+                                             ?>
+                               </select>
+                                             
  
                         </td>
                       <td>

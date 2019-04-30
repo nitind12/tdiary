@@ -3,6 +3,9 @@ class Update_Assignment_Controller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+
+         if(!$this->session->userdata('user')) redirect('Login_controller');
+         
 		$this->load->model('Checkassignmentmodel','um');
 		 $this->load->model('Add_class_model','am');
 	}
@@ -54,9 +57,7 @@ class Update_Assignment_Controller extends CI_Controller{
     }
 
 
-
-
-  function updatedColumn()
+ function updatedColumn()
     {
 
         //$this->load->model('Lectureedit_model','lectup');
@@ -64,6 +65,7 @@ class Update_Assignment_Controller extends CI_Controller{
 
         echo $data; 
     }
+    
 
 
 

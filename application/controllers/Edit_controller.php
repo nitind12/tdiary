@@ -6,6 +6,7 @@ class Edit_controller extends CI_Controller
 	function __construct()
 	{
         parent::__construct();
+          if(!$this->session->userdata('user')) redirect('Login_controller');
          $this->load->model('Lectureedit_model','obj'); 
          $this->load->model('Add_class_model','am');
     }

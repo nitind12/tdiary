@@ -23,9 +23,8 @@ class Testmodel extends CI_Model
 			'roll_no' => $stdroll[$i],
 			'totalmarks' => $totalmarks[$i],
 			'marks'=>$Obtained_Marks[$i],
-			
-			//'marks_type_id' => $this->session->userdata('itypeid'),
-			'marks_type_id' => '1',
+			'marks_type_id' => $this->session->userdata('itypeid'),
+			//'marks_type_id' => '1',
 			'status' => '1',
 			'username' =>'ra',
 			);

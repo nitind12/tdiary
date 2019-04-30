@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 					<ul class="nav pull-right">
 
-						<li><a href='<?php echo base_url()."index.php/Main/login"; ?>'>Sign In</a>
+						<li><a href='<?php echo base_url()."index.php/Login_controller"; ?>'>Sign In</a>
 							</li>
 
 						
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="sir-name"name="txtsir_name"  placeholder="Sir-name">
+									<input class="span12" type="text" id="txtsir_name"name="txtsir_name"  placeholder="Sur-name">
 								</div>
 							</div>
 						</div>
@@ -130,16 +130,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="control-group">
 								<div class="controls row-fluid">
 									
-									<label class="radio inline" "span12" >
-													<input type="radio" name="rod" id="Teacher" value="Teacher" checked="">
-													Teacher
-												</label>
-									<label class="radio inline">
-													<input type="radio" name="rod" id="Student" value="Student">
+										<label class="radio inline">
+													<input type="radio" name="rod" id="Student" value="2">
 													Student
 												</label> 
 									<label class="radio inline">
-													<input type="radio" name="rod" id="Parents" value="Parents">
+													<input type="radio" name="rod" id="Parents" value="3">
 													Parents
 												</label>
 								</div>

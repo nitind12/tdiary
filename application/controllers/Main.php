@@ -7,11 +7,14 @@ class Main extends CI_Controller {
 
      if(!$this->session->userdata('user')) redirect('Login_controller');
        $this->load->model('Add_class_model','am');
+       $this->load->model('Viewtimetablemodel','vm');
+      
     }
     public function index()  
     {   
         $data['page_'] = "Reg_div";
         $data['title'] = "Dashboard";
+        $data['das1'] = $this->vm->dashtimetable();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();

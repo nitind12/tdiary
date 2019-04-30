@@ -19,16 +19,7 @@
 				<thead>
 <tr>
 	<span class="hideblock"><a href="#" onclick="window.print()"><span class="btn btn-primary icon-print" style="float:right">print</span></a></span>
-									  <td >Day:<input type="hidden" value="<?php echo date("d")?>" name="day" id="day"><?php echo date("D")?><br>
-									  	<select tabindex="1"data-placeholder="Select here.." name="day" id="day"class="span8" >
-									  		<option value ="">Salect here.. </option>
-									  	 <option value ="Monday">Monday</option>
-									  	 <option value ="Tuesday">Tuesday</option>
-									  	 <option value ="Wednesday">Wednesday</option>
-									  	 <option value ="Thursday">Thursday</option>
-									  	 <option value ="Friday">Friday</option>
-									  	 <option value ="Saturday">Saturday</option>
-									  </select></td>
+									 
 									
 									  <td> Date<br>
 									  	<input type="text" value="<?php echo date("d-m-Y")?>" name="Date" id="Date" class="span8"/></td>
@@ -36,15 +27,7 @@
 									</tr>
 								</thead>
 							</table>
-							<div class="control-group">
-								<div class="controls" style="float:left;">
-									<button type="Reset" class="btn btn-primary hideblock" name="save" value="Reset">Reset</button>
-								</div>
-											<div class="controls" style="float:left;">
-												
-												<button type="button" class="btn btn-primary hideblock" name="save" value="submit" id="btnsubmit">Submit</button>
-											</div>
-										</div>
+							
 						</form>
 						
 					<div class="module-body">
@@ -65,13 +48,13 @@
 									  <tbody>
 										<tr>
 										  <td>MON</td>
-										  <td id="Monday09_00_09_50"></td>
-										  <td id="Monday09_50_10_40"></td>
-										  <td id="Monday10_40_11_30"></td>
-										  <td id="Monday11_50_12_40"></td>
-										  <td id="Monday12_40_01_30"></td>
-										  <td id="Monday02_10_03_00"></td>
-										  <td id="Monday03_00_03_50"></td>
+										  <td></td>
+										  <td></td>
+										  <td></td>
+										  <td></td>
+										  <td></td>
+										  <td></td>
+										  <td></td>
 										  
 										  
 										</tr>

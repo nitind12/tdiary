@@ -3,6 +3,9 @@ class Givenassignmentcontroller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+
+        if(!$this->session->userdata('user')) redirect('Login_controller');
+        
 		$this->load->model('Givenassignmentmodel','gm');
 		 $this->load->model('Add_class_model','am');
 	}
@@ -70,5 +73,20 @@ class Givenassignmentcontroller extends CI_Controller{
         $this->gm->del1($u);
         redirect('givenassignmentcontroller/index','refresh');
     }
+
+
+
+
+       function updatedColumnview()
+    {
+
+        //$this->load->model('Lectureedit_model','lectup');
+        $bool_= $this->gm->updatedColumnview();
+
+        echo $data; 
+    }
+
+
+
 
 }

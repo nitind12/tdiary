@@ -1,0 +1,1 @@
+ALTER TABLE `student_time_table` CHANGE `Choose_File` `Choose_File` VARCHAR(100) NOT NULL;

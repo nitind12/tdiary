@@ -3,21 +3,37 @@
        display: none;
     }
 </style>
+
+
+<style media="print">
+  .hideblock{
+      display:none;
+    }
+</style>
+
+
 <div class="span9">
-  <div class="content">
-    <div class="module">
-      <div class="module-head">
-          <h1>Weekly Details</h1>
-      </div>
-               <div class="module-body">
+    <div class="content">
+        <div class="module">
+            <div class="module-head">
+
+                <div style="float:right">
+                    <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"> <?php echo date("Y-m-d")?>
+                </div>
+      
+              <h1>Weekly Details</h1>
+            </div>
+
+            <div class="module-body">
           
+                <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
+               <br>
+
+              
 
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
-                  <!-- <div style="float:right">
-                    <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
-                    //echo date("D-d-M-Y")?> </div>--->
-      
-                    
+            
+                      
                       <thead>
                           <tr>
                               <!-- <th align="center">No_of_Lecture</th>  -->
@@ -37,6 +53,9 @@
                       
                         <?php foreach ($t_diary as $item) { ?>
                            <tr>
+
+                           
+
                                 <td><?php echo $item->week_id ?></td>
                                 <td><?php echo $item->start_date ?></td>
                                 <td><?php echo $item->end_date ?></td>

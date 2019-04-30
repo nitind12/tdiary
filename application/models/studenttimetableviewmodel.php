@@ -6,23 +6,20 @@ class Studenttimetableviewmodel extends CI_Model{
 		$query = $this->db->get("student_time_table");
 		return $query->result();
 	}
-	function savingdata3()
+	function savingTTable()
 	{
 		$data = array(
 			'Course_id' => $this->input->post('Course_id'),
 			'Semester' => $this->input->post('Semester'),
 			'Session' => $this->input->post('Session'),
 			'Section' => $this->input->post('Section'),
-			//'Choose file' => $this->input->post('Choose file(filename)'),
-			//'Faculty_id' => $this->input->post('Faculty_id'),
-			//'Time_table_id' => $this->input->post('Time_table_id'),
-			//'Time' => $this->input->post('Time'),
-			//'Room' => $this->input->post('Room'),
+		);	
+			$this->db->insert('student_time_table',$data);
+		$fileid = $this->db->insert_id();
+		echo $this->upload_TT($fileid); die();
+	}
 
-
-		);
-		
-		$this->db->insert('student_time_table',$data);
+       $this->db->insert('student_time_table',$data);
 
 	}
 	/*function saving()

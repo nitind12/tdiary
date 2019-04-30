@@ -51,16 +51,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
-					<form class="form-vertical" method="POST" action="<?php echo site_url('Main/signin_validation');?>">
-					<form class="form-vertical">
-
+					<form class="form-vertical" method="POST" name="frmsign"id="frmsign" action="<?php echo site_url('signup_controller/register');?>">
+					
 						<div class="module-head">
 							<h3>Sign Up</h3>
 						</div>
-						<?php
-						  echo form_open();  
-  						  echo validation_errors();  
-						  ?>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
@@ -82,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="sir-name"name="txtsir_name"  placeholder="Sir-name">
+									<input class="span12" type="text" id="sur-name"name="txtsir_name"  placeholder="Sir-name">
 								</div>
 							</div>
 						</div>
@@ -97,6 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<input class="span12" type="password" id="RePassword" name="retxtPwd" placeholder="Re-Password">
 								</div>
 							</div>
+						<div id="message"></div>
 							</div><div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
@@ -134,24 +130,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="control-group">
 								<div class="controls row-fluid">
 									
-									<label class="radio inline" "span12" >
-													<input type="radio" name="rod" id="Teacher" value="Teacher" checked="">
-													Teacher
-												</label>
-									<label class="radio inline">
-													<input type="radio" name="rod" id="Student" value="Student">
+										<label class="radio inline">
+													<input type="radio" name="rod" id="Student" value="2">
 													Student
 												</label> 
 									<label class="radio inline">
-													<input type="radio" name="rod" id="Parents" value="Parents">
+													<input type="radio" name="rod" id="Parents" value="3">
 													Parents
 												</label>
 								</div>
 							</div>
-							<?php
-							   echo form_close();
-							?>
-
+							
 							<div>
 							<hr>
 						</div>
@@ -161,7 +150,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
-									<input type="submit" class="btn btn-primary pull-right" value="Sign Up">
+									<input type="submit" class="btn btn-primary pull-right" id="btnsign" name="btnsign"value="Sign Up" disabled > 
 								
 								</div>
 							</div>
@@ -181,7 +170,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	
 	</div>
-	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-1.9.1.min.js'); ?>" ></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/scripts/jquery-ui-1.10.1.custom.min.js'); ?>" ></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>" ></script>
-</body>
+	

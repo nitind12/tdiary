@@ -1,21 +1,121 @@
 <?php
 class Add_class_model extends CI_Model
 {
+		function getDashboardMenu()
+		{
+		$this->db->select('a.*');
+		$this->db->from('sidebar a');
+		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
+		$this->db->where('b.users_id', $this->session->userdata('user_status'));
+		$this->db->where('a.status', 2);
+		$q = $this->db->get();
+		//echo $this->db->last_query();
+
+		return $q->result();
+		
+		}
+		function getlastMenu()
+		{
+			$this->db->select('a.*');
+		$this->db->from('sidebar a');
+		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
+		$this->db->where('b.users_id', $this->session->userdata('user_status'));
+		$this->db->where('a.status', 3);
+		$q = $this->db->get();
+		//echo $this->db->last_query();
+		return $q->result();
+		
+		}
+		
+		 function getAssignment1()
+		{
+		$this->db->distinct('Assignment_no');	
+		$this->db->select('Assignment_no');
+		$query = $this->db->get('assignment');
+		return $query->result();
+		}
+
+		function getCourse1()
+		{
+		$this->db->select('course_id,name_of_courses');
+		$query = $this->db->get('course_table');
+		return $query->result();
+		}
+
+		 function getSession1()
+		{
+		$this->db->select('s_id,session');
+		$query = $this->db->get('session');
+		return $query->result();
+		}
+		function getSemester1()
+		{
+		$this->db->select('semester_id,no_of_semester');
+		$query = $this->db->get('semester');
+		return $query->result();
+		}
+		function getSubject1($Course_id,$Semester_id)
+		{
+		$this->db->where('course_id',$Course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		return $query->result();
+		}
+		
+		function getMenu()
+		{
+		$this->db->select('a.*');
+		$this->db->from('sidebar a');
+		$this->db->join('users_menu b', 'a.sidebar_id=b.sidebar_id');
+		$this->db->where('b.users_id', $this->session->userdata('user_status'));
+		$this->db->where('a.status', 1);
+		$q = $this->db->get();
+		//echo $this->db->last_query();
+
+		return $q->result();
+		}
+		
+		function getSubmenu(){
+			$query = $this->db->get('sub_sidebar');
+			return $query->result();
+		}
 		function specificClass(){
-			$this->db->select('add_class_id, ');
-			$this->db->where('session_id', $this->input->post(''));
-			$this->db->where('course_id', $this->input->post(''));
-			$this->db->where('semester_id', $this->input->post(''));
-			$this->db->where('subject_id', $this->input->post(''));
-			$this->db->where('section_id', $this->input->post(''));
+			$this->db->select('add_class_id');
+			$this->db->where('session_id', $this->input->post('sessionji'));
+			$this->db->where('course_id', $this->input->post('crs_for_attendance'));
+			$this->db->where('semester_id', $this->input->post('semji'));
+			$this->db->where('subject_id', $this->input->post('subjectji'));
+			$this->db->where('section_id', $this->input->post('sectionji'));
 			$query = $this->db->get('add_class');
+			//echo $this->db->last_query();
 			return $query->row();
 		}
+		function getformtypeMenu()
+		{
+		$this->db->order_by('form_type_id');
+		$query = $this->db->get("form_type");
+		return $query->result();
+		}
+		
 		function fetchClass()
 		{
-			$this->db->order_by('course_id');
+		$this->db->order_by('course_id');
 		$query = $this->db->get("add_class");
 		return $query->result();
+		}
+		function fetchSubject()
+		{
+		$this->db->order_by('subject_id');
+
+		$query = $this->db->get("add_class");
+		return $query->result();
+		}
+
+		function fetchSession(){
+			$this->db->order_by('s_id');
+			$query = $this->db->get('session');
+			return $query->result();
 		}
 
 		function fetchCourses()
@@ -38,7 +138,10 @@ class Add_class_model extends CI_Model
 			'semester_id' => $this->input->post('Semester'),
 			'section_id' => $this->input->post('Section'),
 			'subject_id' => $this->input->post('Subject_Name'),
-			'username' => 'ra',
+			'section_id' => $this->input->post('Section'),
+			'date_of_completion' => $this->input->post('DateOfCompletion'),
+			//'section_id' => $this->input->post('Section'),
+			'username' => $this->session->userdata('user'),
 			'status'=>1						
 
 			);
@@ -78,16 +181,20 @@ class Add_class_model extends CI_Model
 		}
 		
 		
-		public function  reports_attendance_modals()
+		function  reports_attendance_modals($no_='')
 		{
 			$reports_=array();
 			$btn1= $this->input->post('d1');
 	
-		$this->db->distinct('a.roll_no');
+		//$this->db->distinct('a.roll_no');
 		$this->db->select('a.*');
-		$this->db->where('a.date',$btn1);
+		$this->db->where('DATE_FORMAT(a.date, "%Y-%m-%d")=',date('Y-m-d',strtotime($btn1)));
+		if($no_ != ''){
+			$this->db->where('a.add_class_id', $no_);
+		}
 		$this->db->from('attendance a');
 		$query = $this->db->get();
+		//echo $this->db->last_query();
 		return $query->result();
 		
 		}
@@ -123,7 +230,7 @@ class Add_class_model extends CI_Model
 			'roll_no' => $stdroll[$i],
 			'attendance_status' => $mk1[$i],
 			'status' => '1',
-			'username' =>'ra',
+			'username' =>$this->session->userdata('user'),
 			'faculty_id'=>'2',
 			'student_id'=>'121'
 			);

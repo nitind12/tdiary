@@ -126,7 +126,7 @@
 											<!--/div-->
 										</div></center><br><br>
 									</form>
-									<center><a href="<?php echo site_url('edittimetablecontroller/del/' )?>" class="btn btn-primary " onclick="return confirm('Are you sure to delete whole data from the table??')">Delete Whole Data From the Table!</a></center>
+									<center><a href="<?php echo site_url('edittimetablecontroller/del/' )?>" class="btn btn-primary" onclick="return confirm('Are you sure to delete whole data from the table??')">Delete Whole Data From the Table!</a></center>
 									<br>
 										<table class="table table-striped table-bordered table-condensed"  border="1">
 
@@ -156,7 +156,7 @@
 				<!--td align="center"><?php echo $item->Time_table_id;?></td-->
 				<td align="center"><?php echo $item->Time;?></td>
 				<td align="center"><?php echo $item->Room;?></td>
-				<td><a href="<?php echo site_url('edittimetablecontroller/del1/' . $item->Subject_id)?>" class="btn btn-primary " onclick="return confirm('Are you sure')">Delete</a></td>
+				<td><a href="<?php echo site_url('edittimetablecontroller/del1/' . $item->Subject_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 				<!--<td><a href="<?php echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
 			</tr>
 

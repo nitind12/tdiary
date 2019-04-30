@@ -17,18 +17,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 href="<?php echo base_url('assets/bootstrap/css/bootstrap-responsive.min.css'); ?>"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/theme.css'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/images/icons/css/font-awesome.css'); ?>" />
-  
+    
   
 	<!--link rel="stylesheet" type="text/css" href="http://fonts.googleapis.comcss?family=Open+Sans:400italic,600italic,400,600"/>
 	<link type="text/css" rel='stylesheet' href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"/-->
 </head>
-<body>
+<body >
 
-	<!--<div class="navbar navbar-fixed-top">
+	<div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
-                <div class="container">
+                <div class="container ">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Teacher diary </a>
+                        <i class="icon-reorder shaded"></i></a><span class="hideblock"><a class="brand " href="index.html">Teacher diary </span></a>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
 
 
@@ -48,10 +48,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                         <ul class="nav pull-right">
-                            <li><a href="#">Support </a></li>
+                            <li style="color:red;  font-family:serif; font-weight: bold;  font-size: 20px;   font-variant: small-caps;">
+                                <a href="#"></a>
+                                <?php echo  $this->session->userdata('user') ?></li>
+
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo base_url(),"assets/"?>images/user.png" class="nav-avatar" />
                                 <b class="caret"></b></a>
+
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Your Profile</a></li>
                                     <li><a href="#">Edit Profile</a></li>

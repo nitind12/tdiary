@@ -18,6 +18,10 @@
 				  <h2>Lecture Plan</h2>
 			</div>
 			<div class="module-body table">
+									<div class="alert">
+										<button type="button" class="close" data-dismiss="alert">×</button>
+										<strong>Note!</strong> For Edit Double Click!
+									</div>
            		 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                 	<thead>
                   		<tr>
@@ -89,7 +93,9 @@
 					<tr>
 							
 						<td>
-						<input type="number" id="txtunit" name="txtunit" class="span12">
+
+						<input type="number" id="txtunit" name="txtunit" class="span12" min="1" max="12">
+
 						</td>
 
 						<td>
@@ -98,7 +104,10 @@
 						</td>
 				
 						<td>
-							<input type="number" id="Lecture_no" name="Lecture_no" class="span12">
+
+							<input type="number" id="Lecture_no" name="Lecture_no" class="span12" min="1" max="12">
+
+	
 						</td>
 						
 					</tr>
@@ -109,7 +118,7 @@
 								<td colspan="3">
 									<div class="control-group">
 										<div class="controls">			
-											<button style="float:right" type="submit" name="save" class=" span3 btn">Submit</button>
+											<button style="float:right" type="submit" name="save" class=" btn btn-primary">Submit</button>
 										</div>
 									</div>
 								</td>
@@ -184,14 +193,14 @@
 
 	                      
 
-	                        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>
+	                        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 	                    </tr>
 
                    		<?php 
                    	} 
                    	?> <?php ///foreach ($total as $item) {?>
 
-                   <tr><td colspan="4">TOTAL LECTURE=-<?php //echo $total;   } ?></td></tr>
+                   <tr><td colspan="4">TOTAL LECTURE=<input type="text"/></td></tr>
                   </tbody> 
                </table>
 				</form>

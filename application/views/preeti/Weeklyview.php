@@ -16,8 +16,24 @@
 
 
             <div class="module-body table">
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Note!</strong> For Edit Double Click!
+                  </div>
+
+                <?php 
+                      $data=array(
+                        'name'=>'frmweeklyview_details',
+                        'id'=>'frmweeklyview_details'
+                      );
+                      echo form_open('Weeklyedit_controller/details', $data);
+                ?>
+
+
+             
+
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
-                      <thead>
+                      <thead> 
                           <tr>
                               <th align="center">Session:</th>
                               <th align="center">Course:</th>
@@ -45,8 +61,12 @@
             
 
 
-                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller');?>">
+            <!--  <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" >  action="<?php //echo site_url('Test/submitmarks_controller');?>">  -->
 
+                  
+
+             
+               
                          <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
                   <!-- <div style="float:right">
                     <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
@@ -56,7 +76,7 @@
                   <thead>
                       <tr>
                           <!-- <th align="center">No_of_Lecture</th>  -->
-                          <th align="center">Week_No</th>
+                          <th align="center">WeekNo</th>
                           <th align="center">StartDate</th>
                           <th align="center">EndDate</th>
                           <th align="center">L.Schedule</th>
@@ -67,14 +87,19 @@
                           <th align="center">Details</th>
                           
                          
-                          <th align="center">Delete</th>
+                         <th align="center">Delete</th>    
                       
                        </tr>
                   </thead>
                   <tbody>
                   
              <?php foreach ($t_diary as $item) { ?>
+
+                 
+                
                 <tr>
+                    
+               
                       <td><?php echo $item->week_id ?></td>
                       <td><?php echo $item->start_date ?></td>
                       <td><?php echo $item->end_date ?></td>
@@ -83,21 +108,33 @@
                       <td><?php echo $item->no_of_lost_due_to_cl ?></td>
                       <td><?php echo $item->no_extra_taken ?></td>
                       <td><?php echo $item->no_of_lecture_actual_taken ?></td>
-                      <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date . '/'.$item->week_id);?>" class="btn btn-primary">Details</a></td>
+
+                  <!--   <td><a href="<?php// echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id);?>" class="btn btn-primary  ">Details</a></td>  -->
 
 
+                    <td>  <a class="btn btn-primary  weeklyview_detailsclass" id="<?php echo $item->add_class_id . "~" . $item->start_date . "~" . $item->end_date . "~" .$item->week_id ;?>" > Details</a></td>
                                           
               
-                                <!--  <td align="center"><?php echo $item->no_of_lecture ?></td>    -->
+                                <!--  <td align="center"><?php //echo $item->no_of_lecture ?></td>    -->
                                   
-                                     <td><a href="<?php echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-primary" onclick="return confirm('Are you sure')">Delete</a></td>    
+                                   <td><a href="<?php echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-danger  icon-trash" onclick="return confirm('Are you sure')"></a></td>   
+
                                  <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
                               </tr>
 
                           <?php } ?>
-                        </tbody>
+
+                          <input type="hidden" name="addclassidED" id="addclassidED">
+                          <input type="hidden" name="startdateED" id="startdateED">
+                          <input type="hidden" name="enddateED" id="enddateED">
+                          <input type="hidden" name="weekidED" id="weekidED">
+                          
+                          <?php
+                          echo form_close();
+                          ?>
+
                     </table>
-                </form>
+             
               </div>
           </div>
       </div>

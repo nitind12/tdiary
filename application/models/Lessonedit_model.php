@@ -17,7 +17,7 @@ class Lessonedit_model extends CI_Model
 	{
 		$addclass_id=$this->input->post('addclass_id');
 		$date=$this->input->post('date1');
-
+		$lecture_ty=$this->input->post('lecturetype');
 		for($i=0; $i<count($addclass_id); $i++)
 		{
 			$data = array(
@@ -26,11 +26,11 @@ class Lessonedit_model extends CI_Model
 				'end_time' => $this->input->post('txtend'),
 				'lesson_id'=>$this->input->post('lesson_no'),	
 				//'date' => $date,
-				//'no_of_lecture' => $this->input->post('No_of_leture'),
+				'lecture_type' => $lecture_ty[$i],
 				'date'=>$this->input->post('date'),
 				'topic' => $this->input->post('Topic'),
 				'unit' => $this->input->post('Unit'),
-				'lecture_id' => $this->input->post('Lecture'),
+				//'lecture_id' => $this->input->post('Lecture'),
 				'status'=>'1',
 				'username'=>'ra'
 			);

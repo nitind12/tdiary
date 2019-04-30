@@ -27,10 +27,10 @@
 									  </tr>
 									  <tr>
 									  	<td>Father Name:<br>
-									  <input type="text"  name="father_name" class="span8" required="">
+									  <input type="text"  name="father_name" class="span8" >
 									</td>
 									<td>Mother Name:<br>
-									  <input type="text"  name="mother_name" class="span8" required="">
+									  <input type="text"  name="mother_name" class="span8" >
 									</td>
 									<td>Gender:<br>
 									  <select tabindex="1"data-placeholder="Select here.." class="span8" name="gender" id="gender">

@@ -6,7 +6,7 @@ class Weeklyview_model extends CI_Model
 
 	function savingdata()
 	{
-		$weekly_ = array();
+		//$weekly_ = array();
 
 		//$Course=$this->input->post('txtcourse');
 		//$Semester= $this->input->post('txtsemester');
@@ -17,8 +17,8 @@ class Weeklyview_model extends CI_Model
 		//$Enddate=$this->input->post('enddate');
 
 		
-		$this->db->distinct('w.weekly_id');
-		$this->db->select('w.*,l.topic,l.date,l.unit,l.no_of_lecture');
+			//$this->db->distinct('w.weekly_id');
+			//$this->db->select('w.*,l.topic,l.date,l.unit,l.no_of_lecture');
 
 
 		//$this->db->where('w.course_id',$Course);
@@ -30,17 +30,17 @@ class Weeklyview_model extends CI_Model
 
 		//$this->db->where("DATE_FORMAT('w.start_date','%Y-%m-%d')>=date('Y-m-d',strtotime('".$Startdate."'))");
 		//$this->db->where('l.date BETWEEN " '.date('Y-m-d' ,strtotime('2019-04-02')).' " and " '. date('Y-m-d' ,strtotime('2019-04-04.')).'" ');
-		$this->db->where('l.date BETWEEN "'. date('Y-m-d', strtotime('01/04/2019')). '" and "'. date('Y-m-d', strtotime('04/04/2019')).'"');
+			//$this->db->where('l.date BETWEEN "'. date('Y-m-d', strtotime('01/04/2019')). '" and "'. date('Y-m-d', strtotime('04/04/2019')).'"');
 		//$this->db->where('l.date', BETWEEN '$Startdate' and  '$Enddate');
 
-		$this->db->from('weekly w');
-		$this->db->join('lesson l','l.lesson_id=w.lesson_id');
+			//$this->db->from('weekly w');
+			//$this->db->join('lesson l','l.lesson_id=w.lesson_id');
 
 
 
-		$q=$this->db->get('weekly');
+			//$q=$this->db->get('weekly');
 		// echo $this->db->last_query(); 
 
-		return $q->result();
+			//return $q->result();
 	}
 }?>

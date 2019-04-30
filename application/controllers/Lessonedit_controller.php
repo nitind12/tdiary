@@ -6,6 +6,9 @@ class Lessonedit_controller extends CI_Controller
 	function __construct()
 	{
         parent::__construct();
+
+        if(!$this->session->userdata('user')) redirect('Login_controller');
+        
         $this->load->model('Givenassignmentmodel','gm');
        $this->load->model('Lessonedit_model','obj');
         $this->load->model('Add_class_model','am');
@@ -14,8 +17,14 @@ class Lessonedit_controller extends CI_Controller
 
 
     function index()
-	{ ///done
+	{ 
         $data['cls_in_session'] = $this->am->fetchClass();
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        
         $data['title'] = "Lesson_Plan";
         $data['page_'] = "Lesson_class";
         $this->load->view('templates/header', $data);
@@ -25,16 +34,36 @@ class Lessonedit_controller extends CI_Controller
 
 
 
-    public function lesson_edit($no_)  
+
+
+    public function lesson_edit()  
     { 
-    $data['t_diary'] = $this->obj->fetchtable($no_);     
-    $data['add_class_in'] = $this->gm->add_view_class($no_);     
-    $data['title'] = "lesson_edit";
-    $data['page_'] = "lesson_new";    
-    $this->load->view('templates/header', $data);
-    $this->load->view('mypreetipage');  
-    $this->load->view('templates/footer');
+        if($this->input->post('addclassidED'))
+        {
+            $no_ = $this->input->post('addclassidED');
+            $sess = $this->input->post('sessionidED');
+            $clsid = $this->input->post('courseidED');
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        
+            $data['t_diary'] = $this->obj->fetchtable($no_);     
+            $data['add_class_in'] = $this->gm->add_view_class($no_);     
+            $data['title'] = "lesson_edit";
+            $data['page_'] = "lesson_new";    
+            $this->load->view('templates/header', $data);
+            $this->load->view('mypreetipage');  
+            $this->load->view('templates/footer');
+        }
+        else
+        {
+            redirect('Lessonedit_controller');
+        }
     }
+
+
 
 
 
@@ -50,7 +79,7 @@ class Lessonedit_controller extends CI_Controller
     function savingdata()
     {
         $this->obj->lesson_edit_saving_modal();
-        redirect('Lessonedit_controller');
+        redirect('Lessonedit_controller/lesson_edit');
     }
 
 
@@ -60,7 +89,7 @@ class Lessonedit_controller extends CI_Controller
         $u = $this->uri->segment(3);
         $this->obj->del($u);
         
-        redirect('Lessonedit_controller','refresh');
+        redirect('Lessonedit_controller/lesson_edit','refresh');
     }
 
 }?>

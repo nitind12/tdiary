@@ -1,4 +1,4 @@
-$(document).ready(function()
+ $(document).ready(function()
 {
 
 	$('.editmarksselected').click(function(){
@@ -62,7 +62,21 @@ $('.assignmentchecker').click(function(){
 			$('#sessionidCA').val(arr[1]);
 
 			$('#frmassignmentchecker').submit();
-		});	
+		});
+
+
+		
+
+		$('.viewassign').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidCA').val(arr[0]);
+			$('#sessionidCA').val(arr[1]);
+
+			$('#frmviewassignment').submit();
+		});
+
+
 		
 	$('#myform1').submit(function()
 	{
@@ -361,6 +375,158 @@ $('.assignmentchecker').click(function(){
 
 
 
+	$('#btnViewassignment').click(function(){
+		
+		var data_ = $('#assignmentform').serialize();
+		
+		$.ajax({
+			url:site_url_+ '/Assign_report_controller/assignment_report',
+			method: 'post',
+			data: data_,
+			success: function(intel){
+
+				var obj = JSON.parse(intel);
+				var len = obj.marks.length;
+				
+				var str = '';
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th> Assignment_no</th>"
+					str = str + "<th> Given_date</th>"
+					str = str + "<th> Submission_date</th>"
+					str = str + "<th> Unit</th>"
+					str = str + "<th> Topic</th>"
+					str = str + "</tr>";
+					for(i=0; i<len;i++){
+						str = str + '<tr>';
+						str = str + '<td>' + obj.marks[i].Assignment_no + "</td>";
+						str = str + '<td>' + obj.marks[i].Given_date + "</td>";
+						str = str + '<td>' + obj.marks[i].Submission_date + "</td>";
+						str = str + '<td>' + obj.marks[i].Unit + "</td>";
+						str = str + '<td>' + obj.marks[i].Topic + "</td>";
+						
+						str = str + '</tr>';
+					}
+					$('#assignmenthere').html(str);
+
+				}else{
+					$('#assignmenthere').html('No Data Found');
+				}
+			}, error: function(xhr, error, status){
+				$('#assignmenthere').html(xhr.responseText);
+			}
+
+		});
+	});
+
+
+
+
+
+$('#btnViewassignmentmarks').click(function(){
+		
+		var data_ = $('#assignmentformview').serialize();
+		
+		$.ajax({
+			url:site_url_+ '/check_assign_report_controller/assignment_report',
+			method: 'post',
+			data: data_,
+			success: function(intel){
+
+				var obj = JSON.parse(intel);
+				var len = obj.marks.length;
+				
+				var str = '';
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th> roll_no</th>"
+					str = str + "<th> Student_name</th>"
+					str = str + "<th> A_no</th>"
+					str = str + "<th> A_status<br>1=checked 0=unchecked</th>"
+					str = str + "<th> Submission_date</th>"
+					str = str + "<th> Grade</th>"
+					str = str + "</tr>";
+					for(i=0; i<len;i++){
+						str = str + '<tr>';
+						str = str + '<td>' + obj.marks[i].roll_no + "</td>";
+						str = str + '<td>' + obj.marks[i].first_name + "</td>";
+						str = str + '<td>' + obj.marks[i].assignment_id + "</td>";
+						str = str + '<td>' + obj.marks[i].assignment_status + "</td>";
+						str = str + '<td>' + obj.marks[i].checker_date + "</td>";
+						str = str + '<td>' + obj.marks[i].Grade + "</td>";
+						
+						
+						str = str + '</tr>';
+					}
+					$('#assignmentmarkshere').html(str);
+
+				}else{
+					$('#assignmentmarkshere').html('No Data Found');
+				}
+			}, error: function(xhr, error, status){
+				$('#assignmentmarkshere').html(xhr.responseText);
+			}
+
+		});
+	});
+
+
+
+$('#btnViewmarks1report').click(function(){
+		
+		var data_ = $('#marks1formview').serialize();
+		
+		$.ajax({
+			url:site_url_+ '/check_assign_report_controller/marks1_report',
+			method: 'post',
+			data: data_,
+			success: function(intel){
+
+				var obj = JSON.parse(intel);
+				var len = obj.marks.length;
+				
+				var str = '';
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th> roll_no</th>"
+					str = str + "<th> Student_name</th>"
+					str = str + "<th> Subject_name</th>"
+					str = str + "<th> Total marks</th>"
+					str = str + "<th> Obtain marks</th>"
+					
+					str = str + "</tr>";
+					for(i=0; i<len;i++){
+						str = str + '<tr>';
+						str = str + '<td>' + obj.marks[i].roll_no + "</td>";
+						str = str + '<td>' + obj.marks[i].first_name + "</td>";
+						str = str + '<td>' + obj.marks[i].subject_id + "</td>";
+						str = str + '<td>' + obj.marks[i].totalmarks + "</td>";
+						str = str + '<td>' + obj.marks[i].marks + "</td>";
+						
+						
+						
+						str = str + '</tr>';
+					}
+					$('#marksreporthere').html(str);
+
+				}else{
+					$('#marksreporthere').html('No Data Found');
+				}
+			}, error: function(xhr, error, status){
+				$('#marksreporthere').html(xhr.responseText);
+			}
+
+		});
+	});
+
+
+
+
+
+
 
 
 $('#btnView').click(function(){
@@ -577,7 +743,185 @@ $('#update').click(function(){
 
 
 
+ var maxLength = 30;
+
+		    	$(".show-read-more1").each(function() {
+
+		       		var myStr = $(this).text();
+
+		        	if($.trim(myStr).length > maxLength){
+
+			            var newStr = myStr.substring(0, maxLength);
+			            var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			            $(this).empty().html(newStr);
+			            $(this).append(' <a href="javascript:void(0);" class="read-more hideblock">Read More...</a>');
+			            $(this).append('<span class="more-text">' + removedStr + '</span>');
+			        }
+		  		});
+		  		
+			    	$(".read-more").click(function(){
+			        $(this).siblings(".more-text").contents().unwrap();
+			        $(this).remove();
+		    });
 
 
 
+
+
+
+//---double click and edit text marks view----//
+    		var oriVal;
+    			$('body').on('dblclick', '.marksdata', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.markstd > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&marksid="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/test/updatedColumn";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+
+
+
+
+
+//---double click and edit text given assignment----//
+    		var oriVal;
+    			$('body').on('dblclick', '.givenassign_data', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.givenassign_td > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&givenassign_id="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/Assignmentcontroller/updatedColumn";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+	
+	
+
+
+
+
+//---double click and edit text view given assignment----//
+    		var oriVal;
+    			$('body').on('dblclick', '.viewgivenassign_data', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.viewgivenassign_td > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&viewgivenassign_id="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/Givenassignmentcontroller/updatedColumnview";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
+
+
+
+  		
+  		//---double click and edit text view checked assignment----//
+    		var oriVal;
+    			$('body').on('dblclick', '.checkedassign_data', function(){
+    				// this.id - it will give you the specific id of td where dblclick held
+    				oriVal = $(this).text();
+				    $(this).text("");
+				    $("<input type='text' id=lct-"+this.id+" value='"+oriVal+"'>").appendTo(this).focus();
+    			});
+				
+    			$('body').on('focusout', '.checkedassign_td > input', function(){
+    				var str = this.id;
+    				var arr = str.split('-');
+    				//alert(arr[0] + "  " + arr[1] + "  " + arr[2]);
+    				var $this = $(this);
+				    var data_ = $this.val();
+				    $this.parent().text($this.val() || oriVal);
+				    $this.remove(); // Don't just hide, remove the element.
+				    var dt__ = $this.val();
+				    var data_ = "dt="+dt__+"&checkedassign_id="+arr[1]+"&columnname="+arr[2];
+				    var url_ = site_url_ + "/Update_Assignment_Controller/updatedColumn";
+
+				    $.ajax({
+				    	url:url_,
+						type: 'post',
+						data: data_,
+						success: function(data){
+							if(data == false){
+								alert('Some server error! Please try again')
+							}
+						}, error: function (xhr, status, error){
+							alert(xhr.responseText);
+						}
+
+				    });
+    			});
 });

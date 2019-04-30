@@ -6,15 +6,21 @@
 								<h1>View Time Table </h1>
 							</div>
 							<div class="module-body">
+								<style media="print">
+									.hideblock{
+										display:none;
+									}
+								</style>
 	<form id="myform100" name="myform100" class="form-horizontal row-fluid">
 	<table class="table table-striped table-bordered table-condensed" border="1">
 		
 			<!--<table class="table" >-->
 				<thead>
 <tr>
-									  <td >Day<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Day" id="Day" >
-									  		<option value ="">Select here..</option>
+	<span class="hideblock"><a href="#" onclick="window.print()"><span class="btn btn-primary icon-print" style="float:right">print</span></a></span>
+									  <td >Day:<input type="hidden" value="<?php echo date("d")?>" name="day" id="day"><?php echo date("D")?><br>
+									  	<select tabindex="1"data-placeholder="Select here.." name="day" id="day"class="span8" >
+									  		<option value ="">Salect here.. </option>
 									  	 <option value ="Monday">Monday</option>
 									  	 <option value ="Tuesday">Tuesday</option>
 									  	 <option value ="Wednesday">Wednesday</option>
@@ -22,17 +28,20 @@
 									  	 <option value ="Friday">Friday</option>
 									  	 <option value ="Saturday">Saturday</option>
 									  </select></td>
+									
+									  <td> Date<br>
+									  	<input type="text" value="<?php echo date("d-m-Y")?>" name="Date" id="Date" class="span8"/></td>
 									  
 									</tr>
 								</thead>
 							</table>
 							<div class="control-group">
 								<div class="controls" style="float:left;">
-									<button type="Reset" class="btn btn-primary" name="save" value="Reset">Reset</button>
+									<button type="Reset" class="btn btn-primary hideblock" name="save" value="Reset">Reset</button>
 								</div>
 											<div class="controls" style="float:left;">
 												
-												<button type="button" class="btn btn-primary" name="save" value="submit" id="btnsubmit">Submit</button>
+												<button type="button" class="btn btn-primary hideblock" name="save" value="submit" id="btnsubmit">Submit</button>
 											</div>
 										</div>
 						</form>
@@ -46,8 +55,7 @@
 										  <th>09:00-09:50</th>
 										  <th>09:50-10:40</th>
 										  <th>10:40-11:30</th>
-								
-										  <th>11:50-12:40</th>
+					                      <th>11:50-12:40</th>
 										  <th>12:40-01:30</th>
 										  <th>02:10-03:00</th>
 										  <th>03:00-03:50</th>

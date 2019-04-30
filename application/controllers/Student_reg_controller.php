@@ -4,6 +4,9 @@ class Student_reg_controller extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+
+		 if(!$this->session->userdata('user')) redirect('Login_controller');
+		 
 		$this->load->model('reg_model','um');
 	}
 function index()

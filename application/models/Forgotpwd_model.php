@@ -12,9 +12,9 @@ class Forgotpwd_model extends CI_Model
 	}
 */
 	
-	function change_pass($username,$newPassword)
+	function change_pass($email,$newPassword)
 	{
-		$update_pass=$this->db->query("UPDATE sign_up set password='$newPassword'  where username='$username'");
+		$update_pass=$this->db->query("UPDATE sign_up set password='$newPassword'  where email='$email'");
 	}
 
 

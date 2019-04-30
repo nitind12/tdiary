@@ -77,7 +77,7 @@ $('.assignmentchecker').click(function(){
 		});
 
 
-		
+/*		
 	$('#myform1').submit(function()
 	{
 		if($.trim($('#Course_name').val()) == '')
@@ -105,7 +105,7 @@ $('.assignmentchecker').click(function(){
 			{
 				alert('Student_name must be filled out');
 			}*/
-		else if($.trim($('#marks1').val()) == '')
+	/*	else if($.trim($('#marks1').val()) == '')
 			{
 				alert('marks1 must be filled out');
 			}
@@ -321,7 +321,7 @@ $('.assignmentchecker').click(function(){
 		
 	});
 
-
+*/
 
 
 

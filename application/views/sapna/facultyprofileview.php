@@ -74,7 +74,7 @@
 			
 			<tr>
 			<th align="center">City</th>
-			<th align="center">Pinc_code</th>
+			<th align="center">Pincode</th>
 
 			</tr>
 

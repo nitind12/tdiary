@@ -524,7 +524,7 @@ $(document).ready(function()
 			$(".toggle-password").click(function() 
 			{
 
-			  $(this).toggleClass("icon-eye-open icon-eye-open-slash");
+			  $(this).toggleClass(" icon-eye-close");
 
 			  var input = $($(this).attr("toggle"));
 

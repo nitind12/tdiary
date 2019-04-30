@@ -94,18 +94,18 @@
 							
 						<td>
 
-						<input type="number" id="txtunit" name="txtunit" class="span12" min="1" max="12">
+						<input type="number" id="txtunit" name="txtunit" class="span12" min="1" max="12" required="required">
 
 						</td>
 
 						<td>
-							<textarea id="topic" name="topic" class="span12" rows="6"  cols="30">
+							<textarea id="topic" name="topic" class="span12" rows="6"  cols="30" required="required">
 						</textarea>
 						</td>
 				
 						<td>
 
-							<input type="number" id="Lecture_no" name="Lecture_no" class="span12" min="1" max="12">
+							<input type="number" id="Lecture_no" name="Lecture_no" class="span12" min="1" max="12" required="required">
 
 	
 						</td>

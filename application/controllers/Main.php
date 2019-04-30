@@ -219,13 +219,7 @@ class Main extends CI_Controller {
     public function addclass_controller()  
     {  
     
-        $config['upload_path']  = './assets/uploads/';
-        $config['allowed_types']  = 'gif|jpg|png';
-        $config['max_size']     = 1000;
-            $this->load->library('upload', $config);    
-                $upload_data = $this->upload->data();
-                $data['pic_file'] = $upload_data['file_name'];
-                 $this->am->savingdata($data); 
+        $this->am->savingdata(); 
             
         redirect('Main/attendance_controller');   
         }
@@ -259,7 +253,7 @@ class Main extends CI_Controller {
     public function submitattendance_controller()               ///showing the page of submit the data;
     {  
         $this->am->take_attendance(); 
-        redirect('Main/attendance_controller');   
+        redirect('Main/attendance_class_controller');   
     }
 
     function deleteClass($no_){

@@ -130,7 +130,7 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		}
 
-		function savingdata($data)
+		function savingdata()
 		{
 			
 		$data = array(
@@ -143,14 +143,41 @@ class Add_class_model extends CI_Model
 			'section_id' => $this->input->post('Section'),
 			'date_of_commencement' => $this->input->post('DateOfCommencement'),
 			'date_of_completion' => $this->input->post('DateOfCompletion'),
-			'syllabus_pdf' => $this->input->post('pic_file'),
 			'username' => $this->session->userdata('user'),
 			'status'=>1						
 
 			);
 			$this->db->insert('add_class',$data);
+		
+			
+	$fileid = $this->db->insert_id();
+	$path_id = $this->upload_tt1($fileid);
+	$this->db->where('add_class_id', $fileid);
+		$data = array(
+			'syllabus_pdf' => $path_id
+		);
+		$this->db->update('add_class', $data);
+	}
 
-		}
+	function upload_tt1($id){
+		clearstatcache();
+        $config=array(
+	        'upload_path'=>'./assets/ttdocs/',
+	        'allowed_types'=>'pdf|xlsx',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
+        );
+        $file_element_name='pic_file';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+	        $path_ji=$this->upload->data();
+	        $path_=$path_ji['file_name'];
+	    }else{
+	        $path_='x';
+	    }
+
+    return $path_;
+    }
 		function delClass($no_)
 		{	
 			$this->db->where('add_class_id', $no_);

@@ -86,16 +86,16 @@
 										 <td>Type of Marks:<br>
 									  	<!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="marks_type_id" id="marks_type_id"  >
-									  		<option value ="">Select here..</option>
-									  	 <option value ="1">Internal-marks-1</option>
-									  	 <option value ="2">Internal-Marks-2</option>
-									  	 <option value ="3">Practical-Marks</option>
-									  	 <option value ="4">Class-Marks</option>
-									  	 <option value ="5">Other-Activity-Marks</option>
+									  		<option value ="">Select marks type...</option>
+									  		<?php foreach($marks_type as $item){?>
+									  			<option value="<?php echo $item->marks_type_id;?>">
+									  				<?php echo $item->marks_name?></option>
+
+									  		<?php
+									  	}?>
 									  	 
 									  </select>
 									  </td>
-									
 									 
 									</tr>
 								</tbody>

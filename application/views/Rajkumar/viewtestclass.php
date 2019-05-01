@@ -30,8 +30,8 @@
           <div class="btn-box-row row-fluid"  style="border: #ff0000 solid 0px; float: left">
         <a class="btn-box-row row-fluid  span2  viewtest" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >
         
-              Session:<?php echo $item->session_id?><br>
-              <b><?php echo $item->course_id.'-'.$item->semester_id;?><br><u><?php echo $item->subject_id;?></u></b>
+               Session:<?php echo $item->session_id?><br>
+              <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br><u><?php echo $item->subject_id;?></u></b>
           </a>
           </div>
       </div>

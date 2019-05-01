@@ -7,11 +7,14 @@ class Main extends CI_Controller {
 
      if(!$this->session->userdata('user')) redirect('Login_controller');
        $this->load->model('Add_class_model','am');
+       $this->load->model('Viewtimetablemodel','vm');
+      
     }
     public function index()  
     {   
         $data['page_'] = "Reg_div";
         $data['title'] = "Dashboard";
+        $data['das1'] = $this->vm->dashtimetable();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
@@ -32,6 +35,36 @@ class Main extends CI_Controller {
             }
             echo json_encode($sub_select_box);
         }?*/
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+    public function indext()  
+    {   
+        $data['page_'] = "teacherdash";
+        $data['title'] = "Dashboard";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+    public function indexs()  
+    {   
+        $data['page_'] = "studentdash";
+        $data['title'] = "Dashboard";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -185,7 +218,9 @@ class Main extends CI_Controller {
     
     public function addclass_controller()  
     {  
+    
         $this->am->savingdata(); 
+            
         redirect('Main/attendance_controller');   
         }
 
@@ -218,7 +253,7 @@ class Main extends CI_Controller {
     public function submitattendance_controller()               ///showing the page of submit the data;
     {  
         $this->am->take_attendance(); 
-        redirect('Main/attendance_controller');   
+        redirect('Main/attendance_class_controller');   
     }
 
     function deleteClass($no_){

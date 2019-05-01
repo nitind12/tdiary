@@ -14,13 +14,14 @@ class Edittimetablecontroller extends CI_Controller{
 	}
 	function index()
 	{
+		$data['title'] = "TIME_page";
 		$data['users'] = $this->um->fetchtable();
 		 $data['page_'] = 'edittimetable';
           $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-       $this->load->view('templates/header');
+       $this->load->view('templates/header',$data);
         $this->load->view('mysatyampage',$data);  
         $this->load->view('templates/footer');
 		

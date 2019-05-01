@@ -54,7 +54,10 @@
                     <tr>
                      <th align="center">Roll-no</th>
                       <th align="center">Student Name</th>
-                      <th align="center">Attendance status</th>
+                      <th>Attendance status
+                 <label class="rodio-inline"><input type="radio"  id="optionsRadios5">PRESENT All<input type="radio"  id="optionsRadios4"> ABSENT ALL</label>
+                   
+                    </th>
                      </tr>
                   </thead>
                   <tbody>
@@ -70,24 +73,24 @@
         <td><?php echo $item->student_id;?>
                       <input type="hidden" value="<?php echo $item->student_id;?>" name="Student_Roll[]" id="sid_<?php echo $item->student_id;?>">
                     </td>
+
                    
-        <td align="center"><?php echo $item->first_name; ?></td>
+        <td align="center">
+
+          <?php echo $item->first_name; ?></td>
         <td>
           <div class="control-group">
+                     
                       <div class="controls">
                         <label class="radio inline">
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios1" value="PRESENT" checked="">
+                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios1" value="1">
                           PRESENT
                         </label> 
                         <label class="radio inline">
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value=" ABSENT">
+                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value="0">
                            ABSENT
                         </label> 
-                        <label class="radio inline">
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios3" value="LEAVE">
-                          LEAVE
-                        </label>
-                      </div>
+                             </div>
                     </div>
           </td>
        

@@ -22,7 +22,8 @@ class studentprofilecontroller extends CI_Controller
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-        
+         $data['course1'] = $this->am->getCourse1();
+       
 		$data['m'] = $this->sp->getData();
 		
 		$data['page_'] = 'studentprofileview';

@@ -4,6 +4,8 @@
 						<div class="module">
 							<div class="module-head">
 								<h1 >Check_View_Assignment</h1>
+
+                 <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
 							</div>
 
 							<div class="module-body">

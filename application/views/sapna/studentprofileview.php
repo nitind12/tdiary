@@ -1,103 +1,44 @@
 <div class="span9">
-					<div class="content">
-
-						<div class="module">
-							<div class="module-head">
-								<h1 >Student Profile</h1>
-							</div>
-							
-	<form method="post" id="myform2" action="<?php echo site_url('studentprofile1controller/savingdata3');?>" class="form-horizontal row-fluid">
-	<table class="table table-striped table-bordered table-condensed"  border="1">
-		
-			
-				<thead>
-				<tbody>
-			<tr>		
-			<th align="center">First_Name</th>
-			<th align="center">Last_name</th>
-			<th align="center">Father_name</th>
-		</tr>
-		<?php foreach($marks as $user):
+	<div class="content">
+		<div class="module">
+			<div class="module-head">
+				<h1 >Student Profile</h1>
+				</div>
+		<div class="module-body">
+						
+	<form method="post" id="" action="<?php echo site_url('studentprofile1controller/savingdata3');?>" class="form-horizontal row-fluid">
+								
+	<table class="table"  width="20" height="30"border="1">
+		<tbody>
+		<?php foreach($m as $user):
 		?>
-			
-
-			<tr>
-				<td>
-					<center><?= $user['First_Name']?></center>
-				</td>
-				<td>
-					<center><?= $user['Last_Name']?></center>
-				</td>
-				<td>
-					<center><?= $user['Father_Name']?></center>
-				</td></tr>
-				<?php endforeach;?>
 		
-		
+		<tr>		
+			<th>User_Name:<?php echo $user->username?></th></tr>
 			<tr>
-			<th align="center">D.O.B</th>
-			<th align="center">Blood_Group</th>
-			<th align="center">Category</th>
+			<th>Name:<?php echo   $user->first_name.' '.$user->last_name?></th>
 			</tr>
-			<?php foreach($marks as $user):
-		?>
-			
-			<tr>
-				<td>
-					<center><?= $user['D_O_B']?></center>
-				</td>
-		
-			
-				<td>
-					<center><?= $user['Blood_Group']?></center>
-				</td>
-				<td>
-					<center><?= $user['Category']?></center>
-				</td></tr>
-				<?php endforeach;?>
 		<tr>
-			<th align="center">Contact_no</th>
-			<th align="center">Email</th>
+			<th >Email:<?php echo $user->email?></th>
+		</tr>
+		<tr>
+			<th>Phone-No:<?php echo $user->phone_no?></th>
+		</tr>
+		<tr>
+			<th>Date-of-Birthday:<?php echo $user->date_of_birth?></th>
+		</tr>
+		<tr>
+			<th class="span4">Father Name:<?php echo $user->father_name?></th>
+		</tr>
+		<tr>
+			<th>Mother Name:<?php echo $user->mother_name?></th>
 		</tr>
 		
-			<?php foreach($marks as $user):
-		?>
-			<tr>
-				<td>
-					<center><?= $user['Student_Contact_No']?></center>
-				</td>
-				<td>
-					<center><?= $user['Student_Email']?></center>
-				</td>
-			</tr>
-			<?php endforeach;?>
-			
-			<tr>
-			<th align="center">City</th>
-			<th align="center">Pincode</th>
-
-			</tr>
-
-		<?php foreach($marks as $user):
-		?>
-			
-
-			
-			<tr>
-				<td>
-					<center><?= $user['Current_City']?></center>
-				</td>
-				<td>
-					<center><?= $user['Current_Pincode']?></center>
-				</td>
-				
-			</tr>
-			
-				<?php endforeach;?>
+		
+		<?php endforeach;?>
 		
 	
 </tbody>
-</thead>
 </table>
 </form>
 </div>

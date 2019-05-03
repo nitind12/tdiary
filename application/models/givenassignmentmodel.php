@@ -48,7 +48,7 @@ class Givenassignmentmodel extends CI_Model{
 			'Unit' => $this->input->post('Unit'),
 			'Topic' => $this->input->post('Topic'),
 			'status' => '1',
-			'username' =>'ra'
+			'username' => $this->session->userdata('user'),
 		);
 			$this->db->insert('assignment',$data);
 		}

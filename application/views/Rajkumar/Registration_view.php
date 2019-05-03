@@ -23,6 +23,8 @@
 										<label class="control-label" for="basicinput"><b>Course</b></label>
 										<div class="controls" style="float: right">
 									    	<select tabindex="2" data-placeholder="Select here.."class="span2"  name="Course" id="Course">
+										<div class="controls">
+									    <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course" id="Course">
                                            <option value="">Select Course</option>
                                             <?php foreach ($course1 as  $item) { ?>
                                                <option value="<?php echo $item->course_id;?>">

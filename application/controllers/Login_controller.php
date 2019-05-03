@@ -23,8 +23,10 @@ class Login_controller extends CI_Controller
         if ($this->login_model->log_in_correctly())  
         {  
            redirect('Main');
+
         } else {  
-            redirect('Login_controller');  
+          
+            redirect('Login_controller'); 
            
         }  
     }  

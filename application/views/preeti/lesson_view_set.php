@@ -73,12 +73,12 @@
                   
              <?php foreach ($t_diary as $item) { ?>
                 <tr>
-                      <td class="show-read-more"><?php echo $item->date ?></td>
-                      <td class="show-read-more"><?php echo $item->start_time ?></td>
-                      <td class="show-read-more"><?php echo $item->end_time ?></td>
-                      <td class="show-read-more"><?php echo $item->unit ?></td>
-                      <td class="show-read-more"><?php echo $item->topic ?></td>
-                       <td class="show-read-more"><?php echo $item->lecture_type ?></td>
+                      <td class="show-read-more  lessondata  lesstd"   id="<?php echo $item->lesson_id.'-date';?>"><?php echo $item->date ?></td>
+                      <td class="show-read-more lessondata  lesstd"  id="<?php echo $item->lesson_id.'-start_time';?>"><?php echo $item->start_time ?></td>
+                      <td class="show-read-more  lessondata  lesstd"  id="<?php echo $item->lesson_id.'-end_time';?>"><?php echo $item->end_time ?></td>
+                      <td class="show-read-more  lessondata lesstd"  id="<?php echo $item->lesson_id.'-unit';?>"><?php echo $item->unit ?></td>
+                      <td class="show-read-more lessondata  lesstd"  id="<?php echo $item->lesson_id.'-topic';?>"><?php echo $item->topic ?></td>
+                       <td class="show-read-more  lessondata  lesstd"  id="<?php echo $item->lesson_id.'-lecture_type';?>"><?php echo $item->lecture_type ?></td>
                      
                       <!--td class="show-read-more"><?php echo $item->lecture_id ?></td>
               

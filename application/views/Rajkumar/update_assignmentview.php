@@ -1,17 +1,28 @@
+<style media="print">
+  .hideblock{
+      display:none;
+}
+</style>
+
+
+
+
+
 <div class="span9">
 					<div class="content">
 
 						<div class="module">
 							<div class="module-head">
+                   <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
 								<h1 >Check_View_Assignment</h1>
 
-                 <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
+
 							</div>
 
 							<div class="module-body">
 					 <div class="module-body table">
-            <div class="alert">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
+            <div class="alert  hideblock">
+                    <button type="button" class="close " data-dismiss="alert">×</button>
                     <strong>Note!</strong>Double Click For Edit!
                   </div>
                  <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
@@ -72,7 +83,7 @@
 						</th>	
 						<th align="center">Submission_date</th>	
             <th align="center">Grade</th> 
-						<th align="center">Delete/Edit</th>
+						<th align="center" class="hideblock">Delete/Edit</th>
 					</tr>
    
                   </thead>
@@ -94,7 +105,7 @@
 
                   <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-Grade';?>"><?php echo $item->Grade;?></td>
 
-      						<td><a href="<?php echo site_url('update_assignment_controller/del1/' .$item->assignment_checker_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
+      						<td class="hideblock"><a href="<?php echo site_url('update_assignment_controller/del1/' .$item->assignment_checker_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 				    <?php } ?>
 		  </tbody>
 </table>

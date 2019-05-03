@@ -32,6 +32,7 @@ class Main extends CI_Controller {
     {   
         $data['page_'] = "teacherdash";
         $data['title'] = "Dashboard";
+        $data['das1'] = $this->vm->dashtimetable();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
@@ -58,7 +59,7 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
-    sdfghjk
+    
     public function form_controller()  
     {   
         $data['page_'] = "formpage";

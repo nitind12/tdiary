@@ -90,9 +90,9 @@
              <?php foreach ($t_diary as $item) { ?>
               <tr>
             
-              <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
-               <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
-                 <td align="center"><?php echo $item->no_of_lecture?></td>
+              <td class="show-read-more lectdata mytd"  id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ?></td>
+               <td  class="show-read-more  lectdata mytd"  id="<?php echo $item->lecture_id.'-topic';?>" align="center"><?php echo $item->topic ?></td>
+                 <td align="center" class="lectdata mytd"  id="<?php echo $item->lecture_id.'-no_of_lecture';?>"><?php echo $item->no_of_lecture?></td>
 
                                 <td class="hideblock"><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " 
                                     onclick="return confirm('Are you sure')"></a></td>    

@@ -1,3 +1,9 @@
+	<style media="print">
+					.hideblock{
+						display:none;
+									}
+	</style>
+
 <div class="span9">
 					<div class="content">
 
@@ -7,11 +13,7 @@
 								
 							</div>
 							<div class="module-body">
-								<style media="print">
-									.hideblock{
-										display:none;
-									}
-								</style>
+							
 	<form id="myform100" name="myform100" class="form-horizontal row-fluid">
 	<table class="table table-striped table-bordered table-condensed" border="1">
 		
@@ -19,9 +21,9 @@
 				<thead>
 <tr>
 	<span class="hideblock"><a href="#" onclick="window.print()"><span class="btn btn-primary icon-print" style="float:right">print</span></a></span>
-									  <td >Day:<input type="hidden" value="<?php echo date("d")?>" name="day" id="day"><?php echo date("D")?><br>
+									  <td class="hideblock">Day:<input type="hidden" value="<?php echo date("d")?>" name="day" id="day"><?php echo date("D")?><br>
 									  	<select tabindex="1"data-placeholder="Select here.." name="day" id="day"class="span8" >
-									  		<option value ="">Salect here.. </option>
+									  		<option value ="">Select here.. </option>
 									  	 <option value ="Monday">Monday</option>
 									  	 <option value ="Tuesday">Tuesday</option>
 									  	 <option value ="Wednesday">Wednesday</option>
@@ -30,8 +32,8 @@
 									  	 <option value ="Saturday">Saturday</option>
 									  </select></td>
 									
-									  <td> Date<br>
-									  	<input type="text" value="<?php echo date("d-m-Y")?>" name="Date" id="Date" class="span8"/></td>
+									 <td class="hideblock"> Date<br>
+									  	<input type="text" value="<?php echo date("d-m-Y")?>" name="Date" id="Date" class="span8 hideblock"/></td>
 									  
 									</tr>
 								</thead>
@@ -49,7 +51,7 @@
 						
 					<div class="module-body">
 									
-		                           <table class="table" border="1">
+		                          <table class="table table-striped table-bordered table-condensed"  border="1">
 									  <thead>
 										<tr bgcolor="lightblue">
 										  <th>DAY</th>

@@ -55,12 +55,34 @@ class Add_class_model extends CI_Model
 		$query = $this->db->get('semester');
 		return $query->result();
 		}
-		function getSubject1($Course_id,$Semester_id)
+		function getfaculty(){
+		
+		$this->db->select('faculty_id,first_name,last_name');
+		$query = $this->db->get('faculty_personal');
+		return $query->result();
+		}
+		function getSubject1()
 		{
-		$this->db->where('course_id',$Course_id);
+			$course_id = $this->input->post('Course');
+			$Semester_id = $this->input->post('Semester');
+
+		$this->db->where('course_id',$course_id);
 		$this->db->where('semester_id',$Semester_id);
 		$this->db->order_by('subject_id');
 		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getSubjectasign()
+		{
+			$course_id = $this->input->post('Courseasign');
+			$Semester_id = $this->input->post('Semesterasign');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
 		return $query->result();
 		}
 		

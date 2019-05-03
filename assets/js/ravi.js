@@ -21,7 +21,10 @@ $(function()
 					$('#btnsign').attr('disabled','disabled');
     			}
 					});
-		
+
+			$('').change(function(){
+				var course_id
+			})		
 	$('#cmbAttendanceReport').click(function()
 	{
 		$('#msg_').html('');
@@ -108,6 +111,69 @@ $(function()
 				}
 			})
 			return false;
+		});
+
+
+		$('#Course').change(function(){
+			if($('#Course').val() != '' && $('#Semester').val() !=0){
+				var url_ = site_url_+"/main/get_subjects";
+				var data_ = $('#frmclass').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Subject</option>";
+					for(i=0; i<obj.subjects.length; i++){
+						str = str + "<option value='"+obj.subjects[i].subject_id+"'>"+obj.subjects[i].subject_name+"</option>";
+					}
+					$('#Subject_Name').html(str);
+				},
+					
+				
+
+				});
+			}
+		});
+
+		$('#Semester').change(function(){
+			$('#Course').change();
+
+		
+		});
+
+$('#Courseasign').change(function(){
+
+			if($('#Courseasign').val() != '' && $('#Semesterasign').val() !=0){
+				var url_ = site_url_+"/main/get_subjectsasign";
+				var data_ = $('#frmassign').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					alert(obj.subjects.length);
+					var str = '';
+					str = str + "<option value=''>Select Subject</option>";
+					for(i=0; i<obj.subjects.length; i++){
+						str = str + "<option value='"+obj.subjects[i].subject_id+"'>"+obj.subjects[i].subject_name+"</option>";
+					}
+					$('#SubjectNameasign').html(str);
+				},
+					
+				
+
+				});
+			}
+		});
+
+		$('#Semesterasign').change(function(){
+			$('#Courseasign').change( );
+
+		
 		});
 
 });

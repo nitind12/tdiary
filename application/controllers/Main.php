@@ -22,19 +22,8 @@ class Main extends CI_Controller {
         $data['course1'] = $this->am->getCourse1();
         $data['Session1'] = $this->am->getSession1();
         $data['Semester1'] = $this->am->getSemester1();
-        /*/$Course_id=$this->input->post('Course');
-        //$Semester_id=$this->input->post('Semester');
-        //$Subject=$this->am->getSubject1($Course_id,$Semester_id);
-        if(count($Subject)>0)
-        {
-            $sub_select_box="";
-            $sub_select_box.='<option value="none">Select subject</option>';
-            foreach($Subject as $sub)
-            {
-                $sub_select_box.='<option value="'.$sub->subject.'">'$sub->subject_name.'</option>';
-            }
-            echo json_encode($sub_select_box);
-        }?*/
+        $Course_id=$this->input->post('Course');
+        $Semester_id=$this->input->post('Semester');
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -69,6 +58,7 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
+    sdfghjk
     public function form_controller()  
     {   
         $data['page_'] = "formpage";
@@ -81,7 +71,8 @@ class Main extends CI_Controller {
        $data['course1'] = $this->am->getCourse1();
       $data['Semester1'] = $this->am->getSemester1();
       $data['Session1'] = $this->am->getSession1();
-            
+      $data['faculty'] = $this->am->getfaculty();
+             
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -259,6 +250,15 @@ class Main extends CI_Controller {
     function deleteClass($no_){
         $res = $this->am->delClass($no_);
         redirect('Main/attendance_controller');
+    }
+
+    function get_subjects(){
+        $data['subjects'] = $this->am->getSubject1();
+        echo json_encode($data);
+    }
+    function get_subjectsasign(){
+        $data['subjects'] = $this->am->getSubjectasign();
+        echo json_encode($data);
     }
     
  }

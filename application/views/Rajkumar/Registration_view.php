@@ -8,7 +8,33 @@
 							<div class="module-head">
 								<h1 > Registration Form</h1>
 							</div>
-							<div class="module-body">
+							<div class="control-group"><br>
+											<label class="control-label" for="basicinput"><b>Course</b></label>
+										<div class="controls" style="float: left">
+									    <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Course" id="Course">
+                                           <option value="">Select Course</option>
+                                            <?php foreach ($course1 as  $item) { ?>
+                                               <option value="<?php echo $item->course_id;?>">
+                                                 	<?php echo $item->name_of_courses ?> 
+                                               </option>
+                                                    <?php }?>
+                                        </select>
+                                      </div>
+										<label class="control-label" for="basicinput"><b>Course</b></label>
+										<div class="controls" style="float: right">
+									    	<select tabindex="2" data-placeholder="Select here.."class="span2"  name="Course" id="Course">
+                                           <option value="">Select Course</option>
+                                            <?php foreach ($course1 as  $item) { ?>
+                                               <option value="<?php echo $item->course_id;?>">
+                                                 	<?php echo $item->name_of_courses ?> </option>
+                                                    <?php }?>
+                                                 </select>
+                                                
+											</div>
+							</div>
+		
+									
+
 	<form method="post" action="<?php echo site_url('registrationform_controller/savingdata3');?>" class="form-horizontal row-fluid" id="form102" name="form102">
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 			<!--<table class="table" >-->
@@ -59,6 +85,8 @@
 									  		<option value ="">Select here..</option>
 									  	 <option value ="SC/ST">SC/ST</option>
 									  	 <option value ="GEN">GEN</option>
+									  	<option value ="OBC">OBC</option>
+									  	 
 									  	 <option value ="Other">Other</option>
 									  	
 									  	  
@@ -80,22 +108,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td>Course:<br>
-									  <select tabindex="1"data-placeholder="Select here.." class="span8" name="course_id" id="course_id">
-									  		<option value ="">Select here..</option>
-									  	 <option value ="BCA">BCA</option>
-									  	 <option value ="MCA">MCA</option>
-									  	 <option value ="BBA">BBA</option>
-									  	 <option value ="MBA">MBA</option>
-									  	 <option value ="B.Tech">B.Tech</option>
-									  	 <option value ="m.Tech">m.Tech</option>
-
-									  	
-									  	  
-									  </select>
-									</td>
 									
-
 
 									  
 

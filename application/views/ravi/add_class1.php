@@ -61,7 +61,9 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Subject-Name</label>
 											<div class="controls">
-												<input type="text" id="Subject_Name" name="Subject_Name" placeholder="Subject_Name" class="span8">
+												<select tabindex="1" data-placeholder="Select here.."class="span8"  name="Subject_Name" id="Subject_Name">
+											     </select>
+                                             
 												</div>
 										</div>
 

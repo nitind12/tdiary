@@ -22,6 +22,9 @@
                     <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"> <?php echo date("Y-m-d")?>
                 </div>
                 <h1>Lecture View</h1>
+                      <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
+               <br>
+
             </div>
 
             <div class="module-body table">
@@ -31,9 +34,7 @@
                     <strong>Note!</strong> For Edit Double Click!
                   </div>
 
-                <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
-               <br>
-
+          
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
 
 

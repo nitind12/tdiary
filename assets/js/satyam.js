@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
 
-	$('#myform111').submit(function()
+	/*$('#myform111').submit(function()
 	{
 		if($.trim($('#Course_id').val()) == '')
 		    {
@@ -62,7 +62,7 @@ $(document).ready(function()
 		/*else if($.trim($('#Time_table_id').val()) == '')
 			{
 				alert('Time_table_id must be filled out');
-			}*/
+			}
 		else if($.trim($('#Time').val()) == '')
 			{
 				alert('Time must be filled out');

@@ -15,7 +15,7 @@
 								  
 									<tr>
 									  <td >Day<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Day" id="Day">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Day" id="Day" required="required">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="Monday">Monday</option>
 									  	 <option value ="Tuesday">Tuesday</option>
@@ -25,8 +25,7 @@
 									  	 <option value ="Saturday">Saturday</option>
 									  </select></td>
 									  <td>Semester<br>
-									  	<!--<input type="text" id="txtSemester" name="txtSemester" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" id="Semester">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" id="Semester" required="required">
 									  		<option value ="">Select here..</option>
 									  	 <option value =" 1">1</option>
 									  	 <option value =" 2">2</option>
@@ -39,8 +38,7 @@
 									  </select>
 									  </td>
 									  <td>Section<br>
-									  	<!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" id="Section">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" id="Section" required="required">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="A">A</option>
 									  	 <option value ="B">B</option>
@@ -52,8 +50,7 @@
 									  </td>
 
 									  <td>Course_id:<br>
-									  	<!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_id" id="Course_id">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_id" id="Course_id" required="required">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="BCA">BCA</option>
 									  	 <option value ="BBA">BBA</option>
@@ -78,9 +75,9 @@
 									
 									<tr>
 									  <td>Subject_id<br>
-									  	<input type="text" name="Subject_id" id="Subject_id" class="span8"/></td>
+									  	<input type="text" name="Subject_id" id="Subject_id" class="span8" required="required"></td>
 									  <td>Session<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Session" id="Session">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Session" id="Session" required="required">
 									  		<option value ="">Select here..</option>
 									  	 <option value =" 2010-2011">2010-2011</option>
 									  	 <option value =" 2011-2012">2011-2012</option>
@@ -91,7 +88,7 @@
 									  </select>
 									  	
 									  <td>Time<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Time" id="Time">
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Time" id="Time" required="required">
 									  		<option value ="">Select here..</option>
 									  		<option value="09_00_09_50">09:00-09:50 AM</option>
 									  		<option value="09_50_10_40">09:50-10_40 AM</option>
@@ -103,7 +100,7 @@
 									  	</select>
 									  	
 									  	<td>Room<br>
-									   	<input type="text" name="Room" id="Room" class="span8"/></td>
+									   	<input type="text" name="Room" id="Room" class="span8" required="required"></td>
 									   
 									</tr>
 									

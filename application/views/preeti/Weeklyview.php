@@ -48,7 +48,7 @@
 
                           <?php foreach($add_class_in as $item){?>
                             <tr >
-                                <td><b><?php echo $item->session_id?></b> </td>
+                                <td ><b><?php echo $item->session_id?></b> </td>
                                 <td><b><?php echo $item->course_id?></b> </td>
                                 <td><b><?php echo $item->semester_id?></b> </td>
                                 <td><b><?php echo $item->section_id;?></b></td>
@@ -100,14 +100,14 @@
                 <tr>
                     
                
-                      <td><?php echo $item->week_id ?></td>
-                      <td><?php echo $item->start_date ?></td>
-                      <td><?php echo $item->end_date ?></td>
-                      <td><?php echo $item->no_of_lecture_schedule ?></td>
-                      <td><?php echo $item->no_of_lost_due_to_holiday ?></td>
-                      <td><?php echo $item->no_of_lost_due_to_cl ?></td>
-                      <td><?php echo $item->no_extra_taken ?></td>
-                      <td><?php echo $item->no_of_lecture_actual_taken ?></td>
+                      <td  class="weekdata  weektd" id="<?php echo $item->week_id.'-week_id';?>"><?php echo $item->week_id ?></td>
+                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-start_date';?>"><?php echo $item->start_date ?></td>
+                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-end_date';?>"><?php echo $item->end_date ?></td>
+                      <td   class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_schedule';?>"><?php echo $item->no_of_lecture_schedule ?></td>
+                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_holiday';?>"><?php echo $item->no_of_lost_due_to_holiday ?></td>
+                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_cl';?>"><?php echo $item->no_of_lost_due_to_cl ?></td>
+                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_extra_taken';?>"><?php echo $item->no_extra_taken ?></td>
+                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_actual_taken';?>"><?php echo $item->no_of_lecture_actual_taken ?></td>
 
                   <!--   <td><a href="<?php// echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id);?>" class="btn btn-primary  ">Details</a></td>  -->
 

@@ -3,6 +3,12 @@
     <div class="module">
       <div class="module-head">
         <h1>sDashboard</h1>
+        <?php 
+        echo $this->session->userdata('sin');
+        echo $this->session->userdata('cos');
+        echo $this->session->userdata('tan');
+        echo $this->session->userdata('cot');
+            ?>
       </div>
       <div class="module-body">
       <div class="btn-box-row row-fluid" ><div class="module">

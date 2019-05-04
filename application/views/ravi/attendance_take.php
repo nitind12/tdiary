@@ -41,7 +41,7 @@
          
                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Main/submitattendance_controller');?>">
 
-                <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
+                <table cellpadding="0" cellspacing="0" border="1" class="datatable-1 table table-bordered table-striped  display" width="100%">
                    <div style="float:right">
                     <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"><?php 
                     echo date("D-d-M-Y")?> </div>
@@ -54,8 +54,11 @@
                     <tr>
                      <th align="center">Roll-no</th>
                       <th align="center">Student Name</th>
-                      <th>Attendance status
-                 <label class="rodio-inline"><input type="radio"  id="optionsRadios5">PRESENT All<input type="radio"  id="optionsRadios4"> ABSENT ALL</label>
+                      <th>Attendance status<br>
+                        <div style="float: left; padding: 0px 5px">
+                  <input type="radio" name="checkUncheckAll"  id="optionsRadios5">PRESENT All
+                </div>
+                <div style="float: left; padding: 0px 5px"><input type="radio" name="checkUncheckAll"  id="optionsRadios4"> ABSENT ALL</div>
                    
                     </th>
                      </tr>
@@ -79,19 +82,15 @@
 
           <?php echo $item->first_name; ?></td>
         <td>
-          <div class="control-group">
-                     
-                      <div class="controls">
-                        <label class="radio inline">
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios1" value="1">
+                      <div style="float: left; padding: 0px 5px">
+                          <input type="radio" name="optionsRadios_<?php echo $item->student_id;?>[]" id="optionsRadios1" value="1" class="PRESENT_class">
                           PRESENT
-                        </label> 
-                        <label class="radio inline">
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value="0">
+                      </div>
+                      <div style="float: left; padding: 0px 22px">
+                          <input type="radio" name="optionsRadios_<?php echo $item->student_id;?>[]" id="optionsRadios2" value="0" class="ABSENT_class">
                            ABSENT
-                        </label> 
-                             </div>
-                    </div>
+                      </div>
+
           </td>
        
         </tr>  

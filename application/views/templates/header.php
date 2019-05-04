@@ -1,4 +1,4 @@
-<?php
+                                                                                                                                                   <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
@@ -57,9 +57,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <b class="caret"></b></a>
 
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Your Profile</a></li>
+                                    <li><a href="<?php echo site_url('studentprofilecontroller');?>">Your Profile</a></li>
                                     <li><a href="#">Edit Profile</a></li>
-                                    <li><a href="#">Account Settings</a></li>
+                                    <li><a href='<?php echo base_url()."index.php/Forgotpwd_controller"; ?>'>Account Settings</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo site_url('Login_controller/logout'); ?>">Logout</a></li>
                                 </ul>

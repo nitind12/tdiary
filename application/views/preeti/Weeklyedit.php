@@ -76,15 +76,15 @@
                                   <tr>
 
                                       <td>Start Date:<br>
-                                          <input type="date" id="startdate" name="startdate" class="span8">
+                                          <input type="date" id="startdate" name="startdate" class="span8"  required="required">
                                       </td>
 
                                       <td>End Date:<br>
-                                          <input type="date" id="enddate" name="enddate" class="span8">
+                                          <input type="date" id="enddate" name="enddate" class="span8"  required="required">
                                       </td>
 
                                         <td>No. Of Lecture Schedule:
-                                            <input type="number" id="Lecture_schedule" name="Lecture_schedule" class="span8">
+                                            <input type="number" id="Lecture_schedule" name="Lecture_schedule" class="span8"  required="required">
                                         </td>
                                    
    
@@ -93,15 +93,15 @@
 
                                   <tr>
                                        <td>No. Of Extra Taken :
-                                          <input type="number" id="extra_taken" name="extra_taken" class="span8">
+                                          <input type="number" id="extra_taken" name="extra_taken" class="span8"  required="required">
                                       </td>
 
                                         <td>No. Of Lost Due To Holiday:
-                                            <input type="number" id="due_to_holiday" name="due_to_holiday" class="span8">
+                                            <input type="number" id="due_to_holiday" name="due_to_holiday" class="span8"  required="required">
                                         </td>
 
                                         <td>No. Of Lost Due To College Leave(CL):
-                                            <input type="number" id="due_to_cl" name="due_to_cl" class="span8">
+                                            <input type="number" id="due_to_cl" name="due_to_cl" class="span8"  required="required">
                                         </td>
                                   </tr>
 
@@ -110,7 +110,7 @@
                                      
  
                                       <td colspan="3">No. Of Lecture Actual Taken :<br>
-                                          <input type="number" id="actual_taken" name="actual_taken" class="span3">  
+                                          <input type="number" id="actual_taken" name="actual_taken" class="span3" required="required">  
                                       </td>
                                            
 

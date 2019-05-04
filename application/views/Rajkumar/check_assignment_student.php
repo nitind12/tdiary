@@ -59,25 +59,25 @@
                       </td>
                       <td align="center"><?php echo $item->first_name; ?></td>
                       <td>
-                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Assignment_No[]" id="Assignment_No[]">
-                              <option value="">Assignment No</option>
-                            <?php foreach ($assignment as  $item) { ?>
-                              <option value="<?php echo $item->Assignment_no;?>">
-                               <?php echo $item->Assignment_no?></option>
-                                      <?php
-                                        }
-                                             ?>
-                               </select>
-                                             
- 
-                        </td>
+                      <!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
+                      <select tabindex="1"data-placeholder="Select here.." class="span8" name="Assignment_no" id="Assignment_no"  >
+                        <option value ="">Select here...</option>
+                        <?php foreach($marks_type as $item){?>
+                          <option value="<?php echo $item->Assignment_no;?>">
+                            <?php echo $item->Assignment_no?></option>
+
+                        <?php
+                      }?>
+                       
+                    </select>
+                    </td>
                       <td>
                      	 <label class="radio inline">
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios1" value="1">
+                          <input type="radio" name="optionsRadios[]" id="optionsRadios1" value="1">
                              CHECKED
                         </label> 
                         <label class="radio inline">
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value="0">
+                          <input type="radio" name="optionsRadios[]" id="optionsRadios2" value="0">
                            UNCHECKED
                         </label> 
                        </td>

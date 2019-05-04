@@ -3,9 +3,6 @@ class Check_assign_report_controller extends CI_Controller{
 	function __construct()
 	{
         parent::__construct();
-
-         if(!$this->session->userdata('user')) redirect('Login_controller');
-         
         $this->load->model('Givenassignmentmodel','gm');
        $this->load->model('Lessonedit_model','obj');
         $this->load->model('Add_class_model','am');
@@ -39,6 +36,9 @@ class Check_assign_report_controller extends CI_Controller{
 
 	public function marks1()
 	{
+		$this->load->model('check_assign_report_model','im');
+		$data['marks_type'] = $this->im->getmarkstype();
+		
 		 $data['page_'] = 'check_marks1_report_view';
 		 $data['title'] = 'marks_report_view ';
         $data['dashboard1'] = $this->am->getDashboardMenu();

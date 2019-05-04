@@ -22,6 +22,9 @@
                     <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"> <?php echo date("Y-m-d")?>
                 </div>
                 <h1>Lecture View</h1>
+                      <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
+               <br>
+
             </div>
 
             <div class="module-body table">
@@ -31,9 +34,7 @@
                     <strong>Note!</strong> For Edit Double Click!
                   </div>
 
-                <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
-               <br>
-
+          
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
 
 
@@ -89,9 +90,9 @@
              <?php foreach ($t_diary as $item) { ?>
               <tr>
             
-              <td class="show-read-more lectdata"><?php echo $item->unit ?></td>
-               <td  class="show-read-more" align="center"><?php echo $item->topic ?></td>
-                 <td align="center"><?php echo $item->no_of_lecture?></td>
+              <td class="show-read-more lectdata mytd"  id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ?></td>
+               <td  class="show-read-more  lectdata mytd"  id="<?php echo $item->lecture_id.'-topic';?>" align="center"><?php echo $item->topic ?></td>
+                 <td align="center" class="lectdata mytd"  id="<?php echo $item->lecture_id.'-no_of_lecture';?>"><?php echo $item->no_of_lecture?></td>
 
                                 <td class="hideblock"><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " 
                                     onclick="return confirm('Are you sure')"></a></td>    

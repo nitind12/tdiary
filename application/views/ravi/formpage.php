@@ -108,8 +108,10 @@
         <th> <h2>Assign-Subject</h2></th> 
         <th><h2>Add Department</h2></th>
     </tr>
-    <tr><td> <div class="control-group">
-                      <label class="control-label" for="CourseName">Session</label>
+    <tr>
+<form name="frmassign" id="frmassign"method="post">
+      <td> <div class="control-group">
+                      <label class="control-label" for="Session">Session</label>
                       <div class="controls">
                    
                             <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session">
@@ -124,7 +126,7 @@
                     <div class="control-group">
                       <label class="control-label" for="CourseName">Course Name</label>
                       <div class="controls">
-                       <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course" id="Course">
+                       <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Courseasign" id="Courseasign">
                                              <option value="">Select Course</option>
                                                 <?php foreach ($course1 as  $item) { ?>
                                                  <option value="<?php echo $item->course_id;?>">
@@ -134,9 +136,9 @@
                                                 </div>
                     </div>
                     <div class="control-group">
-                      <label class="control-label" for="basicinput">Semester</label>
+                      <label class="control-label" for="Semester">Semester</label>
                       <div class="controls">
-                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Semester" id="Semester">
+                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Semesterasign" id="Semesterasign">
                       <option value="">Select Semester</option>
                                                 <?php foreach ($Semester1 as  $item) { ?>
                                                  <option value="<?php echo $item->semester_id;?>">
@@ -147,22 +149,19 @@
                 <div class="control-group">
                       <label class="control-label" for="basicinput">Subject</label>
                       <div class="controls">
-                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Subject" id="Subject">
-                      <option value="">Select Subject</option>
-                                                <?php foreach ($Semester1 as  $item) { ?>
-                                                 <option value="<?php echo $item->semester_id;?>">
-                                                  <?php echo $item->no_of_semester?></option>
-                                                    <?php }?>
-                                                 </select>
-                         </div></div>
+                        <select tabindex="1" data-placeholder="Select here.."class="span8"  name="SubjectNameasign" id="SubjectNameasign">
+                           </select>
+                                             
+                        </div>
+                </div>
                          <div class="control-group">
                       <label class="control-label" for="basicinput">Faculty</label>
                       <div class="controls">
                         <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Subject" id="Subject">
                       <option value="">Select Faculty</option>
-                                                <?php foreach ($Semester1 as  $item) { ?>
-                                                 <option value="<?php echo $item->semester_id;?>">
-                                                  <?php echo $item->no_of_semester?></option>
+                                                <?php foreach ($faculty as  $item) { ?>
+                                                 <option value="<?php echo $item->faculty_id;?>">
+                                                  <?php echo $item->first_name.'  '.$item->last_name?></option>
                                                     <?php }?>
                                                  </select>
                          </div></div>

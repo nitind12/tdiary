@@ -16,26 +16,32 @@ class Studenttimetableeditmodel extends CI_Model{
 		);
 		$this->db->insert('student_time_table',$data);
 		$fileid = $this->db->insert_id();
-		echo $this->upload_tt($fileid); die();
+		$path_id = $this->upload_tt($fileid);
+
+		$this->db->where('fid', $fileid);
+		$data = array(
+			'Choose_File' => $path_id
+		);
+		$this->db->update('student_time_table', $data);
 	}
 
 	function upload_tt($id){
+		clearstatcache();
         $config=array(
 	        'upload_path'=>'./assets/ttdocs/',
-	        'allowed_type'=>'*',
+	        'allowed_types'=>'pdf|xlsx',
 	        'file_name'=>$id,
         	'overwrite'=>TRUE,
         );
-        $config['upload_path'];
         $file_element_name='txtttUpload';
         $this->load->library('upload',$config);
-        $this->upload->do_upload($file_element_name);
         if($this->upload->do_upload($file_element_name)){
 	        $path_ji=$this->upload->data();
 	        $path_=$path_ji['file_name'];
 	    }else{
 	        $path_='x';
 	    }
+
     return $path_;
     }
 	/*

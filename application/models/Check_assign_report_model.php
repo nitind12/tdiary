@@ -59,5 +59,13 @@ class Check_assign_report_model extends CI_Model{
 		//echo $this->db->last_query();
 		return $q->result();
 	}
+
+	public function getmarkstype()
+	{
+		$this->db->select('marks_type_id,marks_name');
+		$query = $this->db->get('marks_type');
+		return $query->result();
+	}
+	
 	
 }

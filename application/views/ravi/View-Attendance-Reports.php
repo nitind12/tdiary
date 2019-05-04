@@ -132,26 +132,16 @@
               echo form_close(); 
             ?>
         </div>
-    <div class="module-head">
+     <div class="module-head">
            <h2>View-Attendance-Reports </h2>
         </div>
-
-        <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
-          
-        <div class="module-body table">
-             <tr>
-              <td>
-                
-                    </td>
-
-                      <td> 
-                    </td>
-                    </tr>
-                </table>
-              
-              </div>
+         <div class="module-body">
+        
         <table class="table table-bordered table-striped" id="reportshere" name="reportshere">
-            </table>
-   </div></div></div>
+        </table>
+   </div>
+ </div>
+</div>
+</div>
                  
             

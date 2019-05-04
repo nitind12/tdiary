@@ -82,11 +82,11 @@
 									</td>
 								-->
 								<td>Start Time:<br>
-									<input type="time" id="txtstart" name="txtstart" class="span8">
+									<input type="time" id="txtstart" name="txtstart" class="span8" required="required">
 								</td>
 
 								<td>End Time:<br>
-									<input type="time" id="txtend" name="txtend" class="span8">				
+									<input type="time" id="txtend" name="txtend" class="span8" required="required">				
 								</td>
 						
 
@@ -132,7 +132,7 @@
 			-->
 
 							 	<td>Date:<br>
-									<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date"class="span8">
+									<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date" class="span8" required="required">
     							</td>
     						</tr>
 
@@ -157,7 +157,7 @@
 					 						<tr>
 	    										<td >Unit:<br>
 													
-													<input type="number" id="Unit" name="Unit" class="span8">
+													<input type="number" id="Unit" name="Unit" class="span8" required="required">
 												</td>
 											</tr>
 											
@@ -165,7 +165,7 @@
 											<tr>
 										
 												<td > Topic:<br>
-				    								<textarea class="span12" rows="5"  cols="30" id="Topic" name="Topic"></textarea>
+				    								<textarea class="span12" rows="5"  cols="30" id="Topic" name="Topic" required="required"></textarea>
 												</td>
 											</tr>
 

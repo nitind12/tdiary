@@ -22,13 +22,14 @@
                 </div>
       
               <h1>Weekly Details</h1>
+                     <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
+               <br>
+
             </div>
 
             <div class="module-body">
           
-                <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
-               <br>
-
+         
               
 
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">

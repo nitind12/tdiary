@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 					<ul class="nav pull-right">
 
-						<li><a href='<?php echo base_url()."index.php/Main/login"; ?>'>Sign In</a>
+						<li><a href='<?php echo base_url()."index.php/Login_controller"; ?>'>Sign In</a>
 							</li>
 
 						
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="sur-name"name="txtsir_name"  placeholder="Sir-name">
+									<input class="span12" type="text" id="txtsir_name"name="txtsir_name"  placeholder="Sur-name">
 								</div>
 							</div>
 						</div>

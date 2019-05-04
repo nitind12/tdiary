@@ -1,7 +1,8 @@
 <?php
 class Add_class_model extends CI_Model
 {
-		function getDashboardMenu()
+	
+	function getDashboardMenu()
 		{
 		$this->db->select('a.*');
 		$this->db->from('sidebar a');
@@ -54,12 +55,34 @@ class Add_class_model extends CI_Model
 		$query = $this->db->get('semester');
 		return $query->result();
 		}
-		function getSubject1($Course_id,$Semester_id)
+		function getfaculty(){
+		
+		$this->db->select('faculty_id,first_name,last_name');
+		$query = $this->db->get('faculty_personal');
+		return $query->result();
+		}
+		function getSubject1()
 		{
-		$this->db->where('course_id',$Course_id);
+			$course_id = $this->input->post('Course');
+			$Semester_id = $this->input->post('Semester');
+
+		$this->db->where('course_id',$course_id);
 		$this->db->where('semester_id',$Semester_id);
 		$this->db->order_by('subject_id');
 		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getSubjectasign()
+		{
+			$course_id = $this->input->post('Courseasign');
+			$Semester_id = $this->input->post('Semesterasign');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
 		return $query->result();
 		}
 		
@@ -131,6 +154,7 @@ class Add_class_model extends CI_Model
 
 		function savingdata()
 		{
+			
 		$data = array(
 			'faculty_id'=>'ravi',
 			'session_id' => $this->input->post('Session'),
@@ -139,15 +163,43 @@ class Add_class_model extends CI_Model
 			'section_id' => $this->input->post('Section'),
 			'subject_id' => $this->input->post('Subject_Name'),
 			'section_id' => $this->input->post('Section'),
+			'date_of_commencement' => $this->input->post('DateOfCommencement'),
 			'date_of_completion' => $this->input->post('DateOfCompletion'),
-			//'section_id' => $this->input->post('Section'),
 			'username' => $this->session->userdata('user'),
 			'status'=>1						
 
 			);
 			$this->db->insert('add_class',$data);
+		
+			
+	$fileid = $this->db->insert_id();
+	$path_id = $this->upload_tt1($fileid);
+	$this->db->where('add_class_id', $fileid);
+		$data = array(
+			'syllabus_pdf' => $path_id
+		);
+		$this->db->update('add_class', $data);
+	}
 
-		}
+	function upload_tt1($id){
+		clearstatcache();
+        $config=array(
+	        'upload_path'=>'./assets/ttdocs/',
+	        'allowed_types'=>'pdf|xlsx',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
+        );
+        $file_element_name='pic_file';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+	        $path_ji=$this->upload->data();
+	        $path_=$path_ji['file_name'];
+	    }else{
+	        $path_='x';
+	    }
+
+    return $path_;
+    }
 		function delClass($no_)
 		{	
 			$this->db->where('add_class_id', $no_);

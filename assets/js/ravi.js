@@ -136,7 +136,8 @@ $(function()
 
 				});
 			}
-		});
+
+			});
 
 		$('#Semester').change(function(){
 			$('#Course').change();
@@ -172,8 +173,13 @@ $('#Courseasign').change(function(){
 
 		$('#Semesterasign').change(function(){
 			$('#Courseasign').change( );
-
-		
+		});
+		$('#optionsRadios5').click(function(){
+			$('.PRESENT_class').prop('checked', true);
 		});
 
+		$('#optionsRadios4').click(function(){
+			$('.ABSENT_class').prop('checked', true);
+		});
+		
 });

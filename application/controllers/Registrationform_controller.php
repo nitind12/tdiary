@@ -19,6 +19,7 @@ class Registrationform_controller extends CI_Controller{
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+       
        $data['course1'] = $this->am->getCourse1();
         
         $this->load->view('templates/header',$data);
@@ -41,6 +42,7 @@ function index()
         $data['course1'] = $this->am->getCourse1();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+       $data['Ses'] = $this->am->getSession1();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  

@@ -166,8 +166,8 @@ class Add_class_model extends CI_Model
 			'date_of_commencement' => $this->input->post('DateOfCommencement'),
 			'date_of_completion' => $this->input->post('DateOfCompletion'),
 			'username' => $this->session->userdata('user'),
-			'status'=>1						
-
+			'status'=>1,						
+			'syllabus_pdf'=>'x'
 			);
 			$this->db->insert('add_class',$data);
 		

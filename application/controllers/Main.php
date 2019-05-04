@@ -58,7 +58,7 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
-    sdfghjk
+    
     public function form_controller()  
     {   
         $data['page_'] = "formpage";

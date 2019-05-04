@@ -105,8 +105,7 @@
                   </table>
                   </table>
                     </div>
-
-         
+    
 
       <div class="btn-box-row row-fluid" >
 

@@ -110,20 +110,6 @@
        
       <div class="btn-box-row row-fluid" >
 
-      <div class="btn-box-row row-fluid  btn-box big span6" >
-          <a href="<?php echo site_url('Registrationform_controller/index');?>" >
-           <i class="icon-briefcase"></i>
-                <b>Student Registration</b>
-      </div>
-      </a>
-      <div class="btn-box-row row-fluid  btn-box big span5" >
-          <a href="<?php echo site_url('Registrationform_controller/index');?>" >
-           <i class="icon-briefcase"></i>
-                <b>Faculty Registration</b>
-      </div>
-      </a>
-
-
       <div class="btn-box-row row-fluid  btn-box big span5" >
           <a href="<?php echo site_url('Main/attendance_controller');?>" >
            <i class="icon-adjust"></i>

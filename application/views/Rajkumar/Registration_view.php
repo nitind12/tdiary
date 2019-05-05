@@ -128,8 +128,24 @@
 								</tr>
 									<tr><td colspan="2"><h2>Address Detail</h2></td></tr>
 								  
-																		
+									<tr><td colspan="2"><h4>Current Address</h4></td></tr>									
 									<tr>
+
+									  <td >Address:<br>
+									  	<input type="text" name="address" class="span8" id="address" /></td>
+									  <td>State:<br>
+									  	<input type="text" id="state" name="state" class="span8"></td>
+									  	</tr>
+									  	<tr>
+									  <td>City:<br>
+									  	<input type="text" id="city" name="city" class="span8"></td>
+									 
+									  	<td>pincode:<br>
+									  <input type="text"  name="pincode" class="span8" required="">
+									</td>
+								</tr>
+								<tr><td colspan="2"><h4>Permanent Address</h4></td></tr>					
+								   <tr>
 
 									  <td >Address:<br>
 									  	<input type="text" name="address" class="span8" id="address" /></td>

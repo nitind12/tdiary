@@ -144,12 +144,6 @@
 									  <input type="text"  name="pincode" class="span8" required="">
 									</td>
 								</tr>
-								<tr>
-									<td>Date of Commencement:<br>
-									  <input type="date"  name="date_of_commencement" class="span8" required="">
-									</td>
-								</tr>
-									
 								   
 								
 									<tr><td colspan="2"><h2>Contact Detail</h2></td></tr>

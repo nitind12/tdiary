@@ -42,8 +42,14 @@ class Add_class_model extends CI_Model
 		$query = $this->db->get('course_table');
 		return $query->result();
 		}
+		function getboard()
+		{
+		$this->db->select('board_id,board_name');
+		$query = $this->db->get('board');
+		return $query->result();
+		}
 
-		 function getSession1()
+	 function getSession1()
 		{
 		$this->db->select('s_id,session');
 		$query = $this->db->get('session');

@@ -43,6 +43,7 @@ function index()
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
        $data['Ses'] = $this->am->getSession1();
+       $data['board'] = $this->am->getboard();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  

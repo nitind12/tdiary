@@ -15,7 +15,7 @@
 										<tr>
 											<td>Course_id:<br>
 														
-															<select tabindex="1" data-placeholder="Select here.." class="span8"  id="Course_id" name="Course_id">
+															<select tabindex="1" data-placeholder="Select here.." class="span8"  id="Course_id" name="Course_id" required="required">
 																<option value="">Select here..</option>
 																<option value="BCA">BCA</option>
 																<option value="BBA">BBA</option>
@@ -27,7 +27,7 @@
 												
 										  	 </td>
 										  	  <td>Semester:<br>
-												  	<select tabindex="1" data-placeholder="Select here.." class="span8" name="Semester" id="Semester">
+												  	<select tabindex="1" data-placeholder="Select here.." class="span8" name="Semester" id="Semester" required="required">
 												  		<option value ="">Select here..</option>
 												  	 <option value ="1">1</option>
 												  	 <option value ="2">2</option>
@@ -41,7 +41,7 @@
 									         </td>
                                                     <td>
 														Session:<br>
-														<select tabindex="1" data-placeholder="Select here.." class="span8" name="Session" id="Session">
+														<select tabindex="1" data-placeholder="Select here.." class="span8" name="Session" id="Session" required="required">
 												  		<option value ="">Select here..</option>
 												  	  <option value ="2010-2011">2010-2011</option>
 									  	              <option value ="2011-2012">2011-2012</option>
@@ -55,7 +55,7 @@
 												</td>
 												<td>		
 										           Section:<br>
-												  	<select tabindex="1" data-placeholder="Select here.." class="span8" name="Section" id="Section">
+												  	<select tabindex="1" data-placeholder="Select here.." class="span8" name="Section" id="Section" required="required">
 												  		<option value ="">Select here..</option>
 												  	 <option value ="A">A</option>
 												  	 <option value ="B">B</option>

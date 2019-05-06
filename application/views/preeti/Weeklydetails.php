@@ -29,12 +29,8 @@
 
             <div class="module-body">
           
-         
-              
-
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
             
-                      
                       <thead>
                           <tr>
                               <!-- <th align="center">No_of_Lecture</th>  -->
@@ -46,17 +42,12 @@
                               <th align="center">CLG.Leave</th>
                               <th align="cneter">L.Extra </th>
                               <th align="center">L.Actual</th>
-                            
-                          
-                           </tr>
+                          </tr>
                       </thead>
                       <tbody>
                       
                         <?php foreach ($t_diary as $item) { ?>
                            <tr>
-
-                           
-
                                 <td><?php echo $item->week_id ?></td>
                                 <td><?php echo $item->start_date ?></td>
                                 <td><?php echo $item->end_date ?></td>
@@ -69,38 +60,28 @@
                          <?php }?>
                       </tbody>
                     </table>
-                    
-
-
                 <br>
 
 
-
-
-                  <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
+                    <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
                
-                                <tr style="text-align: left">
-                            
-                                    
+                             <tr style="text-align: left">     
                                   <th align="center">Date</th>
                                   <th align="center">Unit</th>
-                                  
                                   <th align="center"> Topic</th> 
-                                   </tr>
-                                  <?php foreach ($details as $item) { ?>
+                              </tr>
 
-                                        <tr>
-                                           
-                                            <td><?php echo $item->date;?></td>
+                              <?php foreach ($details as $item) { ?>
+                                     <tr>
+                                           <td><?php echo $item->date;?></td>
                                             <td><?php echo $item->unit;?></td>
                                             <td><?php echo $item->topic;?></td>
                                             
-                                        </tr>
-                                    <?php } ?>
-
+                                      </tr>
+                                <?php } ?>
                             </table>
+                            
                           </div>
-
                          </div>
                      </div>
                  </div>

@@ -1,10 +1,11 @@
 <!--  Read More -->
-
 <style type="text/css">
     .show-read-more .more-text{
         display: none;
     }
 </style>
+
+
 
 <div class="span9">
 	<div class="content">
@@ -13,12 +14,13 @@
 				 <h2>Lesson Plan</h2>
 			</div>
 
-
 			<div class="module-body table">
+
 				  <div class="alert">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     <strong>Note!</strong> For Edit Double Click!
                   </div>
+
 				<form  id="mylessonedit" name="mylessonedit" method="post" action="<?php echo site_url('Lessonedit_controller/savingdata');?>" class="form-horizontal row-fluid">
 
 					<table class="table table-striped table-bordered table-condensed">
@@ -46,9 +48,6 @@
                 		</tbody>
           			</table>	
                     <br>
-
-                 
-
 				<!--	<form  method="post"action="<?php //echo site_url('Lessonedit_controller/lesson_edit_saving_controller');?>" 
 				 class="form-horizontal row-fluid">		-->
 
@@ -59,8 +58,6 @@
 								name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
 							<?php }?>	
 
-				
-				
 						<!--<div style="float:right">
                    		 <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date1" id="date1"> </div>		-->
                     
@@ -89,47 +86,6 @@
 									<input type="time" id="txtend" name="txtend" class="span8" required="required">				
 								</td>
 						
-
-				
-				 <!--	<td>Date:<br>
-						<input type="text" value="<?php //echo date("Y-m-d");?>" id="date" name="date"class="span8">
-    				</td>
-
-				 				<td colspan="2">
-				 					<table class="table table-striped table-bordered table-condensed">
-				 						<tbody>
-					 						<tr>
-	    										<td >Unit:<br>
-													<input type="number" id="Unit" name="Unit" class="span4">
-												</td>
-											</tr>
-
-											<tr>
-												<td > Topic:<br>
-				    								<textarea class="span12" rows="5"  cols="30" id="Topic" name="Topic"></textarea>
-												</td>
-											</tr>
-
-										<tr>
-											<td>No Of Lecture:<br>
-												<input type="number" id="Lecture" name="Lecture"class="span4">
-    										</td>
-    									</tr>
-
-									</table>
-								</td>
-							</tr>
-							<tr>
-
-
-							<tr>
-								<td colspan="3">			
-									<button style="float:right" type="submit" name="save" id="save" class="btn btn-primary">Submit</button>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-			-->
 
 							 	<td>Date:<br>
 									<input type="text" value="<?php echo date("Y-m-d");?>" id="date" name="date" class="span8" required="required">
@@ -189,11 +145,7 @@
 									</tbody>
 								</table>
 							<br>
-
-
-								
-								
-						
+				
 
 			<table class="table table-striped table-bordered table-condensed">
                     <tr style="text-align: left">

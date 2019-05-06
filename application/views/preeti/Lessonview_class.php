@@ -1,5 +1,4 @@
 
-
 <style type="text/css">
   .classBox{font-size: 13px !important; text-align: left; margin: 10px}
 </style>
@@ -30,9 +29,7 @@
                 <div class="btn-box-row row-fluid"  style="border: #ff0000 solid 0px; float: left">
 
                  <!--  <a href="<?php //echo site_url('Lessonview_controller/lesson_view_controller/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>" id="<?php echo $item->add_class_id;?>">   -->
-
-                    <a class="btn-box-row row-fluid  lessonviewclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >
-        
+                    <a class="btn-box-row row-fluid  lessonviewclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >        
 
                       Session:<?php echo $item->session_id?><br>
                       <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br><u><?php echo $item->subject_id;?></u></b>

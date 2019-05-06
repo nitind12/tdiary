@@ -261,6 +261,15 @@ class Main extends CI_Controller {
         $data['subjects'] = $this->am->getSubjectasign();
         echo json_encode($data);
     }
+
+     public function addcourse_controller()  
+    {  
+    
+        $this->am->add_course(); 
+            
+        redirect('Main/form_controller');   
+        }
+
     
  }
 ?>  

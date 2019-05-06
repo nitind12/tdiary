@@ -4,7 +4,7 @@
       <h1>FORMS</h1>
     </div>
   <div class="module-body">
-   <form class="form-horizontal row-fluid">
+   <span class="form-horizontal row-fluid">
     <table class="table" border="2">
       <tr>
         <th >
@@ -16,6 +16,7 @@
     </tr>
     <tr>
       <td>
+        <form name="frmcourse" id="frmcourse"  Method="POST" action="<?php echo site_url('main/addcourse_controller');?>">
                     <div class="control-group">
                       <label class="control-label" for="University">University</label>
                       <div class="controls">
@@ -52,9 +53,9 @@
                         <button type="submit" class="btncourse">GO</button>
                       </div>
                     </div>
-</td>
- </form>
-     <form class="form-horizontal row-fluid">
+</form>
+ </td>  
+   <form class="form-horizontal row-fluid">
      <td>                          
      
                     <div class="control-group">
@@ -101,10 +102,10 @@
                       </div>
                     </div>
 
-     </form></td></tr> <tr>
-        
-
-        <tr>
+     </form>
+   </td>
+ </tr>
+  <tr>
         <th> <h2>Assign-Subject</h2></th> 
         <th><h2>Add Department</h2></th>
     </tr>

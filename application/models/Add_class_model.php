@@ -296,4 +296,22 @@ class Add_class_model extends CI_Model
 			$this->db->insert('attendance',$data);
 			}	
 		}
+		public function add_course()
+		{
+			$University = $this->input->post('University');
+			$Course_ID = $this->input->post('Course_ID');
+			$Course_Name= $this->input->post('Course_Name');
+			$Course_Duration= $this->input->post('Course_Duration');
+			
+			$data = array(
+			'university_id'=>$University,
+			'course_id'=>$Course_ID,
+			'name_of_courses'=>$Course_Name,
+			'no_of_years' => $Course_Duration,
+			'status' => '1',
+			'username' =>$this->session->userdata('user'),
+			);
+		
+			$this->db->insert('course_table',$data);
+		}
 	}

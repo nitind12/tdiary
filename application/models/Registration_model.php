@@ -35,18 +35,33 @@ class Registration_model extends CI_Model{
 		);
 		$this->db->update('std_personal', $data);
 	
-$data = array(
+	$data = array(
 			
 			
 			
-			'address' => $this->input->post('address'),
-			'state' => $this->input->post('state'),
-			'city' => $this->input->post('city'),
-			'pincode' => $this->input->post('pincode'),
+			'address' => $this->input->post('addressname'),
+			'state' => $this->input->post('statename'),
+			'city' => $this->input->post('cityname'),
+			'pincode' => $this->input->post('pincodename'),
 			'address_status' => '1',
-			'date_of_commencement' => $this->input->post('date_of_commencement'),
+			'address_sign' => '1',
+			
 			'username' =>'ra',
+			'student_id' => $sid
 
+		);	
+		$this->db->insert('std_address',$data);
+	
+$data = array(
+	
+			'address' => $this->input->post('addressname1'),
+			'state' => $this->input->post('statename1'),
+			'city' => $this->input->post('cityname1'),
+			'pincode' => $this->input->post('pincodename1'),
+			'address_sign' => '2',
+			
+			'address_status' => '1',
+			'username' =>'ra',
 			'student_id' => $sid
 
 
@@ -55,9 +70,26 @@ $data = array(
 
 		
 		$this->db->insert('std_address',$data);
+
+
+$data = array(
+	
+			'std_email' => $this->input->post('std_email'),
+			'std_contact' => $this->input->post('std_contact'),
+			'alternate_contact' => $this->input->post('alternate_contact'),
+			'alternate_email' => $this->input->post('alternate_email'),
+			'status' => '1',
+			'username' =>'ra',
+			'student_id' => $sid
+
+
+
+		);
+
+		
+		$this->db->insert('std_contact',$data);
 	
 	}
-
 	function getprofile()
 	{
 		

@@ -3,7 +3,7 @@
 
             <div class="module">
               <div class="module-head">
-                <h1>Dashboard-Admin</h1>
+                <h1>tDashboard</h1>
               </div>
               <div class="module-body">
                  <div class="btn-box-row row-fluid" >
@@ -11,13 +11,7 @@
        <h2>View Time Table </h2>
                 
   <table class="table table-striped table-bordered table-condensed" border="1">
-    <?php foreach ($das1 as  $re) 
-    {
-      echo $re->Subject_id;
-?>
-<br/>
-<?php
-    }?>
+    
               <thead>
                     <tr bgcolor="lightblue">
                       <th>DAY</th>
@@ -35,7 +29,13 @@
                       <td>MON</td>
                       <td id="Monday09_00_09_50"></td>
                       <td id="Monday09_50_10_40"></td>
-                      <td id="Monday10_40_11_30"></td>
+                      <td id="Monday10_40_11_30"><?php foreach ($das1 as  $re) 
+    {
+      echo $re->Subject_id;
+?>
+<br/>
+<?php
+    }?></td>
                       <td id="Monday11_50_12_40"></td>
                       <td id="Monday12_40_01_30"></td>
                       <td id="Monday02_10_03_00"></td>
@@ -124,6 +124,38 @@
         </button>
       </div>
    
+     <div class="btn-box-row row-fluid  btn-box big span5" >
+           <i class="icon-adjust"></i>
+                <b>Attendance Reports</b>
+      </div>
+      <div class="btn-box-row row-fluid  btn-box big span5" >
+          <a href="<?php echo site_url('Main/attendance_controller');?>" >
+           <i class="icon-adjust"></i>
+                <b>Total No Of Subjects</b>
+      </div>
+      </a>
+     <div class="btn-box-row row-fluid  btn-box big span5" >
+           <i class="icon-adjust"></i>
+                <b>Total No Of Class</b>
+      </div>
+      <div class="btn-box-row row-fluid  btn-box big span5" >
+          <a href="<?php echo site_url('Main/attendance_controller');?>" >
+           <i class="icon-adjust"></i>
+                <b>View_Class/Edit_class</b>
+      </div>
+      </a>
+     <div class="btn-box-row row-fluid  btn-box big span5" >
+          <a href="<?php echo site_url('Main/attendance_controller');?>" >
+           <i class="icon-adjust"></i>
+                <b>View_Class/Edit_class</b>
+      </div>
+      </a>
+     <div class="btn-box-row row-fluid  btn-box big span5" >
+          <a href="<?php echo site_url('Main/attendance_controller');?>" >
+           <i class="icon-adjust"></i>
+                <b>View_Class/Edit_class</b>
+      </div>
+      </a>
     
     
     </div>

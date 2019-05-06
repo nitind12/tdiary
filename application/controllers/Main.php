@@ -285,6 +285,15 @@ class Main extends CI_Controller {
     }
 
 
+     public function addcourse_controller()  
+    {  
+    
+        $this->am->add_course(); 
+            
+        redirect('Main/form_controller');   
+        }
+
+
     
  }
 ?>  

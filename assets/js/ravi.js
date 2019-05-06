@@ -182,4 +182,5 @@ $('#Courseasign').change(function(){
 			$('.ABSENT_class').prop('checked', true);
 		});
 		
+	
 });

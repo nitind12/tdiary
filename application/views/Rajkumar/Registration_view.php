@@ -1,5 +1,22 @@
 
+<script type="text/javascript">function addresssame(f) 
+	{
+			if(f.check.checked == true) 
+  	{
 
+    f.addressname1.value = f.addressname.value;
+    f.cityname1.value = f.cityname.value;
+	   f.pincodename1.value = f.pincodename.value;
+    f.statename1.value = f.statename.value;
+	}
+	  	else{
+	  	 f.addressname1.value='';
+    f.cityname1.value ='';
+	  	 f.pincodename1.value='';
+    f.statename1.value ='';
+	}
+	}
+</script>>
 
 <div class="span9">
 					<div class="content">
@@ -129,39 +146,43 @@
 									<tr><td colspan="2"><h2>Address Detail</h2></td></tr>
 								  
 									<tr><td colspan="2"><h4>Current Address</h4></td></tr>									
-									<tr>
+									<form><tr>
 
 									  <td >Address:<br>
-									  	<input type="text" name="address" class="span8" id="address" /></td>
+									  	<input type="text" name="addressname" class="span8" id="addressname" /></td>
 									  <td>State:<br>
-									  	<input type="text" id="state" name="state" class="span8"></td>
+									  	<input type="text" id="statename" name="statename" class="span8"></td>
 									  	</tr>
 									  	<tr>
 									  <td>City:<br>
-									  	<input type="text" id="city" name="city" class="span8"></td>
+									  	<input type="text" id="cityname" name="cityname" class="span8"></td>
 									 
 									  	<td>pincode:<br>
-									  <input type="text"  name="pincode" class="span8" required="">
+									  <input type="text"  name="pincodename"  id="pincodename" class="span8" required="">
 									</td>
 								</tr>
-								<tr><td colspan="2"><h4>Permanent Address</h4></td></tr>					
+
+								<tr><td colspan="2"><h4> 													
+													Permanent Address <h6><input type="checkbox" value="" name="check" id="check" onclick="addresssame(this.form)">
+									(checked for same current address)</h6></h4></td></tr>					
 								   <tr>
 
 									  <td >Address:<br>
-									  	<input type="text" name="address" class="span8" id="address" /></td>
+									  	<input type="text" name="addressname1" class="span8" id="addressname1" /></td>
 									  <td>State:<br>
-									  	<input type="text" id="state" name="state" class="span8"></td>
+									  	<input type="text" id="statename1" name="statename1" class="span8"></td>
 									  	</tr>
+									  	
 									  	<tr>
 									  <td>City:<br>
-									  	<input type="text" id="city" name="city" class="span8"></td>
+									  	<input type="text" id="cityname1" name="cityname1" class="span8"></td>
 									 
 									  	<td>pincode:<br>
-									  <input type="text"  name="pincode" class="span8" required="">
+									  <input type="text"  name="pincodename1" id="pincodename1" class="span8" required="">
 									</td>
 								</tr>
 								   
-								
+								</form>
 									<tr><td colspan="2"><h2>Contact Detail</h2></td></tr>
 								  
 									<tr>

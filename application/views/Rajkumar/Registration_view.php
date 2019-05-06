@@ -206,19 +206,19 @@
 									<tr>
 									  <td >Qualification
 									  	</td>
-									  <td>Passing Year
+									  <td class="span2" >Passing Year
 									  	</td>
 									  	
-									  <td>Name of School
-									  	</td>
-									 
+									  
 									  	<td>Name of Board
 									  </td>
-								
+								<td class="span2">Name of School
+									  	</td>
+									 
 								 <td>Total Marks
 									  </td>
 									 
-									  	<td>Obtained Marks
+									  	<td class="span1">Obtained Marks
 									  	</td>
 																
 									 
@@ -228,31 +228,23 @@
 								<tr>
 									  <td >
 									
-									<select tabindex="1" data-placeholder="Select here.."  name="qualification_status" id="qualification_status" class="span12">
+									<select tabindex="1" data-placeholder="Select here.."  name="qualification_status1" id="qualification_status1" class="span12">
 													<option value="">Select here..</option>
-													<option value="Category 1">10th</option>
-													<option value="Category 2">12th</option>
-													<option value="Category 3">UG</option>
-													<option value="Category 4">PG</option>
+													<option value="1">10th</option>
 												</select>
 								</td>
 									  <td>
-									  	<select tabindex="1" data-placeholder="Select here.."  name="qualification_status" id="qualification_status" class="span12">
+									  	<select  data-placeholder="Select here.."  name="PassingYear1" id="PassingYear1" class="span12">
 													<option value="">Select here..</option>
-												<?php  for ($i=1975; $i<=2019 ; $i++) 
+												<?php  for ($i=1975; $i<=date('Y') ; $i++) 
 												{ ?> 
 									  			<option value="<?php echo  $i;?>"><?php echo  $i;?></option>
 													
 									  	<?php } ?>
 									  </select>
 									</td>
-									  	
-									  <td>
-									  	<input type="text" id="school" name="school" class="span7"></td>
-									 
-									  		
-								 <td>
-									  	<select tabindex="1" data-placeholder="Select here.."class="span7"  name="batch" id="batch">
+									   <td>
+									  	<select  data-placeholder="Select here.."class="span12"  name="board1" id="board1">
                                              <option value="">Select Board</option>
                                                 <?php foreach ($board as  $item1) { ?>
                                                  <option value="<?php echo $item1->board_id;?>">
@@ -260,157 +252,153 @@
                                                     <?php }?>
                                        </select>
                                         </td>
+									
+									  <td>
+									  	<input type="text" id="schoolname1" name="schoolname1" class="span12"></td>
+									 
+									  		
 									 <td>
-									  	<input type="text" id="school" name="school" class="span12">
+									  	<input type="text" id="totalmarks1" name="totalmarks1" class="span12">
 									 </td>
 									 
 									 <td>
-									 <input type="text"  name="board" class="span8" required="">
+									 <input type="text"  name="obtained1" id="obtained1"class="span12" required="">
 									</td>
 									<td>
-									 <input type="text"  name="percentage" class="span8" required="">
+									 <input type="text"  name="percentage1"id="percentage1" class="span8" >
+									</td>
+	</tr>
+								<tr>
+									  <td >
+									
+									<select tabindex="1" data-placeholder="Select here.."  name="qualification_status2" id="qualification_status2" class="span12">
+													<option value="">Select here..</option>
+													<option value="2">12th</option>
+												</select>
+								</td>
+									  <td>
+									  	<select  data-placeholder="Select here.."  name="PassingYear2" id="PassingYear2" class="span12">
+													<option value="">Select here..</option>
+												<?php  for ($i=1975; $i<=date('Y') ; $i++) 
+												{ ?> 
+									  			<option value="<?php echo $i;?>"><?php echo $i;?></option>
+													
+									  	<?php } ?>
+									  </select>
+									</td>
+									   <td>
+									  	<select  data-placeholder="Select here.."class="span12"  name="board2" id="board2">
+                                             <option value="">Select Board</option>
+                                                <?php foreach ($board as  $item1) { ?>
+                                                 <option value="<?php echo $item1->board_id;?>">
+                                                 	<?php echo $item1->board_name?></option>
+                                                    <?php }?>
+                                       </select>
+                                        </td>
+									
+									  <td>
+									  	<input type="text" id="schoolname2" name="schoolname2" class="span12"></td>
+									 
+									  		
+									 <td>
+									  	<input type="text" id="totalmarks2" name="totalmarks2" class="span12">
+									 </td>
+									 
+									 <td>
+									 <input type="text"  name="obtained2" id="obtained2"class="span12" required="">
+									</td>
+									<td>
+									 <input type="text"  name="percentage2"id="percentage2" class="span8" required="">
 									</td>
 								</tr>
 								<tr>
 									  <td >
 									
-									<select tabindex="1" data-placeholder="Select here.."  name="qualification_status" id="qualification_status" class="span12">
+									<select tabindex="1" data-placeholder="Select here.."  name="qualification_status3" id="qualification_status3" class="span12">
 													<option value="">Select here..</option>
-													<option value="Category 1">10th</option>
-													<option value="Category 2">12th</option>
-													<option value="Category 3">UG</option>
-													<option value="Category 4">PG</option>
+													<option value="3">UG</option>
 												</select>
 								</td>
 									  <td>
-									  	<select tabindex="1" data-placeholder="Select here.."  name="qualification_status" id="qualification_status" class="span12">
+									  	<select  data-placeholder="Select here.."  name="PassingYear3" id="PassingYear3" class="span12">
 													<option value="">Select here..</option>
-												<?php  for ($i=1975; $i<=2019 ; $i++) 
+												<?php  for ($i=1975; $i<=date('Y') ; $i++) 
 												{ ?> 
 									  			<option value="<?php echo  $i;?>"><?php echo  $i;?></option>
 													
 									  	<?php } ?>
 									  </select>
 									</td>
-									  	
+									   <td>
+									  	 <input type="text"  name="board3" id="board3" class="span12">
+									 
+                                        </td>
+									
 									  <td>
-									  	<input type="text" id="school" name="school" class="span7"></td>
+									  	<input type="text" id="schoolname3" name="schoolname3" class="span12"></td>
 									 
 									  		
-								 <td>
-									  	<select class="span7"  name="batch" id="batch">
-                                             <option value="">Select Board</option>
-                                                <?php foreach ($board as  $item1) { ?>
-                                                 <option value="<?php echo $item1->board_id;?>">
-                                                 	<?php echo $item1->board_name?></option>
-                                                    <?php }?>
-                                       </select>
-                                        </td>
 									 <td>
-									  	<input type="text" id="school" name="school" class="span12">
+									  	<input type="text" id="totalmarks3" name="totalmarks3" class="span12">
 									 </td>
 									 
 									 <td>
-									 <input type="text"  name="board" class="span8" required="">
+									 <input type="text"  name="obtained3" id="obtained3"class="span12" required="">
 									</td>
 									<td>
-									 <input type="text"  name="percentage" class="span8" required="">
+									 <input type="text"  name="percentage3"id="percentage3" class="span8" required="">
 									</td>
 								</tr>
-								
 								<tr>
 									  <td >
 									
-									<select  name="qualification_status" id="qualification_status" class="span12">
+									<select tabindex="1" data-placeholder="Select here.."  name="qualification_status4" id="qualification_status4" class="span12">
 													<option value="">Select here..</option>
-													<option value="Category 1">10th</option>
-													<option value="Category 2">12th</option>
-													<option value="Category 3">UG</option>
-													<option value="Category 4">PG</option>
+													<option value="4">PG</option>
 												</select>
 								</td>
 									  <td>
-									  	<select  name="qualification_status" id="qualification_status" class="span12">
+									  	<select  data-placeholder="Select here.."  name="PassingYear4" id="PassingYear4" class="span12">
 													<option value="">Select here..</option>
-												<?php  for ($i=1975; $i<=2019 ; $i++) 
+												<?php  for ($i=1975; $i<=date('Y') ; $i++) 
 												{ ?> 
 									  			<option value="<?php echo  $i;?>"><?php echo  $i;?></option>
 													
 									  	<?php } ?>
 									  </select>
 									</td>
-									  	
-									  <td>
-									  	<input type="text" id="school" name="school" class="span12"></td>
-									 
-									  		
-								 <td>
-									  	<select class="span7"  name="batch" id="batch">
-                                             <option value="">Select Board</option>
-                                                <?php foreach ($board as  $item1) { ?>
-                                                 <option value="<?php echo $item1->board_id;?>">
-                                                 	<?php echo $item1->board_name?></option>
-                                                    <?php }?>
-                                       </select>
-                                        </td>
-									 <td>
-									  	<input type="text" id="school" name="school" class="span12">
-									 </td>
-									 
-									 <td>
-									 <input type="text"  name="board" class="span8" required="">
-									</td>
-									<td>
-									 <input type="text"  name="percentage" class="span8" required="">
-									</td>
-								</tr><tr>
-									  <td >
+									   <td>
+									  	<input type="text" id="board4" name="board4" class="span12"></td>
+									  
 									
-									<select tabindex="1" data-placeholder="Select here.."  name="qualification_status" id="qualification_status" class="span12">
-													<option value="">Select here..</option>
-													<option value="Category 1">10th</option>
-													<option value="Category 2">12th</option>
-													<option value="Category 3">UG</option>
-													<option value="Category 4">PG</option>
-												</select>
-								</td>
 									  <td>
-									  	<select tabindex="1" data-placeholder="Select here.."  name="qualification_status" id="qualification_status" class="span12">
-													<option value="">Select here..</option>
-												<?php  for ($i=1975; $i<=2019 ; $i++) 
-												{ ?> 
-									  			<option value="<?php echo  $i;?>"><?php echo  $i;?></option>
-													
-									  	<?php } ?>
-									  </select>
-									</td>
-									  	
-									  <td>
-									  	<input type="text" id="school" name="school" class="span7"></td>
+									  	<input type="text" id="schoolname4" name="schoolname4" class="span12"></td>
 									 
 									  		
-								 <td>
-									  	<select tabindex="1" data-placeholder="Select here.."class="span7"  name="batch" id="batch">
-                                             <option value="">Select Board</option>
-                                                <?php foreach ($board as  $item1) { ?>
-                                                 <option value="<?php echo $item1->board_id;?>">
-                                                 	<?php echo $item1->board_name?></option>
-                                                    <?php }?>
-                                       </select>
-                                        </td>
 									 <td>
-									  	<input type="text" id="school" name="school" class="span12">
+									  	<input type="text" id="totalmarks4" name="totalmarks4" class="span12">
 									 </td>
 									 
 									 <td>
-									 <input type="text"  name="board" class="span8" required="">
+									 <input type="text"  name="obtained4" id="obtained4"class="span12" required="">
 									</td>
 									<td>
-									 <input type="text"  name="percentage" class="span8" required="">
+									 <input type="text"  name="percentage4"id="percentage4" class="span8" required="">
 									</td>
 								</tr>
+							<tr><td colspan="7"><h3>Upload Photos</h3></td></tr>
+					
+									
+					<tr>
+						 <td colspan="3" >Upload Photo<br>
+									  	<input type="file" name="UploadP" class="span8" id="UploadP" />
+									  </td>
+							<td colspan="4">Upload Signature<br>
+									  	<input type="file" id="Signature" name="Signature" class="span8"></td>
+									 	</tr>
+													
 					</table>
-									
+							<hr>		
 								  </thead>
 								</tbody>
 								   

@@ -340,12 +340,10 @@ class Add_class_model extends CI_Model
 			);
 			$this->db->insert('admin',$data);
 		}
-	}
+	
 
 
-?>
-
-		public function add_course()
+		function add_course()
 		{
 			$University = $this->input->post('University');
 			$Course_ID = $this->input->post('Course_ID');
@@ -364,4 +362,4 @@ class Add_class_model extends CI_Model
 			$this->db->insert('course_table',$data);
 		}
 	}
-
+?>

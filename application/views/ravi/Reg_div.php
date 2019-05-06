@@ -6,7 +6,8 @@
                 <h1>Dashboard-Admin</h1>
               </div>
               <div class="module-body">
-                 <div class="btn-box-row row-fluid">
+
+                 <div class="btn-box-row row-fluid" >
        <h2>View Time Table </h2>
                 
   <table class="table table-striped table-bordered table-condensed" border="1">
@@ -105,7 +106,8 @@
                   </table>
                   </table>
                     </div>
-    
+
+         
 
       <div class="btn-box-row row-fluid" >
 
@@ -134,6 +136,6 @@
 </div>
 </div>
 </div></div>
-
+  
 
 

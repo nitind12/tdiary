@@ -42,8 +42,14 @@ class Add_class_model extends CI_Model
 		$query = $this->db->get('course_table');
 		return $query->result();
 		}
+		function getboard()
+		{
+		$this->db->select('board_id,board_name');
+		$query = $this->db->get('board');
+		return $query->result();
+		}
 
-		 function getSession1()
+	 function getSession1()
 		{
 		$this->db->select('s_id,session');
 		$query = $this->db->get('session');
@@ -166,8 +172,8 @@ class Add_class_model extends CI_Model
 			'date_of_commencement' => $this->input->post('DateOfCommencement'),
 			'date_of_completion' => $this->input->post('DateOfCompletion'),
 			'username' => $this->session->userdata('user'),
-			'status'=>1						
-
+			'status'=>1,						
+			'syllabus_pdf'=>'x'
 			);
 			$this->db->insert('add_class',$data);
 		

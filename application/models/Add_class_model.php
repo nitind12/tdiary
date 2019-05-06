@@ -272,6 +272,7 @@ class Add_class_model extends CI_Model
 		}
 		
 
+
 		public function take_attendance()
 		{
 			$mk1 = $this->input->post('optionsRadios');

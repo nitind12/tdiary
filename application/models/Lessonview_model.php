@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 class Lessonview_model extends CI_Model
 {
 
-	function savingdata2()
+/*	function savingdata2()
 	{
 		$lesson_ = array();
 

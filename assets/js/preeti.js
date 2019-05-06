@@ -538,13 +538,6 @@ $(document).ready(function()
 			  }
 			});
 
-
-
-
-			
-
-
-
 });
 
 

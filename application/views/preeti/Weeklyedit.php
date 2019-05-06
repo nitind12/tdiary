@@ -1,4 +1,3 @@
-
 <!-- Read More -->
 <style type="text/css">
     .show-read-more .more-text{
@@ -112,9 +111,7 @@
                                       <td colspan="3">No. Of Lecture Actual Taken :<br>
                                           <input type="number" id="actual_taken" name="actual_taken" class="span3" required="required">  
                                       </td>
-                                           
-
-                                               <!--   <td colspan="4">Description Of Topic:<br>
+                                           <!--   <td colspan="4">Description Of Topic:<br>
                                                         <textarea id="topic" name="topic" class="span8" rows="5" cols="30" ></textarea>
                                                   </td>   -->
                                                </tr>
@@ -129,8 +126,7 @@
                                     </tbody>
                                </table>
                           </form>
-                     
-<br>
+                        <br>
 
                         <table class="table table-striped table-bordered table-condensed">
 
@@ -143,17 +139,13 @@
                                     <th align="center">No Of<br> Lost <br>Due To Holiday</th>
                                     <th align="center">No Of Lost<br> Due To CL</th>
                                     <th align="center">No Extra Taken</th>  
-               
                                     <th align="center">No Of <br>Lect Actual Taken</th>
-                               <!--     <th align="center">Details</th>   -->
-                                  
-                               
+                                 <!--     <th align="center">Details</th>   -->
                                     <th align="center">Delete</th>                            
                                 </tr>
-                                  <?php foreach ($t_diary as $item) { ?>
-
-                                         
-                                        <tr>
+                                
+                                  <?php foreach ($t_diary as $item) { ?>   
+                                      <tr>
 
                                            <td  class="weekdata  weektd"  id="<?php echo $item->week_id.'-week_id';?>"><?php echo $item->week_id ?></td>
 

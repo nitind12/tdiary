@@ -7,10 +7,6 @@
 </style>
 
 
-
-
-
-
 <div class="span9">
 	<div class="content">
 		<div class="module">
@@ -18,10 +14,12 @@
 				  <h2>Lecture Plan</h2>
 			</div>
 			<div class="module-body table">
+
 									<div class="alert">
 										<button type="button" class="close" data-dismiss="alert">×</button>
 										<strong>Note!</strong> For Edit Double Click!
 									</div>
+
            		 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                 	<thead>
                   		<tr>
@@ -76,65 +74,61 @@
             
 
 					
-					<tr>
-						
-						<th>
-		                	<center>  <h5>Unit No</h5></center>
-		                </th>				
-						<th>
-						<center><h5>Topic</h5></center>
-						</th>
-					
-						<th>
-							<center><h5>No Of Lecture Aspect</h5></center>
-						</th>
-						
-					</tr>
-					<tr>
-							
-						<td>
-
-						<input type="number" id="txtunit" name="txtunit" class="span12" min="1" max="12" required="required">
-
-						</td>
-
-						<td>
-							<textarea id="topic" name="topic" class="span12" rows="6"  cols="30" required="required">
-						</textarea>
-						</td>
-				
-						<td>
-
-							<input type="number" id="Lecture_no" name="Lecture_no" class="span12" min="1" max="12" required="required">
-
-	
-						</td>
-						
-					</tr>
-			
-
-
 							<tr>
-								<td colspan="3">
-									<div class="control-group">
-										<div class="controls">			
-											<button style="float:right" type="submit" name="save" class=" btn btn-primary">Submit</button>
-										</div>
-									</div>
-								</td>
+								
+								<th>
+				                	<center>  <h5>Unit No</h5></center>
+				                </th>				
+								<th>
+								<center><h5>Topic</h5></center>
+								</th>
+							
+								<th>
+									<center><h5>No Of Lecture Aspect</h5></center>
+								</th>
+								
 							</tr>
-						</tbody>
+
+
+								<tr>		
+									<td>
+										<input type="number" id="txtunit" name="txtunit" class="span12" min="1" max="12" required="required">
+									</td>
+
+									<td>
+										<textarea id="topic" name="topic" class="span12" rows="6"  cols="30" required="required">
+										</textarea>
+									</td>
+							
+									<td>
+										<input type="number" id="Lecture_no" name="Lecture_no" class="span12" min="1" max="12" required="required">
+									</td>
+									
+								</tr>
+						
+
+
+								<tr>
+									<td colspan="3">
+										<div class="control-group">
+											<div class="controls">			
+												<button style="float:right" type="submit" name="save" class=" btn btn-primary">Submit</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
 				</table>
 
 
 
-			<div claas="module-body">
-				<div class="control-group">
-					<label class="control-label" >
-						<h3>Lecture Details</h3>
-					</label>
-				</div>
-			</div> 
+				<div claas="module-body">
+					<div class="control-group">
+						<label class="control-label" >
+							<h3>Lecture Details</h3>
+						</label>
+					</div>
+				</div> 
 
 
 

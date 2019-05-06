@@ -27,12 +27,13 @@ class Studenttimetableviewcontroller extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('mysatyampage', $data);  
         $this->load->view('templates/footer');
+       // redirect('studenttimetableviewcontroller');
     }
 
     public function update()  
     {  
         $this->load->model('Studenttimetableviewmodel', 'stem');
         $this->stem->savingTTable();
-        redirect('Studenttimetableviewcontroller'); 
+        redirect('studenttimetableviewcontroller/index'); 
        }  
 }?>

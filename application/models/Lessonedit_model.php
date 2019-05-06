@@ -59,13 +59,15 @@ class Lessonedit_model extends CI_Model
     }
 	
 
-
+/*
 	function getCourse()
 	{
 		$this->db->select('s_no , course_id');
 		$query = $this->db->get('course_table');
 		return $query->result();
 	}
+*/
+	
 
 
 	//---- for delete ---//

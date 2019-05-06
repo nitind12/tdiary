@@ -14,7 +14,7 @@
 
         <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=4.8"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=1.1"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=1.0"></script>
         
         <script type="text/javascript" src="<?php echo base_url('assets/js/preeti.js');?>?version=7.0"></script>
 

@@ -261,6 +261,30 @@ class Main extends CI_Controller {
         $data['subjects'] = $this->am->getSubjectasign();
         echo json_encode($data);
     }
+
+    function get_sessionassign()
+       {
+        $this->am->addSession();
+         redirect('Main/form_controller');
+
+     }
+
+
+       function get_Batchsign()
+       {
+        $this->am->addBatch();
+         redirect('Main/form_controller');
+
+     }
+
+         function getAdmin_pwd()
+       {
+        $this->am->addAdmin_pwd();
+         redirect('Main/form_controller');
+
+    }
+
+
     
  }
 ?>  

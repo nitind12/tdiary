@@ -1,3 +1,15 @@
+    <style type="text/css">
+
+        .field-icon {
+            float: right;
+            margin-left: -20px;
+            margin-top: 5px;
+            position: relative;
+            z-index: 2;
+          }
+    </style>
+
+
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
@@ -22,7 +34,7 @@
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="password"name="password" id="password" placeholder="Password">
+									<input class="span12" type="password"name="password" id="password" placeholder="Password"><span toggle="#password"   class="icon-eye-open field-icon  toggle-password"></span>
 								</div>
 							</div>
 						</div>

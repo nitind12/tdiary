@@ -89,8 +89,70 @@ $data = array(
 		
 		$this->db->insert('std_contact',$data);
 	
-	}
-	function getprofile()
+							 
+$data = array(
+	
+			'qualification_status' => $this->input->post('qualification_status1'),
+			'board' => $this->input->post('board1'),
+			'passing_year' => $this->input->post('PassingYear1'),
+			'school' => $this->input->post('schoolname1'),
+			'percentage' => $this->input->post('percentage1'),
+			'totalmarks' => $this->input->post('totalmarks1'),
+			'obtainedmarks' => $this->input->post('obtained1'),
+			'status' => '1',
+			'username' =>'ra',
+			'student_id' => $sid
+		);
+		$this->db->insert('std_academic',$data);
+	
+$data = array(
+	
+			'qualification_status' => $this->input->post('qualification_status2'),
+			'board' => $this->input->post('board2'),
+			'passing_year' => $this->input->post('PassingYear2'),
+			'school' => $this->input->post('schoolname2'),
+			'percentage' => $this->input->post('percentage2'),
+			'totalmarks' => $this->input->post('totalmarks2'),
+			'obtainedmarks' => $this->input->post('obtained2'),
+			'status' => '1',
+			'username' =>'ra',
+			'student_id' => $sid
+		);
+		$this->db->insert('std_academic',$data);
+
+$data = array(
+	
+			'qualification_status' => $this->input->post('qualification_status3'),
+			'board' => $this->input->post('board3'),
+			'passing_year' => $this->input->post('PassingYear3'),
+			'school' => $this->input->post('schoolname3'),
+			'percentage' => $this->input->post('percentage3'),
+			'totalmarks' => $this->input->post('totalmarks3'),
+			'obtainedmarks' => $this->input->post('obtained3'),
+			'status' => '1',
+			'username' =>'ra',
+			'student_id' => $sid
+		);
+		$this->db->insert('std_academic',$data);
+	
+$data = array(
+	
+			'qualification_status' => $this->input->post('qualification_status4'),
+			'board' => $this->input->post('board4'),
+			'passing_year' => $this->input->post('PassingYear4'),
+			'school' => $this->input->post('schoolname4'),
+			'percentage' => $this->input->post('percentage4'),
+			'totalmarks' => $this->input->post('totalmarks4'),
+			'obtainedmarks' => $this->input->post('obtained4'),
+			'status' => '1',
+			'username' =>'ra',
+			'student_id' => $sid
+	);
+			$this->db->insert('std_academic',$data);
+
+	
+	
+	}function getprofile()
 	{
 		
 		$this->db->select('st.first_name, st.last_name, st.date_of_birth, st.blood_group,st.course_id, sc.std_contact ,sc.std_email	');

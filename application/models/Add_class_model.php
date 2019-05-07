@@ -297,7 +297,53 @@ class Add_class_model extends CI_Model
 			$this->db->insert('attendance',$data);
 			}	
 		}
-		public function add_course()
+
+
+
+		function addSession()
+		{ 
+			
+			$data=array(
+				's_id'=> $this->input->post('inputsession_id'),
+				'session'=> $this->input->post('inputsession_name'),
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+
+			);
+			$this->db->insert('session',$data);
+		}
+
+
+		function addBatch()
+		{ 
+			
+			$data=array(
+				'batch_id'=> $this->input->post('inputbatch_id'),
+				'batch_name'=> $this->input->post('inputbatch_name'),
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+
+			);
+			$this->db->insert('batch',$data);
+		}
+
+
+		function addAdmin_pwd()
+		{ 
+			
+			$data=array(
+				'admin_name'=> $this->input->post('inputadmin_name'),
+				'admin_password'=> $this->input->post('inputadmin_pwd'),
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+
+			);
+			$this->db->insert('admin',$data);
+		}
+	
+
+
+		function add_course()
 		{
 			$University = $this->input->post('University');
 			$Course_ID = $this->input->post('Course_ID');
@@ -316,3 +362,4 @@ class Add_class_model extends CI_Model
 			$this->db->insert('course_table',$data);
 		}
 	}
+?>

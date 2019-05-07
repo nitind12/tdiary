@@ -262,6 +262,29 @@ class Main extends CI_Controller {
         echo json_encode($data);
     }
 
+    function get_sessionassign()
+       {
+        $this->am->addSession();
+         redirect('Main/form_controller');
+
+     }
+
+
+       function get_Batchsign()
+       {
+        $this->am->addBatch();
+         redirect('Main/form_controller');
+
+     }
+
+         function getAdmin_pwd()
+       {
+        $this->am->addAdmin_pwd();
+         redirect('Main/form_controller');
+
+    }
+
+
      public function addcourse_controller()  
     {  
     
@@ -269,6 +292,7 @@ class Main extends CI_Controller {
             
         redirect('Main/form_controller');   
         }
+
 
     
  }

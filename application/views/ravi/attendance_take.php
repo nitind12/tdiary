@@ -83,11 +83,11 @@
           <?php echo $item->first_name; ?></td>
         <td>
                       <div style="float: left; padding: 0px 5px">
-                          <input type="radio" name="optionsRadios_<?php echo $item->student_id;?>[]" id="optionsRadios1" value="1" class="PRESENT_class">
+                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios1" value="1" class="PRESENT_class">
                           PRESENT
                       </div>
                       <div style="float: left; padding: 0px 22px">
-                          <input type="radio" name="optionsRadios_<?php echo $item->student_id;?>[]" id="optionsRadios2" value="0" class="ABSENT_class">
+                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value="0" class="ABSENT_class">
                            ABSENT
                       </div>
 

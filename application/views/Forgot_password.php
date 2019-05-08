@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
@@ -63,6 +64,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
+=======
+>>>>>>> parent of 841edc2... upload
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
@@ -72,6 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 					
 						<div class="module-body">
+<<<<<<< HEAD
 								<div ><?php echo $this->session->flashdata('c');?> </div>	
 				
 						
@@ -87,20 +91,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="control-group">
 								<div class="controls row-fluid">
 								<input type="password" name="newPassword" id="newPassword"  class="span12 " placeholder="New Password"  required="required"><span  toggle="#newPassword"  class="icon-eye-open field-icon  toggle-password"></span>
-								</div>
-							</div>
-
+=======
 							<div class="control-group">
 								<div class="controls row-fluid">
+									<input class="span12" type="password" name="pwd" id="pwd" placeholder="Password">
+>>>>>>> parent of 841edc2... upload
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls row-fluid">
+<<<<<<< HEAD
 								<input type="password" name="confirmPassword"  id="confirmPassword"  class="span12 " placeholder="Confirm Password" required="required"><span  toggle="#confirmPassword"  class="icon-eye-open field-icon  toggle-password"></span>
+=======
+									<input class="span12" type="password"name="confirmpwd" id="confirmpwd" placeholder=" Confirm Password">
+>>>>>>> parent of 841edc2... upload
 								</div>
 							</div>
 						</div>
-
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix "align="center">
-									<input type="submit" name="submit" id="submit" class="btn btn-primary   " value="Reset Password ">
+									<input type="submit" name="btnpwd" id="btnpwd" class="btn btn-primary " value="Reset Password ">
 									
 
 								</div>
@@ -110,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-	</div><!--/.wrapper-->	
+	</div><!--/.wrapper-->
 
 	<div class="footer">
 		<div class="container">
@@ -119,9 +130,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<b class="copyright">&copy; ravi.com </b> All rights reserved.
 		</div>
 	</div>
-
-
-
-
-
-
+	

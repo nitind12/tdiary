@@ -57,7 +57,9 @@ class Update_Assignment_Controller extends CI_Controller{
     }
 
 
- function updatedColumn()
+
+
+  function updatedColumn()
     {
 
         //$this->load->model('Lectureedit_model','lectup');
@@ -65,7 +67,6 @@ class Update_Assignment_Controller extends CI_Controller{
 
         echo $data; 
     }
-    
 
 
 

@@ -70,17 +70,6 @@ $(document).ready(function()
 
 
 
-	$('.weeklyview_detailsclass').click(function(){
-			var str = this.id;
-			var arr = str.split('~');
-			$('#addclassidED').val(arr[0]);
-			$('#startdateED').val(arr[1]);
-			$('#enddateED').val(arr[2]);
-			$('#weekidED').val(arr[3]);
-
-			$('#frmweeklyview_details').submit();
-		});	
-
 
 
 
@@ -518,6 +507,7 @@ $(document).ready(function()
     			});
 
 
+<<<<<<< HEAD
 
 
 
@@ -538,6 +528,11 @@ $(document).ready(function()
 			  }
 			});
 
+=======
+			//------- total number of lecture------//
+
+
+>>>>>>> parent of 841edc2... upload
 });
 
 

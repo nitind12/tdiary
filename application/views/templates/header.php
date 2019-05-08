@@ -1,5 +1,4 @@
-                                                                                                                                                   <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </form>
 
 
-                        <ul class="nav pull-right">
+                        <ul class="nav pull-right">  
                             <li style="color:red;  font-family:serif; font-weight: bold;  font-size: 20px;   font-variant: small-caps;">
                                 <a href="#"></a>
                                 <?php echo  $this->session->userdata('user') ?></li>
@@ -55,7 +54,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo base_url(),"assets/"?>images/user.png" class="nav-avatar" />
                                 <b class="caret"></b></a>
-
                                 <ul class="dropdown-menu">
                                     <li><a href="<?php echo site_url('studentprofilecontroller');?>">Your Profile</a></li>
                                     <li><a href="#">Edit Profile</a></li>

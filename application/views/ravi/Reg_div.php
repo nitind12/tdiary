@@ -23,7 +23,25 @@
       <div class="btn-box-row row-fluid  btn-box big span5" >
           <a href="<?php echo site_url('Registrationform_controller/index');?>" >
            <i class="icon-briefcase"></i>
+<<<<<<< HEAD
                 <b>Faculty Registration</b></a>
+=======
+                <b>Faculty Registration</b>
+      </div>
+      </a>
+      <div class="btn-box-row row-fluid  btn-box big span5" >
+          <a href="<?php echo site_url('Main/attendance_controller');?>" >
+           <i class="icon-adjust"></i>
+                <b>View_Class/Edit_class</b>
+      </div>
+      </a>
+    
+    <div class="btn-box-row row-fluid" >
+       <button type="button" class="btn-box big span5" data-toggle="modal" data-target="#myModal">
+            <i class="icon-briefcase" id="btnaddclass"name="btnaddclass"></i>
+          <b>Add-Class</b>
+        </button>
+>>>>>>> parent of 841edc2... upload
       </div>
    
        <div class="btn-box-row row-fluid  btn-box big span5" >   <b class="label green pull-right">

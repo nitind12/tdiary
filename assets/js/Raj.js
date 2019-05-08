@@ -772,9 +772,6 @@ $('#update').click(function(){
 
 	});
 
-
-
-
  var maxLength = 30;
 
 		    	$(".show-read-more1").each(function() {
@@ -917,11 +914,12 @@ $('#update').click(function(){
 
 				    });
     			});
+	
+	
 
 
 
-  		
-  		//---double click and edit text view checked assignment----//
+//---double click and edit text view checked assignment----//
     		var oriVal;
     			$('body').on('dblclick', '.checkedassign_data', function(){
     				// this.id - it will give you the specific id of td where dblclick held
@@ -940,7 +938,7 @@ $('#update').click(function(){
 				    $this.remove(); // Don't just hide, remove the element.
 				    var dt__ = $this.val();
 				    var data_ = "dt="+dt__+"&checkedassign_id="+arr[1]+"&columnname="+arr[2];
-				    var url_ = site_url_ + "/Update_Assignment_Controller/updatedColumn";
+				    var url_ = site_url_ + "/Assignmentcontroller/updatedColumn";
 
 				    $.ajax({
 				    	url:url_,

@@ -55,37 +55,24 @@ class Weeklyedit_controller extends CI_Controller
         }
     }
 
-    public function details()
+    public function details($no_,$sd,$ed,$wi)
     {  
-        if($this->input->post('addclassidED'))
-        {
-            $no_ = $this->input->post('addclassidED');
-            $sd = $this->input->post('startdateED');
-            $ed = $this->input->post('enddateED');
-            $wi = $this->input->post('weekidED');
+        $data['title'] = "Weekly details";
+        $data['page_'] = "Weeklydetails";
 
-            $data['title'] = "Weekly details";
-            $data['page_'] = "Weeklydetails";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       
+         $data['t_diary'] = $this->obj->fetchtable($no_);
 
-            $data['dashboard1'] = $this->am->getDashboardMenu();
-            $data['menu'] = $this->am->getMenu();
-            $data['submenu'] = $this->am->getSubmenu();
-            $data['last'] = $this->am->getlastMenu();
-           
-             $data['t_diary'] = $this->obj->fetchtable($no_);
+         $data['t_diary'] = $this->obj->weeklyreport($wi);
 
-             $data['t_diary'] = $this->obj->weeklyreport($wi);
-
-            $data['details']= $this->obj->detailsreports($sd,$ed,$no_,$wi);
-            $this->load->view('templates/header', $data);
-            $this->load->view('mypreetipage',$data);
-            $this->load->view('templates/footer');
-        }
-        else
-        {
-            redirect("Weeklyedit_controller/weekly_view");
-        }
-
+        $data['details']= $this->obj->detailsreports($sd,$ed,$no_,$wi);
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage',$data);
+        $this->load->view('templates/footer');
     }
 
 
@@ -98,11 +85,10 @@ class Weeklyedit_controller extends CI_Controller
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
 
-            $data['dashboard1'] = $this->am->getDashboardMenu();
-            $data['menu'] = $this->am->getMenu();
-            $data['submenu'] = $this->am->getSubmenu();
-            $data['last'] = $this->am->getlastMenu();
-
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
             $data['add_class_in'] = $this->obj->add_view_class($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
             $data['title'] = "Weekly Edit";

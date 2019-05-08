@@ -132,7 +132,7 @@
 
                                 <tr style="text-align: left">
                             
-                                    
+                                    <th align="center">Week No</th>
                                     <th align="center">Start Date</th>
                                     <th align="center">End Date</th>
                                     <th align="center">No Of<br> Lect Schedule</th>

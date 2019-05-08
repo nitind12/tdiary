@@ -77,6 +77,38 @@ $('.assignmentchecker').click(function(){
 		});
 
 
+		$('#Course_name').change(function(){
+			if($('#Course_name').val() != '' && $('#Semester').val() !=0){
+				var url_ = site_url_+"/assign_report_controller/get_subjects";
+				var data_ = $('#assignmentform').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Subject</option>";
+					for(i=0; i<obj.subjects.length; i++){
+						str = str + "<option value='"+obj.subjects[i].subject_id+"'>"+obj.subjects[i].subject_name+"</option>";
+					}
+					$('#Subject').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#Semester').change(function(){
+			$('#Course_name').change();
+
+		
+		});
+
+
 /*		
 	$('#myform1').submit(function()
 	{

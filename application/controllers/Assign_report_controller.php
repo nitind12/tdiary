@@ -5,8 +5,14 @@ class assign_report_controller extends CI_Controller{
         parent::__construct();
         $this->load->model('Givenassignmentmodel','gm');
        $this->load->model('Lessonedit_model','obj');
-        $this->load->model('Add_class_model','am');
+      $this->load->model('Add_class_model','am');
+        $this->load->model('Assign_report_model','ar');
     }
+    function  get_subjects(){
+        $data['subjects'] = $this->ar->getSubjectr();
+        echo json_encode($data);
+    }
+    
     public function index()
 	{
 		 $data['page_'] = 'assign_report_view';
@@ -15,6 +21,9 @@ class assign_report_controller extends CI_Controller{
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  

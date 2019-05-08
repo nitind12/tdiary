@@ -56,7 +56,7 @@ class Check_assign_report_model extends CI_Model{
 		
 
 		$q = $this->db->get();
-		//echo $this->db->last_query();
+		//echo $this->db->last_query();die();
 		return $q->result();
 	}
 

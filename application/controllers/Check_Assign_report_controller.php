@@ -45,6 +45,9 @@ class Check_assign_report_controller extends CI_Controller{
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  

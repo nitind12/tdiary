@@ -352,17 +352,15 @@ class Add_class_model extends CI_Model
 		}
 		function addsectionstudent()
 		{ 
-			$checkbox= $this->input->post('checkbox');//valueeee
-			echo $checkbox;
-			for($i=0; $i<count($checkbox); $i++)
+			$std_group= $this->input->post('students');//valueeee
+			for($i=0; $i<count($std_group); $i++)
 			{
 			$data=array(
 				'session_id'=> $this->input->post('SessionG'),
 				'session_class_id'=> $this->input->post('ClassG'),
-				'student_id'=>$checkbox[$i],
+				'student_id'=>$std_group[$i],
 				'status'=>'1',
 				'username'=>$this->session->userdata('user')
-
 			);
 			$this->db->insert('section',$data);
 		}

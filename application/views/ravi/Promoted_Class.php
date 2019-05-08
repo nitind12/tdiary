@@ -76,7 +76,7 @@
     
        <span class="form-horizontal row-fluid">
 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%"> 
-  <form class="form-horizontal row-fluid" method="post" name="frmPromClass" id="frmPromotedClass" action="addsectionClass">
+  <form class="form-horizontal row-fluid" method="post" name="frmPromClass" id="frmPromotedClass" action="<?php echo site_url('main/addsectionClass');?>">
     <tr>
       <td>
                      <div class="control-group">

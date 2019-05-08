@@ -507,8 +507,6 @@ $(document).ready(function()
     			});
 
 
-<<<<<<< HEAD
-
 
 
 			$(".toggle-password").click(function() 
@@ -528,11 +526,11 @@ $(document).ready(function()
 			  }
 			});
 
-=======
-			//------- total number of lecture------//
+
+		
 
 
->>>>>>> parent of 841edc2... upload
+
 });
 
 

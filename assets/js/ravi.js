@@ -145,6 +145,70 @@ $(function()
 		
 		});
 
+$('#CourseG').change(function(){
+
+			if($('#CourseG').val() != '' && $('#SessionG').val() !=0){
+				var url_ = site_url_+"/main/get_class";
+				var data_ = $('#frmPromotedClass').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Class</option>";
+					for(i=0; i<obj.class.length; i++){
+						str = str + "<option value='"+obj.class[i].add_class_id+"'>"+obj.class[i].course_id+obj.class[i].semester_id+obj.class[i].section_id+"</option>";
+					}
+					$('#ClassG').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#SessionG').change(function(){
+			$('#CourseG').change();
+
+			
+		});
+
+$('#CourseG').change(function(){
+
+			if($('#CourseG').val() != '' && $('#SessionG').val() !=0){
+				var url_ = site_url_+"/main/get_student";
+				var data_ = $('#frmPromotedClass').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+
+					for(i=0; i<obj.student.length; i++){
+						str = str + "<input type='checkbox' name=`checkbox[].`"+obj.student[i].student_id+"' value='"+obj.student[i].student_id+"'>"+obj.student[i].first_name+obj.student[i].last_name+"<br/>";
+					}
+					$('#getstudent').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#SessionG').change(function(){
+			$('#CourseG').change();
+
+			
+		});
+
 $('#Courseasign').change(function(){
 
 			if($('#Courseasign').val() != '' && $('#Semesterasign').val() !=0){

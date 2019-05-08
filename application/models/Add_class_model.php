@@ -70,12 +70,36 @@ class Add_class_model extends CI_Model
 		function getSubject1()
 		{
 			$course_id = $this->input->post('Course');
-			$Semester_id = $this->input->post('Semester');
+			$Semester_id = $this->input->post('SemesterG');
 
 		$this->db->where('course_id',$course_id);
 		$this->db->where('semester_id',$Semester_id);
 		$this->db->order_by('subject_id');
 		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclass1()
+		{
+			$course_id = $this->input->post('CourseG');
+			$Session_id = $this->input->post('SessionG');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('session_id',$Session_id );
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getstudent1()
+		{
+			$course_id = $this->input->post('CourseG');
+			$Session_id = $this->input->post('SessionG');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('session_id',$Session_id );
+		$this->db->order_by('first_name');
+		$query = $this->db->get('std_personal');
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
@@ -326,6 +350,23 @@ class Add_class_model extends CI_Model
 			);
 			$this->db->insert('batch',$data);
 		}
+		function addsectionstudent()
+		{ 
+			$checkbox= $this->input->post('checkbox');//valueeee
+			echo $checkbox;
+			for($i=0; $i<count($checkbox); $i++)
+			{
+			$data=array(
+				'session_id'=> $this->input->post('SessionG'),
+				'session_class_id'=> $this->input->post('ClassG'),
+				'student_id'=>$checkbox[$i],
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+
+			);
+			$this->db->insert('section',$data);
+		}
+	}
 
 
 		function addAdmin_pwd()

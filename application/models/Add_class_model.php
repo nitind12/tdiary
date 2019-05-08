@@ -95,11 +95,13 @@ class Add_class_model extends CI_Model
 		{
 			$course_id = $this->input->post('CourseG');
 			$Session_id = $this->input->post('SessionG');
-
-		$this->db->where('course_id',$course_id);
-		$this->db->where('session_id',$Session_id );
-		$this->db->order_by('first_name');
-		$query = $this->db->get('std_personal');
+		$this->db->distinct();
+		$this->db->select('a.student_id, a.first_name, a.last_name');
+		$this->db->where('a.course_id',$course_id);
+		$this->db->where('a.session_id',$Session_id );
+		$this->db->order_by('a.first_name');
+		$this->db->where('(a.student_id not in (select b.student_id from section b))');
+		$query = $this->db->get('std_personal a');
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}

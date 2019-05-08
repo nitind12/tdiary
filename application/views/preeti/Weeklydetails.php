@@ -75,7 +75,7 @@
                                      <tr>
                                            <td><?php echo $item->date;?></td>
                                             <td><?php echo $item->unit;?></td>
-                                            <td><?php echo $item->topic;?></td>
+                                            <td class="show-read-more "><?php echo $item->topic;?></td>
                                             
                                       </tr>
                                 <?php } ?>

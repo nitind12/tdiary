@@ -191,7 +191,7 @@ $('#CourseG').change(function(){
 					var str = '';
 
 					for(i=0; i<obj.student.length; i++){
-						str = str + "<input type='checkbox' name=`checkbox[].`"+obj.student[i].student_id+"' value='"+obj.student[i].student_id+"'>"+obj.student[i].first_name+obj.student[i].last_name+"<br/>";
+						str = str + "<input type='checkbox' name='students[]' id='checkbox"+obj.student[i].student_id+"' value='"+obj.student[i].student_id+"'>"+obj.student[i].first_name+obj.student[i].last_name+"<br/>";
 					}
 					$('#getstudent').html(str);
 				},

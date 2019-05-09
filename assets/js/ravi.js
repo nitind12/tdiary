@@ -174,6 +174,77 @@ $('#CourseG').change(function(){
 		$('#SessionG').change(function(){
 			$('#CourseG').change();
 
+
+			
+		});
+
+$('#CourseP').change(function(){
+
+			if($('#CourseP').val() != '' && $('#SessionP').val() !=0){
+				var url_ = site_url_+"/main/get_classP";
+				var data_ = $('#frmPromotedClass1').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+
+				success: function(data){
+				
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Class</option>";
+					for(i=0; i<obj.class.length; i++){
+						str = str + "<option value='"+obj.class[i].add_class_id+"'>"+obj.class[i].course_id+obj.class[i].semester_id+obj.class[i].section_id+"</option>";
+					}
+					$('#ClassP').html(str);
+			
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#SessionP').change(function(){
+			$('#CourseP').change();
+
+			
+		});
+
+$('#CourseP1').change(function(){
+
+			if($('#CourseP1').val() != '' && $('#SessionP1').val() !=0){
+				var url_ = site_url_+"/main/get_classP1";
+				var data_ = $('#frmPromotedClass1').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+
+				success: function(data){
+				
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Class</option>";
+					for(i=0; i<obj.class.length; i++){
+						str = str + "<option value='"+obj.class[i].add_class_id+"'>"+obj.class[i].course_id+obj.class[i].semester_id+obj.class[i].section_id+"</option>";
+					}
+					$('#ClassP1').html(str);
+			
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#SessionP1').change(function(){
+			$('#CourseP1').change();
+
 			
 		});
 
@@ -205,6 +276,38 @@ $('#CourseG').change(function(){
 
 		$('#SessionG').change(function(){
 			$('#CourseG').change();
+
+			
+		});
+
+$('#CourseP').change(function(){
+
+			if($('#CourseP').val() != '' && $('#SessionP').val() !=0){
+				var url_ = site_url_+"/main/get_studentP";
+				var data_ = $('#frmPromotedClass1').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+
+					for(i=0; i<obj.student.length; i++){
+						str = str + "<input type='checkbox' name='stud[]' id='checkbox"+obj.student[i].student_id+"' value='"+obj.student[i].student_id+"'>"+obj.student[i].first_name+'  '+obj.student[i].last_name+"<br/>";
+					}
+					$('#getstudentP').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#SessionP').change(function(){
+			$('#CourseP').change();
 
 			
 		});

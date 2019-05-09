@@ -46,7 +46,7 @@ class Registration_model extends CI_Model{
 			'address_status' => '1',
 			'address_sign' => '1',
 			
-			'username' =>'ra',
+			'username'=>$this->session->userdata('user'),
 			'student_id' => $sid
 
 		);	
@@ -61,7 +61,7 @@ $data = array(
 			'address_sign' => '2',
 			
 			'address_status' => '1',
-			'username' =>'ra',
+			'username'=>$this->session->userdata('user') ,
 			'student_id' => $sid
 
 
@@ -79,7 +79,7 @@ $data = array(
 			'alternate_contact' => $this->input->post('alternate_contact'),
 			'alternate_email' => $this->input->post('alternate_email'),
 			'status' => '1',
-			'username' =>'ra',
+			'username'=>$this->session->userdata('user'),
 			'student_id' => $sid
 
 
@@ -100,7 +100,7 @@ $data = array(
 			'totalmarks' => $this->input->post('totalmarks1'),
 			'obtainedmarks' => $this->input->post('obtained1'),
 			'status' => '1',
-			'username' =>'ra',
+			'username'=>$this->session->userdata('user'),
 			'student_id' => $sid
 		);
 		$this->db->insert('std_academic',$data);
@@ -115,7 +115,7 @@ $data = array(
 			'totalmarks' => $this->input->post('totalmarks2'),
 			'obtainedmarks' => $this->input->post('obtained2'),
 			'status' => '1',
-			'username' =>'ra',
+			'username'=>$this->session->userdata('user'),
 			'student_id' => $sid
 		);
 		$this->db->insert('std_academic',$data);
@@ -130,7 +130,7 @@ $data = array(
 			'totalmarks' => $this->input->post('totalmarks3'),
 			'obtainedmarks' => $this->input->post('obtained3'),
 			'status' => '1',
-			'username' =>'ra',
+			'username'=>$this->session->userdata('user'),
 			'student_id' => $sid
 		);
 		$this->db->insert('std_academic',$data);
@@ -145,14 +145,77 @@ $data = array(
 			'totalmarks' => $this->input->post('totalmarks4'),
 			'obtainedmarks' => $this->input->post('obtained4'),
 			'status' => '1',
-			'username' =>'ra',
+			'username'=>$this->session->userdata('user'),
 			'student_id' => $sid
 	);
 			$this->db->insert('std_academic',$data);
 
 	
 	
-	}function getprofile()
+			
+		$data = array(
+			'student_id' =>$sid, 
+			'username'=>$this->session->userdata('user'),
+			'status'=>1						
+			);
+			$this->db->insert('student_photo',$data);
+		
+			
+	$fileid = $this->db->insert_id();
+	$path_id = $this->upload_ttStudent($fileid);
+	
+	$path_id = $this->upload_ttStudents($fileid);
+	$this->db->where('student_photo_id', $fileid);
+		$data = array(
+			'student_photo' => $path_id,
+			'student_sig' => $path_id
+
+		);
+		
+		$this->db->update('student_photo', $data);
+	
+	}
+function upload_ttStudents($id){
+		clearstatcache();
+        $config=array(
+	        'upload_path'=>'./assets/ttdocs/',
+	        'allowed_types'=>'jpg|png',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
+        );
+        $file_element_name='Signature';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+	        $path_ji=$this->upload->data();
+	        $path_=$path_ji['file_name'];
+	    }else{
+	        $path_='x';
+	    }
+
+    return $path_;
+    }
+	
+	function upload_ttStudent($id){
+		clearstatcache();
+        $config=array(
+	        'upload_path'=>'./assets/ttdocs/',
+	        'allowed_types'=>'jpg|png',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
+        );
+        $file_element_name='UploadP';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+	        $path_ji=$this->upload->data();
+	        $path_=$path_ji['file_name'];
+	    }else{
+	        $path_='x';
+	    }
+
+    return $path_;
+    }
+		
+	function getprofile()
 	{
 		
 		$this->db->select('st.first_name, st.last_name, st.date_of_birth, st.blood_group,st.course_id, sc.std_contact ,sc.std_email	');

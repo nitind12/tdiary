@@ -8,7 +8,7 @@
 						
 	<form method="post" id="" action="<?php echo site_url('studentprofile1controller/savingdata3');?>" class="form-horizontal row-fluid">
 								
-	<table class="table"  width="20" height="30"border="1">
+	<table class="table"  width="10" height="30"border="1">
 		<tbody>
 		<?php foreach($m as $user):
 		?>

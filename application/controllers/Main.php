@@ -340,7 +340,49 @@ function get_student()
         redirect('Main/form_controller');   
         }
 
-
     
+
+    public function save_notes_controller()  
+    {  
+    
+         $this->am->getUpload();
+       
+        redirect('Main/upload_controller');   
+        }
+
+
+    public function Upload_controller()
+     {   
+        $data['page_'] = "Upload_Notes";
+        $data['title'] = "Form Page";
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+      
+       
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage', $data);  
+        $this->load->view('templates/footer');
+    }
+
+
+       public function Download_controller()
+     {   
+        $data['page_'] = "Download_notes";
+        $data['title'] = "Form Page";
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       $data['downloads'] = $this->am->download_models();
+        
+    
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage', $data);  
+        $this->load->view('templates/footer');
+    }
  }
 ?>  

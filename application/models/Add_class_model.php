@@ -400,5 +400,62 @@ class Add_class_model extends CI_Model
 		
 			$this->db->insert('course_table',$data);
 		}
+
+
+
+		function getUpload()
+		{
+			
+		$data = array(
+			'faculty_id'=>'ravi',
+			'subject_id' =>'BCA101',
+			'upload_notes'=> 'x',
+			'status'=>1						
+			
+			);
+			$this->db->insert('upload_notes',$data);
+		
+			
+	$fileid = $this->db->insert_id();
+	$path_id = $this->upload_notes($fileid);
+	$this->db->where('notes_id', $fileid);
+		$data = array(
+			'upload_notes'=> $path_id
+				);
+		$this->db->update('upload_notes', $data);
 	}
+
+	function upload_notes($id)
+	{
+		clearstatcache();
+        $config=array(
+	        'upload_path'=>'./assets/upload_notes/',
+	        'allowed_types'=>'pdf|xlsx',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
+        );
+        $file_element_name='pic_file';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+	        $path_ji=$this->upload->data();
+	        $path_=$path_ji['file_name'];
+	    }else{
+	        $path_='x';
+	    }
+
+    return $path_;
+    }
+    function download_models( )
+		{
+		
+		$this->db->distinct('a.notes_id');
+		$this->db->select('a.*');
+		$this->db->where('a.subject_id','BCA101');
+		$this->db->where('a.faculty_id', 'ravi');
+		$this->db->from('upload_notes a');
+		$q = $this->db->get();
+		return $q->result();
+		}
+		
+}
 ?>

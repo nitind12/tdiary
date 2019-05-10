@@ -383,6 +383,7 @@ function get_student()
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+        $data['downloads'] = $this->am->download_models();
       
        
         $this->load->view('templates/header', $data);
@@ -406,6 +407,17 @@ function get_student()
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
+    }
+
+
+
+    //--- for delete -->
+    public function del1()
+    {
+        $u = $this->uri->segment(3);
+        $this->am->del($u);
+        
+        redirect('Main/upload_controller','refresh');
     }
  }
 ?>  

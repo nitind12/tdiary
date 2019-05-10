@@ -286,7 +286,13 @@ class Main extends CI_Controller {
         redirect('Main/attendance_controller');
     }
     function addsectionClass(){
-        $res = $this->am->addsectionstudent();
+         $this->am->addsectionstudent();
+        
+        redirect('Main/Promoted_Class_controller');
+    }
+ function promotedClass()
+ {
+         $this->am->addpromotedstudent();
         
         redirect('Main/Promoted_Class_controller');
     }
@@ -304,11 +310,28 @@ class Main extends CI_Controller {
         $data['class'] = $this->am->getclass1();
         echo json_encode($data);
     }
+    function get_classP()
+    {
+        $data['class'] = $this->am->getclassP();
+        echo json_encode($data);
+    }
+ function get_classP1()
+    {
+        $data['class'] = $this->am->getclassP1();
+        echo json_encode($data);
+    }
+
 function get_student()
     {
         $data['student'] = $this->am->getstudent1();
         echo json_encode($data);
     }
+    function get_studentP()
+    {
+        $data['student'] = $this->am->getstudentP();
+        echo json_encode($data);
+    }
+
     function get_sessionassign()
        {
         $this->am->addSession();

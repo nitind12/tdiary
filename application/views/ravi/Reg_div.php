@@ -21,7 +21,7 @@
       </div>
       
       <div class="btn-box-row row-fluid  btn-box big span5" >
-          <a href="<?php echo site_url('Registrationform_controller/index');?>" >
+          <a href="<?php echo site_url('F_registrationform_controller/index1');?>" >
            <i class="icon-briefcase"></i>
 
                 <b>Faculty Registration</b>

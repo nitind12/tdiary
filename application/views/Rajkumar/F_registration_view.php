@@ -1,13 +1,11 @@
-
-<script type="text/javascript">function addresssame(f) 
+<script type="text/javascript">function addresssame(f)
 	{
 			if(f.check.checked == true) 
   	{
-
-    f.addressname1.value = f.addressname.value;
-    f.cityname1.value = f.cityname.value;
-	   f.pincodename1.value = f.pincodename.value;
-    f.statename1.value = f.statename.value;
+    f.addressname1.value = f.address.value;
+    f.cityname1.value = f.city.value;
+	   f.pincodename1.value = f.pincode.value;
+    f.statename1.value = f.state.value;
 	}
 	  	else{
 	  	 f.addressname1.value='';
@@ -16,64 +14,28 @@
     f.statename1.value ='';
 	}
 	}
-</script>>
+</script>
+
 
 <div class="span9">
 					<div class="content">
 
 						<div class="module">
 							<div class="module-head">
-								<h1 > Registration Form</h1>
+								<h1 >Faculty Registration Form</h1>
 							</div>
-							<div class="module-body">	<?php
-            				$data = array(
-              				'name' => 'frmregstudent',
-              			'id' => 'frmregstudent'
-            			);
-           					 echo form_open_multipart('registrationform_controller/savingdata3', $data); 
-          				?>
-							<span class="form-horizontal row-fluid">	
-						<!--form method="post" action="<?php //echo site_url('registrationform_controller/savingdata3');?>" class="form-horizontal row-fluid" id="form102" name="form102"--->
+							<div class="module-body">
+								
+						<form method="post" action="<?php echo site_url('F_registrationform_controller/savingdata3');?>" class="form-horizontal row-fluid" id="form102" name="form102">
+
 		
-							<table class="table table-striped table-bordered table-condensed "  border="1">
+							<table class="table table-striped table-bordered table-condensed " >
 									<tr><div style="float:right">
                     <input type="hidden" value="<?php echo date("Ym")?>" name="date" id="date"> <?php echo date("Y-m-d")?>
                 </div>
-      
-											<td>Batch<br>
-									  	<select tabindex="1" data-placeholder="Select here.."class="span12"  name="batch" id="batch">
-                                             <option value="">Select Batch</option>
-                                                <?php foreach ($Ses as  $item1) { ?>
-                                                 <option value="<?php echo $item1->s_id;?>">
-                                                 	<?php echo $item1->session?></option>
-                                                    <?php }?>
-                                                 </select>
-                                             	</td>
-									 									  	
-									 <td>Session:<br>
-									  	<select tabindex="1" data-placeholder="Select here.."class="span12"  name="regsession" id="regsession">
-                                             <option value="">Select Session</option>
-                                                <?php foreach ($Ses as  $item1) { ?>
-                                                 <option value="<?php echo $item1->s_id;?>">
-                                                 	<?php echo $item1->session?></option>
-                                                    <?php }?>
-                                                 </select>
-                                             	</td>
-									 <td ><b>Course:</b>
-										<br>
-									  	<select tabindex="1" data-placeholder="Select here.."class="span8"  name="regCourse" id="regCourse">
-                                           <option value="">Select Course</option>
-                                            <?php foreach ($course1 as  $item) { ?>
-                                               <option value="<?php echo $item->course_id;?>">
-                                                 	<?php echo $item->name_of_courses ?> 
-                                               </option>
-                                                    <?php }?>
-                                        </select></td>
-                                        								</tr>
-								</div>
-		</table>
-									
-<br><br>
+            </tr>
+        </table>
+
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 			<!--<table class="table" >-->
 				<thead>
@@ -87,12 +49,20 @@
 									  	<input type="text" id="last_name" name="last_name" class="span8"></td>
 									  	</tr>
 									  	<tr>
-								  	<td>Father Name:<br>
+								  	<td>Father Name/Husband Name:<br>
 									  <input type="text"  name="father_name" class="span8" required="">
 									</td>
-									<td>Mother Name:<br>
-									  <input type="text"  name="mother_name" class="span8" required="">
-									</td></tr>
+									<td>Marital Status:<br>
+									  <select tabindex="1"data-placeholder="Select here.." class="span8" name="marital_status" id="marital_status">
+									  		<option value ="">Select here..</option>
+									  	 <option value ="Married">Married</option>
+									  	 <option value ="Unmarried">Unmarried</option>
+									  	
+
+									  	
+									  	  
+									  </select></td>
+									</tr>
 									<tr>
 										<td>Date of birth:<br>
 									  	<input type="date" id="date_of_birth" name="date_of_birth" class="span8"></td>
@@ -149,28 +119,28 @@
 									<td >Username:<br>
 									  	<input type="text" name="username" class="span8" id="username" /></td>
 								</tr>
-									<tr><td colspan="2"><h2>Address Detail</h2></td></tr>
+								<tr><td colspan="2"><h2>Address Detail</h2></td></tr>
 								  
 									<tr><td colspan="2"><h4>Current Address</h4></td></tr>									
 									<form><tr>
 
 									  <td >Address:<br>
-									  	<input type="text" name="addressname" class="span8" id="addressname" /></td>
+									  	<input type="text" name="address" class="span8" id="address" /></td>
 									  <td>State:<br>
-									  	<input type="text" id="statename" name="statename" class="span8"></td>
+									  	<input type="text" id="state" name="state" class="span8"></td>
 									  	</tr>
 									  	<tr>
 									  <td>City:<br>
-									  	<input type="text" id="cityname" name="cityname" class="span8"></td>
+									  	<input type="text" id="city" name="city" class="span8"></td>
 									 
 									  	<td>pincode:<br>
-									  <input type="text"  name="pincodename"  id="pincodename" class="span8" required="">
+									  <input type="text"  name="pincode"  id="pincode" class="span8" required="">
 									</td>
 								</tr>
 
 								<tr><td colspan="2"><h4> 													
 													Permanent Address <h6><input type="checkbox" value="" name="check" id="check" onclick="addresssame(this.form)">
-									(checked for same current address)</h6></h4></td></tr>					
+									(Same as current address)</h6></h4></td></tr>					
 								   <tr>
 
 									  <td >Address:<br>
@@ -188,14 +158,13 @@
 									</td>
 								</tr>
 								   
-								</form>
-									<tr><td colspan="2"><h2>Contact Detail</h2></td></tr>
+								</form>	<tr><td colspan="2"><h2>Contact Detail</h2></td></tr>
 								  
 									<tr>
-									  <td >Student Email Id:<br>
-									  	<input type="text" name="std_email" class="span8" id="std_email" /></td>
-									  <td>Student Contact No:<br>
-									  	<input type="text" id="std_contact" name="std_contact" class="span8"></td>
+									  <td >Faculty Email Id:<br>
+									  	<input type="text" name="faculty_email" class="span8" id="faculty_email" /></td>
+									  <td>Faculty Contact No:<br>
+									  	<input type="text" id="faculty_contact" name="faculty_contact" class="span8"></td>
 									  	</tr>
 									  	<tr>
 									  <td>Alternate Contact no:<br>
@@ -208,7 +177,7 @@
 	
 								<tr>
 									<td colspan="2"><h2>Academic Detail</h2></td></tr>
-<table class="table table-striped table-bordered table-condensed">
+								  <table class="table table-striped table-bordered table-condensed">
 									<tr>
 									  <td >Qualification
 									  	</td>
@@ -392,28 +361,53 @@
 									 <input type="text"  name="percentage4"id="percentage4" class="span8" required="">
 									</td>
 								</tr>
-							<tr><td colspan="7"><h3>Upload Photos</h3></td></tr>
-					
-									
-					<tr>
-						 <td colspan="3" >Upload Photo<br>
-									  	<input type="file" name="UploadP" class="span8" id="UploadP" />
+	<table class="table table-striped table-bordered table-condensed"  border="1">
+								<td colspan="2"><h2> Faculty Profile Detail</h2></td></tr>
+								<tr>
+								
+									  <td >Faculty Experience<br>
+									  	<input type="text"name="teacher_experience"id="teacher_experience"class="span8">
 									  </td>
-							<td colspan="4">Upload Signature<br>
-									  	<input type="file" id="Signature" name="Signature" class="span8"></td>
-									 	</tr>
-													
-					</table></tbody></thead></table></span>
+									  <td >Date of joining<br>
+											<input type="date"name="date_of_joining"id="date_of_joining"class="span8">
+										</td>
+									</tr>
+									<tr>
+										
+										<td  colspan="2">Upload Resume<br>
+											<input class="specialInput" type="file"  id="resume" name="resume" > 
+											<span class="help-inline">Resume should be PDF or CVV format</span>
+									  </td>
+										</tr>
+									<tr>
+						 <td colspan="2" >Upload Photo<br>
+									  	<input class="specialInput" type="file" name="UploadP" class="span8" id="UploadP" />
+									  	<span class="help-inline">Image should be JPG or PNG format(150KB-250KB)</span>
+									  </td>
+									</tr>
+									  <tr>
+							<td colspan="2">Upload Signature<br>
+									  	<input  class="specialInput"type="file" id="Signature" name="Signature" class="span8">
+									 	<span class="help-inline">Image should be JPG or PNG format(15KB-50KB)</span></td>
+									  </tr>
+					</table>
+
+
+
+					</table>
+									
+								  </thead>
+								</tbody>
 								   
 								
 									
 									
-								<br><br>
+								</table><br><br>
 								<center>
 								<div class="control-group">
 											<!--<div class="controls">-->
 												
-												<button type="submit" class="btn btn-primary" name="save">Save&Next</button>
+												<button type="submit" class="btn btn-primary" name="save">Save</button>
 											<!--</div>-->
 										</div></center><br><br>
 									</form>

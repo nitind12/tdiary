@@ -81,8 +81,32 @@ class Add_class_model extends CI_Model
 		}
 		function getclass1()
 		{
-			$course_id = $this->input->post('CourseG');
-			$Session_id = $this->input->post('SessionG');
+		$course_id = $this->input->post('CourseG');
+		$Session_id = $this->input->post('SessionG');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('session_id',$Session_id );
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclassP()
+		{
+		$course_id = $this->input->post('CourseP');
+		$Session_id = $this->input->post('SessionP');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('session_id',$Session_id );
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclassP1()
+		{
+		$course_id = $this->input->post('CourseP1');
+		$Session_id = $this->input->post('SessionP1');
 
 		$this->db->where('course_id',$course_id);
 		$this->db->where('session_id',$Session_id );
@@ -93,14 +117,27 @@ class Add_class_model extends CI_Model
 		}
 		function getstudent1()
 		{
-			$course_id = $this->input->post('CourseG');
-			$Session_id = $this->input->post('SessionG');
+		$course_id = $this->input->post('CourseG');
+		$Session_id = $this->input->post('SessionG');
 		$this->db->distinct();
 		$this->db->select('a.student_id, a.first_name, a.last_name');
 		$this->db->where('a.course_id',$course_id);
 		$this->db->where('a.session_id',$Session_id );
 		$this->db->order_by('a.first_name');
 		$this->db->where('(a.student_id not in (select b.student_id from section b))');
+		$query = $this->db->get('std_personal a');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getstudentP()
+		{
+		$course_id = $this->input->post('CourseP');
+		$Session_id = $this->input->post('SessionP');
+		$this->db->distinct();
+		$this->db->select('a.student_id, a.first_name, a.last_name');
+		$this->db->where('a.course_id',$course_id);
+		$this->db->where('a.session_id',$Session_id );
+		$this->db->order_by('a.first_name');
 		$query = $this->db->get('std_personal a');
 		//echo $this->db->last_query();die();
 		return $query->result();
@@ -364,8 +401,26 @@ class Add_class_model extends CI_Model
 				'status'=>'1',
 				'username'=>$this->session->userdata('user')
 			);
+
 			$this->db->insert('section',$data);
 		}
+	}
+		function addpromotedstudent()
+		{ 
+			$std_group= $this->input->post('stud');//valueeee
+			for($i=0; $i<count($std_group); $i++)
+			{
+			$data=array(
+				'session_id'=> $this->input->post('SessionP1'),
+				'session_class_id'=> $this->input->post('ClassP1'),
+				'student_id'=>$std_group[$i],
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+			);
+		
+			$this->db->insert('section',$data);
+		}
+		
 	}
 
 

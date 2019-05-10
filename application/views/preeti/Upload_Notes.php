@@ -40,8 +40,10 @@
                             <button type="submit" class="btn btn-primary" id="btnaddclass">Upload</button>
                           </div>
                         </div>
+
           
                   </table>
+                  <br>
 
                       <table class="table table-bordered table-striped  display" width="100%">
                     <thead>

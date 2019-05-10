@@ -432,7 +432,7 @@ class Add_class_model extends CI_Model
 		clearstatcache();
         $config=array(
 	        'upload_path'=>'./assets/upload_notes/',
-	        'allowed_types'=>'pdf|xlsx',
+	        'allowed_types'=>'pdf|xlsx|docx',
 	        'file_name'=>$id,
         	'overwrite'=>TRUE,
         );

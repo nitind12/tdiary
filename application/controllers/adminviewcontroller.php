@@ -10,6 +10,8 @@ class Adminviewcontroller extends CI_Controller
          if(!$this->session->userdata('user')) redirect('Login_controller');
          
            $this->load->model('Add_class_model','am');
+           $this->load->model('Adminviewmodel','im');
+
    
         
      
@@ -19,6 +21,9 @@ class Adminviewcontroller extends CI_Controller
     {  
         $data['title'] = "Asminview";
         $data['page_'] = "Adminview";
+        $data['course1'] = $this->im->getmarkstype();
+        $data['Session1'] = $this->im->getmarkstype2();
+         $data['Semester1'] = $this->im->getmarkstype1();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $this->load->view('templates/header', $data);

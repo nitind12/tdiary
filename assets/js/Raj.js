@@ -77,6 +77,38 @@ $('.assignmentchecker').click(function(){
 		});
 
 
+		$('#Course_name').change(function(){
+			if($('#Course_name').val() != '' && $('#Semester').val() !=0){
+				var url_ = site_url_+"/assign_report_controller/get_subjects";
+				var data_ = $('#assignmentform').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Subject</option>";
+					for(i=0; i<obj.subjects.length; i++){
+						str = str + "<option value='"+obj.subjects[i].subject_id+"'>"+obj.subjects[i].subject_name+"</option>";
+					}
+					$('#Subject').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#Semester').change(function(){
+			$('#Course_name').change();
+
+		
+		});
+
+
 /*		
 	$('#myform1').submit(function()
 	{
@@ -740,9 +772,6 @@ $('#update').click(function(){
 
 	});
 
-
-
-
  var maxLength = 30;
 
 		    	$(".show-read-more1").each(function() {
@@ -885,11 +914,12 @@ $('#update').click(function(){
 
 				    });
     			});
+	
+	
 
 
 
-  		
-  		//---double click and edit text view checked assignment----//
+//---double click and edit text view checked assignment----//
     		var oriVal;
     			$('body').on('dblclick', '.checkedassign_data', function(){
     				// this.id - it will give you the specific id of td where dblclick held
@@ -908,7 +938,7 @@ $('#update').click(function(){
 				    $this.remove(); // Don't just hide, remove the element.
 				    var dt__ = $this.val();
 				    var data_ = "dt="+dt__+"&checkedassign_id="+arr[1]+"&columnname="+arr[2];
-				    var url_ = site_url_ + "/Update_Assignment_Controller/updatedColumn";
+				    var url_ = site_url_ + "/Assignmentcontroller/updatedColumn";
 
 				    $.ajax({
 				    	url:url_,

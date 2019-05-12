@@ -24,32 +24,27 @@
 			<!--<table class="table" >-->
 				<tbody>
 <tr>
-	 <td >Seesion:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Session" id="Session" >
-									  		<option value ="">Select here..</option>
-									  	 <option value ="2015">2015</option>
-									  	 <option value ="2016">2016</option>
-									  	 <option value ="2017">2017</option>
-									  	 <option value ="2018 ">2018</option>
-									  	 <option value ="2019">2019</option>
-									  	 <option value ="2020">2020</option>
-									  </select></td>
+	 <td><div class="control-group">
+                     Session<br/>
+                         <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session">
+                                             <option value="">Select Session</option>
+                                                <?php foreach ($Session1 as  $item) { ?>
+                                                 <option value="<?php echo $item->s_id;?>">
+                                                  <?php echo $item->session?></option>
+                                                    <?php }?>
+                                                 </select>
+                       </td>
 									  <td >Course_name:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_name" id="Course_name" >
-									  		<option value ="">Select here..</option>
-									  	 <option value ="BCA">BCA</option>
-									  	 <option value ="MCA">MCA</option>
-									  	 <option value ="BBA">BBA</option>
-									  	 <option value ="MBA">MBA</option>
-									  	 <option value ="B.COM">B.COM</option>
-									  	  <option value ="B.SC">B.SC</option>
-									  	 <option value ="BHM">BHM</option>
-									  	 <option value ="DHM">DHM</option>
-									  	 <option value ="B.TECH">B.TECH</option>
-									  	  <option value ="M.TECH">M.TECH</option>
-									  </select></td>
+									 
+                       <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course_name" id="Course_name">
+                                             <option value="">Select Course</option>
+                                                <?php foreach ($course1 as  $item) { ?>
+                                                 <option value="<?php echo $item->course_id;?>">
+                                                  <?php echo $item->name_of_courses?></option>
+                                                    <?php }?>
+                                                 </select>
+                    </td>
 									  <td>Semester:<br>
-									  	<!--<input type="text" id="txtSemester" name="txtSemester" class="span8">-->
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" id="Semester" >
 									  		<option value ="">Select here..</option>
 									  	 <option value ="1">1</option>
@@ -65,7 +60,6 @@
 									</tr>
 									<tr>
 									  <td>Section:<br>
-									  	<!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" id="Section"  >
 									  		<option value ="">Select here..</option>
 									  	 <option value ="A">A</option>
@@ -75,10 +69,7 @@
 									  	 
 									  </select>
 									  </td>
-									
-									 
-									
-									
+						
 										
 											 <td >roll_no:<br>
 									  <input type="text" id="roll_no" name="roll_no" class="span8"></td>

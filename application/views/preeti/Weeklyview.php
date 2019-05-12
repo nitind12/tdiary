@@ -30,7 +30,6 @@
                 ?>
 
 
-
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                       <thead> 
                           <tr>
@@ -100,18 +99,23 @@
                     
                
                       <td  class="weekdata  weektd" id="<?php echo $item->week_id.'-week_id';?>"><?php echo $item->week_id ?></td>
+
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-start_date';?>"><?php echo $item->start_date ?></td>
+
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-end_date';?>"><?php echo $item->end_date ?></td>
+
                       <td   class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_schedule';?>"><?php echo $item->no_of_lecture_schedule ?></td>
+
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_holiday';?>"><?php echo $item->no_of_lost_due_to_holiday ?></td>
+
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_cl';?>"><?php echo $item->no_of_lost_due_to_cl ?></td>
+
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_extra_taken';?>"><?php echo $item->no_extra_taken ?></td>
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_actual_taken';?>"><?php echo $item->no_of_lecture_actual_taken ?></td>
+                      
 
-                  <!--   <td><a href="<?php// echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id);?>" class="btn btn-primary  ">Details</a></td>  -->
+                      <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id);?>" class="btn btn-primary">Details</a></td>  
 
-
-                    <td>  <a class="btn btn-primary  weeklyview_detailsclass" id="<?php echo $item->add_class_id . "~" . $item->start_date . "~" . $item->end_date . "~" .$item->week_id ;?>" > Details</a></td>
                                           
               
                                 <!--  <td align="center"><?php //echo $item->no_of_lecture ?></td>    -->
@@ -122,15 +126,6 @@
                               </tr>
 
                           <?php } ?>
-
-                          <input type="hidden" name="addclassidED" id="addclassidED">
-                          <input type="hidden" name="startdateED" id="startdateED">
-                          <input type="hidden" name="enddateED" id="enddateED">
-                          <input type="hidden" name="weekidED" id="weekidED">
-                          
-                          <?php
-                          echo form_close();
-                          ?>
 
                     </table>
              

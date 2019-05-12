@@ -78,10 +78,9 @@
                           
                   <thead>
                     <tr>
-                        
+                        <th align="center">No Of Lecture Aspect</th>
                         <th align="center">Unit No</th>
                         <th align="center">Topic</th>
-                        <th align="center">No Of Lecture Aspect</th>
                         <th align="center" class="hideblock">Delete</th>    
                     </tr>
                   </thead>
@@ -93,7 +92,6 @@
               <td class="show-read-more lectdata mytd"  id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ?></td>
                <td  class="show-read-more  lectdata mytd"  id="<?php echo $item->lecture_id.'-topic';?>" align="center"><?php echo $item->topic ?></td>
                  <td align="center" class="lectdata mytd"  id="<?php echo $item->lecture_id.'-no_of_lecture';?>"><?php echo $item->no_of_lecture?></td>
-
                                 <td class="hideblock"><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " 
                                     onclick="return confirm('Are you sure')"></a></td>    
      

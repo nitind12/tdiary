@@ -6,16 +6,18 @@ class Forgotpwd_controller extends CI_Controller
     function __construct()
     {
         parent::__construct();
-
-        $this->load->model('Forgotpwd_model' , 'fm');
+        $this->load->model('Forgotpwd_model','fm');
     }
     
 
     
     public function index()
+  
     {
-        if($this->input->post('submit'))
+
+        if($this->input->post('btnpwd'))
         {
+
             $email=$this->input->post('email');
             $newPassword=$this->input->post('newPassword');
             $confirmPassword=$this->input->post('confirmPassword');
@@ -44,3 +46,4 @@ class Forgotpwd_controller extends CI_Controller
     }
 }
 ?>
+ 

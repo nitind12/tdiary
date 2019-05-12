@@ -25,5 +25,17 @@ class Assign_report_model extends CI_Model{
 		//echo $this->db->last_query();
 		return $q->result();
 	}
-	
+	function getSubjectr()
+		{
+			$course_id = $this->input->post('Course_name');
+			$Semester_id = $this->input->post('Semester');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		
 }

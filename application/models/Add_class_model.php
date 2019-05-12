@@ -70,12 +70,75 @@ class Add_class_model extends CI_Model
 		function getSubject1()
 		{
 			$course_id = $this->input->post('Course');
-			$Semester_id = $this->input->post('Semester');
+			$Semester_id = $this->input->post('SemesterG');
 
 		$this->db->where('course_id',$course_id);
 		$this->db->where('semester_id',$Semester_id);
 		$this->db->order_by('subject_id');
 		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclass1()
+		{
+		$course_id = $this->input->post('CourseG');
+		$Session_id = $this->input->post('SessionG');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('session_id',$Session_id );
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclassP()
+		{
+		$course_id = $this->input->post('CourseP');
+		$Session_id = $this->input->post('SessionP');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('session_id',$Session_id );
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclassP1()
+		{
+		$course_id = $this->input->post('CourseP1');
+		$Session_id = $this->input->post('SessionP1');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('session_id',$Session_id );
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getstudent1()
+		{
+		$course_id = $this->input->post('CourseG');
+		$Session_id = $this->input->post('SessionG');
+		$this->db->distinct();
+		$this->db->select('a.student_id, a.first_name, a.last_name');
+		$this->db->where('a.course_id',$course_id);
+		$this->db->where('a.session_id',$Session_id );
+		$this->db->order_by('a.first_name');
+		$this->db->where('(a.student_id not in (select b.student_id from section b))');
+		$query = $this->db->get('std_personal a');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getstudentP()
+		{
+		$course_id = $this->input->post('CourseP');
+		$Session_id = $this->input->post('SessionP');
+		$this->db->distinct();
+		$this->db->select('a.student_id, a.first_name, a.last_name');
+		$this->db->where('a.course_id',$course_id);
+		$this->db->where('a.session_id',$Session_id );
+		$this->db->order_by('a.first_name');
+		$query = $this->db->get('std_personal a');
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
@@ -297,7 +360,86 @@ class Add_class_model extends CI_Model
 			$this->db->insert('attendance',$data);
 			}	
 		}
-		public function add_course()
+
+
+
+		function addSession()
+		{ 
+			
+			$data=array(
+				's_id'=> $this->input->post('inputsession_id'),
+				'session'=> $this->input->post('inputsession_name'),
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+
+			);
+			$this->db->insert('session',$data);
+		}
+
+
+		function addBatch()
+		{ 
+			
+			$data=array(
+				'batch_id'=> $this->input->post('inputbatch_id'),
+				'batch_name'=> $this->input->post('inputbatch_name'),
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+
+			);
+			$this->db->insert('batch',$data);
+		}
+		function addsectionstudent()
+		{ 
+			$std_group= $this->input->post('students');//valueeee
+			for($i=0; $i<count($std_group); $i++)
+			{
+			$data=array(
+				'session_id'=> $this->input->post('SessionG'),
+				'session_class_id'=> $this->input->post('ClassG'),
+				'student_id'=>$std_group[$i],
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+			);
+
+			$this->db->insert('section',$data);
+		}
+	}
+		function addpromotedstudent()
+		{ 
+			$std_group= $this->input->post('stud');//valueeee
+			for($i=0; $i<count($std_group); $i++)
+			{
+			$data=array(
+				'session_id'=> $this->input->post('SessionP1'),
+				'session_class_id'=> $this->input->post('ClassP1'),
+				'student_id'=>$std_group[$i],
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+			);
+		
+			$this->db->insert('section',$data);
+		}
+		
+	}
+
+
+		function addAdmin_pwd()
+		{ 
+			
+			$data=array(
+				'admin_name'=> $this->input->post('inputadmin_name'),
+				'admin_password'=> $this->input->post('inputadmin_pwd'),
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+
+			);
+			$this->db->insert('admin',$data);
+		}
+	
+
+
+		function add_course()
 		{
 			$University = $this->input->post('University');
 			$Course_ID = $this->input->post('Course_ID');
@@ -315,4 +457,72 @@ class Add_class_model extends CI_Model
 		
 			$this->db->insert('course_table',$data);
 		}
+
+
+
+		function getUpload()
+		{
+			
+		$data = array(
+			'faculty_id'=>'ravi',
+			'subject_id' =>'BCA101',
+			'upload_notes'=> 'x',
+			'status'=>1						
+			
+			);
+			$this->db->insert('upload_notes',$data);
+		
+			
+	$fileid = $this->db->insert_id();
+	$path_id = $this->upload_notes($fileid);
+	$this->db->where('notes_id', $fileid);
+		$data = array(
+			'upload_notes'=> $path_id
+				);
+		$this->db->update('upload_notes', $data);
 	}
+
+	function upload_notes($id)
+	{
+		clearstatcache();
+        $config=array(
+	        'upload_path'=>'./assets/upload_notes/',
+	        'allowed_types'=>'pdf|xlsx|docx|jpg',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
+        );
+        $file_element_name='pic_file';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+	        $path_ji=$this->upload->data();
+	        $path_=$path_ji['file_name'];
+	    }else{
+	        $path_='x';
+	    }
+
+    return $path_;
+    }
+
+
+    function download_models( )
+		{
+		
+		$this->db->distinct('a.notes_id');
+		$this->db->select('a.*');
+		$this->db->where('a.subject_id','BCA101');
+		$this->db->where('a.faculty_id', 'ravi');
+		$this->db->from('upload_notes a');
+		$q = $this->db->get();
+		return $q->result();
+		}
+
+
+
+	function del($a)
+	{
+		$this->db->delete('upload_notes',array('notes_id'=>$a));
+		return;
+	}
+		
+}
+?>

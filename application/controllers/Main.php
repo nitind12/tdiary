@@ -60,7 +60,26 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
     }
     
-    public function form_controller()  
+    public function Promoted_Class_controller()
+     {   
+        $data['page_'] = "Promoted_Class";
+        $data['title'] = "Form Page";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['f4_'] = $this->am->getformtypeMenu();
+       $data['course1'] = $this->am->getCourse1();
+      $data['Semester1'] = $this->am->getSemester1();
+      $data['Session1'] = $this->am->getSession1();
+      $data['faculty'] = $this->am->getfaculty();
+             
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+   
+   public function form_controller()  
     {   
         $data['page_'] = "formpage";
         $data['title'] = "Form Page";
@@ -134,7 +153,21 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
+ public function attendance_report_View_Consolidate()  
+    {  
+        $data['title'] = "View-Consolidate";
+        $data['page_'] = "student_report_View_Consolidate";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
 
+    
     function specificClass()
     {
         $data['clsid'] = $this->am->specificClass();
@@ -252,6 +285,17 @@ class Main extends CI_Controller {
         $res = $this->am->delClass($no_);
         redirect('Main/attendance_controller');
     }
+    function addsectionClass(){
+         $this->am->addsectionstudent();
+        
+        redirect('Main/Promoted_Class_controller');
+    }
+ function promotedClass()
+ {
+         $this->am->addpromotedstudent();
+        
+        redirect('Main/Promoted_Class_controller');
+    }
 
     function get_subjects(){
         $data['subjects'] = $this->am->getSubject1();
@@ -261,6 +305,55 @@ class Main extends CI_Controller {
         $data['subjects'] = $this->am->getSubjectasign();
         echo json_encode($data);
     }
+    function get_class()
+    {
+        $data['class'] = $this->am->getclass1();
+        echo json_encode($data);
+    }
+    function get_classP()
+    {
+        $data['class'] = $this->am->getclassP();
+        echo json_encode($data);
+    }
+ function get_classP1()
+    {
+        $data['class'] = $this->am->getclassP1();
+        echo json_encode($data);
+    }
+
+function get_student()
+    {
+        $data['student'] = $this->am->getstudent1();
+        echo json_encode($data);
+    }
+    function get_studentP()
+    {
+        $data['student'] = $this->am->getstudentP();
+        echo json_encode($data);
+    }
+
+    function get_sessionassign()
+       {
+        $this->am->addSession();
+         redirect('Main/form_controller');
+
+     }
+
+
+       function get_Batchsign()
+       {
+        $this->am->addBatch();
+         redirect('Main/form_controller');
+
+     }
+
+         function getAdmin_pwd()
+       {
+        $this->am->addAdmin_pwd();
+         redirect('Main/form_controller');
+
+    }
+
 
      public function addcourse_controller()  
     {  
@@ -271,5 +364,60 @@ class Main extends CI_Controller {
         }
 
     
+
+    public function save_notes_controller()  
+    {  
+    
+         $this->am->getUpload();
+       
+        redirect('Main/upload_controller');   
+        }
+
+
+    public function Upload_controller()
+     {   
+        $data['page_'] = "Upload_Notes";
+        $data['title'] = "Form Page";
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['downloads'] = $this->am->download_models();
+      
+       
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage', $data);  
+        $this->load->view('templates/footer');
+    }
+
+
+       public function Download_controller()
+     {   
+        $data['page_'] = "Download_notes";
+        $data['title'] = "Form Page";
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       $data['downloads'] = $this->am->download_models();
+        
+    
+        $this->load->view('templates/header', $data);
+        $this->load->view('mypreetipage', $data);  
+        $this->load->view('templates/footer');
+    }
+
+
+
+    //--- for delete -->
+    public function del1()
+    {
+        $u = $this->uri->segment(3);
+        $this->am->del($u);
+        
+        redirect('Main/upload_controller','refresh');
+    }
  }
 ?>  

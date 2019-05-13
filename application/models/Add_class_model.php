@@ -220,7 +220,6 @@ class Add_class_model extends CI_Model
 			$query = $this->db->get();
 		return $query->result();
 		}
-
 		function savingdata()
 		{
 			
@@ -376,6 +375,20 @@ class Add_class_model extends CI_Model
 			$this->db->insert('session',$data);
 		}
 
+	function assignsubject_modals()
+		{ 
+			
+			$data=array(
+				'subject_id'=> $this->input->post('SubjectNameasign'),
+				'faculty_id'=> $this->input->post('Faculty'),
+				'session_id'=> $this->input->post('Session'),
+				
+				'status'=>'1',
+				'username'=>$this->session->userdata('user')
+
+			);
+			$this->db->insert('assign_subject',$data);
+		}
 
 		function addBatch()
 		{ 

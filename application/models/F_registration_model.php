@@ -102,24 +102,48 @@ $data = array(
 		$this->db->insert('faculty_profile',$data);
 
 		$fileid = $this->db->insert_id();
-		$path_id = $this->upload_tt($fileid);
+		$path_id = $this->upload_ttres($fileid);
+		$path_id1 = $this-> upload_ttphoto($fileid);
+		$path_id2 = $this->upload_ttsign($fileid);
 
 		$this->db->where('faculty_profile_id', $fileid);
 		$data = array(
-			'resume' => $path_id
+			'resume' => $path_id,
+			'faculty_photo' => $path_id1,
+			'faculty_sig' => $path_id2
+	
 		);
 		$this->db->update('faculty_profile', $data);
 	
 	}
-	function upload_tt($id){
+	function upload_ttsign($id){
 		clearstatcache();
         $config=array(
 	        'upload_path'=>'./assets/ttdocs/',
-	        'allowed_types'=>'pdf|xlsx',
+	        'allowed_types'=>'jpg|png',
 	        'file_name'=>$id,
         	'overwrite'=>TRUE,
         );
-        $file_element_name='txtttUpload';
+        $file_element_name='Signature';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+	        $path_ji1=$this->upload->data();
+	        $path_=$path_ji1['file_name'];
+	    }else{
+	        $path_='x';
+	    }
+
+    return $path_;
+    }
+	function upload_ttres($id){
+		clearstatcache();
+        $config=array(
+	        'upload_path'=>'./assets/ttdocs/',
+	        'allowed_types'=>'pdf|docx',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
+        );
+        $file_element_name='resume';
         $this->load->library('upload',$config);
         if($this->upload->do_upload($file_element_name)){
 	        $path_ji=$this->upload->data();
@@ -130,7 +154,27 @@ $data = array(
 
     return $path_;
     }
+	
+	function upload_ttphoto($id){
+		clearstatcache();
+        $config=array(
+	        'upload_path'=>'./assets/ttdocs/',
+	        'allowed_types'=>'jpg|png',
+	        'file_name'=>$id,
+        	'overwrite'=>TRUE,
+        );
+        $file_element_name='UploadP';
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload($file_element_name)){
+	        $path_ji2=$this->upload->data();
+	        $path_=$path_ji2['file_name'];
+	    }else{
+	        $path_='x';
+	    }
 
+    return $path_;
+    }
+	
 
 
 

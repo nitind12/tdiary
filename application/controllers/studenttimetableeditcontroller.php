@@ -11,6 +11,8 @@ class Studenttimetableeditcontroller extends CI_Controller
          if(!$this->session->userdata('user')) redirect('Login_controller');
          
            $this->load->model('Add_class_model','am');
+           $this->load->model('Studenttimetableeditmodel','im');
+
    
         
      
@@ -20,7 +22,10 @@ class Studenttimetableeditcontroller extends CI_Controller
     {  
         $data['title'] = "Studenttimetableedit";
         $data['page_'] = "Studenttimetableedit";
-         $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['course1'] = $this->im->getmarkstype4();
+        $data['Semester1'] = $this->im->getmarkstype5();
+        $data['Session1'] = $this->im->getmarkstype6();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();

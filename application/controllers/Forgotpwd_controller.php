@@ -40,7 +40,7 @@ class Forgotpwd_controller extends CI_Controller
         }
 
         $data['title'] = "Forgot Password";
-        $this->load->view('templates/header_login', $data);
+        //$this->load->view('templates/header_login', $data);
         $this->load->view('Forgot_password'); 
         $this->load->view('templates/footer');  
     }

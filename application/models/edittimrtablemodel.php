@@ -11,7 +11,7 @@ class Edittimrtablemodel extends CI_Model{
 			'Day' => $this->input->post('Day'),
 			'Semester' => $this->input->post('Semester'),
 			'Section' => $this->input->post('Section'),
-			'Course_id' => $this->input->post('Course_id'),
+			'Course_id' => $this->input->post('Course_Name'),
 			'Subject_id' => $this->input->post('Subject_id'),
 		    'Session' => $this->input->post('Session'),
 			//'Time_table_id' => $this->input->post('Time_table_id'),
@@ -23,6 +23,24 @@ class Edittimrtablemodel extends CI_Model{
 		
 		$this->db->insert('time_table_edit',$data);
 
+	}
+	public function getmarkstype1()
+	{
+		$this->db->select('semester_id,no_of_semester');
+		$query = $this->db->get('semester');
+		return $query->result();
+	}
+	public function getmarkstype4()
+	{
+		$this->db->select('course_id,name_of_courses');
+		$query = $this->db->get('course_table');
+		return $query->result();
+	}
+	public function getmarkstype6()
+	{
+		$this->db->select('s_id,session');
+		$query = $this->db->get('session');
+		return $query->result();
 	}
 	/*function saving()
 	{

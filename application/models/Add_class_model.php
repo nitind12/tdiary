@@ -500,7 +500,7 @@ class Add_class_model extends CI_Model
 		clearstatcache();
         $config=array(
 	        'upload_path'=>'./assets/upload_notes/',
-	        'allowed_types'=>'pdf|xlsx',
+	        'allowed_types'=>'pdf|xlsx|docx|jpg',
 	        'file_name'=>$id,
         	'overwrite'=>TRUE,
         );
@@ -515,6 +515,8 @@ class Add_class_model extends CI_Model
 
     return $path_;
     }
+
+
     function download_models( )
 		{
 		
@@ -526,6 +528,14 @@ class Add_class_model extends CI_Model
 		$q = $this->db->get();
 		return $q->result();
 		}
+
+
+
+	function del($a)
+	{
+		$this->db->delete('upload_notes',array('notes_id'=>$a));
+		return;
+	}
 		
 }
 ?>

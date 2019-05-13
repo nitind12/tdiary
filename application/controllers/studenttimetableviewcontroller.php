@@ -11,15 +11,22 @@ class Studenttimetableviewcontroller extends CI_Controller
          
 
            $this->load->model('Add_class_model','am');
+           $this->load->model('Studenttimetableviewmodel','im');
+
    
         
      
     }
 
+    
+
     public function index()  
     {  
         $data['title'] = "Studenttimetableview";
         $data['page_'] = "Studenttimetableview";
+        $data['course1'] = $this->im->getmarkstype();
+        $data['Semester1'] = $this->im->getmarkstype1();
+        $data['Session1'] = $this->im->getmarkstype2();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
@@ -27,7 +34,7 @@ class Studenttimetableviewcontroller extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('mysatyampage', $data);  
         $this->load->view('templates/footer');
-       // redirect('studenttimetableviewcontroller');
+
     }
 
     public function update()  

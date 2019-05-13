@@ -183,14 +183,13 @@
   </div>
   </td>
 </form>     
- <form class="form-horizontal row-fluid" method="post" name="frmsession" id="frmsession" action="get_sessionassign">
+ <form class="form-horizontal row-fluid" method="post" name="frmsession" id="frmsession" action="get_sessionassign"> 
   <td>
-                     <div class="control-group">
-                      <label class="control-label" for="basicinput">Session id</label>
-                      <div class="controls">
-                        <input type="text" id="inputsession_id" name="inputsession_id" class="span8">
-                    
-                      </div>
+  <div class="control-group">
+    <label class="control-label" for="basicinput">Session id</label>
+    <div class="controls">
+      <input type="text" id="inputsession_id" name="inputsession_id" class="span8">
+    </div>
                     </div>
 
                     <div class="control-group">

@@ -476,12 +476,14 @@ class Add_class_model extends CI_Model
 		function getUpload()
 		{
 			
+		$date= $this->input->post('dateup');
+		
 		$data = array(
+			'date_notes'=>$date,
 			'faculty_id'=>'ravi',
 			'subject_id' =>'BCA101',
 			'upload_notes'=> 'x',
-			'status'=>1						
-			
+			'status'=>1					
 			);
 			$this->db->insert('upload_notes',$data);
 		

@@ -14,7 +14,7 @@
 				<tbody>
 								  
 									<tr>
-									  <td >Day<br>
+									  <td >Day:<br>
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Day" id="Day" required="required">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="Monday">Monday</option>
@@ -24,20 +24,16 @@
 									  	 <option value ="Friday">Friday</option>
 									  	 <option value ="Saturday">Saturday</option>
 									  </select></td>
-									  <td>Semester<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" id="Semester" required="required">
-									  		<option value ="">Select here..</option>
-									  	 <option value =" 1">1</option>
-									  	 <option value =" 2">2</option>
-									  	 <option value =" 3">3</option>
-									  	 <option value =" 4">4</option>
-									  	 <option value =" 5">5</option>
-									  	 <option value =" 6">6</option>
-									  	 <option value =" 7">7</option>
-									  	 <option value =" 8">8</option>
-									  </select>
-									  </td>
-									  <td>Section<br>
+									  <td>Semester:<br>
+									  	 <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Semester" id="Semester" required="required">
+                                        <option value="">Select Semester</option>
+                                                <?php foreach ($Semester1 as  $item) { ?>
+                                                 <option value="<?php echo $item->semester_id;?>">
+                                                  <?php echo $item->no_of_semester?></option>
+                                                    <?php }?>
+                                                 </select></td>
+                                             </div></div>
+									  <td>Section:<br>
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" id="Section" required="required">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="A">A</option>
@@ -49,19 +45,16 @@
 									  </select>
 									  </td>
 
-									  <td>Course_id:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Course_id" id="Course_id" required="required">
-									  		<option value ="">Select here..</option>
-									  	 <option value ="BCA">BCA</option>
-									  	 <option value ="BBA">BBA</option>
-									  	 <option value ="B.sc">BSC</option>
-									  	 <option value ="POLY TECHNIQUE">POLY TECHNIQUE</option>
-									  	 <option value ="B.com">B.com</option>
-									  	 <option value ="B.tech">B.tech</option>
-									  	 <option value ="BHM">BHM</option>
-									  	 
-									  </select>
-									  </td>
+									  <td>Course Name:<br>
+									  	 <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course_Name" id="Course_Name" required="required">
+                                             <option value="">Select Course</option>
+                                                <?php foreach ($course1 as  $item) { ?>
+                                                 <option value="<?php echo $item->course_id;?>">
+                                                  <?php echo $item->name_of_courses?></option>
+                                                    <?php }?>
+                                                 </select></td>
+                                                </div>
+                                             </div>
 									  
 
 
@@ -74,20 +67,20 @@
 								
 									
 									<tr>
-									  <td>Subject_id<br>
+									  <td>Subject_id:<br>
 									  	<input type="text" name="Subject_id" id="Subject_id" class="span8" required="required"></td>
-									  <td>Session<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Session" id="Session" required="required">
-									  		<option value ="">Select here..</option>
-									  	 <option value =" 2010-2011">2010-2011</option>
-									  	 <option value =" 2011-2012">2011-2012</option>
-									  	 <option value =" 2012-2013">2012-2013</option>
-									  	 <option value =" 2013-2014">2013-2014</option>
-									  	 <option value =" 2014-2015">2014-2015</option>
-									  	 <option value =" 2015-2016">2015-2016</option>
-									  </select>
+									  <td>Session:<br>
+									  	<select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session" required="required">
+                                             <option value="">Select Session</option>
+                                                <?php foreach ($Session1 as  $item) { ?>
+                                                 <option value="<?php echo $item->s_id;?>">
+                                                  <?php echo $item->session?></option>
+                                                    <?php }?>
+                                                 </select></td>
+                                         </div>
+                                     </div>     
 									  	
-									  <td>Time<br>
+									  <td>Time:<br>
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Time" id="Time" required="required">
 									  		<option value ="">Select here..</option>
 									  		<option value="09_00_09_50">09:00-09:50 AM</option>
@@ -99,7 +92,7 @@
 									  		<option value="03_00_03_50">03:00-03:50 PM</option>
 									  	</select>
 									  	
-									  	<td>Room<br>
+									  	<td>Room:<br>
 									   	<input type="text" name="Room" id="Room" class="span8" required="required"></td>
 									   
 									</tr>
@@ -131,7 +124,7 @@
 			<th align="center">Day</th>
 			<th align="center">Semester</th>
 			<th align="center">Section</th>
-			<th align="center">Course_id</th>
+			<th align="center">Course Name</th>
 			<th align="center">Subject_id</th>
 			<th align="center">Session</th>
 			<!--th align="center">Time_table_id</th-->

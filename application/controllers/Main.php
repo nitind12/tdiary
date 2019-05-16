@@ -274,7 +274,11 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
-
+ public function asignsubject_controller()               ///showing the page of submit the data;
+    {  
+        $this->am->assignsubject_modals(); 
+        redirect('Main/form_controller');   
+    }
     public function submitattendance_controller()               ///showing the page of submit the data;
     {  
         $this->am->take_attendance(); 

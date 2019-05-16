@@ -8,16 +8,18 @@ class Edittimetablecontroller extends CI_Controller{
 		 if(!$this->session->userdata('user')) redirect('Login_controller');
 		 
 		 $this->load->model('Add_class_model','am');
- 
-     
-		$this->load->model('edittimrtablemodel','um');
+         $this->load->model('edittimrtablemodel','um');
+         $this->load->model('Edittimrtablemodel','im');
 	}
 	function index()
 	{
 		$data['title'] = "TIME_page";
 		$data['users'] = $this->um->fetchtable();
-		 $data['page_'] = 'edittimetable';
-          $data['dashboard1'] = $this->am->getDashboardMenu();
+		$data['page_'] = 'edittimetable';
+		$data['Semester1'] = $this->im->getmarkstype1();
+		$data['course1'] = $this->im->getmarkstype4();
+		$data['Session1'] = $this->im->getmarkstype6();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();

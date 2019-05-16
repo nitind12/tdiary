@@ -18,6 +18,7 @@
 
                       <?php
                     $data = array(
+                      'method'=>'post',
                       'name' => 'frmnotes',
                     'id' => 'frmnotes'
                   );
@@ -31,7 +32,7 @@
                           <label class="control-label" for="basicinput">Upload Notes</label>
                           <div class="controls">
                             <input type="file" name="pic_file" class="form-control"  id="pic_file" class="span8">
-                            <!--input type="file" name="syllabus_pdf"id="syllabus_pdf" placeholder="syllabus_pdf" class="span8"-->
+                            <input type="hidden" value="<?php echo date("Y-m-d")?>" name="dateup" id="dateup"></td>
                           </div>
                         </div>
                         
@@ -51,13 +52,14 @@
                     </thead>
 
                       <?php foreach ($downloads as $item) {?>
-                        
+
                         <tr><td><a href="<?php  echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><?php echo $item->upload_notes;?></a>
+                        </td><td>
+<?php echo $item->date_notes;?>
                         </td>
-
-                        <td>
-                         <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"> <?php echo date("Y-m-d")?></td>
-
+                        <td> <?php echo $item->faculty_id;?></td>
+                       <td> <?php echo $item->subject_id;?></td>
+                       
                            <td class="hideblock"><a href="<?php echo site_url('Main/del1/' . $item->notes_id)?>" class="btn btn-danger icon-trash " 
                                     onclick="return confirm('Are you sure')"></a></td>    
      

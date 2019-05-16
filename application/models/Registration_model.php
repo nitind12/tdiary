@@ -164,11 +164,11 @@ $data = array(
 	$fileid = $this->db->insert_id();
 	$path_id = $this->upload_ttStudent($fileid);
 	
-	$path_id = $this->upload_ttStudents($fileid);
+	$path_id1 = $this->upload_ttStudents($fileid);
 	$this->db->where('student_photo_id', $fileid);
 		$data = array(
 			'student_photo' => $path_id,
-			'student_sig' => $path_id
+			'student_sig' => $path_id1
 
 		);
 		
@@ -200,14 +200,14 @@ function upload_ttStudents($id){
         $config=array(
 	        'upload_path'=>'./assets/ttdocs/',
 	        'allowed_types'=>'jpg|png',
-	        'file_name'=>$id,
+	        'file_name'=>$id+'p',
         	'overwrite'=>TRUE,
         );
         $file_element_name='UploadP';
         $this->load->library('upload',$config);
         if($this->upload->do_upload($file_element_name)){
-	        $path_ji=$this->upload->data();
-	        $path_=$path_ji['file_name'];
+	        $path_ji1=$this->upload->data();
+	        $path_=$path_ji1['file_name'];
 	    }else{
 	        $path_='x';
 	    }

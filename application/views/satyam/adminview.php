@@ -14,20 +14,19 @@
                 				<tbody>
 										<tr>
 											
-											   <div class="controls">
-
-                                          <td>Course Name:<br/>
-                                         
-                                         	
-                                         <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course_Name" id="Course_Name" required="required">
-                                             <option value="">Select Course</option>
-                                                <?php foreach ($course1 as  $item) { ?>
-                                                 <option value="<?php echo $item->course_id;?>">
-                                                  <?php echo $item->name_of_courses?></option>
+											  <div class="controls">
+														<td>Session:<br>
+														
+                   
+                                             <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session" required="required">
+                                             <option value="">Select Session</option>
+                                                <?php foreach ($Session1 as  $item) { ?>
+                                                 <option value="<?php echo $item->s_id;?>">
+                                                  <?php echo $item->session?></option>
                                                     <?php }?>
                                                  </select></td>
-                                                </div>
-                                             </div>			
+                                         </div>
+                                     </div>   
 															
 										  	 
 										  	  <div class="controls">
@@ -44,19 +43,21 @@
                                              </div></div>
 									         
                                                     
-														<div class="controls">
-														<td>Session:<br>
 														
-                   
-                                             <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session" required="required">
-                                             <option value="">Select Session</option>
-                                                <?php foreach ($Session1 as  $item) { ?>
-                                                 <option value="<?php echo $item->s_id;?>">
-                                                  <?php echo $item->session?></option>
+                                       <div class="controls">
+
+                                          <td>Course Name:<br/>
+                                         
+                                         	
+                                         <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course_Name" id="Course_Name" required="required">
+                                             <option value="">Select Course</option>
+                                                <?php foreach ($course1 as  $item) { ?>
+                                                 <option value="<?php echo $item->course_id;?>">
+                                                  <?php echo $item->name_of_courses?></option>
                                                     <?php }?>
                                                  </select></td>
-                                         </div>
-                                     </div>     
+                                                </div>
+                                             </div>			  
 												<td>		
 										           Section:<br>
 												  	<select tabindex="1" data-placeholder="Select here.." class="span8" name="Section" id="Section" required="required">

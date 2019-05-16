@@ -14,14 +14,12 @@ class Adminviewmodel extends CI_Model{
 			'Session' => $this->input->post('Session'),
 			'Section' => $this->input->post('Section'),
 		);	
-			$this->db->insert('student_time_table',$data);
+		$this->db->insert('student_time_table',$data);
 		$fileid = $this->db->insert_id();
 		echo $this->upload_TT($fileid); die();
 	}
 
-       $this->db->insert('student_time_table',$data);
-
-	
+      
 	public function getmarkstype()
 	{
 		$this->db->select('course_id,name_of_courses');

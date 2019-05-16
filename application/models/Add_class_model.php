@@ -493,16 +493,16 @@ class Add_class_model extends CI_Model
 	$path_id = $this->upload_notes($fileid);
 	$this->db->where('notes_id', $fileid);
 		$data = array(
-			'upload_notes'=> $path_id
+			'upload_notes'=> $path_id		// column in database
 				);
-		$this->db->update('upload_notes', $data);
+		$this->db->update('upload_notes', $data);		// table name in database
 	}
 
 	function upload_notes($id)
 	{
 		clearstatcache();
         $config=array(
-	        'upload_path'=>'./assets/upload_notes/',
+	        'upload_path'=>'./assets/upload_notes/',   // upload notes is a folder in assets folder
 	        'allowed_types'=>'pdf|xlsx|docx|jpg',
 	        'file_name'=>$id,
         	'overwrite'=>TRUE,

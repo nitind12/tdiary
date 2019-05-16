@@ -7,7 +7,6 @@ class Login_controller extends CI_Controller
     {
         parent::__construct();
 
-         if(!$this->session->userdata('user')) redirect('homemain');
     }
     
     public function index()  

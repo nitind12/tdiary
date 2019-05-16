@@ -55,18 +55,16 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Section</label>
 											<div class="controls">
-												<input type="text" id="Section" name="Section" placeholder="Section" class="span8">
+												 <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Section" id="Section">
+											<option value="">Select Section</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            </select>
 												</div>
 										</div>
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Subject-Name</label>
-											<div class="controls">
-												<select tabindex="1" data-placeholder="Select here.."class="span8"  name="Subject_Name" id="Subject_Name">
-											     </select>
-                                             
-												</div>
-										</div>
-
+										
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Date Of Commencement:</label>
 											<div class="controls">

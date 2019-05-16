@@ -24,7 +24,8 @@
                         <tr><td><a href="<?php  echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><?php echo $item->upload_notes;?></a>
                         </td>
                         <td>
-                         <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"> <?php echo date("Y-m-d")?></td>
+                      <td><?php echo $item->faculty_id;?>
+                         </td>
                       <?php }
                       ?>
                     </div>

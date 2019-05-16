@@ -1,3 +1,4 @@
+
 <?php
 class Add_class_model extends CI_Model
 {

@@ -176,13 +176,14 @@
                    </tr>
                   </thead>
                    <tbody>
+                   	<?php $tot = 0;?>
                    <?php foreach ($t_diary as $item) { ?>		
                        <tr>                 	
 	                       
 	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
 	                        <td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php echo $item->topic;?></td>
 	                        <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-no_of_lecture';?>"><?php echo 
-	                       $item->no_of_lecture ;?></td>
+	                       $item->no_of_lecture ; $tot = $tot + $item->no_of_lecture; ?></td>
 
 
 	                      
@@ -194,7 +195,7 @@
                    	} 
                    	?> <?php ///foreach ($total as $item) {?>
 
-                   <tr><td colspan="4">TOTAL LECTURE=<input type="text"/></td></tr>
+                   <tr><td colspan="4">TOTAL LECTURE: <b id="totalLectures"><?php echo $tot;?>	</b></td></tr>
                   </tbody> 
                </table>
 				</form>

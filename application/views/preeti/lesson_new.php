@@ -31,7 +31,7 @@
                                 <th>Course</th>
                                 <th>Semester</th>
                            		<th>Section</th>
-                                <th>Faculty</th>	
+                                <th>Subject</th>	
                        		</tr>
              			</thead> 
 
@@ -42,7 +42,7 @@
 			       	    			<td><?php echo $item->course_id;?></td>
 				          			<td><?php echo $item->semester_id ;?></td>
 				         			<td><?php echo $item->section_id ;?></td>
-				                    <td><?php echo $item->faculty_id ;?></td>		
+				                    <td><?php echo $item->subject_id?></td>		
 		           				</tr>
 	                    	<?php }?>		
                 		</tbody>

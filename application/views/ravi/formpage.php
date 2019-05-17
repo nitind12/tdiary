@@ -157,6 +157,14 @@
       </select>
     </div>
 </div>
+<div class="control-group">
+  <label class="control-label" for="Class">Class 
+  </label>
+    <div class="controls">
+      <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Classasign" id="Classasign">
+        </select>
+    </div>
+</div>
   <div class="control-group">
      <label class="control-label" for="basicinput">Subject</label>
        <div class="controls">

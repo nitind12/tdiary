@@ -113,6 +113,39 @@ $(function()
 			return false;
 		});
 
+$('#Courseasign').change(function(){
+			if($('#Courseasign').val() != '' && $('#Semesterasign').val() !=0){
+				var url_ = site_url_+"/main/get_classassign";
+				var data_ = $('#frmassign').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Class</option>";
+					for(i=0; i<obj.class.length; i++){
+						str = str + "<option value='"+obj.class[i].add_class_id+"'>"+obj.class[i].course_id+obj.class[i].semester_id+obj.class[i].section_id+"</option>";
+					}
+					$('#Classasign').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+		
+		$('#Semesterasign').change(function(){
+			$('#Courseasign').change();
+
+		
+		});
+
+
+
 
 		$('#Course').change(function(){
 			if($('#Course').val() != '' && $('#Semester').val() !=0){

@@ -41,7 +41,7 @@ class Weeklyedit_controller extends CI_Controller
             $data['submenu'] = $this->am->getSubmenu();
             $data['last'] = $this->am->getlastMenu();
             
-            $data['add_class_in'] = $this->obj->add_view_class($no_);
+            $data['add_class_in'] = $this->am->add_view_attendance($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
             $data['title'] = "Weekly Edit";
             $data['page_'] = "Weeklyedit";
@@ -89,8 +89,8 @@ class Weeklyedit_controller extends CI_Controller
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-            $data['add_class_in'] = $this->obj->add_view_class($no_);
-            $data['t_diary'] = $this->obj->fetchtable($no_);
+           $data['add_class_in'] = $this->am->add_view_attendance($no_);
+             $data['t_diary'] = $this->obj->fetchtable($no_);
             $data['title'] = "Weekly Edit";
             $data['page_'] = "Weeklyview";
             $this->load->view('templates/header', $data);

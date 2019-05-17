@@ -6,6 +6,7 @@ class Login_controller extends CI_Controller
     function __construct()
     {
         parent::__construct();
+
     }
     
     public function index()  
@@ -22,7 +23,7 @@ class Login_controller extends CI_Controller
     
         if ($this->login_model->log_in_correctly())  
         {  
-           redirect('Main');
+           redirect('main');
 
         } else {  
           

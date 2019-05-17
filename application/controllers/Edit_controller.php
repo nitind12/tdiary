@@ -65,9 +65,9 @@ class Edit_controller extends CI_Controller
             $data['submenu'] = $this->am->getSubmenu();
             $data['last'] = $this->am->getlastMenu();
         
-            $data['add_class_in'] = $this->obj->add_view_class($no_);
+            $data['add_class_in'] = $this->am->add_view_attendance($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_);
-           // $data['total']=$this->obj->total_modal();
+           
             $data['title'] = "lecture_edit";
             $data['page_'] = "Lecture_edit";
             
@@ -156,6 +156,8 @@ class Edit_controller extends CI_Controller
 
         echo $data; 
     }
+
+    // $data['total']=$this->obj->total_modal();
 
 }	
 ?>

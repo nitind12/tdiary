@@ -22,7 +22,7 @@
 <tr>
 	<span class="hideblock"><a href="#" onclick="window.print()"><span class="btn btn-primary icon-print" style="float:right">print</span></a></span>
 									  <td class="hideblock">Day:<input type="hidden" value="<?php echo date("D")?>" name="day" id="day"><?php echo date("D")?><br>
-									  	<select tabindex="1"data-placeholder="Select here.." name="day" id="day"class="span8" required="required" >
+									  	<select tabindex="1"data-placeholder="Select here.." name="day" id="day"class="span8" required="required">
 									  		<option value ="">Select here.. </option>
 									  	 <option value ="Monday">Monday</option>
 									  	 <option value ="Tuesday">Tuesday</option>

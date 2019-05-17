@@ -117,13 +117,7 @@
       </div>
       </a>
     
-    <div class="btn-box-row row-fluid" >
-       <button type="button" class="btn-box big span5" data-toggle="modal" data-target="#myModal">
-            <i class="icon-briefcase" id="btnaddclass"name="btnaddclass"></i>
-          <b>Add-Class</b>
-        </button>
-      </div>
-   
+    
      <div class="btn-box-row row-fluid  btn-box big span5" >
            <i class="icon-adjust"></i>
                 <b>Attendance Reports</b>

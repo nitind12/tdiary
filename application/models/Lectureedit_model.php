@@ -71,15 +71,6 @@ class Lectureedit_model extends CI_Model
 
 
 	
-	function add_view_class($clsid)
-	{
-		//$intel = array();
-		$this->db->where('a.add_class_id', $clsid);
-		$this->db->from('add_class a');
-		$q = $this->db->get();
-		//echo $this->db->last_query();
-		return $q->result();
-	}
 	/*	public function add_view_class($sess,$crs)
 		{
 			$this->db->distinct('b.session_id');

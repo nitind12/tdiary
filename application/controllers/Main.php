@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');  
   
 class Main extends CI_Controller {  
-    function __construct(){
+    function __construct()
+    {
         parent::__construct();
 
      if(!$this->session->userdata('user')) redirect('Login_controller');
@@ -92,6 +93,7 @@ class Main extends CI_Controller {
       $data['Semester1'] = $this->am->getSemester1();
       $data['Session1'] = $this->am->getSession1();
       $data['faculty'] = $this->am->getfaculty();
+      $data['class'] = $this->am->getclass1();
              
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
@@ -312,6 +314,11 @@ class Main extends CI_Controller {
     function get_class()
     {
         $data['class'] = $this->am->getclass1();
+        echo json_encode($data);
+    }
+    function get_classassign()
+    {
+        $data['class'] = $this->am->getclassassign();
         echo json_encode($data);
     }
     function get_classP()

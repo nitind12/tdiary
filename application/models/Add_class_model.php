@@ -11,7 +11,6 @@ class Add_class_model extends CI_Model
 		$this->db->where('a.status', 2);
 		$q = $this->db->get();
 		//echo $this->db->last_query();
-
 		return $q->result();
 		
 		}
@@ -76,6 +75,20 @@ class Add_class_model extends CI_Model
 		$this->db->where('semester_id',$Semester_id);
 		$this->db->order_by('subject_id');
 		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclassassign()
+		{
+			$course_id = $this->input->post('Courseasign');
+			$Semester_id = $this->input->post('Semesterasign');
+			$Session_id = $this->input->post('Session');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->where('session_id',$Session_id);
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
@@ -180,7 +193,7 @@ class Add_class_model extends CI_Model
 			$this->db->where('subject_id', $this->input->post('subjectji'));
 			$this->db->where('section_id', $this->input->post('sectionji'));
 			$query = $this->db->get('add_class');
-			//echo $this->db->last_query();
+			//echo $this->db->last_query();die();
 			return $query->row();
 		}
 		function getformtypeMenu()
@@ -192,8 +205,14 @@ class Add_class_model extends CI_Model
 		
 		function fetchClass()
 		{
-		$this->db->order_by('course_id');
-		$query = $this->db->get("add_class");
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id');
+		$this->db->from('assign_subject a');
+		$this->db->where('faculty_id', $this->session->userdata('facultyid'));
+		$this->db->join('add_class b', 'a.add_class_id=b.add_class_id');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
 		return $query->result();
 		}
 		function fetchSubject()
@@ -292,11 +311,15 @@ class Add_class_model extends CI_Model
 		}
 		function add_view_attendance($clsid)
 		{
-		//$intel = array();
-		$this->db->where('a.add_class_id', $clsid);
-		$this->db->from('add_class a');
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id');
+		$this->db->from('assign_subject a');
+		$this->db->where('faculty_id', $this->session->userdata('facultyid'));
+		$this->db->where('b.add_class_id', $clsid);
+		
+		$this->db->join('add_class b', 'a.add_class_id=b.add_class_id');
+		
 		$q = $this->db->get();
-		//echo $this->db->last_query();
 		return $q->result();
 		}
 		
@@ -382,6 +405,7 @@ class Add_class_model extends CI_Model
 				'subject_id'=> $this->input->post('SubjectNameasign'),
 				'faculty_id'=> $this->input->post('Faculty'),
 				'session_id'=> $this->input->post('Session'),
+				'add_class_id'=> $this->input->post('Classasign'),
 				
 				'status'=>'1',
 				'username'=>$this->session->userdata('user')

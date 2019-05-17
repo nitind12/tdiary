@@ -29,8 +29,15 @@ class Givenassignmentmodel extends CI_Model{
 	}
 	public function add_view_class($clsid)
 		{
-		$this->db->where('a.add_class_id', $clsid);
-		$this->db->from('add_class a');
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id, c.first_name,c.last_name');
+		$this->db->from('assign_subject a');
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+		$this->db->where('b.add_class_id', $clsid);
+		
+		$this->db->join('add_class b', 'a.add_class_id=b.add_class_id');
+		$this->db->join('faculty_personal c', 'a.faculty_id=c.faculty_id');
+		
 		$q = $this->db->get();
 		return $q->result();
 		}

@@ -423,5 +423,7 @@ function get_student()
         
         redirect('Main/upload_controller','refresh');
     }
+
+
  }
 ?>  

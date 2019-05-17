@@ -493,9 +493,9 @@ class Add_class_model extends CI_Model
 	$path_id = $this->upload_notes($fileid);
 	$this->db->where('notes_id', $fileid);
 		$data = array(
-			'upload_notes'=> $path_id		// column in database
+			'upload_notes'=> $path_id		// here upload notes is a column in database
 				);
-		$this->db->update('upload_notes', $data);		// table name in database
+		$this->db->update('upload_notes', $data);		// here upload notes is a table name in database
 	}
 
 	function upload_notes($id)

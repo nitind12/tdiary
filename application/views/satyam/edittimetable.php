@@ -6,6 +6,9 @@
 							<div class="module-head">
 								<h1 >Edit Time Table</h1>
 							</div>
+
+							      
+
 	<form method="post" id="myform100" name="myform100" action="<?php echo site_url('edittimetablecontroller/savingdata3');?>" class="form-horizontal row-fluid">
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
@@ -64,11 +67,14 @@
 								  </thead>
 								</tbody>
 								   
-								
 									
 									<tr>
-									  <td>Subject_id:<br>
-									  	<input type="text" name="Subject_id" id="Subject_id" class="span8" required="required"></td>
+								
+									  <td >Subject:<br>
+									  	<!--<input type="text" id="Subject" name="Subject" class="span8"><-->
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+									  	 </select>
+									  </td>
 									  <td>Session:<br>
 									  	<select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session" required="required">
                                              <option value="">Select Session</option>
@@ -127,25 +133,24 @@
 			<th align="center">Course Name</th>
 			<th align="center">Subject_id</th>
 			<th align="center">Session</th>
-			<!--th align="center">Time_table_id</th-->
 			<th align="center">Time</th>
 			<th align="center">Room</th>
 			<th align="center">Delete</th>
 
-			<!--<th align="center">Update</th>-->
+			
 		</tr>
 
-		<?php foreach ($users as $item) { ?>
+		<!--<?php foreach ($users as $item) { ?>
 			<tr >
-				<td align="center"><?php echo $item->Day;?></td>
-				<td align="center"><?php echo $item->Semester;?></td>
-				<td align="center"><?php echo $item->Section;?></td>
-				<td align="center"><?php echo $item->Course_id;?></td>
-				<td align="center"><?php echo $item->Subject_id;?></td>
-				<td align="center"><?php echo $item->Session;?></td>
-				<!--td align="center"><?php echo $item->Time_table_id;?></td-->
-				<td align="center"><?php echo $item->Time;?></td>
-				<td align="center"><?php echo $item->Room;?></td>
+				<td align="center" class="timetable  timetd"   id="<?php echo $item->Subject_id.'-Day';?>"><?php echo $item->Day;?></td>
+				<td align="center"  class="timetable  timetd"   id="<?php echo $item->Subject_id.'-Semester';?>"><?php echo $item->Semester;?></td>
+				<td align="center"  class="timetable  timetd"   id="<?php echo $item->Subject_id.'-Section';?>"><?php echo $item->Section;?></td>
+				<td align="center"  class="timetable  timetd"   id="<?php echo $item->Subject_id.'-Course_id';?>"><?php echo $item->Course_id;?></td>
+				<td align="center"  class="timetable  timetd"   id="<?php echo $item->Subject_id.'-Subject_id';?>"><?php echo $item->Subject_id;?></td>
+				<td align="center"  class="timetable  timetd"   id="<?php echo $item->Subject_id.'-Session';?>"><?php echo $item->Session;?></td>
+				
+				<td align="center"  class="timetable  timetd"   id="<?php echo $item->Subject_id.'-Time';?>"><?php echo $item->Time;?></td>
+				<td align="center"  class="timetable  timetd"   id="<?php echo $item->Subject_id.'-Room';?>"><?php echo $item->Room;?></td>
 				<td><a href="<?php echo site_url('edittimetablecontroller/del1/' . $item->Subject_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 				<!--<td><a href="<?php echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
 			</tr>

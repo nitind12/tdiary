@@ -10,7 +10,15 @@ class Edittimetablecontroller extends CI_Controller{
 		 $this->load->model('Add_class_model','am');
          $this->load->model('edittimrtablemodel','um');
          $this->load->model('Edittimrtablemodel','im');
+         //$this->load->model('Givenassignmentmodel','gm');
+         //$this->load->model('Lessonedit_model','obj');
+         //$this->load->model('Add_class_model','am');
+         $this->load->model('Assign_report_model','ar');
 	}
+	 function  get_subjectT(){
+        $data['subjects'] = $this->um->getSubjectT();
+        echo json_encode($data);
+    }
 	function index()
 	{
 		$data['title'] = "TIME_page";
@@ -49,5 +57,13 @@ class Edittimetablecontroller extends CI_Controller{
 		redirect('Edittimetablecontroller','refresh');
 
 	}
+
+	   function updatedColumn()
+    {
+      //  $this->load->model('Lessonedit_model','lectup');
+        $bool_= $this->um->updatedColumn();
+        echo $data; 
+    }
+
 	
 }

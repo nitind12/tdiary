@@ -21,7 +21,7 @@ class Login_model extends CI_Model {
 
             if($row->category==3)
             {
-                $this->db->select('a.*,b.session_id,b.session_class_id,b.student_id, c.subject_id ,c.semester_id');
+                $this->db->select('a.*,b.session_id,b.session_class_id,b.student_id,c.semester_id');
                 $this->db->from('std_personal a');
                  $this->db->join('section b', 'a.session_id=b.session_id');
                 $this->db->join('add_class c', 'b.session_class_id=c.add_class_id');

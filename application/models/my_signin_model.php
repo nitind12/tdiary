@@ -2,7 +2,23 @@
 
 class My_signin_model extends CI_Model
 {
+
+/* public function log_in_correctly() {  
+  
+       $username_ = $this->input->post('txtUsername');
+		$dateofbirth= $this->input->post('dateofbirth');
+		$email_ = $this->input->post('txtEmail');
+		$phone = $this->input->post('Phone');
+		
+        $this->db->where('username', $username_);  
+        $this->db->where('dateofbirth', $pwd);  
+        $this->db->where('$dateofbirth',);  
+        $query = $this->db->get('sign_up');  
+  
+}*/
+
  	function register()
+
 	{
 		$username_ = $this->input->post('txtUsername');
 		$pwd = $this->input->post('txtPwd');

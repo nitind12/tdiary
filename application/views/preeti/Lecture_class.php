@@ -24,20 +24,20 @@
      
         <?php foreach($cls_in_session as $item){?>
 
-       
         <div class="btn-box-row row-fluid span2" style="background: #f0f0f0; border-radius: 12px; padding: 3px; vertical-align: top; color: #000090; border: #808080 dotted 1px; margin: 10px">
 
-            <div class="btn-box-row row-fluid"  style="border: #ff0000 solid 0px; float: left">
-                <a class="btn-box-row row-fluid  lectureclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >
-          
+            <a class="btn-box-row row-fluid  lectureclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >
+          <div class="btn-box-row row-fluid"  style="border: #ff0000 solid 0px; float: left">
+                
               
                    Session:<?php echo $item->session_id?><br>
-                   <b><?php echo $item->course_id.'-'.$item->semester_id;?><br>
-                          <button style="float:left; border:2px solid grey" type="submit" name="save ">
-                                                  <u><?php echo $item->subject_id;?></u></button></b>
-                </a>
+                   <b><?php echo $item->course_id.'-'.$item->semester_id;?></b>
+                         
           </div>
-        </div>
+          <br> <button style="float:bottom; border:2px solid grey" type="submit" name="save ">
+                                                  <u><?php echo $item->subject_id;?></u></button></b>
+              </a>
+      </div>
         <?php 
         } 
         ?>

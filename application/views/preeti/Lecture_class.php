@@ -30,7 +30,8 @@
             <div class="btn-box-row row-fluid"  style="border: #ff0000 solid 0px; float: left">
                 <a class="btn-box-row row-fluid  lectureclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >
           
-              
+                <div class="btn-box-row row-fluid span10" style="background: #ffffff; border-radius: 12px; padding: 3px; vertical-align: top; color: #000090; border: #808080 dotted 1px; margin: 10px">
+
                    Session:<?php echo $item->session_id?><br>
                    <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br>
                           <button style="float:left; border:2px solid grey" type="submit" name="save ">

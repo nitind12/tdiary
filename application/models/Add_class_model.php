@@ -239,11 +239,7 @@ class Add_class_model extends CI_Model
 
 		function fetchSubject()
 		{
-		$this->db->order_by('subject_id');
-
-		$query = $this->db->get("add_class");
-		return $query->result();
-		}
+			}
 
 		function fetchSession(){
 			$this->db->order_by('s_id');

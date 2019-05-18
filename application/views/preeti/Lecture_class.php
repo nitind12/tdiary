@@ -37,8 +37,8 @@
                    <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br>
                           
           </div>
-          <br><button style="float:top,left; vertical-align:bottom; border:2px solid grey" type="submit" name="save ">
-            <u><?php echo $item->subject_id;?></u></center></button></b>
+          <br><center><button style="float:top,left; vertical-align:bottom; border:2px solid grey" type="submit" name="save ">
+            <u><?php echo $item->subject_id;?></u></button></center></b>
              </div> </a>
       </div>
         <?php 

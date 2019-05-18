@@ -238,7 +238,16 @@ class Add_class_model extends CI_Model
 		}
 
 		function fetchSubject()
-		{
+		{		
+		$this->db->select('a.*');
+		$this->db->where('faculty_id', $this->session->userdata('facultyid'));
+		
+		$this->db->from('assign_subject a');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $query->result();
+
 			}
 
 		function fetchSession(){

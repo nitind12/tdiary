@@ -26,7 +26,8 @@
 	                    	<th align="center">Session</th>
 	                        <th align="center">Course</th>
 	                        <th align="center">Semester</th>
-	                        <th align="center">Subject</th>
+	                         <th align="center">Section</th>
+	                       <th align="center">Subject</th>
 	                      <!--<th align="center">Date Of Commencement</th> 
 	                      <th align="center">Date Of Completion</th> -->
 	               		</tr>
@@ -39,10 +40,10 @@
 		                        <td><b><?php echo $item->session_id?></b> </td>
 		                        <td><b><?php echo $item->course_id?></b> </td>
 		                        <td><b><?php echo $item->semester_id?></b> </td>
-		                       <td><b><?php echo $item->subject_id;?></b></td>
-		                     <!--  <td><b><?php echo $item->subject_id;?></b></td>
-		                       <td><b><?php echo $item->subject_id;?></b></td>		-->
-                    		</tr>        
+		                       <td><b><?php echo $item->section_id;?></b></td>
+		                      
+		                       <td><b><?php echo $item->subject_name;?></b></td>
+		                       </tr>        
               			<?php } ?>
                		</tbody>
            		 </table>

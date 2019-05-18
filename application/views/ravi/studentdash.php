@@ -5,6 +5,8 @@
       <div class="module-head">
         <h1>sDashboard</h1>
         <?php 
+        echo $this->session->userdata('studentid');
+       
         echo $this->session->userdata('sin');
         echo $this->session->userdata('cos');
         echo $this->session->userdata('tan');

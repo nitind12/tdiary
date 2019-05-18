@@ -60,8 +60,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<input class="span12" type="text" id="txtUsername" name ="txtUsername"placeholder="Username">
 								</div>
 							</div>
+
+							<div class="module-body">
+							<div class="control-group">
+								<div class="controls row-fluid">
+									<input class="span12" type="text" id="txtstd_id" name ="txtstd_id"placeholder="Enter Student Id">
+								</div>
+							</div>
 				
-					
+				
+					</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">

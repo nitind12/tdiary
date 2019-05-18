@@ -6,7 +6,6 @@
     }
 </style>
 
-
 <style media="print">
   .hideblock{
       display:none;

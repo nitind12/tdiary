@@ -10,10 +10,12 @@
 <div class="content">
     <div class="module">
        <div class="module-head">
-           <h1>View-Total</h1>
+           <h1>Total Report</h1>
         </div>
 
  <div class="module-body">
+
+    
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
             <tr>
@@ -49,19 +51,7 @@
                 </tr>
                </tbody>
            </table>
-          
-        <div class="module-body table">
-             <tr>
-              <td>
-                
-                    </td>
-
-                      <td> 
-                    </td>
-                    </tr>
-                </table>
-              
-              </div>
+  
         <table class="table table-bordered table-striped" id="reportshere" name="reportshere">
             </table>
    </div></div></div>

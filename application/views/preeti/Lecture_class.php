@@ -38,7 +38,7 @@
                           
           </div>
           <br><button style="float:top,left; vertical-align:bottom; border:2px solid grey" type="submit" name="save ">
-                                                  <u><?php echo $item->subject_id;?></u></center></button></b>
+            <u><?php echo $item->subject_id;?></u></center></button></b>
              </div> </a>
       </div>
         <?php 

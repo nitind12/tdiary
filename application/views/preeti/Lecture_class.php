@@ -37,11 +37,11 @@
                    <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br>
 
                       </b>
-                  </div>
-              
+                 
                 
           </div>
-          <br><center><button style="float:top,left; vertical-align:bottom; border:2px solid grey" type="submit" name="save ">
+          <br>
+          <center><button style="float:top,left; vertical-align:bottom; border:2px solid grey" type="submit" name="save ">
             <u><?php echo $item->subject_name;?></u></button></center></b>
              </div> </a>
       </div>

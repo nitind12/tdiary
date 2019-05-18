@@ -1,5 +1,8 @@
 $(function()
 {
+	$('#myModal').css('display', 'none');
+		
+
 	$('#frmLogin').submit(function(){
 		if($.trim($('#username').val()) == ''){
 			alert('001: Please Enter Username');
@@ -10,7 +13,6 @@ $(function()
 		}
 		return false;
 	});
-		$('#myModal').css('display', 'none');
 		
 			$('#Password, #RePassword').on('keyup', function () {
   		if ($('#Password').val() == $('#RePassword').val()) {

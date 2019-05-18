@@ -244,12 +244,10 @@ class Add_class_model extends CI_Model
 		{
 			
 		$data = array(
-			'faculty_id'=>'ravi',
 			'session_id' => $this->input->post('Session'),
 			'course_id' => $this->input->post('Course'),
 			'semester_id' => $this->input->post('Semester'),
 			'section_id' => $this->input->post('Section'),
-			'subject_id' => $this->input->post('Subject_Name'),
 			'section_id' => $this->input->post('Section'),
 			'date_of_commencement' => $this->input->post('DateOfCommencement'),
 			'date_of_completion' => $this->input->post('DateOfCompletion'),

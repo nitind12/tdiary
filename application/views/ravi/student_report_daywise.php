@@ -14,29 +14,32 @@
         </div>
 
  <div class="module-body">
-      <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+    <form name="frmdaywise" id="frmdaywise"  Method="POST" action="<?php echo site_url('main/student_report_daywise_controller');?>">
+            <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
             <tr>
                 
                 <td>
                  <div class="control-group">
-                   <label class="control-label" for="basicinput">Date From </label>
                       <div class="controls">
+                         Date From:
+                 <br/>
                           <input type="date" name="d1" class="span2">
                       </div>
                     </div>
                 </td>
                  <td>
                  <div class="control-group">
-                   <label class="control-label" for="basicinput">Date Upto</label>
                       <div class="controls">
+                         Date Upto:
+                  <br/>
                           <input type="date" name="d2" class="span2">
                       </div>
                     </div>
                 </td>
                 </tr>  
                 <tr>
-                   <td colspan="3">
+                  <td colspan="2">
                   <div class="control-group">
                       <div class="controls">
                         <div style="float: right;"> 
@@ -48,20 +51,9 @@
                 
                 </tr>
                </tbody>
-           </table>
-          
-        <div class="module-body table">
-             <tr>
-              <td>
-                
-                    </td>
-
-                      <td> 
-                    </td>
-                    </tr>
-                </table>
-              
-              </div>
-        <table class="table table-bordered table-striped" id="reportshere" name="reportshere">
-            </table>
-   </div></div></div>
+          </table></form> 
+         <table class="table table-bordered table-striped" id="reportdaywise" name="reportdaywise">
+        </table>
+   </div>
+ </div>
+</div>

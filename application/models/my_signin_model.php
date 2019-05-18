@@ -27,9 +27,17 @@ class My_signin_model extends CI_Model
 		$answer = $this->input->post('txtanswer');
 		$dateofbirth= $this->input->post('dateofbirth');
 		$cat = $this->input->post('rod');
+		
 		$this->db->where('b.username', $username_);
 		$this->db->or_where('b.student_id', $student_id);
-		$this->db->get('std_personal b');
+		$q=$this->db->get('std_personal b');
+				
+				if($q->num_rows()!=0)
+		{
+			$bool = false;
+		} 
+		else 
+		{
 		
 		$this->db->where('a.username', $username_);
 		$this->db->or_where('a.student_id', $student_id);
@@ -58,4 +66,5 @@ class My_signin_model extends CI_Model
 
 		return $bool;
 	}
+}
 }

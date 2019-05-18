@@ -405,6 +405,11 @@ function get_student()
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
     }
+    function get_subjectupload()
+    {
+        $data['subjects'] = $this->am->getuploadsubject();
+        echo json_encode($data);
+    }
 
 
        public function Download_controller()

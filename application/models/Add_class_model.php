@@ -79,6 +79,18 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
+		function getuploadsubject()
+		{
+			$course_id = $this->input->post('Course');
+			$Semester_id = $this->input->post('Semester');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
 		function getclassassign()
 		{
 			$course_id = $this->input->post('Courseasign');

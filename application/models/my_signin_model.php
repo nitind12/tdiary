@@ -25,28 +25,28 @@ class My_signin_model extends CI_Model
 		$student_id = $this->input->post('txtstudentid');
 		$question = $this->input->post('txtquestion');
 		$answer = $this->input->post('txtanswer');
-		
+
 		$cat = $this->input->post('rod');
 		
 		$this->db->where('username', $username_);
-		$this->db->or_where('student_id', $student_id);
+		$this->db->where('student_id', $student_id);
 		$q=$this->db->get('std_personal');
-		if($q->num_rows()!=0)
+		if($q->num_rows()==0)
 		{
-			$bool = false;
+			$boo1 = false;
 		} 
 		else 
 		{
 		$this->db->where('username', $username_);
 		$this->db->where('student_id', $student_id);
-
-		$data = array(
+			$data = array
+			(
         			'active_status' =>1
-       			 );
+       		);
 
 		$this->db->update('std_personal' ,$data);
 		$this->db->where('username', $username_);
-		$this->db->or_where('student_id', $student_id);
+		$this->db->where('student_id', $student_id);
 		$query=$this->db->get('sign_up');
 		
 

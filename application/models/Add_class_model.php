@@ -218,10 +218,11 @@ class Add_class_model extends CI_Model
 		function fetchClass()
 		{
 		$this->db->distinct('a.add_class_id');
-		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id');
+		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id ,c.subject_name');
 		$this->db->from('assign_subject a');
 		$this->db->where('faculty_id', $this->session->userdata('facultyid'));
 		$this->db->join('add_class b', 'a.add_class_id=b.add_class_id');
+		$this->db->join('subject c', 'a.subject_id=c.subject_id');
 		
 		$query = $this->db->get();
 		//echo $this->db->last_query();die();

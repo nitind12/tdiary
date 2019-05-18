@@ -28,20 +28,26 @@ class My_signin_model extends CI_Model
 		$dateofbirth= $this->input->post('dateofbirth');
 		$cat = $this->input->post('rod');
 		
-		$this->db->where('b.username', $username_);
-		$this->db->or_where('b.student_id', $student_id);
-		$q=$this->db->get('std_personal b');
-				
-				if($q->num_rows()!=0)
+		$this->db->where('username', $username_);
+		$this->db->or_where('student_id', $student_id);
+		$q=$this->db->get('std_personal');
+		if($q->num_rows()!=0)
 		{
 			$bool = false;
 		} 
 		else 
 		{
-		
-		$this->db->where('a.username', $username_);
-		$this->db->or_where('a.student_id', $student_id);
-		$query=$this->db->get('sign_up a');
+		$this->db->where('username', $username_);
+		$this->db->where('student_id', $student_id);
+
+		$data = array(
+        			'active_status' =>1
+       			 );
+
+		$this->db->update('std_personal' ,$data);
+		$this->db->where('username', $username_);
+		$this->db->or_where('student_id', $student_id);
+		$query=$this->db->get('sign_up');
 		
 
 		if($query->num_rows()!=0)

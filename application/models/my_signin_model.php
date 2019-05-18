@@ -67,4 +67,3 @@ class My_signin_model extends CI_Model
 		return $bool;
 	}
 }
-}

@@ -76,15 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<input class="span12" type="password" id="RePassword" name="retxtPwd" placeholder="Re-Password">
 								</div>
 							</div>
-						<div id="message"></div>
-							</div><div class="module-body">
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="Phone" name="Phone" placeholder="phone no">
-								</div>
-							</div>
-							</div>	
-
+						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">

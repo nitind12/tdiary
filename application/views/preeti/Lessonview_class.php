@@ -41,7 +41,7 @@
                         <u><?php echo $item->subject_name;?></u></button></center></b>
                          </div> </a>
                  
-                </div>
+                
              </div>
               <?php 
                 } 

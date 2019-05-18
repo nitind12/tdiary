@@ -24,79 +24,85 @@
                   ?>
 
 
-    <table>
+       <table class="table table-bordered table-striped">
       
           <tbody>
             <tr>
-                <td >Session:<br>
-                  
-                         <select tabindex="1" data-placeholder="Select here.."class="span1"  name="Session" id="Session">
-                                             <option value="">Select Session</option>
-                                                <?php foreach ($Session1 as  $item) { ?>
-                                                 <option value="<?php echo $item->s_id;?>">
-                                                  <?php echo $item->session?></option>
-                                                    <?php }?>
-                                                 </select>
-                    </td>
+                 <td >Session:<br>
+                    <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Session" id="Session">
+                          <option value="">Select Session</option>
+                            <?php foreach ($Session1 as  $item) { ?>
+                               <option value="<?php echo $item->s_id;?>">
+                                 <?php echo $item->session?></option>
+                                  <?php }?>
+                    </select>
+                  </td>
 
                     <td >Course_name:<br>
-                       <select tabindex="1" data-placeholder="Select here.."class="span1"  name="Course_name" id="Course_name">
-                                             <option value="">Select Course</option>
-                                                <?php foreach ($course1 as  $item) { ?>
-                                                 <option value="<?php echo $item->course_id;?>">
-                                                  <?php echo $item->name_of_courses?></option>
-                                                    <?php }?>
-                                                 </select>
-                      </td>
+                       <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Course" id="Course">
+                              <option value="">Select Course</option>
+                                <?php foreach ($course1 as  $item) { ?>
+                                    <option value="<?php echo $item->course_id;?>">
+                                      <?php echo $item->name_of_courses?></option>
+                                      <?php }?>
+                        </select>
+                    </td>
+
                     <td>Semester:<br>
                       <!--<input type="text" id="txtSemester" name="txtSemester" class="span8">-->
-                      <select tabindex="1"data-placeholder="Select here.." class="span1" name="Semester" id="Semester" >
-                        <option value ="">Select here..</option>
-                       <option value ="1">1</option>
-                       <option value ="2">2</option>
-                       <option value ="3">3</option>
-                       <option value ="4">4</option>
-                       <option value ="5">5</option>
-                       <option value ="6">6</option>
-                       <option value ="7">7</option>
-                       <option value ="8">8</option>
-                    </select>
+                        <select tabindex="1"data-placeholder="Select here.." class="span2" name="Semester" id="Semester" >
+                            <option value ="">Select here..</option>
+                           <option value ="1">1</option>
+                           <option value ="2">2</option>
+                           <option value ="3">3</option>
+                           <option value ="4">4</option>
+                           <option value ="5">5</option>
+                           <option value ="6">6</option>
+                           <option value ="7">7</option>
+                           <option value ="8">8</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
                     <td>Section:<br>
                       <!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
-                      <select tabindex="1"data-placeholder="Select here.." class="span1" name="Section" id="Section"  >
-                        <option value ="">Select here..</option>
-                       <option value ="A">A</option>
-                       <option value ="B">B</option>
-                       <option value ="C">C</option>
-                       <option value ="D">D</option>
-                       
-                    </select>
+                          <select tabindex="1"data-placeholder="Select here.." class="span2" name="Section" id="Section"  >
+                              <option value ="">Select here..</option>
+                             <option value ="A">A</option>
+                             <option value ="B">B</option>
+                             <option value ="C">C</option>
+                             <option value ="D">D</option>
+                           
+                        </select>
                     </td>
                   
                     <td >Subject:<br>
                       <!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
-                      <select tabindex="1"data-placeholder="Select here.." class="span1" name="Subject" id="Subject" >
-                       </select>
+                         <select tabindex="1"data-placeholder="Select here.." class="span2" name="Subject" id="Subject" >
+                         </select>
                     </td>
+                    <td>Upload Notes:<br>
+                   
+                        <input type="file" name="pic_file" class="form-control"  id="pic_file" class="span2">
+                        <!--input type="file" name="syllabus_pdf"id="syllabus_pdf" placeholder="syllabus_pdf" class="span8"-->
+                     
+               
+                      </td>
                   
                   
                     
                      
                   </tr>
-  
-                        
-                    <tr> <td>   <div class="control-group">
+      
+                    <tr> <td colspan="3">   <div class="control-group">
                           <div class="controls" style="float:right">
-                            <button type="submit" class="btn btn-primary" id="btnaddclass">Upload</button>
+                            <button type="submit" class="btn btn-primary" id="btnaddclass">Submit</button>
                           </div>
                         </div>
           </td></tr>
            
                
-    </div></tbody></table>          </form>
+    </div></tbody></table> <br>         
 
                       <table class="table table-bordered table-striped  display" width="100%">
                          <thead>

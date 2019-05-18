@@ -36,6 +36,7 @@
     
     <div class="btn-box-row row-fluid" >
        <button type="button" class="btn-box big span5" data-toggle="modal" data-target="#myModal">
+           <a href="<?php echo site_url('Main/addclass_controller');?>" >
             <i class="icon-briefcase" id="btnaddclass"name="btnaddclass"></i>
           <b>Add-Class</b>
         </button>

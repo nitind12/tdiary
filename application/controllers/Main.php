@@ -395,6 +395,10 @@ function get_student()
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
         $data['downloads'] = $this->am->download_models();
+
+        $data['course1'] = $this->am->getCourse1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Session1'] = $this->am->getSession1();
       
        
         $this->load->view('templates/header', $data);

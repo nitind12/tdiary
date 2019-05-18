@@ -62,24 +62,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<input class="span12" type="text" id="txtUsername" name ="txtUsername"placeholder="Username">
 								</div>
 							</div>
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="email" id="email"name="txtEmail" placeholder="Email">
-								</div>
-							</div>
+				
 					
-						</div>
-						<div class="module-body">
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="first-name"name="txtfirst_name"  placeholder="First-name">
-								</div>
-							</div>
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="txtsir_name"name="txtsir_name"  placeholder="Sur-name">
-								</div>
-							</div>
 						</div>
 						<div class="module-body">
 							<div class="control-group">

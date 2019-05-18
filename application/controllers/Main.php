@@ -159,6 +159,19 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "Student-Report-Daywise";
         $data['page_'] = "student_report_daywise";
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    } public function attendance_report_student_controller2()  
+    {  
+        $data['title'] = "Student-Report-Attendance";
+        $data['page_'] = "View_total";
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
@@ -168,6 +181,7 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
+
  public function attendance_report_View_Consolidate()  
     {  
         $data['title'] = "View-Consolidate";

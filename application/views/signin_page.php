@@ -45,12 +45,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div><!-- /navbar-inner -->
 	</div><!-- /navbar -->
 
-
-
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
-				<div class="module module-login span4 offset4">
+				<div class="module span4 offset4">
 					<form class="form-vertical" method="POST" name="frmsign"id="frmsign" action="<?php echo site_url('signup_controller/register');?>">
 					
 						<div class="module-head">

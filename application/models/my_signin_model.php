@@ -11,12 +11,13 @@ class My_signin_model extends CI_Model
 		$answer = $this->input->post('txtanswer');
 		$dateofbirth= $this->input->post('dateofbirth');
 		$cat = $this->input->post('rod');
-		$this->db->where('username', $username_);
-		$this->db->or_where('student_id', $student_id);
-		$this->db->get('sign_up');
-		$this->db->where('username', $username_);
-		$this->db->or_where('student_id', $student_id);
-		$query=$this->db->get('std_personal');
+		$this->db->where('b.username', $username_);
+		$this->db->or_where('b.student_id', $student_id);
+		$this->db->get('std_personal b');
+		
+		$this->db->where('a.username', $username_);
+		$this->db->or_where('a.student_id', $student_id);
+		$query=$this->db->get('sign_up a');
 		
 
 		if($query->num_rows()!=0)

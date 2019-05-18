@@ -10,7 +10,7 @@
 <div class="content">
     <div class="module">
        <div class="module-head">
-           <h1>View-Consolidate</h1>
+           <h1>View-Total</h1>
         </div>
 
  <div class="module-body">

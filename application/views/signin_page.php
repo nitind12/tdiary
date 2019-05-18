@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="txtstd_id" name ="txtstd_id"placeholder="Enter Student Id">
+									<input class="span12" type="text" id="txtstudentid" name ="txtstudentid"placeholder="Student Id">
 								</div>
 							</div>
 				

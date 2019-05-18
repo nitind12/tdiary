@@ -34,9 +34,11 @@
 
                    Session:<?php echo $item->session_id?><br>
                    <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br>
-                          <button style="float:left; border:2px solid grey" type="submit" name="save ">
-                                                  <u><?php echo $item->subject_id;?></u></button></b>
+                   <center>       <button style="float:left; border:2px solid grey "type="submit" name="save ">
+                                                  <u><?php echo $item->subject_id;?></u></button></center></b>
+                  </div>
                 </a>
+
           </div>
         </div>
         <?php 

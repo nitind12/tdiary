@@ -108,7 +108,7 @@ class Main extends CI_Controller {
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-        $data['cls_in_session'] = $this->am->fetchClass();
+        $data['cls_in_session'] = $this->am->fetchClass1();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');

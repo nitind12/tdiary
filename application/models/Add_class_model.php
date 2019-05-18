@@ -216,6 +216,15 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
+		function fetchClass1()
+		{
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.*');
+		$this->db->from('add_class a');
+		$query = $this->db->get();
+		return $query->result();
+		}
+
 		function fetchSubject()
 		{
 		$this->db->order_by('subject_id');

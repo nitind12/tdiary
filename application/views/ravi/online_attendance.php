@@ -16,7 +16,7 @@
         </div>
           <div class="btn-box-row row-fluid"  style="border: #ff0000 solid 0px; float: left">
               Session:<?php echo $item->session_id?><br>
-              <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br><u><?php echo $item->subject_id;?></u></b>
+              <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?><br><u></u></b>
           
           </div>
       </div>

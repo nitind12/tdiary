@@ -468,5 +468,15 @@ function get_student()
     }
 
 
+
+    function totalAttenview()
+    {
+        $data['totalatten_'] = $this->am->totalAttendance_view();
+
+        echo json_encode($data);    
+    }
+
+
+
  }
 ?>  

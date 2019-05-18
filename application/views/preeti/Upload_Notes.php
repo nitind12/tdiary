@@ -38,7 +38,7 @@
                     </select>
                   </td>
 
-                    <td >Course_name:<br>
+                    <td>Course:<br>
                        <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Course" id="Course">
                               <option value="">Select Course</option>
                                 <?php foreach ($course1 as  $item) { ?>

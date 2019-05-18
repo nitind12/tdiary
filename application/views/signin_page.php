@@ -97,12 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</div>
 							</div>
 						</div>
-						<div class="module-body">
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="date" id="dateofbirth" name="dateofbirth" placeholder="Date-Of-Birth">
-								</div>
-							</div>
+					
 							<div class="control-group">
 								<div class="controls row-fluid">
 									

@@ -397,12 +397,12 @@ class Add_class_model extends CI_Model
 			'add_class_id'=>$addclass_id[$i],
 			'date'=>$date,
 			'time'=>'02:00',
-			'roll_no' => $stdroll[$i],
+			'roll_no' =>'121',
 			'attendance_status' => $mk1[$i],
 			'status' => '1',
 			'username' =>$this->session->userdata('user'),
-			'faculty_id'=>'2',
-			'student_id'=>'121'
+			'faculty_id'=>$this->session->userdata('facultyid'),
+			'student_id'=> $stdroll[$i],
 			);
 		
 			$this->db->insert('attendance',$data);

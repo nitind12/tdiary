@@ -19,6 +19,10 @@ class Edittimetablecontroller extends CI_Controller{
         $data['subjects'] = $this->um->getSubjectT();
         echo json_encode($data);
     }
+    function time_edit_controller(){
+		$data['time_table'] = $this->im->time_edit_modals();
+       echo json_encode($data);
+	}
 	function index()
 	{
 		$data['title'] = "TIME_page";

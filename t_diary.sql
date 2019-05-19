@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2019 at 11:42 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Generation Time: May 19, 2019 at 08:58 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,16 +46,12 @@ CREATE TABLE `add_class` (
 --
 
 INSERT INTO `add_class` (`add_class_id`, `session_id`, `course_id`, `semester_id`, `section_id`, `date_of_commencement`, `date_of_completion`, `syllabus_pdf`, `username`, `status`) VALUES
-(24, '2014', 'BCA', '5', 'A', '0000-00-00', '0000-00-00', '', 'ra', 1),
-(25, '2015', 'BBA', '5', 'A', '0000-00-00', '0000-00-00', '', 'ra', 1),
-(26, '2015', 'BBA', '5', 'B', '0000-00-00', '0000-00-00', '', 'ra', 1),
-(28, '2018', 'BCA', '5', 'A', '0000-00-00', '0000-00-00', '', 'ra', 1),
-(29, '2018', 'BCA', '5', 'B', '0000-00-00', '0000-00-00', '', 'ra', 1),
-(33, '2015', 'B.SC', '1', 'A', '2019-05-10', '2019-05-31', '33.pdf', 'ra', 1),
-(34, '2016', 'BBA', '2', 'A', '2019-05-16', '2019-05-24', '34.pdf', 'ra', 1),
-(35, '2016', 'BCA', '2', 'A', '2019-05-20', '2019-05-21', '35.pdf', 'ra', 1),
-(36, '2016', 'BCA', '2', 'B', '2019-05-20', '2019-05-21', '35.pdf', 'ra', 1),
-(37, '2019', 'BCA', '4', 'A', '2019-05-10', '2019-05-23', '37.pdf', 'ra', 1);
+(1, '2018', 'BCA', '2', 'A', '2018-02-01', '2018-05-31', '1.pdf', 'ra', 1),
+(2, '2018', 'BCA', '2', 'B', '2018-02-01', '2018-05-31', '2.pdf', 'ra', 1),
+(3, '2018', 'BCA', '4', 'A', '2018-02-01', '2018-05-31', '3.pdf', 'ra', 1),
+(4, '2018', 'BCA', '4', 'B', '2018-02-01', '2018-05-31', '4.pdf', 'ra', 1),
+(5, '2019', 'BBA', '3', 'A', '2019-02-01', '2019-05-31', '5.pdf', 'ra', 1),
+(6, '2019', 'BBA', '3', 'B', '2019-02-01', '2019-05-31', '6.pdf', 'ra', 1);
 
 -- --------------------------------------------------------
 
@@ -99,7 +95,8 @@ INSERT INTO `assignment` (`Assignment_id`, `add_class_id`, `Assignment_no`, `Giv
 (3, 25, 1, '2019-04-15', '2019-04-15', 1, 'FFGDZGV XZDVXVXVDXXXDZVSXGX', 1, 'ra'),
 (8, 25, 2, '2019-04-26', '2019-04-26', 2, 'r5wd6yuoifpfdisgxtaycgvfiokgbp;lsxazuyt5rdxgfcvkbl;h\'/v,xlknzftgcfx', 1, 'ra'),
 (9, 25, 1, '2019-04-29', '2019-04-30', 1, 'sfdghgjhkjlkl', 1, 'ra'),
-(10, 25, 1, '2019-05-08', '2019-05-14', 1, 'sderfgtyhujikl,kmnb', 1, 'ra');
+(10, 25, 1, '2019-05-08', '2019-05-14', 1, 'sderfgtyhujikl,kmnb', 1, 'ra'),
+(11, 35, 1, '2019-05-18', '2019-05-17', 1, 'vbvnbn', 1, 'Aman12');
 
 -- --------------------------------------------------------
 
@@ -118,21 +115,6 @@ CREATE TABLE `assignment_checker` (
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `assignment_checker`
---
-
-INSERT INTO `assignment_checker` (`assignment_checker_id`, `add_class_id`, `assignment_id`, `roll_no`, `assignment_status`, `checker_date`, `Grade`, `status`, `username`) VALUES
-(1, 25, 2, 121, 1, '2019-04-11', 'A', 1, 'ra'),
-(2, 25, 2, 119, 1, '2019-04-11', 'A', 1, 'ra'),
-(3, 25, 2, 120, 1, '2019-04-11', 'A', 1, 'ra'),
-(4, 26, 55, 121, 1, '2019-04-11', 'A', 1, 'ra'),
-(5, 26, 5646, 122, 1, '2019-04-11', 'B', 1, 'ra'),
-(6, 26, 944, 403, 1, '2019-04-11', 'D', 1, 'ra'),
-(7, 25, 2, 118, 1, '2019-04-26', 'A', 1, 'ra'),
-(8, 25, 2, 119, 1, '2019-04-26', 'A', 1, 'ra'),
-(9, 25, 2, 120, 1, '2019-04-26', 'A', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -155,15 +137,12 @@ CREATE TABLE `assign_subject` (
 --
 
 INSERT INTO `assign_subject` (`assign_subject_id`, `subject_id`, `faculty_id`, `session_id`, `add_class_id`, `status`, `username`) VALUES
-(1, 'BCA303', 2019056, 2019, 0, 1, 'ra'),
-(2, 'BCA202', 2019057, 2019, 0, 1, 'ra'),
-(3, 'BCA203', 2019058, 2019, 0, 1, 'ra'),
-(4, 'BCA204', 2019056, 2019, 0, 1, 'ra'),
-(5, 'BCA405', 2019058, 2019, 0, 1, 'ra'),
-(6, 'BCA201', 2019057, 2016, 35, 1, 'ra'),
-(7, 'BCA503', 2019058, 2018, 28, 1, 'ra'),
-(8, 'BBA 503 ', 2019056, 2015, 25, 1, 'ra'),
-(9, 'BCA202', 2019056, 2016, 35, 1, 'ra');
+(1, 'BCA203', 2019058, 2018, 1, 1, 'ra'),
+(2, 'BCA206', 2019058, 2018, 2, 1, 'ra'),
+(3, 'BCA401', 2019055, 2018, 3, 1, 'ra'),
+(4, 'BCA403', 2019057, 2018, 4, 1, 'ra'),
+(5, 'BBA 303 ', 2019056, 2019, 5, 1, 'ra'),
+(6, 'BBA 303 ', 2019055, 2019, 6, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -183,70 +162,6 @@ CREATE TABLE `attendance` (
   `student_id` varchar(50) NOT NULL,
   `faculty_id` varchar(50) NOT NULL,
   `description_if_any` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `attendance`
---
-
-INSERT INTO `attendance` (`add_class_id`, `attendance_id`, `date`, `time`, `roll_no`, `attendance_status`, `username`, `status`, `student_id`, `faculty_id`, `description_if_any`) VALUES
-(28, 69, '2019-04-09', '02:00:00.000', 4, 'LEAVE', 'ra', 1, '121', '2', ''),
-(28, 70, '2019-04-09', '02:00:00.000', 5, ' ABSENT', 'ra', 1, '121', '2', ''),
-(28, 71, '2019-04-09', '02:00:00.000', 6, 'PRESENT', 'ra', 1, '121', '2', ''),
-(28, 72, '2019-04-09', '02:00:00.000', 7, 'LEAVE', 'ra', 1, '121', '2', ''),
-(28, 73, '2019-04-09', '02:00:00.000', 8, ' ABSENT', 'ra', 1, '121', '2', ''),
-(28, 74, '2019-04-09', '02:00:00.000', 9, ' ABSENT', 'ra', 1, '121', '2', ''),
-(26, 75, '2019-04-11', '02:00:00.000', 121, ' ABSENT', 'ra', 1, '121', '2', ''),
-(26, 76, '2019-04-11', '02:00:00.000', 122, ' ABSENT', 'ra', 1, '121', '2', ''),
-(26, 77, '2019-04-11', '02:00:00.000', 403, 'PRESENT', 'ra', 1, '121', '2', ''),
-(25, 78, '2019-04-12', '02:00:00.000', 118, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 79, '2019-04-12', '02:00:00.000', 119, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 80, '2019-04-12', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 81, '2019-04-27', '02:00:00.000', 118, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 82, '2019-04-27', '02:00:00.000', 119, 'PRESENT', 'ra', 1, '121', '2', ''),
-(25, 83, '2019-04-27', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 84, '2019-04-29', '02:00:00.000', 118, 'PRESENT', 'new1', 1, '121', '2', ''),
-(25, 85, '2019-04-29', '02:00:00.000', 119, ' ABSENT', 'new1', 1, '121', '2', ''),
-(25, 86, '2019-04-29', '02:00:00.000', 120, 'PRESENT', 'new1', 1, '121', '2', ''),
-(25, 87, '2019-04-29', '02:00:00.000', 118, ' ABSENT', 'new1', 1, '121', '2', ''),
-(25, 88, '2019-04-29', '02:00:00.000', 119, 'PRESENT', 'new1', 1, '121', '2', ''),
-(25, 89, '2019-04-29', '02:00:00.000', 120, ' ABSENT', 'new1', 1, '121', '2', ''),
-(25, 90, '2019-05-01', '02:00:00.000', 118, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 91, '2019-05-01', '02:00:00.000', 119, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 92, '2019-05-01', '02:00:00.000', 120, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 93, '2019-05-01', '02:00:00.000', 118, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 94, '2019-05-01', '02:00:00.000', 119, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 95, '2019-05-01', '02:00:00.000', 120, 'PRESENT', 'ra', 1, '121', '2', ''),
-(25, 96, '2019-05-01', '02:00:00.000', 118, 'PRESENT', 'ra', 1, '121', '2', ''),
-(25, 97, '2019-05-01', '02:00:00.000', 119, ' ABSENT', 'ra', 1, '121', '2', ''),
-(25, 98, '2019-05-01', '02:00:00.000', 120, 'PRESENT', 'ra', 1, '121', '2', ''),
-(26, 99, '2019-05-01', '02:00:00.000', 121, 'PRESENT', 'ra', 1, '121', '2', ''),
-(26, 100, '2019-05-01', '02:00:00.000', 122, 'PRESENT', 'ra', 1, '121', '2', ''),
-(26, 101, '2019-05-01', '02:00:00.000', 403, 'PRESENT', 'ra', 1, '121', '2', ''),
-(25, 102, '2019-05-07', '02:00:00.000', 118, '1', 'ra', 1, '121', '2', ''),
-(25, 103, '2019-05-07', '02:00:00.000', 119, '1', 'ra', 1, '121', '2', ''),
-(25, 104, '2019-05-07', '02:00:00.000', 120, '1', 'ra', 1, '121', '2', ''),
-(25, 105, '2019-05-07', '02:00:00.000', 118, '0', 'ra', 1, '121', '2', ''),
-(25, 106, '2019-05-07', '02:00:00.000', 119, '0', 'ra', 1, '121', '2', ''),
-(25, 107, '2019-05-07', '02:00:00.000', 120, '0', 'ra', 1, '121', '2', ''),
-(25, 108, '2019-05-08', '02:00:00.000', 118, '1', 'ra', 1, '121', '2', ''),
-(25, 109, '2019-05-08', '02:00:00.000', 119, '1', 'ra', 1, '121', '2', ''),
-(25, 110, '2019-05-08', '02:00:00.000', 120, '1', 'ra', 1, '121', '2', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `attendance_update`
---
-
-CREATE TABLE `attendance_update` (
-  `attendance_update_id` int(11) NOT NULL,
-  `add_class_id` int(11) NOT NULL,
-  `take_attendance_id` int(11) NOT NULL,
-  `update_date` date NOT NULL,
-  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` tinyint(1) NOT NULL,
-  `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -350,6 +265,7 @@ CREATE TABLE `course_table` (
 --
 
 INSERT INTO `course_table` (`university_id`, `course_id`, `name_of_courses`, `no_of_years`, `status`, `username`) VALUES
+('', '', '', 0, 1, 'ra'),
 ('ku', 'ABC', 'APPLEBATCAT', 1, 1, 'ra'),
 ('	 ku', 'B.COM', 'Bachelor of Commerce', 3, 1, 'ra'),
 ('	 ku', 'B.SC', 'Bachelor of Science', 3, 1, 'ra'),
@@ -379,6 +295,7 @@ CREATE TABLE `faculty_address` (
   `address_sign` int(4) NOT NULL,
   `date_of_commencement` date NOT NULL,
   `username` varchar(50) NOT NULL,
+  `fusername` varchar(50) NOT NULL,
   `faculty_id` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -386,17 +303,15 @@ CREATE TABLE `faculty_address` (
 -- Dumping data for table `faculty_address`
 --
 
-INSERT INTO `faculty_address` (`faculty_address_id`, `address`, `state`, `city`, `pincode`, `address_status`, `status`, `address_sign`, `date_of_commencement`, `username`, `faculty_id`) VALUES
-(1, 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, '0000-00-00', 'ra', '2019054'),
-(2, 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, '0000-00-00', 'ra', '2019054'),
-(3, 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, '0000-00-00', 'ra', '2019055'),
-(4, 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, '0000-00-00', 'ra', '2019055'),
-(5, 'mehdipatnam aayodhya nagar colony, pillar no 28 ,rithwik reddy hostel house no 12-2-786/13/A', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 1, '0000-00-00', 'ra', '2019056'),
-(6, 'mehdipatnam aayodhya nagar colony, pillar no 28 ,rithwik reddy hostel house no 12-2-786/13/A', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 2, '0000-00-00', 'ra', '2019056'),
-(7, 'mehdipatnam aayodhya nagar colony, pillar no 28 ,rithwik reddy hostel house no 12-2-786/13/A', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 1, '0000-00-00', 'ra', '2019057'),
-(8, 'mehdipatnam aayodhya nagar colony, pillar no 28 ,rithwik reddy hostel house no 12-2-786/13/A', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 2, '0000-00-00', 'ra', '2019057'),
-(9, 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 1, '0000-00-00', 'ra', '2019058'),
-(10, 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, '0000-00-00', 'ra', '2019058');
+INSERT INTO `faculty_address` (`faculty_address_id`, `address`, `state`, `city`, `pincode`, `address_status`, `status`, `address_sign`, `date_of_commencement`, `username`, `fusername`, `faculty_id`) VALUES
+(9, 'BK PURAM , BITHORIA NO.1 ,NEAR TARA TENT HOUSE, LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, '0000-00-00', 'ra', '', '2019055'),
+(10, 'BK PURAM , BITHORIA NO.1 ,NEAR TARA TENT HOUSE, LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, '0000-00-00', 'ra', '', '2019055'),
+(11, 'BK PURAM , BITHORIA NO.1 , LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, '0000-00-00', 'ra', '', '2019056'),
+(12, 'BK PURAM , BITHORIA NO.1 , LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, '0000-00-00', 'ra', '', '2019056'),
+(13, 'BK PURAM , uchapul', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, '0000-00-00', 'ra', '', '2019057'),
+(14, 'BK PURAM , uchapul', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, '0000-00-00', 'ra', '', '2019057'),
+(15, 'BK PURAM , ramnager', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, '0000-00-00', 'ra', '', '2019058'),
+(16, 'BK PURAM , ramnager', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, '0000-00-00', 'ra', '', '2019058');
 
 -- --------------------------------------------------------
 
@@ -413,6 +328,7 @@ CREATE TABLE `faculty_contact` (
   `contact_status` tinyint(1) NOT NULL,
   `status` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `fusername` varchar(50) NOT NULL,
   `faculty_id` varchar(50) NOT NULL,
   `alternate_email` varchar(152) NOT NULL,
   `alternate_contact` varchar(20) NOT NULL
@@ -422,13 +338,11 @@ CREATE TABLE `faculty_contact` (
 -- Dumping data for table `faculty_contact`
 --
 
-INSERT INTO `faculty_contact` (`faculty_contact_id`, `faculty_email`, `email_status`, `faculty_contact`, `faculty_status`, `contact_status`, `status`, `username`, `faculty_id`, `alternate_email`, `alternate_contact`) VALUES
-(1, 'ravip8527@gmail.com', 1, '', 1, 1, 1, 'ra', '', 'ravip8527@gmail.com', '9917604820'),
-(2, 'ravip8527@gmail.com', 1, '', 1, 1, 1, 'ra', '', 'ravip8527@gmail.com', '9917604820'),
-(3, 'ravip8527@gmail.com', 1, '', 1, 1, 1, 'ra', '', 'ravip8527@gmail.com', '9917604820'),
-(4, '', 1, '', 1, 1, 1, 'ra', '', 'ravip8527@gmail.com', ''),
-(5, 'pree@gmail.com', 1, '15456', 1, 1, 1, 'ra', '', 'pree@gmail.com', '9515409476'),
-(6, 'rj7@gmail.com', 1, '15456', 1, 1, 1, 'ra', '', 'rj7@gmail.com', '9917604820');
+INSERT INTO `faculty_contact` (`faculty_contact_id`, `faculty_email`, `email_status`, `faculty_contact`, `faculty_status`, `contact_status`, `status`, `username`, `fusername`, `faculty_id`, `alternate_email`, `alternate_contact`) VALUES
+(5, 'naveen@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', '', '', 'naveen@gmail.com', '9294839456'),
+(6, 'nitin@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', '', '', 'nitin@gmail.com', '9294839456'),
+(7, 'neetu@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', '', '', 'neetu@gmail.com', '9294839456'),
+(8, 'ankush@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', '', '', 'ankush@gmail.com', '9294839456');
 
 -- --------------------------------------------------------
 
@@ -450,6 +364,7 @@ CREATE TABLE `faculty_personal` (
   `blood_group` varchar(4) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(100) NOT NULL,
+  `fusername` varchar(50) NOT NULL,
   `session` year(4) NOT NULL,
   `faculty_id` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -458,11 +373,11 @@ CREATE TABLE `faculty_personal` (
 -- Dumping data for table `faculty_personal`
 --
 
-INSERT INTO `faculty_personal` (`faculty_personal_id`, `first_name`, `last_name`, `date_of_birth`, `gender`, `marital_status`, `father_name`, `husband_name`, `nationality`, `category`, `blood_group`, `status`, `username`, `session`, `faculty_id`) VALUES
-(1, 'Teacher1', 'arya', '2019-05-21', 'Male', 'no', 'teacher father', 'teacher mother', 'hindu', 'SC', 'A+', 1, 'ra', 2014, '1000'),
-(6, 'poonam', 'pandey', '0000-00-00', '', 'Married', 'surendra prasad kushwaha', '', 'Indian', 'GEN', 'A+', 1, 'poonam', 0000, '2019056'),
-(7, 'Preeti ', 'kushwaha', '2019-05-22', 'Male', 'Unmarried', 'surendra prasad kushwaha', '', 'Indian', 'GEN', 'A+', 1, 'preeti12', 0000, '2019057'),
-(8, 'Rajkumar', 'Gupta', '2019-05-15', 'Male', 'Married', 'surendra prasad kushwaha', '', 'Indian', 'GEN', 'A+', 1, 'raj12', 0000, '2019058');
+INSERT INTO `faculty_personal` (`faculty_personal_id`, `first_name`, `last_name`, `date_of_birth`, `gender`, `marital_status`, `father_name`, `husband_name`, `nationality`, `category`, `blood_group`, `status`, `username`, `fusername`, `session`, `faculty_id`) VALUES
+(5, 'naveen', 'tiwari', '1980-01-02', 'Male', 'Married', 'rajesh tiwari', '', 'Indian', 'GEN', 'A+', 0, 'naveeen12', '', 0000, '2019055'),
+(6, 'nitin', 'deepak', '1980-01-11', 'Male', 'Married', 'deepak pant', '', 'Indian', 'GEN', 'A+', 0, 'nitin12', '', 0000, '2019056'),
+(7, 'neetu', 'pant', '1980-02-01', 'Male', 'Married', 'harish pant', '', 'Indian', 'GEN', 'O+', 0, 'neetu12', '', 0000, '2019057'),
+(8, 'ankush', 'joshi', '1985-03-02', 'Male', 'Married', 'naveen joshi', '', 'Indian', 'GEN', 'B+', 0, 'ankush12', '', 0000, '2019058');
 
 -- --------------------------------------------------------
 
@@ -477,6 +392,7 @@ CREATE TABLE `faculty_profile` (
   `date_of_joining` date NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `fusername` varchar(50) NOT NULL,
   `faculty_id` varchar(50) NOT NULL,
   `faculty_photo` varchar(150) NOT NULL,
   `faculty_sig` varchar(60) NOT NULL
@@ -486,12 +402,11 @@ CREATE TABLE `faculty_profile` (
 -- Dumping data for table `faculty_profile`
 --
 
-INSERT INTO `faculty_profile` (`faculty_profile_id`, `resume`, `teacher_experience`, `date_of_joining`, `status`, `username`, `faculty_id`, `faculty_photo`, `faculty_sig`) VALUES
-(1, '', 5, '2019-05-15', 1, 'ra', '2019054', '', ''),
-(2, 'x', 5, '2019-05-15', 1, 'ra', '2019055', 'x', 'x'),
-(3, 'x', 0, '0000-00-00', 1, 'ra', '2019056', 'x', 'x'),
-(4, 'x', 5, '2019-05-21', 1, 'ra', '2019057', 'x', 'x'),
-(5, 'x', 5, '2019-05-10', 1, 'ra', '2019058', 'x', 'x');
+INSERT INTO `faculty_profile` (`faculty_profile_id`, `resume`, `teacher_experience`, `date_of_joining`, `status`, `username`, `fusername`, `faculty_id`, `faculty_photo`, `faculty_sig`) VALUES
+(5, 'x', 8, '2009-02-02', 1, 'ra', '', '2019055', 'x', 'x'),
+(6, 'x', 10, '2005-02-02', 1, 'ra', '', '2019056', 'x', 'x'),
+(7, 'x', 10, '2005-02-02', 1, 'ra', '', '2019057', 'x', 'x'),
+(8, 'x', 5, '2012-02-04', 1, 'ra', '', '2019058', 'x', 'x');
 
 -- --------------------------------------------------------
 
@@ -557,7 +472,8 @@ INSERT INTO `lecture` (`lecture_id`, `faculty_id`, `add_class_id`, `unit`, `topi
 (12, '121', 26, 1, '			zsfC			', 1, 1, 'ra'),
 (13, '121', 25, 55, '					dbifzvhrvivf	', 55, 1, 'ra'),
 (14, '121', 24, 1, '				GUDYUIAUYFEUGCY		', 1, 1, 'ra'),
-(15, '121', 25, 1, '						rtyuiopdf[\'l;likhgjhg', 4, 1, 'ra');
+(15, '121', 25, 1, '						rtyuiopdf[\'l;likhgjhg', 4, 1, 'ra'),
+(16, '121', 35, 1, '	what is software engineering?, software characteristic								', 1, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -591,7 +507,8 @@ INSERT INTO `lesson` (`lesson_id`, `add_class_id`, `lecture_id`, `start_time`, `
 (5, 26, '5', '00:00:00.00', '00:00:00.00', '33', '32', '', 'sad', '2019-04-11', 1, 'ra'),
 (6, 25, '3', '00:00:00.00', '00:00:00.00', '4', '55565', '', 'dcCjCk,cc', '2019-04-11', 1, 'ra'),
 (7, 25, '', '00:00:00.00', '00:00:00.00', '', '', 'Arrangement', '', '2019-04-27', 1, 'ra'),
-(8, 25, '', '00:05:00.00', '02:01:00.00', '1', '', 'Arrangement', 'hagfsyuchczhjcbjsxnaugcfzbauefgbzwuns', '2019-05-08', 1, 'ra');
+(8, 25, '', '00:05:00.00', '02:01:00.00', '1', '', 'Arrangement', 'hagfsyuchczhjcbjsxnaugcfzbauefgbzwuns', '2019-05-08', 1, 'ra'),
+(9, 35, '', '01:00:00.00', '01:50:00.00', '1', '', 'Letcure Schedule', 'what is software engineering?and software characterstic', '2019-05-18', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -706,7 +623,8 @@ INSERT INTO `section` (`s_no`, `session_id`, `session_class_id`, `student_id`, `
 (32, '2019', '37', '1', 1, 'ra'),
 (33, '2019', '37', '2', 1, 'ra'),
 (34, '2019', '37', '3', 1, 'ra'),
-(35, '2019', '37', '130', 1, 'ra');
+(35, '2019', '37', '130', 1, 'ra'),
+(36, '2016', '34', '127', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -818,12 +736,7 @@ INSERT INTO `sidebar` (`sidebar_id`, `sidebar_name`, `path`, `status`, `username
 CREATE TABLE `sign_up` (
   `s_no` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
   `password` varchar(15) NOT NULL,
-  `phone_no` varchar(15) NOT NULL,
-  `date_of_birth` date NOT NULL,
   `question` longtext NOT NULL,
   `answer` mediumtext NOT NULL,
   `student_id` int(50) NOT NULL,
@@ -835,11 +748,10 @@ CREATE TABLE `sign_up` (
 -- Dumping data for table `sign_up`
 --
 
-INSERT INTO `sign_up` (`s_no`, `username`, `first_name`, `last_name`, `email`, `password`, `phone_no`, `date_of_birth`, `question`, `answer`, `student_id`, `category`, `staus`) VALUES
-(1, 'ra', 'ed', 'pa', 'ravip8527@gmail.com', '12', '9917604820', '2005-02-25', 'question 1', '1', 45, '1', '1'),
-(2, 'new1', 'raj', 'joshi', 'ravip@gmail.com', '123', '9917604820', '2019-04-22', 'question 1', '1', 2019056, '2', '1'),
-(5, 'preeti', 'preeti', 'joshi', 'preeti@gmail.com', '123', '9917604820', '1997-04-11', 'question 1', '1', 2, '3', '1'),
-(6, 'Aman12', 'Aman', 'jangi', 'Aman@gmail.com', '123', '9917604820', '1997-04-11', 'question 1', '1', 2019057, '2', '1');
+INSERT INTO `sign_up` (`s_no`, `username`, `password`, `question`, `answer`, `student_id`, `category`, `staus`) VALUES
+(1, 'ra', '12', 'question 1', '1', 45, '1', '1'),
+(2, 'preeti12', '12', 'question 1', 'gchvchb', 2019053, '3', ''),
+(3, 'ankush12', '12', 'question 1', '2.', 2019058, '2', '');
 
 -- --------------------------------------------------------
 
@@ -858,54 +770,87 @@ CREATE TABLE `std_academic` (
   `totalmarks` int(11) NOT NULL,
   `obtainedmarks` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `username` varchar(50) NOT NULL
+  `username` varchar(50) NOT NULL,
+  `fusername` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `std_academic`
 --
 
-INSERT INTO `std_academic` (`std_academic_id`, `student_id`, `qualification_status`, `passing_year`, `school`, `board`, `percentage`, `totalmarks`, `obtainedmarks`, `status`, `username`) VALUES
-(29, '201905174', '1', 1992, 'wertyui', 'Council for the', 85, 50, 50, 1, 'ra'),
-(30, '201905174', '2', 1990, 'DRTYUI', 'Uchchatar Madhy', 5, 50, 40, 1, 'ra'),
-(31, '201905174', '3', 2008, 'SDFGHJK1', 'DFGHJK1', 51, 50, 45, 1, 'ra'),
-(32, '201905174', '4', 1990, 'DFGHJK1', 'DFGHJKL2', 98, 50, 45, 1, 'ra'),
-(33, '201905175', '', 0000, 'umesh chandra pandey pandey', '', 85, 50, 50, 1, 'ra'),
-(34, '201905175', '', 0000, 'DRTYUI', '', 5, 50, 40, 1, 'ra'),
-(35, '201905175', '', 0000, 'SDFGHJK', 'poonam pandey', 51, 50, 45, 1, 'ra'),
-(36, '201905175', '', 0000, 'DFGHJK', 'TELANGANA', 98, 50, 45, 1, 'ra'),
-(37, '201905176', '', 0000, 'umesh chandra pandey pandey', '', 85, 50, 50, 1, 'ra'),
-(38, '201905176', '', 0000, 'DRTYUI', '', 5, 50, 40, 1, 'ra'),
-(39, '201905176', '', 0000, 'SDFGHJK', 'poonam pandey', 51, 50, 45, 1, 'ra'),
-(40, '201905176', '', 0000, 'DFGHJK', 'TELANGANA', 98, 50, 45, 1, 'ra'),
-(41, '201905177', '', 0000, 'umesh chandra pandey pandey', '', 85, 50, 50, 1, 'ra'),
-(42, '201905177', '', 0000, '', '', 5, 50, 40, 1, 'ra'),
-(43, '201905177', '', 0000, '', '', 51, 50, 45, 1, 'ra'),
-(44, '201905177', '', 0000, '', '', 98, 50, 45, 1, 'ra'),
-(45, '201905178', '', 0000, 'umesh chandra pandey pandey', '', 85, 50, 50, 1, 'ra'),
-(46, '201905178', '', 0000, '', '', 5, 50, 40, 1, 'ra'),
-(47, '201905178', '', 0000, '', '', 51, 50, 45, 1, 'ra'),
-(48, '201905178', '', 0000, '', '', 98, 50, 45, 1, 'ra'),
-(49, '201905179', '', 0000, 'umesh chandra pandey pandey', '', 85, 0, 50, 1, 'ra'),
-(50, '201905179', '', 0000, '', '', 5, 0, 40, 1, 'ra'),
-(51, '201905179', '', 0000, '', '', 51, 50, 45, 1, 'ra'),
-(52, '201905179', '', 0000, '', '', 98, 50, 45, 1, 'ra'),
-(53, '201905180', '', 0000, 'umesh chandra pandey pandey', '', 85, 0, 50, 1, 'ra'),
-(54, '201905180', '', 0000, '', '', 5, 0, 40, 1, 'ra'),
-(55, '201905180', '', 0000, '', '', 51, 50, 45, 1, 'ra'),
-(56, '201905180', '', 0000, '', '', 98, 50, 45, 1, 'ra'),
-(57, '201905181', '', 0000, 'umesh chandra pandey pandey', '', 85, 0, 50, 1, 'ra'),
-(58, '201905181', '', 0000, '', '', 5, 0, 40, 1, 'ra'),
-(59, '201905181', '', 0000, '', '', 51, 0, 45, 1, 'ra'),
-(60, '201905181', '', 0000, '', '', 98, 0, 45, 1, 'ra'),
-(61, '201905182', '', 0000, 'umesh chandra pandey pandey', '', 78, 0, 52, 1, 'ra'),
-(62, '201905182', '', 0000, '', '', 88, 0, 14, 1, 'ra'),
-(63, '201905182', '', 0000, '', '', 85, 0, 15, 1, 'ra'),
-(64, '201905182', '', 0000, '', '', 985, 0, 16, 1, 'ra'),
-(65, '201905183', '1', 2014, 'ever green sr sec school', 'Central Board o', 75, 500, 375, 1, 'ra'),
-(66, '201905183', '2', 2016, 'ever green sr sec school', 'Central Board o', 58, 500, 257, 1, 'ra'),
-(67, '201905183', '3', 2019, 'AGI', 'K U', 75, 1200, 895, 1, 'ra'),
-(68, '201905183', '', 0000, '', '', 98, 0, 45, 1, 'ra');
+INSERT INTO `std_academic` (`std_academic_id`, `student_id`, `qualification_status`, `passing_year`, `school`, `board`, `percentage`, `totalmarks`, `obtainedmarks`, `status`, `username`, `fusername`) VALUES
+(1, '2019051', '1', 2017, 'Doon public school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(2, '2019051', '2', 2019, 'Doon public school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(3, '2019051', '3', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(4, '2019051', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(5, '2019052', '1', 2017, 'Evergreen school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(6, '2019052', '2', 2019, 'Evergreen school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(7, '2019052', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(8, '2019052', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(9, '2019053', '1', 2017, 'Goverment school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(10, '2019053', '2', 2019, 'Goverment school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(11, '2019053', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(12, '2019053', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(13, '2019054', '1', 2017, 'Goverment school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(14, '2019054', '2', 2019, 'Goverment school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(15, '2019054', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(16, '2019054', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(17, '2019055', '1', 2017, 'Goverment school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(18, '2019055', '2', 2019, 'Goverment school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(19, '2019055', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(20, '2019055', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(21, '2019056', '1', 2017, 'Goverment school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(22, '2019056', '2', 2019, 'Goverment school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(23, '2019056', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(24, '2019056', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(25, '2019057', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(26, '2019057', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(27, '2019057', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(28, '2019057', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(29, '2019058', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(30, '2019058', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(31, '2019058', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(32, '2019058', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(33, '2019059', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(34, '2019059', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(35, '2019059', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(36, '2019059', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(37, '20190510', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(38, '20190510', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(39, '20190510', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(40, '20190510', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(41, '20190511', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(42, '20190511', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(43, '20190511', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(44, '20190511', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(45, '20190512', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(46, '20190512', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(47, '20190512', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(48, '20190512', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(49, '20190513', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(50, '20190513', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(51, '20190513', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(52, '20190513', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(53, '20190514', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(54, '20190514', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(55, '20190514', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(56, '20190514', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(57, '20190515', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(58, '20190515', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(59, '20190515', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(60, '20190515', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(61, '20190516', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(62, '20190516', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(63, '20190516', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(64, '20190516', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(65, '20190517', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(66, '20190517', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(67, '20190517', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(68, '20190517', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', ''),
+(69, '20190518', '1', 2017, 'Covent school', 'Central Board o', 82, 500, 406, 1, 'ra', ''),
+(70, '20190518', '2', 2019, 'Convent school', 'Central Board o', 100, 500, 500, 1, 'ra', ''),
+(71, '20190518', '3', 2019, 'mumbai', 'Amrapali', 100, 500, 500, 1, 'ra', ''),
+(72, '20190518', '4', 2019, 'mumbai', 'IIT', 100, 500, 500, 1, 'ra', '');
 
 -- --------------------------------------------------------
 
@@ -923,64 +868,51 @@ CREATE TABLE `std_address` (
   `address_status` tinyint(1) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `address_sign` int(11) NOT NULL,
-  `username` varchar(200) NOT NULL
+  `username` varchar(200) NOT NULL,
+  `fusername` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `std_address`
 --
 
-INSERT INTO `std_address` (`std_address_id`, `student_id`, `address`, `state`, `city`, `pincode`, `address_status`, `status`, `address_sign`, `username`) VALUES
-(2, '', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHOUR', 'Uttarakhand', 'HALDWANI', 263139, 1, 1, 20190515, 'ra'),
-(3, '201905158', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHOUR', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 20190521, 'ra'),
-(4, '201905160', 'D/O UMESH CHANDRA PANDEY SINGHAL FARM', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 0, 'ra'),
-(5, '201905160', 'D/O UMESH CHANDRA PANDEY SINGHAL FARM', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 0, 'ra'),
-(6, '201905161', 'D/O UMESH CHANDRA PANDEY SINGHAL FARM', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 0, 'ra'),
-(7, '201905161', 'D/O UMESH CHANDRA PANDEY SINGHAL FARM', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 0, 'ra'),
-(8, '201905162', 'mehdipatnam aayodhya nagar colony', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 1, 'ra'),
-(9, '201905162', 'D/O UMESH CHANDRA PANDEY SINGHAL FARM', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(10, '201905163', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(11, '201905163', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(12, '201905164', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(13, '201905164', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(14, '201905165', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(15, '201905165', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(16, '201905166', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(17, '201905166', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(18, '201905167', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(19, '201905167', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(20, '201905168', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(21, '201905168', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(22, '201905169', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(23, '201905169', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(24, '201905170', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(25, '201905170', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(26, '201905171', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(27, '201905171', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(28, '201905172', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(29, '201905172', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(30, '201905173', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 1, 'ra'),
-(31, '201905173', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 2, 'ra'),
-(32, '201905174', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 1, 'ra'),
-(33, '201905174', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 2, 'ra'),
-(34, '201905175', 'mehdipatnam aayodhya nagar colony', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 1, 'ra'),
-(35, '201905175', 'mehdipatnam aayodhya nagar colony', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 2, 'ra'),
-(36, '201905176', 'mehdipatnam aayodhya nagar colony', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 1, 'ra'),
-(37, '201905176', 'mehdipatnam aayodhya nagar colony', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 2, 'ra'),
-(38, '201905177', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 1, 'ra'),
-(39, '201905177', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(40, '201905178', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 1, 'ra'),
-(41, '201905178', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(42, '201905179', 'mehdipatnam aayodhya nagar colony', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 1, 'ra'),
-(43, '201905179', 'mehdipatnam aayodhya nagar colony', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(44, '201905180', 'mehdipatnam aayodhya nagar colony', 'TELANGANA', 'HYDERABAD', 500028, 1, 0, 1, 'ra'),
-(45, '201905180', 'mehdipatnam aayodhya nagar colony', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(46, '201905181', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 1, 'ra'),
-(47, '201905181', '', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 2, 'ra'),
-(48, '201905182', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARANCHAL', 'HALDWANI', 263139, 1, 0, 1, 'ra'),
-(49, '201905182', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra'),
-(50, '201905183', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 1, 'ra'),
-(51, '201905183', 'dumka bangar bacchi dharma singhal farm halduchour', 'UTTARAKHAND', 'HALDWANI', 263931, 1, 0, 2, 'ra');
+INSERT INTO `std_address` (`std_address_id`, `student_id`, `address`, `state`, `city`, `pincode`, `address_status`, `status`, `address_sign`, `username`, `fusername`) VALUES
+(1, '2019051', 'BK PURAM , BITHORIA NO.1 ,NEAR TARA TENT HOUSE, LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(2, '2019051', 'BK PURAM , BITHORIA NO.1 ,NEAR TARA TENT HOUSE, LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(3, '2019052', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(4, '2019052', 'VILL-DUMKA BANGAR BACCHI DHARMA SINGHAL FARM HALDUCHAUR', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(5, '2019053', 'BK PURAM , BITHORIA NO.1 ,NEAR TARA TENT HOUSE, LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(6, '2019053', 'BK PURAM , BITHORIA NO.1 ,NEAR TARA TENT HOUSE, LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(7, '2019054', 'NEAR TARA TENT HOUSE, RAMNAGAR', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(8, '2019054', 'NEAR TARA TENT HOUSE, RAMNAGAR', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(9, '2019055', 'NEAR TARA TENT HOUSE, RAMNAGAR', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(10, '2019055', 'NEAR TARA TENT HOUSE, RAMNAGAR', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(11, '2019056', 'NEAR TARA TENT HOUSE, pantnagar', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(12, '2019056', 'NEAR TARA TENT HOUSE, pantnagar', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(13, '2019057', 'NEAR TARA TENT HOUSE, LALKUWA', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(14, '2019057', 'NEAR TARA TENT HOUSE, LALKUWA', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(15, '2019058', 'NEAR TARA TENT HOUSE, Haldwani', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(16, '2019058', 'NEAR TARA TENT HOUSE, Haldwani', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(17, '2019059', 'NEAR TARA TENT HOUSE, Haldwani', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(18, '2019059', 'NEAR TARA TENT HOUSE, Haldwani', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(19, '20190510', 'near shiv mandir , nawabi road', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(20, '20190510', 'near shiv mandir , nawabi road', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(21, '20190511', 'near shiv mandir , uchapul', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(22, '20190511', 'near shiv mandir , uchapul', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(23, '20190512', 'near shiv mandir , pilikoti', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(24, '20190512', 'near shiv mandir , pilikoti', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(25, '20190513', 'near shiv mandir , ramnagar', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(26, '20190513', 'lamachor', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(27, '20190514', 'BK PURAM , BITHORIA NO.1 ,NEAR TARA TENT HOUSE, LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(28, '20190514', 'BK PURAM , BITHORIA NO.1 ,NEAR TARA TENT HOUSE, LALDATH ROAD', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(29, '20190515', 'mukhani road', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(30, '20190515', 'mukhani road', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(31, '20190516', 'uchapul ', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(32, '20190516', 'uchapul ', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(33, '20190517', 'laldath road', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(34, '20190517', 'laldath road', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', ''),
+(35, '20190518', 'laldath road', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 1, 'ra', ''),
+(36, '20190518', 'laldath road', 'Uttarakhand', 'HALDWANI', 263139, 1, 0, 2, 'ra', '');
 
 -- --------------------------------------------------------
 
@@ -998,57 +930,33 @@ CREATE TABLE `std_contact` (
   `status` tinyint(1) NOT NULL,
   `alternate_email` varchar(50) NOT NULL,
   `student_id` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL
+  `username` varchar(50) NOT NULL,
+  `fusername` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `std_contact`
 --
 
-INSERT INTO `std_contact` (`std_contact_id`, `std_email`, `std_contact`, `alternate_contact`, `contact_status`, `email_status`, `status`, `alternate_email`, `student_id`, `username`) VALUES
-(1, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905161', 'ra'),
-(2, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905162', 'ra'),
-(3, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905163', 'ra'),
-(4, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905164', 'ra'),
-(5, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905165', 'ra'),
-(6, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905166', 'ra'),
-(7, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905167', 'ra'),
-(8, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905168', 'ra'),
-(9, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905169', 'ra'),
-(10, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905170', 'ra'),
-(11, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905171', 'ra'),
-(12, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905172', 'ra'),
-(13, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905173', 'ra'),
-(14, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905174', 'ra'),
-(15, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905175', 'ra'),
-(16, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905176', 'ra'),
-(17, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905177', 'ra'),
-(18, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905178', 'ra'),
-(19, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905179', 'ra'),
-(20, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905180', 'ra'),
-(21, '', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905181', 'ra'),
-(22, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905182', 'ra'),
-(23, 'ravip8527@gmail.com', '94445858754', 2147483647, 0, 0, 1, 'ravip8527@gmail.com', '201905183', 'ra');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `std_group`
---
-
-CREATE TABLE `std_group` (
-  `session_id` varchar(15) NOT NULL,
-  `course_id` text NOT NULL,
-  `subject_id` varchar(15) NOT NULL,
-  `group_id` varchar(15) NOT NULL,
-  `semester_id` varchar(15) NOT NULL,
-  `section_id` varchar(15) NOT NULL,
-  `starting_roll` int(4) NOT NULL,
-  `ending_roll` int(4) NOT NULL,
-  `std_id` varchar(15) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `username` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `std_contact` (`std_contact_id`, `std_email`, `std_contact`, `alternate_contact`, `contact_status`, `email_status`, `status`, `alternate_email`, `student_id`, `username`, `fusername`) VALUES
+(1, 'ashu@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'ashu@gmail.com', '2019051', 'ra', ''),
+(2, 'ravi@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'ravi@gmail.com', '2019052', 'ra', ''),
+(3, 'preeti@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'preeti@gmail.com', '2019053', 'ra', ''),
+(4, 'raju@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'raju@gmail.com', '2019054', 'ra', ''),
+(5, 'ramesh@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'ramesh@gmail.com', '2019055', 'ra', ''),
+(6, 'pooja@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'pooja@gmail.com', '2019056', 'ra', ''),
+(7, 'mansi@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'mansi@gmail.com', '2019057', 'ra', ''),
+(8, 'rohit@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'rohit@gmail.com', '2019058', 'ra', ''),
+(9, 'suraj@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'suraj@gmail.com', '2019059', 'ra', ''),
+(10, 'purnima@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'purnima@gmail.com', '20190510', 'ra', ''),
+(11, 'sapna@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'sapna@gmail.com', '20190511', 'ra', ''),
+(12, 'raj@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'raj@gmail.com', '20190512', 'ra', ''),
+(13, 'satyam@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'satyam@gmail.com', '20190513', 'ra', ''),
+(14, 'kiran@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'kiran@gmail.com', '20190514', 'ra', ''),
+(15, 'poonam@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'poonam@gmail.com', '20190515', 'ra', ''),
+(16, 'nikita@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'nikita@gmail.com', '20190516', 'ra', ''),
+(17, 'nidhi@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'nidhi@gmail.com', '20190517', 'ra', ''),
+(18, 'sakshi@gmail.com', '1234567891', 1234567777, 0, 0, 1, 'sakhshi@gmail.com', '20190518', 'ra', '');
 
 -- --------------------------------------------------------
 
@@ -1069,6 +977,7 @@ CREATE TABLE `std_personal` (
   `blood_group` varchar(3) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `fusername` varchar(50) NOT NULL,
   `student_id` varchar(50) NOT NULL,
   `session_id` varchar(50) NOT NULL,
   `course_id` varchar(15) NOT NULL,
@@ -1080,191 +989,25 @@ CREATE TABLE `std_personal` (
 -- Dumping data for table `std_personal`
 --
 
-INSERT INTO `std_personal` (`s_no`, `first_name`, `last_name`, `date_of_birth`, `father_name`, `mother_name`, `gender`, `nationality`, `category`, `blood_group`, `status`, `username`, `student_id`, `session_id`, `course_id`, `active_status`, `batch_id`) VALUES
-(1, 'Aman', 'jangi', '0000-00-00', 'Pramod  kumar jangi', 'Janki   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '1', '2017', 'BCA', 0, 0),
-(2, 'Bhavesh', 'bajetha', '0000-00-00', 'Ramesh c. bajetha', 'Manju bajetha', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '2', '2017', 'BCA', 0, 0),
-(3, 'Dev', 'mandal', '0000-00-00', 'Ajay   mandal', 'Purnima   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '3', '2017', 'BCA', 0, 0),
-(4, 'Divisha', 'sharma', '0000-00-00', 'Vivek   sharma', 'Upma   sharma', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '4', '2018', 'BCA', 0, 0),
-(5, 'Gourav', 'farswan', '0000-00-00', 'Surender s. farswan', 'Renu   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '5', '2018', 'BCA', 0, 0),
-(6, 'Jeevika', 'chausali', '0000-00-00', 'Trilochan chausali', 'Lata   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '6', '2018', 'BCA', 0, 0),
-(7, 'Kapil', 'ruwali', '0000-00-00', 'Bhuvan   chand', 'Pushpa   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '7', '2018', 'BCA', 0, 0),
-(8, 'Khushi', 'chausali', '0000-00-00', 'Deepanshu   ', 'Meena   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '8', '2018', 'BCA', 0, 0),
-(11, 'Sarthak', 'dosad', '0000-00-00', 'Mahendra s. dosad', 'Lata   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '9', '2018', 'BCA', 0, 0),
-(12, 'Shivansh', 'belwal', '0000-00-00', 'Ramesh c. belwal', 'Beena   devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '10', '2018', 'BCA', 0, 0),
-(13, 'Yamini', 'kavidayal', '0000-00-00', 'Pramod chand Kavidayal', 'Hema Kavidayal', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '11', '2018', 'BCA', 0, 0),
-(14, 'Vaishnavi', 'pant', '0000-00-00', 'Vinay kumar pant', 'Deepa   pant', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '12', '2018', 'BCA', 0, 0),
-(15, 'Hariom', 'sharma', '0000-00-00', 'Chandra praksh sharma', 'Prema   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '13', '2018', 'BCA', 0, 0),
-(16, 'Naitik', 'dangwal', '0000-00-00', 'Dinesh c. dangwal', 'Geeta   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '14', '2018', 'BCA', 0, 0),
-(17, 'Narender', 'singh', '0000-00-00', 'Inderjeet   singh', 'Prema   ', 'M', 'hindu', 'OBC', 'A+', 1, 'gopal', '15', '2015', 'BCA', 0, 0),
-(18, 'Vinay', 'ruwali', '0000-00-00', 'Hem chandra ruwali', 'Khasti   devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '16', '2015', 'BCA', 0, 0),
-(19, 'Aarti', 'arya', '0000-00-00', 'Khasti   ram', 'Asha   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '17', '2018', 'BCA', 0, 0),
-(20, 'Anushka', 'bhandari', '0000-00-00', 'D. s. bhandari', 'Khasti   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '18', '2019', 'BCA', 0, 0),
-(21, 'Jatin', 'tamta', '0000-00-00', 'Vinod   kumar', 'Sunita   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '19', '2019', 'BCA', 0, 0),
-(22, 'Ayush', 'bohra', '0000-00-00', 'Rajeev   kumar', 'Pushpa   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '20', '2019', 'BCA', 0, 0),
-(23, 'Khushi', 'milkani', '0000-00-00', 'Chandra s. milkani', 'Suman   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '21', '2019', 'BCA', 0, 0),
-(24, 'Gourav', 'jangi', '0000-00-00', 'Manoj   jangi', 'Munni   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '22', '2019', 'BCA', 0, 0),
-(25, 'Preeti', 'patni', '0000-00-00', 'Lalit   singh', 'Neelu   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '23', '2019', 'BCA', 0, 0),
-(26, 'Paramjoat', 'singh', '0000-00-00', 'Jaswinder   singh', 'Kamlajeet   kaur', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '24', '2019', 'BCA', 0, 0),
-(27, 'Jagdish', 'bora', '0000-00-00', 'Anand singh bohra', 'Diksha   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '25', '2019', 'BCA', 0, 0),
-(28, 'Raja', 'chousali', '0000-00-00', 'Sanjay   kumar', 'Deepa   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '26', '2019', 'BBA', 0, 0),
-(29, 'Tanishka', 'sharma', '0000-00-00', 'Sushil   kumar', 'Pooja   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '27', '2019', 'BBA', 0, 0),
-(30, 'Harjas', 'singh', '0000-00-00', 'Amandeep   singh', 'Rajwinder   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '28', '2019', 'BBA', 0, 0),
-(31, 'Diksha', 'chousali', '0000-00-00', 'Heera ballabh bhatt', 'Hema   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '29', '2019', 'BBA', 0, 0),
-(32, 'Sourabh', 'bahuguna', '0000-00-00', 'Vipin   bahuguna', 'Hema   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '30', '2018', 'BBA', 0, 0),
-(33, 'Ojaswani', 'tamta', '0000-00-00', 'Surender   tamta', 'Shobha   ', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '31', '2018', 'BBA', 0, 0),
-(34, 'Surajpreet', 'singh', '0000-00-00', 'Malkeet   singh', 'Mukhtiyar   kaur', 'M', 'hindu', 'OBC', 'A+', 1, 'gopal', '32', '2018', 'BBA', 0, 0),
-(35, 'Kartick', 'Chauhan', '0000-00-00', 'Shyam  singh Chauhan', 'Saraswati', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '33', '2018', 'BBA', 0, 0),
-(36, 'Charulata', 'arya', '0000-00-00', 'Lalit  arya', 'Sapna   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '34', '2019', 'BBA', 0, 0),
-(37, 'Deepanshi', 'rana', '0000-00-00', 'Prakash   rana', 'Pushpa   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '35', '2019', 'BBA', 0, 0),
-(38, 'Ishita', 'kulera', '0000-00-00', 'Diwan singh kulera', 'Neeru   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '36', '2019', 'BBA', 0, 0),
-(39, 'Aksh', 'chilwal', '0000-00-00', 'Manoj   chilwal', 'Saroj   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '37', '2018', 'BBA', 0, 0),
-(40, 'Bhupender', 'gounia', '0000-00-00', 'Yash pal singh', 'Kamla   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '38', '2018', 'BBA', 0, 0),
-(41, 'Niharika', 'sharma', '0000-00-00', 'Pradeep   shrma', 'Sunita Sharma', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '39', '2018', 'BBA', 0, 0),
-(42, 'Jiya', 'chousali', '0000-00-00', 'Tara dutt chousali', 'Mamta   chausali', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '40', '2018', 'BBA', 0, 0),
-(43, 'Sagun', 'tamta', '0000-00-00', 'Gajender  tamta', 'Ka   lpna', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '41', '2018', 'BBA', 0, 0),
-(44, 'Kushal', 'paneru', '0000-00-00', 'Lalit   paneru', 'Bhawna   paneru', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '42', '2018', 'BBA', 0, 0),
-(45, 'Shubham', 'chousali', '0000-00-00', 'Ramesh c. chausali', 'Saroj   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '43', '2018', 'BBA', 0, 0),
-(46, 'Hardik', 'mehra', '0000-00-00', 'Balwant  singh mehra', 'Hansi   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '44', '2018', 'BBA', 0, 0),
-(47, 'Prateek', 'raj', '0000-00-00', 'Daya kishan raj', 'Geeta   ', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '45', '2018', 'BBA', 0, 0),
-(48, 'Sourabh', 'mehra', '0000-00-00', 'Mohan s. mehra', 'Meena   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '46', '2018', 'BBA', 0, 0),
-(49, 'Deepanshu', 'joshi', '0000-00-00', 'Deepak chandra joshi', 'Asha   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '47', '2018', 'BBA', 0, 0),
-(50, 'Rohit', 'pargain', '0000-00-00', 'Chander shekar pargain', 'Khasti   pargain', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '48', '2018', 'BBA', 0, 0),
-(51, 'Vanshika', 'arya', '0000-00-00', 'Rakesh   kumar', 'Rekha   ', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '49', '2017', 'BBA', 0, 0),
-(52, 'Deepak', 'bisht', '0000-00-00', 'Laxman singh bisht', 'Uma   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '50', '2017', 'BBA', 0, 0),
-(53, 'Kartick', 'ghangola', '0000-00-00', 'Heera ballabh ghangola', 'Mamta devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '51', '2017', 'BBA', 0, 0),
-(54, 'Manish', 'thuwal', '0000-00-00', 'Bipin c. thuwal', 'Pooja   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '52', '2017', 'BBA', 0, 0),
-(55, 'Devansh', 'pargain', '0000-00-00', 'Mukesh   pargain', 'Pooja   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '53', '2017', 'BBA', 0, 0),
-(56, 'Parth', 'tamta', '0000-00-00', 'Amit   kumar', 'Mamta   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '54', '2017', 'BBA', 0, 0),
-(57, 'Kajal', 'joshi', '0000-00-00', 'Mohan c. joshi', 'Kamla joshi  ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '55', '2018', 'BBA', 0, 0),
-(58, 'Kumkum', 'upreti', '0000-00-00', 'Yogesh   upreti', 'Pooja   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '56', '2018', 'BBA', 0, 0),
-(59, 'Somya', 'chufal', '0000-00-00', 'Deepak s. chufal', 'Pushpa   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '57', '2018', 'MCA', 0, 0),
-(60, 'Rakshita', 'belwal', '0000-00-00', 'Chattarpati   belwal', 'Durga   belwal', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '58', '2018', 'MCA', 0, 0),
-(61, 'Gourav', 'pantola', '0000-00-00', 'Bishan datt pantola', 'Kamla   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '59', '2019', 'MCA', 0, 0),
-(62, 'Himani', 'bisht', '0000-00-00', 'Prakash   singh', 'Prema   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '60', '2017', 'MCA', 0, 0),
-(63, 'Tanuja', 'bughani', '0000-00-00', 'Bipin  bughani', 'Sunita   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '61', '2016', 'MCA', 0, 0),
-(66, 'Aarav', 'jangi', '0000-00-00', 'Pramod kumar jangi', 'Janki   ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '62', '2015', 'MCA', 0, 0),
-(67, 'Asha', 'pargain', '0000-00-00', 'Lalit mohan pargain', 'Geeta   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '63', '2016', 'MCA', 0, 0),
-(69, 'Bhawna', 'matiyali', '0000-00-00', 'Bahadur   singh', 'Nirmala   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '64', '2015', 'MCA', 0, 0),
-(70, 'Bharat', 'matiyali', '0000-00-00', 'Harish s. matiyali', 'Nirmala   matiyali', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '65', '2015', 'MCA', 0, 0),
-(71, 'Arpit', 'matiyali', '0000-00-00', 'Nirmal   singh', 'Kamla   matiyali', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '66', '2016', 'MCA', 0, 0),
-(72, 'Niharika', 'tamta', '0000-00-00', 'Govind   ram', 'Maheswari   devi', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '67', '2017', 'MCA', 0, 0),
-(74, 'Harshita', 'pant', '0000-00-00', 'Mr. lalit mohan pant  ', 'Mrs. tanuja pant  ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '68', '2018', 'MCA', 0, 0),
-(75, 'Lokesh', 'joshi', '0000-00-00', 'Girish chandra joshi  ', 'Beena joshi  ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'gopal', '69', '2015', 'MCA', 0, 0),
-(76, 'Vansh', 'singh', '0000-00-00', 'Mangal singh   ', 'Mamta dhami  ', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '70', '2019', 'MCA', 0, 0),
-(77, 'Gurpreet', 'singh', '0000-00-00', 'Malkeet   singh', 'Mukhtiyar   kaur', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '71', '2018', 'MCA', 0, 0),
-(78, 'Aman', 'arya', '0000-00-00', 'Ramesh c. arya', 'Sunita   ', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '72', '2014', 'MCA', 0, 0),
-(79, 'Rashi', 'pantola', '0000-00-00', 'Manoj   pantola', 'Babita   pantola', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '73', '2022', 'MCA', 0, 0),
-(80, 'Mayank', 'goldar', '0000-00-00', 'Deelip   goldar', 'Renu   goldar', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '74', '2019', 'MCA', 0, 0),
-(81, 'Yogesh', 'bajetha', '0000-00-00', 'Kheem singh bajetha', 'Kavita   bajetha', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '75', '2019', 'MCA', 0, 0),
-(82, 'Sourav', 'kumar', '0000-00-00', 'Prakash   chandra', 'Hansa   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '76', '2019', 'MBA', 0, 0),
-(83, 'Garima', 'deopa', '0000-00-00', 'Bishan s. deopa', 'Pushpa   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '77', '2021', 'MBA', 0, 0),
-(84, 'Karan', 'kumar', '0000-00-00', 'Dinesh   prasad', 'Mamta   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '78', '2019', 'MBA', 0, 0),
-(85, 'Nisha', 'bhatt', '0000-00-00', 'Deepak   chandra', 'Keshvi   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '79', '2019', 'MBA', 0, 0),
-(86, 'Ishita', 'rajwar', '0000-00-00', 'Pratap   rajwar', 'Kavita   chand', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '80', '2021', 'MBA', 0, 0),
-(87, 'Deepak', 'bhatt', '0000-00-00', 'Ramesh   bhatt', 'Renu   bhatt', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '81', '2018', 'MBA', 0, 0),
-(88, 'Upasna', 'jangi', '0000-00-00', 'Neeraj   kumar', 'Janki   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '82', '2017', 'MBA', 0, 0),
-(89, 'Mamta', 'rajput', '0000-00-00', 'Jhamman singh ', 'Pushpa   devi', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '83', '2020', 'MBA', 0, 0),
-(90, 'Naman', 'joshi', '0000-00-00', 'Mukesh c. joshi', 'Mamta   joshi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '84', '2019', 'MBA', 0, 0),
-(91, 'Prince', 'bajetha', '0000-00-00', 'Naveen c. bajetha', 'Rekha   bajetha', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '85', '2016', 'MBA', 0, 0),
-(92, 'Dev', 'mehra', '0000-00-00', 'Jagat s. mehra', 'Radha   mehra', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '86', '2019', 'MBA', 0, 0),
-(93, 'Mamta', 'ruwali', '0000-00-00', 'Chandra prakash ruwali', 'Renu   ruwali', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '87', '2021', 'MBA', 0, 0),
-(94, 'Rajat', 'bora', '0000-00-00', 'Nandan s. bora', 'Saroj   bora', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '88', '2015', 'MBA', 0, 0),
-(95, 'Mannya', 'rautela', '0000-00-00', 'Narendra s. rautela', 'Asha   rautela', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '89', '2030', 'MBA', 0, 0),
-(96, 'Aruniya', 'kohli', '0000-00-00', 'Prem   kohli', 'Veena   kohli', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '90', '2016', 'MBA', 0, 0),
-(97, 'Prachi', 'chand', '0000-00-00', 'Gopal   chand', 'Sunita   chand', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '91', '2016', 'MBA', 0, 0),
-(98, 'Piyush', 'sharma', '0000-00-00', 'Lalit   sharma', 'Sona   sharma', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '92', '2016', 'MBA', 0, 0),
-(99, 'Deepanshu', 'gaira', '0000-00-00', 'Dinesh lal', 'Chandra arya', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '93', '2016', 'MBA', 0, 0),
-(100, 'Harsh', 'bajetha', '0000-00-00', 'Kailash c. bajetha', 'Tulsi   devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '94', '2016', 'MBA', 0, 0),
-(101, 'Priyanshi', 'gunwant', '0000-00-00', 'Lalit   gunwant', 'Asha   gunwant', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '95', '2016', 'BCA', 0, 0),
-(102, 'Pritiyush', 'tamta', '0000-00-00', 'Surendera   lal', 'Shobha   tamta', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '96', '2016', 'BCA', 0, 0),
-(103, 'Ritika', 'rawat', '0000-00-00', 'Sanjay   rawat', 'Reetu   rawat', 'F', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '97', '2016', 'BCA', 0, 0),
-(104, 'Aniket', 'kumar', '0000-00-00', 'Rakesh   kumar', 'Rekha   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '98', '2016', 'BCA', 0, 0),
-(105, 'Sapna', 'arya', '0000-00-00', 'Suresh   chandra', 'Sunita   arya', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '99', '2016', 'BCA', 0, 0),
-(106, 'Manish', 'singh', '0000-00-00', 'S. s. barthyal', 'Hansi   devi', 'M', 'hindu', 'GENERAL', 'A+', 1, 'nitin', '100', '2019', 'BCA', 0, 0),
-(107, 'Aadarsh', 'kumar', '0000-00-00', 'Madan   ram', 'Vimla   devi', 'M', 'hindu', 'SC', 'A+', 1, 'gopal', '101', '2019', 'BCA', 0, 0),
-(108, 'Pooja', 'joshi', '0000-00-00', 'K. d. joshi', 'Seema   joshi', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '102', '2019', 'BCA', 0, 0),
-(109, 'Sabina', 'khatoon', '0000-00-00', 'Guddu   khan', 'Sharina   khatoon', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '103', '2019', 'BCA', 0, 0),
-(111, 'Manvi', 'tamta', '0000-00-00', 'Mahipal   tamta', 'Champta   tamta', 'F', 'hindu', 'SC', 'B+', 1, 'gopal', '104', '2019', 'BCA', 0, 0),
-(112, 'Aayush', 'arya', '0000-00-00', 'Laxman   kumar', 'Chandrakala   ', 'M', 'hindu', 'SC', 'B+', 1, 'gopal', '105', '2019', 'BCA', 0, 0),
-(114, 'Bhumika', 'bajetha', '0000-00-00', 'Jagdish c. bajetha', 'Kanchan   bajetha', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '106', '2019', 'BCA', 0, 0),
-(115, 'Divyam', 'tamta', '0000-00-00', 'Sanjay   tamta', 'Ganga   devi', 'M', 'hindu', 'SC', 'B+', 1, 'gopal', '107', '2019', 'BCA', 0, 0),
-(116, 'Gourav', 'arya', '0000-00-00', 'Pooran c. arya', 'Shobha   arya', 'M', 'hindu', 'SC', 'B+', 1, 'gopal', '108', '2019', 'BBA', 0, 0),
-(117, 'Harshit', 'bughani', '0000-00-00', 'Tara dutt chousali', 'Durga   bughani', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '109', '2019', 'BBA', 0, 0),
-(118, 'Kashish', 'joshi', '0000-00-00', 'Madhawanand   joshi', 'Seeta   joshi', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '110', '2019', 'BBA', 0, 0),
-(119, 'Mukul', 'bughani', '0000-00-00', 'Naveen c. bughani', 'Vimla   bughani', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '111', '2019', 'BBA', 0, 0),
-(120, 'Nikhil', 'mehra', '0000-00-00', 'Bhagat s. mehra', 'Neha   mehra', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '112', '2019', 'BBA', 0, 0),
-(121, 'Piyush', 'pokhriyal', '0000-00-00', 'Dheerendra   pokhriyal', 'Rupa   ', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '113', '2019', 'BBA', 0, 0),
-(122, 'Purva', 'bajetha', '0000-00-00', 'Ramesh c. bajetha', 'Mamta   bajetha', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '114', '2019', 'BBA', 0, 0),
-(123, 'Priyanshu', 'belwal', '0000-00-00', 'Vinod   belwal', 'Asha   belwal', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '115', '2019', 'BBA', 0, 0),
-(124, 'Twinkle', 'khanwal', '0000-00-00', 'Gopal   singh', 'Uma   khanwal', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '116', '2019', 'BBA', 0, 0),
-(125, 'Tanmay', 'kumar', '0000-00-00', 'Arjun   kumar', '   ', 'F', 'hindu', 'SC', 'B+', 1, 'gopal', '117', '2019', 'BBA', 0, 0),
-(126, 'Yogita', 'kohli', '0000-00-00', 'Ram   lal', 'Sarita   devi', 'F', 'hindu', 'SC', 'B+', 1, 'gopal', '118', '2015', 'BBA', 0, 0),
-(127, 'Himanshi', 'bhatt', '0000-00-00', 'Bhuwan c. bhatt', 'Pushpa   bhatt', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '119', '2015', 'BBA', 0, 0),
-(128, 'Kamini', 'bisht', '0000-00-00', 'Ganesh   bisht', 'Radha   devi', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '120', '2015', 'BBA', 0, 0),
-(129, 'Jyoti', 'paliwal', '0000-00-00', 'Keshav   paliwal', 'Mamta   ruwali', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '121', '2015', 'BBA', 0, 0),
-(130, 'Ananya', 'kohli', '0000-00-00', 'Chandan   lal', 'Rekha   devi', 'F', 'hindu', 'SC', 'B+', 1, 'gopal', '122', '2015', 'BBA', 0, 0),
-(131, 'Bhawna', 'bisht', '0000-00-00', 'Bishan s. bisht', 'Champa devi', 'F', 'hindu', 'GENERAL', 'B+', 1, 'gopal', '123', '2017', 'BBA', 0, 0),
-(132, 'Kushankit', 'parki', '0000-00-00', 'Manoj kumar', 'Champa parki', 'F', 'hindu', 'GENERAL', 'B+', 1, 'gopal', '124', '2016', 'BBA', 0, 0),
-(133, 'Neha', 'sanwal', '0000-00-00', 'Surech c. sanwal', 'Lt. pushpa sanwal', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '125', '2014', 'BBA', 0, 0),
-(134, 'Prateek', 'kanyal', '0000-00-00', 'Dinesh s. kanyal', 'Asha   kanyal', 'M', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '126', '2017', 'BBA', 0, 0),
-(135, 'Garima', 'rawat', '0000-00-00', 'Gopal s. rawat', 'Manju   rawat', 'F', 'hindu', 'GENERAL', 'B+', 1, 'nitin', '127', '2016', 'BBA', 0, 0),
-(136, 'Bhumika', 'chilwal', '0000-00-00', 'Manoj   chilwal', 'Saroj   chilwal', 'F', 'hindu', 'GENERAL', 'O+', 1, 'nitin', '128', '2016', 'BBA', 0, 0),
-(138, 'Anshuman', 'summal', '0000-00-00', 'Laxman s. summal', 'Bhawna   summal', 'M', 'hindu', 'GENERAL', 'O+', 1, 'nitin', '129', '2017', 'BBA', 0, 0),
-(139, 'Mayank', 'tamta', '0000-00-00', 'Govind   ram', 'Maheswari   devi', 'F', 'hindu', 'SC', 'O+', 1, 'gopal', '130', '2017', 'BCA', 0, 0),
-(141, 'Ayush', 'rautela', '0000-00-00', 'Devender   rautela', 'Kamla   rautela', 'M', 'hindu', 'GENERAL', 'O+', 1, 'nitin', '131', '2017', 'MCA', 0, 0),
-(142, 'Vikash', 'pokhriya', '0000-00-00', 'Govind   ballabh', 'Geeta   devi', 'M', 'hindu', 'GENERAL', 'O+', 1, 'gopal', '132', '2017', 'MCA', 0, 0),
-(143, 'Diksha', 'mewari', '0000-00-00', 'Rajendar   mewari', 'Bhagwati   devi', 'F', 'hindu', 'GENERAL', 'O+', 1, 'gopal', '133', '2017', 'BBA', 0, 0),
-(144, 'Deepanshu', 'sanwal', '0000-00-00', 'Rajendra Kumar sanwal', 'Pinky   sanwal', 'M', 'hindu', 'GENERAL', 'O+', 1, 'gopal', '134', '2017', 'MBA', 0, 0),
-(145, 'Priyanshi', 'bisht', '0000-00-00', 'Narayan   bisht', 'Diksha   bisht', 'F', 'hindu', 'GENERAL', 'O+', 1, 'gopal', '135', '2018', 'BBA', 0, 0),
-(148, 'NEW', 'arya', '0000-00-00', 'Suresh   chandra', 'Sunita   arya', 'F', 'hindu', 'SC', 'A+', 1, 'gopal', '403', '2015', 'BBA', 0, 0),
-(149, '', 'PANDEY', '2019-05-02', 'fdsf', 'scf', 'Other', 'Forainer', 'SC/ST', 'A+', 0, 'sdwertyuio', '', '2016', 'B.COM', 0, 2015),
-(152, 'ey', 'pande', '2019-05-16', 'surendra prasad kushwaha', 'binda devi', 'Male', '', 'OBC', '', 0, 'Aman12', '2019-05', '2014', 'B.TECH', 0, 2015),
-(154, 'preeti', 'joshi', '2019-05-15', 'surendra prasad kushwaha', 'binda devi', 'Female', '', 'GEN', '', 0, 'preeti12', '2019-05', '2014', 'BBA', 0, 2014),
-(155, 'preeti', 'joshi', '2019-05-15', 'surendra prasad kushwaha', 'binda devi', 'Female', '', 'GEN', '', 0, 'preeti12', '201905', '2014', 'BBA', 0, 2014),
-(156, '???', '???????', '2019-05-08', 'surendra prasad kushwaha', 'binda devi', 'Male', 'Indian', 'GEN', 'O-', 0, 'rp46671', '201905', '', '', 0, 0),
-(157, 'eavi', '???????', '2019-05-22', 'surendra prasad kushwaha', 'binda devi', 'Male', 'Indian', 'GEN', 'O+', 0, 'preeti123', 'x', '2014', 'B.SC', 0, 2015),
-(158, 'eavi', '???????', '2019-05-22', 'surendra prasad kushwaha', 'binda devi', 'Male', 'Indian', 'GEN', 'O+', 0, 'preeti123', '201905158', '2014', 'B.SC', 0, 2015),
-(159, '', '', '0000-00-00', 'azsdcf', 'sqwdergt', '', '', '', '', 0, '', '201905159', '', '', 0, 0),
-(160, '', '', '0000-00-00', 'azsdcf', 'sqwdergt', '', '', '', '', 0, '', '201905160', '', '', 0, 0),
-(161, '', '', '0000-00-00', 'azsdcf', 'sqwdergt', '', '', '', '', 0, '', '201905161', '', '', 0, 0),
-(162, 'poonam', 'pandey', '2019-05-22', 'surendra prasad kushwaha', 'binda devi', 'Female', '', 'GEN', '', 0, 'preeti', '201905162', '', '', 0, 0),
-(163, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905163', '', '', 0, 0),
-(164, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905164', '', '', 0, 0),
-(165, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905165', '', '', 0, 0),
-(166, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905166', '', '', 0, 0),
-(167, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905167', '', '', 0, 0),
-(168, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905168', '', '', 0, 0),
-(169, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905169', '', '', 0, 0),
-(170, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905170', '', '', 0, 0),
-(171, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905171', '', '', 0, 0),
-(172, 'umesh chandra pandey', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905172', '', '', 0, 0),
-(173, 'POONAM', 'PANDEY', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905173', '', '', 0, 0),
-(174, 'POONAM', 'PANDEY', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905174', '', '', 0, 0),
-(175, 'poonam', 'pandey', '2019-05-17', 'surendra prasad kushwaha', 'binda devi', 'Female', 'Indian', 'GEN', 'A+', 0, 'preeti123', '201905175', '', '', 0, 0),
-(176, 'poonam', 'pandey', '2019-05-17', 'surendra prasad kushwaha', 'binda devi', 'Female', 'Indian', 'GEN', 'A+', 0, 'preeti123', '201905176', '', '', 0, 0),
-(177, 'POONAM', 'PANDEY', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', 'Female', '', '', '', 0, '', '201905177', '2018', 'BCA', 0, 2017),
-(178, 'POONAM', 'PANDEY', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', 'Female', '', '', '', 0, '', '201905178', '2018', 'BCA', 0, 2017),
-(179, 'poonam', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905179', '', '', 0, 0),
-(180, 'poonam', 'pandey', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905180', '', '', 0, 0),
-(181, 'POONAM', 'PANDEY', '0000-00-00', 'surendra prasad kushwaha', 'binda devi', '', '', '', '', 0, '', '201905181', '', '', 0, 0),
-(182, 'POONAM', 'PANDEY', '0000-00-00', 'ertyuo', 'wertyuo', '', '', '', '', 0, '', '201905182', '', '', 0, 0),
-(183, 'Ravi', 'Pandey', '1998-11-05', 'Umesh Chandra Pandey', 'Radha Pandey', 'Male', 'Indian', 'GEN', 'A+', 0, 'rp44671', '201905183', '2019', 'BCA', 0, 2019);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `std_reg`
---
-
-CREATE TABLE `std_reg` (
-  `session` varchar(10) DEFAULT NULL,
-  `course_of_admission` varchar(15) NOT NULL,
-  `date_of_admission` date NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `description` text NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `std_id` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `std_personal` (`s_no`, `first_name`, `last_name`, `date_of_birth`, `father_name`, `mother_name`, `gender`, `nationality`, `category`, `blood_group`, `status`, `username`, `fusername`, `student_id`, `session_id`, `course_id`, `active_status`, `batch_id`) VALUES
+(1, 'Ashu', 'Kushwaha', '2002-05-15', 'surendra prasad', 'binda devi', 'Male', 'Indian', 'OBC', 'O+', 0, 'ashu12', '', '2019051', '2018', 'BCA', 0, 2018),
+(2, 'Ravi', 'Pandey', '1998-05-11', 'Dr. pandey', 'Deepa pandey', 'Male', 'Indian', 'GEN', 'A+', 0, 'ravi12', '', '2019052', '2018', 'BCA', 0, 2018),
+(3, 'Preeti', 'Kushwaha', '1997-11-04', 'surendra prasad', 'binda devi', 'Female', 'Indian', 'GEN', 'O+', 0, 'preeti12', '', '2019053', '2018', 'BCA', 1, 2018),
+(4, 'Raju', 'kumar', '1997-12-13', 'Rajeev   kumar', 'Pushpa ', 'Male', 'Indian', 'GEN', 'O-', 0, 'raju12', '', '2019054', '2018', 'BCA', 0, 2018),
+(5, 'Ramesh', 'bajetha', '1997-12-13', 'Ramesh c. bajetha', 'Manju bajetha', 'Male', 'Indian', 'GEN', 'AB+', 0, 'ramesh12', '', '2019055', '2018', 'BCA', 0, 2018),
+(6, 'Pooja', 'bohra', '1997-01-12', 'Anand singh bohra', 'Diksha', 'Female', 'Indian', 'GEN', 'AB+', 0, 'pooja12', '', '2019056', '2018', 'BCA', 0, 2018),
+(7, 'Mansi', 'singh', '1998-01-12', 'Anand singh ', 'Disha singh', 'Female', 'Indian', 'GEN', 'AB+', 0, 'mansi12', '', '2019057', '2019', 'BCA', 0, 2018),
+(8, 'Rohit', 'singh', '1997-01-12', 'Rajesh singh ', 'pooja singh', 'Male', 'Indian', 'GEN', 'O+', 0, 'rohit12', '', '2019058', '2019', 'BCA', 0, 2018),
+(9, 'Suraj', 'matiyali', '1997-01-12', 'Harish s. matiyali', 'Nirmala   matiyali', 'Male', 'Indian', 'GEN', 'O+', 0, 'suraj12', '', '2019059', '2019', 'BCA', 0, 2018),
+(10, 'Purnima', 'parmar', '1997-11-14', 'rajesh parmar', 'asha parmar', 'Female', 'Indian', 'GEN', 'O+', 0, 'purnima12', '', '20190510', '2019', 'BCA', 0, 2018),
+(11, 'Sapna', 'bhatt', '1997-06-03', 'Mahendra bhatt', 'disha bhatt', 'Female', 'Indian', 'GEN', 'B+', 0, 'sapna12', '', '20190511', '2018', 'BCA', 0, 2018),
+(12, 'Raj', 'kumar', '1997-06-03', 'Vinod kumar', 'sunita', 'Male', 'Indian', 'GEN', 'B+', 0, 'raj12', '', '20190512', '2018', 'BCA', 1, 2018),
+(13, 'Satyam', 'kumar', '1997-06-03', 'Vijay kumar', 'meena', 'Male', 'Indian', 'GEN', 'B+', 0, 'satyam12', '', '20190513', '2019', 'BBA', 0, 2019),
+(14, 'kiran', 'Kushwaha', '1996-11-01', 'surendra prasad', 'binda devi', 'Female', 'Indian', 'GEN', 'O+', 0, 'kiran12', '', '20190514', '2019', 'BBA', 0, 2019),
+(15, 'poonan', 'pathak', '1997-03-01', 'Nirmal pathak', 'Janki pathak ', 'Female', 'Indian', 'GEN', 'A+', 0, 'poonam12', '', '20190515', '2019', 'BBA', 0, 2019),
+(16, 'nikita', 'pant', '1997-03-01', 'harsh pant', 'Janvi pant', 'Female', 'Indian', 'GEN', 'A+', 0, 'nikita12', '', '20190516', '2019', 'BBA', 0, 2019),
+(17, 'nidhi', 'dhami', '1997-03-01', 'Mangal dhami ', 'Mamta dhami ', 'Female', 'Indian', 'GEN', 'A+', 0, 'nidhi12', '', '20190517', '2019', 'BBA', 0, 2019),
+(18, 'sakshi', 'dhami', '1997-03-01', 'naveen dhami ', 'nirmala dhami ', 'Female', 'Indian', 'GEN', 'A+', 0, 'sakshi12', '', '20190518', '2019', 'BBA', 0, 2019);
 
 -- --------------------------------------------------------
 
@@ -1334,7 +1077,13 @@ INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_ty
 (45, 25, 120, 1, 14, 30, 1, 'ra'),
 (46, 25, 118, 1, 14, 30, 1, 'ra'),
 (47, 25, 119, 1, 14, 30, 1, 'ra'),
-(48, 25, 120, 1, 9, 30, 1, 'ra');
+(48, 25, 120, 1, 9, 30, 1, 'ra'),
+(49, 35, 0, 1, 12, 30, 1, 'Aman12'),
+(50, 35, 95, 1, 12, 30, 1, 'Aman12'),
+(51, 35, 96, 1, 1, 30, 1, 'Aman12'),
+(52, 35, 97, 1, 17, 30, 1, 'Aman12'),
+(53, 35, 98, 1, 1, 30, 1, 'Aman12'),
+(54, 35, 99, 1, 60, 30, 1, 'Aman12');
 
 -- --------------------------------------------------------
 
@@ -1356,14 +1105,24 @@ CREATE TABLE `student_photo` (
 --
 
 INSERT INTO `student_photo` (`student_photo_id`, `student_id`, `student_photo`, `student_sig`, `status`, `username`) VALUES
-(1, '201905176', 'x', '', 1, 'ra'),
-(2, '201905177', '2.JPG', '', 1, 'ra'),
-(3, '201905178', '3.JPG', '', 1, 'ra'),
-(4, '201905179', 'x', '', 1, 'ra'),
-(5, '201905180', '5.JPG', '', 1, 'ra'),
-(6, '201905181', '6.JPG', '6.JPG', 1, 'ra'),
-(7, '201905182', '7.JPG', '7.JPG', 1, 'ra'),
-(8, '201905183', '8.JPG', '8.jpg', 1, 'ra');
+(1, '2019051', 'x', 'x', 1, 'ra'),
+(2, '2019052', 'x', 'x', 1, 'ra'),
+(3, '2019053', '3.JPG', '3.jpg', 1, 'ra'),
+(4, '2019054', '4.png', '4.png', 1, 'ra'),
+(5, '2019055', '5.png', '5.png', 1, 'ra'),
+(6, '2019056', '6.png', '6.png', 1, 'ra'),
+(7, '2019057', '7.png', '7.png', 1, 'ra'),
+(8, '2019058', '8.png', '8.png', 1, 'ra'),
+(9, '2019059', '9.png', '9.png', 1, 'ra'),
+(10, '20190510', '10.png', '10.png', 1, 'ra'),
+(11, '20190511', '11.png', '11.png', 1, 'ra'),
+(12, '20190512', '12.png', '12.png', 1, 'ra'),
+(13, '20190513', '13.png', '13.png', 1, 'ra'),
+(14, '20190514', '14.png', '14.png', 1, 'ra'),
+(15, '20190515', '15.png', '15.png', 1, 'ra'),
+(16, '20190516', '16.png', '16.png', 1, 'ra'),
+(17, '20190517', '17.png', '17.png', 1, 'ra'),
+(18, '20190518', '18.png', '18.png', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -1735,8 +1494,8 @@ INSERT INTO `sub_sidebar` (`sub_sidebar_id`, `sidebar_id`, `sub_sidebar_name`, `
 (3, 9, 'View-Daywise', 'Main/attendance_view_controller', 1, 'ra'),
 (4, 9, 'View-Total', 'Main/attendance_report_student_controller', 1, 'ra'),
 (5, 10, 'View-Consolidate', 'Main/attendance_report_student_controller', 1, 'ra'),
-(6, 10, 'View-Daywise', 'Main/attendance_report_student_controller', 1, 'ra'),
-(7, 10, 'View-Total', 'Main/attendance_report_student_controller', 1, 'ra'),
+(6, 10, 'View-Daywise', 'Main/attendance_report_student_controller1', 1, 'ra'),
+(7, 10, 'View-Total', 'Main/attendance_report_student_controller2', 1, 'ra'),
 (8, 14, 'Edit', 'test/index', 1, 'ra'),
 (9, 14, 'View', 'Test/viewmarks', 1, 'ra'),
 (10, 15, 'Given-Assignment', 'assignmentcontroller/index', 1, 'ra'),
@@ -1804,7 +1563,9 @@ CREATE TABLE `time_table_edit` (
 
 INSERT INTO `time_table_edit` (`tid`, `Day`, `Course_id`, `Semester`, `Section`, `Subject_id`, `Room`, `Time`, `Session`, `Faculty_id`) VALUES
 (2, 'Monday', '0', 1, 'A', 'nm', 45, '09_00_09_50', ' 2010-2011', '1'),
-(3, 'Tuesday', '0', 1, 'A', 'AV', 123, '10_40_11_30', ' 2015-2016', '2');
+(3, 'Tuesday', '0', 1, 'A', 'AV', 123, '10_40_11_30', ' 2015-2016', '2'),
+(4, 'Monday', 'BCA', 1, 'A', '', 1, '09_00_09_50', '2014', ''),
+(5, 'Monday', 'BCA', 1, 'B', 'BCA101', 5, '09_50_10_40', '2017', '');
 
 -- --------------------------------------------------------
 
@@ -1951,7 +1712,8 @@ CREATE TABLE `weekly` (
 --
 
 INSERT INTO `weekly` (`add_class_id`, `lectureid`, `lesson_id`, `week_id`, `start_date`, `end_date`, `no_of_lecture_schedule`, `no_of_lost_due_to_holiday`, `no_of_lost_due_to_cl`, `no_extra_taken`, `no_of_lecture_actual_taken`, `description_of_topic`) VALUES
-(25, '', '', 1, '2019-04-11', '2019-05-08', 11, 2, 2, 2, 12, '');
+(25, '', '', 1, '2019-04-11', '2019-05-08', 11, 2, 2, 2, 12, ''),
+(35, '', '', 2, '2019-05-18', '2019-05-19', 1, 0, 0, 0, 1, '');
 
 --
 -- Indexes for dumped tables
@@ -1992,12 +1754,6 @@ ALTER TABLE `assign_subject`
 --
 ALTER TABLE `attendance`
   ADD PRIMARY KEY (`attendance_id`);
-
---
--- Indexes for table `attendance_update`
---
-ALTER TABLE `attendance_update`
-  ADD PRIMARY KEY (`attendance_update_id`);
 
 --
 -- Indexes for table `batch`
@@ -2129,12 +1885,6 @@ ALTER TABLE `std_contact`
   ADD PRIMARY KEY (`std_contact_id`);
 
 --
--- Indexes for table `std_group`
---
-ALTER TABLE `std_group`
-  ADD PRIMARY KEY (`group_id`);
-
---
 -- Indexes for table `std_personal`
 --
 ALTER TABLE `std_personal`
@@ -2220,43 +1970,37 @@ ALTER TABLE `weekly`
 -- AUTO_INCREMENT for table `add_class`
 --
 ALTER TABLE `add_class`
-  MODIFY `add_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `add_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `assignment`
 --
 ALTER TABLE `assignment`
-  MODIFY `Assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `assignment_checker`
 --
 ALTER TABLE `assignment_checker`
-  MODIFY `assignment_checker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `assignment_checker_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `assign_subject`
 --
 ALTER TABLE `assign_subject`
-  MODIFY `assign_subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `assign_subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
-
---
--- AUTO_INCREMENT for table `attendance_update`
---
-ALTER TABLE `attendance_update`
-  MODIFY `attendance_update_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `batch`
@@ -2274,13 +2018,13 @@ ALTER TABLE `board`
 -- AUTO_INCREMENT for table `faculty_address`
 --
 ALTER TABLE `faculty_address`
-  MODIFY `faculty_address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `faculty_address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `faculty_contact`
 --
 ALTER TABLE `faculty_contact`
-  MODIFY `faculty_contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `faculty_contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `faculty_personal`
@@ -2292,7 +2036,7 @@ ALTER TABLE `faculty_personal`
 -- AUTO_INCREMENT for table `faculty_profile`
 --
 ALTER TABLE `faculty_profile`
-  MODIFY `faculty_profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `faculty_profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `form_type`
@@ -2304,13 +2048,13 @@ ALTER TABLE `form_type`
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
-  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `marks_type`
@@ -2328,7 +2072,7 @@ ALTER TABLE `qualification`
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `s_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `s_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `semester`
@@ -2346,43 +2090,43 @@ ALTER TABLE `sidebar`
 -- AUTO_INCREMENT for table `sign_up`
 --
 ALTER TABLE `sign_up`
-  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `std_academic`
 --
 ALTER TABLE `std_academic`
-  MODIFY `std_academic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `std_academic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `std_address`
 --
 ALTER TABLE `std_address`
-  MODIFY `std_address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `std_address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `std_contact`
 --
 ALTER TABLE `std_contact`
-  MODIFY `std_contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `std_contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `std_personal`
 --
 ALTER TABLE `std_personal`
-  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `studentmarks`
 --
 ALTER TABLE `studentmarks`
-  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `student_photo`
 --
 ALTER TABLE `student_photo`
-  MODIFY `student_photo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `student_photo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `student_time_table`
@@ -2400,7 +2144,7 @@ ALTER TABLE `sub_sidebar`
 -- AUTO_INCREMENT for table `time_table_edit`
 --
 ALTER TABLE `time_table_edit`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `upload_notes`
@@ -2424,7 +2168,7 @@ ALTER TABLE `users_menu`
 -- AUTO_INCREMENT for table `weekly`
 --
 ALTER TABLE `weekly`
-  MODIFY `week_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `week_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

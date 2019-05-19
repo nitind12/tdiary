@@ -77,10 +77,10 @@
  <h1>Promoted Class</h1>
        <span class="form-horizontal row-fluid">
 
-   <form class="form-horizontal row-fluid" method="post" name="frmPromotedClass1" id="frmPromotedClass1" action="<?php echo site_url('main/promotedClass');?>">       
+   <form class="form-horizontal row-fluid" method="post" name="frmPromotedClass1" id="frmPromotedClass1" action="<?php echo  site_url('main/promotedClass');?>">       
     
-<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">  
-        
+<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">     
+    
     <tr>
       <td>
                      <div class="control-group">
@@ -152,7 +152,7 @@
                      </select>
                       </div>
                     </div>
-                  </td>s
+                  </td>
                 </tr>
                 <tr>
                   <td colspan="2">

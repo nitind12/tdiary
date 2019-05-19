@@ -42,7 +42,7 @@
 			       	    			<td><?php echo $item->course_id;?></td>
 				          			<td><?php echo $item->semester_id ;?></td>
 				         			<td><?php echo $item->section_id ;?></td>
-				                    <td><?php echo $item->subject_id?></td>		
+				                    <td><?php echo $item->subject_name?></td>		
 		           				</tr>
 	                    	<?php }?>		
                 		</tbody>

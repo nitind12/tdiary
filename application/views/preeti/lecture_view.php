@@ -6,7 +6,6 @@
     }
 </style>
 
-
 <style media="print">
   .hideblock{
       display:none;
@@ -29,10 +28,10 @@
 
             <div class="module-body table">
 
-                  <div class="alert hideblock">
+               <!--   <div class="alert hideblock">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     <strong>Note!</strong> For Edit Double Click!
-                  </div>
+                  </div>    -->
 
           
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
@@ -78,9 +77,9 @@
                           
                   <thead>
                     <tr>
-                        <th align="center">No Of Lecture Aspect</th>
-                        <th align="center">Unit No</th>
+                        <th align="center">Unit</th>
                         <th align="center">Topic</th>
+                        <th align="center">No Of Lecture Aspect</th>
                         <th align="center" class="hideblock">Delete</th>    
                     </tr>
                   </thead>
@@ -89,9 +88,9 @@
              <?php foreach ($t_diary as $item) { ?>
               <tr>
             
-              <td class="lectdata mytd"  id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ?></td>
-               <td  class="lectdata mytd"  id="<?php echo $item->lecture_id.'-topic';?>" align="center"><?php echo $item->topic ?></td>
-                 <td align="center" class="lectdata mytd"  id="<?php echo $item->lecture_id.'-no_of_lecture';?>"><?php echo $item->no_of_lecture?></td>
+              <td><?php echo $item->unit ?></td>
+               <td><?php echo $item->topic ?></td>
+                 <td><?php echo $item->no_of_lecture?></td>
                                 <td class="hideblock"><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " 
                                     onclick="return confirm('Are you sure')"></a></td>    
      

@@ -108,7 +108,7 @@ class Main extends CI_Controller {
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-        $data['cls_in_session'] = $this->am->fetchClass();
+        $data['cls_in_session'] = $this->am->fetchClass1();
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -155,6 +155,33 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
+  public function attendance_report_student_controller1()  
+    {  
+        $data['title'] = "Student-Report-Daywise";
+        $data['page_'] = "student_report_daywise";
+
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    } public function attendance_report_student_controller2()  
+    {  
+        $data['title'] = "Student-Report-Attendance";
+        $data['page_'] = "View_total";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
+
  public function attendance_report_View_Consolidate()  
     {  
         $data['title'] = "View-Consolidate";
@@ -395,11 +422,20 @@ function get_student()
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
         $data['downloads'] = $this->am->download_models();
+
+        $data['course1'] = $this->am->getCourse1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Session1'] = $this->am->getSession1();
       
        
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');
+    }
+    function get_subjectupload()
+    {
+        $data['subjects'] = $this->am->getuploadsubject();
+        echo json_encode($data);
     }
 
 
@@ -430,5 +466,17 @@ function get_student()
         
         redirect('Main/upload_controller','refresh');
     }
+
+
+
+    function totalAttenview()
+    {
+        $data['totalatten_'] = $this->am->totalAttendance_view();
+
+        echo json_encode($data);    
+    }
+
+
+
  }
 ?>  

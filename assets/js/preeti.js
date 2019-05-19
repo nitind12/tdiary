@@ -22,6 +22,37 @@ $(document).ready(function()
 		});	
 
 
+$('#Course').change(function(){
+			if($('#Course').val() != '' && $('#Semester').val() !=0){
+				var url_ = site_url_+"/main/get_subjectupload";
+				var data_ = $('#frmnotes').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Subject</option>";
+					for(i=0; i<obj.subjects.length; i++){
+						str = str + "<option value='"+obj.subjects[i].subject_id+"'>"+obj.subjects[i].subject_name+"</option>";
+					}
+					$('#Subject').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+		
+		$('#Semester').change(function(){
+			$('#Course').change();
+
+		
+		});
+
 
 	$('.lessonclass').click(function(){
 			var str = this.id;

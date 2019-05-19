@@ -79,6 +79,18 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
+		function getuploadsubject()
+		{
+			$course_id = $this->input->post('Course');
+			$Semester_id = $this->input->post('Semester');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
 		function getclassassign()
 		{
 			$course_id = $this->input->post('Courseasign');
@@ -191,7 +203,6 @@ class Add_class_model extends CI_Model
 			$this->db->where('session_id', $this->input->post('sessionji'));
 			$this->db->where('course_id', $this->input->post('crs_for_attendance'));
 			$this->db->where('semester_id', $this->input->post('semji'));
-			$this->db->where('subject_id', $this->input->post('subjectji'));
 			$this->db->where('section_id', $this->input->post('sectionji'));
 			$query = $this->db->get('add_class');
 			//echo $this->db->last_query();die();
@@ -207,22 +218,37 @@ class Add_class_model extends CI_Model
 		function fetchClass()
 		{
 		$this->db->distinct('a.add_class_id');
-		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id');
+		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id ,c.subject_name');
 		$this->db->from('assign_subject a');
 		$this->db->where('faculty_id', $this->session->userdata('facultyid'));
 		$this->db->join('add_class b', 'a.add_class_id=b.add_class_id');
+		$this->db->join('subject c', 'a.subject_id=c.subject_id');
 		
 		$query = $this->db->get();
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
-		function fetchSubject()
+		function fetchClass1()
 		{
-		$this->db->order_by('subject_id');
-
-		$query = $this->db->get("add_class");
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.*');
+		$this->db->from('add_class a');
+		$query = $this->db->get();
 		return $query->result();
 		}
+
+		function fetchSubject()
+		{		
+		$this->db->select('a.*');
+		$this->db->where('faculty_id', $this->session->userdata('facultyid'));
+		
+		$this->db->from('assign_subject a');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $query->result();
+
+			}
 
 		function fetchSession(){
 			$this->db->order_by('s_id');
@@ -244,12 +270,10 @@ class Add_class_model extends CI_Model
 		{
 			
 		$data = array(
-			'faculty_id'=>'ravi',
 			'session_id' => $this->input->post('Session'),
 			'course_id' => $this->input->post('Course'),
 			'semester_id' => $this->input->post('Semester'),
 			'section_id' => $this->input->post('Section'),
-			'subject_id' => $this->input->post('Subject_Name'),
 			'section_id' => $this->input->post('Section'),
 			'date_of_commencement' => $this->input->post('DateOfCommencement'),
 			'date_of_completion' => $this->input->post('DateOfCompletion'),
@@ -313,12 +337,13 @@ class Add_class_model extends CI_Model
 		function add_view_attendance($clsid)
 		{
 		$this->db->distinct('a.add_class_id');
-		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id');
+		$this->db->select('a.* ,b.course_id, b.semester_id, b.section_id,c.subject_name');
 		$this->db->from('assign_subject a');
 		$this->db->where('faculty_id', $this->session->userdata('facultyid'));
 		$this->db->where('b.add_class_id', $clsid);
 		
 		$this->db->join('add_class b', 'a.add_class_id=b.add_class_id');
+		$this->db->join('subject c', 'a.subject_id=c.subject_id');
 		
 		$q = $this->db->get();
 		return $q->result();
@@ -517,9 +542,9 @@ class Add_class_model extends CI_Model
 	$path_id = $this->upload_notes($fileid);
 	$this->db->where('notes_id', $fileid);
 		$data = array(
-			'upload_notes'=> $path_id		// column in database
+			'upload_notes'=> $path_id		// here upload notes is a column in database
 				);
-		$this->db->update('upload_notes', $data);		// table name in database
+		$this->db->update('upload_notes', $data);		// here upload notes is a table name in database
 	}
 
 	function upload_notes($id)
@@ -564,5 +589,8 @@ class Add_class_model extends CI_Model
 		return;
 	}
 		
+
+
+	
 }
 ?>

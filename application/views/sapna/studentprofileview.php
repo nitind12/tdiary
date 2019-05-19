@@ -7,34 +7,36 @@
 		<div class="module-body">
 						
 	<form method="post" id="" action="<?php echo site_url('studentprofile1controller/savingdata3');?>" class="form-horizontal row-fluid">
-								
 	<table class="table"  width="10" height="30"border="1">
 		<tbody>
 		<?php foreach($m as $user):
 		?>
-		
+		<div>							
+	
 		<tr>		
-			<th>User_Name:<?php echo $user->username?></th></tr>
-			<tr>
-			<th>Name:<?php echo   $user->first_name.' '.$user->last_name?></th>
-			</tr>
+			<th>Username:<?php echo $user->username?></th></tr>
 		<tr>
-			<th >Email:<?php echo $user->email?></th>
+			<th>Name:<?php echo $user->first_name.''.$user->last_name?></th>
 		</tr>
 		<tr>
-			<th>Phone-No:<?php echo $user->phone_no?></th>
+			<th >Email:<?php echo $user->std_email?></th>
+		</tr>
+		<tr>
+			<th>Phone-No:<?php echo $user->std_contact?></th>
 		</tr>
 		<tr>
 			<th>Date-of-Birthday:<?php echo $user->date_of_birth?></th>
 		</tr>
 		<tr>
-			<th class="span4">Father Name:<?php echo $user->father_name?></th>
+		<th>Father Name:<?php echo $user->father_name?></th>
 		</tr>
 		<tr>
 			<th>Mother Name:<?php echo $user->mother_name?></th>
 		</tr>
-		
-		
+		<div><img src="<?php base_url("assert/ttdocs"). $user->student_sig?>);">
+			<img src="<?php base_url("assert/ttdocs"). $user->student_photo?>);">
+					</div>
+		</div>
 		<?php endforeach;?>
 		
 	

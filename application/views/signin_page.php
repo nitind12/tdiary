@@ -45,42 +45,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div><!-- /navbar-inner -->
 	</div><!-- /navbar -->
 
-
-
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
-				<div class="module module-login span4 offset4">
+				<div class="module span4 offset4">
 					<form class="form-vertical" method="POST" name="frmsign"id="frmsign" action="<?php echo site_url('signup_controller/register');?>">
 					
 						<div class="module-head">
 							<h3>Sign Up</h3>
 						</div>
-						<div class="module-body">
+					<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
 									<input class="span12" type="text" id="txtUsername" name ="txtUsername"placeholder="Username">
 								</div>
 							</div>
+
+							
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="email" id="email"name="txtEmail" placeholder="Email">
+									<input class="span12" type="text" id="txtstudentid" name ="txtstudentid"placeholder="Student Id">
 								</div>
 							</div>
-					
-						</div>
-						<div class="module-body">
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="first-name"name="txtfirst_name"  placeholder="First-name">
-								</div>
-							</div>
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="txtsir_name"name="txtsir_name"  placeholder="Sur-name">
-								</div>
-							</div>
-						</div>
+				
+				
+					</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
@@ -92,15 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<input class="span12" type="password" id="RePassword" name="retxtPwd" placeholder="Re-Password">
 								</div>
 							</div>
-						<div id="message"></div>
-							</div><div class="module-body">
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="Phone" name="Phone" placeholder="phone no">
-								</div>
-							</div>
-							</div>	
-
+						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
@@ -121,24 +102,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</div>
 							</div>
 						</div>
-						<div class="module-body">
+					
 							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="date" id="dateofbirth" name="dateofbirth" placeholder="Date-Of-Birth">
-								</div>
-							</div>
-							<div class="control-group">
-								<div class="controls row-fluid">
-									
-										<label class="radio inline">
-													<input type="radio" name="rod" id="Student" value="2">
+								<div class="controls row-fluid ">
+								<center><input type="radio" name="rod" id="Student" value="3" class="radio inline">
 													Student
-												</label> 
-									<label class="radio inline">
-													<input type="radio" name="rod" id="Parents" value="3">
-													Parents
-												</label>
-								</div>
+										
+													<input type="radio" name="rod" id="Parents" value="4" class="radio inline">
+													Parents</center>
+												</div>
 							</div>
 							
 							<div>

@@ -2,7 +2,8 @@
 
 class My_signin_model extends CI_Model
 {
- public function log_in_correctly() {  
+
+/* public function log_in_correctly() {  
   
        $username_ = $this->input->post('txtUsername');
 		$dateofbirth= $this->input->post('dateofbirth');
@@ -14,23 +15,41 @@ class My_signin_model extends CI_Model
         $this->db->where('$dateofbirth',);  
         $query = $this->db->get('sign_up');  
   
-}
-	function register()
+}*/
+
+ 	function register()
+
 	{
 		$username_ = $this->input->post('txtUsername');
-		$email_ = $this->input->post('txtEmail');
-		$first_name = $this->input->post('txtfirst_name');
-		$sir_name = $this->input->post('txtsir_name');
 		$pwd = $this->input->post('txtPwd');
-		$phone = $this->input->post('Phone');
+		$student_id = $this->input->post('txtstudentid');
 		$question = $this->input->post('txtquestion');
 		$answer = $this->input->post('txtanswer');
-		$dateofbirth= $this->input->post('dateofbirth');
+
 		$cat = $this->input->post('rod');
-		$this->db->where('username', $username_);
-		$this->db->or_where('email', $email_);
-		$query = $this->db->get('sign_up');
 		
+		$this->db->where('username', $username_);
+		$this->db->where('student_id', $student_id);
+		$q=$this->db->get('std_personal');
+		if($q->num_rows()==0)
+		{
+			$boo1 = false;
+		} 
+		else 
+		{
+		$this->db->where('username', $username_);
+		$this->db->where('student_id', $student_id);
+			$data = array
+			(
+        			'active_status' =>1
+       		);
+
+		$this->db->update('std_personal' ,$data);
+		$this->db->where('username', $username_);
+		$this->db->where('student_id', $student_id);
+		$query=$this->db->get('sign_up');
+		
+
 		if($query->num_rows()!=0)
 		{
 			$bool = false;
@@ -39,15 +58,11 @@ class My_signin_model extends CI_Model
 		{
 			$data = array
 			(
-				'Username'=>$username_,
-				'first_name'=>$first_name,	
-				'last_name'=>$sir_name,
-				'email'=>$email_,	
+				'username'=>$username_,
 				'password'=>$pwd,
-				'phone_no'=>$phone,
 				'question'=>$question,	
 				'answer'=>$answer,	
-				'date_of_birth'=>$dateofbirth,
+				'student_id'=>$student_id,
 				'category'=>$cat
 				
 			);
@@ -57,4 +72,5 @@ class My_signin_model extends CI_Model
 
 		return $bool;
 	}
+}
 }

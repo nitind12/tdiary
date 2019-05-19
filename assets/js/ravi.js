@@ -1,5 +1,8 @@
 $(function()
 {
+	$('#myModal').css('display', 'none');
+		
+
 	$('#frmLogin').submit(function(){
 		if($.trim($('#username').val()) == ''){
 			alert('001: Please Enter Username');
@@ -10,7 +13,6 @@ $(function()
 		}
 		return false;
 	});
-		$('#myModal').css('display', 'none');
 		
 			$('#Password, #RePassword').on('keyup', function () {
   		if ($('#Password').val() == $('#RePassword').val()) {
@@ -382,5 +384,66 @@ $('#Courseasign').change(function(){
 			$('.ABSENT_class').prop('checked', true);
 		});
 		
+
+
+
+
+	$('#Totalattensubmit').click(function(){
+		var data_ = $('#frmtotalatten').serialize();
+		var url_ = site_url_+ '/Main/totalAttenview';
+
+		$.ajax({
+			url:url_,
+			type: 'post',
+			data: data_,
+			success: function(weekly_){
+				$('#weeklyhere').html(weekly_);
+				var obj = JSON.parse(weekly_);
+				var len = obj.week.length;
+
+				var str = 'x';
+				alert(len);
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th>Week No</th>"
+					str = str + "<th>Date</th>"
+					str = str + "<th>Unit</th>"	
+					str = str + "<th>Topic</th>"
+					str = str + "<th>No Of Lecture</th>"
+					str = str + "<th>NO Of lecture Schedule</th>"
+					str = str + "<th>No of Lost Due To Holiday</th>"
+					str = str + "<th>No Of Lost Due To CL</th>"
+					str = str + "<th>No Of Extra Taken</th>"
+					str = str + "<th>No Of Lecure Actual Taken</th>"
+					
+					str = str + "</tr>";
+
+					for(i=0; i<len;i++){
+						str = str + '<tr>';	
+						str = str + '<td>' + obj.week[i].week_id + "</td>";
+						str = str + '<td>' + obj.week[i].date + "</td>";
+						str = str + '<td>' + obj.week[i].unit+ "</td>";
+						str = str + '<td>' + obj.week[i].topic+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lecture+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lecture_schedule+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lost_due_to_holiday+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lost_due_to_cl+ "</td>";
+						str = str + '<td>' + obj.week[i].no_extra_taken+ "</td>";
+						str = str + '<td>' + obj.week[i].no_of_lecture_actual_taken+ "</td>";
+						
+						str = str + '</tr>';
+				}$('#weeklyhere').html(str);
+			}else {
+					$('#weeklyhere').html('No data found');
+				}
+			}, error: function(xhr, error, status){
+				$('#weeklyhere').html(xhr.responseText);
+			}
+
+		});
+	});
+
+
 	
 });

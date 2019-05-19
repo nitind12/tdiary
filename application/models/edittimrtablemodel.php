@@ -6,6 +6,14 @@ class Edittimrtablemodel extends CI_Model{
 
 		return $query->result();
 	}
+	function time_edit_modals()
+	{
+		$this->db->where('faculty_id',$this->session->userdata('user'));
+		$query = $this->db->get("time_table_edit");
+
+		return $query->result();
+	}
+	
 	function savingdata3()
 	{
 		$data = array(
@@ -14,11 +22,12 @@ class Edittimrtablemodel extends CI_Model{
 			'Section' => $this->input->post('Section'),
 			'Course_id' => $this->input->post('Course_Name'),
 			'Subject_id' => $this->input->post('Subject'),
-		    'Session' => $this->input->post('Session'),
+		    'session_id' => $this->input->post('Session'),
 			//'Time_table_id' => $this->input->post('Time_table_id'),
 			'Time' => $this->input->post('Time'),
 			'Room' => $this->input->post('Room'),
-
+			'faculty_id' => $this->session->userdata('user')
+		    
 
 		);
 		

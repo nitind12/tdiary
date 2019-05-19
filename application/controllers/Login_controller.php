@@ -23,8 +23,19 @@ class Login_controller extends CI_Controller
     
         if ($this->login_model->log_in_correctly())  
         {  
-           redirect('main');
-
+            if($this->session->userdata('user_status')==1){
+              redirect('main');
+   
+            }
+          if($this->session->userdata('user_status')==2){
+              redirect('main/indext');
+   
+            }
+          if($this->session->userdata('user_status')==3){
+              redirect('main/indexs');
+   
+            }
+          
         } else {  
           
             redirect('Login_controller'); 

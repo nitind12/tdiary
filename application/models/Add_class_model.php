@@ -593,6 +593,22 @@ class Add_class_model extends CI_Model
 		
 
 
-	
+	function reports_attendance_modals2()
+		{
+			$subject_id=$this->input->post('subject');
+			$btn1= $this->input->post('d1');
+			$btn1= $this->input->post('d2');
+		$this->db->distinct('date');
+		$this->db->select('a.*');
+		$this->db->where('a.subject_id',$subject_id);
+		$this->db->where('a.faculty_id',$this->session->userdata('facultyid'));
+		$this->db->where('DATE(date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+		$this->db->from('attendance a');
+		$query = $this->db->get();
+		//echo $this->db->last_query();
+		return $query->result();
+		
+		}
+		
 }
 ?>

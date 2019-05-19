@@ -5,7 +5,7 @@
 <div class="content">
   <div class="module">
     <div class="module-head">
-      <h1>view Consolidate</h1>
+      <h1>View Consolidate</h1>
     </div>
       
       <div class="btn-box-row row-fluid" >

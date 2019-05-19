@@ -14,6 +14,14 @@
         </div>
 
  <div class="module-body">
+  <?php
+                $options = array(
+                  'name' => 'frmattendancereports',
+                  'id' => 'frmattendancereports'
+                ); 
+                echo form_open('main/view_attendance_controller/'.$no_, $options);
+              ?>
+        
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
             <tr>

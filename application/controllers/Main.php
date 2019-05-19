@@ -279,7 +279,9 @@ public function attendance_report_View_Consolidate2()
         $data['last'] = $this->am->getlastMenu();
         $data['cls_in_session'] = $this->am->fetchClass();
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
-        $data['attendance_Status'] = $this->am->reports_modals($no_);   
+        $data['attendance_Status'] = $this->am->reports_modals($no_);
+         $data['no_'] = $no_;
+          
          $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -491,6 +493,12 @@ function get_student()
         echo json_encode($data);    
     }
 
+ function view_attendance_controller_via_ajax2()
+ {
+        $data['reports_'] = $this->am->reports_attendance_modalsC($no_);
+        echo json_encode($data);
+    }
+   
 
 
  }

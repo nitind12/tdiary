@@ -205,7 +205,9 @@ public function attendance_report_View_Consolidate2()
     {  
         $data['title'] = "View-Consolidate";
         $data['page_'] = "student_report_View_Consolidate";
-        $data['dashboard1'] = $this->am->getDashboardMenu();
+       
+         $data['add_class_in'] = $this->am->add_view_attendance($no_);
+      $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();

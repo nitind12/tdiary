@@ -18,7 +18,6 @@
             <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
             <tr>
-                
                 <td>
                  <div class="control-group">
                       <div class="controls">

@@ -44,8 +44,11 @@
                 <table cellpadding="0" cellspacing="0" border="1" class="datatable-1 table table-bordered table-striped  display" width="100%">
                    <div style="float:right">
                     <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"><?php 
-                    echo date("D-d-M-Y")?> </div>
-                   
+                    echo date("D-d-M-Y")?> </div> 
+                     <?php foreach($add_class_in as $item){?>
+
+                    <input type="hidden" value="<?php echo $item->subject_id ?>" name="subject" id="subject">
+                  <?php }?> 
                   </h3>
                        
                         </div>

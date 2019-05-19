@@ -37,6 +37,9 @@
                   <!-- <div style="float:right">
                     <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
                     //echo date("D-d-M-Y")?> </div>--->   
+                  <?php foreach($add_class_in as $item){?>
+              <input type="hidden" value="<?php echo $item->subject_id ?>" name="subject" id="subject">
+                  <?php }?> 
                     
                   <thead>
                     <tr>

@@ -205,9 +205,9 @@ public function attendance_report_View_Consolidate2()
     {  
         $data['title'] = "View-Consolidate";
         $data['page_'] = "student_report_View_Consolidate";
-       
-         $data['add_class_in'] = $this->am->add_view_attendance($no_);
-      $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['cls_in_session'] = $this->am->fetchClass();
+        $data['add_class_in'] = $this->am->add_view_attendance($no_);
+        $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
@@ -275,20 +275,23 @@ public function attendance_report_View_Consolidate2()
         }
     }
     
-     public function view_attendance_reports_controller($no_,$sess)  
+     public function view_attendance_reports_controller()  
     {  
         $data['title'] = "ONLINE_ATTENDANCE";
         $data['page_'] = "view-reports-attendance";
+        $data['cls_in_session'] = $this->am->fetchCourses();
+        $data['session__'] = $this->am->fetchSession();
+        $data['subject__'] = $this->am->fetchSubject();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-        $data['cls_in_session'] = $this->am->fetchClass();
+        // --------------------
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
-        $data['attendance_Status'] = $this->am->reports_modals($no_);
-         $data['no_'] = $no_;
-          
-         $this->load->view('templates/header', $data);
+        $data['reports'] = $this->am->reports_attendance_modals();
+        $data['no_'] = $no_;
+        $data['sess_'] = $sess;
+        $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }

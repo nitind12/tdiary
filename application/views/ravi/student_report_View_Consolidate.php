@@ -60,7 +60,7 @@
                   'name' => 'frmattendancereports',
                   'id' => 'frmattendancereports'
                 ); 
-                echo form_open('main/view_attendance_controller/'.$no_, $options);
+                echo form_open('main/view_attendance_controller/', $options);
               ?>
         
 

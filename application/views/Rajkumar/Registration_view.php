@@ -16,7 +16,7 @@
     f.statename1.value ='';
 	}
 	}
-</script>>
+</script>
 
 <div class="span9">
 					<div class="content">
@@ -59,7 +59,7 @@
                                                     <?php }?>
                                                  </select>
                                              	</td>
-									 <td ><b>Course:</b>
+									 <td >Course:
 										<br>
 									  	<select tabindex="1" data-placeholder="Select here.."class="span8"  name="regCourse" id="regCourse">
                                            <option value="">Select Course</option>
@@ -356,7 +356,7 @@
 									</td>
 								</tr>
 								<tr>
-									  <td >
+									  <td>
 									
 									<select tabindex="1" data-placeholder="Select here.."  name="qualification_status4" id="qualification_status4" class="span12">
 													<option value="">Select here..</option>

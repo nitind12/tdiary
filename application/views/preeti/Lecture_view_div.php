@@ -30,7 +30,7 @@
           
         <!--    <a href="<?php //echo site_url('Edit_controller/lecture_view/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>" id="<?php echo $item->add_class_id;?>">    -->
 
-                    <a class="btn-box-row row-fluid  lectureviewclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >
+                    <a class="btn-box-row row-fluid  lectureviewclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id. "~" . $item->subject_id;?>" >
         
                         Session:<?php echo $item->session_id?><br>
                         <b><?php echo $item->course_id.'-'.$item->semester_id;?></b><br>

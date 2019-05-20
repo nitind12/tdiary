@@ -209,7 +209,7 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
-public function attendance_report_View_Consolidate2()  
+public function attendance_report_View_Consolidate2($no_)  
     {  
         $data['title'] = "View-Consolidate";
         $data['page_'] = "student_report_View_Consolidate";
@@ -219,7 +219,7 @@ public function attendance_report_View_Consolidate2()
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-         
+          
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');

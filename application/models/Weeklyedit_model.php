@@ -6,17 +6,21 @@ class Weeklyedit_model extends CI_Model
 	
 		
 
-	function fetchtable($clsid)
+	function fetchtable($clsid,$subid)
 	{  
 
 		//$query = $this->db->get("weekly");
 		//return $query->result();
 
 		$this->db->select('a.*');
-		$this->db->where('a.add_class_id', $clsid);
+		$this->db->where('a.add_class_id', $clsid,$subid);
+		$this->db->where('subject_id', $subid);
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+
 		$this->db->from('weekly a');
 		$query = $this->db->get();
-		return $query->result();
+		echo $this->db->last_query();die();
+		//return $query->result();
 	}
 	
 

@@ -524,7 +524,6 @@ function get_student()
         $data['last'] = $this->am->getlastMenu();
        $data['downloads'] = $this->am->download_models();
         
-    
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');

@@ -15,6 +15,7 @@ class Check_assign_report_controller extends CI_Controller{
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+        $data['subject'] = $this->am->getstudentsubj();
        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  

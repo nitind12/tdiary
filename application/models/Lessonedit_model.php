@@ -15,6 +15,7 @@ class Lessonedit_model extends CI_Model
 
 	function lesson_edit_saving_modal()
 	{
+		$subject_id=$this->input->post('subject_id');
 		$addclass_id=$this->input->post('addclass_id');
 		$date=$this->input->post('date1');
 		$lecture_ty=$this->input->post('lecturetype');
@@ -30,6 +31,7 @@ class Lessonedit_model extends CI_Model
 				'date'=>$this->input->post('date'),
 				'topic' => $this->input->post('Topic'),
 				'unit' => $this->input->post('Unit'),
+				'subject_id'=>$subject_id,
 				//'lecture_id' => $this->input->post('Lecture'),
 				'status'=>'1',
 				'username'=>'ra'

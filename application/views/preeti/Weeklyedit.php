@@ -57,6 +57,8 @@
                                    
                       <?php foreach ($add_class_in as $item) { ?>
                           <input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]"                                    id="sid_<?php echo $item->add_class_id;?>">
+
+                           <input type="hidden" value="<?php echo $item->subject_id; ?>" name="subject_id" id="subject_id"> 
                       <?php } ?>  
 
                               <thead>

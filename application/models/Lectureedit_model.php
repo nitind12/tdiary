@@ -6,6 +6,7 @@ class Lectureedit_model extends CI_Model
 
 	function fetchtable($clsid)
 	{  
+		
 		$this->db->select('a.*');
 		$this->db->where('a.add_class_id', $clsid);
 		$this->db->from('lecture a');

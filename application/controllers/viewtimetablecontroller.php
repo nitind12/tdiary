@@ -27,6 +27,6 @@ class Viewtimetablecontroller extends CI_Controller{
 	function viewmarks(){
 		$this->load->model('viewtimetablemodel','im');
 		$data['marks'] = $this->im->timetable();
-       echo json_encode($data);
+        echo json_encode($data);
 	}
 }

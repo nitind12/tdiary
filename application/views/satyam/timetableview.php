@@ -14,7 +14,7 @@
 							</div>
 							<div class="module-body">
 							
-	<form id="myform100" name="myform100" class="form-horizontal row-fluid">
+	<form id="myform1001" name="myform1001" class="form-horizontal row-fluid">
 	<table class="table table-striped table-bordered table-condensed" border="1">
 		
 			<!--<table class="table" >-->
@@ -44,7 +44,7 @@
 								</div>
 											<div class="controls" style="float:left;">
 												
-												<button type="button" class="btn btn-primary hideblock" name="save" value="submit" id="btnsubmit">Submit</button>
+												<button type="button" class="btn btn-primary hideblock" name="save" value="submit" id="btnsubmit1">Submit</button>
 											</div>
 										</div>
 						</form>
@@ -142,7 +142,7 @@
 										</div>
 
 					<div>
-						<table class="table" border="1" id="timetablehere">
+						<table class="table" border="1" id="timetablehere1">
 						</table>
 					</div>
 					</div>

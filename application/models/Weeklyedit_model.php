@@ -21,7 +21,8 @@ class Weeklyedit_model extends CI_Model
 	
 
 	function savingdata()
-	{
+	{	
+		$subject_id=$this->input->post('subject_id');
 		$addclass_id=$this->input->post('addclass_id');
 
 		for($i=0; $i<count($addclass_id); $i++)
@@ -36,6 +37,7 @@ class Weeklyedit_model extends CI_Model
 			'no_of_lost_due_to_cl' => $this->input->post('due_to_cl'),
 			'no_extra_taken' => $this->input->post('extra_taken'),
 			'no_of_lecture_actual_taken' => $this->input->post('actual_taken'),
+			'subject_id'=>$subject_id,
 				);
 		
 		$this->db->insert('weekly',$data);

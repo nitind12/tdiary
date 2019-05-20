@@ -67,7 +67,7 @@ class Edit_controller extends CI_Controller
             $data['last'] = $this->am->getlastMenu();
         
             $data['add_class_in'] = $this->am->add_view_attendance($no_);
-            $data['t_diary'] = $this->obj->fetchtable($no_);
+            $data['t_diary'] = $this->obj->fetchtable($no_,$subid);
            
             $data['title'] = "lecture_edit";
             $data['page_'] = "Lecture_edit";

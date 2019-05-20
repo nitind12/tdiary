@@ -38,13 +38,15 @@ class Lessonview_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
+             $subid = $this->input->post('courseidED');
+
 
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
             
-         	$data['t_diary'] = $this->obj->fetchtable($no_);     
+         	$data['t_diary'] = $this->obj->fetchtable($no_,$subid);     
        		//$data['add_class_in']= $this->gm->add_view_class($no_);////ravi wALA SE
              $data['add_class_in'] = $this->am->add_view_attendance($no_);
             $data['title'] = "Lesson_plan";

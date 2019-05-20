@@ -11,8 +11,8 @@ class Lessonedit_model extends CI_Model
 		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
 		$this->db->from('lesson a');
 		$query = $this->db->get();	
-		echo $this->db->last_query();die();
-		//return $query->result();
+		//echo $this->db->last_query();die();
+		return $query->result();
 	}
 
 

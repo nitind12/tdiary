@@ -14,6 +14,8 @@
         </div>
 
  <div class="module-body">
+  <form name="frmdaywise" id="frmdaywise"  Method="POST" action="<?php echo site_url('main/student_report_daywise_controller');?>">
+    
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
             <td>
@@ -111,7 +113,7 @@
                 </tr>
                </tbody>
            </table>
-          
+          </form>
         <div class="module-body table">
              <tr>
               <td>

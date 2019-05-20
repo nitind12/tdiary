@@ -147,10 +147,9 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "Student-Report-Attendance";
         $data['page_'] = "student_report_attendance1";
-          $data['course1'] = $this->am->getCourse1();
-      $data['Semester1'] = $this->am->getSemester1();
-      $data['Session1'] = $this->am->getSession1();
-     
+        $data['course1'] = $this->am->getCourse1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Session1'] = $this->am->getSession1();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
@@ -164,7 +163,10 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "Student-Report-Daywise";
         $data['page_'] = "student_report_daywise";
-
+        $data['course1'] = $this->am->getCourse1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Session1'] = $this->am->getSession1();
+        
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();

@@ -546,11 +546,12 @@ $('#cmbAttendanceReportc').click(function()
 			url:url_,
 			type: 'post',
 			data: data_,
-			success: function(consolidate){
+			success: function(consolidate,date1){
 				
 				var obj = JSON.parse(consolidate);
 				var len = obj.consolidate.length;
-				var f=obj.consolidate[i].date.length;
+				var len1 = obj.date1.length;
+				
 				var str = 'x';
 				
 
@@ -559,8 +560,8 @@ $('#cmbAttendanceReportc').click(function()
 					str = str + "</tr>";
 					//str = str + "<th>Session</th>"
 					str = str + "<th>Roll-No</th>"
-					for(i=0; i<len;i++){
-					str = str + "<th>"+obj.consolidate[i].date+"</th>"
+					for(i=0; i<len1;i++){
+					str = str + "<th>"+obj.date1[i].date+"</th>"
 					}
 					for(i=0; i<len;i++){
 						str = str + '<tr>';	

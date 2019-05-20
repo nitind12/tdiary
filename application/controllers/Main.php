@@ -384,6 +384,8 @@ public function attendance_report_View_Consolidate2()
     function reports_attendance_controller_CA()
     {
         $data['consolidate']=$this->am->reports_attendance_modalsCA();
+        $data['date1']=$this->am->reports_attendance_modals_data();
+       
         echo json_encode($data);
     
     }

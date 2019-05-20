@@ -656,6 +656,14 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		
 		}
+		function reports_attendance_modals_data(){
+			$this->db->distinct('a.date');
+		
+		$this->db->select('a.*');
+		$query = $this->db->get('attendance a');
+		return $query->result();
+		
+		}
 		function reports_attendance_modalsCA()
 		{
 			$consolidate= array();	

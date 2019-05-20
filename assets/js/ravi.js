@@ -546,8 +546,7 @@ $('#cmbAttendanceReportc').click(function()
 			url:url_,
 			type: 'post',
 			data: data_,
-			success: function(consolidate_){
-				//$('#reportshere').html(reports_);
+			success: function(consolidate){
 				
 				var obj = JSON.parse(consolidate);
 				var len = obj.consolidate.length;

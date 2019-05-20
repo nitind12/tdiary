@@ -445,5 +445,29 @@ $('#Courseasign').change(function(){
 	});
 
 
-	
+		$('.take_attend_class').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			
+
+			$('#frmtakeattend_class').submit();
+		});	
+
+
+
+		$('.attend_daywiseclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			
+
+			$('#frmatten_daywise').submit();
+		});
+
+
+
 });
+	

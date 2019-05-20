@@ -534,5 +534,55 @@ $('#Course').change(function(){
 			
 		});
 
+
+$('#cmbAttendanceReportc').click(function()
+	
+	{
+		var data_ = $('#frmconsolidate').serialize();
+		var url_ = site_url_+"/main/reports_attendance_controller_CA";
+		//console.log(url_);
+
+		$.ajax({
+			url:url_,
+			type: 'post',
+			data: data_,
+			success: function(consolidate_){
+				//$('#reportshere').html(reports_);
+				
+				var obj = JSON.parse(consolidate);
+				var len = obj.consolidate.length;
+
+				var str = 'x';
+				
+
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					//str = str + "<th>Session</th>"
+					str = str + "<th>Roll-No</th>"
+					for(i=0; i<len;i++){
+					str = str + "<th>obj.consolidate[i].date</th>"
+					}
+					for(i=0; i<len;i++){
+						str = str + '<tr>';	
+						str = str + '<td>' + obj.consolidate[i].student_id + "</td>";
+						str = str + '<td>' + obj.consolidate[i].attendance_status + "</td>";
+						
+						str = str + '</tr>';
+					}
+					$('#reportshere').html(str);	//print table heading
+				} else {
+					$('#reportshere').html('No data found');
+				}
+			}, error: function(xhr, error, status){
+				$('#reportshere').html(xhr.responseText);
+			}
+		});
+	return false;
+	});	
+
+
+
+
 });
 	

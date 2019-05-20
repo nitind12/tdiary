@@ -14,7 +14,7 @@
         </div>
 
  <div class="module-body">
-  <form name="frmconsolidate" id="frmconsolidate"  Method="POST" action="<?php echo site_url('main/student_report_consolidate_controller');?>">
+  <form name="frmconsolidate" id="frmconsolidate"  Method="POST" action="<?php echo site_url('main/reports_attendance_controller_CA');?>">
     
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>

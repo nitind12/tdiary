@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2019 at 07:38 PM
+-- Generation Time: May 20, 2019 at 08:29 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -81,6 +81,8 @@ CREATE TABLE `assignment` (
   `Submission_date` date NOT NULL,
   `Unit` int(3) NOT NULL,
   `Topic` longtext NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
+  `faculty_id` varchar(50) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -89,14 +91,8 @@ CREATE TABLE `assignment` (
 -- Dumping data for table `assignment`
 --
 
-INSERT INTO `assignment` (`Assignment_id`, `add_class_id`, `Assignment_no`, `Given_date`, `Submission_date`, `Unit`, `Topic`, `status`, `username`) VALUES
-(1, 25, 1, '2019-04-11', '2019-04-12', 1, 'tgjjkhgyuk', 1, 'ra'),
-(2, 25, 1, '2019-04-11', '2019-04-12', 1, 'tgjjkhgyuk', 1, 'ra'),
-(3, 25, 1, '2019-04-15', '2019-04-15', 1, 'FFGDZGV XZDVXVXVDXXXDZVSXGX', 1, 'ra'),
-(8, 25, 2, '2019-04-26', '2019-04-26', 2, 'r5wd6yuoifpfdisgxtaycgvfiokgbp;lsxazuyt5rdxgfcvkbl;h\'/v,xlknzftgcfx', 1, 'ra'),
-(9, 25, 1, '2019-04-29', '2019-04-30', 1, 'sfdghgjhkjlkl', 1, 'ra'),
-(10, 25, 1, '2019-05-08', '2019-05-14', 1, 'sderfgtyhujikl,kmnb', 1, 'ra'),
-(11, 35, 1, '2019-05-18', '2019-05-17', 1, 'vbvnbn', 1, 'Aman12');
+INSERT INTO `assignment` (`Assignment_id`, `add_class_id`, `Assignment_no`, `Given_date`, `Submission_date`, `Unit`, `Topic`, `subject_id`, `faculty_id`, `status`, `username`) VALUES
+(13, 1, 2, '2019-05-20', '2019-05-20', 1, 'uygsgjsdcgbyuczjcbfuycjduyjfdz', 'BCA203', '2019058', 1, 'ankush12');
 
 -- --------------------------------------------------------
 
@@ -112,9 +108,21 @@ CREATE TABLE `assignment_checker` (
   `assignment_status` tinyint(1) NOT NULL,
   `checker_date` date NOT NULL,
   `Grade` varchar(4) NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `assignment_checker`
+--
+
+INSERT INTO `assignment_checker` (`assignment_checker_id`, `add_class_id`, `assignment_id`, `roll_no`, `assignment_status`, `checker_date`, `Grade`, `subject_id`, `status`, `username`) VALUES
+(9, 1, 2, 2019051, 0, '2019-05-20', 'B', 'BCA203', 1, 'ankush12'),
+(10, 1, 2, 20190512, 1, '2019-05-20', 'A', 'BCA203', 1, 'ankush12'),
+(11, 1, 2, 2019053, 0, '2019-05-20', 'A', 'BCA203', 1, 'ankush12'),
+(12, 1, 2, 2019056, 0, '2019-05-20', 'A', 'BCA203', 1, 'ankush12'),
+(13, 1, 2, 2019053, 1, '2019-05-20', 'A', 'BCA204', 1, 'ankush12');
 
 -- --------------------------------------------------------
 
@@ -142,7 +150,8 @@ INSERT INTO `assign_subject` (`assign_subject_id`, `subject_id`, `faculty_id`, `
 (3, 'BCA401', 2019055, 2018, 3, 1, 'ra'),
 (4, 'BCA403', 2019057, 2018, 4, 1, 'ra'),
 (5, 'BBA 303 ', 2019056, 2019, 5, 1, 'ra'),
-(6, 'BBA 303 ', 2019055, 2019, 6, 1, 'ra');
+(6, 'BBA 303 ', 2019055, 2019, 6, 1, 'ra'),
+(7, 'BCA202', 2019056, 2018, 1, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -177,7 +186,11 @@ INSERT INTO `attendance` (`add_class_id`, `attendance_id`, `date`, `time`, `roll
 (1, 17, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
 (1, 18, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
 (1, 19, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
-(1, 20, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', '');
+(1, 20, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(1, 21, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '2019051', '2019056', 'BCA202', ''),
+(1, 22, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '20190512', '2019056', 'BCA202', ''),
+(1, 23, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '2019053', '2019056', 'BCA202', ''),
+(1, 24, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '2019056', '2019056', 'BCA202', '');
 
 -- --------------------------------------------------------
 
@@ -280,8 +293,6 @@ CREATE TABLE `course_table` (
 --
 
 INSERT INTO `course_table` (`university_id`, `course_id`, `name_of_courses`, `no_of_years`, `status`, `username`) VALUES
-('', '', '', 0, 1, 'ra'),
-('ku', 'ABC', 'APPLEBATCAT', 1, 1, 'ra'),
 ('	 ku', 'B.COM', 'Bachelor of Commerce', 3, 1, 'ra'),
 ('	 ku', 'B.SC', 'Bachelor of Science', 3, 1, 'ra'),
 ('uou', 'B.TECH', 'Bachelor Of Technology ', 4, 1, 'ra'),
@@ -463,6 +474,7 @@ CREATE TABLE `lecture` (
   `lecture_id` int(3) NOT NULL,
   `faculty_id` varchar(50) NOT NULL,
   `add_class_id` int(11) NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
   `unit` int(3) NOT NULL,
   `topic` text NOT NULL,
   `no_of_lecture` int(11) NOT NULL,
@@ -474,21 +486,10 @@ CREATE TABLE `lecture` (
 -- Dumping data for table `lecture`
 --
 
-INSERT INTO `lecture` (`lecture_id`, `faculty_id`, `add_class_id`, `unit`, `topic`, `no_of_lecture`, `status`, `username`) VALUES
-(1, '', 24, 0, '						', 0, 1, 'ra'),
-(4, '121', 25, 1, '					aijdciiccocvbfvvbj 	', 1, 1, 'ra'),
-(5, '121', 26, 1, '					aijdciiccocvbfvvbj 	', 1, 1, 'ra'),
-(6, '121', 25, 1, 'iugaxhuihiclhghcygzbgcefkcfjnkjggnkgngfxnyuh', 1, 1, 'ra'),
-(7, '121', 26, 1, '		fdzcz				', 1, 1, 'ra'),
-(8, '121', 25, 1, '			iioiuuuiuyg			', 1, 1, 'ra'),
-(9, '121', 26, 1, '			iioiuuuiuyg			', 1, 1, 'ra'),
-(10, '121', 26, 5, '				sa		', 5, 1, 'ra'),
-(11, '121', 26, 0, '			fdvfz			', 0, 1, 'ra'),
-(12, '121', 26, 1, '			zsfC			', 1, 1, 'ra'),
-(13, '121', 25, 55, '					dbifzvhrvivf	', 55, 1, 'ra'),
-(14, '121', 24, 1, '				GUDYUIAUYFEUGCY		', 1, 1, 'ra'),
-(15, '121', 25, 1, '						rtyuiopdf[\'l;likhgjhg', 4, 1, 'ra'),
-(16, '121', 35, 1, '	what is software engineering?, software characteristic								', 1, 1, 'ra');
+INSERT INTO `lecture` (`lecture_id`, `faculty_id`, `add_class_id`, `subject_id`, `unit`, `topic`, `no_of_lecture`, `status`, `username`) VALUES
+(1, '121', 1, 'BCA202', 1, '			ujjdvoclvdc							', 4, 1, 'ra'),
+(2, '121', 1, 'BCA203', 1, '			k							', 1, 1, 'ra'),
+(3, '2019058', 1, 'BCA203', 4, '				m						', 1, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -499,6 +500,8 @@ INSERT INTO `lecture` (`lecture_id`, `faculty_id`, `add_class_id`, `unit`, `topi
 CREATE TABLE `lesson` (
   `lesson_id` int(20) NOT NULL,
   `add_class_id` int(11) NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
+  `faculty_id` varchar(50) NOT NULL,
   `lecture_id` varchar(50) NOT NULL,
   `start_time` time(2) NOT NULL,
   `end_time` time(2) NOT NULL,
@@ -515,15 +518,16 @@ CREATE TABLE `lesson` (
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`lesson_id`, `add_class_id`, `lecture_id`, `start_time`, `end_time`, `unit`, `no_of_lecture`, `lecture_type`, `topic`, `date`, `status`, `username`) VALUES
-(1, 26, '3', '00:00:00.00', '00:00:00.00', '3', '5', '', 'wqyadh', '2019-04-11', 1, 'ra'),
-(2, 26, '1', '13:00:00.00', '16:12:00.00', '5', '54', '', 'fsexd', '2019-04-11', 1, 'ra'),
-(4, 26, '3', '02:05:00.00', '10:05:00.00', '322', '4', '', 'gddbf ', '2019-04-11', 1, 'ra'),
-(5, 26, '5', '00:00:00.00', '00:00:00.00', '33', '32', '', 'sad', '2019-04-11', 1, 'ra'),
-(6, 25, '3', '00:00:00.00', '00:00:00.00', '4', '55565', '', 'dcCjCk,cc', '2019-04-11', 1, 'ra'),
-(7, 25, '', '00:00:00.00', '00:00:00.00', '', '', 'Arrangement', '', '2019-04-27', 1, 'ra'),
-(8, 25, '', '00:05:00.00', '02:01:00.00', '1', '', 'Arrangement', 'hagfsyuchczhjcbjsxnaugcfzbauefgbzwuns', '2019-05-08', 1, 'ra'),
-(9, 35, '', '01:00:00.00', '01:50:00.00', '1', '', 'Letcure Schedule', 'what is software engineering?and software characterstic', '2019-05-18', 1, 'ra');
+INSERT INTO `lesson` (`lesson_id`, `add_class_id`, `subject_id`, `faculty_id`, `lecture_id`, `start_time`, `end_time`, `unit`, `no_of_lecture`, `lecture_type`, `topic`, `date`, `status`, `username`) VALUES
+(1, 26, '', '', '3', '00:00:00.00', '00:00:00.00', '3', '5', '', 'wqyadh', '2019-04-11', 1, 'ra'),
+(2, 26, '', '', '1', '13:00:00.00', '16:12:00.00', '5', '54', '', 'fsexd', '2019-04-11', 1, 'ra'),
+(4, 26, '', '', '3', '02:05:00.00', '10:05:00.00', '322', '4', '', 'gddbf ', '2019-04-11', 1, 'ra'),
+(5, 26, '', '', '5', '00:00:00.00', '00:00:00.00', '33', '32', '', 'sad', '2019-04-11', 1, 'ra'),
+(6, 25, '', '', '3', '00:00:00.00', '00:00:00.00', '4', '55565', '', 'dcCjCk,cc', '2019-04-11', 1, 'ra'),
+(7, 25, '', '', '', '00:00:00.00', '00:00:00.00', '', '', 'Arrangement', '', '2019-04-27', 1, 'ra'),
+(8, 25, '', '', '', '00:05:00.00', '02:01:00.00', '1', '', 'Arrangement', 'hagfsyuchczhjcbjsxnaugcfzbauefgbzwuns', '2019-05-08', 1, 'ra'),
+(9, 35, '', '', '', '01:00:00.00', '01:50:00.00', '1', '', 'Letcure Schedule', 'what is software engineering?and software characterstic', '2019-05-18', 1, 'ra'),
+(10, 1, 'BCA203', '2019058', '', '00:05:00.00', '04:05:00.00', '1', '', 'Letcure Schedule', 'iuolkjhyuhikjuhiokhjoj', '2019-05-20', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -639,11 +643,7 @@ INSERT INTO `semester` (`semester_id`, `no_of_semester`, `status`, `username`) V
 (5, 5, 1, 'ra'),
 (6, 6, 1, 'ra'),
 (7, 7, 1, 'ra'),
-(8, 8, 1, 'ra'),
-(9, 9, 1, 'ra'),
-(10, 10, 1, 'ra'),
-(11, 11, 1, 'ra'),
-(12, 12, 1, 'ra');
+(8, 8, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -692,9 +692,9 @@ CREATE TABLE `sidebar` (
 
 INSERT INTO `sidebar` (`sidebar_id`, `sidebar_name`, `path`, `status`, `username`) VALUES
 (1, 'Dashboard', 'Main/index', 2, 'ra'),
-(2, 'sDashboard', 'Main/indexs', 2, 'ra'),
-(3, 'tDashboard', 'Main/indext', 2, 'ra'),
-(7, 'SNotification', 'Main/index', 2, 'ra'),
+(2, 'Dashboard', 'Main/indexs', 2, 'ra'),
+(3, 'Dashboard', 'Main/indext', 2, 'ra'),
+(7, 'Notification', 'Main/index', 2, 'ra'),
 (8, 'Notification', 'Main/index', 2, 'ra'),
 (9, 'Teacher-Online-Attendance', '#', 1, 'ra'),
 (10, 'Student-Attendace-Report', '#', 1, 'ra'),
@@ -739,7 +739,8 @@ CREATE TABLE `sign_up` (
 INSERT INTO `sign_up` (`s_no`, `username`, `password`, `question`, `answer`, `student_id`, `category`, `staus`) VALUES
 (1, 'ra', '12', 'question 1', '1', 45, '1', '1'),
 (2, 'preeti12', '12', 'question 1', 'gchvchb', 2019053, '3', ''),
-(3, 'ankush12', '12', 'question 1', '2.', 2019058, '2', '');
+(3, 'ankush12', '12', 'question 1', '2.', 2019058, '2', ''),
+(4, 'nitin12', '12', 'question 1', '1', 2019056, '2', '');
 
 -- --------------------------------------------------------
 
@@ -983,7 +984,7 @@ INSERT INTO `std_personal` (`s_no`, `first_name`, `last_name`, `date_of_birth`, 
 (3, 'Preeti', 'Kushwaha', '1997-11-04', 'surendra prasad', 'binda devi', 'Female', 'Indian', 'GEN', 'O+', 0, 'preeti12', '', '2019053', '2018', 'BCA', 1, 2018),
 (4, 'Raju', 'kumar', '1997-12-13', 'Rajeev   kumar', 'Pushpa ', 'Male', 'Indian', 'GEN', 'O-', 0, 'raju12', '', '2019054', '2018', 'BCA', 0, 2018),
 (5, 'Ramesh', 'bajetha', '1997-12-13', 'Ramesh c. bajetha', 'Manju bajetha', 'Male', 'Indian', 'GEN', 'AB+', 0, 'ramesh12', '', '2019055', '2018', 'BCA', 0, 2018),
-(6, 'Pooja', 'bohra', '1997-01-12', 'Anand singh bohra', 'Diksha', 'Female', 'Indian', 'GEN', 'AB+', 0, 'pooja12', '', '2019056', '2018', 'BCA', 0, 2018),
+(6, 'Pooja', 'bohra', '1997-01-12', 'Anand singh bohra', 'Diksha', 'Female', 'Indian', 'GEN', 'AB+', 0, 'pooja12', '', '2019056', '2018', 'BCA', 1, 2018),
 (7, 'Mansi', 'singh', '1998-01-12', 'Anand singh ', 'Disha singh', 'Female', 'Indian', 'GEN', 'AB+', 0, 'mansi12', '', '2019057', '2019', 'BCA', 0, 2018),
 (8, 'Rohit', 'singh', '1997-01-12', 'Rajesh singh ', 'pooja singh', 'Male', 'Indian', 'GEN', 'O+', 0, 'rohit12', '', '2019058', '2019', 'BCA', 0, 2018),
 (9, 'Suraj', 'matiyali', '1997-01-12', 'Harish s. matiyali', 'Nirmala   matiyali', 'Male', 'Indian', 'GEN', 'O+', 0, 'suraj12', '', '2019059', '2019', 'BCA', 0, 2018),
@@ -1023,7 +1024,11 @@ INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_ty
 (59, 1, 2019051, 1, 30, 14, 'BCA203', 1, 'ankush12'),
 (60, 1, 20190512, 1, 30, 25, 'BCA203', 1, 'ankush12'),
 (61, 1, 2019053, 1, 30, 30, 'BCA203', 1, 'ankush12'),
-(62, 1, 2019056, 1, 30, 30, 'BCA203', 1, 'ankush12');
+(62, 1, 2019056, 1, 30, 30, 'BCA203', 1, 'ankush12'),
+(63, 1, 2019051, 1, 30, 14, 'BCA203', 1, 'ankush12'),
+(64, 1, 20190512, 1, 30, 14, 'BCA203', 1, 'ankush12'),
+(65, 1, 2019053, 1, 30, 30, 'BCA203', 1, 'ankush12'),
+(66, 1, 2019056, 1, 30, 15, 'BCA203', 1, 'ankush12');
 
 -- --------------------------------------------------------
 
@@ -1493,7 +1498,7 @@ CREATE TABLE `time_table_edit` (
   `Subject_id` varchar(15) NOT NULL,
   `Room` int(8) NOT NULL,
   `Time` varchar(25) NOT NULL,
-  `Session` varchar(15) NOT NULL,
+  `session_id` varchar(15) NOT NULL,
   `Faculty_id` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1501,11 +1506,12 @@ CREATE TABLE `time_table_edit` (
 -- Dumping data for table `time_table_edit`
 --
 
-INSERT INTO `time_table_edit` (`tid`, `Day`, `Course_id`, `Semester`, `Section`, `Subject_id`, `Room`, `Time`, `Session`, `Faculty_id`) VALUES
+INSERT INTO `time_table_edit` (`tid`, `Day`, `Course_id`, `Semester`, `Section`, `Subject_id`, `Room`, `Time`, `session_id`, `Faculty_id`) VALUES
 (2, 'Monday', '0', 1, 'A', 'nm', 45, '09_00_09_50', ' 2010-2011', '1'),
 (3, 'Tuesday', '0', 1, 'A', 'AV', 123, '10_40_11_30', ' 2015-2016', '2'),
 (4, 'Monday', 'BCA', 1, 'A', '', 1, '09_00_09_50', '2014', ''),
-(5, 'Monday', 'BCA', 1, 'B', 'BCA101', 5, '09_50_10_40', '2017', '');
+(5, 'Monday', 'BCA', 1, 'B', 'BCA101', 5, '09_50_10_40', '2017', ''),
+(6, 'Tuesday', 'BCA', 1, 'A', 'BCA103', 12, '09_50_10_40', '2018', 'ankush12');
 
 -- --------------------------------------------------------
 
@@ -1549,10 +1555,9 @@ CREATE TABLE `upload_notes` (
 --
 
 INSERT INTO `upload_notes` (`notes_id`, `upload_notes`, `subject_id`, `faculty_id`, `date_notes`, `status`, `username`) VALUES
-(1, 0x78, 'BCA101', 'ravi', '0000-00-00', 1, ''),
-(2, 0x322e706466, 'BCA101', 'ravi', '0000-00-00', 1, ''),
-(3, 0x332e706466, 'BCA101', 'ravi', '0000-00-00', 1, ''),
-(4, 0x342e706466, 'BCA101', 'ravi', '2019-05-13', 1, '');
+(7, 0x372e706466, 'BCA101', 'ravi', '0000-00-00', 1, ''),
+(8, 0x78, 'BCA101', 'ravi', '0000-00-00', 1, ''),
+(9, 0x78, 'BCA101', 'ravi', '2019-05-20', 1, '');
 
 -- --------------------------------------------------------
 
@@ -1634,6 +1639,8 @@ INSERT INTO `users_menu` (`users_menu_id`, `users_id`, `sidebar_id`, `status`, `
 
 CREATE TABLE `weekly` (
   `add_class_id` int(11) NOT NULL,
+  `faculty_id` varchar(50) NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
   `lectureid` varchar(10) NOT NULL,
   `lesson_id` varchar(10) NOT NULL,
   `week_id` int(10) NOT NULL,
@@ -1651,9 +1658,8 @@ CREATE TABLE `weekly` (
 -- Dumping data for table `weekly`
 --
 
-INSERT INTO `weekly` (`add_class_id`, `lectureid`, `lesson_id`, `week_id`, `start_date`, `end_date`, `no_of_lecture_schedule`, `no_of_lost_due_to_holiday`, `no_of_lost_due_to_cl`, `no_extra_taken`, `no_of_lecture_actual_taken`, `description_of_topic`) VALUES
-(25, '', '', 1, '2019-04-11', '2019-05-08', 11, 2, 2, 2, 12, ''),
-(35, '', '', 2, '2019-05-18', '2019-05-19', 1, 0, 0, 0, 1, '');
+INSERT INTO `weekly` (`add_class_id`, `faculty_id`, `subject_id`, `lectureid`, `lesson_id`, `week_id`, `start_date`, `end_date`, `no_of_lecture_schedule`, `no_of_lost_due_to_holiday`, `no_of_lost_due_to_cl`, `no_extra_taken`, `no_of_lecture_actual_taken`, `description_of_topic`) VALUES
+(1, '2019058', 'BCA203', '', '', 5, '2019-05-20', '2019-05-20', 1, 3, 1, 1, 1, '');
 
 --
 -- Indexes for dumped tables
@@ -1916,31 +1922,31 @@ ALTER TABLE `add_class`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `assignment`
 --
 ALTER TABLE `assignment`
-  MODIFY `Assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `assignment_checker`
 --
 ALTER TABLE `assignment_checker`
-  MODIFY `assignment_checker_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `assignment_checker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `assign_subject`
 --
 ALTER TABLE `assign_subject`
-  MODIFY `assign_subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `assign_subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `batch`
@@ -1988,13 +1994,13 @@ ALTER TABLE `form_type`
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
-  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `marks_type`
@@ -2018,7 +2024,7 @@ ALTER TABLE `section`
 -- AUTO_INCREMENT for table `semester`
 --
 ALTER TABLE `semester`
-  MODIFY `semester_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `semester_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `sidebar`
@@ -2030,7 +2036,7 @@ ALTER TABLE `sidebar`
 -- AUTO_INCREMENT for table `sign_up`
 --
 ALTER TABLE `sign_up`
-  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `s_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `std_academic`
@@ -2060,7 +2066,7 @@ ALTER TABLE `std_personal`
 -- AUTO_INCREMENT for table `studentmarks`
 --
 ALTER TABLE `studentmarks`
-  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `student_photo`
@@ -2084,13 +2090,13 @@ ALTER TABLE `sub_sidebar`
 -- AUTO_INCREMENT for table `time_table_edit`
 --
 ALTER TABLE `time_table_edit`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `upload_notes`
 --
 ALTER TABLE `upload_notes`
-  MODIFY `notes_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `notes_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -2108,7 +2114,7 @@ ALTER TABLE `users_menu`
 -- AUTO_INCREMENT for table `weekly`
 --
 ALTER TABLE `weekly`
-  MODIFY `week_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `week_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -4,11 +4,12 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 class Lectureedit_model extends CI_Model
 {
 
-	function fetchtable($clsid)
+	function fetchtable($clsid,$subid)
 	{  
 		
 		$this->db->select('a.*');
-		$this->db->where('a.add_class_id', $clsid);
+		$this->db->where('a.add_class_id', $clsid,$subid);
+		$this->db->where('subject_id', $subid);
 		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
 	
 		$this->db->from('lecture a');

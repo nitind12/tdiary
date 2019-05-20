@@ -657,12 +657,12 @@ class Add_class_model extends CI_Model
 		}
 		function reports_attendance_modalsCA()
 		{
-			$consolidate_= array();	
+			$consolidate= array();	
 			$subject_id=$this->input->post('Subject_Name');
 			$course_id=$this->input->post('Course');
 			$add_class_id=$this->input->post('Class');
 			$session_id=$this->input->post('Session');
-			$semseter_id=$this->input->post('');
+			$semseter_id=$this->input->post('Semester');
 			$btn1= $this->input->post('d1');
 			$btn2= $this->input->post('d2');
 		$this->db->distinct('date');
@@ -678,8 +678,8 @@ class Add_class_model extends CI_Model
 		$this->db->join(' faculty_personal c', 'c.faculty_id=a.faculty_id');
 		
 		$query = $this->db->get();
-		echo $this->db->last_query();die();
-		//return $query->result();
+		//echo $this->db->last_query();die();
+		return $query->result();
 		
 		}
 		

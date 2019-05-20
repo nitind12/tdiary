@@ -24,16 +24,21 @@
 					<!--<table class="table" >-->
 						<tbody>
 							<tr>	
-									<td >Subject:<br>
-									  	<!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
-									  	 </select>
-									</td>
-									
-									
+								<td>Subject:<br>
+									<!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
+									<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+										<option value ="">Select here...</option>
+										<?php foreach ($subject as  $item) { ?>
+                                                 <option value="<?php echo $item->subject_id;?>">
+                                                 	<?php echo $item->subject_name?></option>
+                                                    <?php }?>
+                                                
+										
+									</select>
+								</td>
 										
 									<td>Assignment No:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span4" name="Assignment_no" id="Assignment_no" >
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Assignment_no" id="Assignment_no" >
 									  		<option value ="">Select here..</option>
 									  	 <option value ="1">1</option>
 									  	 <option value ="2">2</option>

@@ -26,6 +26,7 @@
 								<td>Subject:<br>
 									<!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
 									<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+										<option value ="">Select here...</option>
 										<?php foreach ($subject as  $item) { ?>
                                                  <option value="<?php echo $item->subject_id;?>">
                                                  	<?php echo $item->subject_name?></option>

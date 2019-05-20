@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2019 at 08:58 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Generation Time: May 19, 2019 at 07:38 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -48,8 +48,8 @@ CREATE TABLE `add_class` (
 INSERT INTO `add_class` (`add_class_id`, `session_id`, `course_id`, `semester_id`, `section_id`, `date_of_commencement`, `date_of_completion`, `syllabus_pdf`, `username`, `status`) VALUES
 (1, '2018', 'BCA', '2', 'A', '2018-02-01', '2018-05-31', '1.pdf', 'ra', 1),
 (2, '2018', 'BCA', '2', 'B', '2018-02-01', '2018-05-31', '2.pdf', 'ra', 1),
-(3, '2018', 'BCA', '4', 'A', '2018-02-01', '2018-05-31', '3.pdf', 'ra', 1),
-(4, '2018', 'BCA', '4', 'B', '2018-02-01', '2018-05-31', '4.pdf', 'ra', 1),
+(3, '2019', 'BCA', '4', 'A', '2018-02-01', '2018-05-31', '3.pdf', 'ra', 1),
+(4, '2019', 'BCA', '4', 'B', '2018-02-01', '2018-05-31', '4.pdf', 'ra', 1),
 (5, '2019', 'BBA', '3', 'A', '2019-02-01', '2019-05-31', '5.pdf', 'ra', 1),
 (6, '2019', 'BBA', '3', 'B', '2019-02-01', '2019-05-31', '6.pdf', 'ra', 1);
 
@@ -161,8 +161,23 @@ CREATE TABLE `attendance` (
   `status` tinyint(1) NOT NULL,
   `student_id` varchar(50) NOT NULL,
   `faculty_id` varchar(50) NOT NULL,
+  `subject_id` varchar(15) NOT NULL,
   `description_if_any` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`add_class_id`, `attendance_id`, `date`, `time`, `roll_no`, `attendance_status`, `username`, `status`, `student_id`, `faculty_id`, `subject_id`, `description_if_any`) VALUES
+(1, 13, '2019-05-18', '02:00:00.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 14, '2019-05-18', '02:00:00.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 15, '2019-05-18', '02:00:00.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 16, '2019-05-18', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(1, 17, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 18, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 19, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 20, '2019-05-19', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', '');
 
 -- --------------------------------------------------------
 
@@ -590,41 +605,14 @@ CREATE TABLE `section` (
 --
 
 INSERT INTO `section` (`s_no`, `session_id`, `session_class_id`, `student_id`, `status`, `username`) VALUES
-(1, '2015', '26', '403', 1, 'ra'),
-(2, '2015', '25', '118', 1, 'ra'),
-(3, '2015', '25', '119', 1, 'ra'),
-(4, '2015', '25', '120', 1, 'ra'),
-(5, '2015', '26', '121', 1, 'ra'),
-(6, '2015', '26', '122', 1, 'ra'),
-(7, '2018', '28', '4', 1, 'ra'),
-(8, '2018', '28', '5', 1, 'ra'),
-(9, '2018', '28', '6', 1, 'ra'),
-(10, '2018', '28', '7', 1, 'ra'),
-(11, '2018', '28', '8', 1, 'ra'),
-(12, '2018', '28', '9', 1, 'ra'),
-(13, '2018', '29', '10', 1, 'ra'),
-(14, '2018', '29', '11', 1, 'ra'),
-(15, '2018', '29', '12', 1, 'ra'),
-(16, '2018', '29', '13', 1, 'ra'),
-(17, '2018', '29', '14', 1, 'ra'),
-(18, '2018', '29', '17', 1, 'ra'),
-(19, '2016', '36', '45', 1, 'ra'),
-(21, '2016', '35', '98', 1, 'ra'),
-(22, '2016', '35', '96', 1, 'ra'),
-(23, '2016', '35', '95', 1, 'ra'),
-(24, '2016', '35', '99', 1, 'ra'),
-(25, '2016', '35', '', 1, 'ra'),
-(26, '2016', '35', '97', 1, 'ra'),
-(27, '2019', '37', '98', 1, 'ra'),
-(28, '2019', '37', '96', 1, 'ra'),
-(29, '2019', '37', '95', 1, 'ra'),
-(30, '2019', '37', '97', 1, 'ra'),
-(31, '2019', '37', '99', 1, 'ra'),
-(32, '2019', '37', '1', 1, 'ra'),
-(33, '2019', '37', '2', 1, 'ra'),
-(34, '2019', '37', '3', 1, 'ra'),
-(35, '2019', '37', '130', 1, 'ra'),
-(36, '2016', '34', '127', 1, 'ra');
+(49, '2018', '1', '2019051', 1, 'ra'),
+(50, '2018', '1', '2019056', 1, 'ra'),
+(51, '2018', '1', '2019053', 1, 'ra'),
+(52, '2018', '1', '20190512', 1, 'ra'),
+(53, '2018', '2', '2019054', 1, 'ra'),
+(54, '2018', '2', '2019055', 1, 'ra'),
+(55, '2018', '2', '2019052', 1, 'ra'),
+(56, '2018', '2', '20190511', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -1020,8 +1008,9 @@ CREATE TABLE `studentmarks` (
   `add_class_id` int(11) NOT NULL,
   `roll_no` int(10) NOT NULL,
   `marks_type_id` int(12) NOT NULL,
-  `marks` int(4) NOT NULL,
   `totalmarks` int(5) NOT NULL,
+  `marks` int(4) NOT NULL,
+  `subject_id` varchar(50) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1030,60 +1019,11 @@ CREATE TABLE `studentmarks` (
 -- Dumping data for table `studentmarks`
 --
 
-INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_type_id`, `marks`, `totalmarks`, `status`, `username`) VALUES
-(1, 25, 118, 0, 7, 30, 1, 'ra'),
-(2, 25, 119, 0, 5, 30, 1, 'ra'),
-(3, 25, 120, 0, 6, 30, 1, 'ra'),
-(4, 29, 10, 0, 14, 30, 1, 'ra'),
-(5, 29, 11, 0, 14, 30, 1, 'ra'),
-(6, 29, 12, 0, 14, 30, 1, 'ra'),
-(7, 29, 13, 0, 14, 30, 1, 'ra'),
-(8, 29, 14, 0, 14, 30, 1, 'ra'),
-(9, 29, 17, 0, 14, 30, 1, 'ra'),
-(10, 26, 121, 0, 14, 30, 1, 'ra'),
-(11, 26, 122, 0, 0, 30, 1, 'ra'),
-(12, 26, 403, 0, 0, 30, 1, 'ra'),
-(13, 26, 121, 0, 14, 30, 1, 'ra'),
-(14, 26, 122, 0, 12, 30, 1, 'ra'),
-(15, 26, 403, 0, 15, 30, 1, 'ra'),
-(16, 26, 121, 0, 14, 30, 1, 'ra'),
-(17, 26, 122, 0, 15, 30, 1, 'ra'),
-(18, 26, 403, 0, 4, 30, 1, 'ra'),
-(19, 29, 10, 0, 14, 30, 1, 'ra'),
-(20, 29, 11, 0, 14, 30, 1, 'ra'),
-(21, 29, 12, 0, 9, 30, 1, 'ra'),
-(22, 29, 13, 0, 9, 30, 1, 'ra'),
-(23, 29, 14, 0, 18, 30, 1, 'ra'),
-(24, 29, 17, 0, 7, 30, 1, 'ra'),
-(25, 25, 118, 0, 14, 30, 1, 'ra'),
-(26, 25, 119, 0, 14, 30, 1, 'ra'),
-(27, 25, 120, 0, 14, 30, 1, 'ra'),
-(28, 26, 121, 0, 14, 30, 1, 'ra'),
-(29, 26, 122, 0, 14, 30, 1, 'ra'),
-(30, 26, 403, 0, 14, 30, 1, 'ra'),
-(31, 26, 121, 0, 14, 30, 1, 'ra'),
-(32, 26, 122, 0, 14, 30, 1, 'ra'),
-(33, 26, 403, 0, 14, 30, 1, 'ra'),
-(34, 25, 118, 1, 14, 30, 1, 'ra'),
-(35, 25, 119, 1, 14, 30, 1, 'ra'),
-(36, 25, 120, 1, 14, 30, 1, 'ra'),
-(37, 25, 118, 1, 9, 30, 1, 'ra'),
-(38, 25, 119, 1, 14, 30, 1, 'ra'),
-(39, 25, 120, 1, 14, 30, 1, 'ra'),
-(40, 25, 118, 2, 14, 30, 1, 'ra'),
-(41, 25, 119, 2, 14, 30, 1, 'ra'),
-(42, 25, 120, 2, 14, 30, 1, 'ra'),
-(43, 25, 118, 1, 14, 30, 1, 'ra'),
-(45, 25, 120, 1, 14, 30, 1, 'ra'),
-(46, 25, 118, 1, 14, 30, 1, 'ra'),
-(47, 25, 119, 1, 14, 30, 1, 'ra'),
-(48, 25, 120, 1, 9, 30, 1, 'ra'),
-(49, 35, 0, 1, 12, 30, 1, 'Aman12'),
-(50, 35, 95, 1, 12, 30, 1, 'Aman12'),
-(51, 35, 96, 1, 1, 30, 1, 'Aman12'),
-(52, 35, 97, 1, 17, 30, 1, 'Aman12'),
-(53, 35, 98, 1, 1, 30, 1, 'Aman12'),
-(54, 35, 99, 1, 60, 30, 1, 'Aman12');
+INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_type_id`, `totalmarks`, `marks`, `subject_id`, `status`, `username`) VALUES
+(59, 1, 2019051, 1, 30, 14, 'BCA203', 1, 'ankush12'),
+(60, 1, 20190512, 1, 30, 25, 'BCA203', 1, 'ankush12'),
+(61, 1, 2019053, 1, 30, 30, 'BCA203', 1, 'ankush12'),
+(62, 1, 2019056, 1, 30, 30, 'BCA203', 1, 'ankush12');
 
 -- --------------------------------------------------------
 
@@ -2000,7 +1940,7 @@ ALTER TABLE `assign_subject`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `batch`
@@ -2072,7 +2012,7 @@ ALTER TABLE `qualification`
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `s_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `s_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `semester`
@@ -2120,7 +2060,7 @@ ALTER TABLE `std_personal`
 -- AUTO_INCREMENT for table `studentmarks`
 --
 ALTER TABLE `studentmarks`
-  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `student_photo`

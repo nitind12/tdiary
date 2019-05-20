@@ -30,6 +30,7 @@ class Edittimetablecontroller extends CI_Controller{
 		$data['page_'] = 'edittimetable';
 		$data['Semester1'] = $this->im->getmarkstype1();
 		$data['course1'] = $this->im->getmarkstype4();
+		//$data['course1'] = $this->im->getmarkstype();
 		$data['Session1'] = $this->im->getmarkstype6();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
@@ -68,6 +69,13 @@ class Edittimetablecontroller extends CI_Controller{
         $bool_= $this->um->updatedColumn();
         echo $data; 
     }
+
+
+    function viewmarks(){
+		$this->load->model('Edittimrtablemodel','im');
+		$data['marks'] = $this->im->savingdata3();
+        echo json_encode($data);
+	}
 
 	
 }

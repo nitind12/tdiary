@@ -32,9 +32,9 @@ $(document).ready(function()
 		
 		});
 
-	$('#btnsubmit').click(function(){
+	$('#btnsubmit1').click(function(){
 		
-		var data_ = $('#myform100').serialize();
+		var data_ = $('#myform1001').serialize();
 
 
 		$.ajax({
@@ -73,22 +73,22 @@ $(document).ready(function()
 						
 				}
 				else{
-					$('#timetablehere').html('no data found');
+					$('#timetablehere1').html('no data found');
 				}
 
 			}, error: function(xhr, error, status){
-				$('#timetablehere').html(xhr.responseText);
+				$('#timetablehere1').html(xhr.responseText);
 			}
 
 		});
 	});
-$('#btnsubmit').click(function(){
+$('#btnsubmit2').click(function(){
 		
 		var data_ = $('#myform100').serialize();
 
 
 		$.ajax({
-			url:site_url_+ '/viewtimetablecontroller/viewmarks',
+			url:site_url_+ '/Edittimetablecontroller/viewmarks',
 			method: 'post',
 			data: data_,
 			datatype: 'json',
@@ -123,11 +123,11 @@ $('#btnsubmit').click(function(){
 						
 				}
 				else{
-					$('#timetablehere').html('no data found');
+					$('#timetablehere2').html('no data found');
 				}
 
 			}, error: function(xhr, error, status){
-				$('#timetablehere').html(xhr.responseText);
+				$('#timetablehere2').html(xhr.responseText);
 			}
 
 		});

@@ -121,5 +121,31 @@ function del($a){
 		$this->db->where('Student_Roll',$id);
 		$this->db->insert('test',$data);
 	}*/
+
+
+	
 }
+/*function timetable()
+	{
+		$intel = array();
+		$Day = $this->input->post('day');
+		
+		
+		$this->db->distinct('a.Day');
+		$this->db->select('a.*');
+		$this->db->where('a.Day',$Day);
+		
+		$this->db->from('time_table_edit a');
+		
+
+		$q = $this->db->get('time_table_edit');
+		return $q->result();
+		//'status' =>'1';
+		//'username' ->$this->session->userdata('user');
+		//echo  $this->db->last_query();
+	}*/
+
+
+
+
 ?>

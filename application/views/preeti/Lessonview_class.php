@@ -49,6 +49,7 @@
                   <input type="hidden" name="addclassidED" id="addclassidED">
                   <input type="hidden" name="sessionidED" id="sessionidED">
                   <input type="hidden" name="courseidED" id="courseidED">
+                  <input type="hidden" name="subjectidED" id="subjectidED">
               
               <?php
               echo form_close();

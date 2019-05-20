@@ -106,7 +106,7 @@
                   <div class="control-group">
                       <div class="controls">
                         <div style="float: right;"> 
-                        <input type="submit"class="btn btn-primary" value="Search" id="cmbAttendanceReport">
+                        <input type="submit"class="btn btn-primary" value="Search" id="cmbAttendanceReportc">
                       </div>
                     </div>
                   </div>

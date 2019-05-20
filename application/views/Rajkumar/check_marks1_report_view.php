@@ -25,12 +25,19 @@
 						<tbody>
 								<td>Subject:<br>
 									<!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
-									<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" ></select>
+									<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+										<?php foreach ($subject as  $item) { ?>
+                                                 <option value="<?php echo $item->subject_id;?>">
+                                                 	<?php echo $item->subject_name?></option>
+                                                    <?php }?>
+                                                
+										
+									</select>
 								</td>
 
 								<td>Type of Marks:<br>
 									  	<!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
-									<select tabindex="1"data-placeholder="Select here.." class="span4" name="marks_type_id" id="marks_type_id"  >
+									<select tabindex="1"data-placeholder="Select here.." class="span8" name="marks_type_id" id="marks_type_id"  >
 									  	<option value ="">Select marks type...</option>
 									  		<?php foreach($marks_type as $item){?>
 									  			<option value="<?php echo $item->marks_type_id;?>">

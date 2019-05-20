@@ -91,6 +91,16 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
+		function getstudentsubj()
+		{
+			
+		$this->db->where('course_id',$this->session->userdata('cos'));
+		$this->db->where('semester_id',$this->session->userdata('tan'));
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
 		function getuploadsubject()
 		{
 			$course_id = $this->input->post('Course');

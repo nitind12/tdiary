@@ -18,6 +18,7 @@ $(document).ready(function()
 			$('#addclassidED').val(arr[0]);
 			$('#sessionidED').val(arr[1]);
 			$('#courseidED').val(arr[2]);
+			$('#subjectidED').val(arr[3]);
 
 			$('#frmlectureviewclass').submit();
 		});	
@@ -44,6 +45,7 @@ $(document).ready(function()
 			$('#addclassidED').val(arr[0]);
 			$('#sessionidED').val(arr[1]);
 			$('#courseidED').val(arr[2]);
+			$('#subjectidED').val(arr[3]);
 
 			$('#frmlessonviewclass').submit();
 		});	

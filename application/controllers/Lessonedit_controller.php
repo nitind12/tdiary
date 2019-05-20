@@ -44,7 +44,7 @@ class Lessonedit_controller extends CI_Controller
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
             $subid = $this->input->post('subjectidED');
-
+           
             $data['dashboard1'] = $this->am->getDashboardMenu();
             $data['menu'] = $this->am->getMenu();
             $data['submenu'] = $this->am->getSubmenu();

@@ -13,8 +13,8 @@ class Weeklyedit_model extends CI_Model
 		//return $query->result();
 
 		$this->db->select('a.*');
-		$this->db->where('a.add_class_id', $clsid,$subid);
-		$this->db->where('subject_id', $subid);
+		$this->db->where('a.add_class_id', $clsid);
+		$this->db->where('a.subject_id', $subid);
 		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
 
 		$this->db->from('weekly a');

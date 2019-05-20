@@ -228,26 +228,36 @@ public function attendance_report_View_Consolidate2()
         $data['reports_'] = $data['reports'] = $this->am->reports_attendance_modals($no_);
         echo json_encode($data);
     }
-    public function view_attendance_controller($no_,$sess)  
+    public function view_attendance_controller()  
     {  
-        $data['title'] = "ONLINE_ATTENDANCE";
-        $data['page_'] = "View-Attendance-Reports";
-        // Fetcing Master Data
-        $data['cls_in_session'] = $this->am->fetchCourses();
-        $data['session__'] = $this->am->fetchSession();
-        $data['subject__'] = $this->am->fetchSubject();
-        $data['dashboard1'] = $this->am->getDashboardMenu();
-        $data['menu'] = $this->am->getMenu();
-        $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
-        // --------------------
-        $data['add_class_in'] = $this->am->add_view_attendance($no_);
-        $data['reports'] = $this->am->reports_attendance_modals();
-        $data['no_'] = $no_;
-        $data['sess_'] = $sess;
-        $this->load->view('templates/header', $data);
-        $this->load->view('myravipage', $data);  
-        $this->load->view('templates/footer');
+        if($this->input->post('addclassidED'))
+        {
+            $no_ = $this->input->post('addclassidED');
+            $sess = $this->input->post('sessionidED');
+
+            $data['title'] = "ONLINE_ATTENDANCE";
+            $data['page_'] = "View-Attendance-Reports";
+            // Fetcing Master Data
+            $data['cls_in_session'] = $this->am->fetchCourses();
+            $data['session__'] = $this->am->fetchSession();
+            $data['subject__'] = $this->am->fetchSubject();
+            $data['dashboard1'] = $this->am->getDashboardMenu();
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
+            $data['last'] = $this->am->getlastMenu();
+            // --------------------
+            $data['add_class_in'] = $this->am->add_view_attendance($no_);
+            $data['reports'] = $this->am->reports_attendance_modals();
+            $data['no_'] = $no_;
+            $data['sess_'] = $sess;
+            $this->load->view('templates/header', $data);
+            $this->load->view('myravipage', $data);  
+            $this->load->view('templates/footer');
+        }
+        else
+        {
+            redirect("main/view_attendance_controller");
+        }
     }
      public function Edit_Form_controller()  /////internal marks page load as like input box;
     {  
@@ -309,23 +319,36 @@ public function attendance_report_View_Consolidate2()
 
 
 
-    public function takeattendance_controller($no_,$sess)  //showing the page of aatendance;
+    public function takeattendance_controller()  //showing the page of aatendance;
     {  
-        $data['title'] = "TAKE-ONLINE_ATTENDANCE";
-        $data['page_'] = "attendance_take";        
-        $this->load->view('templates/header', $data);
-         //  $data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);
-         //  $data['add_attend'] = $this->am->add_attendance($sess, $crs);
-       
-        $data['dashboard1'] = $this->am->getDashboardMenu();
-        $data['menu'] = $this->am->getMenu();
-        $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
-         $data['add_class_in'] = $this->am->add_view_attendance($no_);
-        $data['add_attend'] = $this->am->add_attendance($sess, $no_);
-        $this->load->view('myravipage', $data);  
-        $this->load->view('templates/footer');
+
+        if($this->input->post('addclassidED'))
+        {
+            $no_ = $this->input->post('addclassidED');
+            $sess = $this->input->post('sessionidED');
+
+            $data['title'] = "TAKE-ONLINE_ATTENDANCE";
+            $data['page_'] = "attendance_take";        
+            $this->load->view('templates/header', $data);
+             //  $data['add_class_in'] = $this->am->add_view_attendance($sess, $crs);
+             //  $data['add_attend'] = $this->am->add_attendance($sess, $crs);
+           
+            $data['dashboard1'] = $this->am->getDashboardMenu();
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
+            $data['last'] = $this->am->getlastMenu();
+             $data['add_class_in'] = $this->am->add_view_attendance($no_);
+            $data['add_attend'] = $this->am->add_attendance($sess, $no_);
+            $this->load->view('myravipage', $data);  
+            $this->load->view('templates/footer');
+        }
+        else
+        {
+            redirect('Main/takeattendance_controller');
+        }
     }
+
+
  public function asignsubject_controller()               ///showing the page of submit the data;
     {  
         $this->am->assignsubject_modals(); 

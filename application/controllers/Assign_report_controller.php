@@ -23,9 +23,11 @@ class assign_report_controller extends CI_Controller{
         $data['last'] = $this->am->getlastMenu();
         $data['course1'] = $this->am->getCourse1();
         $data['Session1'] = $this->am->getSession1();
+        $data['assignment_'] = $this->am->getAssiG();
+       
         $data['Semester1'] = $this->am->getSemester1();
         $data['subject'] = $this->am->getstudentsubj();
-       
+        
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');

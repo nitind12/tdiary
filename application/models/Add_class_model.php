@@ -2,7 +2,16 @@
 <?php
 class Add_class_model extends CI_Model
 {
-	
+	function getAssiG()
+		{
+			
+		$this->db->distinct('Assignment_no');
+		$this->db->select('a.*');
+		$this->db->from('assignment a');
+		$query = $this->db->get('');
+		return $query->result();
+		}
+		
 	function getDashboardMenu()
 		{
 		$this->db->select('a.*');
@@ -91,6 +100,7 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
+		
 		function getstudentsubj()
 		{
 			

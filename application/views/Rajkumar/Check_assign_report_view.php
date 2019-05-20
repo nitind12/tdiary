@@ -39,13 +39,12 @@
 									<td>Assignment No:<br>
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Assignment_no" id="Assignment_no" >
 									  		<option value ="">Select here..</option>
-									  	 <option value ="1">1</option>
-									  	 <option value ="2">2</option>
-									  	 <option value ="3">3</option>
-									  	 <option value ="4">4</option>
-									  	 <option value ="5">5</option>
-									  	 <option value ="6">6</option>
-									  </select>
+									  	<?php foreach ($assignment_ as  $item) { ?>
+                                                 <option value="<?php echo $item->Assignment_no;?>">
+                                                 	<?php echo $item->Assignment_no?></option>
+                                                    <?php }?>
+                                                
+										 </select>
 									</td>
 									
 										

@@ -25,7 +25,7 @@
                         <td><b><?php echo $item->course_id?></b> </td>
                         <td> <b><?php echo $item->semester_id?></b> </td>
                         <td> <b><?php  echo $item->section_id?></b> </td>
-                       <td> <b><?php echo $item->subject_id;?></b></td>
+                       <td> <b><?php echo $item->subject_name;?></b></td>
                      </tr>        
               <?php 
                 }
@@ -36,15 +36,21 @@
          
              <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Check_Assignment_Controller/check_assignment_marks_enter');?>">
             <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
+
                   <div style="float:right">
                     <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date1" id="date1"> </div>
+                     <?php foreach($add_class_in as $item){?>
+             
+                    <input type="hidden" value="<?php echo $item->subject_id;?>" name="subject" id="subject">
+                     <?php } ?></div>
                     
                   <thead>
                     <tr>
                      <th align="center">Roll-no</th>
                       <th align="center">Student Name</th>
-                      <th align="center">Assignment_NO</th>
                       <th align="center">Status</th>
+                      
+                      <th align="center">Assignment_NO</th>
                       <th align="center">Grade</th>
                         </tr>
                   </thead>
@@ -59,28 +65,33 @@
                       </td>
                       <td align="center"><?php echo $item->first_name; ?></td>
                       <td>
+                       <label class="radio inline">
+                      
+                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios1" value="1">
+                             CHECKED
+                        </label> 
+                        <label class="radio inline">
+                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value="0">
+                           UNCHECKED
+                        </label> 
+                       </td>
+                      <td>
                       <!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
-                      <select tabindex="1"data-placeholder="Select here.." class="span8" name="Assignment_no" id="Assignment_no"  >
+                      <select tabindex="1"data-placeholder="Select here.." class="span8" name="assignment_no" id="assignment_no"  >
                         <option value ="">Select here...</option>
-                        <?php foreach($marks_type as $item){?>
+                        
+                        <?php foreach($marks_type as $item) { ?>
                           <option value="<?php echo $item->Assignment_no;?>">
                             <?php echo $item->Assignment_no?></option>
 
                         <?php
-                      }?>
+                      }
+
+                      ?>
                        
                     </select>
                     </td>
-                      <td>
-                     	 <label class="radio inline">
-                          <input type="radio" name="optionsRadios[]" id="optionsRadios1" value="1">
-                             CHECKED
-                        </label> 
-                        <label class="radio inline">
-                          <input type="radio" name="optionsRadios[]" id="optionsRadios2" value="0">
-                           UNCHECKED
-                        </label> 
-                       </td>
+                      
                        <td>
                         <select tabindex="1" data-placeholder="" class="span9" name=grade[]>
                           <option value="">Select Grade</option>

@@ -95,9 +95,10 @@ class Edit_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
+            $subid = $this->input->post('subjectidED');
             
             $data['add_class_in'] = $this->am->add_view_attendance($no_);
-            $data['t_diary'] = $this->obj->fetchtable($no_);
+            $data['t_diary'] = $this->obj->fetchtable($no_,$subid);
 
                 $data['dashboard1'] = $this->am->getDashboardMenu();
                 $data['menu'] = $this->am->getMenu();

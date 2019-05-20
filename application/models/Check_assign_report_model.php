@@ -7,6 +7,7 @@ class Check_assign_report_model extends CI_Model{
 		$Subject = $this->input->post('Subject');
 		$assignment_id =$this->input->post('assignment_no');
 		
+
 		$this->db->distinct('a.add_class_id');
 		$this->db->select('a.*,b.roll_no,b.assignment_id,b.assignment_status,b.checker_date,b.Grade,c.first_name');
 		$this->db->where('a.session_id',$this->session->userdata('sin'));
@@ -23,8 +24,8 @@ class Check_assign_report_model extends CI_Model{
 		$this->db->join('std_personal c', 'c.Student_id=b.roll_no');
 
 		$q = $this->db->get();
-		//echo $this->db->last_query();
-		return $q->result();
+		echo $this->db->last_query();
+		//return $q->result();
 	}
 	
 

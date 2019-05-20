@@ -462,10 +462,11 @@ $('#btnViewassignmentmarks').click(function(){
 		
 		$.ajax({
 			url:site_url_+ '/check_assign_report_controller/assignment_report',
-			method: 'post',
+			method:'post',
 			data: data_,
+			
 			success: function(intel){
-
+alert(data);
 				var obj = JSON.parse(intel);
 				var len = obj.marks.length;
 				

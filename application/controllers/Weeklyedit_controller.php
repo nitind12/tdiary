@@ -57,7 +57,7 @@ class Weeklyedit_controller extends CI_Controller
         }
     }
 
-    public function details($no_,$sd,$ed,$wi)
+    public function details($no_,$sd,$ed,$wi,$subid)
     {  
         $data['title'] = "Weekly details";
         $data['page_'] = "Weeklydetails";
@@ -67,7 +67,7 @@ class Weeklyedit_controller extends CI_Controller
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
        
-         $data['t_diary'] = $this->obj->fetchtable($no_);
+         $data['t_diary'] = $this->obj->fetchtable($no_,$subid);
 
          $data['t_diary'] = $this->obj->weeklyreport($wi);
 

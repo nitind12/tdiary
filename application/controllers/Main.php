@@ -192,7 +192,7 @@ class Main extends CI_Controller {
         
     }
 
- public function attendance_report_View_Consolidate($no_)  
+ public function attendance_report_View_Consolidate()  
     {  
         $data['title'] = "View-Consolidate";
         $data['page_'] = "view_attendance_consolidate";
@@ -203,7 +203,6 @@ class Main extends CI_Controller {
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
 
-       $data['add_class_in'] = $this->am->add_view_attendance($no_);
        
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
@@ -220,6 +219,7 @@ public function attendance_report_View_Consolidate2()
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+         
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');

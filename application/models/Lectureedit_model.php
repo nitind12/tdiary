@@ -18,7 +18,7 @@ class Lectureedit_model extends CI_Model
 	function lecture_saving_data_modal()
 	{
 		$addclass_id=$this->input->post('addclass_id');
-
+		$subject_id=$this->input->post('subject_id');
 		for($i=0; $i<count($addclass_id); $i++)
 		{			
 
@@ -27,7 +27,7 @@ class Lectureedit_model extends CI_Model
 				'unit' => $this->input->post('txtunit'),
 				'topic'=>$this->input->post('topic'),
 				'no_of_lecture'=>$this->input->post('Lecture_no'),
-			//	'total_lecture'=>$this->input->post('total'),
+				'subject_id'=>$subject_id,
 
 	            'faculty_id'=>'121',
 				'status'=>'1',

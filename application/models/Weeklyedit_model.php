@@ -42,6 +42,7 @@ class Weeklyedit_model extends CI_Model
 			'no_extra_taken' => $this->input->post('extra_taken'),
 			'no_of_lecture_actual_taken' => $this->input->post('actual_taken'),
 			'subject_id'=>$subject_id,
+				'faculty_id'=>$this->session->userdata('facultyid'),
 				);
 		
 		$this->db->insert('weekly',$data);

@@ -378,6 +378,13 @@ public function attendance_report_View_Consolidate2()
         
         redirect('Main/Promoted_Class_controller');
     }
+    function reports_attendance_controller_CA()
+    {
+        $data['consolidate']=$this->am->reports_attendance_modalsCA();
+        echo json_encode($data);
+    
+    }
+        
  function promotedClass()
  {
          $this->am->addpromotedstudent();

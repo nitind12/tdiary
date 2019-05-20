@@ -16,18 +16,86 @@
  <div class="module-body">
     <form name="frmdaywise" id="frmdaywise"  Method="POST" action="<?php echo site_url('main/student_report_daywise_controller');?>">
             <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+              <tbody>
           <tr>
             <tr>
-                <td>
-                 <div class="control-group">
-                      <div class="controls">
-                         Date From:
-                 <br/>
-                          <input type="date" name="d1" class="span2">
+                   <td>
+                   <div class="control-group">
+                     <label class="control-label" for="basicinput">Session </label>
+                     <div class="controls">
+                        <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Session" id="Session">
+                             <option value="">Select Session</option>
+                                <?php foreach ($Session1 as  $item) { ?>
+                                  <option value="<?php echo $item->s_id;?>">
+                                     <?php echo $item->session?></option>
+                                        <?php }?>
+                          </select>
                       </div>
                     </div>
-                </td>
-                 <td>
+                 </td>
+                    <td>
+                   <div class="control-group">
+                     <label class="control-label" for="basicinput">Course</label>
+                          <div class="controls">
+                           <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Course" id="Course">
+                                             <option value="">Select Course</option>
+                                                <?php foreach ($course1 as  $item) { ?>
+                                                 <option value="<?php echo $item->course_id;?>">
+                                                  <?php echo $item->name_of_courses?></option>
+                                                    <?php }?>
+                                                 </select>
+                                                
+                      </div>
+
+                      </div>
+                 </td>
+                    <td>
+                   <div class="control-group">
+                     <label class="control-label" for="basicinput">Semester</label>
+                      <div class="controls">
+                       <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Semester" id="Semester">
+                      <option value="">Select Semester</option>
+                                                <?php foreach ($Semester1 as  $item) { ?>
+                                                 <option value="<?php echo $item->semester_id;?>">
+                                                  <?php echo $item->no_of_semester?></option>
+                                                    <?php }?>
+                                                 </select>
+                                             
+                        
+                      </div>
+                      </div>
+                 </td>
+      
+                      <td>
+                     <div class="control-group">
+                       <label class="control-label" for="basicinput">Class</label>
+                          <div class="controls">
+                              <input type="text" name="Class"  id="Class" class="span2">
+                           </div>
+                        </div>
+                   </td>
+                 </tr>
+
+                 <tr>
+                      <td>
+                     <div class="control-group">
+                       <label class="control-label" for="basicinput">Subject</label>
+                          <div class="controls">
+                              <input type="text" name="Subject"  id="Subject" class="span4">
+                           </div>
+                        </div>
+                   </td>
+                    <td>
+                     <div class="control-group">
+                          <div class="controls">
+                             Date From:
+                     <br/>
+                              <input type="date" name="d1" class="span2">
+                          </div>
+                        </div>
+                    </td>
+
+                 <td colspan="2">
                  <div class="control-group">
                       <div class="controls">
                          Date Upto:
@@ -36,9 +104,9 @@
                       </div>
                     </div>
                 </td>
-                </tr>  
-                <tr>
-                  <td colspan="2">
+              </tr>
+           
+                  <td colspan="4">
                   <div class="control-group">
                       <div class="controls">
                         <div style="float: right;"> 

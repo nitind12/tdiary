@@ -560,7 +560,7 @@ $('#cmbAttendanceReportc').click(function()
 					//str = str + "<th>Session</th>"
 					str = str + "<th>Roll-No</th>"
 					for(i=0; i<len;i++){
-					str = str + "<th>obj.consolidate[i].date</th>"
+					str = str + "<th>"+obj.consolidate[i].date+"</th>"
 					}
 					for(i=0; i<len;i++){
 						str = str + '<tr>';	

@@ -5,7 +5,8 @@ class Check_assign_report_controller extends CI_Controller{
         parent::__construct();
         $this->load->model('Givenassignmentmodel','gm');
        $this->load->model('Lessonedit_model','obj');
-        $this->load->model('Add_class_model','am');
+        $this->load->model('check_assign_report_model','im');
+		$this->load->model('Add_class_model','am');
     }
     public function index()
 	{
@@ -26,9 +27,7 @@ class Check_assign_report_controller extends CI_Controller{
 	}
 
 	function assignment_report(){
-		$this->load->model('check_assign_report_model','im');
 		$data['marks'] = $this->im->assignment_report();
-
 		echo json_encode($data);
 	}
 

@@ -15,7 +15,7 @@ class Check_assign_report_model extends CI_Model{
 		$this->db->where('a.semester_id',$this->session->userdata('tan'));
 		$this->db->where('a.section_id',$this->session->userdata('cot'));
 		$this->db->where('b.subject_id', $Subject);
-		$this->db->where('b.assignment_id', $assignment_id);
+		$this->db->where('b.assignment_id',2);
 		
 		$this->db->where('b.roll_no',$this->session->userdata('studentid'));
 		
@@ -24,8 +24,8 @@ class Check_assign_report_model extends CI_Model{
 		$this->db->join('std_personal c', 'c.Student_id=b.roll_no');
 
 		$q = $this->db->get();
-		echo $this->db->last_query();
-		//return $q->result();
+		//echo $this->db->last_query();die();
+		return $q->result();
 	}
 	
 

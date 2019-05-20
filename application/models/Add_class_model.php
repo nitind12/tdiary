@@ -593,7 +593,7 @@ class Add_class_model extends CI_Model
 		
 
 
-	function reports_attendance_modals2()
+	function reports_attendance_modalsC()
 		{
 			$subject_id=$this->input->post('subject');
 			$btn1= $this->input->post('d1');

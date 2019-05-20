@@ -550,7 +550,7 @@ $('#cmbAttendanceReportc').click(function()
 				
 				var obj = JSON.parse(consolidate);
 				var len = obj.consolidate.length;
-
+				var f=obj.consolidate[i].date.length;
 				var str = 'x';
 				
 

@@ -573,8 +573,9 @@ class Add_class_model extends CI_Model
 
 		function getUpload()
 		{
+			$date= $this->input->post('date');
 			
-		$date= $this->input->post('dateup');
+		
 		
 		$data = array(
 			'date_notes'=>$date,

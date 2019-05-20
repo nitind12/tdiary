@@ -147,10 +147,9 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "Student-Report-Attendance";
         $data['page_'] = "student_report_attendance1";
-          $data['course1'] = $this->am->getCourse1();
-      $data['Semester1'] = $this->am->getSemester1();
-      $data['Session1'] = $this->am->getSession1();
-     
+        $data['course1'] = $this->am->getCourse1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Session1'] = $this->am->getSession1();
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
@@ -164,7 +163,10 @@ class Main extends CI_Controller {
     {  
         $data['title'] = "Student-Report-Daywise";
         $data['page_'] = "student_report_daywise";
-
+        $data['course1'] = $this->am->getCourse1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Session1'] = $this->am->getSession1();
+        
         $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
@@ -390,6 +392,10 @@ public function attendance_report_View_Consolidate2()
         $data['subjects'] = $this->am->getSubject1();
         echo json_encode($data);
     }
+    function get_subjectc(){
+        $data['subjects'] = $this->am->getSubjectc();
+        echo json_encode($data);
+    }
     function get_subjectsasign(){
         $data['subjects'] = $this->am->getSubjectasign();
         echo json_encode($data);
@@ -397,6 +403,11 @@ public function attendance_report_View_Consolidate2()
     function get_class()
     {
         $data['class'] = $this->am->getclass1();
+        echo json_encode($data);
+    }
+    function get_classC()
+    {
+        $data['class'] = $this->am->getclassC();
         echo json_encode($data);
     }
     function get_classassign()

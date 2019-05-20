@@ -14,6 +14,8 @@
         </div>
 
  <div class="module-body">
+  <form name="frmconsolidate" id="frmconsolidate"  Method="POST" action="<?php echo site_url('main/student_report_consolidate_controller');?>">
+    
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
             <td>
@@ -65,8 +67,9 @@
                  <div class="control-group">
                    <label class="control-label" for="basicinput">Class</label>
                       <div class="controls">
-                          <input type="text" name="d1" class="span2">
-                       </div>
+                        <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Class" id="Class">
+                      </select>
+                    </div>
                     </div>
                </td>
                 </tr>
@@ -75,8 +78,9 @@
             <td colspan="2"> <div class="control-group">
                    <label class="control-label" for="basicinput">Subject</label>
                       <div class="controls">
-                          <input type="text" name="d1" class="span4">
-                       </div>
+                      <select tabindex="1" data-placeholder="Select here.."class="span4"  name="Subject_Name" id="Subject_Name">
+        </select>
+        </div>
                     </div>
                </td>
                 
@@ -111,7 +115,7 @@
                 </tr>
                </tbody>
            </table>
-          
+          </form>
         <div class="module-body table">
              <tr>
               <td>

@@ -45,7 +45,8 @@ class Lessonview_controller extends CI_Controller
         $data['last'] = $this->am->getlastMenu();
             
          	$data['t_diary'] = $this->obj->fetchtable($no_);     
-       		$data['add_class_in']= $this->gm->add_view_class($no_);////ravi wALA SE
+       		//$data['add_class_in']= $this->gm->add_view_class($no_);////ravi wALA SE
+             $data['add_class_in'] = $this->am->add_view_attendance($no_);
             $data['title'] = "Lesson_plan";
             $data['page_'] = "lesson_view_set";
             $this->load->view('templates/header', $data);

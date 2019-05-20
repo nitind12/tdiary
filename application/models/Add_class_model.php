@@ -79,6 +79,28 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
+		function getSubjectc()
+		{
+			$course_id = $this->input->post('Course');
+			$Semester_id = $this->input->post('Semester');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getstudentsubj()
+		{
+			
+		$this->db->where('course_id',$this->session->userdata('cos'));
+		$this->db->where('semester_id',$this->session->userdata('tan'));
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
 		function getuploadsubject()
 		{
 			$course_id = $this->input->post('Course');
@@ -95,6 +117,20 @@ class Add_class_model extends CI_Model
 		{
 			$course_id = $this->input->post('Courseasign');
 			$Semester_id = $this->input->post('Semesterasign');
+			$Session_id = $this->input->post('Session');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->where('session_id',$Session_id);
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclassC()
+		{
+			$course_id = $this->input->post('Course');
+			$Semester_id = $this->input->post('Semester');
 			$Session_id = $this->input->post('Session');
 
 		$this->db->where('course_id',$course_id);
@@ -593,7 +629,7 @@ class Add_class_model extends CI_Model
 		
 
 
-	function reports_attendance_modals2()
+	function reports_attendance_modalsC()
 		{
 			$subject_id=$this->input->post('subject');
 			$btn1= $this->input->post('d1');
@@ -606,6 +642,32 @@ class Add_class_model extends CI_Model
 		$this->db->from('attendance a');
 		$query = $this->db->get();
 		//echo $this->db->last_query();
+		return $query->result();
+		
+		}
+		function reports_attendance_modalsCA()
+		{
+			$consolidate_= array();	
+			$subject_id=$this->input->post('Subject_Name');
+			$course_id=$this->input->post('Course');
+			$add_class_id=$this->input->post('Class');
+			$session_id=$this->input->post('Session');
+			$semseter_id=$this->input->post('');
+			$btn1= $this->input->post('d1');
+			$btn1= $this->input->post('d2');
+		$this->db->distinct('date');
+		$this->db->select('a.*');
+		$this->db->where('a.subject_id',$subject_id);
+		$this->db->where('a.course_id',$course_id);
+		$this->db->where('a.add_class_id',$add_class_id);
+		$this->db->where('a.session_id',$session_id);
+		$this->db->where('a.semseter_id',$semseter_id);
+		$this->db->where('DATE(date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+		$this->db->from('attendance a');
+		$this->db->join(' faculty_personal b', 'b.faculty_id=a.faculty_id');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
 		return $query->result();
 		
 		}

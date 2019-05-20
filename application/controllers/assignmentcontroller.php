@@ -38,7 +38,7 @@ class Assignmentcontroller extends CI_Controller{
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
         
-    	$data['add_class_in']= $this->gm->add_view_class($no_);////ravi wALA SE
+    	$data['add_class_in']= $this->am->add_view_attendance($no_);////ravi wALA SE
         $data['title'] = "assignment_edit";
         $data['page_'] = "assignmentview";
         $this->load->view('templates/header', $data);

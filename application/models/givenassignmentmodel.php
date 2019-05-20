@@ -45,16 +45,19 @@ class Givenassignmentmodel extends CI_Model{
 	public function assignment_edit_modal_saving()
 	{
 		$addclass_id= $this->input->post('addclass_id');	
+		$subject_id= $this->input->post('subject_id');	
 			for($i=0; $i<count($addclass_id); $i++)
 			{
 			$data = array(	
 			'add_class_id' => $addclass_id[$i],	
+			'subject_id' => $subject_id[$i],	
 			'Assignment_no' => $this->input->post('Assignment_no'),
 			'Given_date' => $this->input->post('Given_date'),
 			'Submission_date' => $this->input->post('Submission_date'),
 			'Unit' => $this->input->post('Unit'),
 			'Topic' => $this->input->post('Topic'),
 			'status' => '1',
+			'faculty_id' => $this->session->userdata('facultyid'),
 			'username' => $this->session->userdata('user'),
 		);
 			$this->db->insert('assignment',$data);

@@ -31,7 +31,7 @@
                          <td><b><?php echo $item->course_id?></b> </td>
                          <td> <b><?php echo $item->semester_id?></b> </td>
                          <td> <b><?php  echo $item->section_id?></b> </td>
-                         <td> <b><?php echo $item->subject_id;?></b></td>
+                         <td> <b><?php echo $item->subject_name;?></b></td>
                     </tr>        
 		              <?php 
 		                }
@@ -53,6 +53,8 @@
 				<tbody>	
 					<?php foreach ($add_class_in as $item) { ?>
 					<input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
+					<input type="hidden" value="<?php echo $item->subject_id;?>" name="subject_id[]" id="sid_<?php echo $item->subject_id;?>">
+					
 					<?php  }  ?>
 						<tr>
 							<td>Assignment No<br>

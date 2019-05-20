@@ -445,5 +445,144 @@ $('#Courseasign').change(function(){
 	});
 
 
+//This is for hiding assclass_id and session_id from url
+		$('.take_attend_class').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			
+
+			$('#frmtakeattend_class').submit();
+		});	
+
+
+
+		$('.attend_daywiseclass').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidED').val(arr[0]);
+			$('#sessionidED').val(arr[1]);
+			
+
+			$('#frmatten_daywise').submit();
+		});
+
+
+$('#Course').change(function(){
+			if($('#Course').val() != '' && $('#Semester').val() !=0){
+				var url_ = site_url_+"/main/get_subjectc";
+				var data_ = $('#frmconsolidate').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Subject</option>";
+					for(i=0; i<obj.subjects.length; i++){
+						str = str + "<option value='"+obj.subjects[i].subject_id+"'>"+obj.subjects[i].subject_name+"</option>";
+					}
+					$('#Subject_Name').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#Semester').change(function(){
+			$('#Course').change();
+
+		
+		});
+$('#Course').change(function(){
+
+			if($('#Course').val() != '' && $('#Session').val() !=0){
+				var url_ = site_url_+"/main/get_classC";
+				var data_ = $('#frmconsolidate').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+
+				success: function(data){
+				
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + "<option value=''>Select Class</option>";
+					for(i=0; i<obj.class.length; i++){
+						str = str + "<option value='"+obj.class[i].add_class_id+"'>"+obj.class[i].course_id+obj.class[i].semester_id+obj.class[i].section_id+"</option>";
+					}
+					$('#Class').html(str);
+			
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#Session').change(function(){
+			$('#Course').change();
+
+			
+		});
+
+
+$('#cmbAttendanceReportc').click(function()
 	
+	{
+		var data_ = $('#frmconsolidate').serialize();
+		var url_ = site_url_+"/main/reports_attendance_controller_CA";
+		//console.log(url_);
+
+		$.ajax({
+			url:url_,
+			type: 'post',
+			data: data_,
+			success: function(consolidate_){
+				//$('#reportshere').html(reports_);
+				
+				var obj = JSON.parse(consolidate);
+				var len = obj.consolidate.length;
+
+				var str = 'x';
+				
+
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					//str = str + "<th>Session</th>"
+					str = str + "<th>Roll-No</th>"
+					for(i=0; i<len;i++){
+					str = str + "<th>obj.consolidate[i].date</th>"
+					}
+					for(i=0; i<len;i++){
+						str = str + '<tr>';	
+						str = str + '<td>' + obj.consolidate[i].student_id + "</td>";
+						str = str + '<td>' + obj.consolidate[i].attendance_status + "</td>";
+						
+						str = str + '</tr>';
+					}
+					$('#reportshere').html(str);	//print table heading
+				} else {
+					$('#reportshere').html('No data found');
+				}
+			}, error: function(xhr, error, status){
+				$('#reportshere').html(xhr.responseText);
+			}
+		});
+	return false;
+	});	
+
+
+
+
 });
+	

@@ -18,68 +18,26 @@
 							<div class="module-body">
 							<span class="hideblock"><a href="#"onclick="window.print()"><span class="btn btn-primary icon-print" style="float:right"> print</span></a></span>
 
-	<form id="assignmentform" name="assignmentform" class="form-horizontal row-fluid">
-	<table class="table table-striped table-bordered table-condensed"  >
+				<form id="assignmentform" name="assignmentform" class="form-horizontal row-fluid">
+				<table class="table table-striped table-bordered table-condensed"  >
 		
-			<!--<table class="table" >-->
-				<tbody>
-<tr>
-	 <td >Session:<br>
-									
-                         <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Session" id="Session">
-                                             <option value="">Select Session</option>
-                                                <?php foreach ($Session1 as  $item) { ?>
-                                                 <option value="<?php echo $item->s_id;?>">
-                                                  <?php echo $item->session?></option>
+					<!--<table class="table" >-->
+						<tbody>
+							<tr>	
+								<td>Subject:<br>
+									<!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
+									<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+										<option value ="">Select here...</option>
+										<?php foreach ($subject as  $item) { ?>
+                                                 <option value="<?php echo $item->subject_id;?>">
+                                                 	<?php echo $item->subject_name?></option>
                                                     <?php }?>
-                                                 </select>
-</td>
-									  <td >Course_name:<br>
-									  	 <select tabindex="1" data-placeholder="Select here.."class="span8"  name="Course_name" id="Course_name">
-                                             <option value="">Select Course</option>
-                                                <?php foreach ($course1 as  $item) { ?>
-                                                 <option value="<?php echo $item->course_id;?>">
-                                                  <?php echo $item->name_of_courses?></option>
-                                                    <?php }?>
-                                                 </select>
-                      </td>
-									  <td>Semester:<br>
-									  	<!--<input type="text" id="txtSemester" name="txtSemester" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Semester" id="Semester" >
-									  		<option value ="">Select here..</option>
-									  	 <option value ="1">1</option>
-									  	 <option value ="2">2</option>
-									  	 <option value ="3">3</option>
-									  	 <option value ="4">4</option>
-									  	 <option value ="5">5</option>
-									  	 <option value ="6">6</option>
-									  	 <option value ="7">7</option>
-									  	 <option value ="8">8</option>
-									  </select>
-									  </td>
-									</tr>
-									<tr>
-									  <td>Section:<br>
-									  	<!--<input type="text" id="txtSection" name="txtSection" class="span8">-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Section" id="Section"  >
-									  		<option value ="">Select here..</option>
-									  	 <option value ="A">A</option>
-									  	 <option value ="B">B</option>
-									  	 <option value ="C">C</option>
-									  	 <option value ="D">D</option>
-									  	 
-									  </select>
-									  </td>
-									
-									  <td >Subject:<br>
-									  	<!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
-									  	 </select>
-									  </td>
-									
-									
+                                                
 										
-											 <td colspan="3">Assignment No:<br>
+									</select>
+								</td>
+										
+									<td>Assignment No:<br>
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Assignment_no" id="Assignment_no" >
 									  		<option value ="">Select here..</option>
 									  	 <option value ="1">1</option>
@@ -93,6 +51,7 @@
 									</tr>
 								</tbody>
 							</table>
+							<br>
 							<div class="control-group">
 								<div class="controls" style="float:left;">
 									<span class="hideblock"><button type="Reset" class="btn btn-primary" name="save" value="Reset">Reset</button></span>

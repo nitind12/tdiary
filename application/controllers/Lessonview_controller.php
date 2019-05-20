@@ -38,7 +38,7 @@ class Lessonview_controller extends CI_Controller
             $no_ = $this->input->post('addclassidED');
             $sess = $this->input->post('sessionidED');
             $clsid = $this->input->post('courseidED');
-             $subid = $this->input->post('courseidED');
+             $subid = $this->input->post('subjectidED');
 
 
         $data['dashboard1'] = $this->am->getDashboardMenu();

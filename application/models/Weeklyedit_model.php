@@ -19,8 +19,8 @@ class Weeklyedit_model extends CI_Model
 
 		$this->db->from('weekly a');
 		$query = $this->db->get();
-		echo $this->db->last_query();die();
-		//return $query->result();
+		//echo $this->db->last_query();die();
+		return $query->result();
 	}
 	
 

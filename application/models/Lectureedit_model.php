@@ -8,6 +8,8 @@ class Lectureedit_model extends CI_Model
 	{  
 		$this->db->select('a.*');
 		$this->db->where('a.add_class_id', $clsid);
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+	
 		$this->db->from('lecture a');
 		$query = $this->db->get();
 		return $query->result();
@@ -29,7 +31,7 @@ class Lectureedit_model extends CI_Model
 				'no_of_lecture'=>$this->input->post('Lecture_no'),
 				'subject_id'=>$subject_id,
 
-	            'faculty_id'=>'121',
+	            'faculty_id'=>$this->session->userdata('facultyid'),
 				'status'=>'1',
 	            'username'=>'ra'
           	 );	

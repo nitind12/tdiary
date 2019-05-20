@@ -547,7 +547,6 @@ $('#cmbAttendanceReportc').click(function()
 			type: 'post',
 			data: data_,
 			success: function(consolidate){
-				//$('#reportshere').html(consolidate);
 				
 				var obj = JSON.parse(consolidate);
 				var len = obj.consolidate.length;
@@ -574,7 +573,6 @@ $('#cmbAttendanceReportc').click(function()
 				} else {
 					$('#reportshere').html('No data found');
 				}
-				
 			}, error: function(xhr, error, status){
 				$('#reportshere').html(xhr.responseText);
 			}

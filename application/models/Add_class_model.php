@@ -674,12 +674,11 @@ class Add_class_model extends CI_Model
 		$this->db->where('b.semester_id',$semseter_id);
 		$this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
 		$this->db->from('attendance a');
-		$this->db->join('faculty_personal b', 'b.faculty_id=a.faculty_id');
 		$this->db->join(' add_class b', 'b.add_class_id=a.add_class_id');
 		$this->db->join(' faculty_personal c', 'c.faculty_id=a.faculty_id');
 		
 		$query = $this->db->get();
-		echo $this->db->last_query(); die();
+		//echo $this->db->last_query();die();
 		return $query->result();
 		
 		}

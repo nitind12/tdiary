@@ -51,7 +51,7 @@
 
 
 
-   		<form  method="post" name="myEdit"  id="myEdit"   action="<?php site_url('Edit_controller/lecture_saving_data/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>"  class="form-horizontal row-fluid">
+   		<form  method="post" name="myEdit"  id="myEdit" class="form-horizontal row-fluid" action="<?php echo site_url('Edit_controller/lecture_saving_data/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>" >
 
 				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" width="100%">
 
@@ -120,7 +120,7 @@
 								</tr>
 							</tbody>
 				</table>
-
+</form>
 
 
 				<div claas="module-body">

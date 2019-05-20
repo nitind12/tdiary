@@ -664,7 +664,7 @@ class Add_class_model extends CI_Model
 			$session_id=$this->input->post('Session');
 			$semseter_id=$this->input->post('');
 			$btn1= $this->input->post('d1');
-			$btn1= $this->input->post('d2');
+			$btn2= $this->input->post('d2');
 		$this->db->distinct('date');
 		$this->db->select('a.*');
 		$this->db->where('a.subject_id',$subject_id);
@@ -674,10 +674,10 @@ class Add_class_model extends CI_Model
 		$this->db->where('a.semseter_id',$semseter_id);
 		$this->db->where('DATE(date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
 		$this->db->from('attendance a');
-		$this->db->join(' faculty_personal b', 'b.faculty_id=a.faculty_id');
+		$this->db->join('faculty_personal b', 'b.faculty_id=a.faculty_id');
 		
 		$query = $this->db->get();
-		//echo $this->db->last_query();die();
+		echo $this->db->last_query(); die();
 		return $query->result();
 		
 		}

@@ -445,6 +445,7 @@ $('#Courseasign').change(function(){
 	});
 
 
+//This is for hiding assclass_id and session_id from url
 		$('.take_attend_class').click(function(){
 			var str = this.id;
 			var arr = str.split('~');

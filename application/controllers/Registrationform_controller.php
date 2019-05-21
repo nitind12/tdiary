@@ -55,6 +55,6 @@ function index()
 	function savingdata3()
 	{
 		$this->um->savingdata3();
-		redirect('address_form_controller','refresh');
+		redirect('Registrationform_controller','refresh');
 	}
 }

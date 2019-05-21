@@ -171,7 +171,8 @@
 		<table class="table table-striped table-bordered table-condensed">
                  <thead>
                   <tr style="text-align: left">
-                    
+                    <th>S.No</th>
+              		
                     <th>Unit No</th>
               		<th>Topic</th>
               		<th>No Of Lecture Aspect</th>
@@ -181,8 +182,14 @@
                   </thead>
                    <tbody>
                    	<?php $tot = 0;?>
-                   <?php foreach ($t_diary as $item) { ?>		
-                       <tr>                 	
+                   <?php foreach ($t_diary as $item) { ?>
+                       <tr>
+                       <?php
+                       	$length = count($t_diary);
+                   
+                        for ($i=0; $i<$length; $i++) { ?>
+                       	<td><?php echo  $i; ?></td>	
+	                      <?php } ?>                	
 	                       
 	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
 	                        <td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php echo $item->topic;?></td>

@@ -13,7 +13,7 @@
 							<table class="table table-striped table-bordered table-condensed">							
 		
  					<?php foreach ($time1 as  $item) { ?>
-                                                <img src="<?php  echo base_url('./assets/upload_notes/'. $item->Choose_File);?>">	<?php echo $item->Choose_File;?>
+                                                <img src="<?php  echo base_url('./assets/upload_notes/'. $item->Choose_File);?>"><?php echo $item->Choose_File;?>
                                                  
                                                     <?php }?>
                                                  

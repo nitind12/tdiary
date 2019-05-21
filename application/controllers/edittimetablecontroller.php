@@ -20,9 +20,7 @@ class Edittimetablecontroller extends CI_Controller{
         echo json_encode($data);
     }
     function time_edit_controller(){
-		$data['time_table'] = $this->im->time_edit_modals();
-       echo json_encode($data);
-	}
+		}
 	function index()
 	{
 		$data['title'] = "TIME_page";
@@ -46,7 +44,8 @@ class Edittimetablecontroller extends CI_Controller{
 	function savingdata3()
 	{
 		$this->um->savingdata3();
-		redirect('Edittimetablecontroller');
+		$data['time_table'] = $this->im->time_edit_modals();
+       echo json_encode($data);
 			}
 	
 	public function del()

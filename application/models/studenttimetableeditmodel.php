@@ -10,9 +10,9 @@ class Studenttimetableeditmodel extends CI_Model{
 	{
 		$data = array(
 			'Course_id' => $this->input->post('Course_Name'),
-			'Semester' => $this->input->post('Semester'),
-			'Session' => $this->input->post('Session'),
-			'Section' => $this->input->post('Section'),
+			'semester_id' => $this->input->post('Semester'),
+			'session_id' => $this->input->post('Session'),
+			'section_id' => $this->input->post('Section'),
 		);
 		$this->db->insert('student_time_table',$data);
 		$fileid = $this->db->insert_id();
@@ -28,8 +28,8 @@ class Studenttimetableeditmodel extends CI_Model{
 	function upload_tt($id){
 		clearstatcache();
         $config=array(
-	        'upload_path'=>'./assets/ttdocs/',
-	        'allowed_types'=>'pdf|xlsx',
+	        'upload_path'=>'./assets/ttdocs1/',
+	        'allowed_types'=>'pdf|xlsx|jpg|png',
 	        'file_name'=>$id,
         	'overwrite'=>TRUE,
         );

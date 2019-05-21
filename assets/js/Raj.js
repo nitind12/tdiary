@@ -457,6 +457,7 @@ $('.assignmentchecker').click(function(){
 
 
 $('#btnViewassignmentmarks').click(function(){
+
 		
 		var data_ = $('#assignmentformview').serialize();
 		
@@ -466,11 +467,11 @@ $('#btnViewassignmentmarks').click(function(){
 			data: data_,
 
 			success: function(intel){
-				var obj = JSON.parse(marks);
+				var obj = JSON.parse(intel);
 				var len = obj.marks.length;
-				
 				var str = '';
 				if(len > 0){
+
 					str = str + "<tr>";
 					str = str + "</tr>";
 					str = str + "<th> roll_no</th>"
@@ -481,6 +482,7 @@ $('#btnViewassignmentmarks').click(function(){
 					str = str + "<th> Grade</th>"
 					str = str + "</tr>";
 					for(i=0; i<len;i++){
+
 						str = str + '<tr>';
 						str = str + '<td>' + obj.marks[i].roll_no + "</td>";
 						str = str + '<td>' + obj.marks[i].first_name + "</td>";
@@ -954,4 +956,12 @@ $('#update').click(function(){
 
 				    });
     			});
+
+    			$('#optionsRadios1').click(function(){
+			$('.PRESENT_class').prop('checked', true);
+		});
+
+		$('#optionsRadios2').click(function(){
+			$('.ABSENT_class').prop('checked', true);
+		});
 });

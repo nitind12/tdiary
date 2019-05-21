@@ -46,12 +46,18 @@
                     
                   <thead>
                     <tr>
-                     <th align="center">Roll-no</th>
-                      <th align="center">Student Name</th>
-                      <th align="center">Status</th>
+                     <th>Roll-no</th>
+                      <th>Student Name</th>
+                      <th><center>Status</center><br/>
+                         <div style="float: left; padding: 0px 5px">
+                  <input type="radio" name="checkUncheckAll"  id="optionsRadios1">checked All
+                </div>
+                <div style="float: left; padding: 0px 5px"><input type="radio" name="checkUncheckAll"  id="optionsRadios2"> Unchecked All</div>
+                   
+                      </th>
                       
-                      <th align="center">Assignment_NO</th>
-                      <th align="center">Grade</th>
+                      <th>Assignment_NO</th>
+                      <th>Grade</th>
                         </tr>
                   </thead>
                   <tbody>
@@ -67,11 +73,11 @@
                       <td>
                        <label class="radio inline">
                       
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios1" value="1">
+                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios1" value="1" class="PRESENT_class">
                              CHECKED
                         </label> 
                         <label class="radio inline">
-                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value="0">
+                          <input type="radio" name="optionsRadios[].<?php echo $item->student_id;?>" id="optionsRadios2" value="0" class="ABSENT_class">
                            UNCHECKED
                         </label> 
                        </td>

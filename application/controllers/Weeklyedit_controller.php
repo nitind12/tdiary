@@ -71,7 +71,7 @@ class Weeklyedit_controller extends CI_Controller
 
          $data['t_diary'] = $this->obj->weeklyreport($wi);
 
-        $data['details']= $this->obj->detailsreports($sd,$ed,$no_,$wi);
+        $data['details']= $this->obj->detailsreports($sd,$ed,$no_,$subid);
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage',$data);
         $this->load->view('templates/footer');

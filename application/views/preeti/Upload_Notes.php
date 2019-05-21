@@ -25,7 +25,7 @@
 
 
        <table class="table table-bordered table-striped">
-       <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date">?>
+       <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date">
               
           <tbody>
             <tr>

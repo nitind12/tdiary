@@ -114,7 +114,8 @@
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_actual_taken';?>"><?php echo $item->no_of_lecture_actual_taken ?></td>
                       
 
-                      <td><a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id.'/'.$item->subject_id);?>" class="btn btn-primary">Details</a></td>  
+                      <td>
+                        <a href="<?php echo site_url('Weeklyedit_controller/details/' .$item->add_class_id.'/'.$item->start_date .'/'.$item->end_date. '/'.$item->week_id.'/'.$item->subject_id);?>" class="btn btn-primary">Details</a></td>  
 
                                           
               

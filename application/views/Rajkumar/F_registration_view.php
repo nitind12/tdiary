@@ -224,7 +224,9 @@
                                                 <?php foreach ($board as  $item1) { ?>
                                                  <option value="<?php echo $item1->board_id;?>">
                                                  	<?php echo $item1->board_name?></option>
-                                                    <?php }?>
+                                                    <?php 
+                                                } 
+                                                    ?>
                                        </select>
                                         </td>
 									
@@ -267,7 +269,9 @@
                                                 <?php foreach ($board as  $item1) { ?>
                                                  <option value="<?php echo $item1->board_id;?>">
                                                  	<?php echo $item1->board_name?></option>
-                                                    <?php }?>
+                                                    <?php 
+                                                } 
+                                                    ?>
                                        </select>
                                         </td>
 									

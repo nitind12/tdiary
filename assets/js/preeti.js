@@ -372,7 +372,7 @@ $(document).ready(function()
 
 
 //Read More...
-		    var maxLength = 40;
+		    var maxLength = 45;
 
 		    	$(".show-read-more").each(function() {
 

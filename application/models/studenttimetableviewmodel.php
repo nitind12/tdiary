@@ -3,7 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Studenttimetableviewmodel extends CI_Model{
 	function fetchtable()
 	{
-		$query = $this->db->get("student_time_table");
+		$this->db->where('a.session_id',$this->session->userdata('sin'));
+		$this->db->where('a.course_id',$this->session->userdata('cos'));
+		$this->db->where('a.semester_id',$this->session->userdata('tan'));
+		
+		$query = $this->db->get("student_time_table a");
 		return $query->result();
 	}
 	function savingTTable()

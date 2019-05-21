@@ -5,7 +5,7 @@ class Check_assign_report_model extends CI_Model{
 	{
 		$intel = array();
 		$Subject = $this->input->post('Subject');
-		$assignment_id=$this->input->post('Assignment_no');
+		//$assignment_id=$this->input->post('Assignment_no');
 		
 
 		$this->db->distinct('a.add_class_id');
@@ -15,7 +15,7 @@ class Check_assign_report_model extends CI_Model{
 		$this->db->where('a.semester_id',$this->session->userdata('tan'));
 		$this->db->where('a.section_id',$this->session->userdata('cot'));
 		$this->db->where('b.subject_id', $Subject);
-		$this->db->where('b.assignment_id',$assignment_id);
+		//$this->db->where('b.assignment_id',$assignment_id);
 		
 		$this->db->where('b.roll_no',$this->session->userdata('studentid'));
 		

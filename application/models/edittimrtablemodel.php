@@ -8,10 +8,13 @@ class Edittimrtablemodel extends CI_Model{
 	}
 	function time_edit_modals()
 	{
-		$this->db->where('faculty_id',$this->session->userdata('user'));
+		$time_table=array();
+		$this->db->where('username',$this->session->userdata('username'));
+		$this->db->where('faculty_id',$this->session->userdata('facultyid'));
 		$query = $this->db->get("time_table_edit");
+		echo $this->db->last_query();die();
 
-		return $query->result();
+		//return $query->result();
 	}
 	
 	function savingdata3()
@@ -23,11 +26,10 @@ class Edittimrtablemodel extends CI_Model{
 			'Course_id' => $this->input->post('Course_Name'),
 			'Subject_id' => $this->input->post('Subject'),
 		    'session_id' => $this->input->post('Session'),
-			//'Time_table_id' => $this->input->post('Time_table_id'),
 			'Time' => $this->input->post('Time'),
 			'Room' => $this->input->post('Room'),
-			'faculty_id' => $this->session->userdata('user')
-		    
+			'username' => $this->session->userdata('user'),
+		    'faculty_id' =>$this->session->userdata('facultyid')
 
 		);
 		

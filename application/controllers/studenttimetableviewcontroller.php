@@ -14,7 +14,7 @@ class Studenttimetableviewcontroller extends CI_Controller
            $this->load->model('Studenttimetableviewmodel','im');
 
    
-        
+    
      
     }
 
@@ -31,7 +31,8 @@ class Studenttimetableviewcontroller extends CI_Controller
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-        $this->load->view('templates/header', $data);
+        $data['time1'] = $this->im-> fetchtable();
+               $this->load->view('templates/header', $data);
         $this->load->view('mysatyampage', $data);  
         $this->load->view('templates/footer');
 

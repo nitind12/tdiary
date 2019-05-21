@@ -118,11 +118,9 @@
 								<div class="control-group">
 											<!--div class="controls" style="float:left;"-->
 												
-											<button type="submit" class="btn btn-primary" name="save">INSERT RECORD</button>
+											<button type="submit" class="btn btn-primary" name="btnsave" id="btnsave">INSERT RECORD</button>
 											<!--/div-->
 										</div></center><br><br>
-									</form>
-									<!--<center><a href="<?php echo site_url('edittimetablecontroller/del/' )?>" class="btn btn-primary" onclick="return confirm('Are you sure to delete whole data from the table??')">Delete Whole Data From the Table!</a></center>-->
 									<br>
 										<table class="table table-striped table-bordered table-condensed"  border="1">
 
@@ -219,13 +217,13 @@
 										</div>
 
 					<div>
-						<table class="table" border="1" id="timetablehere">
+						<table class="table" border="1" id="timetablehere2"name="timetablehere2">
 						</table>
 					</div>
 					</div>
 				</div>
 			</div>
-
+</form>
 
 		<!--<tr style="text-align: left">
 			<th align="center">Day</th>

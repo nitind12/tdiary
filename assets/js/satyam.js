@@ -82,7 +82,7 @@ $(document).ready(function()
 
 		});
 	});
-$('#btnsubmit2').click(function(){
+	$('#btnsubmit2').click(function(){
 		
 		var data_ = $('#myform100').serialize();
 
@@ -117,7 +117,60 @@ $('#btnsubmit2').click(function(){
 					for(i=0; i<len;i++){
 						//alert(obj.marks[i].Subject_id);
 						id_ = obj.marks[i].Day+obj.marks[i].Time;
-						$('#'+id_).html(obj.marks[i].Subject_id);
+						$('#'+id_).html(obj.marks[i].subject_id);
+
+                        }
+						
+				}
+				else{
+					$('#timetablehere2').html('no data found');
+				}
+
+			}, error: function(xhr, error, status){
+				$('#timetablehere2').html(xhr.responseText);
+			}
+
+		});
+});
+
+	$('#btnsave').click(function(){
+		var data_ = $('#myform100').serialize();
+
+		
+		$.ajax({
+			url:site_url_+ '/savingdata3/time_edit_controller',
+			method: 'post',
+			data: data_,
+			datatype: 'json',
+			
+
+			success: function(time_table)
+			{
+alert(data);
+				var obj = JSON.parse(time_table);
+				var len = obj.time_table.length;
+				
+				var str = '';
+				
+				if(len > 0){
+
+					//str = str + "<tr>";
+					//str = str + "</tr>";
+					str = str + "<th> Semester</th>"
+					str = str + "<th> Section</th>"
+					str = str + "<th> Course_id</th>"
+					str = str + "<th> Subject_id</th>"
+					str = str + "<th> Session</th>"
+					str = str + "<th> Time</th>"
+					str = str + "<th> Room</th>"
+
+					
+					
+					str = str + "</tr>";
+					for(i=0; i<len;i++){
+						//alert(obj.marks[i].Subject_id);
+						id_ = obj.time_table[i].Day+obj.time_table[i].Time;
+						$('#'+id_).html(obj.time_table[i].Subject_id);
 
                         }
 						
@@ -134,110 +187,3 @@ $('#btnsubmit2').click(function(){
 	});
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

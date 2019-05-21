@@ -5,7 +5,7 @@
 <div class="content">
   <div class="module">
     <div class="module-head">
-      <h1>ONLINE_VIEW_ATTENDANCE</h1>
+      <h1>Day-wise Attendance</h1>
     </div>
       
       <div class="btn-box-row row-fluid" >

@@ -187,7 +187,7 @@
                        <?php
                        	$length = count($t_diary);
                    
-                        for ($i=0; $i<$length; $i++) { ?>
+                        for ($i=1; $i<=$length; $i++) { ?>
                        	<td><?php echo  $i; ?></td>	
 	                      <?php } ?>                	
 	                       

@@ -117,7 +117,7 @@ $(document).ready(function()
 					for(i=0; i<len;i++){
 						//alert(obj.marks[i].Subject_id);
 						id_ = obj.marks[i].Day+obj.marks[i].Time;
-						$('#'+id_).html(obj.marks[i].Subject_id);
+						$('#'+id_).html(obj.marks[i].subject_id);
 
                         }
 						

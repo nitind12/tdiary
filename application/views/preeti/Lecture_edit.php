@@ -182,14 +182,15 @@
                   </thead>
                    <tbody>
                    	<?php $tot = 0;?>
-                   <?php foreach ($t_diary as $item) { ?>
+                   <?php
+                   $length = count($t_diary);
+ 				 foreach ($t_diary as $item) {  
+ 				 	$length--;
+                   	
+           				                  ?>
                        <tr>
-                       <?php
-                       	$length = count($t_diary);
-                   
-                        for ($i=1; $i<=$length; $i++) { ?>
-                       	<td><?php echo  $i; ?></td>	
-	                      <?php } ?>                	
+                       
+                       	<td><?php echo 	$length; ?></td>	
 	                       
 	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
 	                        <td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php echo $item->topic;?></td>

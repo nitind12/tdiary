@@ -13,7 +13,7 @@ class Weeklyedit_model extends CI_Model
 		//return $query->result();
 
 		$this->db->select('a.*');
-		$this->db->where('a.add_class_id', $clsid);
+		$this->db->where('a.add_class_id', $clsid,$subid);
 		$this->db->where('a.subject_id', $subid);
 		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
 
@@ -65,21 +65,21 @@ class Weeklyedit_model extends CI_Model
 
 
 
-	function detailsreports($sd,$ed,$no_)
+	function detailsreports($sd,$ed,$no_,$subid)
 	{
-		$this->db->select('date , unit,topic');
+		$this->db->select('date , unit,topic,lecture_type');
 
 		$this->db->where('DATE(date) BETWEEN "'.$sd.'" AND "'.$ed.'"', '',false);
+		
 		$this->db->where('add_class_id',$no_);
+		$this->db->where('subject_id',$subid);
 	
-			//$this->db->where(' date >= date("'.$sd.'")');
-			//$this->db->where( 'date <= date("'.$ed.'")');
-			//$this->db->where('a.date ',$sd);
-			//$this->db->where('a.date ',$ed);
 		$this->db->from('lesson');
-			
+		
 		$query= $this->db->get();
-		return $query->result();
+		//echo $this->db->last_query();die();
+	return $query->result();
+
 	}
 
 

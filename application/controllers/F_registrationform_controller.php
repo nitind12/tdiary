@@ -1,4 +1,4 @@
-<?php
+s<?php
 defined('BASEPATH') OR exit('NO direct script access allowed');
 class F_registrationform_controller extends CI_Controller{
 	function __construct()
@@ -10,7 +10,7 @@ class F_registrationform_controller extends CI_Controller{
   		 $this->load->model('Add_class_model','am');
 		$this->load->model('F_registration_model','um');
 	}
-	public function index1()
+	public function index2()
 	{
 		//$data['cls_in_session'] = $this->am->fetchClass();
 		 $data['page_'] = 'F_registration_view';
@@ -32,7 +32,7 @@ class F_registrationform_controller extends CI_Controller{
 
 
 
-function index()
+function index1()
 	{
 		
 		 $data['page_'] = 'F_registration_view';

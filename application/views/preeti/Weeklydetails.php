@@ -68,7 +68,8 @@
                              <tr style="text-align: left">     
                                   <th align="center">Date</th>
                                   <th align="center">Unit</th>
-                                  <th align="center"> Topic</th> 
+                                  <th align="center"> Topic</th>
+                                  <th align="center">Lecture Type</th> 
                               </tr>
 
                               <?php foreach ($details as $item) { ?>
@@ -76,6 +77,7 @@
                                            <td><?php echo $item->date;?></td>
                                             <td><?php echo $item->unit;?></td>
                                             <td><?php echo $item->topic;?></td>
+                                             <td><?php echo $item->lecture_type;?></td>
                                             
                                       </tr>
                                 <?php } ?>

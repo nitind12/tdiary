@@ -96,13 +96,21 @@
 
 
 						 		<td colspan="2"> Lecture Type:<br>
-									<select tabindex="1" data-placeholder="Select here.." class="span8" name="lecturetype[]"id="lecturetype[]" required="required">
+									<!--select tabindex="1" data-placeholder="Select here.." class="span8" name="lecturetype[]"id="lecturetype[]" required="required">
 										<option value="">Select here..</option>
 										<option value="Letcure Schedule">Letcure Schedule</option>
 										<option value="Arrangement">Arrangement</option>
 										<option value="Extra Lecture Taken">Extra Lecture Taken</option>
 												
-									</select>
+									</select-->
+									<select tabindex="1"data-placeholder="Select here.." class="span8" name="lecturetype" id="lecturetype"  >
+									  	<option value ="">Select lecture type...</option>
+									  		<?php foreach($lecture_type as $item){?>
+									  			<option value="<?php echo $item->lecture_type_id;?>">
+									  				<?php echo $item->lecture_name?></option>
+
+									  		<?php
+									  	}?>
 										
 								</td>
 							
@@ -178,7 +186,7 @@
 
 	                        <!--    <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>		-->
 
-	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?></td>
+	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>" ><?php echo $item->lecture_type;?></td>
 
 
 	                            <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>
@@ -192,7 +200,7 @@
         </div>
     </div>
 </div>
-    
+<!--    style="color:<?php //echo $item->color;?>"-->
 
 
 

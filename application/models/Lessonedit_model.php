@@ -82,4 +82,11 @@ class Lessonedit_model extends CI_Model
 		$this->db->delete('lesson',array('lesson_id' => $a));
 		return;
 	}
+
+	public function getLecturetype()
+	{
+		$this->db->select('lecture_type_id,lecture_name');
+		$query = $this->db->get('lecture_type');
+		return $query->result();
+	}
 }?>

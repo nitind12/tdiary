@@ -185,14 +185,9 @@
                        
                    	<?php $tot = 0;?>
                    <?php
-                  $length=1;
-                        foreach ($t_diary as $item) { 
-                         
-
-           				                  ?>
-                       
-                       	     	  <td><?php  echo 	$length;  ?>
-                			  </td>
+                	  $length=1;
+                        foreach ($t_diary as $item) {  ?>
+                       	    <td><?php  echo $length;  ?></td>
 	               
 	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	
 	                        <td id="<?php echo $item->lecture_id.'-topic';?>"class="show-read-more lectdata mytd"><?php echo $item->topic;?></td>

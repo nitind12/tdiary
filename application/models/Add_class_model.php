@@ -573,8 +573,9 @@ class Add_class_model extends CI_Model
 
 		function getUpload()
 		{
+			$date= $this->input->post('date');
 			
-		$date= $this->input->post('dateup');
+		
 		
 		$data = array(
 			'date_notes'=>$date,
@@ -655,6 +656,14 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		
 		}
+		function reports_attendance_modals_data(){
+			$this->db->distinct('a.date');
+		
+		$this->db->select('a.*');
+		$query = $this->db->get('attendance a');
+		return $query->result();
+		
+		}
 		function reports_attendance_modalsCA()
 		{
 			$consolidate= array();	
@@ -665,7 +674,7 @@ class Add_class_model extends CI_Model
 			$semseter_id=$this->input->post('Semester');
 			$btn1= $this->input->post('d1');
 			$btn2= $this->input->post('d2');
-		$this->db->distinct('date');
+		$this->db->distinct('a.date');
 		$this->db->select('a.*');
 		$this->db->where('a.subject_id',$subject_id);
 		$this->db->where('b.course_id',$course_id);

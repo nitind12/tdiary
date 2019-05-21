@@ -6,7 +6,7 @@ class Weeklyedit_model extends CI_Model
 	
 		
 
-	function fetchtable($clsid)
+	function fetchtable($clsid,$subid)
 	{  
 
 		//$query = $this->db->get("weekly");
@@ -14,14 +14,19 @@ class Weeklyedit_model extends CI_Model
 
 		$this->db->select('a.*');
 		$this->db->where('a.add_class_id', $clsid);
+		$this->db->where('a.subject_id', $subid);
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+
 		$this->db->from('weekly a');
 		$query = $this->db->get();
+		//echo $this->db->last_query();die();
 		return $query->result();
 	}
 	
 
 	function savingdata()
-	{
+	{	
+		$subject_id=$this->input->post('subject_id');
 		$addclass_id=$this->input->post('addclass_id');
 
 		for($i=0; $i<count($addclass_id); $i++)
@@ -36,6 +41,8 @@ class Weeklyedit_model extends CI_Model
 			'no_of_lost_due_to_cl' => $this->input->post('due_to_cl'),
 			'no_extra_taken' => $this->input->post('extra_taken'),
 			'no_of_lecture_actual_taken' => $this->input->post('actual_taken'),
+			'subject_id'=>$subject_id,
+				'faculty_id'=>$this->session->userdata('facultyid'),
 				);
 		
 		$this->db->insert('weekly',$data);

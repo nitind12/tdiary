@@ -4,10 +4,14 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 class Lectureedit_model extends CI_Model
 {
 
-	function fetchtable($clsid)
+	function fetchtable($clsid,$subid)
 	{  
+		
 		$this->db->select('a.*');
-		$this->db->where('a.add_class_id', $clsid);
+		$this->db->where('a.add_class_id', $clsid,$subid);
+		$this->db->where('subject_id', $subid);
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+	
 		$this->db->from('lecture a');
 		$query = $this->db->get();
 		return $query->result();
@@ -18,7 +22,7 @@ class Lectureedit_model extends CI_Model
 	function lecture_saving_data_modal()
 	{
 		$addclass_id=$this->input->post('addclass_id');
-
+		$subject_id=$this->input->post('subject_id');
 		for($i=0; $i<count($addclass_id); $i++)
 		{			
 
@@ -27,9 +31,9 @@ class Lectureedit_model extends CI_Model
 				'unit' => $this->input->post('txtunit'),
 				'topic'=>$this->input->post('topic'),
 				'no_of_lecture'=>$this->input->post('Lecture_no'),
-			//	'total_lecture'=>$this->input->post('total'),
+				'subject_id'=>$subject_id,
 
-	            'faculty_id'=>'121',
+	            'faculty_id'=>$this->session->userdata('facultyid'),
 				'status'=>'1',
 	            'username'=>'ra'
           	 );	

@@ -56,7 +56,9 @@
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" width="100%">
                                    
                       <?php foreach ($add_class_in as $item) { ?>
-                          <input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]"                                    id="sid_<?php echo $item->add_class_id;?>">
+                          <input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]"  id="sid_<?php echo $item->add_class_id;?>">
+
+                           <input type="hidden" value="<?php echo $item->subject_id; ?>" name="subject_id" id="subject_id"> 
                       <?php } ?>  
 
                               <thead>

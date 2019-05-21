@@ -51,13 +51,16 @@
 
 
 
-   		<form  method="post" name="myEdit"  id="myEdit" class="form-horizontal row-fluid" action="<?php echo site_url('Edit_controller/lecture_saving_data/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>" >
+   		<form  method="post" name="myEdit"  id="myEdit" class="form-horizontal row-fluid" action="<?php echo site_url('Edit_controller/lecture_saving_data/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id.'/'.$item->subject_id);?>" >
 
 				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" width="100%">
+
 
 			            <?php foreach ($add_class_in as $item) { ?>
 							<input type="hidden"   value="<?php echo $item->add_class_id;?>"   name="addclass_id[]"                        
 							 id="sid_<?php echo $item->add_class_id;?>">
+							  <input type="hidden" value="<?php echo $item->subject_id; ?>" name="subject_id" id="subject_id"> 
+                
 						<?php }?>	
 
 

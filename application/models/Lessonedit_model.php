@@ -3,18 +3,22 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 
 class Lessonedit_model extends CI_Model
 {
-	function fetchtable($clsid)
+	function fetchtable($clsid,$subid)
 	{  
 		$this->db->select('a.*');
 		$this->db->where('a.add_class_id', $clsid);
+		$this->db->where('a.subject_id', $subid);
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
 		$this->db->from('lesson a');
-		$query = $this->db->get("");	
+		$query = $this->db->get();	
+		//echo $this->db->last_query();die();
 		return $query->result();
 	}
 
 
 	function lesson_edit_saving_modal()
 	{
+		$subject_id=$this->input->post('subject_id');
 		$addclass_id=$this->input->post('addclass_id');
 		$date=$this->input->post('date1');
 		$lecture_ty=$this->input->post('lecturetype');
@@ -30,6 +34,8 @@ class Lessonedit_model extends CI_Model
 				'date'=>$this->input->post('date'),
 				'topic' => $this->input->post('Topic'),
 				'unit' => $this->input->post('Unit'),
+				'subject_id'=>$subject_id,
+				'faculty_id'=>$this->session->userdata('facultyid'),
 				//'lecture_id' => $this->input->post('Lecture'),
 				'status'=>'1',
 				'username'=>'ra'

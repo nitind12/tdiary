@@ -31,7 +31,7 @@
                  <!--  <a href="<?php //echo site_url('Lessonview_controller/lesson_view_controller/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>" id="<?php //echo $item->add_class_id;?>">   -->
                       <div class="btn-box-row row-fluid span10" style="background: #ffffff; border-radius: 12px; padding: 3px; vertical-align: top; color: #000090; border: #808080 dotted 1px; margin: 10px">
 
-                           <a class="btn-box-row row-fluid  lessonviewclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >        
+                           <a class="btn-box-row row-fluid  lessonviewclass" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id. "~" . $item->subject_id;?>" >        
 
                             Session:<?php echo $item->session_id?><br>
                             <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?></b></br>
@@ -49,6 +49,7 @@
                   <input type="hidden" name="addclassidED" id="addclassidED">
                   <input type="hidden" name="sessionidED" id="sessionidED">
                   <input type="hidden" name="courseidED" id="courseidED">
+                  <input type="hidden" name="subjectidED" id="subjectidED">
               
               <?php
               echo form_close();

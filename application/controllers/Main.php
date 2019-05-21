@@ -192,7 +192,7 @@ class Main extends CI_Controller {
         
     }
 
- public function attendance_report_View_Consolidate($no_)  
+ public function attendance_report_View_Consolidate()  
     {  
         $data['title'] = "View-Consolidate";
         $data['page_'] = "view_attendance_consolidate";
@@ -203,14 +203,13 @@ class Main extends CI_Controller {
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
 
-       $data['add_class_in'] = $this->am->add_view_attendance($no_);
        
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
         
     }
-public function attendance_report_View_Consolidate2()  
+public function attendance_report_View_Consolidate2($no_)  
     {  
         $data['title'] = "View-Consolidate";
         $data['page_'] = "student_report_View_Consolidate";
@@ -220,6 +219,7 @@ public function attendance_report_View_Consolidate2()
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+          
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
@@ -384,6 +384,8 @@ public function attendance_report_View_Consolidate2()
     function reports_attendance_controller_CA()
     {
         $data['consolidate']=$this->am->reports_attendance_modalsCA();
+        $data['date1']=$this->am->reports_attendance_modals_data();
+       
         echo json_encode($data);
     
     }

@@ -6,6 +6,7 @@ $(document).ready(function()
 			$('#addclassidED').val(arr[0]);
 			$('#sessionidED').val(arr[1]);
 			$('#courseidED').val(arr[2]);
+			$('#subjectidED').val(arr[3]);
 
 			$('#frmlectureclass').submit();
 		});	
@@ -17,6 +18,7 @@ $(document).ready(function()
 			$('#addclassidED').val(arr[0]);
 			$('#sessionidED').val(arr[1]);
 			$('#courseidED').val(arr[2]);
+			$('#subjectidED').val(arr[3]);
 
 			$('#frmlectureviewclass').submit();
 		});	
@@ -30,6 +32,7 @@ $(document).ready(function()
 			$('#addclassidED').val(arr[0]);
 			$('#sessionidED').val(arr[1]);
 			$('#courseidED').val(arr[2]);
+			$('#subjectidED').val(arr[3]);
 
 			$('#frmlessonclass').submit();
 		});	
@@ -42,6 +45,7 @@ $(document).ready(function()
 			$('#addclassidED').val(arr[0]);
 			$('#sessionidED').val(arr[1]);
 			$('#courseidED').val(arr[2]);
+			$('#subjectidED').val(arr[3]);
 
 			$('#frmlessonviewclass').submit();
 		});	
@@ -54,6 +58,7 @@ $(document).ready(function()
 			$('#addclassidED').val(arr[0]);
 			$('#sessionidED').val(arr[1]);
 			$('#courseidED').val(arr[2]);
+			$('#subjectidED').val(arr[3]);
 
 			$('#frmweeklyclass').submit();
 		});	
@@ -65,6 +70,7 @@ $(document).ready(function()
 			$('#addclassidED').val(arr[0]);
 			$('#sessionidED').val(arr[1]);
 			$('#courseidED').val(arr[2]);
+			$('#subjectidED').val(arr[3]);
 
 			$('#frmweeklyviewclass').submit();
 		});	

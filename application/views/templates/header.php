@@ -1,4 +1,4 @@
-                                                                                                                                                   <?p
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="navbar-inner">
                 <div class="container ">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><span class="hideblock"><a class="brand " href="index.html">Teacher diary </span></a>
+                        <i class="icon-reorder shaded"></i></a><span class="hideblock"><a class="brand " href="<?php echo site_url('homemain/index');?>"><u>Teacher diary</u> </span></a>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
 
 

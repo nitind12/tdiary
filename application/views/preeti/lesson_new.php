@@ -3,6 +3,9 @@
     .show-read-more .more-text{
         display: none;
     }
+    .redcolor{
+    	color: #ff0000 !important;
+    }
 </style>
 
 
@@ -106,7 +109,7 @@
 									<select tabindex="1"data-placeholder="Select here.." class="span8" name="lecturetype" id="lecturetype"  >
 									  	<option value ="">Select lecture type...</option>
 									  		<?php foreach($lecture_type as $item){?>
-									  			<option value="<?php echo $item->lecture_type_id;?>">
+									  			<option value="<?php echo $item->lecture_type;?>">
 									  				<?php echo $item->lecture_name?></option>
 
 									  		<?php
@@ -169,9 +172,9 @@
                         <th>Lecture Type</th>
                         <th>Delete</th>
                     </tr>
+                      	       
+                        <?php foreach ($t_diary as $item) {?>
 
-
-                        <?php foreach ($t_diary as $item) { ?>		
                             <tr>
                                 <!--     <td><?php echo $item->lesson_id ;?></td>		-->
 	                            <td class="lessondata lesstd"   id="<?php echo $item->lesson_id.'-date';?>"> <?php echo $item->date;?></td>
@@ -185,8 +188,13 @@
 	                            <td class="show-read-more lessondata lesstd"  id="<?php echo $item->lesson_id.'-topic' ;?>"><?php echo $item->topic;?></td>
 
 	                        <!--    <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>		-->
-
-	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>" ><?php echo $item->lecture_type;?></td>
+	                        	<?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra_Lecture_Taken'){?>
+	                            <td class="lessondata lesstd redcolor"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?>
+	                          	<?php } else { ?>
+	                          		 <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?>
+	                          	<?php } ?>
+								                  
+	                            	</td>
 
 
 	                            <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>
@@ -200,7 +208,7 @@
         </div>
     </div>
 </div>
-<!--    style="color:<?php //echo $item->color;?>"-->
+
 
 
 

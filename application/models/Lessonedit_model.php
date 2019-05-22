@@ -5,12 +5,12 @@ class Lessonedit_model extends CI_Model
 {
 	function fetchtable($clsid,$subid)
 	{  
-		$this->db->select('a.* b.color');
+		$this->db->select('a.*');
 		$this->db->where('a.add_class_id', $clsid);
 		$this->db->where('a.subject_id', $subid);
 		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
 		$this->db->from('lesson a');
-		$this->db->join('lecture_type b', 'a.lecture_type=b.lecture_name');
+	
 		$query = $this->db->get();	
 		//echo $this->db->last_query();die();
 		return $query->result();

@@ -139,14 +139,7 @@ class Weeklyedit_model extends CI_Model
         $query = $this->db->update('weekly', $data);
         return $query;
     }
-
-    function weeklylecture_report()
-    {
-    	$this->db->select('a.*');
-    	$this->db->where('subject_id');
-    	$this->db->from('lecture');
-    	$this->row 
-    }	return 
+ 
 	
 }
 ?>

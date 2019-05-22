@@ -9,6 +9,7 @@ class Weeklyedit_controller extends CI_Controller
 
 		$this->load->model('Weeklyedit_model','obj');	
 		$this->load->model('Add_class_model','am');
+        if(!$this->session->userdata('user')) redirect('Login_controller');
 		
 	}
 

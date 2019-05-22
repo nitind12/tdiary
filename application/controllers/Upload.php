@@ -7,6 +7,7 @@ class Upload extends CI_Controller{
 		parent::__construct();
 		$this->load->model('pic_model');
 		$this->load->library('form_validation');
+		 if(!$this->session->userdata('user')) redirect('Login_controller');
 	}
 	
 	public function form()

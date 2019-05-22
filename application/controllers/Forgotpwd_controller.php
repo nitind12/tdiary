@@ -7,6 +7,7 @@ class Forgotpwd_controller extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Forgotpwd_model','fm');
+         if(!$this->session->userdata('user')) redirect('Login_controller');
     }
     
 

@@ -6,6 +6,7 @@ class Test extends CI_Controller{
 		parent::__construct();
 		$this->load->model('testmodel','um');
 		$this->load->model('Add_class_model','am');
+         if(!$this->session->userdata('user')) redirect('Login_controller');
    
 	}
 	function index() 												//internal wale class 

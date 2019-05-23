@@ -36,8 +36,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <i class="icon-reorder shaded"></i>
                 </a>
 
-                <a class="brand" href="index.html">
-                    TEACHER DIARY
+                <a class="brand" href="<?php echo site_url('homemain/index');?>">
+                    <u>TEACHER DIARY</u>
                 </a>
 
                 <div class="nav-collapse collapse navbar-inverse-collapse">

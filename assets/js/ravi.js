@@ -569,7 +569,7 @@ $('#cmbAttendanceReportc').click(function()
 					for(i=0; i<len;i++){
 						str = str + '<tr>';	
 						str = str + '<td>' + obj.consolidate[i].student_id + "</td>";
-							
+										
 						if(obj.consolidate[i].attendance_status==1){
 								$p='PRESENT';
 						str = str + '<td>' + $p + "</td>";

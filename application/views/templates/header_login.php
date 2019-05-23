@@ -24,9 +24,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <i class="icon-reorder shaded"></i>
                 </a>
 
-                <a class="brand" href="index.html">
-                    TEACHER DIARY
-                </a>
+                 <div class="nav-collapse collapse navbar-inverse-collapse">
+                    <a class="brand" href="<?php echo site_url('homemain/index');?>">
+                        <u>TEACHER DIARY</u>
+                    </a>
+                </div>
 
                 <div class="nav-collapse collapse navbar-inverse-collapse">
                 
@@ -34,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <li>
                             <a href='<?php echo base_url()."index.php/signup_controller"; ?>'>Sign Up</a>
-                        </a></li>
+                        </li>
                         <li><a href='<?php echo base_url()."index.php/Forgotpwd_controller"; ?>'>
                             Forgot your password?
                         </a></li>

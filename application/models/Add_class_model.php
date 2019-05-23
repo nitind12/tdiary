@@ -682,6 +682,14 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		
 		}
+		function reports_attendance_modals_datastudent()
+		{
+			
+		$this->db->distinct('a.student_id');
+		$this->db->select('a.student_id');
+		$query = $this->db->get('attendance a');
+		return $query->result();
+		}
 		function reports_attendance_modalsCA()
 		{
 			$consolidate= array();	

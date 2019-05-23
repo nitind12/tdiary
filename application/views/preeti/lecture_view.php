@@ -20,7 +20,7 @@
               <div style="float:right">
                     <input type="hidden" value="<?php echo date("Y-m-d")?>" name="date" id="date"> <?php echo date("Y-m-d")?>
                 </div>
-                <h1>Lecture View</h1>
+                <h1>Proposed Lecture View</h1>
                       <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
                <br>
 

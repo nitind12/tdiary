@@ -7,7 +7,7 @@
 <div class="content">
    <div class="module">
       <div class="module-head">
-        <h2>Lesson Plan View</h2>
+        <h2>Actual Lesson Plan View</h2>
       </div>
       
       <div class="module-body">

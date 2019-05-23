@@ -1,12 +1,17 @@
 <style type="text/css">
     .show-read-more .more-text{
         display: none;
+      }
+      
+    .redcolor{
+      color: #ff0000 !important;
+    }
     }
 </style>
 <div class="content">
 <div class="module">
     <div class="module-head">
-          <h1>Lesson View</h1>
+          <h1> Actual Lesson View</h1>
     </div>
     <div class="module-body table">
           <div class="alert">
@@ -78,7 +83,14 @@
                       <td class="show-read-more  lessondata  lesstd"  id="<?php echo $item->lesson_id.'-end_time';?>"><?php echo $item->end_time ?></td>
                       <td class="show-read-more  lessondata lesstd"  id="<?php echo $item->lesson_id.'-unit';?>"><?php echo $item->unit ?></td>
                       <td class="show-read-more lessondata  lesstd"  id="<?php echo $item->lesson_id.'-topic';?>"><?php echo $item->topic ?></td>
-                       <td class="show-read-more  lessondata  lesstd"  id="<?php echo $item->lesson_id.'-lecture_type';?>"><?php echo $item->lecture_type ?></td>
+
+                     <?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra Lecture Taken'){?>
+                       <td class="show-read-more  lessondata  lesstd redcolor"  id="<?php echo $item->lesson_id.'-lecture_type';?>"><?php echo $item->lecture_type ?>
+                          <?php } else { ?>
+                          <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?>
+                              <?php } ?>
+                             
+                       </td>
                      
                       <!--td class="show-read-more"><?php echo $item->lecture_id ?></td>
               

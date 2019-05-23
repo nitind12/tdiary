@@ -6,7 +6,7 @@
 <div class="content">
   <div class="module">
       <div class="module-head">
-        <h2>Lecture  View</h2>
+        <h2>Proposed Lecture  View</h2>
       </div>
       
         <div class="btn-box-row row-fluid" >

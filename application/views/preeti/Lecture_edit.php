@@ -11,7 +11,7 @@
 	<div class="content">
 		<div class="module">
 			<div class="module-head">
-				  <h2>Lecture Plan</h2>
+				  <h2> Proposed Lecture Plan</h2>
 			</div>
 			<div class="module-body table">
 
@@ -206,7 +206,7 @@
 
                    	?> <?php ///foreach ($total as $item) {?>
 
-                   <tr><td colspan="4">TOTAL LECTURE: <b id="totalLectures"><?php echo $tot;?>	</b></td></tr>
+                   <tr><td colspan="5">TOTAL LECTURE: <b id="totalLectures"><?php echo $tot;?>	</b></td></tr>
                   </tbody> 
                </table>
 				</form>

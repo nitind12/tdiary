@@ -14,7 +14,7 @@
 	<div class="content">
 		<div class="module">
 			<div class="module-head">
-				 <h2>Lesson Plan</h2>
+				 <h2> Actual Lesson Plan</h2>
 			</div>
 
 			<div class="module-body table">
@@ -152,6 +152,7 @@
 				
 
 			<table class="table table-striped table-bordered table-condensed">
+				<thead>
                     <tr style="text-align: left">
                         <!--  <th>Lesson No</th>	-->
                         <th>Date</th>
@@ -163,6 +164,8 @@
                         <th>Lecture Type</th>
                         <th>Delete</th>
                     </tr>
+                </thead>
+                <tbody>
                       	       
                         <?php foreach ($t_diary as $item) {?>
 
@@ -180,9 +183,13 @@
 
 	                        <!--    <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>		-->
 	                        	<?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra Lecture Taken'){?>
-	                            <td class="lessondata lesstd redcolor"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?>
-	                          	<?php } else { ?>
-	                          		 <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?>
+	                            <td class="lessondata lesstd redcolor"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>">
+	                           	<?php echo $item->lecture_type;?>
+	                          	<?php }
+	                          	 else
+	                          	  { ?>
+	                          		 <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>">
+	                          		 	<?php echo $item->lecture_type;?>
 	                          	<?php } ?>
 								                  
 	                            	</td>
@@ -192,7 +199,17 @@
 	                                        
 	                        </tr>
                         <?php } ?>
+
+
+              
+                                
                 </table>
+                          <tr><td>LECTURE SCHEDULE=	 <b id="lect_schedule">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	</b></td>
+                        <td>ARRANGEMENT=<b id="Arrangement">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
+                        <td>EXTRA LECTURE TAKEN= <b id="extra_lect">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
+                        <td>ACTUAL LECTURE TAKEN= <b id="actual_lect"></b></td>
+                    </tr>
+
                 	</form>
 			</div>
    			 <br>

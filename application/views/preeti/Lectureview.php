@@ -2,7 +2,7 @@
     <div class="content">
 
         <div class="module">
-            <div class="module-head">
+            <div class="module-head">bnjbjnkjn
                   <h2>Lecture Plan</h2>
             </div>
                 <div class="module-body">

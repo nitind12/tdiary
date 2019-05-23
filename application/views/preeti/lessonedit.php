@@ -8,7 +8,7 @@
 	<div class="content">
 		<div class="module">
 			<div class="module-head">
-				 <h2>Lesson Plan</h2>
+				 <h2>Actual Lesson Plan</h2>
 		</div>
 <div class="module-body">
 	<form  id="mylessonedit" name="mylessonedit" method="post" action="<?php echo site_url('Lessonedit_controller/savingdata');?>" class="form-horizontal row-fluid">

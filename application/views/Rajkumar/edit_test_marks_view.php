@@ -60,7 +60,7 @@
                       <td><?php echo "30"?><input type="hidden" value=" <?php echo "30"?>" name="totalmarks[]" id="sid_ <?php echo "30"?>">
                         </td>
                       <td>
-                          <input type="text" name="Obtained_Marks[]"id="Obtained_Marks[]" placeholder="Obtained Marks" class="span8">
+                          <input type="number" max="30"min="0"name="Obtained_Marks[]"id="Obtained_Marks[]" placeholder="Obtained Marks" class="span8">
                       </td>
                 </tr>  
                 <?php } ?>

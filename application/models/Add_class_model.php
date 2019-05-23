@@ -380,6 +380,18 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();
 		return $q->result();
 		}
+		function update_marks()
+		{
+			$subid=$this->input->post('sub');
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.*');
+		
+		$this->db->where('a.marks_type_id',$this->session->userdata('itypeid'));
+		$this->db->from('studentmarks a');
+		$q = $this->db->get();
+		//echo $this->db->last_query();
+		return $q->num_rows();
+		}
 		function add_view_attendance($clsid)
 		{
 		$this->db->distinct('a.add_class_id');

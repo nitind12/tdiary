@@ -57,7 +57,7 @@ class Testmodel extends CI_Model
 		$this->db->distinct('a.add_marks_id');
 		$this->db->select('a.*, b.student_id, b.first_name');
 		$this->db->where('c.add_class_id' ,$no_);
-		$this->db->where('b.session_id', $sess);
+		//$this->db->where('b.session_id', $sess);
 		$this->db->where('a.marks_type_id',$this->session->userdata('marksid'));
 		//$this->db->where('a.marks_type_id','1');
 		$this->db->from('studentmarks a');
@@ -66,9 +66,14 @@ class Testmodel extends CI_Model
 
 		$this->db->join('add_class c', 'c.add_class_id=a.add_class_id');
 
-		$q = $this->db->get('studentmarks');
+		$q = $this->db->get('');
 		
 		return $q->result();
+	}
+
+	function del($a){
+		$this->db->delete('studentmarks',array('add_marks_id' => $a));
+		return;
 	}
 	function del1($a){
 		$this->db->delete('studentmarks',array('add_marks_id' => $a));

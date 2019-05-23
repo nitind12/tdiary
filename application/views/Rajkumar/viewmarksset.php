@@ -74,7 +74,7 @@
                       <th align="center">Student Name</th>
                       <th align="center">Total Marks</th>
                       <th align="center">Obtained Marks</th>
-                      <th align="center" class="hideblock">Delete/Edit</th>
+                      <!--th align="center" class="hideblock">Delete/Edit</th-->
                       
                         </tr>
                   </thead>
@@ -86,9 +86,9 @@
               <td align="center"><?php echo $item->first_name?></td>
                <td align="center"><?php echo $item->totalmarks;?></td>
 
-              <td align="center"class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-marks';?>"><?php echo $item->marks;?></td>
+              <td align="center" id="<?php echo $item->add_marks_id.'-marks';?>"><?php echo $item->marks;?></td>
 
-              <td class="hideblock"><a href="<?php echo site_url('test/del1/' .$item->add_marks_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>
+              <!--<td class="hideblock"><a href="<?php echo site_url('test/del1/' .$item->add_marks_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>-->
        
       </tr>
 

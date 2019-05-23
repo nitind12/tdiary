@@ -32,14 +32,14 @@ class Test extends CI_Controller{
             $data['title'] = "Select-Marks-Type";
             $data['page_'] = "testview";        
                $data['dashboard1'] = $this->am->getDashboardMenu();
-        $data['menu'] = $this->am->getMenu();
-        $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
-        $data['cls_in_session'] = $this->am->fetchClass();
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
+            $data['last'] = $this->am->getlastMenu();
+            $data['cls_in_session'] = $this->am->fetchClass();
                $this->session->set_userdata('itype', $mt);
                $this->session->set_userdata('itypeid', $so_);
             $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
-           
+
             $this->load->view('templates/header', $data);
             $this->load->view('myrajpage',$data);  
             $this->load->view('templates/footer');
@@ -64,9 +64,11 @@ class Test extends CI_Controller{
             $data['add_attend'] = $this->am->add_attendance($sess, $no_);
             $data['marks_headerr_']=$this->um->marks_header($no_,$sess);
             $data['dashboard1'] = $this->am->getDashboardMenu();
-        $data['menu'] = $this->am->getMenu();
-        $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
+            $data['menu'] = $this->am->getMenu();
+            $data['submenu'] = $this->am->getSubmenu();
+            $data['last'] = $this->am->getlastMenu();
+            $data['update_marks'] = $this->am->update_marks();
+           
        
              $this->load->view('myrajpage',$data);  
             $this->load->view('templates/footer');

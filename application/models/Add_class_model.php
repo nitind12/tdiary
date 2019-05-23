@@ -382,7 +382,7 @@ class Add_class_model extends CI_Model
 		}
 		function update_marks()
 		{
-			$subid=$this->input->post('sub');
+		$subid=$this->input->post('sub');
 		$this->db->distinct('a.add_class_id');
 		$this->db->select('a.*');
 		
@@ -668,9 +668,10 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		
 		}
-		function reports_attendance_modals_data(){
-			$this->db->distinct('a.date');
-		
+
+		function reports_attendance_modals_data()
+		{
+		$this->db->distinct('a.date');
 		$this->db->select('a.*');
 		$query = $this->db->get('attendance a');
 		return $query->result();

@@ -561,8 +561,10 @@ $('#cmbAttendanceReportc').click(function()
 					//str = str + "<th>Session</th>"
 					str = str + "<th>Roll-No</th>"
 						for(i=0; i<len1;i++){
+							if (obj.date1[i].date==obj.date1[i].date) {
 				str = str + "<th>"+obj.date1[i].date+"</th>"
 					}
+				}
 					for(i=0; i<len;i++){
 						str = str + '<tr>';	
 						str = str + '<td>' + obj.consolidate[i].student_id + "</td>";

@@ -139,7 +139,10 @@ class Weeklyedit_model extends CI_Model
         $query = $this->db->update('weekly', $data);
         return $query;
     }
- 
 	
+	function count_Lecture_schedule()
+	{
+		
+	}
 }
 ?>

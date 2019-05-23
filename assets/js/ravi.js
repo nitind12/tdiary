@@ -560,17 +560,24 @@ $('#cmbAttendanceReportc').click(function()
 					str = str + "</tr>";
 					//str = str + "<th>Session</th>"
 					str = str + "<th>Roll-No</th>"
-						for(i=0; i<len1;i++){
+						for(i=0; i<len1;i++)
+						{
 							if (obj.date1[i].date==obj.date1[i].date) {
-				str = str + "<th>"+obj.date1[i].date+"</th>"
-					}
-				}
+							str = str + "<th>"+obj.date1[i].date+"</th>"
+							}
+						}
 					for(i=0; i<len;i++){
 						str = str + '<tr>';	
 						str = str + '<td>' + obj.consolidate[i].student_id + "</td>";
-
-						str = str + '<td>' + obj.consolidate[i].attendance_status + "</td>";
+							
+						if(obj.consolidate[i].attendance_status==1){
+								$p='P';
+						str = str + '<td>' + $p + "</td>";
+						}else{
+							$A='A';
+							str = str + '<td>' + $A + "</td>";
 						
+						}
 						str = str + '</tr>';
 					}
 					$('#reportshere').html(str);	//print table heading

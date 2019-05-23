@@ -101,7 +101,8 @@
   </tbody>
 </table>
 </form>
-<center><a href="<?php echo site_url('test2/del/'.$item->add_marks_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')">All data Delete</a>
+<center>
+  <a href="<?php echo site_url('test2/del/'.$item->add_marks_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')">All data Delete</a>
 </div>
 </div>
 </div>      

@@ -41,7 +41,6 @@
       </div>
 	<div><h1>You have already inserted <?php echo $this->session->userdata('itype')?> data </h1>
 		<h2>For update <?php echo $this->session->userdata('itype')?> data click update button </h2>
-		<?php $this->session->userdata('marksid');?>
 	  <form class="form-horizontal row-fluid" method="post" action="<?php echo site_url('Test2/viewmarks_controller');?>">
 	  		<?php foreach($add_class_in as $item){?>
     <inpu type="hidden"value="<?php echo $item->subject_name;?>"name="sub"id="sub">

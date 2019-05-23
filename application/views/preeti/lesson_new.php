@@ -179,7 +179,7 @@
 	                            <td class="show-read-more lessondata lesstd"  id="<?php echo $item->lesson_id.'-topic' ;?>"><?php echo $item->topic;?></td>
 
 	                        <!--    <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>		-->
-	                        	<?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra_Lecture_Taken'){?>
+	                        	<?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra Lecture Taken'){?>
 	                            <td class="lessondata lesstd redcolor"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?>
 	                          	<?php } else { ?>
 	                          		 <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?>

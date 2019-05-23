@@ -675,7 +675,7 @@ class Add_class_model extends CI_Model
 			$btn2= $this->input->post('d2');
 			
 		$this->db->distinct('a.date');
-		$this->db->select('a.*');
+		$this->db->select('a.date');
 		$this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
 		$query = $this->db->get('attendance a');
 		//echo $this->db->last_query();die();

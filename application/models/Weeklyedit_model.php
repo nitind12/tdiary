@@ -140,9 +140,6 @@ class Weeklyedit_model extends CI_Model
         return $query;
     }
 	
-	function count_Lecture_schedule()
-	{
-		
-	}
+
 }
 ?>

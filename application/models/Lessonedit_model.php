@@ -90,4 +90,12 @@ class Lessonedit_model extends CI_Model
 		$query = $this->db->get('lecture_type');
 		return $query->result();
 	}
+
+	function count_Lecture_schedule()
+	{
+		$this->db->where('lecture_type_id =', 1);
+		$query = $this->db->get('Employees');
+		echo $query->num_rows();
+
+	}
 }?>

@@ -84,10 +84,11 @@ class Lessonedit_model extends CI_Model
 		return;
 	}
 
-	public function getLecturetype()
+/*	public function getLecturetype()
 	{
 		$this->db->select('lecture_type_id,lecture_name');
 		$query = $this->db->get('lecture_type');
 		return $query->result();
 	}
+	*/
 }?>

@@ -99,22 +99,13 @@
 
 
 						 		<td colspan="2"> Lecture Type:<br>
-									<!--select tabindex="1" data-placeholder="Select here.." class="span8" name="lecturetype[]"id="lecturetype[]" required="required">
+									<select tabindex="1" data-placeholder="Select here.." class="span8" name="lecturetype[]"id="lecturetype[]" required="required">
 										<option value="">Select here..</option>
 										<option value="Letcure Schedule">Letcure Schedule</option>
 										<option value="Arrangement">Arrangement</option>
 										<option value="Extra Lecture Taken">Extra Lecture Taken</option>
 												
-									</select-->
-									<select tabindex="1"data-placeholder="Select here.." class="span8" name="lecturetype" id="lecturetype"  >
-									  	<option value ="">Select lecture type...</option>
-									  		<?php foreach($lecture_type as $item){?>
-									  			<option value="<?php echo $item->lecture_type;?>">
-									  				<?php echo $item->lecture_name?></option>
-
-									  		<?php
-									  	}?>
-										
+									</select>
 								</td>
 							
 

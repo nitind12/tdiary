@@ -49,7 +49,7 @@ class Lessonedit_controller extends CI_Controller
             $data['menu'] = $this->am->getMenu();
             $data['submenu'] = $this->am->getSubmenu();
             $data['last'] = $this->am->getlastMenu();
-             $data['lecture_type'] = $this->obj->getLecturetype();
+            // $data['lecture_type'] = $this->obj->getLecturetype();
         
             $data['t_diary'] = $this->obj->fetchtable($no_,$subid);     
             $data['add_class_in'] = $this->am->add_view_attendance($no_);     

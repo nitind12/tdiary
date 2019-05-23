@@ -385,6 +385,7 @@ public function attendance_report_View_Consolidate2($no_)
     {
         $data['consolidate']=$this->am->reports_attendance_modalsCA();
         $data['date1']=$this->am->reports_attendance_modals_data();
+        $data['student']=$this->am->reports_attendance_modals_datastudent();
        
         echo json_encode($data);
     

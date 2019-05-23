@@ -562,22 +562,30 @@ $('#cmbAttendanceReportc').click(function()
 					str = str + "<th>Roll-No</th>"
 						for(i=0; i<len1;i++)
 						{
-							if (obj.date1[i].date==obj.date1[i].date) {
+							if (obj.date1[i].date==obj.date1[i].date) 
+							{
 							str = str + "<th>"+obj.date1[i].date+"</th>"
 							}
+
 						}
-					for(i=0; i<len;i++){
 						str = str + '<tr>';	
-						str = str + '<td>' + obj.consolidate[i].student_id + "</td>";
-										
+						for(i=0; i<len;i++)
+						{
+							
+							str = str + '<td>' + obj.consolidate[i].student_id + "</td>";
+							if (obj.consolidate[i].date==obj.consolidate[i].date) 
+						{
+						str = str + '<td>' ;	
 						if(obj.consolidate[i].attendance_status==1){
 								$p='PRESENT';
-						str = str + '<td>' + $p + "</td>";
+						str = str  + $p ;
 						}else{
 							$A='ABSENT';
-							str = str + '<td>' + $A + "</td>";
+							str = str + $A + "</td>";
 						
-						}
+						}str = str + "</td>";
+						
+					}
 						str = str + '</tr>';
 					}
 					$('#reportshere').html(str);	//print table heading

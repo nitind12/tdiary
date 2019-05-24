@@ -11,8 +11,8 @@ class Test extends CI_Controller{
 	}
 	 public function viewmarks_controller2() ////rename fecttab 
     {  
-        $no_=1;
-        $sess=2018;
+        $no_='1';
+        $sess='2018';
         $data['title'] = "assignment_view";
         $data['page_'] = "viewmarksset2";
         $data['dashboard1'] = $this->am->getDashboardMenu();
@@ -20,10 +20,10 @@ class Test extends CI_Controller{
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
        
-        $this->load->view('templates/header', $data);
         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['vim'] = $this->um->view_internal_marks($no_,$sess);
-        
+          $this->load->view('templates/header', $data);
+      
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
          }

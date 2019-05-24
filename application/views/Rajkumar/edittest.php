@@ -39,7 +39,8 @@
               </tbody>    
         </table>
       </div>
-	   redirect('test/');      
+      <?php
+	        redirect('test/viewmarks_controller2');      
         } 
          else {?>
 

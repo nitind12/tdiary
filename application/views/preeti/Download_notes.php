@@ -14,6 +14,37 @@
             </div>
 
             <div class="module-body ">
+              <form id="marks1formview" name="marks1formview" class="form-horizontal row-fluid">
+                   <table class="table table-striped table-bordered table-condensed"  >
+    
+      <!--<table class="table" >-->
+                    <tbody>
+                      <tr>
+                         <td>Subject:<br>
+                  <select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+                    <option value ="">Select here...</option>
+                    <?php foreach ($subjects as  $item) { ?>
+                                                 <option value="<?php echo $item->subject_id;?>">
+                                                  <?php echo $item->subject_name?></option>
+                                                    <?php }?>
+                                                
+                    
+                  </select>
+                </td>
+                <td>
+                     
+                       <br> 
+                        <button  style="float:left" type="button" class="btn btn-primary" name="save" value="submit" id="btnViewmarks1report">Submit</button>
+                    
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+               
+        </form>
+        <br/>
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                     <thead>
                               <th>File</th>
@@ -25,6 +56,7 @@
                      
                     </thead>
 
+                
                       <?php foreach ($downloads as $item) {?>
                         
                         <tr><td><a href="<?php  echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><?php echo $item->upload_notes;?></a>

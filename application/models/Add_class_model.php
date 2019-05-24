@@ -631,6 +631,21 @@ class Add_class_model extends CI_Model
 		}
 
 
+	function getSubject_download()
+		{
+			
+		$this->db->where('a.course_id',$this->session->userdata('cos'));
+		$this->db->where('a.semester_id',$this->session->userdata('tan'));
+
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject a');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		
+
+
+
 
 	function del($a)
 	{

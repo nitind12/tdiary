@@ -50,7 +50,7 @@
 
 
 
-          <form  method="post" name="weeklyedit"  id="weeklyedit"    class="form-horizontal row-fluid">
+          <form  method="post" name="weeklyedit"  id="weeklyedit"    class="form-horizontal row-fluid" action="<?php echo site_url('Weeklyedit_controller/savingdata/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>">
 
                
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" width="100%">
@@ -81,7 +81,7 @@
                                       </td>
 
                                       <td>End Date:<br>
-                                          <input type="date" id="enddate" name="enddate" class="span8"  required="required">
+                                          <input type="date" id="enddate" name="enddate" class="span12"  required="required">
                                       </td>
 
                                           <td>No. Of Lost Due To Holiday:
@@ -98,12 +98,12 @@
 
                                          <td>No. Of Lecture Schedule:
                                             <div class="span8"id="Lecture_schedule" name="Lecture_schedule" ></div>
-                                            <input type="text" value="" name="Lecture_schedule_" id="Lecture_schedule_"  disabled="true">
+                                            <input type="hidden" value="" name="Lecture_schedule_" id="Lecture_schedule_">
                                         </td>
 
                                        <td>No. Of Extra Taken :
                                           <div id="extra_taken" name="extra_taken" class=" span8"  required="required"></div>
-                                           <input type="text" value="" name="extra_taken_" id="extra_taken_">
+                                           <input type="hidden" value="" name="extra_taken_" id="extra_taken_">
                                       </td>
                                       
 
@@ -115,12 +115,12 @@
                                      
                                         <td>No. Of Arrangement :<br>
                                             <div id="Arrangement" name="Arrangement" class=" span8"  required="required"></div>
-                                            <input type="text" value="" name="Arrangement_" id="Arrangement_">
+                                            <input type="hidden" value="" name="Arrangement_" id="Arrangement_">
                                          </td>
 
                                         <td colspan="2">No. Of Lecture Actual Taken :<br>
                                             <div class="type span8"id="Acual_Lecture_taken" name="Acual_Lecture_taken" ></div> 
-                                            <input type="text" value="" name="Acual_Lecture_taken_" id="Acual_Lecture_taken_"> 
+                                            <input type="hidden" value="" name="Acual_Lecture_taken_" id="Acual_Lecture_taken_"> 
                                       </td>
                                     
                                       <!--   <td colspan="4">Description Of Topic:<br>

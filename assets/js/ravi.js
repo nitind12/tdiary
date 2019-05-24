@@ -546,18 +546,17 @@ $('#cmbAttendanceReportc').click(function()
 			url:url_,
 			type: 'post',
 			data: data_,
-			success: function(consolidate,date1){
+			success: function(consolidate){
 				
 				var obj = JSON.parse(consolidate);
 				var len = obj.consolidate.length;
 				var len1 = obj.date1.length;
-				
+				var len2 = obj.student.length;
 				var str = 'x';
 				
 
 				if(len > 0){
 					str = str + "<tr>";
-					str = str + "</tr>";
 					//str = str + "<th>Session</th>"
 					str = str + "<th>Roll-No</th>"
 						for(i=0; i<len1;i++)
@@ -568,26 +567,28 @@ $('#cmbAttendanceReportc').click(function()
 							}
 
 						}
-						str = str + '<tr>';	
-						for(i=0; i<len;i++)
+						str = str + '</tr>';	
+						for(k=0; k<len2;k++)
 						{
-							
-							str = str + '<td>' + obj.consolidate[i].student_id + "</td>";
-							if (obj.consolidate[i].date==obj.consolidate[i].date) 
-						{
-						str = str + '<td>' ;	
-						if(obj.consolidate[i].attendance_status==1){
-								$p='PRESENT';
-						str = str  + $p ;
-						}else{
-							$A='ABSENT';
-							str = str + $A + "</td>";
-						
-						}str = str + "</td>";
-						
-					}
-						str = str + '</tr>';
-					}
+							str = str + "<tr>";
+							str = str + '<td>' + obj.student[k].student_id + "</td>";
+							for(i=0;i<len1;i++){
+								for(j=0; j<len; j++){
+									if (obj.date1[i].date==obj.consolidate[j].date && obj.student[k].student_id==obj.consolidate[j].student_id){
+										str = str + '<td>' ;	
+										if(obj.consolidate[j].attendance_status==1){
+												$p='<span style="color: #009000">P</span>';
+										str = str  + $p ;
+										}else{
+											$A='<span style="color: #ff0000">A</span>';
+											str = str + $A + "</td>";
+										
+										}str = str + "</td>";
+									}
+								}
+							}
+							str = str + '</tr>';
+						}	
 					$('#reportshere').html(str);	//print table heading
 				} else {
 					$('#reportshere').html('No data found');

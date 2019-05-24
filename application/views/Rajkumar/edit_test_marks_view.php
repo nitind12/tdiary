@@ -1,5 +1,4 @@
  
-
 <div class="module-body table">
 
           <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
@@ -44,6 +43,7 @@
                       <th align="center">Student Name</th>
                       <th align="center">Total Marks</th>
                       <th align="center">Obtained Marks</th>
+                      <th align="center">Percentage</th>
                         </tr>
                   </thead>
                   <tbody>
@@ -57,13 +57,18 @@
                           <input type="hidden" value="<?php echo $item->student_id;?>" name="Student_Roll[]" id ="sid_<?php echo $item->student_id;?>">
                       </td>
                       <td align="center"><?php echo $item->first_name; ?></td>
-                      <td><?php echo "30"?><input type="hidden" value=" <?php echo "30"?>" name="totalmarks[]" id="sid_ <?php echo "30"?>">
+                      <td><?php echo "30"?><input type="hidden" value="<?php echo "30"?>" name="totalmarks[]" id="tot_<?php echo $item->student_id;?>" class="marks1">
                         </td>
                       <td>
-                          <input type="number" max="30"min="0"name="Obtained_Marks[]"id="Obtained_Marks[]" placeholder="Obtained Marks" class="span8">
+                          <input type="number" max="30" min="0"name="Obtained_Marks[]"id="om_<?php echo $item->student_id;?>" placeholder="Obtained Marks" class="span8 marks">
                       </td>
+                    <td>
+                       <input type="text" name="Percentage[]" id="per_<?php echo $item->student_id;?>" placeholder="Percentage" class="span8 ">
+                      </td>
+
                 </tr>  
                 <?php } ?>
+                 
               </tbody>
           <br/>
         </table>

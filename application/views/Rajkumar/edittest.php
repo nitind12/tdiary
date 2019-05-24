@@ -43,7 +43,7 @@
 		<h2>For update <?php echo $this->session->userdata('itype')?> data click update button </h2>
 	  <form class="form-horizontal row-fluid" method="post" action="<?php echo site_url('Test2/viewmarks_controller');?>">
 	  		<?php foreach($add_class_in as $item){?>
-    <inpu type="hidden"value="<?php echo $item->subject_name;?>"name="sub"id="sub">
+    <inpu type="hidden"value="<?php echo $item->subject_name;?>"name="subject_id"id="subject_id">
  <input type="submit"value="update"> </form>
        <?php
         } 

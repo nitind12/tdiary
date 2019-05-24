@@ -1,7 +1,23 @@
  $(document).ready(function()
 {
+	
 
-	$('.editmarksselected').click(function(){
+	 $('.marks').blur(function() {
+	 	var str = this.id;
+	 	var arr = str.split('_')
+      calculate(this.value, arr[1]);
+    });
+
+    function calculate(val_, id_){
+        var pPos = parseInt(val_);
+        var pEarned = parseInt($('#tot_'+id_).val());
+        var perc="";
+           perc = ((pPos/pEarned) * 100).toFixed(3);
+       
+        $('#per_'+id_).val(perc);
+    }
+
+	 $('.editmarksselected').click(function(){
 			var str = this.id;
 			var arr = str.split('~');
 			$('#mtypeid').val(arr[0]);
@@ -16,6 +32,8 @@
 			var arr = str.split('~');
 			$('#addclassid').val(arr[0]);
 			$('#sessionid').val(arr[1]);
+			$('#course_id').val(arr[2]);
+			$('#subject_id').val(arr[3]);
 
 			$('#frmMarksedit').submit();
 		});	
@@ -108,260 +126,7 @@ $('.assignmentchecker').click(function(){
 		
 		});
 
-
-/*		
-	$('#myform1').submit(function()
-	{
-		if($.trim($('#Course_name').val()) == '')
-			{
-				alert('Course_name must be filled out');
-			}
-		else if($.trim($('#Semester').val()) == '')
-			{
-				alert('Semester must be filled out');
-			}
-		else if($.trim($('#Section').val()) == '')
-			{
-				alert('Section must be filled out');
-			}
-		else if($.trim($('#Subject').val()) == '')
-			{
-				alert('Subject must be filled out');
-			}
-		
-		else if($.trim($('#Student_Roll').val()) == '')
-			{
-				alert('Student_Roll must be filled out');
-			}
-		/*else if($.trim($('#Student_name').val()) == '')
-			{
-				alert('Student_name must be filled out');
-			}*/
-	/*	else if($.trim($('#marks1').val()) == '')
-			{
-				alert('marks1 must be filled out');
-			}
-		else if($.trim($('#marks2').val()) == '')
-			{
-				alert('marks2 must be filled out');
-			}
-		
-		else
-			{
-				$('#myform1').submit();
-			}
-		return false;
-		
-	});
-	$('#myform2').submit(function()
-	{
-		if($.trim($('#Course_name').val()) == '')
-			{
-				alert('Course_name must be filled out');
-			}
-		else if($.trim($('#Semester').val()) == '')
-			{
-				alert('Semester must be filled out');
-			}
-		else if($.trim($('#Section').val()) == '')
-			{
-				alert('Section must be filled out');
-			}
-		else if($.trim($('#Subject').val()) == '')
-			{
-				alert('Subject must be filled out');
-			}
-		else if($.trim($('#Assignment_id').val()) == '')
-			{
-				alert('Assignment_id must be filled out');
-			}
-		
-		else if($.trim($('#Given_date').val()) == '')
-			{
-				alert('Given_date must be filled out');
-			}
-		else if($.trim($('#Submission_date').val()) == '')
-			{
-				alert('Submission_date must be filled out');
-			}
-		else if($.trim($('#Last_submission_date').val()) == '')
-			{
-				alert('Last_submission_date must be filled out');
-			}
-		else if($.trim($('#Unit').val()) == '')
-			{
-				alert('Unit must be filled out');
-			}
-		else if($.trim($('#Topic').val()) == '')
-			{
-				alert('Topic must be filled out');
-			}
-		
-		else
-			{
-				$('#myform2').submit();
-			}
-		return false;
-		
-	});
-	$('#myform3').submit(function()
-	{
-		if($.trim($('#Course_name').val()) == '')
-			{
-				alert('Course_name must be filled out');
-			}
-		else if($.trim($('#Semester').val()) == '')
-			{
-				alert('Semester must be filled out');
-			}
-		else if($.trim($('#Section').val()) == '')
-			{
-				alert('Section must be filled out');
-			}
-		else if($.trim($('#Subject').val()) == '')
-			{
-				alert('Subject must be filled out');
-			}
-		
-		
-		else
-			{
-				$('#myform3').submit();
-			}
-		return false;
-		
-	});
-	$('#form100').submit(function()
-	{
-		if($.trim($('#Course_name').val()) == '')
-			{
-				alert('Course_name must be filled out');
-			}
-		else if($.trim($('#Semester').val()) == '')
-			{
-				alert('Semester must be filled out');
-			}
-		else if($.trim($('#Section').val()) == '')
-			{
-				alert('Section must be filled out');
-			}
-		else if($.trim($('#Subject').val()) == '')
-			{
-				alert('Subject must be filled out');
-			}
-		else if($.trim($('#Student_Roll').val()) == '')
-			{
-				alert('Student_Roll must be filled out');
-			}
-		
-		else if($.trim($('#Marks').val()) == '')
-			{
-				alert('Class_Test_Marks must be filled out');
-			}
-		
-		else
-			{
-				$('#form100').submit();
-			}
-		return false;
-		
-	});
-
-
-	$('#form101').submit(function()
-	{
-		if($.trim($('#Course_name').val()) == '')
-			{
-				alert('Course_name must be filled out');
-			}
-		else if($.trim($('#Semester').val()) == '')
-			{
-				alert('Semester must be filled out');
-			}
-		else if($.trim($('#Section').val()) == '')
-			{
-				alert('Section must be filled out');
-			}
-		else if($.trim($('#Subject').val()) == '')
-			{
-				alert('Subject must be filled out');
-			}
-		else if($.trim($('#Student_Roll').val()) == '')
-			{
-				alert('Student_Roll must be filled out');
-			}
-		
-		else if($.trim($('#Practical_marks').val()) == '')
-			{
-				alert('Practical_Marks must be filled out');
-			}
-		
-		else
-			{
-				$('#form101').submit();
-			}
-		return false;
-		
-	});
-
-	$('#form102').submit(function()
-	{
-		if($.trim($('#Course_name').val()) == '')
-			{
-				alert('Course_name must be filled out');
-			}
-		else if($.trim($('#Semester').val()) == '')
-			{
-				alert('Semester must be filled out');
-			}
-		else if($.trim($('#Section').val()) == '')
-			{
-				alert('Section must be filled out');
-			}
-		else if($.trim($('#Subject').val()) == '')
-			{
-				alert('Subject must be filled out');
-			}
-		else if($.trim($('#Student_Roll').val()) == '')
-			{
-				alert('Student_Roll must be filled out');
-			}
-		else if($.trim($('#Assignment_id').val()) == '')
-			{
-				alert('Assignment_id must be filled out');
-			}
-		
-		
-		else if($.trim($('#Submission_date').val()) == '')
-			{
-				alert('Submission_date must be filled out');
-			}
-		else if($.trim($('#Late_submission').val()) == '')
-			{
-				alert('Late_submission must be filled out');
-			}
-		else if($.trim($('#Grade').val()) == '')
-			{
-				alert('Grade must be filled out');
-			}
-		
-		else
-			{
-				$('#form102').submit();
-			}
-		return false;
-		
-	});
-
-*/
-
-
-
-
-
-
-
-	$('#btnViewmarks11').click(function(){
+$('#btnViewmarks11').click(function(){
 		
 		var data_ = $('#myform3').serialize();
 		

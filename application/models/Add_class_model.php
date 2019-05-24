@@ -380,18 +380,6 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();
 		return $q->result();
 		}
-		function update_marks()
-		{
-		$subid=$this->input->post('sub');
-		$this->db->distinct('a.add_class_id');
-		$this->db->select('a.*');
-		
-		$this->db->where('a.marks_type_id',$this->session->userdata('itypeid'));
-		$this->db->from('studentmarks a');
-		$q = $this->db->get();
-		//echo $this->db->last_query();
-		return $q->num_rows();
-		}
 		function add_view_attendance($clsid)
 		{
 		$this->db->distinct('a.add_class_id');
@@ -677,6 +665,7 @@ class Add_class_model extends CI_Model
 		$this->db->distinct('a.date');
 		$this->db->select('a.date');
 		$this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+		//$this->db->where('a.add_class_id', $this->input->post('Class'));
 		$query = $this->db->get('attendance a');
 		//echo $this->db->last_query();die();
 		return $query->result();
@@ -684,10 +673,12 @@ class Add_class_model extends CI_Model
 		}
 		function reports_attendance_modals_datastudent()
 		{
-			
-		$this->db->distinct('a.student_id');
-		$this->db->select('a.student_id');
-		$query = $this->db->get('attendance a');
+		$this->db->select('a.student_id, a.first_name, a.last_name');
+		$this->db->from('std_personal a');
+		$this->db->join('section b', 'a.student_id=b.student_id');
+		$this->db->where('b.session_id', '2018');
+		$this->db->where('b.session_class_id', $this->input->post('Class'));
+		$query = $this->db->get();
 		return $query->result();
 		}
 		function reports_attendance_modalsCA()

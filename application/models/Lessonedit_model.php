@@ -16,7 +16,6 @@ class Lessonedit_model extends CI_Model
 		return $query->result();
 	}
 
-
 	function lesson_edit_saving_modal()
 	{
 		$subject_id=$this->input->post('subject_id');

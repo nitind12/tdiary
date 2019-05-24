@@ -27,7 +27,26 @@ class Weeklyedit_controller extends CI_Controller
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');	
     }
-
+ function count_lecture()
+    {
+      $data['count'] = $this->obj->count_lecture();
+              echo json_encode($data);
+    }
+function count_lecture1()
+    {
+       $data['count'] = $this->obj->count_lecture_arrangement();
+              echo json_encode($data);
+    }
+function count_lecture2()
+    {
+       $data['count'] = $this->obj->count_lecture_Extra_Lecture_Taken();
+              echo json_encode($data);
+    }
+function count_lecture3()
+    {
+       $data['count'] = $this->obj->count_lecture_Actual_Lecture_Taken();
+              echo json_encode($data);
+    }
 
 
     function weekly_edit()
@@ -43,7 +62,6 @@ class Weeklyedit_controller extends CI_Controller
             $data['menu'] = $this->am->getMenu();
             $data['submenu'] = $this->am->getSubmenu();
             $data['last'] = $this->am->getlastMenu();
-            
             $data['add_class_in'] = $this->am->add_view_attendance($no_);
             $data['t_diary'] = $this->obj->fetchtable($no_,$subid);
             $data['title'] = "Weekly Edit";

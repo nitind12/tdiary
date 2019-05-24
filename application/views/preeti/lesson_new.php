@@ -101,7 +101,7 @@
 						 		<td colspan="2"> Lecture Type:<br>
 									<select tabindex="1" data-placeholder="Select here.." class="span8" name="lecturetype[]"id="lecturetype[]" required="required">
 										<option value="">Select here..</option>
-										<option value="Letcure Schedule">Letcure Schedule</option>
+										<option value="Lecture Schedule">Lecture Schedule</option>
 										<option value="Arrangement">Arrangement</option>
 										<option value="Extra Lecture Taken">Extra Lecture Taken</option>
 												
@@ -184,6 +184,7 @@
 	                        <!--    <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>		-->
 	                        	<?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra Lecture Taken'){?>
 	                            <td class="lessondata lesstd redcolor"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>">
+	                            	
 	                           	<?php echo $item->lecture_type;?>
 	                          	<?php }
 	                          	 else
@@ -204,11 +205,11 @@
               
                                 
                 </table>
-                          <tr><td>LECTURE SCHEDULE=	 <b id="lect_schedule">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	</b></td>
+                          <!--tr><td>LECTURE SCHEDULE=	 <b id="lect_schedule">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	</b></td>
                         <td>ARRANGEMENT=<b id="Arrangement">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
                         <td>EXTRA LECTURE TAKEN= <b id="extra_lect">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
                         <td>ACTUAL LECTURE TAKEN= <b id="actual_lect"></b></td>
-                    </tr>
+                    </tr-->
 
                 	</form>
 			</div>

@@ -26,6 +26,7 @@ class Testmodel extends CI_Model
 			'marks'=>$Obtained_Marks[$i],
 			'marks_type_id' => $this->session->userdata('itypeid'),
 			'subject_id' => $subject_id,
+			'faculty_id' => $this->session->userdata('facultyid'),
 			
 			//'marks_type_id' => '1',
 			'status' => '1',
@@ -84,8 +85,8 @@ class Testmodel extends CI_Model
 		$this->db->join('add_class c', 'c.add_class_id=a.add_class_id');
 
 		$q = $this->db->get();
-		//echo $this->db->last_query();die();
-		return $q->result();
+		echo $this->db->last_query();die();
+		//return $q->result();
 	}
 
 	function del($a){

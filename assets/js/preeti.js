@@ -566,6 +566,10 @@ $(document).ready(function()
 		
 		});
 
+
+
+
+//get Lecture schedule automatically
 $('#enddate').change(function(){
 			if($('#startdate').val() != '' && $('#enddate').val() !=0){
 				var url_ = site_url_+"/Weeklyedit_controller/count_lecture";
@@ -612,6 +616,7 @@ $('#enddate').change(function(){
 					str = str + obj.count.length;
 
 									$('#Arrangement').html(str);
+									$('#Arrangement_').val(str);
 				},
 					
 				
@@ -629,7 +634,7 @@ $('#enddate').change(function(){
 
 
 
-// extra lecture taken
+//get  extra lecture taken automatically
 		$('#enddate').change(function(){
 			if($('#startdate').val() != '' && $('#enddate').val() !=0){
 				var url_ = site_url_+"/Weeklyedit_controller/count_lecture2";
@@ -644,6 +649,7 @@ $('#enddate').change(function(){
 					str = str + obj.count.length;
 
 									$('#extra_taken').html(str);
+									$('#extra_taken_').val(str);
 				},
 					
 				
@@ -677,6 +683,7 @@ $('#enddate').change(function(){
 					str = str + obj.count.length;
 
 									$('#Acual_Lecture_taken').html(str);
+									$('#Acual_Lecture_taken_').val(str);
 				},
 					
 				

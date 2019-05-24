@@ -77,11 +77,11 @@
                                   <tr>
 
                                       <td>Start Date:<br>
-                                          <input type="date" id="startdate" name="startdate" class="span7"  required="required">
+                                          <input type="date" id="startdate" name="startdate" class="span8"  required="required">
                                       </td>
 
                                       <td>End Date:<br>
-                                          <input type="date" id="enddate" name="enddate" class="span12"  required="required">
+                                          <input type="date" id="enddate" name="enddate" class="span8"  required="required">
                                       </td>
 
                                           <td>No. Of Lost Due To Holiday:
@@ -93,15 +93,19 @@
 
                                   <tr>
                                       <td>No. Of Lost Due To College Leave(CL):
-                                            <input type="number" id="due_to_cl" name="due_to_cl" class="span7"  required="required">
+                                            <input type="number" id="due_to_cl" name="due_to_cl" class="span8"  required="required">
                                         </td>
+
+                                         <td>No. Of Lecture Schedule:
+                                            <div class="span8"id="Lecture_schedule" name="Lecture_schedule" ></div>
+                                            <input type="text" value="" name="Lecture_schedule_" id="Lecture_schedule_"  disabled="true">
+                                        </td>
+
                                        <td>No. Of Extra Taken :
                                           <div id="extra_taken" name="extra_taken" class=" span8"  required="required"></div>
+                                           <input type="text" value="" name="extra_taken_" id="extra_taken_">
                                       </td>
-                                        <td>No. Of Lecture Schedule:
-                                            <div class="span8"id="Lecture_schedule" name="Lecture_schedule" ></div>
-                                            <input type="text" value="" name="Lecture_schedule_" id="Lecture_schedule_">
-                                        </td>
+                                      
 
                                     
                                   </tr>
@@ -111,9 +115,12 @@
                                      
                                         <td>No. Of Arrangement :<br>
                                             <div id="Arrangement" name="Arrangement" class=" span8"  required="required"></div>
+                                            <input type="text" value="" name="Arrangement_" id="Arrangement_">
                                          </td>
+
                                         <td colspan="2">No. Of Lecture Actual Taken :<br>
-                                            <div class="type span8"id="Acual_Lecture_taken" name="Acual_Lecture_taken" ></div>  
+                                            <div class="type span8"id="Acual_Lecture_taken" name="Acual_Lecture_taken" ></div> 
+                                            <input type="text" value="" name="Acual_Lecture_taken_" id="Acual_Lecture_taken_"> 
                                       </td>
                                     
                                       <!--   <td colspan="4">Description Of Topic:<br>

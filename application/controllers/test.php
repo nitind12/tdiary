@@ -9,7 +9,28 @@ class Test extends CI_Controller{
          if(!$this->session->userdata('user')) redirect('Login_controller');
    
 	}
-	function index() 												//internal wale class 
+	 public function viewmarks_controller2() ////rename fecttab 
+    {  
+        $no_=1;
+        $sess=2018;
+        $data['title'] = "assignment_view";
+        $data['page_'] = "viewmarksset2";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+       
+        $this->load->view('templates/header', $data);
+        $data['add_class_in'] = $this->am->add_view_attendance($no_);
+        $data['vim'] = $this->um->view_internal_marks($no_,$sess);
+        
+        $this->load->view('myrajpage',$data);  
+        $this->load->view('templates/footer');
+         }
+
+           
+           
+function index() 												//internal wale class 
 	{
 		$data['page_'] = 'edit_marks_selected';
         $data['title'] = "Edit-Marks ";

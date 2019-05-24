@@ -39,8 +39,7 @@
               </tbody>    
         </table>
       </div>
-	  <?php $this->load->view('Rajkumar/viewmarksset2');
-        
+	   redirect('test/');      
         } 
          else {?>
 

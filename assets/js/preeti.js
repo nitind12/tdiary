@@ -566,10 +566,131 @@ $(document).ready(function()
 		
 		});
 
+$('#enddate').change(function(){
+			if($('#startdate').val() != '' && $('#enddate').val() !=0){
+				var url_ = site_url_+"/Weeklyedit_controller/count_lecture";
+				var data_ = $('#weeklyedit').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + obj.count.length;
 
+									$('#Lecture_schedule').html(str);
+									$('#Lecture_schedule_').val(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#startdate').change(function(){
+			$('#enddate').change();
+
+		
+		});
 
 		
 
+		$('#enddate').change(function(){
+			if($('#startdate').val() != '' && $('#enddate').val() !=0){
+				var url_ = site_url_+"/Weeklyedit_controller/count_lecture1";
+				var data_ = $('#weeklyedit').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + obj.count.length;
+
+									$('#Arrangement').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#startdate').change(function(){
+			$('#enddate').change();
+
+		
+		});
+
+
+
+// extra lecture taken
+		$('#enddate').change(function(){
+			if($('#startdate').val() != '' && $('#enddate').val() !=0){
+				var url_ = site_url_+"/Weeklyedit_controller/count_lecture2";
+				var data_ = $('#weeklyedit').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + obj.count.length;
+
+									$('#extra_taken').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#startdate').change(function(){
+			$('#enddate').change();
+
+		
+		});
+
+
+
+
+//actual lecture taken
+		$('#enddate').change(function(){
+			if($('#startdate').val() != '' && $('#enddate').val() !=0){
+				var url_ = site_url_+"/Weeklyedit_controller/count_lecture3";
+				var data_ = $('#weeklyedit').serialize();
+				$.ajax({
+				type:"POST",
+				data: data_,
+				url: url_,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var str = '';
+					str = str + obj.count.length;
+
+									$('#Acual_Lecture_taken').html(str);
+				},
+					
+				
+
+				});
+			}
+
+			});
+
+		$('#startdate').change(function(){
+			$('#enddate').change();
+
+		
+		});
 
 
 });

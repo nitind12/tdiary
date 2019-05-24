@@ -13,7 +13,7 @@ class Weeklyedit_model extends CI_Model
 		//return $query->result();
 
 		$this->db->select('a.*');
-		$this->db->where('a.add_class_id', $clsid,$subid);
+		$this->db->where('a.add_class_id', $clsid);
 		$this->db->where('a.subject_id', $subid);
 		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
 
@@ -22,7 +22,92 @@ class Weeklyedit_model extends CI_Model
 		//echo $this->db->last_query();die();
 		return $query->result();
 	}
+		
+	function count_lecture()
+	{  
+		$sd=$this->input->post('startdate');
+		$ed=$this->input->post('enddate');
+	$subid=$this->input->post('subject_id');
+		
+		$this->db->select('a.*');
+
+		$this->db->where('DATE(date) BETWEEN "'.$sd.'" AND "'.$ed.'"', '',false);
+		$this->db->where('a.lecture_type','Lecture Schedule');
+		
+		$this->db->where('a.subject_id',$subid);
+		$this->db->where('a.username', 'ra');
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+		$this->db->from('lesson a');
 	
+		$query = $this->db->get();	
+		//echo $this->db->last_query();die();
+		return $query->result();
+	}
+function count_lecture_arrangement()
+	{  
+		$sd=$this->input->post('startdate');
+		$ed=$this->input->post('enddate');
+		$subid=$this->input->post('subject_id');
+		
+		$this->db->select('a.*');
+
+		$this->db->where('DATE(date) BETWEEN "'.$sd.'" AND "'.$ed.'"', '',false);
+		$this->db->where('a.lecture_type','Arrangement');
+		
+		$this->db->where('a.subject_id',$subid);
+		$this->db->where('a.username', 'ra');
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+		$this->db->from('lesson a');
+	
+		$query = $this->db->get();	
+		//echo $this->db->last_query();die();
+		return $query->result();
+	}
+
+function count_lecture_Extra_Lecture_Taken()
+	{  
+		$sd=$this->input->post('startdate');
+		$ed=$this->input->post('enddate');
+		$subid=$this->input->post('subject_id');
+		
+		$this->db->select('a.*');
+
+		$this->db->where('DATE(date) BETWEEN "'.$sd.'" AND "'.$ed.'"', '',false);
+		$this->db->where('a.lecture_type','Extra Lecture Taken');
+		
+		$this->db->where('a.subject_id',$subid);
+		$this->db->where('a.username', 'ra');
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+		$this->db->from('lesson a');
+	
+		$query = $this->db->get();	
+		//echo $this->db->last_query();die();
+		return $query->result();
+	}
+
+
+function count_lecture_Actual_Lecture_Taken()
+	{  
+		$sd=$this->input->post('startdate');
+		$ed=$this->input->post('enddate');
+	$subid=$this->input->post('subject_id');
+		
+		$this->db->select('a.*');
+
+		$this->db->where('DATE(date) BETWEEN "'.$sd.'" AND "'.$ed.'"', '',false);
+		
+		$this->db->where('a.subject_id',$subid);
+		$this->db->where('a.username', 'ra');
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+		$this->db->from('lesson a');
+	
+		$query = $this->db->get();	
+		//echo $this->db->last_query();die();
+		return $query->result();
+	}
+
+
+
 
 	function savingdata()
 	{	
@@ -41,6 +126,7 @@ class Weeklyedit_model extends CI_Model
 			'no_of_lost_due_to_cl' => $this->input->post('due_to_cl'),
 			'no_extra_taken' => $this->input->post('extra_taken'),
 			'no_of_lecture_actual_taken' => $this->input->post('actual_taken'),
+			'arrangement'=>$this->input->post('Arrangement'),
 			'subject_id'=>$subject_id,
 				'faculty_id'=>$this->session->userdata('facultyid'),
 				);

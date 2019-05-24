@@ -50,9 +50,9 @@
 
 
 
-          <form  method="post" name="weeklyedit"  id="weeklyedit"   action="<?php echo site_url('Weeklyedit_controller/savingdata/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id);?>"  class="form-horizontal row-fluid">
+          <form  method="post" name="weeklyedit"  id="weeklyedit"    class="form-horizontal row-fluid">
 
-
+               
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" width="100%">
                                    
                       <?php foreach ($add_class_in as $item) { ?>
@@ -77,43 +77,46 @@
                                   <tr>
 
                                       <td>Start Date:<br>
-                                          <input type="date" id="startdate" name="startdate" class="span8"  required="required">
+                                          <input type="date" id="startdate" name="startdate" class="span7"  required="required">
                                       </td>
 
                                       <td>End Date:<br>
-                                          <input type="date" id="enddate" name="enddate" class="span8"  required="required">
+                                          <input type="date" id="enddate" name="enddate" class="span12"  required="required">
                                       </td>
 
-                                        <td>No. Of Lecture Schedule:
-                                            <input type="number" id="Lecture_schedule" name="Lecture_schedule" class="span8"  required="required">
+                                          <td>No. Of Lost Due To Holiday:
+                                            <input type="number" id="due_to_holiday" name="due_to_holiday" class="span8"  required="required">
                                         </td>
-                                   
-   
+
                                   </tr>
 
 
                                   <tr>
+                                      <td>No. Of Lost Due To College Leave(CL):
+                                            <input type="number" id="due_to_cl" name="due_to_cl" class="span7"  required="required">
+                                        </td>
                                        <td>No. Of Extra Taken :
-                                          <input type="number" id="extra_taken" name="extra_taken" class="span8"  required="required">
+                                          <div id="extra_taken" name="extra_taken" class=" span8"  required="required"></div>
                                       </td>
-
-                                        <td>No. Of Lost Due To Holiday:
-                                            <input type="number" id="due_to_holiday" name="due_to_holiday" class="span8"  required="required">
+                                        <td>No. Of Lecture Schedule:
+                                            <div class="span8"id="Lecture_schedule" name="Lecture_schedule" ></div>
+                                            <input type="text" value="" name="Lecture_schedule_" id="Lecture_schedule_">
                                         </td>
 
-                                        <td>No. Of Lost Due To College Leave(CL):
-                                            <input type="number" id="due_to_cl" name="due_to_cl" class="span8"  required="required">
-                                        </td>
+                                    
                                   </tr>
 
 
                                   <tr>
                                      
- 
-                                      <td colspan="3">No. Of Lecture Actual Taken :<br>
-                                          <input type="number" id="actual_taken" name="actual_taken" class="span3" required="required">  
+                                        <td>No. Of Arrangement :<br>
+                                            <div id="Arrangement" name="Arrangement" class=" span8"  required="required"></div>
+                                         </td>
+                                        <td colspan="2">No. Of Lecture Actual Taken :<br>
+                                            <div class="type span8"id="Acual_Lecture_taken" name="Acual_Lecture_taken" ></div>  
                                       </td>
-                                           <!--   <td colspan="4">Description Of Topic:<br>
+                                    
+                                      <!--   <td colspan="4">Description Of Topic:<br>
                                                         <textarea id="topic" name="topic" class="span8" rows="5" cols="30" ></textarea>
                                                   </td>   -->
                                                </tr>
@@ -128,20 +131,21 @@
                                     </tbody>
                                </table>
                           </form>
+                         
                         <br>
 
                         <table class="table table-striped table-bordered table-condensed">
 
                                 <tr style="text-align: left">
-                            
+                          
                                     <th align="center">Week No</th>
                                     <th align="center">Start Date</th>
                                     <th align="center">End Date</th>
-                                    <th align="center">No Of<br> Lect Schedule</th>
-                                    <th align="center">No Of<br> Lost <br>Due To Holiday</th>
-                                    <th align="center">No Of Lost<br> Due To CL</th>
-                                    <th align="center">No Extra Taken</th>  
-                                    <th align="center">No Of <br>Lect Actual Taken</th>
+                                    <th align="center">L.Schedule</th>
+                                    <th align="center">Holiday</th>
+                                    <th align="center">CLG.Leave</th>
+                                    <th align="center">L.Extra</th>  
+                                    <th align="center">L.Actual</th>
                                  <!--     <th align="center">Details</th>   -->
                                     <th align="center">Delete</th>                            
                                 </tr>
@@ -150,6 +154,7 @@
                                       <tr>
 
                                            <td  class="weekdata  weektd"  id="<?php echo $item->week_id.'-week_id';?>"><?php echo $item->week_id ?></td>
+                                           
 
 
                                             <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-start_date';?>"><input type="hidden" name="start_date" value="?php echo $item->start_date;?>"><?php echo $item->start_date;?></td>

@@ -49,13 +49,15 @@ class Test extends CI_Controller{
             redirect('test');
         }
         
-        }
+        } 
+             
     public function Testinternal_controller()  /////internal marks page load as like input box;
         { 
          if($this->input->post('addclassid'))
             {
             $no_ = $this->input->post('addclassid');
             $sess = $this->input->post('sessionid');
+            $subid=$this->input->post('subject_id');
         
             $data['title'] = "Edit-Marks";
             $data['page_'] = "edittest";        
@@ -67,7 +69,7 @@ class Test extends CI_Controller{
             $data['menu'] = $this->am->getMenu();
             $data['submenu'] = $this->am->getSubmenu();
             $data['last'] = $this->am->getlastMenu();
-            $data['update_marks'] = $this->am->update_marks();
+            $data['update_marks'] = $this->um->update_marks($no_,$subid);
            
        
              $this->load->view('myrajpage',$data);  

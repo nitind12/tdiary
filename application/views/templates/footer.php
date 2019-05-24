@@ -1,8 +1,8 @@
        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/ravi.js');?>?version=11.8"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/ravi.js');?>?version=12.0"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=4.8"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=5.3"></script>
 
         <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=2.6"></script>
        

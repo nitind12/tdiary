@@ -6,13 +6,12 @@
 
 </h1> </div> 
        <div>
-       <?php 
+       <?php
        if($update_marks!=0){?>
        	<div class="module-body table">
 
           <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
             <thead>
-
                <tr>
                    <th align="center">Session:</th>
                     <th align="center">Course:</th>
@@ -25,7 +24,8 @@
              </thead>
                   
             <tbody>
-              <?php foreach($add_class_in as $item){?>
+              <?php foreach($add_class_in as $item)
+              {?>
                      <tr>
                         <td><b><?php echo $item->session_id?></b> </td>
                         <td><b><?php echo $item->course_id?></b> </td>
@@ -39,15 +39,10 @@
               </tbody>    
         </table>
       </div>
-	<div><h1>You have already inserted <?php echo $this->session->userdata('itype')?> data </h1>
-		<h2>For update <?php echo $this->session->userdata('itype')?> data click update button </h2>
-	  <form class="form-horizontal row-fluid" method="post" action="<?php echo site_url('Test2/viewmarks_controller');?>">
-	  		<?php foreach($add_class_in as $item){?>
-    <inpu type="hidden"value="<?php echo $item->subject_name;?>"name="sub"id="sub">
- <input type="submit"value="update"> </form>
-       <?php
+	  <?php $this->load->view('Rajkumar/viewmarksset2');
+        
         } 
-   }  else {?>
+         else {?>
 
         <?php $this->load->view('Rajkumar/edit_test_marks_view'); } ?>
         </div>

@@ -38,12 +38,26 @@ class Testmodel extends CI_Model
 
 		}
 		
+		function update_marks($no_,$subid)
+		{
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.*');
+		$this->db->where('a.subject_id',$subid);
+		$this->db->where('a.add_class_id',$no_);
 		
+		$this->db->where('a.marks_type_id',$this->session->userdata('itypeid'));
+		$this->db->from('studentmarks a');
+		$q = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $q->num_rows();
+		}
+	
 	function marks_header($so,$mt)
 
 	{
 		$this->db->distinct('a.marks_type_id');
 		$this->db->select('a.*');
+		
 		$this->db->where('a.marks_type_id' ,$so);
 		$this->db->where('a.marks_name', $mt);
 		$this->db->from('marks_type a');

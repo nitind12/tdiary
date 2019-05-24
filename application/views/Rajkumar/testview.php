@@ -38,7 +38,7 @@
                     
                       <div class="btn-box-row row-fluid span10" style="background: #ffffff; border-radius: 12px; padding: 3px; vertical-align: top; color: #000090; border: #808080 dotted 1px; margin: 10px">
 
-                          <a class="btn-box-row row-fluid  testviewselected" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id;?>" >
+                          <a class="btn-box-row row-fluid  testviewselected" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id. "~" . $item->subject_id;?>" >
         
 
                               Session:<?php echo $item->session_id?><br>
@@ -55,6 +55,9 @@
         ?>
               <input type="hidden" name="addclassid" id="addclassid">
               <input type="hidden" name="sessionid" id="sessionid">
+              <input type="hidden" name="courseid" id="courseid">
+             
+              <input type="hidden" name="subject_id" id="subject_id">
               <?php
               echo form_close();
               ?>

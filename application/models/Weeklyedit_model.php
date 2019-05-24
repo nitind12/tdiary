@@ -121,12 +121,12 @@ function count_lecture_Actual_Lecture_Taken()
 
             'start_date'=>$this->input->post('startdate'),
             'end_date'=>$this->input->post('enddate'),
-			'no_of_lecture_schedule' => $this->input->post('Lecture_schedule'),
+			'no_of_lecture_schedule' => $this->input->post('Lecture_schedule_'),
 			'no_of_lost_due_to_holiday' => $this->input->post('due_to_holiday'),
 			'no_of_lost_due_to_cl' => $this->input->post('due_to_cl'),
-			'no_extra_taken' => $this->input->post('extra_taken'),
-			'no_of_lecture_actual_taken' => $this->input->post('actual_taken'),
-			'arrangement'=>$this->input->post('Arrangement'),
+			'no_extra_taken' => $this->input->post('extra_taken_'),
+			'no_of_lecture_actual_taken' => $this->input->post('Acual_Lecture_taken_'),
+			'arrangement'=>$this->input->post('Arrangement_'),
 			'subject_id'=>$subject_id,
 				'faculty_id'=>$this->session->userdata('facultyid'),
 				);

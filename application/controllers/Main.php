@@ -526,7 +526,8 @@ function get_student()
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
        $data['downloads'] = $this->am->download_models();
-        
+        $data['subjects'] = $this->am->getSubject_download();
+
         $this->load->view('templates/header', $data);
         $this->load->view('mypreetipage', $data);  
         $this->load->view('templates/footer');

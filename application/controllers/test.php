@@ -26,7 +26,7 @@ class Test extends CI_Controller{
       
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
-         }
+    }
 
            
            

@@ -579,7 +579,7 @@ class Add_class_model extends CI_Model
 		
 		$data = array(
 			'date_notes'=>$date,
-			'faculty_id'=>'ravi',
+			'faculty_id'=>$this->session->userdata('facultyid'),
 			'subject_id' =>'BCA101',
 			'upload_notes'=> 'x',
 			'status'=>1					

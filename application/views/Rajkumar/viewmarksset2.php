@@ -80,9 +80,11 @@
                   </thead>
                   <tbody>
                   
-             <?php foreach ($vim as $item) { ?>
+             <?php 
+             foreach ($vim as $item) { ?>
               <tr >
               <td align="center" class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-roll_no';?>"><?php echo $item->roll_no?></td>
+
               <td align="center"><?php echo $item->first_name?></td>
                <td align="center"><?php echo $item->totalmarks;?></td>
 

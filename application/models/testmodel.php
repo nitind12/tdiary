@@ -80,8 +80,8 @@ class Testmodel extends CI_Model
 
 		$this->db->join('add_class c', 'c.add_class_id=a.add_class_id');
 
-		$q = $this->db->get('');
-		
+		$q = $this->db->get();
+		//echo $this->db->last_query();die();
 		return $q->result();
 	}
 

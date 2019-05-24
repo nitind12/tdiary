@@ -580,6 +580,8 @@ class Add_class_model extends CI_Model
 		$data = array(
 			'date_notes'=>$date,
 			'faculty_id'=>$this->session->userdata('facultyid'),
+			'username'=>$this->session->userdata('user'),
+			
 			'subject_id' =>'BCA101',
 			'upload_notes'=> 'x',
 			'status'=>1					
@@ -624,7 +626,7 @@ class Add_class_model extends CI_Model
 		$this->db->distinct('a.notes_id');
 		$this->db->select('a.*');
 		$this->db->where('a.subject_id','BCA101');
-		$this->db->where('a.faculty_id', 'ravi');
+		$this->db->where('a.faculty_id',$this->session->userdata('facultyid') );
 		$this->db->from('upload_notes a');
 		$q = $this->db->get();
 		return $q->result();

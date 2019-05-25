@@ -700,6 +700,55 @@ $('#enddate').change(function(){
 		});
 
 
+
+
+
+
+$('#btndownload_notes').click(function(){		
+		var data_ = $('#frm_download_notes').serialize();
+		$.ajax({
+			url:site_url_+ '/Main/notes_view',
+			method:'post',
+			data: data_,
+
+			success: function(intel){
+				var obj = JSON.parse(intel);
+				var len = obj.down_notes.length;
+				var str = '';
+				if(len > 0){
+
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th>File</th>"
+					str = str + "<th>Date</th>"
+					str = str + "<th>Subject</th>"
+					str = str + "<th>Faculty Name</th>"
+					str = str + "</tr>";
+					for(i=0; i<len;i++){
+
+						str = str + '<tr>';
+						str = str + '<td>' + '<a href="<?php echo base_url(`/assets/upload_notes/`.obj.down_notes[i].upload_notes);?>">' +obj.down_notes[i].upload_notes;
+						str = str + '</a>'+ "</td>";
+						str = str + '<td>' + obj.down_notes[i].date_notes + "</td>";
+						str = str + '<td>' + obj.down_notes[i].subject_id + "</td>";
+						str = str + '<td>' + obj.down_notes[i].first_name + "</td>";
+						
+						str = str + '</tr>';
+					}
+					$('#download_noteshere').html(str);
+
+				}else{
+					$('#download_noteshere').html('No Data Found');
+				}
+			}, error: function(xhr, error, status){
+				$('#download_noteshere').html(xhr.responseText);
+			}
+
+		});
+	});
+
+
+
 });
 
 

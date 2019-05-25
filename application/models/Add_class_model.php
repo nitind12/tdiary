@@ -647,6 +647,32 @@ class Add_class_model extends CI_Model
 
 
 
+	function notes_view()
+	{
+		$intel = array();
+		$Subject = $this->input->post('Subject');
+		//$assignment_id=$this->input->post('Assignment_no');
+		
+
+		$this->db->distinct('a.notes_id');
+		$this->db->select('a.*,b.first_name');
+		//$this->db->where('a.notes_id',2);
+		//$this->db->where('a.session_id',$this->session->userdata('sin'));
+		//$this->db->where('a.course_id',$this->session->userdata('cos'));
+		//$this->db->where('a.semester_id',$this->session->userdata('tan'));
+		//$this->db->where('a.section_id',$this->session->userdata('cot'));
+		$this->db->where('a.subject_id', $Subject);
+		
+		$this->db->from('upload_notes a');
+		$this->db->join('faculty_personal b','a.faculty_id=b.faculty_id');
+
+		$q = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $q->result();
+	}
+	
+
+
 
 	function del($a)
 	{

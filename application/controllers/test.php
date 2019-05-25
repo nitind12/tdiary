@@ -9,6 +9,7 @@ class Test extends CI_Controller{
          if(!$this->session->userdata('user')) redirect('Login_controller');
    
 	}
+    
 	 public function viewmarks_controller2() ////rename fecttab 
     {  
         $no_='1';

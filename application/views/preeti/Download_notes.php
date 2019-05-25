@@ -14,7 +14,7 @@
             </div>
 
             <div class="module-body ">
-              <form id="marks1formview" name="marks1formview" class="form-horizontal row-fluid">
+              <form id="frm_download_notes" name="frm_download_notes" class="form-horizontal row-fluid">
                    <table class="table table-striped table-bordered table-condensed"  >
     
       <!--<table class="table" >-->
@@ -34,7 +34,7 @@
                 <td>
                      
                        <br> 
-                        <button  style="float:left" type="button" class="btn btn-primary" name="save" value="submit" id="btnViewmarks1report">Submit</button>
+                        <button  style="float:left" type="button" class="btn btn-primary" name="btndownload_notes" value="submit" id="btndownload_notes">Submit</button>
                     
                 </td>
               </tr>
@@ -45,7 +45,7 @@
                
         </form>
         <br/>
-                  <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+                  <!--table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
                     <thead>
                               <th>File</th>
                              <th>Date</th>
@@ -59,7 +59,7 @@
                 
                       <?php foreach ($downloads as $item) {?>
                         
-                        <tr><td><a href="<?php  echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><?php echo $item->upload_notes;?></a>
+                        <tr><td><a href="<?php  //echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><?php echo $item->upload_notes;?></a>
                         </td>
                         <td> <?php echo $item->date_notes;?></td>
                       <td><?php echo $item->faculty_id;?></td>
@@ -69,8 +69,11 @@
                       ?>
                     </div>
                   </tr>
-                </table>
+                </table-->
               </div>
+
+                <table class="table" border="1" id="download_noteshere">
+            </table>
             </div>
           </div>
         </div>

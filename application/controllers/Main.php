@@ -535,6 +535,13 @@ function get_student()
 
 
 
+    function notes_view(){
+        $data['down_notes'] = $this->am->notes_view();
+        echo json_encode($data);
+    }
+
+
+
     //--- for delete -->
     public function del1()
     {

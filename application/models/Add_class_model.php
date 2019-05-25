@@ -630,6 +630,17 @@ class Add_class_model extends CI_Model
 		$q = $this->db->get();
 		return $q->result();
 		}
+    function download_models2( )
+		{
+		$subjectid=$this->input->post('Subject');
+		
+		$this->db->distinct('a.notes_id');
+		$this->db->select('a.*');
+		$this->db->where('a.subject_id',$subjectid );
+		$this->db->from('upload_notes a');
+		$q = $this->db->get();
+		return $q->result();
+		}
 
 
 	function getSubject_download()

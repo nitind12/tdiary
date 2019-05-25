@@ -525,7 +525,8 @@ function get_student()
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
-       $data['downloads'] = $this->am->download_models();
+        $data['downloads'] = $this->am->download_models2();
+    
         $data['subjects'] = $this->am->getSubject_download();
 
         $this->load->view('templates/header', $data);
@@ -534,6 +535,7 @@ function get_student()
     }
 
 
+        
 
     //--- for delete -->
     public function del1()

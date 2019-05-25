@@ -14,7 +14,7 @@
             </div>
 
             <div class="module-body ">
-              <form id="marks1formview" name="marks1formview" class="form-horizontal row-fluid">
+              <form id="marks1formview" name="marks1formview" class="form-horizontal row-fluid"action="<?php echo site_url('main/Download_controller2');?>">
                    <table class="table table-striped table-bordered table-condensed"  >
     
       <!--<table class="table" >-->

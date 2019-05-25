@@ -45,7 +45,7 @@
                         <td><b><?php echo $item->course_id?></b> </td>
                         <td> <b><?php echo $item->semester_id?></b> </td>
                         <td> <b><?php  echo $item->section_id?></b> </td>
-                       <td> <b><?php echo $item->subject_id;?></b></td>
+                       <td> <b><?php echo $item->subject_name;?></b></td>
                      </tr>        
               <?php 
                 }
@@ -74,6 +74,7 @@
                       <th align="center">Student Name</th>
                       <th align="center">Total Marks</th>
                       <th align="center">Obtained Marks</th>
+                       <th align="center">percentage</th>
                       <!--th align="center" class="hideblock">Delete/Edit</th-->
                       
                         </tr>
@@ -87,6 +88,7 @@
                <td align="center"><?php echo $item->totalmarks;?></td>
 
               <td align="center" id="<?php echo $item->add_marks_id.'-marks';?>"><?php echo $item->marks;?></td>
+              <td align="center"><?php echo $item->percentage;?></td>
 
               <!--<td class="hideblock"><a href="<?php echo site_url('test/del1/' .$item->add_marks_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>-->
        

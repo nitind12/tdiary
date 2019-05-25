@@ -6,13 +6,12 @@ class Test extends CI_Controller{
 		parent::__construct();
 		$this->load->model('testmodel','um');
 		$this->load->model('Add_class_model','am');
-         if(!$this->session->userdata('user')) redirect('Login_controller');
+        if(!$this->session->userdata('user')) redirect('Login_controller');
    
 	}
 	 public function viewmarks_controller2() ////rename fecttab 
-    {  
-        $no_='1';
-        $sess='2018';
+    {  $no_="1";
+    $sess="2018";
         $data['title'] = "assignment_view";
         $data['page_'] = "viewmarksset2";
         $data['dashboard1'] = $this->am->getDashboardMenu();

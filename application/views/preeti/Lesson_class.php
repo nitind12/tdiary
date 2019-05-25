@@ -8,7 +8,7 @@
 <div class="content">
     <div class="module">
       <div class="module-head">
-        <h2>Actual Lesson Plan</h2>
+        <h2>Actual Lecture Plan</h2>
       </div>
       
       <div class="module-body">

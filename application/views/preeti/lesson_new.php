@@ -117,7 +117,7 @@
 					 						<tr>
 	    										<td >Unit:<br>
 													
-													<input type="number" id="Unit" name="Unit" class="span8" required="required">
+													<input type="number" id="Unit" name="Unit" class="span8"  min="1" max="12" required="required">
 												</td>
 											</tr>
 											

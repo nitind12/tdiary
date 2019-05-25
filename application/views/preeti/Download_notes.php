@@ -14,7 +14,9 @@
             </div>
 
             <div class="module-body ">
-              <form id="frm_download_notes" name="frm_download_notes" class="form-horizontal row-fluid">
+
+              <form id="frm_download_notes" name="frm_download_notes" class="form-horizontal row-fluid"action="<?php echo site_url('main/Download_controller2');?>">
+
                    <table class="table table-striped table-bordered table-condensed"  >
     
       <!--<table class="table" >-->

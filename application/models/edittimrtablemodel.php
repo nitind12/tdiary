@@ -12,9 +12,9 @@ class Edittimrtablemodel extends CI_Model{
 		$this->db->where('username',$this->session->userdata('username'));
 		$this->db->where('faculty_id',$this->session->userdata('facultyid'));
 		$query = $this->db->get("time_table_edit");
-		echo $this->db->last_query();die();
+		//echo $this->db->last_query();die();
 
-		//return $query->result();
+		return $query->result();
 	}
 	
 	function savingdata3()

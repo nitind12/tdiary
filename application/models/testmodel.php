@@ -14,7 +14,7 @@ class Testmodel extends CI_Model
 			$addclass_id = $this->input->post('addclass_id');
 			$Obtained_Marks= $this->input->post('Obtained_Marks');
 			$subject_id= $this->input->post('subject');
-			
+			$per= $this->input->post('Percentage');
 			
 
 			for($i=0; $i<count($addclass_id); $i++)
@@ -26,8 +26,8 @@ class Testmodel extends CI_Model
 			'marks'=>$Obtained_Marks[$i],
 			'marks_type_id' => $this->session->userdata('itypeid'),
 			'subject_id' => $subject_id,
-			'faculty_id' => $this->session->userdata('facultyid'),
-			
+			'faculty_id'=> $this->session->userdata('facultyid'),
+			'percentage'=>$per[$i],
 			//'marks_type_id' => '1',
 			'status' => '1',
 			'username' => $this->session->userdata('user'),

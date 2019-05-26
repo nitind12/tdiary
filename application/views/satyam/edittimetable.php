@@ -1,4 +1,29 @@
+<script type="text/javascript">
+	function update()
+{
+	$.ajax({
+			url:site_url_+ '/Edittimetablecontroller/viewmarks2',
+			method: 'post',
+			success: function(intel){
+				var obj = JSON.parse(intel);
+				var len = obj.timetable.length;
+			
+				var str = '';
+				
+					for(i=0; i<len;i++)
+					{
+						id_ = obj.timetable[i].Day+obj.timetable[i].Time;
+						$('#'+id_).html(obj.timetable[i].Subject_id);
 
+                      }
+						
+				
+				
+			}
+	});
+});
+
+</script>>
 <div class="span9">
 					<div class="content">
 
@@ -6,7 +31,7 @@
 							<div class="module-head">
 								<h1 >Edit Time Table</h1>
 							</div>
-	<form method="post" id="myform100" name="myform100" action="<?php echo site_url('edittimetablecontroller/savingdata3');?>" class="form-horizontal row-fluid">
+	<form method="post" id="myform100t" name="myform100t" action="<?php echo site_url('edittimetablecontroller/savingdata3');?>" class="form-horizontal row-fluid" >
 	<table class="table table-striped table-bordered table-condensed"  border="1">
 		
 			<!--<table class="table" >-->
@@ -14,8 +39,8 @@
 				<tbody>
 								  
 									<tr>
-									  <td >Day:<br>
-									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Day" id="Day" required="required">
+									  <td >Day: <br>
+									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Day" id="Day" required="required" onchange="update()">
 									  		<option value ="">Select here..</option>
 									  	 <option value ="Monday">Monday</option>
 									  	 <option value ="Tuesday">Tuesday</option>
@@ -100,24 +125,36 @@
 								  </thead>
 								   <tbody>
 									
-									<!--tr>
-									   <td>Room<br>
-									   	<input type="text" name="Room" id="Room" class="span8"/></td>
-									   
-									</tr-->
-								
+									
 								  </tbody>
 								</table><br><br>
 								<center>
 								<div class="control-group">
 											<!--div class="controls" style="float:left;"-->
 												
-											<button type="submit" class="btn btn-primary" name="save">INSERT RECORD</button>
+											<button type="submit" class="btn btn-primary" id="newbtn"name="save">INSERT RECORD</button>
 											<!--/div-->
 										</div></center><br><br>
 									</form>
-									<center><table class="table table-striped table-bordered table-condensed" border="1">
-    
+									<center>
+<form method="post" id="myform100tn" name="myform100tn"  class="form-horizontal row-fluid">
+	
+										<table class="table table-striped table-bordered table-condensed" border="1" id="timetablehere">
+          							
+          							 <?php foreach ($timetable as  $item)
+          							  { 
+          							  	if($item->Day.''.$item->Time=='Monday09_00_09_50')
+          							  	{
+          							  		echo $item->Subject_id;
+          							  	}
+											else
+											{
+												echo "invalid";
+          							  	
+											}
+									}
+          							  	?>
+                                         
               <thead>
                     <tr bgcolor="lightblue">
                       <th>DAY</th>
@@ -203,8 +240,9 @@
                       
                     </tr> 
                     </tbody>
+                  
                   </table>
-                  </table>
+              </form>
                     </div>
 
   

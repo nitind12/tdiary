@@ -23,6 +23,8 @@ class Edittimetablecontroller extends CI_Controller{
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+        $data['timetable'] = $this->um->fetchtable2();
+        
        $this->load->view('templates/header',$data);
         $this->load->view('mysatyampage',$data);  
         $this->load->view('templates/footer');
@@ -32,8 +34,7 @@ class Edittimetablecontroller extends CI_Controller{
 	}
 
 	function viewmarks2(){
-		$data['timetable'] = $this->um->fetchtable2();
-        echo json_encode($data);
+		echo json_encode($data);
 	}
 
 	function savingdata3()

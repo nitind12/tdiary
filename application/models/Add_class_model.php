@@ -814,7 +814,7 @@ class Add_class_model extends CI_Model
 		
 		}
 
-		function reports_attendance_modals_studentCA()
+		function reports_attendance_modals_studentCA5()
 		{
 			$consolidate= array();	
 			$subject_id=$this->input->post('Subject_Name');

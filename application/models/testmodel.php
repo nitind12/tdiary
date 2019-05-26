@@ -38,6 +38,32 @@ class Testmodel extends CI_Model
 			}
 
 		}
+		public function take_marks_update()
+		{
+
+			$stdroll = $this->input->post('Student_Roll');
+			$addclass_id = $this->input->post('addclass_id');
+			$Obtained_Marks= $this->input->post('Obtained_Marks');
+			$subject_id= $this->input->post('subject');
+			$per= $this->input->post('Percentage');
+			for($i=0; $i<count($addclass_id); $i++)
+			{
+			
+			$this->db->where('add_class_id',$addclass_id[$i] );
+        	$this->db->where('subject_id',$subject_id[$i] );
+        	$this->db->where('roll_no',$stdroll[$i]); 
+        	$this->db->where('marks_type_id', $this->session->userdata('itypeid'));
+        	$this->db->where('faculty_id',  $this->session->userdata('facultyid'));
+        
+ 			$data = array(
+			'marks'=>$Obtained_Marks[$i],
+			'percentage'=>$per[$i],
+			);
+		
+			$this->db->update('studentmarks',$data);
+			}
+
+		}
 		
 		function update_marks($no_,$subid)
 		{

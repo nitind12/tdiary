@@ -8,6 +8,8 @@ class Update_Assignment_Controller extends CI_Controller{
          
 		$this->load->model('Checkassignmentmodel','um');
 		 $this->load->model('Add_class_model','am');
+          $this->load->model('Update_Assignmentmodel','ohj');
+         
 	}
 
 	public function index()
@@ -29,8 +31,12 @@ class Update_Assignment_Controller extends CI_Controller{
      if($this->input->post('addclassidCA')){
             $no_ = $this->input->post('addclassidCA');
             $sess = $this->input->post('sessionidCA');
+               $cours = $this->input->post('courseidCA');
 
+            $subid = $this->input->post('subjectidCA');
 
+        $data['vie2'] = $this->ohj->view_given_assignment_final($no_,$sess,$cours,$subid);
+        
     	$data['vie'] = $this->um->view_given_assignment($no_,$sess);
     	$data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['title'] = "Check_view_Assignment";

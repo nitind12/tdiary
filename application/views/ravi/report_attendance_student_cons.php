@@ -14,7 +14,7 @@
         </div>
 
  <div class="module-body">
-  <form name="frmconsolidate2" id="frmconsolidate2"  Method="POST" >
+  <form name="frmconsolidate2" id="frmconsolidate2"  Method="POST"  action="<?php echo site_url('main/reports_attendance_controller_via_ajax_studentCA');?>">
     
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>

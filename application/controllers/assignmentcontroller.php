@@ -37,6 +37,7 @@ class Assignmentcontroller extends CI_Controller{
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();
+        //$newno_ = $this->gm->getNewNo(); 
         
     	$data['add_class_in']= $this->am->add_view_attendance($no_);////ravi wALA SE
         $data['title'] = "assignment_edit";
@@ -56,8 +57,16 @@ class Assignmentcontroller extends CI_Controller{
 		$this->gm->assignment_edit_modal_saving();
 		redirect('Assignmentcontroller');
 	}
+    function checkNewAssignmentNo(){
+        $res = $this->gm->fetchtassignemtnewno();
 
+        echo $res;
+    }
 
+    function getNewNo(){
+        $data['newno_'] = $this->gm->getNewNo();
+        echo json_encode($data);
+    }
 
       function updatedColumn()
     {

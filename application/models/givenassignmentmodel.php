@@ -1,6 +1,48 @@
 <?php
 class Givenassignmentmodel extends CI_Model{
 
+function fetchtassignemtnewno()
+
+	{
+		$no_ = $this->input->post('addclass_id');
+		$newno_ = $this->input->post('Assignment_no');
+		$subid_ = $this->input->post('subject_id');
+
+		$this->db->select('a.Assignment_id');
+		$this->db->where('a.add_class_id' ,$no_);
+		$this->db->where('a.Assignment_no', $newno_);
+		$this->db->where('a.subject_id', $subid_);
+		$q = $this->db->get('assignment a');
+		if($q->num_rows()!=0){
+			$bool_ = false;
+		} else {
+			$bool_= true;
+		}
+
+		return $bool_;
+	}
+	
+	function getNewNo(){
+		$no_ = $this->input->post('addclass_id');
+		$subid_ = $this->input->post('subject_id');
+
+		$this->db->select('MAX(a.Assignment_no) as newno');
+		$this->db->where('a.add_class_id' ,$no_);
+		$this->db->where('a.subject_id', $subid_);
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+		$this->db->group_by('a.subject_id');
+		$q = $this->db->get('assignment a');
+		//echo $this->db->last_query(); die();
+		if($q->num_rows()!=0){
+			$r = $q->row();
+			$newno = $r->newno;	
+		} else {
+			$newno = 0;
+		}
+		
+		$newno++;
+		return $newno;
+	}
 
 	function fetchtable($no_)
 
@@ -49,8 +91,8 @@ class Givenassignmentmodel extends CI_Model{
 			for($i=0; $i<count($addclass_id); $i++)
 			{
 			$data = array(	
-			'add_class_id' => $addclass_id[$i],	
-			'subject_id' => $subject_id[$i],	
+			'add_class_id' => $addclass_id,	
+			'subject_id' => $subject_id,	
 			'Assignment_no' => $this->input->post('Assignment_no'),
 			'Given_date' => $this->input->post('Given_date'),
 			'Submission_date' => $this->input->post('Submission_date'),

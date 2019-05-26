@@ -11,7 +11,8 @@ class Test extends CI_Controller{
 	}
     
 	 public function viewmarks_controller2() ////rename fecttab 
-    {  $no_="1";
+    {  
+        $no_="1";
     $sess="2018";
         $data['title'] = "assignment_view";
         $data['page_'] = "viewmarksset2";
@@ -59,6 +60,9 @@ function index() 												//internal wale class
             $data['cls_in_session'] = $this->am->fetchClass();
                $this->session->set_userdata('itype', $mt);
                $this->session->set_userdata('itypeid', $so_);
+               $this->session->set_userdata('marksid', $so_);
+                $this->session->set_userdata('marksname', $mt);
+           
             $data['marks_headerr_']=$this->um->marks_header($so_,$mt);
 
             $this->load->view('templates/header', $data);

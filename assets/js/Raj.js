@@ -125,6 +125,36 @@ $('.assignmentchecker').click(function(){
 
 		
 		});
+$('#Assignment_no').focus();
+$('#Assignment_no').blur(function(){
+		var url_ = site_url_+"/Assignmentcontroller/getNewNo";
+	var data_ = "Assignment_no="+$(this).val()+"&addclass_id="+$('#addclass_id').val()+"&subject_id="+$('#subject_id').val()
+
+	$.ajax({
+		url: url_,
+		type: "POST",
+		data: data_,
+		success: function(intel){
+			var obj = JSON.parse(intel);
+			$('#Assignment_no').val(obj['newno_']);		
+		} 
+	});
+});
+
+$('#Assignment_no').focus(function(){
+	var url_ = site_url_+"/Assignmentcontroller/getNewNo";
+	var data_ = "Assignment_no="+$(this).val()+"&addclass_id="+$('#addclass_id').val()+"&subject_id="+$('#subject_id').val()
+
+	$.ajax({
+		url: url_,
+		type: "POST",
+		data: data_,
+		success: function(intel){
+			var obj = JSON.parse(intel);
+			$('#Assignment_no').val(obj['newno_']);		
+		} 
+	});
+})
 
 $('#btnViewmarks11').click(function(){
 		

@@ -52,13 +52,16 @@
 					</thead>
 				<tbody>	
 					<?php foreach ($add_class_in as $item) { ?>
-					<input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
-					<input type="hidden" value="<?php echo $item->subject_id;?>" name="subject_id[]" id="sid_<?php echo $item->subject_id;?>">
+					<input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id" id="addclass_id">
+					<input type="hidden" value="<?php echo $item->subject_id;?>" name="subject_id" id="subject_id">
 					
 					<?php  }  ?>
+
 						<tr>
 							<td>Assignment No<br>
-							<input type="number"max="10"min="1" name="Assignment_no" id="Assignment_no" class="span8"/></td>
+					
+							<input type="number" max="10"min="1" name="Assignment_no" id="Assignment_no" class="span8"/>
+						</td>
 							<td>Given Date<br>
 							 <input type="text" value="<?php echo date("Y-m-d")?>" name="Given_date" id="date"></td>
 							<td>Submission Date<br>

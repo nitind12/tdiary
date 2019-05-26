@@ -63,12 +63,12 @@
 		<th><b>Father's Name:</b></th>
 			<td><?php echo $user->father_name?></td>
 		</tr>
-		<tr>
+<tr>
 			<th><b>Mother's Name:</b></th>
 			<td><?php echo $user->mother_name?></td>
 		</tr>
-		<div><img src="<?php base_url("assert/ttdocs"). $user->student_sig?>);">
-			<img src="<?php base_url("assert/ttdocs"). $user->student_photo?>);">
+		<div><img src="<?php echo base_url('assets/student_sig/'.$user->student_sig);?>">
+			<img src="<?php echo base_url('assets/student_photo/'.$user->student_photo);?>">
 					</div>
 		</div>
 		<?php endforeach;?>

@@ -178,7 +178,7 @@ $data = array(
 function upload_ttStudents($id){
 		clearstatcache();
         $config=array(
-	        'upload_path'=>'./assets/ttdocs/',
+	        'upload_path'=>'./assets/student_photo/',
 	        'allowed_types'=>'jpg|png',
 	        'file_name'=>$id,
         	'overwrite'=>TRUE,
@@ -198,7 +198,7 @@ function upload_ttStudents($id){
 	function upload_ttStudent($id){
 		clearstatcache();
         $config=array(
-	        'upload_path'=>'./assets/ttdocs/',
+	        'upload_path'=>'./assets/student_sig/',
 	        'allowed_types'=>'jpg|png',
 	        'file_name'=>$id+'p',
         	'overwrite'=>TRUE,

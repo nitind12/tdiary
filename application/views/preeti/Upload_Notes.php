@@ -117,7 +117,7 @@
 
                       <?php foreach ($downloads as $item) {?>
 
-                        <tr><td><a href="<?php  echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><?php echo $item->subject_name;?></a>
+                        <tr><td><a href="<?php  echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><!--?php echo $item->subject_name;?--><?php echo ('Attachment');?></a>
                         </td><td>
                                 <?php echo $item->date_notes;?>
                         </td>

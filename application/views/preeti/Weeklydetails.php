@@ -37,10 +37,12 @@
                               <th align="center">Week_No</th>
                               <th align="center">StartDate</th>
                               <th align="center">EndDate</th>
-                              <th align="center">L.Schedule</th>
+                            
                               <th align="center">Holiday</th>
                               <th align="center">CLG.Leave</th>
+                                <th align="center">L.Schedule</th>
                               <th align="cneter">L.Extra </th>
+                                <th align="center">Arrangement</th>
                               <th align="center">L.Actual</th>
                           </tr>
                       </thead>
@@ -51,10 +53,12 @@
                                 <td><?php echo $item->week_id ?></td>
                                 <td><?php echo $item->start_date ?></td>
                                 <td><?php echo $item->end_date ?></td>
-                                <td><?php echo $item->no_of_lecture_schedule ?></td>
+                            
                                 <td><?php echo $item->no_of_lost_due_to_holiday ?></td>
                                 <td><?php echo $item->no_of_lost_due_to_cl ?></td>
+                                    <td><?php echo $item->no_of_lecture_schedule ?></td>
                                 <td><?php echo $item->no_extra_taken ?></td>
+                                    <td><?php echo $item->arrangement?></td>
                                 <td><?php echo $item->no_of_lecture_actual_taken ?></td>
                           </tr>
                          <?php }?>

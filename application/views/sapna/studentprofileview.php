@@ -18,7 +18,9 @@
   			}
  /* tr:nth-child(even) {background-color: #f2f2f2;}*/
 
-
+ 	img {
+  border-radius: 50%;
+}
 </style>
 
 <div class="span9">
@@ -38,7 +40,7 @@
 		<div>							
 	
 		<tr>
-		<td colspan="2"><img src="<?php echo base_url('assets/student_photo/'.$user->student_photo);?>">
+		<td colspan="2"><img src="<?php echo base_url('assets/student_photo/'.$user->student_photo);?>" style="width:160px">
 	</td></tr>
 	<tr><br>		
 			<th><b>Username:</b></th>

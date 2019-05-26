@@ -37,7 +37,10 @@
 		?>
 		<div>							
 	
-		<tr>		
+		<tr>
+		<td colspan="2"><img src="<?php echo base_url('assets/student_photo/'.$user->student_photo);?>">
+	</td></tr>
+	<tr><br>		
 			<th><b>Username:</b></th>
 				<td>
 					<?php echo $user->username?></td></tr>
@@ -65,10 +68,7 @@
 			<th><b>Mother's Name:</b></th>
 			<td><?php echo $user->mother_name?></td>
 		</tr>
-		<div><img src="<?php echo base_url('assets/student_sig/'.$user->student_sig);?>">
-			<img src="<?php echo base_url('assets/student_photo/'.$user->student_photo);?>">
-					</div>
-		</div>
+				</div>
 		<?php endforeach;?>
 		
 	

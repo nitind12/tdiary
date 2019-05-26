@@ -142,7 +142,7 @@
 				<td align="center"><?php echo $item->Section;?></td>
 				<td align="center"><?php echo $item->Course_id;?></td>
 				<td align="center"><?php echo $item->Subject_id;?></td>
-				<td align="center"><?php echo $item->Session;?></td>
+				<td align="center"><?php echo $item->session_id;?></td>
 				<!--td align="center"><?php echo $item->Time_table_id;?></td-->
 				<td align="center"><?php echo $item->Time;?></td>
 				<td align="center"><?php echo $item->Room;?></td>

@@ -341,6 +341,7 @@ $('#btnViewassignmentmarks').click(function(){
 					str = str + "<th> Total marks</th>"
 					str = str + "<th> Obtain marks</th>"
 					
+					
 					str = str + "</tr>";
 					for(i=0; i<len;i++){
 						str = str + '<tr>';
@@ -394,6 +395,7 @@ $('#btnViewassignmentmarks').click(function(){
 					str = str + "<th> Subject_name</th>"
 					str = str + "<th> Total marks</th>"
 					str = str + "<th> Obtain marks</th>"
+					str = str + "<th> Percentage</th>"
 					
 					str = str + "</tr>";
 					for(i=0; i<len;i++){
@@ -403,6 +405,7 @@ $('#btnViewassignmentmarks').click(function(){
 						str = str + '<td>' + obj.marks[i].subject_id + "</td>";
 						str = str + '<td>' + obj.marks[i].totalmarks + "</td>";
 						str = str + '<td>' + obj.marks[i].marks + "</td>";
+						str = str + '<td>' + obj.marks[i].percentage + "</td>";
 						
 						
 						

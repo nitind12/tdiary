@@ -112,6 +112,12 @@ function index() 												//internal wale class
         $this->um->take_marks(); 
         redirect('Test/index');   
     }
+  
+    public function submitmarks_controller_update()               ///showing the page of submit the data;
+    {  
+        $this->um->take_marks_update(); 
+        redirect('Test/index');   
+    }
     public function viewmarks()                           //showing all classs in view marks
         {
         $data['page_'] = 'view_marks_selected';

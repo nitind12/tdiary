@@ -57,7 +57,7 @@
 
           </div>
          
-               <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller');?>">
+               <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller_update');?>">
 
                 <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
                   <!-- <div style="float:right">
@@ -84,17 +84,25 @@
              <?php 
              foreach ($vim as $item) { ?>
               <tr >
-              <td align="center" class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-roll_no';?>"><?php echo $item->roll_no?></td>
 
-              <td align="center"><?php echo $item->first_name?></td>
-               <td align="center"><?php echo $item->totalmarks;?></td>
+                      <input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
 
-              <td align="center"class="marksdata  markstd" id="<?php echo $item->add_marks_id.'-marks';?>"><?php echo $item->marks;?></td>
+                  
+                      <td><?php echo $item->student_id;?>
+                          <input type="hidden" value="<?php echo $item->student_id;?>" name="Student_Roll[]" id ="sid_<?php echo $item->student_id;?>">
+                      </td>
+                      <td align="center"><?php echo $item->first_name; ?></td>
+                      <td>
+                        <?php echo "30"?><input type="hidden" value="<?php echo "30"?>" name="totalmarks[]" id="tot_<?php echo $item->student_id;?>" class="marks1">
+                        </td>
+                      <td>
+                          <input type="number"  value="<?php echo $item->marks;?>" max="30" min="0"name="Obtained_Marks[]"id="om_<?php echo $item->student_id;?>" placeholder="Obtained Marks" class="span8 marks">
+                      </td>
+                    <td>
+                       <input type="text" name="Percentage[]"  value="<?php echo $item->percentage;?>" id="per_<?php echo $item->student_id;?>" placeholder="Percentage" class="span8 ">
+                      </td>
 
-              <td align="center"><?php echo $item->percentage;?></td>
-
-              <!--<td class="hideblock"><a href="<?php echo site_url('test/del1/' .$item->add_marks_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>-->
-       
+            
       </tr>
 
     <?php } ?>
@@ -105,7 +113,20 @@
 
   </tbody>
 </table>
-</form>
+<table class="table">
+         <tfoot>
+                <tr>
+                    <th>
+                     <div class="control-group">
+                     <div class="controls">
+                        <button type="submit" class="btntake" id="btntake">Update Marks</button>
+                    </div>
+                  </div>
+                    </th>
+                      </tr>
+                  </tfoot>
+        </table>
+       </form>
 <center>
 </div>
 </div>

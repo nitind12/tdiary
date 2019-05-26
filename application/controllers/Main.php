@@ -594,8 +594,8 @@ function get_student()
   
  function reports_attendance_controller_via_ajax_studentCA()
  {
-        $data['consolidate'] = $this->am->reports_attendance_modals_studentCA();
-         $data['date1']=$this->am->reports_attendance_modals_data();
+        $data['consolidate'] = $this->am->reports_attendance_modals_studentCA5();
+        $data['date1']=$this->am->reports_attendance_modals_data();
         $data['student']=$this->am-> reports_attendance_modals_datastudentCA();
        
         echo json_encode($data);

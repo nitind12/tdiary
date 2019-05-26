@@ -6,7 +6,9 @@
 	 	var str = this.id;
 	 	var arr = str.split('_')
       calculate(this.value, arr[1]);
+      update(this.value, arr[1]);
     });
+
 
     function calculate(val_, id_){
         var pPos = parseInt(val_);
@@ -17,6 +19,13 @@
         $('#per_'+id_).val(perc);
     }
 
+    function update(val_, id_){
+       $('#tot_'+id_).click(function(){
+    $('#tot_'+id_).val("31");
+  }); 
+         }
+ 
+  
 	 $('.editmarksselected').click(function(){
 			var str = this.id;
 			var arr = str.split('~');
@@ -69,15 +78,19 @@ $('.assignmentview').click(function(){
 			var arr = str.split('~');
 			$('#addclassidAV').val(arr[0]);
 			$('#sessionidAV').val(arr[1]);
+			
 
 			$('#frmassignmentview').submit();
 		});	
 
 $('.assignmentchecker').click(function(){
 			var str = this.id;
+				
 			var arr = str.split('~');
 			$('#addclassidCA').val(arr[0]);
 			$('#sessionidCA').val(arr[1]);
+			$('#courseidCA').val(arr[2]);
+			$('#subjectidCA').val(arr[3]);
 
 			$('#frmassignmentchecker').submit();
 		});
@@ -90,6 +103,8 @@ $('.assignmentchecker').click(function(){
 			var arr = str.split('~');
 			$('#addclassidCA').val(arr[0]);
 			$('#sessionidCA').val(arr[1]);
+			$('#courseidCA').val(arr[2]);
+			$('#subjectidCA').val(arr[3]);
 
 			$('#frmviewassignment').submit();
 		});

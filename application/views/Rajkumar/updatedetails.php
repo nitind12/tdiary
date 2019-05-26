@@ -1,4 +1,24 @@
-<style media="print">
+ <!---tbody>
+                  
+		             <?php// foreach ($vie as $item)
+		             { 
+		             	?>
+		              <tr >
+		              <td align="center"  class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-roll_no';?>"><?php echo $item->roll_no;?></td>
+
+      						<td align="center"><?php echo $item->first_name;?></td>
+
+      						<td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-assignment_id';?>"><?php echo $item->assignment_id;?></td>
+
+      						<td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-assignment_status';?>"><?php echo $item->assignment_status;?></td>
+
+      						<td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-checker_date';?>"><?php echo $item->checker_date;?></td>
+
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-Grade';?>"><?php echo $item->Grade;?></td>
+
+      						<td class="hideblock"><a href="<?php// echo site_url('update_assignment_controller/del1/' .$item->assignment_checker_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
+				    <?php } ?>
+		  </tbody---><style media="print">
   .hideblock{
       display:none;
 }
@@ -76,22 +96,18 @@
                   <thead>
                    <tr>
 						<th align="center">Student_Roll</th>
-						<th align="center">Student name</th>vie2
-						<th align="center">Total Assignment No.</th>
-						<th align="center"><br>Assignment Status</th>	
-						<th align="center" class="hideblock">Details</th>
+						<th align="center">Student name</th>
+						<th align="center">A_id</th>
+						<th align="center"><b>(1=Check0=Not_Check)</b><br>
+							Assignment Status
+						</th>	
+						<th align="center">Submission_date</th>	
+            <th align="center">Grade</th> 
+						<th align="center" class="hideblock">Delete/Edit</th>
 					</tr>
    
               </thead>
-          <tbody>
-
-                <?php foreach($vie2 as $vie){
-
-                  }
-               ?>
-              </tbody>
-        
-               
+              
               </table>
 </table>
 </div>

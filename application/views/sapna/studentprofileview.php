@@ -1,3 +1,28 @@
+<style type="text/css">
+		table {
+			  width: 70%;
+			   text-align: left;
+  			border: 1px solid black;
+		}
+
+		tr:hover {background-color: #f5f5f5;}
+
+		th, td {
+			  border-bottom: 1px  #ddd;
+			   font-family: "Times New Roman", Times, serif;
+			   font-size: 16px;	
+			    font-weight: bold;
+			     padding: 8px;
+			     text-align: center;
+
+  			}
+ /* tr:nth-child(even) {background-color: #f2f2f2;}*/
+
+
+
+
+</style>
+
 <div class="span9">
 	<div class="content">
 		<div class="module">
@@ -6,13 +31,9 @@
 				</div>
 		<div class="module-body">
 
-									<div class="alert">
-										<button type="button" class="close" data-dismiss="alert">×</button>
-										<strong>Note!</strong> For Edit Double Click!
-									</div>
 						
 	<form method="post" id="" action="<?php echo site_url('studentprofile1controller/savingdata3');?>" class="form-horizontal row-fluid">
-	<table class="table table-bordered table-striped  display"width="10" height="30"border="1">
+	<center><table  class="table-striped">
 		<tbody>
 		<?php foreach($m as $user):
 		?>
@@ -44,7 +65,7 @@
 		</tr>
 		<tr>
 			<th><b>Mother's Name:</b></th>
-			<td><?php echo $user->mother_name?></th>
+			<td><?php echo $user->mother_name?></td>
 		</tr>
 		<div><img src="<?php base_url("assert/ttdocs"). $user->student_sig?>);">
 			<img src="<?php base_url("assert/ttdocs"). $user->student_photo?>);">
@@ -54,7 +75,7 @@
 		
 	
 </tbody>
-</table>
+</table></center>
 </form>
 </div>
 </div>

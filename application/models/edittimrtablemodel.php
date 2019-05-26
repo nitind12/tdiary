@@ -1,10 +1,21 @@
 <?php
 class Edittimrtablemodel extends CI_Model{
+	
 	function fetchtable()
 	{
 		$query = $this->db->get("time_table_edit");
 		return $query->result();
 	}
+	function fetchtable2()
+	{
+
+	 	$this->db->select('a.*');
+		 $this->db->where('a.Faculty_id',$this->session->userdata('facultyid'));
+		$this->db->where('a.username',$this->session->userdata('user'));
+		$query = $this->db->get("time_table_edit a");
+		return $query->result();
+	}
+	
 	function savingdata3()
 	{
 		$data = array(

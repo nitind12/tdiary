@@ -18,7 +18,9 @@
 
       						<td class="hideblock"><a href="<?php// echo site_url('update_assignment_controller/del1/' .$item->assignment_checker_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 				    <?php } ?>
-		  </tbody---><style media="print">
+		  </tbody--->
+
+<style media="print">
   .hideblock{
       display:none;
 }
@@ -83,7 +85,24 @@
           </div>
           <br>
                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller');?>">
+<?php foreach($add_class_in as $item){?>
 
+
+                         
+                     value=" <?php echo $item->semester_id?>"                       
+
+                        value="<?php  echo $item->section_id?>"
+                       value="<?php echo $item->subject_id;?>"
+                      <?php 
+                }
+               ?>
+              <input type="hidden" value="<?php echo $item->session_id?>"
+                     name="addclassidCA" id="addclassidCA">
+              <input type="hidden" name="sessionidCA" id="sessionidCA">
+              <input type="hidden" value="<?php echo $item->course_id?>"
+                      name="courseidCA" id="courseidCA">
+              <input type="hidden" name="subjectidCA" id="subjectidCA">
+            
                 <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
                   <!-- <div style="float:right">
                     <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
@@ -95,19 +114,43 @@
                         
                   <thead>
                    <tr>
+                    
 						<th align="center">Student_Roll</th>
 						<th align="center">Student name</th>
-						<th align="center">A_id</th>
-						<th align="center"><b>(1=Check0=Not_Check)</b><br>
-							Assignment Status
-						</th>	
-						<th align="center">Submission_date</th>	
-            <th align="center">Grade</th> 
-						<th align="center" class="hideblock">Delete/Edit</th>
+						<th align="center">Total Assignment No.</th>
+						<th align="center"><br>Assignment Status</th>	
+						<th align="center" class="hideblock">Details</th>
 					</tr>
    
               </thead>
-              
+          <tbody>
+                  
+                 <?php foreach ($vie as $item)
+                 { 
+                  ?>
+                  <tr >
+                  <td align="center"  class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-roll_no';?>"><?php echo $item->roll_no;?></td>
+
+                  <td align="center"><?php echo $item->first_name;?></td>
+
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-assignment_id';?>"><?php echo $item->assignment_id;?></td>
+
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-assignment_status';?>"><?php echo $item->assignment_status;?></td>
+
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-checker_date';?>"><?php echo $item->checker_date;?></td>
+
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-Grade';?>"><?php echo $item->Grade;?></td>
+ <?php } ?>
+
+                <?php echo count($vie2);
+                foreach($vie2 as $vie){
+
+
+                  }
+               ?>
+              </tbody>
+        
+               
               </table>
 </table>
 </div>

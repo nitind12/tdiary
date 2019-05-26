@@ -24,7 +24,7 @@
                      <div class="control-group">
                        <label class="control-label" for="basicinput">Date From </label>
                           <div class="controls">
-                              <input type="date" name="d1" class="span2">
+                              <input type="date" name="d1" id="2"class="span2">
                           </div>
                         </div>
                     </td>
@@ -32,7 +32,7 @@
                      <div class="control-group">
                        <label class="control-label" for="basicinput">Date Upto</label>
                           <div class="controls">
-                              <input type="date" name="d2" class="span2">
+                              <input type="date" name="d2" id="d2" class="span2">
                           </div>
                         </div>
                     </td>

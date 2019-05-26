@@ -50,7 +50,7 @@ class Testmodel extends CI_Model
 		$this->db->from('studentmarks a');
 		$q = $this->db->get();
 		//echo $this->db->last_query();die();
-		return $q->num_rows();
+		return $q->result();
 		}
 	
 	function marks_header($so,$mt)
@@ -73,9 +73,11 @@ class Testmodel extends CI_Model
 		$this->db->select('a.*, b.student_id, b.first_name');
 		$this->db->where('c.add_class_id' ,$no_);
 		$this->db->where('b.session_id', $sess);
+		//$this->db->where('b.session_id', $sess);
+		
 		$this->db->where('a.marks_type_id',$this->session->userdata('marksid'));
 		
-	$this->db->where('a.username',$this->session->userdata('user'));
+		$this->db->where('a.username',$this->session->userdata('user'));
 		
 		//$this->db->where('a.marks_type_id','1');
 		$this->db->from('studentmarks a');
@@ -100,22 +102,5 @@ class Testmodel extends CI_Model
 
 
 
-	function updatedColumn()
-    {
-        $marksupdate_ = array();
-
-        $dt=$this->input->post('dt');
-        $marks_id=$this->input->post('marksid');
-        echo $col = $this->input->post('columnname');
-
-        $this->db->where('add_marks_id', $marks_id);
-        $data = array(
-        			$col => $dt
-       			 );
-
-        $query = $this->db->update('studentmarks', $data);
-        return $query;
-    }
-	
 	
 }

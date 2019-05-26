@@ -184,7 +184,26 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
         
-    } public function attendance_report_student_controller2()  
+    }
+
+    public function attendance_report_student_controller_daywise()  
+    {  
+        $data['title'] = "Student-Report-Daywise";
+        $data['page_'] = "student_report_daywise_student";
+        
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['subjects'] = $this->am->subjectCAT();
+   
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }     
+
+    public function attendance_report_student_controller2()  
     {  
         $data['title'] = "Student-Report-Attendance";
         $data['page_'] = "View_total";
@@ -593,6 +612,15 @@ function get_student()
    
   
  function reports_attendance_controller_via_ajax_studentCA()
+ {
+        $data['consolidate'] = $this->am->reports_attendance_modals_studentCA5();
+        $data['date1']=$this->am->reports_attendance_modals_data();
+        $data['student']=$this->am-> reports_attendance_modals_datastudentCA();
+       
+        echo json_encode($data);
+    }
+
+function reports_attendance_controller_via_ajax_student_daywise()
  {
         $data['consolidate'] = $this->am->reports_attendance_modals_studentCA5();
         $data['date1']=$this->am->reports_attendance_modals_data();

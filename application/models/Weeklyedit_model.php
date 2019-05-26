@@ -174,7 +174,7 @@ function count_lecture_Actual_Lecture_Taken()
 
 	function weeklyreport($wi)
 	{
-		$this->db->select('week_id, start_date, end_date, no_of_lecture_schedule, no_of_lost_due_to_holiday, no_of_lost_due_to_cl, no_extra_taken,no_of_lecture_actual_taken');
+		$this->db->select('week_id, start_date, end_date, no_of_lecture_schedule, no_of_lost_due_to_holiday, no_of_lost_due_to_cl, no_extra_taken,arrangement,no_of_lecture_actual_taken');
 		
 		$this->db->where('week_id',$wi);
 		$this->db->from('weekly');

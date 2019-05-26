@@ -77,15 +77,16 @@
                           <th align="center">WeekNo</th>
                           <th align="center">StartDate</th>
                           <th align="center">EndDate</th>
-                          <th align="center">L.Schedule</th>
                           <th align="center">Holiday</th>
                           <th align="center">CLG.Leave</th>
+                           <th align="center">L.Schedule</th>
                           <th align="cneter">L.Extra </th>
+                           <th align="center">Arrange<br>ment</th>
                           <th align="center">L.Actual</th>
                           <th align="center">Details</th>
                           
                          
-                         <th align="center">Delete</th>    
+                         <!--th align="center">Delete</th-->    
                       
                        </tr>
                   </thead>
@@ -104,13 +105,17 @@
 
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-end_date';?>"><?php echo $item->end_date ?></td>
 
-                      <td   class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_schedule';?>"><?php echo $item->no_of_lecture_schedule ?></td>
 
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_holiday';?>"><?php echo $item->no_of_lost_due_to_holiday ?></td>
 
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_cl';?>"><?php echo $item->no_of_lost_due_to_cl ?></td>
 
+                      <td   class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_schedule';?>"><?php echo $item->no_of_lecture_schedule ?></td>
+
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_extra_taken';?>"><?php echo $item->no_extra_taken ?></td>
+
+                      <td   class="weekdata  weektd"   id="<?php echo $item->week_id.'-arrangement';?>"><?php echo $item->arrangement?></td>
+
                       <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_actual_taken';?>"><?php echo $item->no_of_lecture_actual_taken ?></td>
                       
 
@@ -121,7 +126,7 @@
               
                                 <!--  <td align="center"><?php //echo $item->no_of_lecture ?></td>    -->
                                   
-                                   <td><a href="<?php echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-danger  icon-trash" onclick="return confirm('Are you sure')"></a></td>   
+                                   <!--td><a href="<?php //echo site_url('Weeklyedit_controller /del1/' . $item->week_id)?>" class="btn btn-danger  icon-trash" onclick="return confirm('Are you sure')"></a></td-->   
 
                                  <!--<td><a href="<?php ///echo site_url('test/pilih/' . $item->Student_Roll)?>" class="btn " onclick="return confirm('Are you sure')">Update</a></td>-->
                               </tr>

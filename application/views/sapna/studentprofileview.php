@@ -2,7 +2,7 @@
 		table {
 			  width: 70%;
 			   text-align: left;
-  			border: 1px solid black;
+  			border: 1px black;
 		}
 
 		tr:hover {background-color: #f5f5f5;}
@@ -33,7 +33,7 @@
 
 						
 	<form method="post" id="" action="<?php echo site_url('studentprofile1controller/savingdata3');?>" class="form-horizontal row-fluid">
-	<center><table  class="table-striped">
+	<center><table  class=" table-bordered table-striped">
 		<tbody>
 		<?php foreach($m as $user):
 		?>

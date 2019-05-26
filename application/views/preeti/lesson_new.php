@@ -14,7 +14,7 @@
 	<div class="content">
 		<div class="module">
 			<div class="module-head">
-				 <h2> Actual Lesson Plan</h2>
+				 <h2> Actual Lecture Plan</h2>
 			</div>
 
 			<div class="module-body table">
@@ -117,7 +117,7 @@
 					 						<tr>
 	    										<td >Unit:<br>
 													
-													<input type="number" id="Unit" name="Unit" class="span8" required="required">
+													<input type="number" id="Unit" name="Unit" class="span8"  min="1" max="12" required="required">
 												</td>
 											</tr>
 											

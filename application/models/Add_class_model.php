@@ -571,6 +571,9 @@ class Add_class_model extends CI_Model
 
 
 
+
+
+
 		function getUpload()
 		{
 		$date= $this->input->post('date');
@@ -596,7 +599,14 @@ class Add_class_model extends CI_Model
 			'upload_notes'=> $path_id		// here upload notes is a column in database
 				);
 		$this->db->update('upload_notes', $data);		// here upload notes is a table name in database
+
+
+
+		
 	}
+
+
+
 
 	function upload_notes($id)
 	{
@@ -620,16 +630,23 @@ class Add_class_model extends CI_Model
     }
 
 
+
     function download_models( )
 		{
 		
-		$this->db->distinct('a.notes_id');
-		$this->db->select('a.*');
+		$this->db->distinct('a.notes_id ');
+		$this->db->select('a.*,b.first_name,b.last_name, c.subject_name');
 		$this->db->where('a.faculty_id',$this->session->userdata('facultyid') );
 		$this->db->from('upload_notes a');
+		$this->db->join('faculty_personal b','a.faculty_id=b.faculty_id');
+		$this->db->join('subject c','a.subject_id=c.subject_id');
+
 		$q = $this->db->get();
 		return $q->result();
 		}
+
+
+
     function download_models2( )
 		{
 		$subjectid=$this->input->post('Subject');
@@ -662,20 +679,15 @@ class Add_class_model extends CI_Model
 	{
 		$intel = array();
 		$Subject = $this->input->post('Subject');
-		//$assignment_id=$this->input->post('Assignment_no');
-		
 
 		$this->db->distinct('a.notes_id');
-		$this->db->select('a.*,b.first_name');
-		//$this->db->where('a.notes_id',2);
-		//$this->db->where('a.session_id',$this->session->userdata('sin'));
-		//$this->db->where('a.course_id',$this->session->userdata('cos'));
-		//$this->db->where('a.semester_id',$this->session->userdata('tan'));
-		//$this->db->where('a.section_id',$this->session->userdata('cot'));
+		$this->db->select('a.*,b.first_name,b.last_name, c.subject_name');
 		$this->db->where('a.subject_id', $Subject);
-		
 		$this->db->from('upload_notes a');
 		$this->db->join('faculty_personal b','a.faculty_id=b.faculty_id');
+		$this->db->join('subject c','a.subject_id=c.subject_id');
+
+
 
 		$q = $this->db->get();
 		//echo $this->db->last_query();die();

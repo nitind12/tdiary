@@ -727,11 +727,11 @@ $('#btndownload_notes').click(function(){
 					for(i=0; i<len;i++){
 
 						str = str + '<tr>';
-						str = str + '<td>' + '<a href="<?php echo base_url(`/assets/upload_notes/`.obj.down_notes[i].upload_notes);?>">' +obj.down_notes[i].upload_notes;
+						str = str + '<td>' + '<a href="'+base_url_+'assets/upload_notes/'+obj.down_notes[i].upload_notes+'">'+obj.down_notes[i].subject_name;
 						str = str + '</a>'+ "</td>";
 						str = str + '<td>' + obj.down_notes[i].date_notes + "</td>";
-						str = str + '<td>' + obj.down_notes[i].subject_id + "</td>";
-						str = str + '<td>' + obj.down_notes[i].first_name + "</td>";
+						str = str + '<td>' + obj.down_notes[i].subject_name + "</td>";
+						str = str + '<td>' + obj.down_notes[i].first_name + obj.down_notes[i].last_name +"</td>";
 						
 						str = str + '</tr>';
 					}

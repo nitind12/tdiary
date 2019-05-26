@@ -117,12 +117,12 @@
 
                       <?php foreach ($downloads as $item) {?>
 
-                        <tr><td><a href="<?php  echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><?php echo $item->upload_notes;?></a>
+                        <tr><td><a href="<?php  echo base_url('./assets/upload_notes/'. $item->upload_notes);?>"><?php echo $item->subject_name;?></a>
                         </td><td>
                                 <?php echo $item->date_notes;?>
                         </td>
-                        <td> <?php echo $item->faculty_id;?></td>
-                       <td> <?php echo $item->subject_id;?></td>
+                        <td> <?php echo $item->first_name;?> <?php echo $item->last_name;?></td>
+                       <td> <?php echo $item->subject_name?></td>
                        
                            <td class="hideblock"><a href="<?php echo site_url('Main/del1/' . $item->notes_id)?>" class="btn btn-danger icon-trash " 
                                     onclick="return confirm('Are you sure')"></a></td>    

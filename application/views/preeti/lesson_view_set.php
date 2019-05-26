@@ -11,7 +11,7 @@
 <div class="content">
 <div class="module">
     <div class="module-head">
-          <h1> Actual Lesson View</h1>
+          <h1> Actual Lecture View</h1>
     </div>
     <div class="module-body table">
           <div class="alert">

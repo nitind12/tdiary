@@ -14,13 +14,12 @@
         </div>
 
  <div class="module-body">
-  <form name="frmconsolidate2" id="frmconsolidate2"  Method="POST"  action="<?php echo site_url('main/reports_attendance_controller_via_ajax_studentCA');?>">
+  <form name="frmconsolidate2" id="frmconsolidate2"  Method="POST" action="<?php echo site_url('main/reports_attendance_controller_CA');?>">
     
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
-            
-            <td colspan="2"> 
-              <div class="control-group">
+            <td>
+            <td colspan="2"> <div class="control-group">
                    <label class="control-label" for="basicinput">Subject</label>
                       <div class="controls">
                         <select tabindex="1" data-placeholder="Select here.."class="span4"  name="Subject_Name" id="Subject_Name">
@@ -78,6 +77,6 @@
                 </table>
               
               </div>
-        <table class="table table-bordered table-striped" id="reportshere2" name="reportshere2">
+        <table class="table table-bordered table-striped" id="reportshere" name="reportshere">
             </table>
    </div></div></div>

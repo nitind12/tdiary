@@ -9,18 +9,18 @@
 
 
 <div class="span9">
-					<div class="content">
+          <div class="content">
 
-						<div class="module">
-							<div class="module-head">
+            <div class="module">
+              <div class="module-head">
                    <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
-								<h1 >Check_View_Assignment</h1>
+                <h1 >Check_View_Assignment</h1>
 
 
-							</div>
+              </div>
 
-							<div class="module-body">
-					 <div class="module-body table">
+              <div class="module-body">
+           <div class="module-body table">
             <div class="alert  hideblock">
                     <button type="button" class="close " data-dismiss="alert">×</button>
                     <strong>Note!</strong>Double Click For Edit!
@@ -75,25 +75,42 @@
                         
                   <thead>
                    <tr>
-						<th align="center">Student_Roll</th>
-						<th align="center">Student name</th>vie2
-						<th align="center">Total Assignment No.</th>
-						<th align="center"><br>Assignment Status</th>	
-						<th align="center" class="hideblock">Details</th>
-					</tr>
+            <th align="center">Student_Roll</th>
+            <th align="center">Student name</th>
+            <th align="center">A_id</th>
+            <th align="center"><b>(1=Check0=Not_Check)</b><br>
+              Assignment Status
+            </th> 
+            <th align="center">Submission_date</th> 
+            <th align="center">Grade</th> 
+            <th align="center" class="hideblock">Delete/Edit</th>
+          </tr>
    
               </thead>
-          <tbody>
+              
+               <tbody>
+                  
+                 <?php foreach ($vie as $item)
+                 { 
+                  ?>
+                  <tr >
+                  <td align="center"  class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-roll_no';?>"><?php echo $item->roll_no;?></td>
 
-                <?php foreach($vie2 as $vie){
+                  <td align="center"><?php echo $item->first_name;?></td>
 
-                  }
-               ?>
-              </tbody>
-        
-               
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-assignment_id';?>"><?php echo $item->assignment_id;?></td>
+
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-assignment_status';?>"><?php echo $item->assignment_status;?></td>
+
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-checker_date';?>"><?php echo $item->checker_date;?></td>
+
+                  <td align="center" class="checkedassign_data  checkedassign_td"   id="<?php echo $item->assignment_checker_id.'-Grade';?>"><?php echo $item->Grade;?></td>
+
+                  <td class="hideblock"><a href="<?php// echo site_url('update_assignment_controller/del1/' .$item->assignment_checker_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
+            <?php } ?>
+      </tbody>
+
+
               </table>
-</table>
 </div>
 </div>
-

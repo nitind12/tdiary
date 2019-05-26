@@ -27,7 +27,7 @@
 
             <div class="btn-box-row row-fluid span10" style="background: #ffffff; border-radius: 12px; padding: 3px; vertical-align: top; color: #000090; border: #808080 dotted 1px; margin: 10px">
 
-              <a class="btn-box-row row-fluid viewassign" id="<?php echo $item->add_class_id . "~" . $item->session_id . "~" . $item->course_id. "~" . $item->subject_id;?>" >
+              <a class="btn-box-row row-fluid viewassign" id="<?php echo $item->add_class_id . "~" .$item->session_id ."~".$item->course_id."~".$item->subject_id;?>" >
         
               Session:<?php echo $item->session_id?><br>
               <b><?php echo $item->course_id.'-'.$item->semester_id.' ('.$item->section_id.')';?></b><br>
@@ -45,7 +45,7 @@
               <input type="hidden" name="addclassidCA" id="addclassidCA">
               <input type="hidden" name="sessionidCA" id="sessionidCA">
               <input type="hidden" name="courseidCA" id="courseidCA">
-                <input type="hidden" name="subjectidCA" id="subjectidCA">
+              <input type="hidden" name="subjectidCA" id="subjectidCA">
              
               <?php
               echo form_close();

@@ -23,9 +23,17 @@
 		
 			<!--<table class="table" >-->
 						<tbody>
+								<td> 		
+													<input type="radio" name="r1" id="allsub" checked required>
+													All Subject<br>
+													<input type="radio" name="r1" id="sub" required>
+													Subject-wise
+													
+													</td>
+
 								<td>Subject:<br>
 									<!--<input type="text" id="Subject" name="Subject" class="span8"  >-->
-									<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" >
+									<select tabindex="1"data-placeholder="Select here.." class="span8" name="Subject" id="Subject" disabled >
 										<option value ="">Select here...</option>
 										<?php foreach ($subject as  $item) { ?>
                                                  <option value="<?php echo $item->subject_id;?>">

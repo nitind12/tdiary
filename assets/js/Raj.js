@@ -78,14 +78,13 @@ $('.assignmentview').click(function(){
 			var arr = str.split('~');
 			$('#addclassidAV').val(arr[0]);
 			$('#sessionidAV').val(arr[1]);
-			
+
 
 			$('#frmassignmentview').submit();
 		});	
 
 $('.assignmentchecker').click(function(){
 			var str = this.id;
-				
 			var arr = str.split('~');
 			$('#addclassidCA').val(arr[0]);
 			$('#sessionidCA').val(arr[1]);
@@ -99,6 +98,8 @@ $('.assignmentchecker').click(function(){
 		
 
 		$('.viewassign').click(function(){
+
+
 			var str = this.id;
 			var arr = str.split('~');
 			$('#addclassidCA').val(arr[0]);
@@ -316,9 +317,62 @@ $('#btnViewassignmentmarks').click(function(){
 		});
 	});
 
+	$("#allsub").click(function(){
+   $("#Subject").attr("disabled", true);  $('#btnViewmarks1report').click(function(){
+		
+		var data_ = $('#marks1formview').serialize();
+		
+		$.ajax({
+			url:site_url_+ '/check_assign_report_controller/marks1_report2',
+			method: 'post',
+			data: data_,
+			success: function(intel){
+
+				var obj = JSON.parse(intel);
+				var len = obj.marks.length;
+				
+				var str = '';
+				if(len > 0){
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th> roll_no</th>"
+					str = str + "<th> Student_name</th>"
+					str = str + "<th> Subject_name</th>"
+					str = str + "<th> Total marks</th>"
+					str = str + "<th> Obtain marks</th>"
+					
+					str = str + "</tr>";
+					for(i=0; i<len;i++){
+						str = str + '<tr>';
+						str = str + '<td>' + obj.marks[i].roll_no + "</td>";
+						str = str + '<td>' + obj.marks[i].first_name + "</td>";
+						str = str + '<td>' + obj.marks[i].subject_id + "</td>";
+						str = str + '<td>' + obj.marks[i].totalmarks + "</td>";
+						str = str + '<td>' + obj.marks[i].marks + "</td>";
+						
+						
+						
+						str = str + '</tr>';
+					}
+					$('#marksreporthere').html(str);
+
+				}else{
+					$('#marksreporthere').html('No Data Found');
+				}
+			}, error: function(xhr, error, status){
+				$('#marksreporthere').html(xhr.responseText);
+			}
+
+		});
+	});
 
 
-$('#btnViewmarks1report').click(function(){
+
+
+});
+   $("#sub").click(function(){
+   $("#Subject").attr("disabled", false); 
+   $('#btnViewmarks1report').click(function(){
 		
 		var data_ = $('#marks1formview').serialize();
 		
@@ -365,6 +419,11 @@ $('#btnViewmarks1report').click(function(){
 
 		});
 	});
+
+
+
+});
+
 
 
 

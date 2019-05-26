@@ -60,8 +60,12 @@ class Check_assign_report_controller extends CI_Controller{
 	}
 
 	function marks1_report(){
-		$this->load->model('check_assign_report_model','im');
 		$data['marks'] = $this->im->marks1_report();
+
+		echo json_encode($data);
+	}
+	function marks1_report2(){
+		$data['marks'] = $this->im->marks1_report2();
 
 		echo json_encode($data);
 	}

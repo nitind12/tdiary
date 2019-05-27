@@ -13,6 +13,47 @@ class Main extends CI_Controller {
       
     }
 
+     public function total_faculty()  
+    {   
+        $data['page_'] = "total_faculty";
+        $data['title'] = "Dashboard";
+        $data['das1'] = $this->vm->dashtimetable();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Faculty'] = $this->am->getallfaculty();
+     
+        $Course_id=$this->input->post('Course');
+        $Semester_id=$this->input->post('Semester');
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+
+
+    function gettotal_faculty_details($faculty)  
+       {   
+        $data['page_'] = "Total_faculty_details";
+        $data['title'] = "Dashboard";
+        $data['das1'] = $this->vm->dashtimetable();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['m'] = $this->am->gettotal_facuty_details($faculty);
+
+ 
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+    
+    
+
     public function total_student()  
     {   
         $data['page_'] = "total_student";
@@ -66,6 +107,7 @@ class Main extends CI_Controller {
         $data['course1'] = $this->am->getCourse1();
         $data['Session1'] = $this->am->getSession1();
         $data['Semester1'] = $this->am->getSemester1();
+        $data['student_no'] = $this->am-> getallstudentno();
           
         $Course_id=$this->input->post('Course');
         $Semester_id=$this->input->post('Semester');

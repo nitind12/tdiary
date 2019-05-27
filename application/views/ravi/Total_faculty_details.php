@@ -30,7 +30,7 @@
 	<div class="content">
 		<div class="module">
 			<div class="module-head">
-				<h1 >Student Details</h1>
+				<h1 >Faculty Details</h1>
 			</div>
 		<div class="module-body">
 
@@ -40,11 +40,11 @@
 		?>
 	<table  class=" table-bordered table-striped" align="center">
 		<tbody>
-				<tr>
-					<td><img src="<?php echo base_url('assets/student_photo/'.$user->student_photo);?>" style="width:160px"></td>
-					<td><img src="<?php echo base_url('assets/student_photo/'.$user->student_sig);?>" style="width:160px">
-					</td>
-				</tr>
+				
+					<!--td><img src="<?php //echo base_url('assets/student_photo/'.$user->faculty_photo);?>" style="width:160px"></td>
+					<td><img src="<?php// echo base_url('assets/student_photo/'.$user->faculty_sig);?>" style="width:160px">
+					</td-->
+				
 				<tr><br>		
 					<th><b>Username:</b></th>
 						<td><?php echo $user->username?></td>
@@ -57,12 +57,12 @@
 
 				<tr>
 					<th><b>Email Id:</b></th>
-					<td><?php echo $user->std_email?></td>
+					<td><?php echo $user->faculty_email?></td>
 				</tr>
 
 				<tr>
 					<th><b>Phone-No:</b></th>
-					<td><?php echo $user->std_contact?></td>
+					<td><?php echo $user->faculty_contact?></td>
 				</tr>
 
 				<tr>
@@ -95,23 +95,11 @@
 					<td><?php echo $user->blood_group?></td>
 				</tr>
 
-
-				<tr>
-					<th><b>Course:</b></th>
-					<td><?php echo $user->course_id?></td>
-				</tr>
-
-
 				<tr>
 				<th><b>Father's Name:</b></th>
 					<td><?php echo $user->father_name?></td>
 				</tr>
 
-				<tr>
-					<th><b>Mother's Name:</b></th>
-					<td><?php echo $user->mother_name?></td>
-				</tr>
-		
 		</tbody>
 	</table>
 	<?php endforeach;?>

@@ -43,7 +43,7 @@
    
        <div class="btn-box-row row-fluid  btn-box big span5" >   <b class="label green pull-right">
                                     11</b> 
-          <a href="<?php echo site_url('Registrationform_controller/index');?>" >
+          <a href="<?php echo site_url('main/total_student');?>" >
            <i class="icon-user"></i>
                 <b>Total No. of Student</b></a>
       </div>

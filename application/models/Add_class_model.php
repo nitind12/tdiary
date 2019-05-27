@@ -2,6 +2,38 @@
 <?php
 class Add_class_model extends CI_Model
 {
+	function getallstudent()
+		{
+			
+		$this->db->distinct('a.student_id');
+		$this->db->select('a.*');
+		$this->db->from('std_personal a');
+		$query = $this->db->get('');
+		return $query->result();
+		}
+	
+		public function gettotalstd_details($std)
+	{
+		$this->db->distinct('a.student_id');
+		
+		$this->db->select('a.*,
+			c.std_email , c.std_contact,d.student_photo,d.student_sig');
+	
+		$this->db->where('a.student_id',$std);
+		$this->db->from('std_personal a');
+		
+		
+		$this->db->join('std_contact c', 'c.student_id=a.student_id');
+		$this->db->join('student_photo d', 'd.student_id=a.student_id');
+		$this->db->join('std_address e', 'e.student_id=a.student_id');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+	
+		return $query->result();
+			
+		
+	}
 	function getAssiG()
 		{
 			

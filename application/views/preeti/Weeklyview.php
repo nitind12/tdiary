@@ -16,10 +16,10 @@
 
 
             <div class="module-body table">
-                  <div class="alert">
+                  <!--div class="alert">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     <strong>Note!</strong> For Edit Double Click!
-                  </div>
+                  </div-->
 
                 <?php 
                       $data=array(
@@ -99,24 +99,24 @@
                 <tr>
                     
                
-                      <td  class="weekdata  weektd" id="<?php echo $item->week_id.'-week_id';?>"><?php echo $item->week_id ?></td>
+                      <td><?php echo $item->week_id ?></td>
 
-                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-start_date';?>"><?php echo $item->start_date ?></td>
+                      <td><?php echo $item->start_date ?></td>
 
-                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-end_date';?>"><?php echo $item->end_date ?></td>
+                      <td><?php echo $item->end_date ?></td>
 
 
-                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_holiday';?>"><?php echo $item->no_of_lost_due_to_holiday ?></td>
+                      <td><?php echo $item->no_of_lost_due_to_holiday ?></td>
 
-                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lost_due_to_cl';?>"><?php echo $item->no_of_lost_due_to_cl ?></td>
+                      <td><?php echo $item->no_of_lost_due_to_cl ?></td>
 
-                      <td   class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_schedule';?>"><?php echo $item->no_of_lecture_schedule ?></td>
+                      <td><?php echo $item->no_of_lecture_schedule ?></td>
 
-                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_extra_taken';?>"><?php echo $item->no_extra_taken ?></td>
+                      <td><?php echo $item->no_extra_taken ?></td>
 
-                      <td   class="weekdata  weektd"   id="<?php echo $item->week_id.'-arrangement';?>"><?php echo $item->arrangement?></td>
+                      <td><?php echo $item->arrangement?></td>
 
-                      <td  class="weekdata  weektd"   id="<?php echo $item->week_id.'-no_of_lecture_actual_taken';?>"><?php echo $item->no_of_lecture_actual_taken ?></td>
+                      <td><?php echo $item->no_of_lecture_actual_taken ?></td>
                       
 
                       <td>

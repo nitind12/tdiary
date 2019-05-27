@@ -39,7 +39,7 @@ class Check_assign_report_model extends CI_Model{
 		
 		
 		$this->db->distinct('a.add_class_id');
-		$this->db->select('a.*,b.subject_id,b.roll_no,b.marks, b.totalmarks,c.first_name');
+		$this->db->select('a.*,b.subject_id,b.roll_no,b.marks, b.totalmarks,c.first_name ,b.percentage');
 		$this->db->where('a.session_id',$this->session->userdata('sin'));
 		$this->db->where('a.course_id',$this->session->userdata('cos'));
 		$this->db->where('a.semester_id',$this->session->userdata('tan'));
@@ -65,7 +65,7 @@ class Check_assign_report_model extends CI_Model{
 		
 		
 		$this->db->distinct('a.add_class_id');
-		$this->db->select('a.*,b.subject_id,b.roll_no,b.marks, b.totalmarks,c.first_name');
+		$this->db->select('a.*,b.subject_id,b.roll_no,b.marks, b.totalmarks,c.first_name,b.percentage');
 		$this->db->where('a.session_id',$this->session->userdata('sin'));
 		$this->db->where('a.course_id',$this->session->userdata('cos'));
 		$this->db->where('a.semester_id',$this->session->userdata('tan'));

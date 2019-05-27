@@ -332,29 +332,75 @@ $('#btnViewassignmentmarks').click(function(){
 				var len = obj.marks.length;
 				
 				var str = '';
+				str = str + "<tr>";
+					
+				str = str + "<th> roll_no</th>"
+				
+						str = str + '<td>' + obj.marks[1].roll_no + "</td>";
+					
+					str = str + "<th> Student_name</th>"
+					str = str + '<td>' + obj.marks[1].first_name + "</td>";
+
+				str = str + "</tr>";
+				str = str + "<tr>";
+					str = str + "<th> </th>"
+					str = str + "<th> </th>"
+					str = str + "<th> </th>"
+					str = str + "<th> </th>"
+				str = str + "</tr>";
+				
 				if(len > 0){
 					str = str + "<tr>";
-					str = str + "</tr>";
-					str = str + "<th> roll_no</th>"
-					str = str + "<th> Student_name</th>"
+
+					str = str + "<br>";
+				
 					str = str + "<th> Subject_name</th>"
 					str = str + "<th> Total marks</th>"
 					str = str + "<th> Obtain marks</th>"
+					str = str + "<th> Percentage</th>"
 					
 					
 					str = str + "</tr>";
+					var total=0;
+					var total1=0;
 					for(i=0; i<len;i++){
+						
+
 						str = str + '<tr>';
-						str = str + '<td>' + obj.marks[i].roll_no + "</td>";
-						str = str + '<td>' + obj.marks[i].first_name + "</td>";
 						str = str + '<td>' + obj.marks[i].subject_id + "</td>";
 						str = str + '<td>' + obj.marks[i].totalmarks + "</td>";
 						str = str + '<td>' + obj.marks[i].marks + "</td>";
-						
-						
+						str = str + '<td>' + obj.marks[i].percentage + "</td>";
+				
+						total=total+obj.marks[i].totalmarks++;
+						total1=total1+obj.marks[i].marks++;
 						
 						str = str + '</tr>';
 					}
+					var per=0;
+					per=(total1/total)*100;
+					
+
+					str = str + "<tr>";
+					str = str + "</tr>";
+					str = str + "<th> </th>"
+					
+					str = str + "<th> Total marks:"
+					str = str + total;
+					str = str + "</th>"
+					str = str + "<th> Total Obtain marks:"
+					str = str + total1;
+					str = str + "</th>"
+					str = str + "<th>Total Percentage:"
+					str = str + per;
+					str = str + "%"
+					
+					str = str + "</th>"
+					
+					
+					
+					str = str + "</tr>";
+					
 					$('#marksreporthere').html(str);
 
 				}else{

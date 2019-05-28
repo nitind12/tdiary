@@ -702,16 +702,16 @@ function get_student()
  {
         $data['consolidate'] = $this->am->reports_attendance_modals_studentCA5();
         $data['date1']=$this->am->reports_attendance_modals_data();
-        $data['student']=$this->am-> reports_attendance_modals_datastudentCA();
+        $data['student']=$this->am->reports_attendance_modals_datastudentCA();
        
         echo json_encode($data);
     }
 
 function reports_attendance_controller_via_ajax_student_daywise()
  {
-        $data['consolidate'] = $this->am->reports_attendance_modals_studentCA5();
-        $data['date1']=$this->am->reports_attendance_modals_data();
-        $data['student']=$this->am-> reports_attendance_modals_datastudentCA();
+        $data['consolidate'] = $this->am->reports_attendance_modals_studentCA6();
+        $data['date1']=$this->am->reports_attendance_modals_data_day();
+        $data['student']=$this->am->reports_attendance_modals_datastudentCA();
        
         echo json_encode($data);
     }

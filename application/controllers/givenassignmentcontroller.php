@@ -38,7 +38,7 @@ class Givenassignmentcontroller extends CI_Controller{
         
     	$data['vie'] = $this->gm->view_given_assignment($no_);
     	$data['add_class_in'] = $this->gm->add_view_class($no_);////ravi wALA SE
-
+         $data['add_class_in'] = $this->am->add_view_attendance($no_);
         $data['title'] = "assignment_view";
          $data['dashboard1'] = $this->am->getDashboardMenu();
         $data['menu'] = $this->am->getMenu();

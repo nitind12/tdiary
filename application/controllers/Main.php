@@ -32,6 +32,8 @@ class Main extends CI_Controller {
     }
     public function indext()  
     {   
+            $data['days_'] = array ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+    $data['time_'] = array ('09_00_09_50', '09_50_10_40', '10_40_11_30', '11_50_12_40', '12_40_01_30', '02_10_03_00', '03_00_03_50', '03_50_04_40');
         $data['page_'] = "teacherdash";
         $data['title'] = "Dashboard";
         $data['das1'] = $this->vm->dashtimetable();

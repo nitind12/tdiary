@@ -56,6 +56,7 @@
         </table>
 
           </div>
+          <center><a href="<?php echo site_url('test/del/')?>"class="btn btn-danger" onclick="return confirm('Are you sure??')">Delete Whole data!</a></center>
          
                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller');?>">
 

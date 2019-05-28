@@ -1,6 +1,20 @@
 $(document).ready(function()
 {
+	if($('#myform100tn').length!=0){
+		var url_ = site_url_ + "/Edittimetablecontroller/viewmarks2";
 
+		$.ajax({
+			type: 'POST',
+			url: url_,
+			success:  function(data){
+				var obj = JSON.parse(data);
+				
+				for(i=0; i<=obj.timetable.length;i++){
+					$('#'+obj.timetable[i].Day+obj.timetable[i].Time).html(obj.timetable[i].Subject_id);
+				}
+			}
+		})
+	}
 	$('#btnsubmit').click(function()
 	{
 		

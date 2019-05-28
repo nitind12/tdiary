@@ -10,10 +10,8 @@ class Test extends CI_Controller{
    
 	}
     
-	 public function viewmarks_controller2() ////rename fecttab 
+	 public function viewmarks_controller2($no_,$sess) ////rename fecttab 
     {  
-        $no_="1";
-    $sess="2018";
         $data['title'] = "assignment_view";
         $data['page_'] = "viewmarksset2";
         $data['dashboard1'] = $this->am->getDashboardMenu();
@@ -116,7 +114,7 @@ function index() 												//internal wale class
     public function submitmarks_controller_update()               ///showing the page of submit the data;
     {  
         $this->um->take_marks_update(); 
-        redirect('Test/index');   
+        redirect('Test/viewmarks_controller2');   
     }
     public function viewmarks()                           //showing all classs in view marks
         {
@@ -182,7 +180,11 @@ function index() 												//internal wale class
        
             }
     }
-
+    public function del()
+    {
+        $this->db->empty_table('studentmarks');
+        redirect('Test/vie_controller','refresh');
+    }
 
     
     public function del1()

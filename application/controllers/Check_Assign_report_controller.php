@@ -7,6 +7,7 @@ class Check_assign_report_controller extends CI_Controller{
        $this->load->model('Lessonedit_model','obj');
         $this->load->model('check_assign_report_model','im');
 		$this->load->model('Add_class_model','am');
+		 if(!$this->session->userdata('user')) redirect('Login_controller');
     }
     public function index()
 	{

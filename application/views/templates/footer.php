@@ -2,9 +2,9 @@
 
         <script type="text/javascript" src="<?php echo base_url('assets/js/ravi.js');?>?version=12.0"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=5.8"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=6.2"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=2.6"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=2.9"></script>
        
         <script type="text/javascript" src="<?php echo base_url('assets/js/preeti.js');?>?version=9.7"></script>
                 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>

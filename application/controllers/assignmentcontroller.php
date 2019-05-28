@@ -7,6 +7,7 @@ class Assignmentcontroller extends CI_Controller{
 		$this->load->model('assignmentmodel','um');
 		 $this->load->model('Add_class_model','am');
 		$this->load->model('Givenassignmentmodel','gm');
+         if(!$this->session->userdata('user')) redirect('Login_controller');
 		
 	
 	}

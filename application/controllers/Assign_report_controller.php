@@ -7,6 +7,7 @@ class assign_report_controller extends CI_Controller{
        $this->load->model('Lessonedit_model','obj');
       $this->load->model('Add_class_model','am');
         $this->load->model('Assign_report_model','ar');
+         if(!$this->session->userdata('user')) redirect('Login_controller');
     }
     function  get_subjects(){
         $data['subjects'] = $this->ar->getSubjectr();

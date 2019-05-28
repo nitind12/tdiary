@@ -14,10 +14,10 @@
           <h1> Actual Lecture View</h1>
     </div>
     <div class="module-body table">
-          <div class="alert">
+          <!--div class="alert">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     <strong>Note!</strong> For Edit Double Click!
-                  </div>    
+                  </div-->    
 
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
         <thead>
@@ -78,16 +78,16 @@
                   
              <?php foreach ($t_diary as $item) { ?>
                 <tr>
-                      <td class="show-read-more  lessondata  lesstd"   id="<?php echo $item->lesson_id.'-date';?>"><?php echo $item->date ?></td>
-                      <td class="show-read-more lessondata  lesstd"  id="<?php echo $item->lesson_id.'-start_time';?>"><?php echo $item->start_time ?></td>
-                      <td class="show-read-more  lessondata  lesstd"  id="<?php echo $item->lesson_id.'-end_time';?>"><?php echo $item->end_time ?></td>
-                      <td class="show-read-more  lessondata lesstd"  id="<?php echo $item->lesson_id.'-unit';?>"><?php echo $item->unit ?></td>
-                      <td class="show-read-more lessondata  lesstd"  id="<?php echo $item->lesson_id.'-topic';?>"><?php echo $item->topic ?></td>
+                      <td><?php echo $item->date ?></td>
+                      <td><?php echo $item->start_time ?></td>
+                      <td><?php echo $item->end_time ?></td>
+                      <td><?php echo $item->unit ?></td>
+                      <td class="show-read-more  "><?php echo $item->topic ?></td>
 
                      <?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra Lecture Taken'){?>
-                       <td class="show-read-more  lessondata  lesstd redcolor"  id="<?php echo $item->lesson_id.'-lecture_type';?>"><?php echo $item->lecture_type ?>
+                       <td class="redcolor"><?php echo $item->lecture_type ?>
                           <?php } else { ?>
-                          <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>"><?php echo $item->lecture_type;?>
+                          <td><?php echo $item->lecture_type;?>
                               <?php } ?>
                              
                        </td>

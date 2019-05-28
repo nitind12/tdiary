@@ -32,7 +32,7 @@
 		<div class="module-body">
 
 						
-	<form method="post" id="" action="<?php echo site_url('studentprofile1controller/savingdata3');?>" class="form-horizontal row-fluid">
+	<form method="post" id="profile" name="profile" action="<?php echo site_url('studentprofile1controller/savingdata3');?>" class="form-horizontal row-fluid">
 	<center><table  class=" table-bordered table-striped">
 		<tbody>
 		<?php foreach($m as $user):

@@ -105,7 +105,8 @@
 										<option value="Arrangement">Arrangement</option>
 										<option value="Extra Lecture Taken">Extra Lecture Taken</option>
 												
-									</select>
+									</select><br>
+									<p style="color:red">*It will not be Edit</p>
 								</td>
 							
 
@@ -183,13 +184,13 @@
 
 	                        <!--    <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_id' ;?>"><?php echo $item->lecture_id;?></td>		-->
 	                        	<?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra Lecture Taken'){?>
-	                            <td class="lessondata lesstd redcolor"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>">
+	                            <td class="redcolor" >
 	                            	
 	                           	<?php echo $item->lecture_type;?>
 	                          	<?php }
 	                          	 else
 	                          	  { ?>
-	                          		 <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-lecture_type' ;?>">
+	                          		 <td>
 	                          		 	<?php echo $item->lecture_type;?>
 	                          	<?php } ?>
 								                  

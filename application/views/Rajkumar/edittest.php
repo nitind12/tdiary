@@ -40,7 +40,7 @@
         </table>
       </div>
       <?php
-	        redirect('test/viewmarks_controller2');      
+	        redirect('test/viewmarks_controller2/'.$item->add_class_id.'/'.$item->session_id);      
         } 
          else {?>
 

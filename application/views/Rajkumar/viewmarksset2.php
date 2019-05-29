@@ -45,7 +45,7 @@
                         <td><b><?php echo $item->course_id?></b> </td>
                         <td> <b><?php echo $item->semester_id?></b> </td>
                         <td> <b><?php  echo $item->section_id?></b> </td>
-                       <td> <b><?php echo $item->subject_id;?></b></td>
+                       <td> <b><?php echo $item->subject_name;?></b></td>
                      </tr>        
               <?php 
                 }
@@ -59,11 +59,7 @@
          
                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller_update');?>">
 
-                <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
-                  <!-- <div style="float:right">
-                    <input type="hidden" value="<?php //echo date("Y-m-d")?>" name="date" id="date"><?php 
-                    //echo date("D-d-M-Y")?> </div>--->
-                   
+                <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">                
                   </h3>
                        
                         </div>
@@ -84,7 +80,7 @@
              <?php 
              foreach ($vim as $item) { ?>
               <tr >
-
+                    <input type="hidden" value="<?php echo $item->subject_id;?>" name="subject[]" id="sid_<?php echo $item->subject_id;?>">
                       <input type="hidden" value="<?php echo $item->add_class_id;?>" name="addclass_id[]" id="sid_<?php echo $item->add_class_id;?>">
 
                   

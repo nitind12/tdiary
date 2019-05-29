@@ -39,7 +39,7 @@ class Check_assign_report_model extends CI_Model{
 		
 		
 		$this->db->distinct('a.add_class_id');
-		$this->db->select('a.*,b.subject_id,b.roll_no,b.marks, b.totalmarks,c.first_name ,b.percentage');
+		$this->db->select('a.*,b.subject_id,b.roll_no,b.marks, b.totalmarks,c.first_name ,b.percentage,d.subject_name ');
 		$this->db->where('a.session_id',$this->session->userdata('sin'));
 		$this->db->where('a.course_id',$this->session->userdata('cos'));
 		$this->db->where('a.semester_id',$this->session->userdata('tan'));
@@ -50,6 +50,7 @@ class Check_assign_report_model extends CI_Model{
 		$this->db->where('b.marks_type_id',$marks_type_id);
 		$this->db->from('add_class a');
 		$this->db->join('studentmarks b', 'b.add_class_id=a.add_class_id');
+		$this->db->join('subject d', 'd.subject_id=b.subject_id');
 		$this->db->join('std_personal c', 'c.Student_id=b.roll_no');
 		
 
@@ -60,12 +61,11 @@ class Check_assign_report_model extends CI_Model{
 	function marks1_report2()
 	{
 		$intel = array();
-		$Subject = $this->input->post('Subject');
 		$marks_type_id = $this->input->post('marks_type_id');
 		
 		
 		$this->db->distinct('a.add_class_id');
-		$this->db->select('a.*,b.subject_id,b.roll_no,b.marks, b.totalmarks,c.first_name,b.percentage');
+		$this->db->select('a.*,b.subject_id,b.roll_no,b.marks,b.totalmarks,c.first_name,b.percentage,d.subject_name ');
 		$this->db->where('a.session_id',$this->session->userdata('sin'));
 		$this->db->where('a.course_id',$this->session->userdata('cos'));
 		$this->db->where('a.semester_id',$this->session->userdata('tan'));
@@ -76,6 +76,7 @@ class Check_assign_report_model extends CI_Model{
 		$this->db->from('add_class a');
 		$this->db->join('studentmarks b', 'b.add_class_id=a.add_class_id');
 		$this->db->join('std_personal c', 'c.Student_id=b.roll_no');
+		$this->db->join('subject d', 'd.subject_id=b.subject_id');
 		
 
 		$q = $this->db->get();

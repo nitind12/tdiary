@@ -1,13 +1,13 @@
        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>" ></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/ravi.js');?>?version=12.0"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/ravi.js');?>?version=12.3"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=5.8"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/Raj.js');?>?version=6.2"></script>
 
-        <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=2.6"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/satyam.js');?>?version=2.9"></script>
        
         <script type="text/javascript" src="<?php echo base_url('assets/js/preeti.js');?>?version=9.8"></script>
-                <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui-1.10.1.custom.min.js');?>"></script>

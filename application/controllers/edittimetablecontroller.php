@@ -34,6 +34,7 @@ class Edittimetablecontroller extends CI_Controller{
 	}
 
 	function viewmarks2(){
+		$data['timetable'] = $this->um->fetchtable2();
 		echo json_encode($data);
 	}
 

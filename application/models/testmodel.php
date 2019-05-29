@@ -61,6 +61,7 @@ class Testmodel extends CI_Model
 			);
 		
 			$this->db->update('studentmarks',$data);
+			//echo $this->db->last_query(); die();
 			}
 
 		}

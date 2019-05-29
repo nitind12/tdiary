@@ -822,11 +822,12 @@ class Add_class_model extends CI_Model
 		{
 			$btn1= $this->input->post('d1');
 			$btn2= $this->input->post('d2');
+			$subject_id=$this->input->post('Subject_Name');
 			
 		$this->db->distinct('a.date');
 		$this->db->select('a.date');
 		$this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
-		//$this->db->where('a.add_class_id', $this->input->post('Class'));
+		$this->db->where('a.subject_id', $subject_id);
 		$query = $this->db->get('attendance a');
 		//echo $this->db->last_query();die();
 		return $query->result();
@@ -915,7 +916,7 @@ class Add_class_model extends CI_Model
 			$consolidate= array();	
 			$subject_id=$this->input->post('Subject_Name');
 			$btn1= $this->input->post('d1');
-			$btn2= $this->input->post('d2');
+				$btn2= $this->input->post('d2');
 			
 		$this->db->distinct('a.date');
 		$this->db->select('a.*');
@@ -926,8 +927,8 @@ class Add_class_model extends CI_Model
     	$this->db->where('a.subject_id',$subject_id);
     	$this->db->where('a.student_id',$this->session->userdata('studentid'));
     	
-    	$this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
-		$this->db->from('attendance a');
+    $this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+			$this->db->from('attendance a');
 		$this->db->join(' add_class b', 'b.add_class_id=a.add_class_id');
 		$this->db->join(' faculty_personal c', 'c.faculty_id=a.faculty_id');
 		
@@ -936,14 +937,57 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		
 		}
+		function reports_attendance_modals_studentCA6()
+		{
+			$consolidate= array();	
+			$subject_id=$this->input->post('Subject_Name');
+			$btn1= $this->input->post('d1');
+			
+		$this->db->distinct('a.date');
+		$this->db->select('a.*');
+		$this->db->where('a.date',$btn1);
+		$this->db->where('a.subject_id',$subject_id);
+    	$this->db->where('a.student_id',$this->session->userdata('studentid'));
+    	$this->db->from('attendance a');
+		$this->db->join(' add_class b', 'b.add_class_id=a.add_class_id');
+		$this->db->where('b.session_id',$this->session->userdata('sin'));
+    	$this->db->where('b.course_id',$this->session->userdata('cos'));
+    	$this->db->where('b.semester_id',$this->session->userdata('tan'));
+    	$this->db->where('b.section_id',$this->session->userdata('cot'));
+    	
+		$this->db->join(' faculty_personal c', 'c.faculty_id=a.faculty_id');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $query->result();
+		
+		}
+		function reports_attendance_modals_data_day()
+		{
+			$btn1= $this->input->post('d1');
+			$subject_id=$this->input->post('Subject_Name');
+			
+		$this->db->distinct('a.date');
+		$this->db->select('a.date');
+		$this->db->where('a.date',$btn1);
+		$this->db->where('a.student_id', $this->session->userdata('studentid'));
+		$this->db->where('a.subject_id', $subject_id);
+		$query = $this->db->get('attendance a');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		
+		}
+
 		function reports_attendance_modals_datastudentCA()
 		{
 		$this->db->select('a.student_id, a.first_name, a.last_name');
 		$this->db->from('std_personal a');
 		$this->db->join('section b', 'a.student_id=b.student_id');
 		$this->db->where('b.session_id',$this->session->userdata('sin'));
-    	$this->db->where('b.session_class_id', $this->session->userdata('cos'));
+    	$this->db->where('b.student_id', $this->session->userdata('studentid'));
 		$query = $this->db->get();
+		
+		//echo $this->db->last_query();die();
 		return $query->result();
 		}
 		

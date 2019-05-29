@@ -281,24 +281,47 @@ $('#btnViewassignmentmarks').click(function(){
 				var obj = JSON.parse(intel);
 				var len = obj.marks.length;
 				var str = '';
+					str = str + "<tr>";
+					str = str + "<th> Roll_no</th>"
+					str = str + '<td>' + obj.marks[0].roll_no; 
+					str = str + '</td>';
+					
+					str = str + "<th> Student_name</th>"
+					str = str + '<td>'+ obj.marks[0].first_name;
+					str = str + '</td>';
+					str = str + "</tr>";
+
+					str = str + "<tr>";
+					str = str + "<th>  </th>"
+					str = str + "<th>  </th>"
+					str = str + "<th> </th>"
+					str = str + "<th> </th>"
+					str = str + "</tr>";
+					
 				if(len > 0){
 
 					str = str + "<tr>";
-					str = str + "</tr>";
-					str = str + "<th> roll_no</th>"
-					str = str + "<th> Student_name</th>"
-					str = str + "<th> A_no</th>"
-					str = str + "<th> A_status<br>1=checked 0=unchecked</th>"
+					str = str + "<th> A_no </th>"
+					str = str + "<th> A_status </th>"
 					str = str + "<th> Submission_date</th>"
 					str = str + "<th> Grade</th>"
 					str = str + "</tr>";
 					for(i=0; i<len;i++){
 
 						str = str + '<tr>';
-						str = str + '<td>' + obj.marks[i].roll_no + "</td>";
-						str = str + '<td>' + obj.marks[i].first_name + "</td>";
 						str = str + '<td>' + obj.marks[i].assignment_id + "</td>";
-						str = str + '<td>' + obj.marks[i].assignment_status + "</td>";
+						
+						if( obj.marks[i].assignment_status==1){
+							str = str + '<td>' 
+							str = str + 'Checked' 
+							 str = str + "</td>";
+						}else
+						{
+							str = str + '<td>' 
+							str = str + 'Unchecked' 
+							 str = str + "</td>";
+						}
+						
 						str = str + '<td>' + obj.marks[i].checker_date + "</td>";
 						str = str + '<td>' + obj.marks[i].Grade + "</td>";
 						
@@ -336,11 +359,12 @@ $('#btnViewassignmentmarks').click(function(){
 					
 				str = str + "<th> roll_no</th>"
 				
-						str = str + '<td>' + obj.marks[1].roll_no + "</td>";
+						str = str + '<td>' + obj.marks[0].roll_no;
+						str = str + '</td>';
 					
 					str = str + "<th> Student_name</th>"
-					str = str + '<td>' + obj.marks[1].first_name + "</td>";
-
+					str = str + '<td>' + obj.marks[0].first_name;
+					str = str + '</td>';
 				str = str + "</tr>";
 				str = str + "<tr>";
 					str = str + "<th> </th>"
@@ -367,7 +391,7 @@ $('#btnViewassignmentmarks').click(function(){
 						
 
 						str = str + '<tr>';
-						str = str + '<td>' + obj.marks[i].subject_id + "</td>";
+						str = str + '<td>' + obj.marks[i].subject_name + "</td>";
 						str = str + '<td>' + obj.marks[i].totalmarks + "</td>";
 						str = str + '<td>' + obj.marks[i].marks + "</td>";
 						str = str + '<td>' + obj.marks[i].percentage + "</td>";
@@ -448,7 +472,7 @@ $('#btnViewassignmentmarks').click(function(){
 						str = str + '<tr>';
 						str = str + '<td>' + obj.marks[i].roll_no + "</td>";
 						str = str + '<td>' + obj.marks[i].first_name + "</td>";
-						str = str + '<td>' + obj.marks[i].subject_id + "</td>";
+						str = str + '<td>' + obj.marks[i].subject_name + "</td>";
 						str = str + '<td>' + obj.marks[i].totalmarks + "</td>";
 						str = str + '<td>' + obj.marks[i].marks + "</td>";
 						str = str + '<td>' + obj.marks[i].percentage + "</td>";

@@ -1,29 +1,7 @@
-<script type="text/javascript">
-	function update()
-{
-	$.ajax({
-			url:site_url_+ '/Edittimetablecontroller/viewmarks2',
-			method: 'post',
-			success: function(intel){
-				var obj = JSON.parse(intel);
-				var len = obj.timetable.length;
-			
-				var str = '';
-				
-					for(i=0; i<len;i++)
-					{
-						id_ = obj.timetable[i].Day+obj.timetable[i].Time;
-						$('#'+id_).html(obj.timetable[i].Subject_id);
-
-                      }
-						
-				
-				
-			}
-	});
-});
-
-</script>>
+<?php
+	$days_ = array ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+	$time_ = array ('09_00_09_50', '09_50_10_40', '10_40_11_30', '11_50_12_40', '12_40_01_30', '02_10_03_00', '03_00_03_50', '03_50_04_40');
+?>
 <div class="span9">
 					<div class="content">
 
@@ -139,21 +117,7 @@
 									<center>
 <form method="post" id="myform100tn" name="myform100tn"  class="form-horizontal row-fluid">
 	
-										<table class="table table-striped table-bordered table-condensed" border="1" id="timetablehere">
-          							
-          							 <?php foreach ($timetable as  $item)
-          							  { 
-          							  	if($item->Day.''.$item->Time=='Monday09_00_09_50')
-          							  	{
-          							  		echo $item->Subject_id;
-          							  	}
-											else
-											{
-												echo "invalid";
-          							  	
-											}
-									}
-          							  	?>
+			<table class="table table-striped table-bordered table-condensed" border="1" id="timetablehere">
                                          
               <thead>
                     <tr bgcolor="lightblue">
@@ -165,78 +129,18 @@
                       <th>12:40-01:30</th>
                       <th>02:10-03:00</th>
                       <th>03:00-03:50</th>
+                      <th>03:50-04:40</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <?php foreach ($days_ as $item) { ?>
                     <tr>
-                      <td>MON</td>
-                      <td id="Monday09_00_09_50"></td>
-                      <td id="Monday09_50_10_40"></td>
-                      <td id="Monday10_40_11_30"></td>
-                      <td id="Monday11_50_12_40"></td>
-                      <td id="Monday12_40_01_30"></td>
-                      <td id="Monday02_10_03_00"></td>
-                      <td id="Monday03_00_03_50"></td>
-                      
-                      
+                      <td><?php echo $item;?></td>
+                      <?php  foreach ($time_ as $timeitem) { ?>
+                      <td id="<?php  echo $item.$timeitem;?>"></td>
+                      <?php } ?>
                     </tr>
-                    <tr>
-                      <td>TUE</td>
-                      <td id="Tuesday09_00_09_50"></td>
-                      <td id="Tuesday09_50_10_40"></td>
-                      <td id="Tuesday10_40_11_30"></td>
-                      <td id="Tuesday11_50_12_40"></td>
-                      <td id="Tuesday12_40_01_30"></td>
-                      <td id="Tuesday02_10_03_00"></td>
-                      <td id="Tuesday03_00_03_50"></td>
-                      
-                      
-                    </tr>
-                    <tr>
-                      <td>WED</td>
-                      <td id="Wednesday09_00_09_50"></td>
-                      <td id="Wednesday09_50_10_40"></td>
-                      <td id="Wednesday10_40_11_30"></td>
-                      <td id="Wednesday11_50_12_40"></td>
-                      <td id="Wednesday12_40_01_30"></td>
-                      <td id="Wednesday02_10_03_00"></td>
-                      <td id="Wednesday03_00_03_50"></td>
-                      
-                      
-                    </tr>
-                    <tr>
-                      <td>THU</td>
-                      <td id="Thursday09_00_09_50"></td>
-                      <td id="Thursday09_50_10_40"></td>
-                      <td id="Thursday10_40_11_30"></td>
-                      <td id="Thursday11_50_12_40"></td>
-                      <td id="Thursday12_40_01_30"></td>
-                      <td id="Thursday02_10_03_00"></td>
-                      <td id="Thursday03_00_03_50"></td>
-                      
-                      
-                    </tr>
-                    <tr>
-                      <td>FRI</td>
-                      <td id="Friday09_00_09_50"></td>
-                      <td id="Friday09_50_10_40"></td>
-                      <td id="Friday10_40_11_30"></td>
-                      <td id="Friday11_50_12_40"></td>
-                      <td id="Friday12_40_01_30"></td>
-                      <td id="Friday02_10_03_00"></td>
-                      <td id="Friday03_00_03_50"></td>
-                                            
-                    </tr>
-                    <tr>
-                      <td>SAT</td>
-                      <td id="Saturday09_00_09_50"></td>
-                      <td id="Saturday09_50_10_40"></td>
-                      <td id="Saturday10_40_11_30"></td>
-                      <td id="Saturday11_50_12_40"></td>
-                      <td id="Saturday12_40_01_30"></td>
-                      <td id="Saturday02_10_03_00"></td>
-                      <td id="Saturday03_00_03_50"></td>
-
+                <?php } ?>
                       
                     </tr> 
                     </tbody>

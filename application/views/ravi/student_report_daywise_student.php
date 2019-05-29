@@ -15,7 +15,8 @@
         </div>
 
  <div class="module-body">
-      <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+      <form name="frmconsolidate_day" id="frmconsolidate_day"  Method="POST"  action="<?php echo site_url('main/ reports_attendance_controller_via_ajax_student_daywise');?>">
+  <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
               
             <td colspan="2"> <div class="control-group">
@@ -42,20 +43,16 @@
                     </div>
                 </td>
                 </tr>  
-                <tr>
-                   <td colspan="4">
-                  <div class="control-group">
+                </tbody>
+           </table>
+           <div class="control-group">
                       <div class="controls">
                         <div style="float: right;"> 
-                        <input type="submit"class="btn btn-primary" value="Search" id="cmbAttendanceReport">
+                        <input type="submit"class="btn btn-primary" value="Search" id="cmbAttendanceReport_day">
                       </div>
                     </div>
                   </div>
-                  </td>
-                
-                </tr>
-               </tbody>
-           </table>
+         </form>
           
         <div class="module-body table">
              <tr>

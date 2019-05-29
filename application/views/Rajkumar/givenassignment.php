@@ -51,7 +51,7 @@
                         
 
                          <td> <b><?php  echo $item->section_id?></b> </td>
-                       <td> <b><?php echo $item->subject_id;?></b></td>
+                       <td> <b><?php echo $item->subject_name;?></b></td>
                      </tr>        
               <?php 
                 }

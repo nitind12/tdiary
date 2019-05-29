@@ -39,6 +39,7 @@ class Add_class_model extends CI_Model
 		$this->db->join('std_contact c', 'c.student_id=a.student_id');
 		$this->db->join('student_photo d', 'd.student_id=a.student_id');
 		$this->db->join('std_address e', 'e.student_id=a.student_id');
+		$this->db->join('std_address f', 'f.student_id=a.student_id');
 		
 		$query = $this->db->get();
 		//echo $this->db->last_query();die();

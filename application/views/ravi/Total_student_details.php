@@ -45,12 +45,6 @@
 					<td><img src="<?php echo base_url('assets/student_photo/'.$user->student_sig);?>" style="width:160px">
 					</td>
 				</tr>
-
-				<tr><br>		
-					<th><b>Username:</b></th>
-						<td><?php echo $user->username?></td>
-				</tr>
-				
 				<tr><br>		
 					<th><b>Username:</b></th>
 						<td><?php echo $user->username?></td>

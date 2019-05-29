@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                  <div class="nav-collapse collapse navbar-inverse-collapse">
                     <a class="brand" href="<?php echo site_url('homemain/index');?>">
-                        <u>TEACHER DIARY</u>
+                        TEACHER DIARY
                     </a>
                 </div>
 

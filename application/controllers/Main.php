@@ -108,7 +108,8 @@ class Main extends CI_Controller {
         $data['Session1'] = $this->am->getSession1();
         $data['Semester1'] = $this->am->getSemester1();
         $data['student_no'] = $this->am-> getallstudentno();
-          
+         $data['faculty_no'] = $this->am-> getall_facultyno();
+
         $Course_id=$this->input->post('Course');
         $Semester_id=$this->input->post('Semester');
         $this->load->view('templates/header', $data);

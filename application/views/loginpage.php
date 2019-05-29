@@ -3,9 +3,11 @@
         .field-icon {
             float: right;
             margin-left: -20px;
+
             margin-top: 5px;
             position: relative;
             z-index: 2;
+               padding: 2px 3px;
           }
     </style>
 
@@ -28,13 +30,14 @@
 						    ?>
 						<div class="module-body">
 							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" name="username"id="username" placeholder="Username">
+								<div class="controls row-fluid input-prepend">
+									<span class="add-on"><i class="icon-user"></i></span><input class="span11" type="text" name="username"id="username" placeholder="Username"></i>
 								</div>
 							</div>
+
 							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="password"name="password" id="password" placeholder="Password"><span toggle="#password"   class="icon-eye-open field-icon  toggle-password"></span>
+								<div class="controls row-fluid input-prepend">
+									<span class="add-on"><i class="icon-lock"></i></span><input class="span11" type="password"name="password" id="password" placeholder="Password"><span toggle="#password"   class="icon-eye-open field-icon  toggle-password"></span>
 								</div>
 							</div>
 						</div>

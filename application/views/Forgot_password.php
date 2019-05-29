@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					  margin-top: 5px;
 					  position: relative;
 					  z-index: 2;
+					    padding: 2px 3px;
 					}
 		</style>
 
@@ -37,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </a>
 
                 <a class="brand" href="<?php echo site_url('homemain/index');?>">
-                    <u>TEACHER DIARY</u>
+                    TEACHER DIARY
                 </a>
 
                 <div class="nav-collapse collapse navbar-inverse-collapse">
@@ -77,20 +78,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<form method="post" action="">
 
 							<div class="control-group">
-								<div class="controls row-fluid  ">
-								<input type="text" name="email" id="email"  class="span12" placeholder="Email Id"  required="required">
+								<div class="controls row-fluid  input-prepend">
+								<span class="add-on"><i class="icon-envelope"></i></span><input type="text" name="email" id="email"  class="span11" placeholder="Email Id"  required="required">
 								</div>
 							</div>
 
 							<div class="control-group">
-								<div class="controls row-fluid">
-								<input type="password" name="newPassword" id="newPassword"  class="span12 " placeholder="New Password"  required="required"><span  toggle="#newPassword"  class="icon-eye-open field-icon  toggle-password"></span>
+								<div class="controls row-fluid input-prepend">
+								<span class="add-on"><i class="icon-lock"></i></span><input type="password" name="newPassword" id="newPassword"  class="span11 " placeholder="New Password"  required="required"><span  toggle="#newPassword"  class="icon-eye-open field-icon  toggle-password"></span>
 							</div>
 
 							<div class="control-group">
-								<div class="controls row-fluid">
+								<div class="controls row-fluid input-prepend">
 
-								<input type="password" name="confirmPassword"  id="confirmPassword"  class="span12 " placeholder="Confirm Password" required="required"><span  toggle="#confirmPassword"  class="icon-eye-open field-icon  toggle-password"></span>
+								<span class="add-on"><i class="icon-lock"></i></span><input type="password" name="confirmPassword"  id="confirmPassword"  class="span11 " placeholder="Confirm Password" required="required"><span  toggle="#confirmPassword"  class="icon-eye-open field-icon  toggle-password"></span>
 									</div>
 							</div>
 						</div>

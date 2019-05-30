@@ -13,6 +13,47 @@ class Main extends CI_Controller {
       
     }
 
+    public function total_course()  
+    {   
+        $data['page_'] = "Total_course";
+        $data['title'] = "Dashboard";
+        $data['das1'] = $this->vm->dashtimetable();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Course'] = $this->am->getall_course();
+     
+        $Course_id=$this->input->post('Course');
+        $Semester_id=$this->input->post('Semester');
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+
+
+
+     function gettotal_course_details($course)  
+       {   
+        $data['page_'] = "Total_course_details";
+        $data['title'] = "Dashboard";
+        $data['das1'] = $this->vm->dashtimetable();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['cour'] = $this->am->gettotal_course_details($course);
+
+ 
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
+    
+
      public function total_faculty()  
     {   
         $data['page_'] = "total_faculty";
@@ -108,7 +149,8 @@ class Main extends CI_Controller {
         $data['Session1'] = $this->am->getSession1();
         $data['Semester1'] = $this->am->getSemester1();
         $data['student_no'] = $this->am-> getallstudentno();
-         $data['faculty_no'] = $this->am-> getall_facultyno();
+        $data['faculty_no'] = $this->am-> getall_facultyno();
+        $data['course_no'] = $this->am-> getall_courseno();
 
         $Course_id=$this->input->post('Course');
         $Semester_id=$this->input->post('Semester');
@@ -116,6 +158,10 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
+
+
+
+
     public function indext()  
     {   
             $data['days_'] = array ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');

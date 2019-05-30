@@ -96,6 +96,50 @@ class Add_class_model extends CI_Model
 			
 		
 	}
+	
+
+
+	function getall_course()
+		{
+			
+		$this->db->distinct('a.course_id');
+		$this->db->select('a.*');
+		$this->db->from('course_table a');
+		$query = $this->db->get('');
+		return $query->result();
+		}
+
+
+
+	function getall_courseno()
+		{
+			
+		$this->db->distinct('a.course_id');
+		$this->db->select('a.*');
+		$this->db->from('course_table a');
+		$query = $this->db->get('');
+		return $query->num_rows();
+		}
+
+
+
+	public function gettotal_course_details($course)
+	{
+		$this->db->distinct('a.course_id');
+		
+		$this->db->select('a.*, a.name_of_courses, a.no_of_years,a.university_id');
+	
+		$this->db->where('a.course_id',$course);
+		$this->db->from('course_table a');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+	
+		return $query->result();
+			
+		
+	}
+	
 
 
 

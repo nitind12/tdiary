@@ -44,18 +44,20 @@
        <div class="btn-box-row row-fluid  btn-box big span5" style="border: #ff0000 solid 0px;">   
         <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $student_no;?></b> <br>
           <a href="<?php echo site_url('main/total_student');?>" >
-           <i class="icon-user"></i>
+           <i class="icon-group"></i>
                 <b>Total No. of Student</b></a>
       </div>
       
-       <div class="btn-box-row row-fluid  btn-box big span5" >
+       <div class="btn-box-row row-fluid  btn-box big span5" style="border: #ff0000 solid 0px;" >
+        <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $faculty_no;?></b> <br>
           <a href="<?php echo site_url('main/total_faculty');?>" >
            <i class="icon-user"></i>
                 <b>Total No. of Faculty</b> </a>
       </div>
      
-       <div class="btn-box-row row-fluid  btn-box big span5" >
-          <a href="<?php echo site_url('Registrationform_controller/index');?>" >
+       <div class="btn-box-row row-fluid  btn-box big span5" style="border: #ff0000 solid 0px;" >
+         <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $course_no;?></b> <br>
+          <a href="<?php echo site_url('main/total_course');?>" >
            <i class="icon-book"></i>
                 <b>Total No. of Course</b>
        </a></div>

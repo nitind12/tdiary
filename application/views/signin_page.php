@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</a>
 
 			  	<a class="brand" href="<?php echo site_url('homemain/index');?>">
-			  		<u>Teacher diary</u>
+			  		Teacher diary
 			  	</a>
 
 			<div class="nav-collapse collapse navbar-inverse-collapse">
@@ -56,15 +56,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 					<div class="module-body">
 							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="txtUsername" name ="txtUsername"placeholder="Username">
+								<div class="controls row-fluid input-prepend">
+									<span class="add-on"><i class="icon-user"></i></span><input class="span11" type="text" id="txtUsername" name ="txtUsername"placeholder="Username">
 								</div>
 							</div>
 
 							
 							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="txtstudentid" name ="txtstudentid"placeholder="Student Id">
+								<div class="controls row-fluid input-prepend">
+									<span class="add-on"><i class="icon-edit"></i></span><input class="span11" type="text" id="txtstudentid" name ="txtstudentid"placeholder="Student Id">
 								</div>
 							</div>
 				
@@ -72,13 +72,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 						<div class="module-body">
 							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="Password" id="Password" name="txtPwd" placeholder="Password">
+								<div class="controls row-fluid input-prepend">
+									<span class="add-on"><i class="icon-lock"></i></span><input class="span11" type="Password" id="Password" name="txtPwd" placeholder="Password">
 								</div>
 							</div>
 							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="password" id="RePassword" name="retxtPwd" placeholder="Re-Password">
+								<div class="controls row-fluid input-prepend">
+									<span class="add-on"><i class="icon-lock"></i></span><input class="span11" type="password" id="RePassword" name="retxtPwd" placeholder="Re-Password">
 								</div>
 							</div>
 						</div>

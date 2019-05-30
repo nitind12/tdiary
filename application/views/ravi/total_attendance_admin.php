@@ -10,12 +10,12 @@
 <div class="content">
     <div class="module">
        <div class="module-head">
-           <h1>Consolidate </h1>
+           <h1>Attendance-Reports Total</h1>
         </div>
 
  <div class="module-body">
-     <form name="frmconsolidateAd" id="frmconsolidateAd"  Method="POST" >
- 
+  <form name="frmtotalAD" id="frmtotalAD"  Method="POST">
+    
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
           <tr>
             <td>
@@ -67,10 +67,9 @@
                  <div class="control-group">
                    <label class="control-label" for="basicinput">Class</label>
                       <div class="controls">
-                          <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Class" id="Class">
-                         </select>
-                         
-                       </div>
+                        <select tabindex="1" data-placeholder="Select here.."class="span2"  name="ClassADT" id="ClassADT">
+                      </select>
+                    </div>
                     </div>
                </td>
                 </tr>
@@ -79,9 +78,9 @@
             <td colspan="2"> <div class="control-group">
                    <label class="control-label" for="basicinput">Subject</label>
                       <div class="controls">
-                          <select tabindex="1" data-placeholder="Select here.."class="span2"  name="subject_name" id="subject_name">
-                         </select>
-                          </div>
+                      <select tabindex="1" data-placeholder="Select here.."class="span4"  name="subjectADT" id="subjectADT">
+        </select>
+        </div>
                     </div>
                </td>
                 
@@ -107,7 +106,7 @@
                   <div class="control-group">
                       <div class="controls">
                         <div style="float: right;"> 
-                        <input type="submit"class="btn btn-primary" value="Search" id="cmbAdminCON">
+                        <input type="submit"class="btn btn-primary" value="Search" id="Admintotal">
                       </div>
                     </div>
                   </div>
@@ -129,6 +128,6 @@
                 </table>
               
               </div>
-        <table class="table table-bordered table-striped" id="reportshere" name="reportshere">
+        <table class="table table-bordered table-striped" id="reportshereTOTAl" name="reportshereTOTAl">
             </table>
    </div></div></div>

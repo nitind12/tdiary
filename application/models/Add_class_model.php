@@ -30,7 +30,7 @@ class Add_class_model extends CI_Model
 	{
 		$this->db->distinct('a.student_id');
 		
-		$this->db->select('a.*,c.std_email , c.std_contact,d.student_photo,d.student_sig');
+		$this->db->select('a.*,c.std_email , c.std_contact, c.std_email, c.alternate_contact, c.alternate_email,d.student_photo,d.student_sig ,f.address,f.state, f.city,f.pincode');
 	
 		$this->db->where('a.student_id',$std);
 		$this->db->from('std_personal a');

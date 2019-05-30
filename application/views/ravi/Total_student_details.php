@@ -23,7 +23,11 @@
 
  	img {
   border-radius: 50%;
-}
+	}
+
+		.sign{
+  border-radius: 0%;
+	}
 </style>
 
 <div class="span9">
@@ -42,89 +46,179 @@
 		<tbody>
 				<tr>
 					<td><img src="<?php echo base_url('assets/student_photo/'.$user->student_photo);?>" style="width:160px"></td>
-					<td><img src="<?php echo base_url('assets/student_photo/'.$user->student_sig);?>" style="width:160px">
+					<td colspan="2"><img  class="sign" src="<?php echo base_url('assets/student_photo/'.$user->student_sig);?>" style="width:120px ">
 					</td>
 				</tr>
-				<tr><br>		
-					<th><b>Username:</b></th>
-						<td><?php echo $user->username?></td>
+			</tbody>
+		</table>
+
+		<table  class=" table-bordered table-striped" align="center">
+				<tr>		
+					<th><b>Batch:</b></th>	
+					<th><b>Session:</b></th>
+					<th><b>Course:</b></th>
+				</tr>
+				<tr>
+						<td><?php echo $user->batch_id?></td>
+						<td><?php echo $user->session_id?></td>
+						<td><?php echo $user->course_id?></td>
+				</tr>
+			
+		</table>
+		<br>
+		<table  class=" table-bordered table-striped" align="center">
+			<tbody>
+				<tr>
+					<td colspan="4"><h3>Personal Detail</h3></td>
 				</tr>
 
 				<tr>
-					<th><b>Name:</b></th>
-					<td><?php echo $user->first_name.''.$user->last_name?></td>
+					<th><b>First Name:</b></th>
+						<td><?php echo $user->first_name?></td>
+
+					<th><b>Last Name:</b></th>
+						<td><?php echo $user->last_name?></td>
 				</tr>
 
 				<tr>
-					<th><b>Email Id:</b></th>
-					<td><?php echo $user->std_email?></td>
-				</tr>
-
-				<tr>
-					<th><b>Phone-No:</b></th>
-					<td><?php echo $user->std_contact?></td>
+					<th><b>Father Name:</b></th>
+						<td><?php echo $user->father_name?></td>
+			
+					<th><b>Mother Name:</b></th>
+						<td><?php echo $user->mother_name?></td>
 				</tr>
 
 				<tr>
 					<th><b>Date-of-Birthday:</b></th>
-					<td><?php echo $user->date_of_birth?></td>
-				</tr>
-
-
-				<tr>
+						<td><?php echo $user->date_of_birth?></td>
+		
 					<th><b>Gender:</b></th>
-					<td><?php echo $user->gender?></td>
+						<td><?php echo $user->gender?></td>
 				</tr>
-
-
 
 				<tr>
 					<th><b>Nationality:</b></th>
-					<td><?php echo $user->nationality?></td>
-				</tr>
-
-
-				<tr>
+						<td><?php echo $user->nationality?></td>
+			
 					<th><b>Category:</b></th>
-					<td><?php echo $user->category?></td>
+						<td><?php echo $user->category?></td>
 				</tr>
 
 
 				<tr>
 					<th><b>Blood Group:</b></th>
-					<td><?php echo $user->blood_group?></td>
-				</tr>
-
-
-				<tr>
-					<th><b>Course:</b></th>
-					<td><?php echo $user->course_id?></td>
-				</tr>
-
-
-				<tr>
-				<th><b>Father's Name:</b></th>
-					<td><?php echo $user->father_name?></td>
-				</tr>
-
-				<tr>
-					<th><b>Mother's Name:</b></th>
-					<td><?php echo $user->mother_name?></td>
-				</tr>
+						<td><?php echo $user->blood_group?></td>
 		
-		</tbody>
-	</table>
+					<th><b>Username:</b></th>
+						<td><?php echo $user->username?></td>
+				</tr>
+			</tbody>
+		</table>
+		<table  class=" table-bordered table-striped" align="center">
+
+
+				<tr>
+					<td colspan="4"><h3>Address Detail</h3></td>
+				</tr>
+
+				<tr>
+					<td colspan="4"><h4>Current Address</h4></td>
+				</tr>
+
+				<tr>
+					<th><b>Address:</b></th>
+						<td><?php echo $user->address?></td>
+		
+					<th><b>State:</b></th>
+						<td><?php echo $user->state?></td>
+				</tr>
+
+				<tr>
+					<th><b>City:</b></th>
+						<td><?php echo $user->city?></td>
+		
+					<th><b>Pincode:</b></th>
+						<td><?php echo $user->pincode?></td>
+				</tr>
+
+				<tr>
+					<td colspan="4"><h4>Permanent Address</h4></td>
+				</tr>
+
+				<tr>
+					<th><b>Address:</b></th>
+						<td><?php echo $user->address?></td>
+		
+					<th><b>State:</b></th>
+						<td><?php echo $user->state?></td>
+				</tr>
+
+				<tr>
+					<th><b>City:</b></th>
+						<td><?php echo $user->city?></td>
+		
+					<th><b>Pincode:</b></th>
+						<td><?php echo $user->pincode?></td>
+				</tr>
+			</table>
+
+
+		<table  class=" table-bordered table-striped" align="center">
+
+				<tr>
+					<td colspan="4"><h3>Contact Detail</h3></td>
+				</tr>
+
+				<tr>
+					<th><b>Student Email Id:</b></th>
+						<td><?php echo $user->std_email?></td>
+		
+					<th><b>Student Contact No.:</b></th>
+						<td><?php echo $user->std_contact?></td>
+				</tr>
+
+				<tr>
+					<th><b>Alternate Contact No.:</b></th>
+						<td><?php echo $user->alternate_contact?></td>
+		
+					<th><b>Alternate Email id:</b></th>
+						<td><?php echo $user->alternate_email?></td>
+				</tr>
+			</table>
+
+
+		<!--table  class=" table-bordered table-striped" align="center">
+
+				<tr>
+					<td colspan="7"><h3>Academic Detail</h3></td>
+				</tr>
+
+				<tr>		
+					<th><b>Qualification:</b></th>	
+					<th><b>Passing Year:</b></th>
+					<th><b>Name Of Board:</b></th>
+					<th><b>Name Of School:</b></th>
+					<th><b>Total Marks:</b></th>
+					<th><b>Obtained Marks:</b></th>
+					<th><b>Percentage:</b></th>
+				</tr>
+
+				<tr>
+						<td><?php //echo $user->qualification_status?></td>
+						<td><?php //echo $user->passing_year?></td>
+						<td><?php //echo $user->board?></td>
+						<td><?php //echo $user->school?></td>
+						<td><?php //echo $user->totalmarks?></td>
+						<td><?php //echo $user->obtainedmarks?></td>
+						<td><?php //echo $user->percentage?></td>
+					</tr>
+				</table-->
+
 	<?php endforeach;?>
+
 </form>
 </div>
-		<!--table  class=" table-bordered table-striped "  align="right" style>
-			<td>
-				<tr>
-					<td colspan="2"><img src="<?php //echo base_url('assets/student_photo/'.$user->student_photo);?>" style="width:160px">
-					<td colspan="2"><img src="<?php //echo base_url('assets/student_photo/'.$user->student_sig);?>" style="width:160px">
-				</tr>
-			</td>
-		</table-->
+	
 </div>		
 </div>
 </div>

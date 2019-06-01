@@ -764,10 +764,13 @@ $('#cmbstudenttotal').click(function()
 					str = str + "<th>Total No of Days</th>";
 					str = str + "<th>Present Days</th>";
 					str = str + "<th>Absent Days</th>";
+					str = str + "<th>Percentage</th>";
 					
 					str = str + '</tr>';
 					var Present=0;
 					var Absent=0;
+
+					var Percentage=0;
 						
 					str = str + "<tr>";
 						
@@ -792,7 +795,9 @@ $('#cmbstudenttotal').click(function()
 						str = str + '<td>' + len + "</td>";
 						str = str + '<td>' + Present+"</td>";
 						str = str + '<td>' + Absent+ "</td>";
-							
+						Percentage=(Present/len)*100;	
+						str = str + '<td>' + Percentage+ "</td>";
+						
 						str = str + '</tr>';
 								
 										
@@ -849,7 +854,8 @@ $('#cmbAdminday').click(function()
 							for(i=0;i<len1;i++){
 
 								for(j=0; j<len; j++){
-									if (obj.date1[i].date==obj.consolidate[j].date && obj.student[k].student_id==obj.consolidate[j].student_id){
+									if (obj.date1[i].date==obj.consolidate[j].date && obj.student[k].student_id==obj.consolidate[j].student_id)
+									{
 										str = str + '<td>' ;	
 										if(obj.consolidate[j].attendance_status==1){
 												$p='<span style="color: #009000">P</span>';
@@ -1029,6 +1035,7 @@ $('#Admintotal').click(function()
 				
 				var obj = JSON.parse(consolidate);
 				var len = obj.consolidate.length;
+				var len1 = obj.student.length;
 				var str = 'x';
 				if(len > 0)
 					{
@@ -1043,31 +1050,39 @@ $('#Admintotal').click(function()
 					var Absent=0;
 						
 					str = str + "<tr>";
-						
-						str = str + '<td>' + obj.consolidate[0].student_id + "</td>";
-					for(k=0; k<len;k++)
-					{
-					
-						if(obj.consolidate[k].attendance_status==1)
-								{
-										Present++;	
 
-								}
-								else
-								{
-									Absent++;		
-								}
-										
-					}
-						var $P=	'<span style="color: #009000"></span>';
-						var	$A='<span style="color: #ff0000"></span>';
-					
-						str = str + '<td>' + len + "</td>";
-						str = str + '<td>' + Present+"</td>";
-						str = str + '<td>' + Absent+ "</td>";
+						for(k=0; k<len1;k++)
+						{
 							
-						str = str + '</tr>';
+							str = str + "<tr>";
+							str = str + '<td>' + obj.student[k].student_id+"</td>";
+
+
+								for(j=0; j<len; j++){
+									if (obj.student[k].student_id==obj.consolidate[j].student_id)
+									{
+											
+										str = str + '<td>' ;	
+										if(obj.consolidate[j].attendance_status==1){
+												Present++;
+												str = str + '<td>' + Present+"</td>";
+												
+
+													}
+											else
+													{
+												Absent++;
+												str = str + '<td>' + Absent+ "</td>";
+							
+											
+										}str = str + "</td>";
+									}
 								
+							}
+							str = str + '</tr>';
+						}	
+			
+						
 										
 				$('#reportshereTOTAl').html(str);	
 				}else {
@@ -1079,6 +1094,4 @@ $('#Admintotal').click(function()
 		});
 		return false;
 	});	
-
 });
-	

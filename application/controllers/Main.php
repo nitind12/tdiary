@@ -821,6 +821,7 @@ function reports_attendance_controller_via_ajax_student_total()
 function reports_attendance_controller_via_ajax_student_total_admin_2()
  {
         $data['consolidate']=$this->am->reports_attendance_modals_student_total_admin_23();
+       $data['student']=$this->am->reports_attendance_modals_datastudent_admin_total_23();
        
         echo json_encode($data);
     }

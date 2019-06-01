@@ -578,13 +578,14 @@ class Add_class_model extends CI_Model
 			$date= $this->input->post('date');
 			$addclass_id = $this->input->post('addclass_id');
 			$subject_id = $this->input->post('subject');
-			
+			$time = $this->input->post('time');
+						
 			for($i=0; $i<count($addclass_id); $i++)
 			{
 			$data = array(
 			'add_class_id'=>$addclass_id[$i],
 			'date'=>$date,
-			'time'=>'02:00',
+			'time'=>$time,
 			'roll_no' => '121',
 			'attendance_status' => $mk1[$i],
 			'status' => '1',
@@ -1157,10 +1158,22 @@ class Add_class_model extends CI_Model
 		$this->db->join(' faculty_personal c', 'c.faculty_id=a.faculty_id');
 		
 		$query = $this->db->get();
-		echo $this->db->last_query();die();
+		//echo $this->db->last_query();die();
 		return $query->result();
 			
 		}
+		function reports_attendance_modals_datastudent_admin_total_23()
+		{
+		$this->db->select('a.student_id, a.first_name, a.last_name');
+		$this->db->from('std_personal a');
+		$this->db->join('section b', 'a.student_id=b.student_id');
+		$this->db->where('b.session_id', '2018');
+		$this->db->where('b.session_class_id', $this->input->post('ClassADT'));
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
 		
+		return $query->result();
+		}
+
 }
 ?>

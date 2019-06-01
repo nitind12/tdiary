@@ -9,8 +9,7 @@ class Test extends CI_Controller{
         if(!$this->session->userdata('user')) redirect('Login_controller');
    
 	}
-    
-	 public function viewmarks_controller2($no_,$sess) ////rename fecttab 
+ public function viewmarks_controller2($no_,$sess) ////rename fecttab 
     {  
         $data['title'] = "assignment_view";
         $data['page_'] = "viewmarksset2";
@@ -114,7 +113,7 @@ function index() 												//internal wale class
     public function submitmarks_controller_update()               ///showing the page of submit the data;
     {  
         $this->um->take_marks_update(); 
-        redirect('Test/viewmarks_controller2');   
+        redirect('Test');   
     }
     public function viewmarks()                           //showing all classs in view marks
         {

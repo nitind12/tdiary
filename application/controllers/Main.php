@@ -299,10 +299,30 @@ class Main extends CI_Controller {
     }
    
    
-  public function attendance_report_student_controller1()  
+  public function attendance_report_student_controller_admin()  
     {  
         $data['title'] = "Student-Report-Daywise";
         $data['page_'] = "student_report_daywise";
+        $data['course1'] = $this->am->getCourse1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Session1'] = $this->am->getSession1();
+        
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
+  public function attendance_report_student_controller1()  
+    {  
+        $data['title'] = "Student-Report-Daywise";
+        $data['page_'] = "student_daywise";
         $data['course1'] = $this->am->getCourse1();
         $data['Semester1'] = $this->am->getSemester1();
         $data['Session1'] = $this->am->getSession1();
@@ -337,19 +357,6 @@ class Main extends CI_Controller {
         
     }     
 
-    public function attendance_report_student_controller2()  
-    {  
-        $data['title'] = "Student-Report-Attendance";
-        $data['page_'] = "View_total";
-        $data['dashboard1'] = $this->am->getDashboardMenu();
-        $data['menu'] = $this->am->getMenu();
-        $data['submenu'] = $this->am->getSubmenu();
-        $data['last'] = $this->am->getlastMenu();
-        $this->load->view('templates/header', $data);
-        $this->load->view('myravipage', $data);  
-        $this->load->view('templates/footer');
-        
-    }
 
  public function attendance_report_View_Consolidate()  
     {  
@@ -543,7 +550,7 @@ public function attendance_report_View_Consolidate2($no_,$sess,$cour,$sem,$subid
     function reports_attendance_controller_CA()
     {
         $data['consolidate']=$this->am->reports_attendance_modalsCA();
-        $data['date1']=$this->am->reports_attendance_modals_data();
+        $data['date1']=$this->am->reports_attendance_modals_data_admin();
         $data['student']=$this->am->reports_attendance_modals_datastudent();
        
         echo json_encode($data);
@@ -756,9 +763,64 @@ function get_student()
 
 function reports_attendance_controller_via_ajax_student_daywise()
  {
-        $data['consolidate'] = $this->am->reports_attendance_modals_studentCA6();
+        $data['consolidate']=$this->am->reports_attendance_modals_studentCA6();
         $data['date1']=$this->am->reports_attendance_modals_data_day();
         $data['student']=$this->am->reports_attendance_modals_datastudentCA();
+       
+        echo json_encode($data);
+    }
+function reports_attendance_controller_via_ajax_student_daywise_admin()
+ {
+        $data['consolidate']=$this->am->reports_attendance_modals_student_admin();
+        $data['date1']=$this->am->reports_attendance_modals_data_day_admin1();
+        $data['student']=$this->am->reports_attendance_modals_datastudent_admin_day();
+       
+        echo json_encode($data);
+    }
+
+ public function attendance_report_student_controller_student2()  
+    {  
+        $data['title'] = "Student-Report-Attendance";
+        $data['page_'] = "student_total_reports";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+         $data['subjects'] = $this->am->subjectCAT();
+   
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
+function reports_attendance_controller_via_ajax_student_total()
+ {
+        $data['consolidate']=$this->am->reports_attendance_modals_student_total();
+       
+        echo json_encode($data);
+    }
+
+   //admin total
+    public function attendance_report_student_controller2()  
+    {  
+        $data['title'] = "Student-Report-Attendance";
+        $data['page_'] = "total_attendance_admin";
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+       
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
+function reports_attendance_controller_via_ajax_student_total_admin_2()
+ {
+        $data['consolidate']=$this->am->reports_attendance_modals_student_total_admin_23();
        
         echo json_encode($data);
     }

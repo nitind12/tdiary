@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('NO direct script access allowed');
-class Test extends CI_Controller{
+class Test extends CI_Controller
+{
 	function __construct()
 	{
 		parent::__construct();
@@ -10,6 +11,7 @@ class Test extends CI_Controller{
    
 	}
     
+
 	 public function viewmarks_controller2($no_,$sess) ////rename fecttab 
     {  
         $data['title'] = "assignment_view";
@@ -27,9 +29,8 @@ class Test extends CI_Controller{
         $this->load->view('templates/footer');
     }
 
-           
-           
-function index() 												//internal wale class 
+                  
+    function index() 												//internal wale class 
 	{
 		$data['page_'] = 'edit_marks_selected';
         $data['title'] = "Edit-Marks ";
@@ -41,12 +42,13 @@ function index() 												//internal wale class
         $this->load->view('templates/header',$data);
         $this->load->view('myrajpage',$data);  
         $this->load->view('templates/footer');
-		
-
 	}
+
+
 	 public function Edt_controller()  /////internal marks page load as like input box;
     {  
-        if($this->input->post('mtypeid')){
+        if($this->input->post('mtypeid'))
+        {
             $so_ = $this->input->post('mtypeid');
             $mt = $this->input->post('mtypename');
             $data['title'] = "Select-Marks-Type";
@@ -72,8 +74,9 @@ function index() 												//internal wale class
             redirect('test');
         }
         
-        } 
+    } 
              
+    
     public function Testinternal_controller()  /////internal marks page load as like input box;
         { 
          if($this->input->post('addclassid'))

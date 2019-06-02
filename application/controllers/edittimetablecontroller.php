@@ -57,5 +57,4 @@ class Edittimetablecontroller extends CI_Controller{
 		redirect('Edittimetablecontroller','refresh');
 
 	}
-	
 }

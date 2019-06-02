@@ -75,7 +75,6 @@ class Studenttimetableeditmodel extends CI_Model{
 	function del1($a){
 		$this->db->delete('Studenttimetableeditcontroller',array('id' => $a));
 		return;
-	}
-	
+	}	
 }
 ?>

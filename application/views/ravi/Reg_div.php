@@ -27,7 +27,8 @@
                 <b>Faculty Registration</b>
       </div>
       </a>
-      <div class="btn-box-row row-fluid  btn-box big span5" >
+      <div class="btn-box-row row-fluid  btn-box big span5" style="border: #ff0000 solid 0px;">
+           <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $view_edit_class_no;?></b> 
           <a href="<?php echo site_url('Main/attendance_controller');?>" >
            <i class="icon-adjust"></i>
                 <b>View_Class/Edit_class</b>

@@ -1,11 +1,9 @@
 <!-- for Read More -->
-
 <style type="text/css">
     .show-read-more .more-text{
        display: none;
     }
 </style>
-
 
 <div class="span9">
 	<div class="content">
@@ -33,7 +31,6 @@
 	               		</tr>
                		</thead>
 
-
              		<tbody>
                 		<?php foreach($add_class_in as $item){?>
                     		<tr >
@@ -49,8 +46,6 @@
            		 </table>
            	</div>
 
-
-
    		<form  method="post" name="myEdit"  id="myEdit" class="form-horizontal row-fluid" action="<?php echo site_url('Edit_controller/lecture_saving_data/'.$item->add_class_id.'/'.$item->session_id.'/'.$item->course_id.'/'.$item->subject_id);?>" >
 
 				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" width="100%">
@@ -62,9 +57,6 @@
 							  <input type="hidden" value="<?php echo $item->subject_id; ?>" name="subject_id" id="subject_id"> 
                 
 						<?php }?>	
-
-
-
 						
 							<tr>
 								<th colspan="3">
@@ -75,9 +67,7 @@
 									</div>
 								</th>
 							</tr>
-            
-
-					
+            					
 							<tr>
 								
 								<th>
@@ -194,9 +184,6 @@
 	                        <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-no_of_lecture';?>"><?php echo 
 	                       $item->no_of_lecture ; $tot = $tot + $item->no_of_lecture; ?></td>
 
-
-	                      
-
 	                        <td><a href="<?php echo site_url('Edit_controller/del1/' . $item->lecture_id)?>" class="btn btn-danger icon-trash " onclick="return confirm('Are you sure')"></a></td>
 	                    </tr>
 
@@ -210,6 +197,7 @@
                   </tbody> 
                </table>
 				</form>
+				
 			</div>						
 		</div>
 	</div>

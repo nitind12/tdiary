@@ -85,8 +85,6 @@ class Givenassignmentcontroller extends CI_Controller{
 
         echo $data; 
     }
-
-
-
+    
 
 }

@@ -7,7 +7,7 @@
               </div>
               <div class="module-body">
          
-      <table class="table table-striped table-bordered table-condensed">
+      <table class="datatable-1 table table-striped table-bordered table-condensed">
 
                         <thead>
                       <tr>

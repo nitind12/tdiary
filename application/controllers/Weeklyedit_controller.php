@@ -133,6 +133,7 @@ function count_lecture3()
 		redirect('Weeklyedit_controller/weekly_edit/'.$no_.'/'.$sess.'/'.$crs);
 	}
 
+
     function del1()
     {
         $u = $this->uri->segment(3);

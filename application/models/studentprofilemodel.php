@@ -4,7 +4,7 @@ class Studentprofilemodel extends CI_Model{
 	public function getData()
 	{
 		$this->db->select('a.* ,b.father_name ,b.mother_name,b.first_name,b.last_name,b.date_of_birth,
-			c.std_email , c.std_contact,d.student_photo,d.student_sig');
+		c.std_email , c.std_contact,d.student_photo,d.student_sig');
 		
 			$this->db->where('a.username',$this->session->userdata('user'));
 	
@@ -18,8 +18,7 @@ class Studentprofilemodel extends CI_Model{
 		
 		$query = $this->db->get();
 		return $query->result();
-			
-		
+					
 	}
 }
 

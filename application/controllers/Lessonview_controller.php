@@ -60,8 +60,6 @@ class Lessonview_controller extends CI_Controller
             redirect('Lessonview_controller');
         }
     }
-	
-
-	
+		
 }
 ?>

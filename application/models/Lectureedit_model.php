@@ -71,9 +71,6 @@ class Lectureedit_model extends CI_Model
         $query = $this->db->update('lecture', $data);
         return $query;
     }
-
-
-
 	
 	/*	public function add_view_class($sess,$crs)
 		{

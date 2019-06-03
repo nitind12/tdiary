@@ -35,7 +35,6 @@ class studentprofilecontroller extends CI_Controller
 		
 
 	}
-
 	
 }
 ?>

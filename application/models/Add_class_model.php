@@ -139,7 +139,38 @@ class Add_class_model extends CI_Model
 			
 		
 	}
+
 	
+	function getall_subject()
+		{
+			
+		$this->db->distinct('a.subject_id');
+		$this->db->select('a.*');
+		$this->db->from('subject a');
+		$query = $this->db->get('');
+		return $query->result();
+		}
+
+	function getall_subjectno()
+		{
+			
+		$this->db->distinct('a.subject_id');
+		$this->db->select('a.*');
+		$this->db->from('subject a');
+		$query = $this->db->get('');
+		return $query->num_rows();
+		}
+
+
+	function getall_view_edit_classno()
+		{
+			
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.*');
+		$this->db->from('add_class a');
+		$query = $this->db->get('');
+		return $query->num_rows();
+		}
 
 
 

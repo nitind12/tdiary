@@ -10,8 +10,7 @@ class Forgotpwd_controller extends CI_Controller
          if(!$this->session->userdata('user')) redirect('Login_controller');
     }
     
-
-    
+   
     public function index()
   
     {

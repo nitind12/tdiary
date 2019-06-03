@@ -126,8 +126,5 @@ class Testmodel extends CI_Model
 		$this->db->delete('studentmarks',array('add_marks_id' => $a));
 		return;
 	}
-
-
-
 	
 }

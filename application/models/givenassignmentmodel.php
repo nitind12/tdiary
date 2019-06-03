@@ -136,7 +136,6 @@ function fetchtassignemtnewno()
     }
 
 
-
     //---double click and edit---//
 
 	function updatedColumnview()

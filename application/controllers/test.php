@@ -29,7 +29,7 @@ class Test extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-                  
+               
     function index() 												//internal wale class 
 	{
 		$data['page_'] = 'edit_marks_selected';

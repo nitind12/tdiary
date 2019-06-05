@@ -13,7 +13,6 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		}
 
-
 	function getallstudentno()
 		{
 			
@@ -24,8 +23,6 @@ class Add_class_model extends CI_Model
 		return $query->num_rows();
 		}
 	
-
-
 	public function gettotalstd_details($std)
 	{
 		$this->db->distinct('a.student_id');
@@ -35,24 +32,19 @@ class Add_class_model extends CI_Model
 		$this->db->where('a.student_id',$std);
 		$this->db->from('std_personal a');
 		
-		
 		$this->db->join('std_contact c', 'c.student_id=a.student_id');
 		$this->db->join('student_photo d', 'd.student_id=a.student_id');
 		$this->db->join('std_address e', 'e.student_id=a.student_id');
 		$this->db->join('std_address f', 'f.student_id=a.student_id');
 		
 		$query = $this->db->get();
-		//echo $this->db->last_query();die();
-	
-		return $query->result();
-			
-		
+		//echo $this->db->last_query();die();	
+		return $query->result();		
 	}
 
 
 	function getallfaculty()
-		{
-			
+		{			
 		$this->db->distinct('a.faculty_id');
 		$this->db->select('a.*');
 		$this->db->from('faculty_personal a');
@@ -60,11 +52,8 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		}
 
-
-
 	function getall_facultyno()
 		{
-			
 		$this->db->distinct('a.faculty_id');
 		$this->db->select('a.*');
 		$this->db->from('faculty_personal a');
@@ -72,14 +61,11 @@ class Add_class_model extends CI_Model
 		return $query->num_rows();
 		}
 	
-
-
-
 	public function gettotal_facuty_details($faculty)
 	{
 		$this->db->distinct('a.faculty_id');
 		
-		$this->db->select('a.*,c.faculty_email , c.faculty_contact,d.faculty_photo,d.faculty_sig');
+		$this->db->select('a.*,c.*,d.faculty_photo,d.faculty_sig, f.address, f.state, f.city ,f.pincode');
 	
 		$this->db->where('a.faculty_id',$faculty);
 		$this->db->from('faculty_personal a');
@@ -88,6 +74,7 @@ class Add_class_model extends CI_Model
 		$this->db->join('faculty_contact c', 'c.faculty_id=a.faculty_id');
 		$this->db->join('faculty_profile d', 'd.faculty_id=a.faculty_id');
 		$this->db->join('faculty_address e', 'e.faculty_id=a.faculty_id');
+		$this->db->join('faculty_address f', 'f.faculty_id=a.faculty_id');
 		
 		$query = $this->db->get();
 		//echo $this->db->last_query();die();

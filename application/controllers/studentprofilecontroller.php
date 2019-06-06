@@ -9,9 +9,9 @@ class studentprofilecontroller extends CI_Controller
         parent::__construct();
 
          if(!$this->session->userdata('user')) redirect('Login_controller');
-      $this->load->model('Add_class_model','am');
+          $this->load->model('Add_class_model','am');
 
-		$this->load->model('studentprofilemodel','sp');
+		  $this->load->model('studentprofilemodel','sp');
      }
 
 
@@ -24,10 +24,22 @@ class studentprofilecontroller extends CI_Controller
         $data['last'] = $this->am->getlastMenu();
          $data['course1'] = $this->am->getCourse1();
        
-		$data['m'] = $this->sp->getData();
 		
-		$data['page_'] = 'studentprofileview';
-		$data['title'] = 'profile';
+            if($this->session->userdata('user_status')==1){
+                   $data['page_'] = 'studentprofileview';
+    
+            }
+          if($this->session->userdata('user_status')==2){
+                $data['m'] = $this->sp->getDatat();
+                $data['page_'] = 'teacherprofile';
+    
+            }
+          if($this->session->userdata('user_status')==3){
+                 $data['m'] = $this->sp->getData();
+                   $data['page_'] = 'studentprofileview';
+    
+            }
+      			$data['title'] = 'profile';
        
         $this->load->view('templates/header',$data);
         $this->load->view('mysapnapage',$data);  

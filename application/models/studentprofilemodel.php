@@ -20,5 +20,26 @@ class Studentprofilemodel extends CI_Model{
 		return $query->result();
 					
 	}
+public function getDatat()
+	{
+	$this->db->select('a.*,b.father_name,b.first_name,b.last_name,b.date_of_birth,
+		c.faculty_email , c.faculty_contact,d.faculty_photo,d.faculty_sig');
+		
+		$this->db->where('a.username',$this->session->userdata('user'));
+		$this->db->from('sign_up a');
+		$this->db->where('b.faculty_id',$this->session->userdata('facultyid'));
+		
+		$this->db->join('faculty_personal b', 'a.student_id=b.faculty_id');
+		
+		$this->db->join('faculty_contact c', 'c.faculty_id=a.student_id');
+		$this->db->join('faculty_profile d', 'd.faculty_id=a.student_id');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+	
+		return $query->result();
+					
+	}
+
 }
 

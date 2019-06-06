@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2019 at 08:29 PM
+-- Generation Time: Jun 06, 2019 at 06:06 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -92,7 +92,7 @@ CREATE TABLE `assignment` (
 --
 
 INSERT INTO `assignment` (`Assignment_id`, `add_class_id`, `Assignment_no`, `Given_date`, `Submission_date`, `Unit`, `Topic`, `subject_id`, `faculty_id`, `status`, `username`) VALUES
-(13, 1, 2, '2019-05-20', '2019-05-20', 1, 'uygsgjsdcgbyuczjcbfuycjduyjfdz', 'BCA203', '2019058', 1, 'ankush12');
+(19, 1, 1, '2019-05-27', '2019-05-29', 1, 'What is ds?', 'BCA203', '2019058', 1, 'ankush12');
 
 -- --------------------------------------------------------
 
@@ -118,11 +118,10 @@ CREATE TABLE `assignment_checker` (
 --
 
 INSERT INTO `assignment_checker` (`assignment_checker_id`, `add_class_id`, `assignment_id`, `roll_no`, `assignment_status`, `checker_date`, `Grade`, `subject_id`, `status`, `username`) VALUES
-(9, 1, 2, 2019051, 0, '2019-05-20', 'B', 'BCA203', 1, 'ankush12'),
-(10, 1, 2, 20190512, 1, '2019-05-20', 'A', 'BCA203', 1, 'ankush12'),
-(11, 1, 2, 2019053, 0, '2019-05-20', 'A', 'BCA203', 1, 'ankush12'),
-(12, 1, 2, 2019056, 0, '2019-05-20', 'A', 'BCA203', 1, 'ankush12'),
-(13, 1, 2, 2019053, 1, '2019-05-20', 'A', 'BCA204', 1, 'ankush12');
+(18, 1, 1, 2019051, 1, '2019-05-27', 'A', 'BCA203', 1, 'ankush12'),
+(19, 1, 1, 20190512, 1, '2019-05-27', 'A', 'BCA203', 1, 'ankush12'),
+(20, 1, 1, 2019053, 1, '2019-05-27', 'A', 'BCA203', 1, 'ankush12'),
+(21, 1, 1, 2019056, 1, '2019-05-27', 'A', 'BCA203', 1, 'ankush12');
 
 -- --------------------------------------------------------
 
@@ -190,7 +189,42 @@ INSERT INTO `attendance` (`add_class_id`, `attendance_id`, `date`, `time`, `roll
 (1, 21, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '2019051', '2019056', 'BCA202', ''),
 (1, 22, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '20190512', '2019056', 'BCA202', ''),
 (1, 23, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '2019053', '2019056', 'BCA202', ''),
-(1, 24, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '2019056', '2019056', 'BCA202', '');
+(1, 24, '2019-05-20', '02:00:00.000', 121, '1', 'nitin12', 1, '2019056', '2019056', 'BCA202', ''),
+(1, 25, '2019-05-18', '02:00:00.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 26, '2019-05-18', '02:00:00.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 27, '2019-05-18', '02:00:00.000', 121, '0', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 28, '2019-05-18', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(1, 29, '2019-05-27', '02:00:00.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 30, '2019-05-27', '02:00:00.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 31, '2019-05-27', '02:00:00.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 32, '2019-05-27', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(1, 33, '2019-05-28', '02:00:00.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 34, '2019-05-28', '02:00:00.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 35, '2019-05-28', '02:00:00.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 36, '2019-05-28', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(2, 37, '2019-05-28', '02:00:00.000', 121, '1', 'ankush12', 1, '20190511', '2019058', 'BCA206', ''),
+(2, 38, '2019-05-28', '02:00:00.000', 121, '1', 'ankush12', 1, '2019052', '2019058', 'BCA206', ''),
+(2, 39, '2019-05-28', '02:00:00.000', 121, '1', 'ankush12', 1, '2019054', '2019058', 'BCA206', ''),
+(2, 40, '2019-05-28', '02:00:00.000', 121, '1', 'ankush12', 1, '2019055', '2019058', 'BCA206', ''),
+(1, 42, '2019-05-30', '02:00:00.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 43, '2019-05-30', '02:00:00.000', 121, '0', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 44, '2019-05-30', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(1, 45, '2019-05-29', '02:00:00.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 46, '2019-05-29', '02:00:00.000', 121, '0', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 47, '2019-05-29', '02:00:00.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 48, '2019-05-29', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(1, 49, '2019-05-30', '02:00:00.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 50, '2019-05-30', '02:00:00.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 51, '2019-05-30', '02:00:00.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 52, '2019-05-30', '02:00:00.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(1, 57, '2019-06-01', '11:50:38.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 58, '2019-06-01', '11:50:38.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 59, '2019-06-01', '11:50:38.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 60, '2019-06-01', '11:50:38.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', ''),
+(1, 61, '2019-06-01', '12:17:21.000', 121, '1', 'ankush12', 1, '2019051', '2019058', 'BCA203', ''),
+(1, 62, '2019-06-01', '12:17:21.000', 121, '1', 'ankush12', 1, '20190512', '2019058', 'BCA203', ''),
+(1, 63, '2019-06-01', '12:17:21.000', 121, '1', 'ankush12', 1, '2019053', '2019058', 'BCA203', ''),
+(1, 64, '2019-06-01', '12:17:21.000', 121, '1', 'ankush12', 1, '2019056', '2019058', 'BCA203', '');
 
 -- --------------------------------------------------------
 
@@ -365,10 +399,10 @@ CREATE TABLE `faculty_contact` (
 --
 
 INSERT INTO `faculty_contact` (`faculty_contact_id`, `faculty_email`, `email_status`, `faculty_contact`, `faculty_status`, `contact_status`, `status`, `username`, `fusername`, `faculty_id`, `alternate_email`, `alternate_contact`) VALUES
-(5, 'naveen@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', '', '', 'naveen@gmail.com', '9294839456'),
-(6, 'nitin@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', '', '', 'nitin@gmail.com', '9294839456'),
-(7, 'neetu@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', '', '', 'neetu@gmail.com', '9294839456'),
-(8, 'ankush@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', '', '', 'ankush@gmail.com', '9294839456');
+(5, 'naveen@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', 'naveen12', '2019055', 'naveen@gmail.com', '9294839456'),
+(6, 'nitin@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', 'nitin12', '2019056', 'nitin@gmail.com', '9294839456'),
+(7, 'neetu@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', 'neetu12', '2019057', 'neetu@gmail.com', '9294839456'),
+(8, 'ankush@gmail.com', 1, '9294839436', 1, 1, 1, 'ra', 'ankush12', '2019058', 'ankush@gmail.com', '9294839456');
 
 -- --------------------------------------------------------
 
@@ -489,7 +523,10 @@ CREATE TABLE `lecture` (
 INSERT INTO `lecture` (`lecture_id`, `faculty_id`, `add_class_id`, `subject_id`, `unit`, `topic`, `no_of_lecture`, `status`, `username`) VALUES
 (1, '121', 1, 'BCA202', 1, '			ujjdvoclvdc							', 4, 1, 'ra'),
 (2, '121', 1, 'BCA203', 1, '			k							', 1, 1, 'ra'),
-(3, '2019058', 1, 'BCA203', 4, '				m						', 1, 1, 'ra');
+(3, '2019058', 1, 'BCA203', 4, '				m						', 1, 1, 'ra'),
+(4, '2019058', 1, 'BCA203', 1, '				rytugyh						', 2, 1, 'ra'),
+(5, '2019058', 1, 'BCA203', 4, '					h					', 2, 1, 'ra'),
+(6, '2019058', 1, 'BCA203', 5, '		hgyjkl								', 5, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -527,7 +564,8 @@ INSERT INTO `lesson` (`lesson_id`, `add_class_id`, `subject_id`, `faculty_id`, `
 (7, 25, '', '', '', '00:00:00.00', '00:00:00.00', '', '', 'Arrangement', '', '2019-04-27', 1, 'ra'),
 (8, 25, '', '', '', '00:05:00.00', '02:01:00.00', '1', '', 'Arrangement', 'hagfsyuchczhjcbjsxnaugcfzbauefgbzwuns', '2019-05-08', 1, 'ra'),
 (9, 35, '', '', '', '01:00:00.00', '01:50:00.00', '1', '', 'Letcure Schedule', 'what is software engineering?and software characterstic', '2019-05-18', 1, 'ra'),
-(10, 1, 'BCA203', '2019058', '', '00:05:00.00', '04:05:00.00', '1', '', 'Letcure Schedule', 'iuolkjhyuhikjuhiokhjoj', '2019-05-20', 1, 'ra');
+(10, 1, 'BCA203', '2019058', '', '00:05:00.00', '04:05:00.00', '1', '', 'Letcure Schedule', 'iuolkjhyuhikjuhiokhjoj', '2019-05-20', 1, 'ra'),
+(13, 1, 'BCA203', '2019058', '', '00:04:00.00', '04:05:00.00', '1', '', 'Extra Lecture Taken', 'fchgyjukj', '2019-05-23', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -616,7 +654,11 @@ INSERT INTO `section` (`s_no`, `session_id`, `session_class_id`, `student_id`, `
 (53, '2018', '2', '2019054', 1, 'ra'),
 (54, '2018', '2', '2019055', 1, 'ra'),
 (55, '2018', '2', '2019052', 1, 'ra'),
-(56, '2018', '2', '20190511', 1, 'ra');
+(56, '2018', '2', '20190511', 1, 'ra'),
+(57, '2019', '3', '2019057', 1, 'ra'),
+(58, '2019', '3', '20190510', 1, 'ra'),
+(59, '2019', '4', '2019058', 1, 'ra'),
+(60, '2019', '4', '2019059', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -694,8 +736,6 @@ INSERT INTO `sidebar` (`sidebar_id`, `sidebar_name`, `path`, `status`, `username
 (1, 'Dashboard', 'Main/index', 2, 'ra'),
 (2, 'Dashboard', 'Main/indexs', 2, 'ra'),
 (3, 'Dashboard', 'Main/indext', 2, 'ra'),
-(7, 'Notification', 'Main/index', 2, 'ra'),
-(8, 'Notification', 'Main/index', 2, 'ra'),
 (9, 'Teacher-Online-Attendance', '#', 1, 'ra'),
 (10, 'Student-Attendace-Report', '#', 1, 'ra'),
 (11, 'Teacher-Lecture-Plan', '#', 1, 'ra'),
@@ -705,15 +745,18 @@ INSERT INTO `sidebar` (`sidebar_id`, `sidebar_name`, `path`, `status`, `username
 (15, 'Assignment', '#', 1, 'ra'),
 (16, 'Student-Marks', '#', 1, 'ra'),
 (17, 'Student-Assignment', '#', 1, 'ra'),
-(18, 'Admin-Timetable', '#', 1, 'ra'),
 (19, 'Teacher-Timetable', '#', 1, 'ra'),
 (20, 'Student-Timetable', '#', 1, 'ra'),
 (21, 'More-Pages', '#', 3, 'ra'),
-(22, 'Logout', 'Main/logout', 3, 'ra'),
-(23, 'Forms', 'Main/form_controller', 2, 'ra'),
+(23, 'Master Entity', 'Main/form_controller', 2, 'ra'),
 (25, ' Add Class Student ', 'Main/Promoted_Class_controller', 2, 'ra'),
 (26, 'Upload Notes', 'Main/Upload_controller', 2, 'ra'),
-(27, 'Download Notes', 'Main/Download_controller', 2, 'ra');
+(27, 'Download Notes', 'Main/Download_controller', 2, 'ra'),
+(28, 'Student-Attendace-Report', '#', 1, 'ra'),
+(30, 'Student-Marks', '#', 1, 'ra'),
+(31, 'Admin-Timetable', '#', 1, 'ra'),
+(32, 'Logout', 'Main/logout', 3, 'ra'),
+(33, 'Registration', '#', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -1012,6 +1055,8 @@ CREATE TABLE `studentmarks` (
   `totalmarks` int(5) NOT NULL,
   `marks` int(4) NOT NULL,
   `subject_id` varchar(50) NOT NULL,
+  `faculty_id` varchar(50) NOT NULL,
+  `percentage` varchar(50) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1020,15 +1065,19 @@ CREATE TABLE `studentmarks` (
 -- Dumping data for table `studentmarks`
 --
 
-INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_type_id`, `totalmarks`, `marks`, `subject_id`, `status`, `username`) VALUES
-(59, 1, 2019051, 1, 30, 14, 'BCA203', 1, 'ankush12'),
-(60, 1, 20190512, 1, 30, 25, 'BCA203', 1, 'ankush12'),
-(61, 1, 2019053, 1, 30, 30, 'BCA203', 1, 'ankush12'),
-(62, 1, 2019056, 1, 30, 30, 'BCA203', 1, 'ankush12'),
-(63, 1, 2019051, 1, 30, 14, 'BCA203', 1, 'ankush12'),
-(64, 1, 20190512, 1, 30, 14, 'BCA203', 1, 'ankush12'),
-(65, 1, 2019053, 1, 30, 30, 'BCA203', 1, 'ankush12'),
-(66, 1, 2019056, 1, 30, 15, 'BCA203', 1, 'ankush12');
+INSERT INTO `studentmarks` (`add_marks_id`, `add_class_id`, `roll_no`, `marks_type_id`, `totalmarks`, `marks`, `subject_id`, `faculty_id`, `percentage`, `status`, `username`) VALUES
+(171, 1, 2019051, 1, 30, 14, 'BCA203', '2019058', '46.667', 1, 'ankush12'),
+(172, 1, 20190512, 1, 30, 15, 'BCA203', '2019058', '50.000', 1, 'ankush12'),
+(173, 1, 2019053, 1, 30, 16, 'BCA203', '2019058', '53.333', 1, 'ankush12'),
+(174, 1, 2019056, 1, 30, 17, 'BCA203', '2019058', '56.667', 1, 'ankush12'),
+(175, 2, 20190511, 1, 30, 28, 'BCA206', '2019058', '93.333', 1, 'ankush12'),
+(176, 2, 2019052, 1, 30, 26, 'BCA206', '2019058', '86.667', 1, 'ankush12'),
+(177, 2, 2019054, 1, 30, 27, 'BCA206', '2019058', '90.000', 1, 'ankush12'),
+(178, 2, 2019055, 1, 30, 28, 'BCA206', '2019058', '93.333', 1, 'ankush12'),
+(179, 1, 2019051, 1, 30, 14, 'BCA202', '2019056', '46.667', 1, 'nitin12'),
+(180, 1, 20190512, 1, 30, 14, 'BCA202', '2019056', '46.667', 1, 'nitin12'),
+(181, 1, 2019053, 1, 30, 14, 'BCA202', '2019056', '46.667', 1, 'nitin12'),
+(182, 1, 2019056, 1, 30, 14, 'BCA202', '2019056', '46.667', 1, 'nitin12');
 
 -- --------------------------------------------------------
 
@@ -1078,9 +1127,9 @@ INSERT INTO `student_photo` (`student_photo_id`, `student_id`, `student_photo`, 
 CREATE TABLE `student_time_table` (
   `fid` int(11) NOT NULL,
   `Course_id` varchar(15) NOT NULL,
-  `Semester` int(5) NOT NULL,
-  `Session` varchar(25) NOT NULL,
-  `Section` varchar(5) NOT NULL,
+  `semester_id` int(5) NOT NULL,
+  `session_id` varchar(25) NOT NULL,
+  `section_id` varchar(5) NOT NULL,
   `Choose_File` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1088,11 +1137,11 @@ CREATE TABLE `student_time_table` (
 -- Dumping data for table `student_time_table`
 --
 
-INSERT INTO `student_time_table` (`fid`, `Course_id`, `Semester`, `Session`, `Section`, `Choose_File`) VALUES
+INSERT INTO `student_time_table` (`fid`, `Course_id`, `semester_id`, `session_id`, `section_id`, `Choose_File`) VALUES
 (1, '', 0, '', '', ''),
 (2, 'BCA', 1, ' 2011-2012', '', ''),
-(3, 'BCA', 2, ' 2010-2011', 'A', 0x332e706466),
-(4, 'BCA', 1, ' 2010-2011', 'B', 0x342e706466);
+(9, 'BCA', 2, '2018', 'A', 0x392e504e47),
+(10, 'BCA', 2, '2016', 'A', 0x31302e4a5047);
 
 -- --------------------------------------------------------
 
@@ -1438,9 +1487,9 @@ INSERT INTO `sub_sidebar` (`sub_sidebar_id`, `sidebar_id`, `sub_sidebar_name`, `
 (2, 9, 'View-Consolidate', 'Main/attendance_report_View_Consolidate', 1, 'ra'),
 (3, 9, 'View-Daywise', 'Main/attendance_view_controller', 1, 'ra'),
 (4, 9, 'View-Total', 'Main/attendance_report_student_controller', 1, 'ra'),
-(5, 10, 'View-Consolidate', 'Main/attendance_report_student_controller', 1, 'ra'),
-(6, 10, 'View-Daywise', 'Main/attendance_report_student_controller1', 1, 'ra'),
-(7, 10, 'View-Total', 'Main/attendance_report_student_controller2', 1, 'ra'),
+(5, 10, 'View-Consolidate', 'Main/attendance_report_student_controller_student', 1, 'ra'),
+(6, 10, 'View-Daywise', 'Main/attendance_report_student_controller_daywise', 1, 'ra'),
+(7, 10, 'View-Total', 'Main/attendance_report_student_controller_student2', 1, 'ra'),
 (8, 14, 'Edit', 'test/index', 1, 'ra'),
 (9, 14, 'View', 'Test/viewmarks', 1, 'ra'),
 (10, 15, 'Given-Assignment', 'assignmentcontroller/index', 1, 'ra'),
@@ -1450,8 +1499,8 @@ INSERT INTO `sub_sidebar` (`sub_sidebar_id`, `sidebar_id`, `sub_sidebar_name`, `
 (14, 16, 'View', 'Check_assign_report_controller/marks1', 1, 'ra'),
 (15, 17, 'View-Assignment', 'assign_report_controller/index', 1, 'ra'),
 (16, 17, 'View-Checked-Assignment', 'check_assign_report_controller/index', 1, 'ra'),
-(17, 18, 'Edit-Timetable', 'Studenttimetableeditcontroller/index', 1, 'ra'),
-(18, 18, 'View-Timetable', 'studenttimetableviewcontroller/index', 1, 'ra'),
+(17, 31, 'Edit-Timetable', 'Studenttimetableeditcontroller/index', 1, 'ra'),
+(18, 31, 'View-Timetable', 'studenttimetableviewcontroller/index', 1, 'ra'),
 (19, 19, 'Edit-Timetable', 'Edittimetablecontroller/index', 1, 'ra'),
 (20, 19, 'View-Timetable', 'viewtimetablecontroller/index', 1, 'ra'),
 (21, 20, 'View-Timetable', 'studenttimetableviewcontroller/index', 1, 'ra'),
@@ -1460,7 +1509,15 @@ INSERT INTO `sub_sidebar` (`sub_sidebar_id`, `sidebar_id`, `sub_sidebar_name`, `
 (24, 12, 'Edit', 'Lessonedit_controller/index', 1, 'ra'),
 (25, 12, 'View', 'Lessonview_controller/index', 1, 'ra'),
 (26, 13, 'Edit', 'Weeklyedit_controller/index', 1, 'ra'),
-(27, 13, 'View', 'Weeklyview_controller/index', 1, 'ra');
+(27, 13, 'View', 'Weeklyview_controller/index', 1, 'ra'),
+(28, 28, 'View-Consolidate', 'Main/attendance_report_student_controller_admin', 1, 'ra'),
+(29, 28, 'View-Daywise', 'Main/attendance_report_student_controller1', 1, 'ra'),
+(30, 28, 'View-Total', 'Main/attendance_report_student_controller2', 1, 'ra'),
+(31, 29, 'View', 'Check_assign_report_controller/marks1', 1, 'ra'),
+(32, 30, 'View', 'Check_assign_report_controller/marks1', 1, 'ra'),
+(33, 21, 'Logout', 'Main/logout', 1, 'ra'),
+(34, 33, 'Student Registration', 'Registrationform_controller/index', 1, 'ra'),
+(35, 33, 'Faculty Registration', 'F_registrationform_controller/index1', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -1499,19 +1556,31 @@ CREATE TABLE `time_table_edit` (
   `Room` int(8) NOT NULL,
   `Time` varchar(25) NOT NULL,
   `session_id` varchar(15) NOT NULL,
-  `Faculty_id` varchar(50) NOT NULL
+  `Faculty_id` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `time_table_edit`
 --
 
-INSERT INTO `time_table_edit` (`tid`, `Day`, `Course_id`, `Semester`, `Section`, `Subject_id`, `Room`, `Time`, `session_id`, `Faculty_id`) VALUES
-(2, 'Monday', '0', 1, 'A', 'nm', 45, '09_00_09_50', ' 2010-2011', '1'),
-(3, 'Tuesday', '0', 1, 'A', 'AV', 123, '10_40_11_30', ' 2015-2016', '2'),
-(4, 'Monday', 'BCA', 1, 'A', '', 1, '09_00_09_50', '2014', ''),
-(5, 'Monday', 'BCA', 1, 'B', 'BCA101', 5, '09_50_10_40', '2017', ''),
-(6, 'Tuesday', 'BCA', 1, 'A', 'BCA103', 12, '09_50_10_40', '2018', 'ankush12');
+INSERT INTO `time_table_edit` (`tid`, `Day`, `Course_id`, `Semester`, `Section`, `Subject_id`, `Room`, `Time`, `session_id`, `Faculty_id`, `username`) VALUES
+(7, 'Tuesday', 'BCA', 2, 'A', 'BCA203', 12, '09_00_09_50', '2019', '2019058', 'ankush12'),
+(8, 'Monday', 'BCA', 1, 'A', 'BCA102', 12, '10_40_11_30', '2019', '2019058', 'ankush12'),
+(9, 'Monday', 'BCA', 3, 'B', 'BCA301', 12, '10_40_11_30', '2019', '2019058', 'ankush12'),
+(10, 'Monday', 'BCA', 1, 'A', 'BCA103', 12, '10_40_11_30', '2018', '2019058', 'ankush12'),
+(11, 'Monday', 'BCA', 1, 'A', 'BCA102', 12, '09_00_09_50', '2014', '2019058', 'ankush12'),
+(12, 'Wednesday', 'BCA', 4, 'B', 'BCA403', 12, '10_40_11_30', '2015', '2019058', 'ankush12'),
+(13, 'Tuesday', 'BCA', 2, 'B', 'BCA202', 12, '12_40_01_30', '2015', '2019058', 'ankush12'),
+(14, 'Monday', 'BCA', 1, 'A', 'BCA102', 12, '09_50_10_40', '2019', '2019058', 'ankush12'),
+(15, 'Tuesday', 'BCA', 2, 'A', 'BCA203', 12, '09_50_10_40', '2015', '2019058', 'ankush12'),
+(16, 'Tuesday', 'BCA', 1, 'A', 'BCA102', 55, '10_40_11_30', '2017', '2019058', 'ankush12'),
+(17, 'Monday', 'BCA', 1, 'A', 'BCA103', 55, '09_00_09_50', '2015', '2019058', 'ankush12'),
+(18, 'Tuesday', 'BCA', 2, 'B', 'BCA201', 12, '09_50_10_40', '2014', '', ''),
+(19, 'Monday', 'BCA', 1, 'B', 'BCA201', 12, '09_50_10_40', '2015', '', ''),
+(20, 'Tuesday', 'B.SC', 2, 'A', 'AV', 12, '09_00_09_50', '2014', '', ''),
+(21, 'Wednesday', 'B.COM', 2, 'A', 'BCA201', 12, '09_00_09_50', '2014', '', ''),
+(22, 'Monday', 'BCA', 1, 'A', 'BCA201', 12, '09_00_09_50', '2014', '', '');
 
 -- --------------------------------------------------------
 
@@ -1557,7 +1626,9 @@ CREATE TABLE `upload_notes` (
 INSERT INTO `upload_notes` (`notes_id`, `upload_notes`, `subject_id`, `faculty_id`, `date_notes`, `status`, `username`) VALUES
 (7, 0x372e706466, 'BCA101', 'ravi', '0000-00-00', 1, ''),
 (8, 0x78, 'BCA101', 'ravi', '0000-00-00', 1, ''),
-(9, 0x78, 'BCA101', 'ravi', '2019-05-20', 1, '');
+(9, 0x78, 'BCA101', 'ravi', '2019-05-20', 1, ''),
+(10, 0x31302e646f6378, 'BCA101', '2019058', '2019-05-24', 1, 'ankush12'),
+(11, 0x31312e646f6378, 'BCA203', '2019058', '2019-05-24', 1, 'ankush12');
 
 -- --------------------------------------------------------
 
@@ -1602,8 +1673,6 @@ CREATE TABLE `users_menu` (
 INSERT INTO `users_menu` (`users_menu_id`, `users_id`, `sidebar_id`, `status`, `username`) VALUES
 (1, 1, 1, 1, 'ra'),
 (5, 1, 8, 1, 'ra'),
-(7, 1, 10, 1, 'ra'),
-(13, 1, 16, 1, 'ra'),
 (15, 1, 18, 1, 'ra'),
 (18, 2, 3, 1, 'ra'),
 (19, 2, 8, 1, 'ra'),
@@ -1624,12 +1693,18 @@ INSERT INTO `users_menu` (`users_menu_id`, `users_id`, `sidebar_id`, `status`, `
 (34, 1, 21, 1, 'ra'),
 (35, 1, 22, 1, 'ra'),
 (36, 2, 21, 1, 'ra'),
-(37, 2, 22, 1, 'ra'),
 (38, 3, 21, 1, 'ra'),
-(39, 3, 22, 1, 'ra'),
 (41, 1, 25, 1, 'ra'),
 (42, 2, 26, 1, 'ra'),
-(43, 3, 27, 1, 'ra');
+(43, 3, 27, 1, 'ra'),
+(44, 1, 28, 1, 'ra'),
+(45, 1, 30, 1, 'ra'),
+(46, 1, 31, 1, 'ra'),
+(47, 1, 32, 1, 'ra'),
+(48, 2, 32, 1, 'ra'),
+(49, 3, 32, 1, 'ra'),
+(50, 1, 33, 1, 'ra'),
+(51, 1, 34, 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -1648,6 +1723,7 @@ CREATE TABLE `weekly` (
   `end_date` date NOT NULL,
   `no_of_lecture_schedule` int(3) NOT NULL,
   `no_of_lost_due_to_holiday` int(3) NOT NULL,
+  `arrangement` int(11) NOT NULL,
   `no_of_lost_due_to_cl` int(3) NOT NULL,
   `no_extra_taken` int(3) NOT NULL,
   `no_of_lecture_actual_taken` int(3) NOT NULL,
@@ -1658,8 +1734,8 @@ CREATE TABLE `weekly` (
 -- Dumping data for table `weekly`
 --
 
-INSERT INTO `weekly` (`add_class_id`, `faculty_id`, `subject_id`, `lectureid`, `lesson_id`, `week_id`, `start_date`, `end_date`, `no_of_lecture_schedule`, `no_of_lost_due_to_holiday`, `no_of_lost_due_to_cl`, `no_extra_taken`, `no_of_lecture_actual_taken`, `description_of_topic`) VALUES
-(1, '2019058', 'BCA203', '', '', 5, '2019-05-20', '2019-05-20', 1, 3, 1, 1, 1, '');
+INSERT INTO `weekly` (`add_class_id`, `faculty_id`, `subject_id`, `lectureid`, `lesson_id`, `week_id`, `start_date`, `end_date`, `no_of_lecture_schedule`, `no_of_lost_due_to_holiday`, `arrangement`, `no_of_lost_due_to_cl`, `no_extra_taken`, `no_of_lecture_actual_taken`, `description_of_topic`) VALUES
+(1, '2019058', 'BCA203', '', '', 5, '2019-05-20', '2019-05-20', 1, 3, 0, 1, 1, 1, '');
 
 --
 -- Indexes for dumped tables
@@ -1928,13 +2004,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `assignment`
 --
 ALTER TABLE `assignment`
-  MODIFY `Assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `assignment_checker`
 --
 ALTER TABLE `assignment_checker`
-  MODIFY `assignment_checker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `assignment_checker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `assign_subject`
@@ -1946,7 +2022,7 @@ ALTER TABLE `assign_subject`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `batch`
@@ -1994,13 +2070,13 @@ ALTER TABLE `form_type`
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
-  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `lecture_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `lesson_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `marks_type`
@@ -2018,7 +2094,7 @@ ALTER TABLE `qualification`
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `s_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `s_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `semester`
@@ -2030,7 +2106,7 @@ ALTER TABLE `semester`
 -- AUTO_INCREMENT for table `sidebar`
 --
 ALTER TABLE `sidebar`
-  MODIFY `sidebar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `sidebar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `sign_up`
@@ -2066,7 +2142,7 @@ ALTER TABLE `std_personal`
 -- AUTO_INCREMENT for table `studentmarks`
 --
 ALTER TABLE `studentmarks`
-  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `add_marks_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
 
 --
 -- AUTO_INCREMENT for table `student_photo`
@@ -2078,25 +2154,25 @@ ALTER TABLE `student_photo`
 -- AUTO_INCREMENT for table `student_time_table`
 --
 ALTER TABLE `student_time_table`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sub_sidebar`
 --
 ALTER TABLE `sub_sidebar`
-  MODIFY `sub_sidebar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `sub_sidebar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `time_table_edit`
 --
 ALTER TABLE `time_table_edit`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `upload_notes`
 --
 ALTER TABLE `upload_notes`
-  MODIFY `notes_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `notes_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -2108,7 +2184,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users_menu`
 --
 ALTER TABLE `users_menu`
-  MODIFY `users_menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `users_menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `weekly`

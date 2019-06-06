@@ -16,6 +16,7 @@
 			     text-align: center;
 
   			}
+ /* tr:nth-child(even) {background-color: #f2f2f2;}*/
 
  	img {
   border-radius: 50%;
@@ -26,7 +27,7 @@
 	<div class="content">
 		<div class="module">
 			<div class="module-head">
-				<h1 >Student Profile</h1>
+				<h1 >Faculty Profile</h1>
 				</div>
 		<div class="module-body">
 
@@ -39,7 +40,7 @@
 		<div>							
 	
 		<tr>
-			<td colspan="2"><img src="<?php echo base_url('assets/student_photo/'.$user->student_photo);?>" style="width:160px"></td>
+			<td colspan="2"><img src="<?php echo base_url('assets/student_photo/'.$user->faculty_photo);?>" style="width:160px"></td>
 		</tr>
 
 		<tr><br>		
@@ -49,17 +50,17 @@
 
 		<tr>
 			<th><b>Name:</b></th>
-			<td><?php echo $user->first_name.''.$user->last_name?></td>
+			<td><?php echo $user->first_name.'  '.$user->last_name?></td>
 		</tr>
 
 		<tr>
 			<th><b>Email Id:</b></th>
-			<td><?php echo $user->std_email?></td>
+			<td><?php echo $user->faculty_email?></td>
 		</tr>
 
 		<tr>
 			<th><b>Phone-No:</b></th>
-			<td><?php echo $user->std_contact?></td>
+			<td><?php echo $user->faculty_contact?></td>
 		</tr>
 
 		<tr>
@@ -72,10 +73,6 @@
 			<td><?php echo $user->father_name?></td>
 		</tr>
 
-		<tr>
-			<th><b>Mother's Name:</b></th>
-			<td><?php echo $user->mother_name?></td>
-		</tr>
 				</div>
 		<?php endforeach;?>
 		

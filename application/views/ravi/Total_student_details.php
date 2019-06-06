@@ -89,7 +89,7 @@
 				</tr>
 
 				<tr>
-					<th><b>Date-of-Birthday:</b></th>
+					<th><b>Date of Birth:</b></th>
 						<td><?php echo $user->date_of_birth?></td>
 		
 					<th><b>Gender:</b></th>
@@ -170,10 +170,10 @@
 				</tr>
 
 				<tr>
-					<th><b>Student Email Id:</b></th>
+					<th><b>Email Id:</b></th>
 						<td><?php echo $user->std_email?></td>
 		
-					<th><b>Student Contact No.:</b></th>
+					<th><b>Contact No.:</b></th>
 						<td><?php echo $user->std_contact?></td>
 				</tr>
 

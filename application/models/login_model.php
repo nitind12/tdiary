@@ -18,7 +18,7 @@ class Login_model extends CI_Model {
             $row = $query->row();
             $this->session->set_userdata('user', $user_);
             $this->session->set_userdata('user_status', $row->category);
-
+            $this->session->set_userdata('adminid', $row->student_id);
             if($row->category==3)
             {
                 $this->db->select('a.*');

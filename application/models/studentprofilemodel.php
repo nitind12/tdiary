@@ -40,6 +40,23 @@ public function getDatat()
 		return $query->result();
 					
 	}
+public function getDatatA()
+	{
+	$this->db->select('a.*,b.admin_father_name,b.admin_mother_name,b.admin_name,b.date_of_births,
+		b.email_id , b.contact_no');
+		
+		$this->db->from('sign_up a');
+		$this->db->where('b.admin_id',$this->session->userdata('adminid'));
+		
+		$this->db->join('admin_profile b', 'a.student_id=b.admin_id');
+		
+		$query = $this->db->get();
+
+		//echo $this->db->last_query();die();
+	
+		return $query->result();
+					
+	}
 
 }
 

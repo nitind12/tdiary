@@ -26,7 +26,8 @@ class studentprofilecontroller extends CI_Controller
        
 		
             if($this->session->userdata('user_status')==1){
-                   $data['page_'] = 'studentprofileview';
+                    $data['m'] = $this->sp->getDatatA();
+                $data['page_'] = 'adminprofile';
     
             }
           if($this->session->userdata('user_status')==2){

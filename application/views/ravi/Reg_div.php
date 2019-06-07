@@ -9,7 +9,8 @@
          
         <div class="module-body row-fluid">
         <div class="module-body row-fluid">
-                        
+                          <?php echo $this->session->userdata('adminid');?>
+          
 
       <div class="btn-box-row row-fluid  btn-box big span5" style="border: #ff0000 solid 0px;">
            <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $view_edit_class_no;?></b> 

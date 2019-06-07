@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2019 at 12:44 PM
+-- Generation Time: Jun 07, 2019 at 12:50 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -763,8 +763,8 @@ INSERT INTO `sidebar` (`sidebar_id`, `sidebar_name`, `path`, `status`, `username
 (3, 'Dashboard', 'Main/indext', 2, 'ra'),
 (9, 'Teacher-Online-Attendance', '#', 1, 'ra'),
 (10, 'Student-Attendace-Report', '#', 1, 'ra'),
-(11, 'Teacher-Lecture-Plan', '#', 1, 'ra'),
-(12, 'Teacher-Lesson-Plan', '#', 1, 'ra'),
+(11, 'Proposed-Lecture-Plan', '#', 1, 'ra'),
+(12, 'Actual-Lecture-Plan', '#', 1, 'ra'),
 (13, 'Teacher-Weekly-Report', '#', 1, 'ra'),
 (14, 'Marks', '#', 1, 'ra'),
 (15, 'Assignment', '#', 1, 'ra'),

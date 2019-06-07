@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2019 at 06:06 AM
+-- Generation Time: Jun 07, 2019 at 12:44 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -66,6 +66,31 @@ CREATE TABLE `admin` (
   `status` tinyint(1) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_profile`
+--
+
+CREATE TABLE `admin_profile` (
+  `admin_id` int(11) NOT NULL,
+  `admin_name` varchar(50) NOT NULL,
+  `admin_father_name` varchar(150) NOT NULL,
+  `admin_mother_name` varchar(150) NOT NULL,
+  `contact_no` varchar(15) NOT NULL,
+  `date_of_births` date NOT NULL,
+  `email_id` varchar(150) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin_profile`
+--
+
+INSERT INTO `admin_profile` (`admin_id`, `admin_name`, `admin_father_name`, `admin_mother_name`, `contact_no`, `date_of_births`, `email_id`, `status`, `username`) VALUES
+(1, 'Ravi Pandey', 'Umesh chandra Pandey', 'Radha pandey', '9917604820', '1998-05-11', 'ravip8527@gmail.com', 1, 'ra');
 
 -- --------------------------------------------------------
 
@@ -780,9 +805,9 @@ CREATE TABLE `sign_up` (
 --
 
 INSERT INTO `sign_up` (`s_no`, `username`, `password`, `question`, `answer`, `student_id`, `category`, `staus`) VALUES
-(1, 'ra', '12', 'question 1', '1', 45, '1', '1'),
-(2, 'preeti12', '12', 'question 1', 'gchvchb', 2019053, '3', ''),
-(3, 'ankush12', '12', 'question 1', '2.', 2019058, '2', ''),
+(1, 'ra', '12', 'question 1', '1', 1, '1', '1'),
+(2, 'preeti12', '12', 'question 1', 'gchvchb', 2019053, '3', '1'),
+(3, 'ankush12', '12', 'question 1', '2.', 2019058, '2', '1'),
 (4, 'nitin12', '12', 'question 1', '1', 2019056, '2', '');
 
 -- --------------------------------------------------------
@@ -1754,6 +1779,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `admin_profile`
+--
+ALTER TABLE `admin_profile`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `assignment`
 --
 ALTER TABLE `assignment`
@@ -1999,6 +2030,12 @@ ALTER TABLE `add_class`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `admin_profile`
+--
+ALTER TABLE `admin_profile`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `assignment`

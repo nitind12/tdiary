@@ -1,4 +1,4 @@
-<?<?php
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <html>
@@ -55,57 +55,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<div id="extra" class="container">
 		<div class="title">
-			<h2>ABOUTS US</h2><br><br><br>
-			<center><table>
+			<h2>CONTACT US</h2><br><br><br>
+			<center>
+				<table >
 				<tr>
-					<td colspan="6" align="center" bgcolor="lightblue"  >
-
-						<img src="<?php echo base_url('assets/photo/nitin_sir.jpg');?>" style="border-radius: 50%"height="150px"width="120px"><br/><b>Dr. Nitin Deepak(Asso. Professor)FTS</b><br>
-						Amrapali Group Of Institute<br>
-						Haldwani(Nainital)<br>
-
+					<td colspan="2" style="padding: 45px"align="center" bgcolor="lightblue"  ><b>Dr. Nitin Deepak</b><br>
+						Contact No: 7895856094<br>
+						Email: nitin.d12@amrapali.ac.in<br>
 					</td>
 				<tr align="center">
-					<td ><img src="<?php echo base_url('assets/photo/ravi.jpg');?>" style="border-radius: 25%"height="150px"width="120px"><br/><b>Ravi Pandey(Student)BCA</b><br>
-						Amrapali Group Of Institute<br>
-						Haldwani(Nainital)<br>
-					</td>
-					<td align="center"><img src="<?php echo base_url('assets/photo/raj.jpg');?>" style="border-radius: 25%"height="150px"width="120px"><br/><b>Rajkumar Gupta(Student)BCA</b><br>
-						Amrapali Group Of Institute<br>
-						Haldwani(Nainital)<br>
+					<td  style="padding: 45px"align="center"><b>Rajkumar Gupta</b><br>
+						Contact No: 9634747874<br>
+						Email: 1999.rajkumargupta@gmail.com<br>
 					</td>
 				
-				
-				
+					<td align="center"><b>Preeti Kumari Kushwaha</b><br>
+						Contact No: 9997122129<br>
+						Email: kushwahapreeti999@gmail.com<br>
+					</td>
+						<tr align="center">
+					<td colspan="2"style="padding: 45px"><b>Ravi Pandey</b><br>
+						Contact No: 9917604820<br>
+						Email: ravip8527@gmail.com<br>
+					</td>
+			</tr>
+					</tr><tr>
 
-					<td align="center"><img src="<?php echo base_url('assets/photo/preeti.jpg');?>" style="border-radius: 25%"height="150px"width="120px"><br/><b>Preeti Kumari Kushwaha(Student)BCA</b><br>
-						Amrapali Group Of Institute<br>
-						Haldwani(Nainital)<br>
+					<td style="padding: 45px" align="center"><b>Sapna Bhatt</b><br>
+						Contact No: 7906519126<br>
+						Email: 790.bhattsapna@gmail.com<br>
 					</td>
-
-					<td align="center"><img src="<?php echo base_url('assets/photo/sapna.jpg');?>" style="border-radius: 25%"height="150px"width="120px"><br/><b>Sapna Bhatt(Student)BCA</b><br>
-						Amrapali Group Of Institute<br>
-						Haldwani(Nainital)<br>
-					</td>
-								
 				
-					<td align="center" ><img src="<?php echo base_url('assets/photo/satyam.jpg');?>" style="border-radius: 25%"height="150px"width="120px"><br/><b>Satyam Kumar Shriwastav(Student)BCA</b><br>
-						Amrapali Group Of Institute<br>
-						Haldwani(Nainital)<br>
+					<td   align="center" ><b>Satyam Kumar Shriwastav</b><br>
+						Contact No: 9568736366<br>
+						Email: ravip8527@gmail.com<br>
 					</td>
 
 
 				</tr>
 				
-			</table></center>		
-			<span class="byline"></span> </div>
-		<div id="three-column">
-					<ul class="actions">
-			
-		</ul>
-	</div>
-	
-</div>
-
-</body>
+			</table></center>			
+			</body>
 </html>

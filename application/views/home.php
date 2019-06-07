@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<a href="<?php echo site_url('Homemain/about_us_controller');?>" 
 						accesskey="5" title="">About Us</a></li>
 				<li>
-					<a href="<?php echo site_url('Login_controller/index'); ?>" accesskey="6" title="">Contact Us</a></li>
+					<a href="<?php echo site_url('Homemain/about_us_controller1'); ?>" accesskey="6" title="">Contact Us</a></li>
 			</ul>
 		</div>
 	</div>

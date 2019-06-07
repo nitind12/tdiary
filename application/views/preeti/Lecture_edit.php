@@ -161,7 +161,7 @@
 		<table class="table table-striped table-bordered table-condensed">
                  <thead>
                   <tr style="text-align: left">
-                    <th>S.No</th>
+                    <th>Sr.No</th>
               		
                     <th>Unit No</th>
               		<th>Topic</th>
@@ -177,6 +177,7 @@
                    <?php
                 	  $length=1;
                         foreach ($t_diary as $item) {  ?>
+                        	<tr>
                        	    <td><?php  echo $length;  ?></td>
 	               
 	                       <td class="lectdata mytd"   id="<?php echo $item->lecture_id.'-unit';?>"><?php echo $item->unit ;?></td>	

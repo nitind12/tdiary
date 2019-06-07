@@ -14,4 +14,10 @@ class Homemain extends CI_Controller{
         $this->load->view('aboutus');  
         
     }
+     public function about_us_controller1()  
+    {  
+
+        $this->load->view('contact_us');  
+        
+    }
 }

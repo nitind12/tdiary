@@ -77,6 +77,7 @@
                           
                   <thead>
                     <tr>
+                       <th align="center">Sr.No</th>
                         <th align="center">Unit</th>
                         <th align="center">Topic</th>
                         <th align="center">No Of Lecture Aspect</th>
@@ -85,9 +86,10 @@
                   </thead>
                   <tbody>
                   
-             <?php foreach ($t_diary as $item) { ?>
+             <?php    $length=1;
+             foreach ($t_diary as $item) { ?>
               <tr>
-            
+               <td><?php  echo $length;  ?></td>
               <td><?php echo $item->unit ?></td>
                <td><?php echo $item->topic ?></td>
                  <td><?php echo $item->no_of_lecture?></td>
@@ -96,7 +98,8 @@
      
                                 </tr>
 
-                              <?php } ?>
+                              <?php 
+                                $length++;} ?>
 
 
                           </tbody>

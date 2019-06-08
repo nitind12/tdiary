@@ -79,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 							<div class="control-group">
 								<div class="controls row-fluid  input-prepend">
-								<span class="add-on"><i class="icon-envelope"></i></span><input type="text" name="email" id="email"  class="span11" placeholder="Email Id"  required="required">
+								<span class="add-on"><i class="icon-user"></i></span><input type="text" name="username" id="username"  class="span11" placeholder="Username"  required="required">
 								</div>
 							</div>
 
@@ -104,6 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</div>
 							</div>
 						</div>
+					</form>
 				
 				</div>
 			</div>

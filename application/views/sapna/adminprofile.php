@@ -37,7 +37,12 @@
 		<tbody>
 		<?php foreach($m as $user):
 		?>
-		<div>							
+		<div>	
+
+
+		<tr>
+			<td colspan="2"><img src="<?php echo base_url('assets/student_photo/'.$user->admin_photo);?>" style="width:160px"></td>
+		</tr>						
 	
 		<tr><br>		
 			<th><b>Username:</b></th>

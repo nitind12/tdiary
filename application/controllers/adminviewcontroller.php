@@ -20,7 +20,7 @@ class Adminviewcontroller extends CI_Controller
 
     public function index()  
     {  
-        $data['title'] = "Asminview";
+        $data['title'] = "Adminview";
         $data['page_'] = "Adminview";
          $data['das1'] = $this->vm->dashtimetable();
         $data['dashboard1'] = $this->am->getDashboardMenu();

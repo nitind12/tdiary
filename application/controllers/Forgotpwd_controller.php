@@ -7,7 +7,7 @@ class Forgotpwd_controller extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Forgotpwd_model','fm');
-         if(!$this->session->userdata('user')) redirect('Login_controller');
+         //if(!$this->session->userdata('user')) redirect('Login_controller');
     }
     
    
@@ -18,16 +18,16 @@ class Forgotpwd_controller extends CI_Controller
         if($this->input->post('btnpwd'))
         {
 
-            $email=$this->input->post('email');
+            $username=$this->input->post('username');
             $newPassword=$this->input->post('newPassword');
             $confirmPassword=$this->input->post('confirmPassword');
 
-            $que=$this->db->query("select password from sign_up  where email='$email'");
+            $que=$this->db->query("select password from sign_up  where username='$username'");
             $row=$que->row();
            
             if(!strcmp($newPassword, $confirmPassword))
             {
-                 $this->fm->change_pass($email,$newPassword);
+                 $this->fm->change_pass($username,$newPassword);
                  
 
                 $this->session->set_flashdata('c', "Password changed successfully");

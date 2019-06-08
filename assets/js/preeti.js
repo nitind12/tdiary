@@ -535,6 +535,8 @@ $(document).ready(function()
 
 
 
+
+
 			$('#Course').change(function(){
 			if($('#Course').val() != '' && $('#Semester').val() !=0){
 				var url_ = site_url_+"/main/get_subjectupload";

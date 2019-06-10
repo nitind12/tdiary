@@ -9,8 +9,7 @@
          
         <div class="module-body row-fluid">
         <div class="module-body row-fluid">
-                          <?php echo $this->session->userdata('adminid');?>
-          
+                        
 
       <div class="btn-box-row row-fluid  btn-box big span5" style="border: #ff0000 solid 0px;">
            <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $view_edit_class_no;?></b> 
@@ -47,22 +46,6 @@
            <i class="icon-book"></i>
                 <b>Total No. of Course</b>
        </a>
-     </div>
-     
-       <div class="btn-box-row row-fluid  btn-box big span5" style="border: #ff0000 solid 0px;" >
-         <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $course_no;?></b> <br>
-          <a href="<?php echo site_url('Main/attendance_controller');?>" >
-           <i class="icon-adjust"></i>
-                <b>View_Class/Edit_class</b>
-      </div>
-      </a>
-    
-         <button type="button" class="btn-box big span5 btn-box-row row-fluid" data-toggle="modal" data-target="#myModal">
-            <i class="icon-briefcase" id="btnaddclass"name="btnaddclass"></i>
-          <b>Add-Class</b>
-        </button>
-    
-   </a>
      </div>
     
 

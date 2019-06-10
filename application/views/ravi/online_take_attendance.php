@@ -4,7 +4,7 @@
 <div class="content">
   <div class="module">
     <div class="module-head">
-      <h3>ONLINE_ATTENDANCE</h3>
+      <h1>TOTAL_ATTENDANCE</h1>
     </div>
       
       <div class="btn-box-row row-fluid" >

@@ -312,6 +312,8 @@ class Main extends CI_Controller {
         $data['title'] = "Student-Report-Attendance";
         $data['page_'] = "student_report_attendance1";
         $data['course1'] = $this->am->getCourse1();
+         $data['cls_in_session'] = $this->am->fetchClass();
+       
         $data['Semester1'] = $this->am->getSemester1();
         $data['Session1'] = $this->am->getSession1();
         $data['dashboard1'] = $this->am->getDashboardMenu();

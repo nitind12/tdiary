@@ -13,10 +13,10 @@
                 <h1><?php echo $this->session->userdata('marksname');?></h1>
                         </div>
               <div class="module-body table">
-                <div class="alert  hideblock">
+                <!--div class="alert  hideblock">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     <strong>Note!</strong>Double Click For Edit!
-                  </div>
+                  </div-->
 
 
        <span class="hideblock"> <a href="#" onclick="window.print()"><span class="btn  btn-primary icon-print" style="float:right" > Print</span> </a></span>
@@ -56,7 +56,7 @@
         </table>
 
           </div>
-          <center><a href="<?php echo site_url('test/del/')?>"class="btn btn-danger" onclick="return confirm('Are you sure??')">Delete Whole data!</a></center>
+          <center><a href="<?php echo site_url('test/del/')?>"class="btn btn-danger hideblock" onclick="return confirm('Are you sure??')">Delete Whole data!</a></center>
          
                <form class="form-horizontal row-fluid" name="frmclass" id="frmclass" method="post" action="<?php echo site_url('Test/submitmarks_controller');?>">
 

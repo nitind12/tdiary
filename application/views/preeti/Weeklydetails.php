@@ -2,6 +2,10 @@
     .show-read-more .more-text{
        display: none;
     }
+
+     .redcolor{
+      color: #ff0000 !important;
+    }
 </style>
 
 
@@ -81,7 +85,20 @@
                                            <td><?php echo $item->date;?></td>
                                             <td><?php echo $item->unit;?></td>
                                             <td><?php echo $item->topic;?></td>
-                                             <td><?php echo $item->lecture_type;?></td>
+
+                                            <?php if(trim($item->lecture_type) == 'Arrangement' || trim($item->lecture_type) == 'Extra Lecture Taken'){?>
+                                             <td class="redcolor">
+                                                   <?php echo $item->lecture_type;?>
+                                                </td>
+                                            <?php }
+                                               else
+                                                  { ?>
+                                                     <td>
+                                                   <?php echo $item->lecture_type;?>
+                                          <?php } ?>
+                                  
+                                </td>
+                                              
                                             
                                       </tr>
                                 <?php } ?>

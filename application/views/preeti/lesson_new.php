@@ -155,7 +155,7 @@
 			<table class="table table-striped table-bordered table-condensed">
 				<thead>
                     <tr style="text-align: left">
-                        <!--  <th>Lesson No</th>	-->
+                        <th>SrNo.</th>	
                         <th>Date</th>
                        	<th>Start Time</th>
                         <th>End Time</th>
@@ -168,11 +168,14 @@
                 </thead>
                 <tbody>
                       	       
-                        <?php foreach ($t_diary as $item) {?>
+                        <?php 
+                          $length=1;
+                          	foreach ($t_diary as $item) {?>
 
                             <tr>
                                 <!--     <td><?php echo $item->lesson_id ;?></td>		-->
-	                            <td class="lessondata lesstd"   id="<?php echo $item->lesson_id.'-date';?>"> <?php echo $item->date;?></td>
+                                <td><?php  echo $length;  ?></td>
+	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-date';?>"> <?php echo $item->date;?></td>
 
 	                            <td class="lessondata lesstd"  id="<?php echo $item->lesson_id.'-start_time' ;?>"><?php echo $item->start_time;?></td>
 
@@ -200,7 +203,8 @@
 	                            <td><a href="<?php echo site_url('Lessonedit_controller/del1/' . $item->lesson_id)?>" class="btn btn-danger icon-trash" onclick="return confirm('Are you sure')"></a></td>
 	                                        
 	                        </tr>
-                        <?php } ?>
+                        <?php 
+                     	$length++;} ?>
 
 
               

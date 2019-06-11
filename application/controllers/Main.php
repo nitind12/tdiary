@@ -406,6 +406,7 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
+
 public function attendance_report_View_Consolidate2($no_,$sess,$cour,$sem,$subid)  
     {  
         $data['title'] = "View-Consolidate";
@@ -857,6 +858,42 @@ function reports_attendance_controller_via_ajax_student_total_admin_2()
         echo json_encode($data);
     }
 
+public function attendance_report_View_total_faculty() 
+{ 
+   if($this->input->post('addclassidtotal'))
+        {
+            $no_ = $this->input->post('addclassidtotal');
+            $sess = $this->input->post('sessionidtotal');
 
- }
+      $data['title'] = "View-Consolidate";
+        $data['page_'] = "view_attendance_total_reports_faculty";
+        $data['cls_in_session'] = $this->am->fetchClass();
+         $data['add_class_in'] = $this->am->add_view_attendance($no_);
+      
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+
+       
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+        
+    }
+        else
+        {
+            redirect('Main/attendance_report_student_controller');
+        }
+}
+
+function reports_attendance_controller_via_ajax_faculty_total()
+ {
+        $data['consolidate'] = $this->am->reports_attendance_modals_student_total_faculty_reports();
+        $data['student'] = $this->am->reports_attendance_modals_data_faculty_student_details_87();
+        $data['date'] = $this->am->reports_attendance_modals_data_faculty_date_87();
+        echo json_encode($data);
+    }
+
+}
 ?>  

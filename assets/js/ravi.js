@@ -53,22 +53,31 @@ $(function()
 					str = str + "<tr>";
 					str = str + "</tr>";
 					//str = str + "<th>Session</th>"
-					str = str + "<th>Roll-No</th>"
+					str = str + "<th>Student-id</th>"
 					str = str + "<th>Attendance</th>"
 					
-					for(i=0; i<len;i++){
+					for(i=0; i<len;i++)
+					{
 						str = str + '<tr>';	
-						str = str + '<td>' + obj.reports_[i].roll_no + "</td>";
-						str = str + '<td>' + obj.reports_[i].attendance_status + "</td>";
-						
+						str = str + '<td>' + obj.reports_[i].student_id + "</td>";
+						str = str + '<td>' ;	
+										if(obj.reports_[i].attendance_status==1){
+												$p='<span style="color: #009000">P</span>';
+										str = str  + $p ;
+										}else{
+											$A='<span style="color: #ff0000">A</span>';
+											str = str + $A + "</td>";
+										
+										}str = str + "</td>";
+							
 						str = str + '</tr>';
 					}
-					$('#reportshere').html(str);	//print table heading
+					$('#reportshere_faculty_day').html(str);	//print table heading
 				} else {
-					$('#reportshere').html('No data found');
+					$('#reportshere_faculty_day').html('No data found');
 				}
 			}, error: function(xhr, error, status){
-				$('#reportshere').html(xhr.responseText);
+				$('#reportshere_faculty_day').html(xhr.responseText);
 			}
 		});
 	return false;
@@ -1093,5 +1102,74 @@ $('#Admintotal').click(function()
 			}
 		});
 		return false;
+	});
+
+	$('.take_attend_total_class').click(function(){
+			var str = this.id;
+			var arr = str.split('~');
+			$('#addclassidtotal').val(arr[0]);
+			$('#sessionidtotal').val(arr[1]);
+			$('#course_idtotal').val(arr[2]);
+			$('#subject_idtotal').val(arr[3]);
+
+			$('#frmtakeattend_total_class').submit();
+		});
+
+
+		$('#cmbAttendanceReportfaculty_com').click(function()
+	
+	{
+		var data_ = $('#frmattendancereports_faculty').serialize();
+		var url_ = site_url_+"/main/reports_attendance_controller_via_ajax_faculty_total";
+		
+		$.ajax({
+			url:url_,
+			type: 'post',
+			data: data_,
+			success: function(consolidate,student,date){
+				
+				var obj = JSON.parse(consolidate);
+				var len2 = obj.student.length;
+				var len3 = obj.date.length;
+				var len =obj.consolidate.TotalAttd;
+				var lej=0;
+				lej=(len/len2);
+				var pec=0;
+				per=(lej/len3)*100;
+
+				var str = 'x';
+				if(len2> 0){
+					str = str + "<tr>";
+					str = str + "<th>Total Class held</th>"
+					str = str + "<th>Total Class Percentage</th>"
+					
+					str = str + '</tr>';
+							
+							str = str + "<tr>";
+							str = str + "<td>";
+							str = str + len3;
+							str = str + "</td>";
+							str = str + "<td>";
+							str = str + per.toFixed();
+							str = str + "%";
+							
+							str = str + "</td>";
+							
+
+							str = str + "</td>";
+
+
+							str = str + '</tr>';
+							$('#reportsherefaculty').html(str);	//print table heading
+				} else {
+					$('#reportsherefaculty').html('No data found');
+				}
+			}, error: function(xhr, error, status){
+				$('#reportsherefaculty').html(xhr.responseText);
+			}
+		});
+	return false;
 	});	
-});
+
+		});	
+	

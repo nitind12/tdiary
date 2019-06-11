@@ -132,12 +132,9 @@
               echo form_close(); 
             ?>
         </div>
-     <div class="module-head">
-           <h2>View-Attendance-Reports </h2>
-        </div>
          <div class="module-body">
         
-        <table class="table table-bordered table-striped" id="reportshere" name="reportshere">
+        <table class="table table-bordered table-striped" id="reportshere_faculty_day" name="reportshere_faculty_day">
         </table>
    </div>
  </div>

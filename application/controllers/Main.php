@@ -581,9 +581,9 @@ public function attendance_report_View_Consolidate2($no_,$sess,$cour,$sem,$subid
     }
     function reports_attendance_controller_CA()
     {
-        $data['consolidate']=$this->am->reports_attendance_modalsCA();
-        $data['date1']=$this->am->reports_attendance_modals_data_admin();
-        $data['student']=$this->am->reports_attendance_modals_datastudent();
+        $data['consolidate']=$this->am->reports_attendance_modalsCA789();
+        $data['date1']=$this->am->reports_attendance_modals_data_admin789();
+        $data['student']=$this->am->reports_attendance_modals_datastudent789();
        
         echo json_encode($data);
     
@@ -602,6 +602,10 @@ redirect('Main/Promoted_Class_controller');
         $data['subjects'] = $this->am->getSubjectc();
         echo json_encode($data);
     }
+    function get_subjectc23(){
+        $data['subjects'] = $this->am->getSubjectc23();
+        echo json_encode($data);
+    }
     function get_subjectsasign(){
         $data['subjects'] = $this->am->getSubjectasign();
         echo json_encode($data);
@@ -614,6 +618,11 @@ redirect('Main/Promoted_Class_controller');
     function get_classC()
     {
         $data['class'] = $this->am->getclassC();
+        echo json_encode($data);
+    }
+    function get_classC23()
+    {
+        $data['class'] = $this->am->getclassC23();
         echo json_encode($data);
     }
     function get_classassign()

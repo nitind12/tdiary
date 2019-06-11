@@ -259,6 +259,18 @@ class Add_class_model extends CI_Model
 		//echo $this->db->last_query();die();
 		return $query->result();
 		}
+		function getSubjectc23()
+		{
+			$course_id = $this->input->post('Course_admin');
+			$Semester_id = $this->input->post('Semester_admin');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
 		
 		function getstudentsubj()
 		{
@@ -301,6 +313,20 @@ class Add_class_model extends CI_Model
 			$course_id = $this->input->post('Course');
 			$Semester_id = $this->input->post('Semester');
 			$Session_id = $this->input->post('Session');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->where('session_id',$Session_id);
+		$this->db->order_by('add_class_id');
+		$query = $this->db->get('add_class');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
+		function getclassC23()
+		{
+			$course_id = $this->input->post('Course_admin');
+			$Semester_id = $this->input->post('Semester_admin');
+			$Session_id = $this->input->post('Session_admin');
 
 		$this->db->where('course_id',$course_id);
 		$this->db->where('semester_id',$Semester_id);
@@ -907,6 +933,16 @@ class Add_class_model extends CI_Model
 		$query = $this->db->get();
 		return $query->result();
 		}
+		function reports_attendance_modals_datastudent789()
+		{
+		$this->db->select('a.student_id, a.first_name, a.last_name');
+		$this->db->from('std_personal a');
+		$this->db->join('section b', 'a.student_id=b.student_id');
+		$this->db->where('b.session_id', '2018');
+		$this->db->where('b.session_class_id', $this->input->post('Class_admin'));
+		$query = $this->db->get();
+		return $query->result();
+		}
 		function reports_attendance_modalsCA()
 		{
 			$consolidate= array();	
@@ -915,6 +951,34 @@ class Add_class_model extends CI_Model
 			$add_class_id=$this->input->post('Class');
 			$session_id=$this->input->post('Session');
 			$semseter_id=$this->input->post('Semester');
+			$btn1= $this->input->post('d1');
+			$btn2= $this->input->post('d2');
+			
+		$this->db->distinct('a.date');
+		$this->db->select('a.*');
+		$this->db->where('a.subject_id',$subject_id);
+		$this->db->where('b.course_id',$course_id);
+		$this->db->where('b.add_class_id',$add_class_id);
+		$this->db->where('b.session_id',$session_id);
+		$this->db->where('b.semester_id',$semseter_id);
+		$this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+		$this->db->from('attendance a');
+		$this->db->join(' add_class b', 'b.add_class_id=a.add_class_id');
+		$this->db->join(' faculty_personal c', 'c.faculty_id=a.faculty_id');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $query->result();
+		
+		}
+		function reports_attendance_modalsCA789()
+		{
+			$consolidate= array();	
+			$subject_id=$this->input->post('subject_name_admin');
+			$course_id=$this->input->post('Course_admin');
+			$add_class_id=$this->input->post('Class_admin');
+			$session_id=$this->input->post('Session_admin');
+			$semseter_id=$this->input->post('Semester_admin');
 			$btn1= $this->input->post('d1');
 			$btn2= $this->input->post('d2');
 			
@@ -1101,6 +1165,20 @@ class Add_class_model extends CI_Model
 			$btn1= $this->input->post('d1');
 			$btn2= $this->input->post('d2');
 			$subject_id=$this->input->post('subject_name');
+			
+		$this->db->distinct('a.date');
+		$this->db->select('a.date');
+		 $this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+		$this->db->where('a.subject_id', $subject_id);
+		$query = $this->db->get('attendance a');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		
+		}function reports_attendance_modals_data_admin789()
+		{
+			$btn1= $this->input->post('d1');
+			$btn2= $this->input->post('d2');
+			$subject_id=$this->input->post('subject_name_admin');
 			
 		$this->db->distinct('a.date');
 		$this->db->select('a.date');

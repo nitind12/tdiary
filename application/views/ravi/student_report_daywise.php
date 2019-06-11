@@ -22,7 +22,7 @@
                  <div class="control-group">
                    <label class="control-label" for="basicinput">Session</label>
                       <div class="controls">
-                      <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Session" id="Session">
+                      <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Session_admin" id="Session_admin">
                                              <option value="">Select Session</option>
                                                 <?php foreach ($Session1 as  $item) { ?>
                                                  <option value="<?php echo $item->s_id;?>">
@@ -37,7 +37,7 @@
                  <div class="control-group">
                    <label class="control-label" for="basicinput">Course</label>
                       <div class="controls">
-                     <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Course" id="Course">
+                     <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Course_admin" id="Course_admin">
                                              <option value="">Select Course</option>
                                                 <?php foreach ($course1 as  $item) { ?>
                                                  <option value="<?php echo $item->course_id;?>">
@@ -51,7 +51,7 @@
                  <div class="control-group">
                    <label class="control-label" for="basicinput">Semester</label>
                       <div class="controls">
-                           <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Semester" id="Semester">
+                           <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Semester_admin" id="Semester_admin">
                       <option value="">Select Semester</option>
                                                 <?php foreach ($Semester1 as  $item) { ?>
                                                  <option value="<?php echo $item->semester_id;?>">
@@ -67,7 +67,7 @@
                  <div class="control-group">
                    <label class="control-label" for="basicinput">Class</label>
                       <div class="controls">
-                          <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Class" id="Class">
+                          <select tabindex="1" data-placeholder="Select here.."class="span2"  name="Class_admin" id="Class_admin">
                          </select>
                          
                        </div>
@@ -79,7 +79,7 @@
             <td colspan="2"> <div class="control-group">
                    <label class="control-label" for="basicinput">Subject</label>
                       <div class="controls">
-                          <select tabindex="1" data-placeholder="Select here.."class="span2"  name="subject_name" id="subject_name">
+                          <select tabindex="1" data-placeholder="Select here.."class="span2"  name="subject_name_admin" id="subject_name_admin">
                          </select>
                           </div>
                     </div>

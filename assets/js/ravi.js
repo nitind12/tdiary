@@ -26,7 +26,8 @@ $(function()
 
 			$('').change(function(){
 				var course_id
-			})		
+			})	
+
 	$('#cmbAttendanceReport').click(function()
 	{
 		$('#msg_').html('');
@@ -478,11 +479,11 @@ $('#Courseasign').change(function(){
 		});
 
 
-$('#Course').change(function(){
+$('#Course_admin').change(function(){
 	
 
-			if($('#Course').val() != '' && $('#Semester').val() !=0){
-				var url_ = site_url_+"/main/get_subjectc";
+			if($('#Course_admin').val() != '' && $('#Semester_admin').val() !=0){
+				var url_ = site_url_+"/main/get_subjectc23";
 				var data_ = $('#frmconsolidateAd').serialize();
 				$.ajax({
 				type:"POST",
@@ -495,7 +496,7 @@ $('#Course').change(function(){
 					for(i=0; i<obj.subjects.length; i++){
 						str = str + "<option value='"+obj.subjects[i].subject_id+"'>"+obj.subjects[i].subject_name+"</option>";
 					}
-					$('#subject_name').html(str);
+					$('#subject_name_admin').html(str);
 				},
 					
 				
@@ -505,15 +506,15 @@ $('#Course').change(function(){
 
 			});
 
-		$('#Semester').change(function(){
-			$('#Course').change();
+		$('#Semester_admin').change(function(){
+			$('#Course_admin').change();
 
 		
 		});
-$('#Course').change(function(){
+$('#Course_admin').change(function(){
 
-			if($('#Course').val() != '' && $('#Session').val() !=0){
-				var url_ = site_url_+"/main/get_classC";
+			if($('#Course_admin').val() != '' && $('#Session_admin').val() !=0){
+				var url_ = site_url_+"/main/get_classC23";
 				var data_ = $('#frmconsolidateAd').serialize();
 				$.ajax({
 				type:"POST",
@@ -528,7 +529,7 @@ $('#Course').change(function(){
 					for(i=0; i<obj.class.length; i++){
 						str = str + "<option value='"+obj.class[i].add_class_id+"'>"+obj.class[i].course_id+obj.class[i].semester_id+obj.class[i].section_id+"</option>";
 					}
-					$('#Class').html(str);
+					$('#Class_admin').html(str);
 			
 				},
 					
@@ -539,8 +540,8 @@ $('#Course').change(function(){
 
 			});
 
-		$('#Session').change(function(){
-			$('#Course').change();
+		$('#Session_admin').change(function(){
+			$('#Course_admin').change();
 
 			
 		});

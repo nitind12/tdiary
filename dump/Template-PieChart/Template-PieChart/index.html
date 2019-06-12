@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pie Chart Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Pie Chart <small>Bootstrap template, demonstrating a Pie Chart</small></h1>
+</div>
+
+<!-- Pie Chart - START -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Pie Series</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chart1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Pie Customized Series</h3>
+                </div>
+                <div id="chart2" class="panel-body">
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+
+<!-- you need to include the shieldui css and js assets in order for the grids to work -->
+<link rel="stylesheet" type="text/css" href="http://www.prepbootstrap.com/Content/shieldui-lite/dist/css/light/all.min.css" />
+<script type="text/javascript" src="http://www.prepbootstrap.com/Content/shieldui-lite/dist/js/shieldui-lite-all.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var data1 = [12, 3, 4, 2];
+        var data2 = [3, 9, 12, 14];       
+            
+        $(function () {            
+            $("#chart1").shieldChart({
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                axisY: {
+                    title: {
+                        text: "Break-Down for selected quarter"
+                    }
+                },               
+                dataSeries: [{
+                    seriesType: "pie",
+                    enablePointSelection: true,
+                    data: data1
+                }]
+            });
+
+            $("#chart2").shieldChart({
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                seriesSettings: {
+                    pie: {
+                        enablePointSelection: true,
+                        borderColor: 'black',
+                        borderWidth: 3,
+                        dataPointText:
+                            {
+                                style: {                                    
+                                    fontWeight: 'bold'
+                            }
+                        }
+                    }
+                },
+                axisY: {
+                    title: {
+                        text: "Break-Down for selected quarter"
+                    }
+                },               
+                dataSeries: [{
+                    seriesType: "pie",                    
+                    data: data2
+                }]
+            });
+
+       
+        });
+      
+    });
+</script>
+<!-- Pie Chart - END -->
+
+</div>
+
+</body>
+</html>

@@ -214,6 +214,7 @@ class Main extends CI_Controller {
         $data['page_'] = "studentdash";
         $data['title'] = "Dashboard";
         $data['dashboard1'] = $this->am->getDashboardMenu();
+          $data['subject_'] = $this->am->subject_wise_data();
         $data['menu'] = $this->am->getMenu();
         $data['submenu'] = $this->am->getSubmenu();
         $data['last'] = $this->am->getlastMenu();

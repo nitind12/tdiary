@@ -1,131 +1,172 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+<style>
+zing-grid[loading]{height:800px;}</style>
+
 <div class="span9">
   <div class="content">
     <div class="module">
       <div class="module-head">
-        <h1>sDashboard</h1>
-        <?php 
-        echo $this->session->userdata('studentid');
-       
-        echo $this->session->userdata('sin');
-        echo $this->session->userdata('cos');
-        echo $this->session->userdata('tan');
-        echo $this->session->userdata('cot');
-            ?>
-      </div>
+        <h1>Dashboard</h1>
+       </div>
       <div class="module-body">
-      <div class="btn-box-row row-fluid" ><div class="module">
-                            <div class="module-head">
-                                <h3>
-                                    Pie - Donut</h3>
-                            </div>
-                            <div class="module-body">
-                              <div id="piechart"></div>
-                            <div>
-                        
-       <ul class="widget widget-usage unstyled span4">
-                                        <li>
-                                            <p>
-                                                <strong>BCA201-C++</strong> <span class="pull-right small muted">78%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar" style="width: 78%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>Y6TREDWEFG</strong> <span class="pull-right small muted">56%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-success" style="width: 56%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong></strong> <span class="pull-right small muted">44%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-warning" style="width: 44%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>iPhone</strong> <span class="pull-right small muted">67%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-danger" style="width: 67%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
 
+        <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+          <tr>
+            <th>ID</th>
+            <th>Session</th>
+            <th>Course</th>
+            <th>Semseter</th>
+            <th>Section</th>
 
+          </tr>
+          <tr>
+            <td>
+              <?php 
+               echo $this->session->userdata('studentid');
+        ?>
+          
+        </td>
+            <td><?php echo $this->session->userdata('sin');?>
+        </td>
+            <td><?php echo $this->session->userdata('cos');
+        ?></td>
+            <td><?php  echo $this->session->userdata('tan');
+        ?></td>
+            <td><?php  echo $this->session->userdata('cot');
+       ?></td>
+          </tr>
+        </table>
+        <div class="module-body"> 
+              <div id="chartDiv">
+                <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+        <h2>Your Attendance Subject Wise Reports</h2>
+                <tr>
+            <th>0</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
 
-  
-    
-    </div>
-         
+          </tr>
+          <tr>
+             <?php foreach ($subject_ as $item) {?>
+       
+            <td>  <?php echo $item->subject_name; }?></td>
+          </tr>
+          </table>
+              </div>
+  <script>ZC.LICENSE=["b55b025e438fa8a98e32482b5f768ff5"];var chartData = {
+      type: 'bar',  // Specify your chart type here.
+      title: {
+        text: 'Your Attendance Reports' 
+
+        // Adds a title to your chart
+      },
+      legend: {}, // Creates an interactive legend
+      series: [  // Insert your series data here
+          { values: [35, 42, 67, 100,67,89] },
+           ]
+    };
+    zingchart.render({ // Render Method[3]
+      id: 'chartDiv',
+      data: chartData,
+      height: 400,
+      width: '100%'
+    });</script>
+          
+          
+          <h3>Your Marks Reports</h3>
+          <?php foreach ($subject_ as $item) {?>
+        <?php echo $item->subject_name;?>
+       
+      <div class="prg">
+        <div class="prg success-color" style="width: 86%;">
+        </div>
       </div>
-     
+          <?php  }
+?>
+      </div>
+    </div>      
+</div>
+</div>
+
+<style>
+.prg {
+  height: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+.success-label{
+    position:absolute;
+    height:26px;
+    left: 15px;
+    margin-top:-10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index:1;
+    border-radius:15px;
+    border: 1px solid white;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+}
+.danger-label{
+    position:absolute;
+    height:26px;
+    left: 15px;
+    margin-top:-10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index:1;
+    border-radius:15px;
+    border: 1px solid white;
+    background-color: #d9534f;
+    color: white;
+    text-align: center;
+}
+.warning-label{
+    position:absolute;
+    height:26px;
+    left: 15px;
+    margin-top:-10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index:1;
+    border-radius:15px;
+    border: 1px solid white;
+    background-color: #f0ad4e;
+    color: white;
+    text-align: center;
+}
+.primary-color{
+    background-color:#4989bd;
+}
+.success-color{
+    background-color:#5cb85c;
+}
+.danger-color{
+    background-color:#d9534f;
+}
+.warning-color{
+    background-color:#f0ad4e;
+}
+.info-color{
+    background-color:#5bc0de;
+}
+.no-color{
+    background-color:inherit;
+}
+</style>
+
+      
      </div>
    </div>
  </div>
 </div>
-</div>
-
-</div>
-<div class="modal fade" id="myModal" style="width:700px; height: 890px;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-      
-        <!-- Modal Header -->
-              <div class="modal-header">
-                  <h4 class="modal-title">ADD-CLASS</h4>
-                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              
-              <div class="modal-body">
-                 <?php $this->load->view('ravi/add_class1');?>
-               
-               </div>
-        
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-        </div>
-      </div>    
-        <?php //$this->load->view('ravi/view_class');?>     
-  </div>
-</div>
-</div>      
-<script type="text/javascript">
-// Load google charts
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-// Draw the chart and set the chart values
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-  ['Task', 'Hours per Day'],
-  ['train', 8],
-  ['Eat', 2],
-  ['TV', 4],
-  ['Gym', 2],
-  ['Sleep', 8]
-]);
-
-  // Optional; add a title and set the width and height of the chart
-  var options = {'title':'My Average Day', 'width':550, 'height':400};
-
-  // Display the chart inside the <div> element with id="piechart"
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data, options);
-}
-</script>
-
 

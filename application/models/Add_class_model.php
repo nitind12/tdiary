@@ -1331,6 +1331,35 @@ class Add_class_model extends CI_Model
 		return $query->result();
 		
 		}
+
+		function subject_wise_data()
+		{
+		$this->db->distinct('a.subject_id');
+		$this->db->select('a.*');
+		$this->db->where('a.course_id',$this->session->userdata('cos'));
+    	$this->db->where('a.semester_id',$this->session->userdata('tan'));
+    	$this->db->from(' subject a');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $query->result();
+		
+		}
+		function subject_wise_marks_id()
+		{
+		$this->db->distinct('a.subject_id');
+		$this->db->select('a.*');
+		$this->db->where('a.course_id',$this->session->userdata('cos'));
+    	$this->db->where('a.semester_id',$this->session->userdata('tan'));
+    	$this->db->from(' subject a');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $query->result();
+		
+		}
+		
+
 		
 }
 ?>

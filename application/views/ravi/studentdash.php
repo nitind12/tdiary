@@ -82,7 +82,7 @@ zing-grid[loading]{height:800px;}</style>
         <?php echo $item->subject_name;?>
        
       <div class="prg">
-        <div class="prg success-color" style="width: 86%;">
+        <div class="prg success-color" style="width: 96%;">
         </div>
       </div>
           <?php  }

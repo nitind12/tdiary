@@ -34,6 +34,27 @@ class Main extends CI_Controller {
         $this->load->view('myravipage', $data);  
         $this->load->view('templates/footer');
     }
+public function total_subject2()  
+    {   
+        $data['page_'] = "Total_subject";
+        $data['title'] = "Dashboard";
+        $data['das1'] = $this->vm->dashtimetable();
+        $data['dashboard1'] = $this->am->getDashboardMenu();
+        $data['menu'] = $this->am->getMenu();
+        $data['submenu'] = $this->am->getSubmenu();
+        $data['last'] = $this->am->getlastMenu();
+        $data['course1'] = $this->am->getCourse1();
+        $data['Session1'] = $this->am->getSession1();
+        $data['Semester1'] = $this->am->getSemester1();
+        $data['Course'] = $this->am->getall_course();
+        $data['totSubject'] = $this->am->getall_subjectno2211();
+     
+        $Course_id=$this->input->post('Course');
+        $Semester_id=$this->input->post('Semester');
+        $this->load->view('templates/header', $data);
+        $this->load->view('myravipage', $data);  
+        $this->load->view('templates/footer');
+    }
 
     public function total_course()  
     {   
@@ -202,8 +223,8 @@ class Main extends CI_Controller {
         $data['Session1'] = $this->am->getSession1();
         $data['Semester1'] = $this->am->getSemester1();
 
-        $data['subject_no'] = $this->am-> getall_subjectno();
-        $data['view_edit_class_no'] = $this->am-> getall_view_edit_classno();
+        $data['subject_no'] = $this->am->getall_subjectno22();
+        $data['view_edit_class_no'] = $this->am-> getall_view_edit_classno22();
 
         $this->load->view('templates/header', $data);
         $this->load->view('myravipage', $data);  

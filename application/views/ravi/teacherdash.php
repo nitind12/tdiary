@@ -1,9 +1,74 @@
-<div class="span9">
+ <style>
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+
+</style>
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+// Add data
+chart.data = [{
+  "country": "Subjects-1",
+  "visits": 65
+},
+ {
+  "country": "Subjects-2",
+  "visits": 70
+}];
+
+// Create axes
+
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "country";
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.renderer.minGridDistance = 30;
+
+categoryAxis.renderer.labels.template.adapter.add("dy", function(dy, target) {
+  if (target.dataItem && target.dataItem.index & 2 == 2) {
+    return dy ;
+  }
+  return dy;
+});
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+// Create series
+var series = chart.series.push(new am4charts.ColumnSeries());
+series.dataFields.valueY = "visits";
+series.dataFields.categoryX = "country";
+series.name = "Visits";
+series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+series.columns.template.fillOpacity = .8;
+
+var columnTemplate = series.columns.template;
+columnTemplate.strokeWidth = 2;
+columnTemplate.strokeOpacity = 1;
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML --><div class="span9">
           <div class="content">
 
             <div class="module">
               <div class="module-head">
-                <h1>tDashboard</h1>
+                <h1>Dashboard</h1>
               </div>
               <div class="module-body">
                  <div class="btn-box-row row-fluid" >
@@ -43,91 +108,27 @@
               </form>            
     
                     </div>
-
        
       <div class="btn-box-row row-fluid" >
 
       <div class="btn-box-row row-fluid  btn-box big span5" style="border: #ff0000 solid 0px;">
         <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $view_edit_class_no;?></b>
-          <a href="<?php echo site_url('Main/attendance_controller');?>" >
+          <a href="<?php echo site_url('Main/total_subject2');?>" >
            <i class="icon-adjust"></i>
-                <b>View_Class/Edit_class</b>
+                <b>Total No Of Class</b>
       </div>
       </a>
     
     
-     <div class="btn-box-row row-fluid  btn-box big span5" >
-           <i class="icon-adjust"></i>
-                <b>Attendance Reports</b>
-      </div>
       <div class="btn-box-row row-fluid  btn-box big span5"  style="border: #ff0000 solid 0px;">
          <b class="label yellow pull-right" style="background:#ffCC00; padding: 5px;"><?php echo $subject_no;?></b>
-          <a href="<?php echo site_url('Main/total_subject');?>" >
+          <a href="<?php echo site_url('Main/total_subject2');?>" >
            <i class="icon-adjust"></i>
                 <b>Total No Of Subjects</b>
       </div>
       </a>
-     <div class="btn-box-row row-fluid  btn-box big span5" >
-           <i class="icon-adjust"></i>
-                <b>Total No Of Class</b>
-      </div>
-      <div class="btn-box-row row-fluid  btn-box big span5" >
-          <a href="<?php echo site_url('Main/attendance_controller');?>" >
-           <i class="icon-adjust"></i>
-                <b>View_Class/Edit_class</b>
-      </div>
-      </a>
-     <div class="btn-box-row row-fluid  btn-box big span5" >
-          <a href="<?php echo site_url('Main/attendance_controller');?>" >
-           <i class="icon-adjust"></i>
-                <b>View_Class/Edit_class</b>
-      </div>
-      </a>
-     <div class="btn-box-row row-fluid  btn-box big span5" >
-          <a href="<?php echo site_url('Main/attendance_controller');?>" >
-           <i class="icon-adjust"></i>
-                <b>View_Class/Edit_class</b>
-      </div>
-      </a>
-    
-    
     </div>
-         
-      </div>
-     
-     </div>
-   </div>
- </div>
-</div>
-</div>
-
-</div>
-<div class="modal fade" id="myModal" style="width:700px; height: 890px;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-      
-        <!-- Modal Header -->
-              <div class="modal-header">
-                  <h4 class="modal-title">ADD-CLASS</h4>
-                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              
-              <div class="modal-body">
-                 <?php $this->load->view('ravi/add_class1');?>
-               
-               </div>
-        
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-        </div>
-      </div>    
-        <?php //$this->load->view('ravi/view_class');?>     
-  </div>
-</div>
-</div>      
-
-
-
+   <div class="module-body">
+       <h2>Attendance Reports</h2>       
+<div id="chartdiv"></div></div>
+</div></div></div></div></div></div></div>

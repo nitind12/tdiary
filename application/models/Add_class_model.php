@@ -147,6 +147,46 @@ class Add_class_model extends CI_Model
 		$query = $this->db->get('');
 		return $query->num_rows();
 		}
+function getall_subjectno22()
+		{
+			
+		$this->db->distinct('a.subject_id');
+		$this->db->select('a.*,b.subject_name');
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+	
+		$this->db->from('assign_subject a');
+		$this->db->join('subject b', 'a.subject_id=b.subject_id');
+		
+		$query = $this->db->get('');
+		return $query->num_rows();
+		}
+function getall_subjectno2211()
+		{
+			
+		$this->db->distinct('a.subject_id');
+		$this->db->select('a.*,b.subject_name,c.course_id,c.semester_id');
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+	
+		$this->db->from('assign_subject a');
+		$this->db->join('subject b', 'a.subject_id=b.subject_id');
+		$this->db->join('add_class c', 'a.add_class_id=c.add_class_id');
+		
+		$query = $this->db->get('');
+		return $query->result();
+		}
+
+function getall_view_edit_classno22()
+		{
+			
+		$this->db->distinct('a.add_class_id');
+		$this->db->select('a.*');
+		$this->db->where('a.faculty_id', $this->session->userdata('facultyid'));
+	
+		$this->db->from('assign_subject a');
+		
+		$query = $this->db->get('');
+		return $query->num_rows();
+		}
 
 
 	function getall_view_edit_classno()

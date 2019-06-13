@@ -78,7 +78,7 @@ zing-grid[loading]{height:800px;}</style>
     });</script>
           
           
-          <h3>Your Marks Reports</h3>
+          <h3>Your Marks Performance</h3>
           <?php foreach ($subject_ as $item) {?>
         <?php echo $item->subject_name;?>
        

@@ -1030,7 +1030,6 @@ $('#Course').change(function(){
 
 $('#Admintotal').click(function()
 	{
-		alert("dssd");
 				
 		var data_ = $('#frmtotalAD').serialize();
 		var url_ = site_url_+"/main/reports_attendance_controller_via_ajax_student_total_admin_2";
@@ -1045,7 +1044,10 @@ $('#Admintotal').click(function()
 				
 				var obj = JSON.parse(consolidate);
 				var len = obj.consolidate.length;
+				
 				var len1 = obj.student.length;
+				var len2= obj.date.length;
+				alert(len);
 				var str = 'x';
 				if(len > 0)
 					{
@@ -1053,7 +1055,7 @@ $('#Admintotal').click(function()
 					str = str + "<th>Roll-No</th>";
 					str = str + "<th>Total No of Days</th>";
 					str = str + "<th>Present Days</th>";
-					str = str + "<th>Absent Days</th>";
+					str = str + "<th>Percentage</th>";
 					
 					str = str + '</tr>';
 					var Present=0;
@@ -1066,32 +1068,30 @@ $('#Admintotal').click(function()
 							
 							str = str + "<tr>";
 							str = str + '<td>' + obj.student[k].student_id+"</td>";
+							str = str + '<td>' + obj.date.length+"</td>";
 
 
-								for(j=0; j<len; j++){
-									if (obj.student[k].student_id==obj.consolidate[j].student_id)
-									{
 											
 										str = str + '<td>' ;	
-										if(obj.consolidate[j].attendance_status==1){
-												Present++;
-												str = str + '<td>' + Present+"</td>";
 												
+										str = str + obj.consolidate2.TotalAttd1;
+				
 
-													}
-											else
-													{
-												Absent++;
-												str = str + '<td>' + Absent+ "</td>";
-							
-											
-										}str = str + "</td>";
-									}
+
+										str = str + "</td>";
+										str = str + '<td>' ;	
+												
+										str = str + obj.consolidate2.TotalAttd1;
+				
+
+
+										str = str + "</td>";
 								
-							}
+							
 							str = str + '</tr>';
 						}	
-			
+			str = str + '</tr>';
+						
 						
 										
 				$('#reportshereTOTAl').html(str);	

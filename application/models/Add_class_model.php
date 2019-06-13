@@ -1214,7 +1214,8 @@ function getall_view_edit_classno22()
 		//echo $this->db->last_query();die();
 		return $query->result();
 		
-		}function reports_attendance_modals_data_admin789()
+		}
+		function reports_attendance_modals_data_admin789()
 		{
 			$btn1= $this->input->post('d1');
 			$btn2= $this->input->post('d2');
@@ -1289,6 +1290,7 @@ function getall_view_edit_classno22()
 		$this->db->where('b.session_id',$session_id);
 		$this->db->where('b.semester_id',$semseter_id);
 		$this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+		
 		$this->db->from('attendance a');
 		$this->db->join(' add_class b', 'b.add_class_id=a.add_class_id');
 		$this->db->join(' faculty_personal c', 'c.faculty_id=a.faculty_id');
@@ -1296,6 +1298,36 @@ function getall_view_edit_classno22()
 		$query = $this->db->get();
 		//echo $this->db->last_query();die();
 		return $query->result();
+			
+		}
+		function reports_attendance_modals_student_total_admin_23458()
+		{
+		$consolidate= array();	
+			$subject_id=$this->input->post('subjectADT');
+			$course_id=$this->input->post('Course');
+			$add_class_id=$this->input->post('ClassADT');
+			$session_id=$this->input->post('Session');
+			$semseter_id=$this->input->post('Semester');
+			$btn1= $this->input->post('d1');
+			$btn2= $this->input->post('d2');
+		
+		$this->db->distinct('a.date');
+		$this->db->select('a.*');
+		$this->db->where('a.subject_id',$subject_id);
+		$this->db->where('b.course_id',$course_id);
+		$this->db->where('b.add_class_id',$add_class_id);
+		$this->db->where('b.session_id',$session_id);
+		$this->db->where('b.semester_id',$semseter_id);
+		$this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+		$this->db->select('sum(a.attendance_status) as TotalAttd1');
+		
+		$this->db->from('attendance a');
+		$this->db->join(' add_class b', 'b.add_class_id=a.add_class_id');
+		$this->db->join(' faculty_personal c', 'c.faculty_id=a.faculty_id');
+		
+		$query = $this->db->get();
+		//echo $this->db->last_query();die();
+		return $query->row();
 			
 		}
 		function reports_attendance_modals_datastudent_admin_total_23()
@@ -1399,7 +1431,20 @@ function getall_view_edit_classno22()
 		
 		}
 		
-
+function reports_attendance_modals_data_admin_total_date_231()
+{	$btn1= $this->input->post('d1');
+			$btn2= $this->input->post('d2');
+			$subject_id=$this->input->post('subjectADT');
+			
+		$this->db->distinct('a.date');
+		$this->db->select('a.date');
+		 $this->db->where('DATE(a.date) BETWEEN "'.$btn1.'" AND "'.$btn2.'"', '',false);
+		$this->db->where('a.subject_id', $subject_id);
+		$query = $this->db->get('attendance a');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		
+		}
 		
 }
 ?>

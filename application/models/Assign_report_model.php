@@ -3,7 +3,7 @@ class Assign_report_model extends CI_Model{
 	function assignment_report()
 	{
 		$intel = array();
-		$A_no = $this->input->post('Assignment_no');
+		//$A_no = $this->input->post('Assignment_no');
 		$Subject = $this->input->post('Subject');
 		
 		$this->db->distinct('a.add_class_id');
@@ -13,7 +13,7 @@ class Assign_report_model extends CI_Model{
 		$this->db->where('a.semester_id',$this->session->userdata('tan'));
 		$this->db->where('a.section_id',$this->session->userdata('cot'));
 		$this->db->where('b.subject_id', $Subject);
-		$this->db->where('b.Assignment_no',$A_no);
+		//$this->db->where('b.Assignment_no',$A_no);
 		$this->db->from('add_class a');
 		$this->db->join('assignment b', 'b.add_class_id=a.add_class_id');
 

@@ -62,9 +62,22 @@
                 ); 
                 echo form_open('main/view_attendance_controller/', $options);
               ?>
-        
+            
+                   
 
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
+
+                   
+                     
+                    <?php foreach($add_class_in as $item){?>
+              <input type="hidden" value="<?php echo $item->session_id?>" name="session_idcon" id="session_idcon">
+              <input type="hidden" value=" <?php echo $item->semester_id?>"  name="semsetercon" id="semsetercon">
+              <input type="hidden" value="<?php echo $item->course_id?>" name="courseiCA" id="courseiCA">
+              <input type="hidden"  value="<?php echo $item->subject_id;?>" name="subjectcon" id="subjectcon">
+              <input type="hidden"  value="<?php  echo $item->section_id?>" name="sectioncon_id" id="sectioncon_id">
+          <?php }
+               ?>
+              
           <tr>
             <tr>
                 
@@ -90,7 +103,7 @@
                   <div class="control-group">
                       <div class="controls">
                         <div style="float: right;"> 
-                        <input type="submit"class="btn btn-primary" value="Search" id="cmbAttendanceReport">
+                        <input type="submit"class="btn btn-primary" value="Search" id="cmbAttendanceReport_faculty_condi">
                       </div>
                     </div>
                   </div>

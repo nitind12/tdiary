@@ -927,6 +927,16 @@ function reports_attendance_controller_via_ajax_faculty_total()
         $data['date'] = $this->am->reports_attendance_modals_data_faculty_date_87();
         echo json_encode($data);
     }
+    function reports_attendance_controller_faculty990()
+    {
+        $data['consolidate']=$this->am->reports_attendance_modalsCA789();
+        $data['date1']=$this->am->reports_attendance_modals_data_admin789();
+        $data['student']=$this->am->reports_attendance_modals_datastudent789();
+       
+        echo json_encode($data);
+    
+    }
+    
 
 }
 ?>  

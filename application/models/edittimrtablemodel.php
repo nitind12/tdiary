@@ -1,9 +1,19 @@
 <?php
 class Edittimrtablemodel extends CI_Model{
-	
 	function fetchtable()
 	{
-		$query = $this->db->get("time_table_edit");
+		$query = $this->db->get('time_table_edit');
+
+		return $query->result();
+	}
+	function time_edit_modals()
+	{
+		$time_table=array();
+		$this->db->where('username',$this->session->userdata('user'));
+		$this->db->where('faculty_id',$this->session->userdata('facultyid'));
+		$query = $this->db->get('time_table_edit');
+		//echo $this->db->last_query();die();
+
 		return $query->result();
 	}
 	function fetchtable2()
@@ -16,6 +26,7 @@ class Edittimrtablemodel extends CI_Model{
 		return $query->result();
 	}
 	
+	
 	function savingdata3()
 	{
 		$data = array(
@@ -23,19 +34,20 @@ class Edittimrtablemodel extends CI_Model{
 			'Semester' => $this->input->post('Semester'),
 			'Section' => $this->input->post('Section'),
 			'Course_id' => $this->input->post('Course_Name'),
-			'Subject_id' => $this->input->post('Subject_id'),
+			'Subject_id' => $this->input->post('Subject'),
 		    'session_id' => $this->input->post('Session'),
-			//'Time_table_id' => $this->input->post('Time_table_id'),
 			'Time' => $this->input->post('Time'),
 			'Room' => $this->input->post('Room'),
-
+			'username' => $this->session->userdata('user'),
+		    'faculty_id' =>$this->session->userdata('facultyid')
 
 		);
 		
 		$this->db->insert('time_table_edit',$data);
+		redirect('Edittimetablecontroller','refresh');
 
 	}
-	public function getmarkstype1()
+	public function getmarkstype1() 
 	{
 		$this->db->select('semester_id,no_of_semester');
 		$query = $this->db->get('semester');
@@ -53,6 +65,18 @@ class Edittimrtablemodel extends CI_Model{
 		$query = $this->db->get('session');
 		return $query->result();
 	}
+	function getSubjectT()
+		{
+			$course_id = $this->input->post('Course_Name');
+			$Semester_id = $this->input->post('Semester');
+
+		$this->db->where('course_id',$course_id);
+		$this->db->where('semester_id',$Semester_id);
+		$this->db->order_by('subject_id');
+		$query = $this->db->get('subject');
+		//echo $this->db->last_query();die();
+		return $query->result();
+		}
 	/*function saving()
 	{
 		$data = array(
@@ -74,6 +98,22 @@ function del($a){
 		$this->db->delete('edittimetablecontroller',array('id' => $a));
 		return;
 	}
+
+	function updatedColumn()
+    {
+        $lectupdate_ = array();
+
+        $dt=$this->input->post('dt');
+        $tt_id=$this->input->post('tt_id');
+        echo $col = $this->input->post('columnname');
+
+        $this->db->where('Subject_id', $tt_id);
+        $data = array(
+        	$col => $dt
+        );
+        $query = $this->db->update('time_table_edit', $data);
+        return $query;
+    }
 	/*public function edit($a)
 	{
 		$d = $this->db->get_where('studentmarks',array('Student_Roll'=>$a))->row();
@@ -94,5 +134,31 @@ function del($a){
 		$this->db->where('Student_Roll',$id);
 		$this->db->insert('test',$data);
 	}*/
+
+
+	
 }
+/*function timetable()
+	{
+		$intel = array();
+		$Day = $this->input->post('day');
+		
+		
+		$this->db->distinct('a.Day');
+		$this->db->select('a.*');
+		$this->db->where('a.Day',$Day);
+		
+		$this->db->from('time_table_edit a');
+		
+
+		$q = $this->db->get('time_table_edit');
+		return $q->result();
+		//'status' =>'1';
+		//'username' ->$this->session->userdata('user');
+		//echo  $this->db->last_query();
+	}*/
+
+
+
+
 ?>

@@ -37,7 +37,7 @@
 									</select>
 								</td>
 										
-									<td>Assignment No:<br>
+									<!--<td>Assignment No:<br>
 									  	<select tabindex="1"data-placeholder="Select here.." class="span8" name="Assignment_no" id="Assignment_no" >
 									  		<option value ="">Select here..</option>
 									  		<?php foreach ($assignment_ as  $item) { ?>
@@ -45,7 +45,7 @@
                                                  	<?php echo $item->Assignment_no?></option>
                                                     <?php }?>
                                                 
-									 </select></td>
+									 </select></td>-->
 										</td>
 									</tr>
 								</tbody>

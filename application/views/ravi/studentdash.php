@@ -42,6 +42,7 @@ zing-grid[loading]{height:800px;}</style>
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped  display" width="100%">
         <h2>Your Attendance Subject Wise Reports</h2>
                 <tr>
+                   <th>No of subject</th>
             <th>0</th>
             <th>1</th>
             <th>2</th>
@@ -51,8 +52,8 @@ zing-grid[loading]{height:800px;}</style>
 
           </tr>
           <tr>
+       <th>Name of subject</th>
              <?php foreach ($subject_ as $item) {?>
-       
             <td>  <?php echo $item->subject_name; }?></td>
           </tr>
           </table>
@@ -77,7 +78,7 @@ zing-grid[loading]{height:800px;}</style>
     });</script>
           
           
-          <h3>Your Marks Reports</h3>
+          <h3>Your Marks Performance</h3>
           <?php foreach ($subject_ as $item) {?>
         <?php echo $item->subject_name;?>
        
